@@ -2,8 +2,7 @@ name: verify
 
 on: push
 
-permissions:
-  contents: write-all
+permissions: write-all
 
 jobs:
   verify:
