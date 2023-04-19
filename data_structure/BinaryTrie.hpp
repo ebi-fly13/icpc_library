@@ -20,6 +20,19 @@ struct BinaryTrie{ // set(NOT multiset) of integer
         if (v == nullptr){return 0;}
         return v->sz;
     }
+    int count(T x = -1) {
+        node *v = root;
+        if(x < 0) return v->sz;
+        x ^= lazy;
+        rrep(i,0,MAX_LOG) {
+            int j = x >> i & 1;
+            if(v->ch[j] == nullptr) {
+                return 0;
+            }
+            v = v->ch[j];
+        }
+        return v->sz;
+    }
     void insert(T x){
         x ^= lazy;
         node *v = root;
@@ -51,7 +64,7 @@ struct BinaryTrie{ // set(NOT multiset) of integer
         if (v->exist == 0) return ;
         v->exist--;
         update(v);
-        repp(i,0,MAX_LOG){
+        rrep(i,0,MAX_LOG){
             node *p = v->p;
             if (size(v) == 0){
                 if (v == p->ch[0]) p->ch[0] = nullptr;
