@@ -5,10 +5,13 @@ data:
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/data_structure/Set_Xor_Min.test.cpp
+    title: test/data_structure/Set_Xor_Min.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"data_structure/BinaryTrie.hpp\"\n\n#line 2 \"template/template.hpp\"\
@@ -25,17 +28,21 @@ data:
     \ of item\n        int sz; // number of integers exist in the subtree of this\
     \ node\n        node () : p(nullptr), ch({nullptr,nullptr}), exist(0), sz(0) {}\n\
     \    };\n    BinaryTrie () : lazy(T(0)){}\n    int size(node *v){\n        if\
-    \ (v == nullptr){return 0;}\n        return v->sz;\n    }\n    void insert(T x){\n\
-    \        x ^= lazy;\n        node *v = root;\n        rrep(i,0,MAX_LOG){\n   \
-    \         int j = x >> i & 1;\n            if (v->ch[j] == nullptr){\n       \
-    \         v->ch[j] = new node();\n                v->ch[j]->p = v;\n         \
-    \   }\n            v = v->ch[j];\n        }\n        v->exist++;\n        update(v);\n\
+    \ (v == nullptr){return 0;}\n        return v->sz;\n    }\n    int count(T x =\
+    \ -1) {\n        node *v = root;\n        if(x < 0) return v->sz;\n        x ^=\
+    \ lazy;\n        rrep(i,0,MAX_LOG) {\n            int j = x >> i & 1;\n      \
+    \      if(v->ch[j] == nullptr) {\n                return 0;\n            }\n \
+    \           v = v->ch[j];\n        }\n        return v->sz;\n    }\n    void insert(T\
+    \ x){\n        x ^= lazy;\n        node *v = root;\n        rrep(i,0,MAX_LOG){\n\
+    \            int j = x >> i & 1;\n            if (v->ch[j] == nullptr){\n    \
+    \            v->ch[j] = new node();\n                v->ch[j]->p = v;\n      \
+    \      }\n            v = v->ch[j];\n        }\n        v->exist++;\n        update(v);\n\
     \        rep(i,0,MAX_LOG){\n            v = v->p;\n            update(v);\n  \
     \      }\n    }\n    void erase(T x){\n        x ^= lazy;\n        node *v = root;\n\
     \        rrep(i,0,MAX_LOG){\n            int j = x >> i & 1;\n            if (v->ch[j]\
     \ == nullptr){\n                return ;\n            }\n            v = v->ch[j];\n\
     \        }\n        if (v->exist == 0) return ;\n        v->exist--;\n       \
-    \ update(v);\n        repp(i,0,MAX_LOG){\n            node *p = v->p;\n      \
+    \ update(v);\n        rrep(i,0,MAX_LOG){\n            node *p = v->p;\n      \
     \      if (size(v) == 0){\n                if (v == p->ch[0]) p->ch[0] = nullptr;\n\
     \                else p->ch[1] = nullptr;\n                delete v;\n       \
     \     }\n            v = p;\n            update(v);\n        }\n    }\n    int\
@@ -61,17 +68,21 @@ data:
     \ of item\n        int sz; // number of integers exist in the subtree of this\
     \ node\n        node () : p(nullptr), ch({nullptr,nullptr}), exist(0), sz(0) {}\n\
     \    };\n    BinaryTrie () : lazy(T(0)){}\n    int size(node *v){\n        if\
-    \ (v == nullptr){return 0;}\n        return v->sz;\n    }\n    void insert(T x){\n\
-    \        x ^= lazy;\n        node *v = root;\n        rrep(i,0,MAX_LOG){\n   \
-    \         int j = x >> i & 1;\n            if (v->ch[j] == nullptr){\n       \
-    \         v->ch[j] = new node();\n                v->ch[j]->p = v;\n         \
-    \   }\n            v = v->ch[j];\n        }\n        v->exist++;\n        update(v);\n\
+    \ (v == nullptr){return 0;}\n        return v->sz;\n    }\n    int count(T x =\
+    \ -1) {\n        node *v = root;\n        if(x < 0) return v->sz;\n        x ^=\
+    \ lazy;\n        rrep(i,0,MAX_LOG) {\n            int j = x >> i & 1;\n      \
+    \      if(v->ch[j] == nullptr) {\n                return 0;\n            }\n \
+    \           v = v->ch[j];\n        }\n        return v->sz;\n    }\n    void insert(T\
+    \ x){\n        x ^= lazy;\n        node *v = root;\n        rrep(i,0,MAX_LOG){\n\
+    \            int j = x >> i & 1;\n            if (v->ch[j] == nullptr){\n    \
+    \            v->ch[j] = new node();\n                v->ch[j]->p = v;\n      \
+    \      }\n            v = v->ch[j];\n        }\n        v->exist++;\n        update(v);\n\
     \        rep(i,0,MAX_LOG){\n            v = v->p;\n            update(v);\n  \
     \      }\n    }\n    void erase(T x){\n        x ^= lazy;\n        node *v = root;\n\
     \        rrep(i,0,MAX_LOG){\n            int j = x >> i & 1;\n            if (v->ch[j]\
     \ == nullptr){\n                return ;\n            }\n            v = v->ch[j];\n\
     \        }\n        if (v->exist == 0) return ;\n        v->exist--;\n       \
-    \ update(v);\n        repp(i,0,MAX_LOG){\n            node *p = v->p;\n      \
+    \ update(v);\n        rrep(i,0,MAX_LOG){\n            node *p = v->p;\n      \
     \      if (size(v) == 0){\n                if (v == p->ch[0]) p->ch[0] = nullptr;\n\
     \                else p->ch[1] = nullptr;\n                delete v;\n       \
     \     }\n            v = p;\n            update(v);\n        }\n    }\n    int\
@@ -95,9 +106,10 @@ data:
   isVerificationFile: false
   path: data_structure/BinaryTrie.hpp
   requiredBy: []
-  timestamp: '2023-04-20 00:34:42+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2023-04-20 01:22:12+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/data_structure/Set_Xor_Min.test.cpp
 documentation_of: data_structure/BinaryTrie.hpp
 layout: document
 redirect_from:

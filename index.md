@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: data_structure
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data_structure/BinaryTrie.hpp
       title: data_structure/BinaryTrie.hpp
   - name: math
@@ -22,6 +22,11 @@ data:
       path: template/template.hpp
       title: template/template.hpp
   verificationCategories:
+  - name: test/data_structure
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/data_structure/Set_Xor_Min.test.cpp
+      title: test/data_structure/Set_Xor_Min.test.cpp
   - name: test/math
     pages:
     - icon: ':heavy_check_mark:'

@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: data_structure/BinaryTrie.hpp
     title: data_structure/BinaryTrie.hpp
   - icon: ':heavy_check_mark:'
@@ -12,6 +12,9 @@ data:
     path: string/RollingHash.hpp
     title: RollingHash
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/data_structure/Set_Xor_Min.test.cpp
+    title: test/data_structure/Set_Xor_Min.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/math/enumerate_primes.test.cpp
     title: test/math/enumerate_primes.test.cpp
@@ -50,6 +53,7 @@ data:
   verifiedWith:
   - test/string/aoj_2444.test.cpp
   - test/math/enumerate_primes.test.cpp
+  - test/data_structure/Set_Xor_Min.test.cpp
 documentation_of: template/template.hpp
 layout: document
 redirect_from:
