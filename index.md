@@ -8,12 +8,12 @@ data:
       title: math/eratosthenes_sieve.hpp
   - name: string
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: string/RollingHash.hpp
       title: RollingHash
   - name: template
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: template/template.hpp
   verificationCategories:
@@ -22,5 +22,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/math/enumerate_primes.test.cpp
       title: test/math/enumerate_primes.test.cpp
+  - name: test/string
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/string/aoj_2444.test.cpp
+      title: test/string/aoj_2444.test.cpp
 layout: toppage
 ---
