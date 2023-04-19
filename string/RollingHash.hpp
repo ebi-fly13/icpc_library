@@ -22,16 +22,10 @@ struct RollingHash {
         rep(i,0,len) res = cal(mul(res,BASE) + s[i]);
         return res;
     }
-    template<class... Hash_Lengths> static ull concat(const Hash_Lengths&... hash_length){
-        return inner_concat(0ULL,hash_length...);
+    static ull concat(const ull& hash1, const ull& hash2, const int& len2){
+        return cal(cal(mul(hash1,pow_base[len2]))+hash2);
     }
   private:
-    static ull inner_concat(const ull& temp){
-        return temp;
-    }
-    template<class... Tail> static ull inner_concat(const ull& temp, const ull& hash, const int& len, const Tail&... tail){
-        return inner_concat(cal(cal(mul(temp,pow_base[len]))+hash),tail...);
-    }
     static constexpr ull MASK30 = (1ULL << 30) - 1;
     static constexpr ull MASK31 = (1ULL << 31) - 1;
     static constexpr ull MASK61 = (1ULL << 61) - 1;
