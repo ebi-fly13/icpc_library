@@ -21,7 +21,8 @@ data:
     https://judge.yosupo.jp/problem/enumerate_primes\"\n\n#include <iostream>\n\n\
     #line 2 \"math/eratosthenes_sieve.hpp\"\n\n#include <vector>\n#include <cassert>\n\
     \n#line 2 \"template/template.hpp\"\n\n#include<bits/stdc++.h>\n#line 5 \"template/template.hpp\"\
-    \n#define rep(i,s,n) for (int i = s; i < (int)(n); i++)\n#define all(v) v.begin(),v.end()\n\
+    \n#define rep(i,s,n) for (int i = s; i < (int)(n); i++)\n#define rrep(i,s,n) for\
+    \ (int i = (int)(n)-1; i >= (int)(s); i--)\n#define all(v) v.begin(),v.end()\n\
     \nusing ll = long long;\nusing ull = unsigned long long;\n\ntemplate<typename\
     \ T> bool chmin(T &a, const T &b){\n    if (a <= b) return false;\n    a = b;\n\
     \    return true;\n}\ntemplate<typename T> bool chmax(T &a, const T &b){\n   \
@@ -54,7 +55,7 @@ data:
   isVerificationFile: true
   path: test/math/enumerate_primes.test.cpp
   requiredBy: []
-  timestamp: '2023-04-20 00:24:38+09:00'
+  timestamp: '2023-04-20 00:34:42+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/math/enumerate_primes.test.cpp

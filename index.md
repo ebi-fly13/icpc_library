@@ -1,6 +1,11 @@
 ---
 data:
   libraryCategories:
+  - name: data_structure
+    pages:
+    - icon: ':warning:'
+      path: data_structure/BinaryTrie.hpp
+      title: data_structure/BinaryTrie.hpp
   - name: math
     pages:
     - icon: ':heavy_check_mark:'
