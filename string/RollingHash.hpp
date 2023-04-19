@@ -53,7 +53,6 @@ struct RollingHash {
     static void extend_pow_base(int len){
         int nlen = pow_base.size();
         if (nlen > len) return ;
-        len = 2*nlen;
         pow_base.resize(len+1);
         rep(i,nlen,len+1) pow_base[i] = cal(mul(pow_base[i-1],BASE));
     }
@@ -70,7 +69,6 @@ struct RollingHash {
         rep(i,0,n) inner_hash[i+1] = cal(mul(inner_hash[i],BASE) + s[i]);
     }
 };
-using ull = unsigned long long;
 ull RollingHash::BASE = 0;
 vector<ull> RollingHash::pow_base = vector<ull>(1,1);
 using roriha = RollingHash;
