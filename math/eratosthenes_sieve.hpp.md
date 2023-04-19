@@ -12,8 +12,8 @@ data:
   attributes:
     links: []
   bundledCode: "#line 2 \"math/eratosthenes_sieve.hpp\"\n\n#include <vector>\n#include\
-    \ <cassert>\n\nstruct eratosthenes_sieve {\nprivate:\n    int n;\n    std::vector<bool>\
-    \ table;\npublic:\n    eratosthenes_sieve(int n) : n(n), table(std::vector<bool>(n+1,\
+    \ <cassert>\n\nstruct eratosthenes_sieve {\n  private:\n    int n;\n    std::vector<bool>\
+    \ table;\n  public:\n    eratosthenes_sieve(int n) : n(n), table(std::vector<bool>(n+1,\
     \ true)) {\n        table[1] = false;\n        for(int i = 2; i*i<=n; i++) {\n\
     \            if(!table[i]) continue;\n            for(int j = i; i*j <= n; j++)\
     \ {\n                table[i*j] = false;\n            }\n        }\n    }\n\n\
@@ -22,7 +22,7 @@ data:
     \ prime;\n        for(int i = 2; i<=m; i++) {\n            if(table[i]) prime.emplace_back(i);\n\
     \        }\n        return prime;\n    }\n};\n"
   code: "#pragma once\n\n#include <vector>\n#include <cassert>\n\nstruct eratosthenes_sieve\
-    \ {\nprivate:\n    int n;\n    std::vector<bool> table;\npublic:\n    eratosthenes_sieve(int\
+    \ {\n  private:\n    int n;\n    std::vector<bool> table;\n  public:\n    eratosthenes_sieve(int\
     \ n) : n(n), table(std::vector<bool>(n+1, true)) {\n        table[1] = false;\n\
     \        for(int i = 2; i*i<=n; i++) {\n            if(!table[i]) continue;\n\
     \            for(int j = i; i*j <= n; j++) {\n                table[i*j] = false;\n\
@@ -35,7 +35,7 @@ data:
   isVerificationFile: false
   path: math/eratosthenes_sieve.hpp
   requiredBy: []
-  timestamp: '2023-04-18 21:56:37+09:00'
+  timestamp: '2023-04-19 14:28:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/math/enumerate_primes.test.cpp
