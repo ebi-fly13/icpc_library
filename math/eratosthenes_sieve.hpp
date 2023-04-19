@@ -4,10 +4,10 @@
 #include <cassert>
 
 struct eratosthenes_sieve {
-private:
+  private:
     int n;
     std::vector<bool> table;
-public:
+  public:
     eratosthenes_sieve(int n) : n(n), table(std::vector<bool>(n+1, true)) {
         table[1] = false;
         for(int i = 2; i*i<=n; i++) {
