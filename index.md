@@ -6,6 +6,16 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/eratosthenes_sieve.hpp
       title: math/eratosthenes_sieve.hpp
+  - name: string
+    pages:
+    - icon: ':warning:'
+      path: string/RollingHash.hpp
+      title: string/RollingHash.hpp
+  - name: template
+    pages:
+    - icon: ':warning:'
+      path: template/template.hpp
+      title: template/template.hpp
   verificationCategories:
   - name: test/math
     pages:
