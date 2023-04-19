@@ -3,6 +3,7 @@
 #include<bits/stdc++.h>
 #include<iostream>
 #define rep(i,s,n) for (int i = s; i < (int)(n); i++)
+#define rrep(i,s,n) for (int i = (int)(n)-1; i >= (int)(s); i--)
 #define all(v) v.begin(),v.end()
 
 using ll = long long;
