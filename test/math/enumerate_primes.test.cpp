@@ -7,7 +7,7 @@
 int main() {
     int n,a,b;
     std::cin >> n >> a >> b;
-    eratosthenes_sieve sieve(n);
+    lib::eratosthenes_sieve sieve(n);
     auto p = sieve.prime_table();
     int sz = p.size();
     int x = (sz-b+a-1)/a;
