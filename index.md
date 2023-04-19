@@ -10,7 +10,7 @@ data:
     pages:
     - icon: ':warning:'
       path: string/RollingHash.hpp
-      title: string/RollingHash.hpp
+      title: RollingHash
   - name: template
     pages:
     - icon: ':warning:'

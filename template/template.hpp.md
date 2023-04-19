@@ -4,7 +4,7 @@ data:
   _extendedRequiredBy:
   - icon: ':warning:'
     path: string/RollingHash.hpp
-    title: string/RollingHash.hpp
+    title: RollingHash
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
