@@ -3,9 +3,15 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
+    path: math/eratosthenes_sieve.hpp
+    title: math/eratosthenes_sieve.hpp
+  - icon: ':heavy_check_mark:'
     path: string/RollingHash.hpp
     title: RollingHash
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/math/enumerate_primes.test.cpp
+    title: test/math/enumerate_primes.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/string/aoj_2444.test.cpp
     title: test/string/aoj_2444.test.cpp
@@ -32,10 +38,12 @@ data:
   path: template/template.hpp
   requiredBy:
   - string/RollingHash.hpp
+  - math/eratosthenes_sieve.hpp
   timestamp: '2023-04-20 00:09:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/string/aoj_2444.test.cpp
+  - test/math/enumerate_primes.test.cpp
 documentation_of: template/template.hpp
 layout: document
 redirect_from:
