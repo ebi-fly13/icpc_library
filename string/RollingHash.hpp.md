@@ -24,16 +24,13 @@ data:
     \   }\n    static ull get_hash(const string &s){\n        int len = s.size();\n\
     \        set_hash();\n        extend_pow_base(len);\n        ull res = 0;\n  \
     \      rep(i,0,len) res = cal(mul(res,BASE) + s[i]);\n        return res;\n  \
-    \  }\n    template<class... Hash_Lengths> static ull concat(const Hash_Lengths&...\
-    \ hash_length){\n        return inner_concat(0ULL,hash_length...);\n    }\n  private:\n\
-    \    static ull inner_concat(const ull& temp){\n        return temp;\n    }\n\
-    \    template<class... Tail> static ull inner_concat(const ull& temp, const ull&\
-    \ hash, const int& len, const Tail&... tail){\n        return inner_concat(cal(cal(mul(temp,pow_base[len]))+hash),tail...);\n\
-    \    }\n    static constexpr ull MASK30 = (1ULL << 30) - 1;\n    static constexpr\
-    \ ull MASK31 = (1ULL << 31) - 1;\n    static constexpr ull MASK61 = (1ULL << 61)\
-    \ - 1;\n    static constexpr ull MOD = (1ULL << 61) - 1;\n    static constexpr\
-    \ ull buf = MOD * 4;\n    static ull BASE;\n    static vector<ull> pow_base;\n\
-    \    static ull mul(ull a, ull b){\n        ull au = a >> 31, ad = a & MASK31;\n\
+    \  }\n    static ull concat(const ull& hash1, const ull& hash2, const int& len2){\n\
+    \        return cal(cal(mul(hash1,pow_base[len2]))+hash2);\n    }\n  private:\n\
+    \    static constexpr ull MASK30 = (1ULL << 30) - 1;\n    static constexpr ull\
+    \ MASK31 = (1ULL << 31) - 1;\n    static constexpr ull MASK61 = (1ULL << 61) -\
+    \ 1;\n    static constexpr ull MOD = (1ULL << 61) - 1;\n    static constexpr ull\
+    \ buf = MOD * 4;\n    static ull BASE;\n    static vector<ull> pow_base;\n   \
+    \ static ull mul(ull a, ull b){\n        ull au = a >> 31, ad = a & MASK31;\n\
     \        ull bu = b >> 31, bd = b & MASK31;\n        ull mid = ad * bu + au *\
     \ bd;\n        ull midu = mid >> 30, midd = mid & MASK30;\n        return (au\
     \ * bu * 2 + midu + (midd << 31) + ad * bd);\n    }\n    static ull cal(ull x){\n\
@@ -57,23 +54,19 @@ data:
     \ + buf - mul(inner_hash[l], pow_base[r-l]));\n    }\n    static ull get_hash(const\
     \ string &s){\n        int len = s.size();\n        set_hash();\n        extend_pow_base(len);\n\
     \        ull res = 0;\n        rep(i,0,len) res = cal(mul(res,BASE) + s[i]);\n\
-    \        return res;\n    }\n    template<class... Hash_Lengths> static ull concat(const\
-    \ Hash_Lengths&... hash_length){\n        return inner_concat(0ULL,hash_length...);\n\
-    \    }\n  private:\n    static ull inner_concat(const ull& temp){\n        return\
-    \ temp;\n    }\n    template<class... Tail> static ull inner_concat(const ull&\
-    \ temp, const ull& hash, const int& len, const Tail&... tail){\n        return\
-    \ inner_concat(cal(cal(mul(temp,pow_base[len]))+hash),tail...);\n    }\n    static\
-    \ constexpr ull MASK30 = (1ULL << 30) - 1;\n    static constexpr ull MASK31 =\
-    \ (1ULL << 31) - 1;\n    static constexpr ull MASK61 = (1ULL << 61) - 1;\n   \
-    \ static constexpr ull MOD = (1ULL << 61) - 1;\n    static constexpr ull buf =\
-    \ MOD * 4;\n    static ull BASE;\n    static vector<ull> pow_base;\n    static\
-    \ ull mul(ull a, ull b){\n        ull au = a >> 31, ad = a & MASK31;\n       \
-    \ ull bu = b >> 31, bd = b & MASK31;\n        ull mid = ad * bu + au * bd;\n \
-    \       ull midu = mid >> 30, midd = mid & MASK30;\n        return (au * bu *\
-    \ 2 + midu + (midd << 31) + ad * bd);\n    }\n    static ull cal(ull x){\n   \
-    \     ull xu = x >> 61;\n        ull xd = x & MASK61;\n        ull res = xu +\
-    \ xd;\n        if (res >= MOD) res -= MOD;\n        return res;\n    }\n    static\
-    \ void set_hash(){\n        if (BASE == 0) BASE = (1UL<<31) + (random_device()()\
+    \        return res;\n    }\n    static ull concat(const ull& hash1, const ull&\
+    \ hash2, const int& len2){\n        return cal(cal(mul(hash1,pow_base[len2]))+hash2);\n\
+    \    }\n  private:\n    static constexpr ull MASK30 = (1ULL << 30) - 1;\n    static\
+    \ constexpr ull MASK31 = (1ULL << 31) - 1;\n    static constexpr ull MASK61 =\
+    \ (1ULL << 61) - 1;\n    static constexpr ull MOD = (1ULL << 61) - 1;\n    static\
+    \ constexpr ull buf = MOD * 4;\n    static ull BASE;\n    static vector<ull> pow_base;\n\
+    \    static ull mul(ull a, ull b){\n        ull au = a >> 31, ad = a & MASK31;\n\
+    \        ull bu = b >> 31, bd = b & MASK31;\n        ull mid = ad * bu + au *\
+    \ bd;\n        ull midu = mid >> 30, midd = mid & MASK30;\n        return (au\
+    \ * bu * 2 + midu + (midd << 31) + ad * bd);\n    }\n    static ull cal(ull x){\n\
+    \        ull xu = x >> 61;\n        ull xd = x & MASK61;\n        ull res = xu\
+    \ + xd;\n        if (res >= MOD) res -= MOD;\n        return res;\n    }\n   \
+    \ static void set_hash(){\n        if (BASE == 0) BASE = (1UL<<31) + (random_device()()\
     \ & MASK31);\n    }\n    static void extend_pow_base(int len){\n        int nlen\
     \ = pow_base.size();\n        if (nlen > len) return ;\n        len = 2*nlen;\n\
     \        pow_base.resize(len+1);\n        rep(i,nlen,len+1) pow_base[i] = cal(mul(pow_base[i-1],BASE));\n\
@@ -89,7 +82,7 @@ data:
   isVerificationFile: false
   path: string/RollingHash.hpp
   requiredBy: []
-  timestamp: '2023-04-19 19:08:56+09:00'
+  timestamp: '2023-04-19 23:15:55+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: string/RollingHash.hpp
