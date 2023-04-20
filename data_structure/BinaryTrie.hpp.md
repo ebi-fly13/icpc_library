@@ -23,11 +23,11 @@ data:
     \ &a, const T &b){\n    if (a >= b) return false;\n    a = b;\n    return true;\n\
     }\n#line 4 \"data_structure/BinaryTrie.hpp\"\n\nnamespace lib{\n\nusing namespace\
     \ std;\n\ntemplate<typename T, int MAX_LOG> // T = int/ll, 0 <= x < 2 ^ MAX_LOG\n\
-    struct BinaryTrie{ // set(NOT multiset) of integer\n    struct node{\n       \
-    \ node *p;\n        array<node*,2> ch;\n        int exist; // number of item\n\
-    \        int sz; // number of integers exist in the subtree of this node\n   \
-    \     node () : p(nullptr), ch({nullptr,nullptr}), exist(0), sz(0) {}\n    };\n\
-    \    BinaryTrie () : lazy(T(0)){}\n    int size(node *v){\n        if (v == nullptr){return\
+    struct BinaryTrie{ // set(multiset) of integer\n    struct node{\n        node\
+    \ *p;\n        array<node*,2> ch;\n        int exist; // number of item\n    \
+    \    int sz; // number of integers exist in the subtree of this node\n       \
+    \ node () : p(nullptr), ch({nullptr,nullptr}), exist(0), sz(0) {}\n    };\n  \
+    \  BinaryTrie () : lazy(T(0)){}\n    int size(node *v){\n        if (v == nullptr){return\
     \ 0;}\n        return v->sz;\n    }\n    int count(T x = -1) {\n        node *v\
     \ = root;\n        if(x < 0) return v->sz;\n        x ^= lazy;\n        rrep(i,0,MAX_LOG)\
     \ {\n            int j = x >> i & 1;\n            if(v->ch[j] == nullptr) {\n\
@@ -63,7 +63,7 @@ data:
     \    }\n};\n\n} // namespace lib\n"
   code: "#pragma once\n\n#include\"../template/template.hpp\"\n\nnamespace lib{\n\n\
     using namespace std;\n\ntemplate<typename T, int MAX_LOG> // T = int/ll, 0 <=\
-    \ x < 2 ^ MAX_LOG\nstruct BinaryTrie{ // set(NOT multiset) of integer\n    struct\
+    \ x < 2 ^ MAX_LOG\nstruct BinaryTrie{ // set(multiset) of integer\n    struct\
     \ node{\n        node *p;\n        array<node*,2> ch;\n        int exist; // number\
     \ of item\n        int sz; // number of integers exist in the subtree of this\
     \ node\n        node () : p(nullptr), ch({nullptr,nullptr}), exist(0), sz(0) {}\n\
@@ -100,13 +100,13 @@ data:
     \ T(1) << i;\n            }\n        }\n        return ans;\n    }\n    void xor_all(T\
     \ x){lazy ^= x;}\n  private:\n    T lazy;\n    node *root = new node();\n    void\
     \ update(node *v){\n        v->sz = v->exist + size(v->ch[0]) + size(v->ch[1]);\n\
-    \    }\n};\n\n} // namespace lib"
+    \    }\n};\n\n} // namespace lib\n"
   dependsOn:
   - template/template.hpp
   isVerificationFile: false
   path: data_structure/BinaryTrie.hpp
   requiredBy: []
-  timestamp: '2023-04-20 01:31:50+09:00'
+  timestamp: '2023-04-20 21:35:45+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/data_structure/Set_Xor_Min.test.cpp

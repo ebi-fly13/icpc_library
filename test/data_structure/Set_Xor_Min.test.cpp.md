@@ -27,9 +27,9 @@ data:
     \ &a, const T &b){\n    if (a >= b) return false;\n    a = b;\n    return true;\n\
     }\n#line 2 \"data_structure/BinaryTrie.hpp\"\n\n#line 4 \"data_structure/BinaryTrie.hpp\"\
     \n\nnamespace lib{\n\nusing namespace std;\n\ntemplate<typename T, int MAX_LOG>\
-    \ // T = int/ll, 0 <= x < 2 ^ MAX_LOG\nstruct BinaryTrie{ // set(NOT multiset)\
-    \ of integer\n    struct node{\n        node *p;\n        array<node*,2> ch;\n\
-    \        int exist; // number of item\n        int sz; // number of integers exist\
+    \ // T = int/ll, 0 <= x < 2 ^ MAX_LOG\nstruct BinaryTrie{ // set(multiset) of\
+    \ integer\n    struct node{\n        node *p;\n        array<node*,2> ch;\n  \
+    \      int exist; // number of item\n        int sz; // number of integers exist\
     \ in the subtree of this node\n        node () : p(nullptr), ch({nullptr,nullptr}),\
     \ exist(0), sz(0) {}\n    };\n    BinaryTrie () : lazy(T(0)){}\n    int size(node\
     \ *v){\n        if (v == nullptr){return 0;}\n        return v->sz;\n    }\n \
@@ -87,7 +87,7 @@ data:
   isVerificationFile: true
   path: test/data_structure/Set_Xor_Min.test.cpp
   requiredBy: []
-  timestamp: '2023-04-20 01:31:50+09:00'
+  timestamp: '2023-04-20 21:35:45+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data_structure/Set_Xor_Min.test.cpp
