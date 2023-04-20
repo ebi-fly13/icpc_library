@@ -7,7 +7,7 @@ namespace lib{
 using namespace std;
 
 template<typename T, int MAX_LOG> // T = int/ll, 0 <= x < 2 ^ MAX_LOG
-struct BinaryTrie{ // set(NOT multiset) of integer
+struct BinaryTrie{ // set(multiset) of integer
     struct node{
         node *p;
         array<node*,2> ch;
