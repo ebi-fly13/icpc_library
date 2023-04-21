@@ -10,7 +10,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: math/eratosthenes_sieve.hpp
-      title: math/eratosthenes_sieve.hpp
+      title: eratosthenes sieve
   - name: string
     pages:
     - icon: ':heavy_check_mark:'

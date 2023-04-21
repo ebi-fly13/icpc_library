@@ -7,7 +7,7 @@ data:
     title: BinaryTrie
   - icon: ':heavy_check_mark:'
     path: math/eratosthenes_sieve.hpp
-    title: math/eratosthenes_sieve.hpp
+    title: eratosthenes sieve
   - icon: ':heavy_check_mark:'
     path: string/RollingHash.hpp
     title: RollingHash

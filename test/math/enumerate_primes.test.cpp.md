@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: math/eratosthenes_sieve.hpp
-    title: math/eratosthenes_sieve.hpp
+    title: eratosthenes sieve
   - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
