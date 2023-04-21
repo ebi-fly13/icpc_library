@@ -11,6 +11,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: string/RollingHash.hpp
     title: RollingHash
+  - icon: ':warning:'
+    path: string/parsing_template.hpp
+    title: string/parsing_template.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/data_structure/Set_Xor_Min.test.cpp
@@ -44,6 +47,7 @@ data:
   isVerificationFile: false
   path: template/template.hpp
   requiredBy:
+  - string/parsing_template.hpp
   - string/RollingHash.hpp
   - math/eratosthenes_sieve.hpp
   - data_structure/BinaryTrie.hpp

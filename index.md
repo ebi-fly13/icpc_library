@@ -16,6 +16,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: string/RollingHash.hpp
       title: RollingHash
+    - icon: ':warning:'
+      path: string/parsing_template.hpp
+      title: string/parsing_template.hpp
   - name: template
     pages:
     - icon: ':heavy_check_mark:'
