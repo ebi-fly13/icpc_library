@@ -5,7 +5,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: data_structure/BinaryTrie.hpp
-      title: data_structure/BinaryTrie.hpp
+      title: BinaryTrie
   - name: math
     pages:
     - icon: ':heavy_check_mark:'

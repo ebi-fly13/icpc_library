@@ -4,7 +4,7 @@ data:
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: data_structure/BinaryTrie.hpp
-    title: data_structure/BinaryTrie.hpp
+    title: BinaryTrie
   - icon: ':heavy_check_mark:'
     path: math/eratosthenes_sieve.hpp
     title: math/eratosthenes_sieve.hpp
