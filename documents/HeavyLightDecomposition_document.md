@@ -27,7 +27,7 @@ documentation_of: //tree/HeavyLightDecomposition.hpp
 
 ### path_noncommutative_query(int u, int v, const F &f)
 
-パス u-v にクエリ`f`を適用する。
+パス u-v にクエリ`f`を適用する。非可換。
 
 ### subtree_query(int u, bool vertex, const F &f)
 
