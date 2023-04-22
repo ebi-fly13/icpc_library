@@ -26,6 +26,9 @@ data:
       title: template/template.hpp
   - name: tree
     pages:
+    - icon: ':warning:'
+      path: tree/HeavyLightDecomposition.hpp
+      title: HeavyLightDecomposition
     - icon: ':heavy_check_mark:'
       path: tree/LowestCommonAncestor.hpp
       title: LowestCommonAncestor

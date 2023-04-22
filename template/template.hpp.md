@@ -14,6 +14,9 @@ data:
   - icon: ':warning:'
     path: string/parsing_template.hpp
     title: string/parsing_template.hpp
+  - icon: ':warning:'
+    path: tree/HeavyLightDecomposition.hpp
+    title: HeavyLightDecomposition
   - icon: ':heavy_check_mark:'
     path: tree/LowestCommonAncestor.hpp
     title: LowestCommonAncestor
@@ -55,6 +58,7 @@ data:
   requiredBy:
   - string/parsing_template.hpp
   - string/RollingHash.hpp
+  - tree/HeavyLightDecomposition.hpp
   - tree/LowestCommonAncestor.hpp
   - math/eratosthenes_sieve.hpp
   - data_structure/BinaryTrie.hpp
