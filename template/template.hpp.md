@@ -14,6 +14,9 @@ data:
   - icon: ':warning:'
     path: string/parsing_template.hpp
     title: string/parsing_template.hpp
+  - icon: ':heavy_check_mark:'
+    path: tree/LowestCommonAncestor.hpp
+    title: tree/LowestCommonAncestor.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/data_structure/Set_Xor_Min.test.cpp
@@ -24,6 +27,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/string/aoj_2444.test.cpp
     title: test/string/aoj_2444.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/tree/LowestCommonAncestor.test.cpp
+    title: test/tree/LowestCommonAncestor.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -49,12 +55,14 @@ data:
   requiredBy:
   - string/parsing_template.hpp
   - string/RollingHash.hpp
+  - tree/LowestCommonAncestor.hpp
   - math/eratosthenes_sieve.hpp
   - data_structure/BinaryTrie.hpp
   timestamp: '2023-04-20 01:31:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/string/aoj_2444.test.cpp
+  - test/tree/LowestCommonAncestor.test.cpp
   - test/math/enumerate_primes.test.cpp
   - test/data_structure/Set_Xor_Min.test.cpp
 documentation_of: template/template.hpp

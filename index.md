@@ -24,6 +24,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: template/template.hpp
+  - name: tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: tree/LowestCommonAncestor.hpp
+      title: tree/LowestCommonAncestor.hpp
   verificationCategories:
   - name: test/data_structure
     pages:
@@ -40,5 +45,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/string/aoj_2444.test.cpp
       title: test/string/aoj_2444.test.cpp
+  - name: test/tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/tree/LowestCommonAncestor.test.cpp
+      title: test/tree/LowestCommonAncestor.test.cpp
 layout: toppage
 ---
