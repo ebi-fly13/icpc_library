@@ -28,7 +28,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: tree/LowestCommonAncestor.hpp
-      title: tree/LowestCommonAncestor.hpp
+      title: LowestCommonAncestor
   verificationCategories:
   - name: test/data_structure
     pages:

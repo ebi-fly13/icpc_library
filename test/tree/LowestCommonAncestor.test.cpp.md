@@ -6,7 +6,7 @@ data:
     title: template/template.hpp
   - icon: ':heavy_check_mark:'
     path: tree/LowestCommonAncestor.hpp
-    title: tree/LowestCommonAncestor.hpp
+    title: LowestCommonAncestor
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false

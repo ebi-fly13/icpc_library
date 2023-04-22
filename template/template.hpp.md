@@ -16,7 +16,7 @@ data:
     title: string/parsing_template.hpp
   - icon: ':heavy_check_mark:'
     path: tree/LowestCommonAncestor.hpp
-    title: tree/LowestCommonAncestor.hpp
+    title: LowestCommonAncestor
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/data_structure/Set_Xor_Min.test.cpp
