@@ -21,12 +21,11 @@ data:
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     ERROR: '0.0000001'
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_C
+    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_D
     links:
-    - https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_C
-  bundledCode: "#line 1 \"test/geometry/Cross_Point.test.cpp\"\n#define PROBLEM \"\
-    https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_C\"\n#define ERROR\
-    \ 0.0000001\n\n#line 2 \"geometry/segment.hpp\"\n\n#line 2 \"geometry/line.hpp\"\
+    - https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_D
+  bundledCode: "#line 1 \"test/geometry/Distance.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_D\"\
+    \n#define ERROR 0.0000001\n\n#line 2 \"geometry/segment.hpp\"\n\n#line 2 \"geometry/line.hpp\"\
     \n\n#line 2 \"geometry/base_ld.hpp\"\n\n#line 2 \"template/template.hpp\"\n\n\
     #include<bits/stdc++.h>\n\n#define rep(i,s,n) for (int i = s; i < (int)(n); i++)\n\
     #define rrep(i,s,n) for (int i = (int)(n)-1; i >= (int)(s); i--)\n#define all(v)\
@@ -66,38 +65,38 @@ data:
     \     return abs(cross(c - a.a, a.b - a.a)/abs(a.b-a.a));\n    }\n}\n\nld distance(const\
     \ segment &a, const segment &b) {\n    if(intersection_segment(a, b, true)) return\
     \ 0;\n    else return min(min(distance(a, b.a), distance(a, b.b)), min(distance(b,\
-    \ a.a), distance(b, a.b)));\n}\n\n}\n#line 5 \"test/geometry/Cross_Point.test.cpp\"\
+    \ a.a), distance(b, a.b)));\n}\n\n}\n#line 5 \"test/geometry/Distance.test.cpp\"\
     \n\nusing namespace lib;\n\nint main() {\n    std::cout << std::fixed << std::setprecision(15);\n\
     \    int q;\n    std::cin >> q;\n    while(q--) {\n        vec p0, p1, p2, p3;\n\
     \        auto input = [](vec &p) {\n            ld x,y;\n            std::cin\
     \ >> x >> y;\n            p = {x, y};\n        };\n        input(p0);\n      \
     \  input(p1);\n        input(p2);\n        input(p3);\n        segment s1 = {p0,\
-    \ p1};\n        segment s2 = {p2, p3};\n        vec p = cross_point(s1, s2);\n\
-    \        std::cout << p.real() << \" \" << p.imag() << '\\n';\n    }\n}\n"
-  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_C\"\
+    \ p1};\n        segment s2 = {p2, p3};\n        std::cout << distance(s1, s2)\
+    \ << '\\n';\n    }\n}\n"
+  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_D\"\
     \n#define ERROR 0.0000001\n\n#include \"../../geometry/segment.hpp\"\n\nusing\
     \ namespace lib;\n\nint main() {\n    std::cout << std::fixed << std::setprecision(15);\n\
     \    int q;\n    std::cin >> q;\n    while(q--) {\n        vec p0, p1, p2, p3;\n\
     \        auto input = [](vec &p) {\n            ld x,y;\n            std::cin\
     \ >> x >> y;\n            p = {x, y};\n        };\n        input(p0);\n      \
     \  input(p1);\n        input(p2);\n        input(p3);\n        segment s1 = {p0,\
-    \ p1};\n        segment s2 = {p2, p3};\n        vec p = cross_point(s1, s2);\n\
-    \        std::cout << p.real() << \" \" << p.imag() << '\\n';\n    }\n}"
+    \ p1};\n        segment s2 = {p2, p3};\n        std::cout << distance(s1, s2)\
+    \ << '\\n';\n    }\n}"
   dependsOn:
   - geometry/segment.hpp
   - geometry/line.hpp
   - geometry/base_ld.hpp
   - template/template.hpp
   isVerificationFile: true
-  path: test/geometry/Cross_Point.test.cpp
+  path: test/geometry/Distance.test.cpp
   requiredBy: []
   timestamp: '2023-04-23 20:44:50+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/geometry/Cross_Point.test.cpp
+documentation_of: test/geometry/Distance.test.cpp
 layout: document
 redirect_from:
-- /verify/test/geometry/Cross_Point.test.cpp
-- /verify/test/geometry/Cross_Point.test.cpp.html
-title: test/geometry/Cross_Point.test.cpp
+- /verify/test/geometry/Distance.test.cpp
+- /verify/test/geometry/Distance.test.cpp.html
+title: test/geometry/Distance.test.cpp
 ---

@@ -52,28 +52,34 @@ data:
     \ a.a, b.a - b.b)) == 0) {\n            return 1;\n        }\n        return 0;\n\
     \    }\n    else if(sgn(cross(a.b - a.a, b.a - a.a)) != 0) {\n        return 2;\n\
     \    }\n    else {\n        return 3;\n    }\n}\n\n}\n#line 4 \"geometry/segment.hpp\"\
-    \n\nnamespace lib {\n\nstruct segment : line {};\n\nbool intersection(const segment\
-    \ &a, const segment &b, bool bound = true) {\n    if(sgn(isp(a.a, a.b, b.a) *\
-    \ isp(a.a, a.b, b.b)) < int(bound) && sgn(isp(b.a, b.b, a.a) * isp(b.a, b.b, a.b))\
-    \ < int(bound)) {\n        return true;\n    }\n    else return false;\n}\n\n\
-    vec cross_point(const segment &a, const segment &b) {\n    assert(intersection(a,\
+    \n\nnamespace lib {\n\nstruct segment : line {};\n\nbool intersection_segment(const\
+    \ segment &a, const segment &b, bool bound = true) {\n    if(sgn(isp(a.a, a.b,\
+    \ b.a) * isp(a.a, a.b, b.b)) < int(bound) && sgn(isp(b.a, b.b, a.a) * isp(b.a,\
+    \ b.b, a.b)) < int(bound)) {\n        return true;\n    }\n    else return false;\n\
+    }\n\nvec cross_point(const segment &a, const segment &b) {\n    assert(intersection_segment(a,\
     \ b, true));\n    return a.a + (a.b - a.a) * cross(b.a - a.a, b.b - b.a) / cross(a.b\
-    \ - a.a, b.b - b.a);\n}\n\n}\n#line 4 \"test/geometry/Intersection.test.cpp\"\n\
-    \nusing namespace lib;\n\nint main() {\n    int q;\n    std::cin >> q;\n    while(q--)\
-    \ {\n        vec p0, p1, p2, p3;\n        auto input = [](vec &p) {\n        \
-    \    ld x,y;\n            std::cin >> x >> y;\n            p = {x, y};\n     \
-    \   };\n        input(p0);\n        input(p1);\n        input(p2);\n        input(p3);\n\
-    \        segment s1 = {p0, p1};\n        segment s2 = {p2, p3};\n        int flag\
-    \ = intersection(s1, s2, true);\n        std::cout << flag << '\\n';\n    }\n\
-    }\n"
+    \ - a.a, b.b - b.a);\n}\n\nld distance(const segment &a, const vec &c) {\n   \
+    \ if(sgn(dot(a.b - a.a, c - a.a)) < 0) {\n        return abs(c-a.a);\n    }\n\
+    \    else if(sgn(dot(a.a - a.b, c - a.b)) < 0) {\n        return abs(c-a.b);\n\
+    \    }\n    else {\n        return abs(cross(c - a.a, a.b - a.a)/abs(a.b-a.a));\n\
+    \    }\n}\n\nld distance(const segment &a, const segment &b) {\n    if(intersection_segment(a,\
+    \ b, true)) return 0;\n    else return min(min(distance(a, b.a), distance(a, b.b)),\
+    \ min(distance(b, a.a), distance(b, a.b)));\n}\n\n}\n#line 4 \"test/geometry/Intersection.test.cpp\"\
+    \n\nusing namespace lib;\n\nint main() {\n    int q;\n    std::cin >> q;\n   \
+    \ while(q--) {\n        vec p0, p1, p2, p3;\n        auto input = [](vec &p) {\n\
+    \            ld x,y;\n            std::cin >> x >> y;\n            p = {x, y};\n\
+    \        };\n        input(p0);\n        input(p1);\n        input(p2);\n    \
+    \    input(p3);\n        segment s1 = {p0, p1};\n        segment s2 = {p2, p3};\n\
+    \        int flag = intersection_segment(s1, s2, true);\n        std::cout <<\
+    \ flag << '\\n';\n    }\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_B\"\
     \n\n#include \"../../geometry/segment.hpp\"\n\nusing namespace lib;\n\nint main()\
     \ {\n    int q;\n    std::cin >> q;\n    while(q--) {\n        vec p0, p1, p2,\
     \ p3;\n        auto input = [](vec &p) {\n            ld x,y;\n            std::cin\
     \ >> x >> y;\n            p = {x, y};\n        };\n        input(p0);\n      \
     \  input(p1);\n        input(p2);\n        input(p3);\n        segment s1 = {p0,\
-    \ p1};\n        segment s2 = {p2, p3};\n        int flag = intersection(s1, s2,\
-    \ true);\n        std::cout << flag << '\\n';\n    }\n}"
+    \ p1};\n        segment s2 = {p2, p3};\n        int flag = intersection_segment(s1,\
+    \ s2, true);\n        std::cout << flag << '\\n';\n    }\n}"
   dependsOn:
   - geometry/segment.hpp
   - geometry/line.hpp
@@ -82,7 +88,7 @@ data:
   isVerificationFile: true
   path: test/geometry/Intersection.test.cpp
   requiredBy: []
-  timestamp: '2023-04-23 20:32:50+09:00'
+  timestamp: '2023-04-23 20:44:50+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/geometry/Intersection.test.cpp

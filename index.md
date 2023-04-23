@@ -73,6 +73,9 @@ data:
       path: test/geometry/Cross_Point.test.cpp
       title: test/geometry/Cross_Point.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/geometry/Distance.test.cpp
+      title: test/geometry/Distance.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/geometry/Intersection.test.cpp
       title: test/geometry/Intersection.test.cpp
     - icon: ':heavy_check_mark:'
