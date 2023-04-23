@@ -7,6 +7,10 @@ namespace lib {
 using vec = complex<ld>;
 const ld eps = 1e-7;
 
+int sgn(ld a) {
+    return (a < -eps) ? -1 : (a > eps) ? 1 : 0;
+}
+
 ld dot(const vec &a, const vec &b){
     return (conj(a) * b).real();
 }
