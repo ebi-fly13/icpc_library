@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':x:'
     path: data_structure/segtree.hpp
-    title: data_structure/segtree.hpp
+    title: segtree
   - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp

@@ -8,7 +8,7 @@ data:
       title: BinaryTrie
     - icon: ':x:'
       path: data_structure/segtree.hpp
-      title: data_structure/segtree.hpp
+      title: segtree
   - name: math
     pages:
     - icon: ':heavy_check_mark:'

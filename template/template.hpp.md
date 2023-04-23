@@ -7,7 +7,7 @@ data:
     title: BinaryTrie
   - icon: ':x:'
     path: data_structure/segtree.hpp
-    title: data_structure/segtree.hpp
+    title: segtree
   - icon: ':heavy_check_mark:'
     path: math/eratosthenes_sieve.hpp
     title: eratosthenes sieve
