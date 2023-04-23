@@ -23,16 +23,18 @@ data:
     \ T> bool chmax(T &a, const T &b){\n    if (a >= b) return false;\n    a = b;\n\
     \    return true;\n}\n\nnamespace lib{\n\nusing namespace std;\n\n} // namespace\
     \ lib;\n\n//using namespace lib;\n#line 4 \"geometry/base_ld.hpp\"\n\nnamespace\
-    \ lib {\n\nusing vec = complex<ld>;\nconst ld eps = 1e-7;\n\nld dot(const vec\
-    \ &a, const vec &b){\n    return (conj(a) * b).real();\n}\n\nld cross(const vec\
-    \ &a, const vec &b){\n    return (conj(a) * b).imag();\n}\n\nbool comp_for_argument_sort(const\
-    \ vec &lhs, const vec &rhs){\n    //if (abs(arg(lhs)-arg(rhs)) < eps) return false;\
-    \ // need ?\n    return arg(lhs) < arg(rhs);\n}\n\n} // namespace lib\n"
-  code: "#pragma once\n\n#include\"../template/template.hpp\"\n\nnamespace lib {\n\
-    \nusing vec = complex<ld>;\nconst ld eps = 1e-7;\n\nld dot(const vec &a, const\
+    \ lib {\n\nusing vec = complex<ld>;\nconst ld eps = 1e-7;\n\nint sgn(ld a) {\n\
+    \    return (a < -eps) ? -1 : (a > eps) ? 1 : 0;\n}\n\nld dot(const vec &a, const\
     \ vec &b){\n    return (conj(a) * b).real();\n}\n\nld cross(const vec &a, const\
     \ vec &b){\n    return (conj(a) * b).imag();\n}\n\nbool comp_for_argument_sort(const\
     \ vec &lhs, const vec &rhs){\n    //if (abs(arg(lhs)-arg(rhs)) < eps) return false;\
+    \ // need ?\n    return arg(lhs) < arg(rhs);\n}\n\n} // namespace lib\n"
+  code: "#pragma once\n\n#include\"../template/template.hpp\"\n\nnamespace lib {\n\
+    \nusing vec = complex<ld>;\nconst ld eps = 1e-7;\n\nint sgn(ld a) {\n    return\
+    \ (a < -eps) ? -1 : (a > eps) ? 1 : 0;\n}\n\nld dot(const vec &a, const vec &b){\n\
+    \    return (conj(a) * b).real();\n}\n\nld cross(const vec &a, const vec &b){\n\
+    \    return (conj(a) * b).imag();\n}\n\nbool comp_for_argument_sort(const vec\
+    \ &lhs, const vec &rhs){\n    //if (abs(arg(lhs)-arg(rhs)) < eps) return false;\
     \ // need ?\n    return arg(lhs) < arg(rhs);\n}\n\n} // namespace lib\n"
   dependsOn:
   - template/template.hpp
@@ -40,7 +42,7 @@ data:
   path: geometry/base_ld.hpp
   requiredBy:
   - geometry/convex_hull.hpp
-  timestamp: '2023-04-23 18:25:06+09:00'
+  timestamp: '2023-04-23 18:37:43+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: geometry/base_ld.hpp
