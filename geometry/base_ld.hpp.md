@@ -8,6 +8,15 @@ data:
   - icon: ':warning:'
     path: geometry/convex_hull.hpp
     title: geometry/convex_hull.hpp
+  - icon: ':warning:'
+    path: geometry/line.hpp
+    title: line
+  - icon: ':warning:'
+    path: test/geometry/Projection.cpp
+    title: test/geometry/Projection.cpp
+  - icon: ':warning:'
+    path: test/geometry/Reflection.cpp
+    title: test/geometry/Reflection.cpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -41,7 +50,10 @@ data:
   isVerificationFile: false
   path: geometry/base_ld.hpp
   requiredBy:
+  - geometry/line.hpp
   - geometry/convex_hull.hpp
+  - test/geometry/Reflection.cpp
+  - test/geometry/Projection.cpp
   timestamp: '2023-04-23 18:37:43+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

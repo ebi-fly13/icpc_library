@@ -17,6 +17,9 @@ data:
   - icon: ':warning:'
     path: geometry/convex_hull.hpp
     title: geometry/convex_hull.hpp
+  - icon: ':warning:'
+    path: geometry/line.hpp
+    title: line
   - icon: ':heavy_check_mark:'
     path: math/eratosthenes_sieve.hpp
     title: eratosthenes sieve
@@ -26,6 +29,12 @@ data:
   - icon: ':warning:'
     path: string/parsing_template.hpp
     title: string/parsing_template.hpp
+  - icon: ':warning:'
+    path: test/geometry/Projection.cpp
+    title: test/geometry/Projection.cpp
+  - icon: ':warning:'
+    path: test/geometry/Reflection.cpp
+    title: test/geometry/Reflection.cpp
   - icon: ':heavy_check_mark:'
     path: tree/HeavyLightDecomposition.hpp
     title: HeavyLightDecomposition
@@ -80,12 +89,15 @@ data:
   - string/RollingHash.hpp
   - tree/HeavyLightDecomposition.hpp
   - tree/LowestCommonAncestor.hpp
+  - geometry/line.hpp
   - geometry/base_ll.hpp
   - geometry/convex_hull.hpp
   - geometry/base_ld.hpp
   - math/eratosthenes_sieve.hpp
   - data_structure/segtree.hpp
   - data_structure/BinaryTrie.hpp
+  - test/geometry/Reflection.cpp
+  - test/geometry/Projection.cpp
   timestamp: '2023-04-23 15:49:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

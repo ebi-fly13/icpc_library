@@ -20,6 +20,9 @@ data:
     - icon: ':warning:'
       path: geometry/convex_hull.hpp
       title: geometry/convex_hull.hpp
+    - icon: ':warning:'
+      path: geometry/line.hpp
+      title: line
   - name: math
     pages:
     - icon: ':heavy_check_mark:'
@@ -38,6 +41,14 @@ data:
     - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: template/template.hpp
+  - name: test/geometry
+    pages:
+    - icon: ':warning:'
+      path: test/geometry/Projection.cpp
+      title: test/geometry/Projection.cpp
+    - icon: ':warning:'
+      path: test/geometry/Reflection.cpp
+      title: test/geometry/Reflection.cpp
   - name: tree
     pages:
     - icon: ':heavy_check_mark:'
