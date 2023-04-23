@@ -35,15 +35,22 @@ data:
     \ lib {\n\nusing vec = complex<ld>;\nconst ld eps = 1e-7;\n\nint sgn(ld a) {\n\
     \    return (a < -eps) ? -1 : (a > eps) ? 1 : 0;\n}\n\nld dot(const vec &a, const\
     \ vec &b){\n    return (conj(a) * b).real();\n}\n\nld cross(const vec &a, const\
-    \ vec &b){\n    return (conj(a) * b).imag();\n}\n\nbool comp_for_argument_sort(const\
-    \ vec &lhs, const vec &rhs){\n    //if (abs(arg(lhs)-arg(rhs)) < eps) return false;\
-    \ // need ?\n    return arg(lhs) < arg(rhs);\n}\n\n} // namespace lib\n"
+    \ vec &b){\n    return (conj(a) * b).imag();\n}\n\nint isp(const vec &a, const\
+    \ vec &b, const vec &c) {\n    int cross_sgn = sgn(cross(b - a, c - a));\n   \
+    \ if(cross_sgn == 0) {\n        if(sgn(dot(b - a, c - a)) < 0) return -2;\n  \
+    \      if(sgn(dot(a - b, c - b)) < 0) return 2;\n    }\n    return cross_sgn;\n\
+    }\n\nbool comp_for_argument_sort(const vec &lhs, const vec &rhs){\n    //if (abs(arg(lhs)-arg(rhs))\
+    \ < eps) return false; // need ?\n    return arg(lhs) < arg(rhs);\n}\n\n} // namespace\
+    \ lib\n"
   code: "#pragma once\n\n#include\"../template/template.hpp\"\n\nnamespace lib {\n\
     \nusing vec = complex<ld>;\nconst ld eps = 1e-7;\n\nint sgn(ld a) {\n    return\
     \ (a < -eps) ? -1 : (a > eps) ? 1 : 0;\n}\n\nld dot(const vec &a, const vec &b){\n\
     \    return (conj(a) * b).real();\n}\n\nld cross(const vec &a, const vec &b){\n\
-    \    return (conj(a) * b).imag();\n}\n\nbool comp_for_argument_sort(const vec\
-    \ &lhs, const vec &rhs){\n    //if (abs(arg(lhs)-arg(rhs)) < eps) return false;\
+    \    return (conj(a) * b).imag();\n}\n\nint isp(const vec &a, const vec &b, const\
+    \ vec &c) {\n    int cross_sgn = sgn(cross(b - a, c - a));\n    if(cross_sgn ==\
+    \ 0) {\n        if(sgn(dot(b - a, c - a)) < 0) return -2;\n        if(sgn(dot(a\
+    \ - b, c - b)) < 0) return 2;\n    }\n    return cross_sgn;\n}\n\nbool comp_for_argument_sort(const\
+    \ vec &lhs, const vec &rhs){\n    //if (abs(arg(lhs)-arg(rhs)) < eps) return false;\
     \ // need ?\n    return arg(lhs) < arg(rhs);\n}\n\n} // namespace lib\n"
   dependsOn:
   - template/template.hpp
@@ -54,13 +61,42 @@ data:
   - geometry/convex_hull.hpp
   - test/geometry/Reflection.cpp
   - test/geometry/Projection.cpp
-  timestamp: '2023-04-23 18:37:43+09:00'
+  timestamp: '2023-04-23 19:28:55+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: geometry/base_ld.hpp
 layout: document
-redirect_from:
-- /library/geometry/base_ld.hpp
-- /library/geometry/base_ld.hpp.html
-title: geometry/base_ld.hpp
+title: base_ld
 ---
+
+## 説明
+
+小数点を用いた平面幾何に必須なもの。小数点での平面幾何ではこれをincludeして用いる。
+
+### sgn(ld x)
+
+$x$ の符号を返す。epsで評価する。
+
+### dot(vec a, vec b)
+
+ベクトル$a$, $b$ の内積を返す。
+
+### cross(vec a, vec b)
+
+ベクトル$a$, $b$ の外積を返す。
+
+### isp(vec a, vec b, vec c)
+
+点 $a$, $b$, $c$ の位置関係を返す。a->b->cの経路が
+
+- 左に曲がる場合: $+1$ 
+- 右に曲がる場合: $-1$
+- c-a-bの順に並ぶ: $-2$
+- a-b-cの順に並ぶ: $+2$
+- a-c-bの順に並ぶ: $0$
+
+となる。
+
+### comp_for_argument_sort(vec lhs, vec rhs)
+
+偏角ソートの比較関数。

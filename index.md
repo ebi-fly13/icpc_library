@@ -13,7 +13,7 @@ data:
     pages:
     - icon: ':warning:'
       path: geometry/base_ld.hpp
-      title: geometry/base_ld.hpp
+      title: base_ld
     - icon: ':warning:'
       path: geometry/base_ll.hpp
       title: geometry/base_ll.hpp

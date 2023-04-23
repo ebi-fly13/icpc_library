@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':warning:'
     path: geometry/base_ld.hpp
-    title: geometry/base_ld.hpp
+    title: base_ld
   - icon: ':warning:'
     path: geometry/line.hpp
     title: line
@@ -32,19 +32,22 @@ data:
     const ld eps = 1e-7;\n\nint sgn(ld a) {\n    return (a < -eps) ? -1 : (a > eps)\
     \ ? 1 : 0;\n}\n\nld dot(const vec &a, const vec &b){\n    return (conj(a) * b).real();\n\
     }\n\nld cross(const vec &a, const vec &b){\n    return (conj(a) * b).imag();\n\
-    }\n\nbool comp_for_argument_sort(const vec &lhs, const vec &rhs){\n    //if (abs(arg(lhs)-arg(rhs))\
-    \ < eps) return false; // need ?\n    return arg(lhs) < arg(rhs);\n}\n\n} // namespace\
-    \ lib\n#line 4 \"geometry/line.hpp\"\n\nnamespace lib {\n\nstruct line {\n   \
-    \ vec a, b;\n};\n\nvec proj(const line &l, const vec &p) {\n    vec ab = l.b -\
-    \ l.a;\n    return l.a + ab * (dot(ab, p - l.a) / norm(ab));\n}\n\nvec refl(const\
-    \ line &l, const vec &p) {\n    return proj(l, p) * ld(2) - p;\n}\n\n}\n#line\
-    \ 5 \"test/geometry/Projection.cpp\"\n\nusing namespace lib;\n\nint main() {\n\
-    \    std::cout << std::fixed << std::setprecision(15);\n    line l;\n    {\n \
-    \       ld x1, y1, x2, y2;\n        std::cin >> x1 >> y1 >> x2 >> y2;\n      \
-    \  l.a = {x1, y1};\n        l.b = {x2, y2};\n    }\n    int q;\n    std::cin >>\
-    \ q;\n    while(q--) {\n        ld x,y;\n        std::cin >> x >> y;\n       \
-    \ vec p = proj(l, {x, y});\n        std::cout << p.real() << \" \" << p.imag()\
-    \ << '\\n';\n    }\n}\n"
+    }\n\nint isp(const vec &a, const vec &b, const vec &c) {\n    int cross_sgn =\
+    \ sgn(cross(b - a, c - a));\n    if(cross_sgn == 0) {\n        if(sgn(dot(b -\
+    \ a, c - a)) < 0) return -2;\n        if(sgn(dot(a - b, c - b)) < 0) return 2;\n\
+    \    }\n    return cross_sgn;\n}\n\nbool comp_for_argument_sort(const vec &lhs,\
+    \ const vec &rhs){\n    //if (abs(arg(lhs)-arg(rhs)) < eps) return false; // need\
+    \ ?\n    return arg(lhs) < arg(rhs);\n}\n\n} // namespace lib\n#line 4 \"geometry/line.hpp\"\
+    \n\nnamespace lib {\n\nstruct line {\n    vec a, b;\n};\n\nvec proj(const line\
+    \ &l, const vec &p) {\n    vec ab = l.b - l.a;\n    return l.a + ab * (dot(ab,\
+    \ p - l.a) / norm(ab));\n}\n\nvec refl(const line &l, const vec &p) {\n    return\
+    \ proj(l, p) * ld(2) - p;\n}\n\n}\n#line 5 \"test/geometry/Projection.cpp\"\n\n\
+    using namespace lib;\n\nint main() {\n    std::cout << std::fixed << std::setprecision(15);\n\
+    \    line l;\n    {\n        ld x1, y1, x2, y2;\n        std::cin >> x1 >> y1\
+    \ >> x2 >> y2;\n        l.a = {x1, y1};\n        l.b = {x2, y2};\n    }\n    int\
+    \ q;\n    std::cin >> q;\n    while(q--) {\n        ld x,y;\n        std::cin\
+    \ >> x >> y;\n        vec p = proj(l, {x, y});\n        std::cout << p.real()\
+    \ << \" \" << p.imag() << '\\n';\n    }\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/1/CGL_1_A\"\
     \n\n#include \"../../geometry/line.hpp\"\n#include \"../../template/template.hpp\"\
     \n\nusing namespace lib;\n\nint main() {\n    std::cout << std::fixed << std::setprecision(15);\n\
@@ -60,7 +63,7 @@ data:
   isVerificationFile: false
   path: test/geometry/Projection.cpp
   requiredBy: []
-  timestamp: '2023-04-23 19:01:38+09:00'
+  timestamp: '2023-04-23 19:28:55+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: test/geometry/Projection.cpp
