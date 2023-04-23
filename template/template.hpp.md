@@ -26,7 +26,7 @@ data:
   - icon: ':warning:'
     path: string/parsing_template.hpp
     title: string/parsing_template.hpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: tree/HeavyLightDecomposition.hpp
     title: HeavyLightDecomposition
   - icon: ':heavy_check_mark:'
@@ -39,6 +39,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/data_structure/Set_Xor_Min.test.cpp
     title: test/data_structure/Set_Xor_Min.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/data_structure/Vertex_Add_Path_Sum.test.cpp
+    title: test/data_structure/Vertex_Add_Path_Sum.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/math/enumerate_primes.test.cpp
     title: test/math/enumerate_primes.test.cpp
@@ -89,6 +92,7 @@ data:
   - test/string/aoj_2444.test.cpp
   - test/tree/Lowest_Common_Ancestor.test.cpp
   - test/math/enumerate_primes.test.cpp
+  - test/data_structure/Vertex_Add_Path_Sum.test.cpp
   - test/data_structure/Set_Xor_Min.test.cpp
   - test/data_structure/Point_Add_Range_Sum.test.cpp
 documentation_of: template/template.hpp

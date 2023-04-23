@@ -9,6 +9,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/data_structure/Point_Add_Range_Sum.test.cpp
     title: test/data_structure/Point_Add_Range_Sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/data_structure/Vertex_Add_Path_Sum.test.cpp
+    title: test/data_structure/Vertex_Add_Path_Sum.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -100,6 +103,7 @@ data:
   timestamp: '2023-04-23 15:50:20+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/data_structure/Vertex_Add_Path_Sum.test.cpp
   - test/data_structure/Point_Add_Range_Sum.test.cpp
 documentation_of: data_structure/segtree.hpp
 layout: document

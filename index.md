@@ -40,7 +40,7 @@ data:
       title: template/template.hpp
   - name: tree
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: tree/HeavyLightDecomposition.hpp
       title: HeavyLightDecomposition
     - icon: ':heavy_check_mark:'
@@ -55,6 +55,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data_structure/Set_Xor_Min.test.cpp
       title: test/data_structure/Set_Xor_Min.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data_structure/Vertex_Add_Path_Sum.test.cpp
+      title: test/data_structure/Vertex_Add_Path_Sum.test.cpp
   - name: test/math
     pages:
     - icon: ':heavy_check_mark:'
