@@ -1,14 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: geometry/base_ld.hpp
     title: base_ld
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':x:'
+    path: geometry/segment.hpp
+    title: geometry/segment.hpp
   _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/geometry/Intersection.test.cpp
+    title: test/geometry/Intersection.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/geometry/Parallel_Orthogonal.test.cpp
     title: test/geometry/Parallel_Orthogonal.test.cpp
@@ -18,9 +24,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/geometry/Reflection.test.cpp
     title: test/geometry/Reflection.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"geometry/line.hpp\"\n\n#line 2 \"geometry/base_ld.hpp\"\n\
@@ -64,13 +70,15 @@ data:
   - template/template.hpp
   isVerificationFile: false
   path: geometry/line.hpp
-  requiredBy: []
+  requiredBy:
+  - geometry/segment.hpp
   timestamp: '2023-04-23 19:45:21+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/geometry/Parallel_Orthogonal.test.cpp
   - test/geometry/Projection.test.cpp
   - test/geometry/Reflection.test.cpp
+  - test/geometry/Intersection.test.cpp
 documentation_of: geometry/line.hpp
 layout: document
 title: line

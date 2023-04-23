@@ -7,23 +7,25 @@ data:
   - icon: ':question:'
     path: geometry/line.hpp
     title: line
+  - icon: ':x:'
+    path: geometry/segment.hpp
+    title: geometry/segment.hpp
   - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    ERROR: '0.0000001'
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/1/CGL_1_B
+    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_A
     links:
-    - https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/1/CGL_1_B
-  bundledCode: "#line 1 \"test/geometry/Reflection.test.cpp\"\n#define PROBLEM \"\
-    https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/1/CGL_1_B\"\n#define ERROR\
-    \ 0.0000001\n\n#line 2 \"geometry/line.hpp\"\n\n#line 2 \"geometry/base_ld.hpp\"\
+    - https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_A
+  bundledCode: "#line 1 \"test/geometry/Intersection.test.cpp\"\n#define PROBLEM \"\
+    https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_A\"\n\n#line 2\
+    \ \"geometry/segment.hpp\"\n\n#line 2 \"geometry/line.hpp\"\n\n#line 2 \"geometry/base_ld.hpp\"\
     \n\n#line 2 \"template/template.hpp\"\n\n#include<bits/stdc++.h>\n\n#define rep(i,s,n)\
     \ for (int i = s; i < (int)(n); i++)\n#define rrep(i,s,n) for (int i = (int)(n)-1;\
     \ i >= (int)(s); i--)\n#define all(v) v.begin(),v.end()\n\nusing ll = long long;\n\
@@ -49,35 +51,41 @@ data:
     \ {\n    if(sgn(cross(a.b - a.a, b.a - b.b)) != 0) {\n        if(sgn(dot(a.b -\
     \ a.a, b.a - b.b)) == 0) {\n            return 1;\n        }\n        return 0;\n\
     \    }\n    else if(sgn(cross(a.b - a.a, b.a - a.a)) != 0) {\n        return 2;\n\
-    \    }\n    else {\n        return 3;\n    }\n}\n\n}\n#line 6 \"test/geometry/Reflection.test.cpp\"\
-    \n\nusing namespace lib;\n\nint main() {\n    std::cout << std::fixed << std::setprecision(15);\n\
-    \    line l;\n    {\n        ld x1, y1, x2, y2;\n        std::cin >> x1 >> y1\
-    \ >> x2 >> y2;\n        l.a = {x1, y1};\n        l.b = {x2, y2};\n    }\n    int\
-    \ q;\n    std::cin >> q;\n    while(q--) {\n        ld x,y;\n        std::cin\
-    \ >> x >> y;\n        vec p = refl(l, {x, y});\n        std::cout << p.real()\
-    \ << \" \" << p.imag() << '\\n';\n    }\n}\n"
-  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/1/CGL_1_B\"\
-    \n#define ERROR 0.0000001\n\n#include \"../../geometry/line.hpp\"\n#include \"\
-    ../../template/template.hpp\"\n\nusing namespace lib;\n\nint main() {\n    std::cout\
-    \ << std::fixed << std::setprecision(15);\n    line l;\n    {\n        ld x1,\
-    \ y1, x2, y2;\n        std::cin >> x1 >> y1 >> x2 >> y2;\n        l.a = {x1, y1};\n\
-    \        l.b = {x2, y2};\n    }\n    int q;\n    std::cin >> q;\n    while(q--)\
-    \ {\n        ld x,y;\n        std::cin >> x >> y;\n        vec p = refl(l, {x,\
-    \ y});\n        std::cout << p.real() << \" \" << p.imag() << '\\n';\n    }\n}"
+    \    }\n    else {\n        return 3;\n    }\n}\n\n}\n#line 4 \"geometry/segment.hpp\"\
+    \n\nnamespace lib {\n\nstruct segment : line {};\n\nbool intersection(const segment\
+    \ &a, const segment &b, bool bound) {\n    if(sgn(isp(a.a, a.b, b.a) * isp(a.a,\
+    \ a.b, b.b)) < int(bound) && sgn(isp(b.a, b.b, a.a) * isp(b.a, b.b, a.b)) < int(bound))\
+    \ {\n        return true;\n    }\n    else return false;\n}\n\n}\n#line 4 \"test/geometry/Intersection.test.cpp\"\
+    \n\nusing namespace lib;\n\nint main() {\n    int q;\n    std::cin >> q;\n   \
+    \ while(q--) {\n        vec p0, p1, p2, p3;\n        auto input = [](vec &p) {\n\
+    \            ld x,y;\n            std::cin >> x >> y;\n            p = {x, y};\n\
+    \        };\n        input(p0);\n        input(p1);\n        input(p2);\n    \
+    \    input(p3);\n        segment s1 = {p0, p1};\n        segment s2 = {p2, p3};\n\
+    \        int flag = intersection(s1, s2, true);\n        std::cout << flag <<\
+    \ '\\n';\n    }\n}\n"
+  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_A\"\
+    \n\n#include \"../../geometry/segment.hpp\"\n\nusing namespace lib;\n\nint main()\
+    \ {\n    int q;\n    std::cin >> q;\n    while(q--) {\n        vec p0, p1, p2,\
+    \ p3;\n        auto input = [](vec &p) {\n            ld x,y;\n            std::cin\
+    \ >> x >> y;\n            p = {x, y};\n        };\n        input(p0);\n      \
+    \  input(p1);\n        input(p2);\n        input(p3);\n        segment s1 = {p0,\
+    \ p1};\n        segment s2 = {p2, p3};\n        int flag = intersection(s1, s2,\
+    \ true);\n        std::cout << flag << '\\n';\n    }\n}"
   dependsOn:
+  - geometry/segment.hpp
   - geometry/line.hpp
   - geometry/base_ld.hpp
   - template/template.hpp
   isVerificationFile: true
-  path: test/geometry/Reflection.test.cpp
+  path: test/geometry/Intersection.test.cpp
   requiredBy: []
-  timestamp: '2023-04-23 19:51:44+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-04-23 20:16:48+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: test/geometry/Reflection.test.cpp
+documentation_of: test/geometry/Intersection.test.cpp
 layout: document
 redirect_from:
-- /verify/test/geometry/Reflection.test.cpp
-- /verify/test/geometry/Reflection.test.cpp.html
-title: test/geometry/Reflection.test.cpp
+- /verify/test/geometry/Intersection.test.cpp
+- /verify/test/geometry/Intersection.test.cpp.html
+title: test/geometry/Intersection.test.cpp
 ---
