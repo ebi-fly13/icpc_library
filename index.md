@@ -6,7 +6,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data_structure/BinaryTrie.hpp
       title: BinaryTrie
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: data_structure/segtree.hpp
       title: data_structure/segtree.hpp
   - name: math
@@ -24,7 +24,7 @@ data:
       title: string/parsing_template.hpp
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: template/template.hpp
   - name: tree
@@ -38,7 +38,7 @@ data:
   verificationCategories:
   - name: test/data_structure
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/data_structure/Point_Add_Range_Sum.test.cpp
       title: test/data_structure/Point_Add_Range_Sum.test.cpp
     - icon: ':heavy_check_mark:'
