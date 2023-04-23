@@ -19,6 +19,15 @@ ld cross(const vec &a, const vec &b){
     return (conj(a) * b).imag();
 }
 
+int isp(const vec &a, const vec &b, const vec &c) {
+    int cross_sgn = sgn(cross(b - a, c - a));
+    if(cross_sgn == 0) {
+        if(sgn(dot(b - a, c - a)) < 0) return -2;
+        if(sgn(dot(a - b, c - b)) < 0) return 2;
+    }
+    return cross_sgn;
+}
+
 bool comp_for_argument_sort(const vec &lhs, const vec &rhs){
     //if (abs(arg(lhs)-arg(rhs)) < eps) return false; // need ?
     return arg(lhs) < arg(rhs);
