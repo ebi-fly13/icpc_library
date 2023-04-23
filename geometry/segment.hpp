@@ -6,7 +6,7 @@ namespace lib {
 
 struct segment : line {};
 
-bool intersection(const segment &a, const segment &b, bool bound = true) {
+bool intersection_segment(const segment &a, const segment &b, bool bound = true) {
     if(sgn(isp(a.a, a.b, b.a) * isp(a.a, a.b, b.b)) < int(bound) && sgn(isp(b.a, b.b, a.a) * isp(b.a, b.b, a.b)) < int(bound)) {
         return true;
     }
@@ -14,8 +14,25 @@ bool intersection(const segment &a, const segment &b, bool bound = true) {
 }
 
 vec cross_point(const segment &a, const segment &b) {
-    assert(intersection(a, b, true));
+    assert(intersection_segment(a, b, true));
     return a.a + (a.b - a.a) * cross(b.a - a.a, b.b - b.a) / cross(a.b - a.a, b.b - b.a);
+}
+
+ld distance(const segment &a, const vec &c) {
+    if(sgn(dot(a.b - a.a, c - a.a)) < 0) {
+        return abs(c-a.a);
+    }
+    else if(sgn(dot(a.a - a.b, c - a.b)) < 0) {
+        return abs(c-a.b);
+    }
+    else {
+        return abs(cross(c - a.a, a.b - a.a)/abs(a.b-a.a));
+    }
+}
+
+ld distance(const segment &a, const segment &b) {
+    if(intersection_segment(a, b, true)) return 0;
+    else return min(min(distance(a, b.a), distance(a, b.b)), min(distance(b, a.a), distance(b, a.b)));
 }
 
 }

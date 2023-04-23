@@ -1,10 +1,12 @@
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_B"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_D"
+#define ERROR 0.0000001
 
 #include "../../geometry/segment.hpp"
 
 using namespace lib;
 
 int main() {
+    std::cout << std::fixed << std::setprecision(15);
     int q;
     std::cin >> q;
     while(q--) {
@@ -20,7 +22,6 @@ int main() {
         input(p3);
         segment s1 = {p0, p1};
         segment s2 = {p2, p3};
-        int flag = intersection_segment(s1, s2, true);
-        std::cout << flag << '\n';
+        std::cout << distance(s1, s2) << '\n';
     }
 }
