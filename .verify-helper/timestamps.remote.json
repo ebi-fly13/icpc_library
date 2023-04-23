@@ -1,6 +1,7 @@
 {
 "test/data_structure/Point_Add_Range_Sum.test.cpp": "2023-04-23 15:50:20 +0900",
 "test/data_structure/Set_Xor_Min.test.cpp": "2023-04-23 15:49:48 +0900",
+"test/data_structure/Vertex_Add_Path_Sum.test.cpp": "2023-04-23 18:35:35 +0900",
 "test/math/enumerate_primes.test.cpp": "2023-04-23 15:49:48 +0900",
 "test/string/aoj_2444.test.cpp": "2023-04-23 15:49:48 +0900",
 "test/tree/Lowest_Common_Ancestor.test.cpp": "2023-04-23 15:49:48 +0900"
