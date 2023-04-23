@@ -6,6 +6,9 @@ data:
     path: data_structure/BinaryTrie.hpp
     title: BinaryTrie
   - icon: ':heavy_check_mark:'
+    path: data_structure/segtree.hpp
+    title: data_structure/segtree.hpp
+  - icon: ':heavy_check_mark:'
     path: math/eratosthenes_sieve.hpp
     title: eratosthenes sieve
   - icon: ':heavy_check_mark:'
@@ -21,6 +24,9 @@ data:
     path: tree/LowestCommonAncestor.hpp
     title: LowestCommonAncestor
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/data_structure/Point_Add_Range_Sum.test.cpp
+    title: test/data_structure/Point_Add_Range_Sum.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/data_structure/Set_Xor_Min.test.cpp
     title: test/data_structure/Set_Xor_Min.test.cpp
@@ -61,6 +67,7 @@ data:
   - tree/HeavyLightDecomposition.hpp
   - tree/LowestCommonAncestor.hpp
   - math/eratosthenes_sieve.hpp
+  - data_structure/segtree.hpp
   - data_structure/BinaryTrie.hpp
   timestamp: '2023-04-20 01:31:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
@@ -69,6 +76,7 @@ data:
   - test/tree/Lowest_Common_Ancestor.test.cpp
   - test/math/enumerate_primes.test.cpp
   - test/data_structure/Set_Xor_Min.test.cpp
+  - test/data_structure/Point_Add_Range_Sum.test.cpp
 documentation_of: template/template.hpp
 layout: document
 redirect_from:

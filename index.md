@@ -6,6 +6,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: data_structure/BinaryTrie.hpp
       title: BinaryTrie
+    - icon: ':heavy_check_mark:'
+      path: data_structure/segtree.hpp
+      title: data_structure/segtree.hpp
   - name: math
     pages:
     - icon: ':heavy_check_mark:'
@@ -35,6 +38,9 @@ data:
   verificationCategories:
   - name: test/data_structure
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/data_structure/Point_Add_Range_Sum.test.cpp
+      title: test/data_structure/Point_Add_Range_Sum.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/data_structure/Set_Xor_Min.test.cpp
       title: test/data_structure/Set_Xor_Min.test.cpp
