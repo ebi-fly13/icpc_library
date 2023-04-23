@@ -11,7 +11,7 @@ data:
       title: segtree
   - name: geometry
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: geometry/base_ld.hpp
       title: base_ld
     - icon: ':warning:'
@@ -20,12 +20,12 @@ data:
     - icon: ':warning:'
       path: geometry/convex_hull.hpp
       title: geometry/convex_hull.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: geometry/line.hpp
       title: line
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: geometry/segment.hpp
-      title: geometry/segment.hpp
+      title: segment
   - name: math
     pages:
     - icon: ':heavy_check_mark:'
@@ -41,7 +41,7 @@ data:
       title: string/parsing_template.hpp
   - name: template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: template/template.hpp
   - name: tree
@@ -69,7 +69,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/geometry/Counter_Clockwise.test.cpp
       title: test/geometry/Counter_Clockwise.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/geometry/Intersection.test.cpp
       title: test/geometry/Intersection.test.cpp
     - icon: ':heavy_check_mark:'

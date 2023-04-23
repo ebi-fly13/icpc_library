@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: geometry/base_ld.hpp
     title: base_ld
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: geometry/line.hpp
     title: line
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/geometry/Intersection.test.cpp
     title: test/geometry/Intersection.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"geometry/segment.hpp\"\n\n#line 2 \"geometry/line.hpp\"\n\
@@ -64,13 +64,22 @@ data:
   path: geometry/segment.hpp
   requiredBy: []
   timestamp: '2023-04-23 20:16:48+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/geometry/Intersection.test.cpp
 documentation_of: geometry/segment.hpp
 layout: document
-redirect_from:
-- /library/geometry/segment.hpp
-- /library/geometry/segment.hpp.html
-title: geometry/segment.hpp
+title: segment
 ---
+
+## 説明
+
+平面での線分の各種操作
+
+### segment
+
+線分の端点 $a$, $b$ を持つ
+
+### intersection(segment a, segment b)
+
+線分 $a$, $b$ が交わるか判定
