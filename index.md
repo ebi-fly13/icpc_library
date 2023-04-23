@@ -51,7 +51,7 @@ data:
   - name: test/tree
     pages:
     - icon: ':heavy_check_mark:'
-      path: test/tree/LowestCommonAncestor.test.cpp
-      title: test/tree/LowestCommonAncestor.test.cpp
+      path: test/tree/Lowest_Common_Ancestor.test.cpp
+      title: test/tree/Lowest_Common_Ancestor.test.cpp
 layout: toppage
 ---

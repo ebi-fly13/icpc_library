@@ -17,7 +17,7 @@ data:
     PROBLEM: https://judge.yosupo.jp/problem/lca
     links:
     - https://judge.yosupo.jp/problem/lca
-  bundledCode: "#line 1 \"test/tree/LowestCommonAncestor.test.cpp\"\n#define PROBLEM\
+  bundledCode: "#line 1 \"test/tree/Lowest_Common_Ancestor.test.cpp\"\n#define PROBLEM\
     \ \"https://judge.yosupo.jp/problem/lca\"\n\n#line 2 \"template/template.hpp\"\
     \n\n#include<bits/stdc++.h>\n\n#define rep(i,s,n) for (int i = s; i < (int)(n);\
     \ i++)\n#define rrep(i,s,n) for (int i = (int)(n)-1; i >= (int)(s); i--)\n#define\
@@ -45,8 +45,8 @@ data:
     \                v = table[i][v];\n            }\n        }\n        return table[0][u];\n\
     \    }\n\n    int distance(int u, int v) const {\n        int l = lca(u, v);\n\
     \        return depth[u] + depth[v] - 2 * depth[l];\n    };\n};\n\n}  // namespace\
-    \ lib\n#line 5 \"test/tree/LowestCommonAncestor.test.cpp\"\n\nint main() {\n \
-    \   int n,q;\n    std::cin >> n >> q;\n    std::vector g(n, std::vector<int>());\n\
+    \ lib\n#line 5 \"test/tree/Lowest_Common_Ancestor.test.cpp\"\n\nint main() {\n\
+    \    int n,q;\n    std::cin >> n >> q;\n    std::vector g(n, std::vector<int>());\n\
     \    rep(i,1,n) {\n        int p;\n        std::cin >> p;\n        g[p].emplace_back(i);\n\
     \        g[i].emplace_back(p);\n    }\n    lib::LowestCommonAncestor lca(g, 0);\n\
     \    while(q--) {\n        int u, v;\n        std::cin >> u >> v;\n        std::cout\
@@ -57,20 +57,20 @@ data:
     \ {\n        int p;\n        std::cin >> p;\n        g[p].emplace_back(i);\n \
     \       g[i].emplace_back(p);\n    }\n    lib::LowestCommonAncestor lca(g, 0);\n\
     \    while(q--) {\n        int u, v;\n        std::cin >> u >> v;\n        std::cout\
-    \ << lca.lca(u, v) << '\\n';\n    }\n}"
+    \ << lca.lca(u, v) << '\\n';\n    }\n}\n"
   dependsOn:
   - template/template.hpp
   - tree/LowestCommonAncestor.hpp
   isVerificationFile: true
-  path: test/tree/LowestCommonAncestor.test.cpp
+  path: test/tree/Lowest_Common_Ancestor.test.cpp
   requiredBy: []
-  timestamp: '2023-04-22 15:21:53+09:00'
+  timestamp: '2023-04-23 15:20:06+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/tree/LowestCommonAncestor.test.cpp
+documentation_of: test/tree/Lowest_Common_Ancestor.test.cpp
 layout: document
 redirect_from:
-- /verify/test/tree/LowestCommonAncestor.test.cpp
-- /verify/test/tree/LowestCommonAncestor.test.cpp.html
-title: test/tree/LowestCommonAncestor.test.cpp
+- /verify/test/tree/Lowest_Common_Ancestor.test.cpp
+- /verify/test/tree/Lowest_Common_Ancestor.test.cpp.html
+title: test/tree/Lowest_Common_Ancestor.test.cpp
 ---

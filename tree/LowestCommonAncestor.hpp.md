@@ -7,8 +7,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/tree/LowestCommonAncestor.test.cpp
-    title: test/tree/LowestCommonAncestor.test.cpp
+    path: test/tree/Lowest_Common_Ancestor.test.cpp
+    title: test/tree/Lowest_Common_Ancestor.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -70,7 +70,7 @@ data:
   timestamp: '2023-04-22 15:21:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/tree/LowestCommonAncestor.test.cpp
+  - test/tree/Lowest_Common_Ancestor.test.cpp
 documentation_of: tree/LowestCommonAncestor.hpp
 layout: document
 title: LowestCommonAncestor
