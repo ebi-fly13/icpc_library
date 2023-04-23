@@ -11,7 +11,7 @@ data:
       title: segtree
   - name: geometry
     pages:
-    - icon: ':warning:'
+    - icon: ':question:'
       path: geometry/base_ld.hpp
       title: base_ld
     - icon: ':warning:'
@@ -20,7 +20,7 @@ data:
     - icon: ':warning:'
       path: geometry/convex_hull.hpp
       title: geometry/convex_hull.hpp
-    - icon: ':warning:'
+    - icon: ':question:'
       path: geometry/line.hpp
       title: line
   - name: math
@@ -38,17 +38,9 @@ data:
       title: string/parsing_template.hpp
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: template/template.hpp
-  - name: test/geometry
-    pages:
-    - icon: ':warning:'
-      path: test/geometry/Projection.cpp
-      title: test/geometry/Projection.cpp
-    - icon: ':warning:'
-      path: test/geometry/Reflection.cpp
-      title: test/geometry/Reflection.cpp
   - name: tree
     pages:
     - icon: ':heavy_check_mark:'
@@ -69,6 +61,20 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data_structure/Vertex_Add_Path_Sum.test.cpp
       title: test/data_structure/Vertex_Add_Path_Sum.test.cpp
+  - name: test/geometry
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/geometry/Counter_Clockwise.test.cpp
+      title: test/geometry/Counter_Clockwise.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/geometry/Parallel_Orthogonal.test.cpp
+      title: test/geometry/Parallel_Orthogonal.test.cpp
+    - icon: ':x:'
+      path: test/geometry/Projection.test.cpp
+      title: test/geometry/Projection.test.cpp
+    - icon: ':x:'
+      path: test/geometry/Reflection.test.cpp
+      title: test/geometry/Reflection.test.cpp
   - name: test/math
     pages:
     - icon: ':heavy_check_mark:'

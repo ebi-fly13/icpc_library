@@ -1,26 +1,32 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy:
   - icon: ':warning:'
     path: geometry/convex_hull.hpp
     title: geometry/convex_hull.hpp
-  - icon: ':warning:'
+  - icon: ':question:'
     path: geometry/line.hpp
     title: line
-  - icon: ':warning:'
-    path: test/geometry/Projection.cpp
-    title: test/geometry/Projection.cpp
-  - icon: ':warning:'
-    path: test/geometry/Reflection.cpp
-    title: test/geometry/Reflection.cpp
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/geometry/Counter_Clockwise.test.cpp
+    title: test/geometry/Counter_Clockwise.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/geometry/Parallel_Orthogonal.test.cpp
+    title: test/geometry/Parallel_Orthogonal.test.cpp
+  - icon: ':x:'
+    path: test/geometry/Projection.test.cpp
+    title: test/geometry/Projection.test.cpp
+  - icon: ':x:'
+    path: test/geometry/Reflection.test.cpp
+    title: test/geometry/Reflection.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"geometry/base_ld.hpp\"\n\n#line 2 \"template/template.hpp\"\
@@ -59,11 +65,13 @@ data:
   requiredBy:
   - geometry/line.hpp
   - geometry/convex_hull.hpp
-  - test/geometry/Reflection.cpp
-  - test/geometry/Projection.cpp
   timestamp: '2023-04-23 19:28:55+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_SOME_WA
+  verifiedWith:
+  - test/geometry/Parallel_Orthogonal.test.cpp
+  - test/geometry/Counter_Clockwise.test.cpp
+  - test/geometry/Projection.test.cpp
+  - test/geometry/Reflection.test.cpp
 documentation_of: geometry/base_ld.hpp
 layout: document
 title: base_ld

@@ -1,23 +1,26 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':question:'
     path: geometry/base_ld.hpp
     title: base_ld
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: test/geometry/Projection.cpp
-    title: test/geometry/Projection.cpp
-  - icon: ':warning:'
-    path: test/geometry/Reflection.cpp
-    title: test/geometry/Reflection.cpp
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/geometry/Parallel_Orthogonal.test.cpp
+    title: test/geometry/Parallel_Orthogonal.test.cpp
+  - icon: ':x:'
+    path: test/geometry/Projection.test.cpp
+    title: test/geometry/Projection.test.cpp
+  - icon: ':x:'
+    path: test/geometry/Reflection.test.cpp
+    title: test/geometry/Reflection.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"geometry/line.hpp\"\n\n#line 2 \"geometry/base_ld.hpp\"\n\
@@ -42,23 +45,32 @@ data:
     \n\nnamespace lib {\n\nstruct line {\n    vec a, b;\n};\n\nvec proj(const line\
     \ &l, const vec &p) {\n    vec ab = l.b - l.a;\n    return l.a + ab * (dot(ab,\
     \ p - l.a) / norm(ab));\n}\n\nvec refl(const line &l, const vec &p) {\n    return\
-    \ proj(l, p) * ld(2) - p;\n}\n\n}\n"
+    \ proj(l, p) * ld(2) - p;\n}\n\nint intersection(const line &a, const line &b)\
+    \ {\n    if(sgn(cross(a.b - a.a, b.a - b.b)) != 0) {\n        if(sgn(dot(a.b -\
+    \ a.a, b.a - b.b)) == 0) {\n            return 1;\n        }\n        return 0;\n\
+    \    }\n    else if(sgn(cross(a.b - a.a, b.a - a.a)) != 0) {\n        return 2;\n\
+    \    }\n    else {\n        return 3;\n    }\n}\n\n}\n"
   code: "#pragma once\n\n#include \"../geometry/base_ld.hpp\"\n\nnamespace lib {\n\
     \nstruct line {\n    vec a, b;\n};\n\nvec proj(const line &l, const vec &p) {\n\
     \    vec ab = l.b - l.a;\n    return l.a + ab * (dot(ab, p - l.a) / norm(ab));\n\
     }\n\nvec refl(const line &l, const vec &p) {\n    return proj(l, p) * ld(2) -\
-    \ p;\n}\n\n}"
+    \ p;\n}\n\nint intersection(const line &a, const line &b) {\n    if(sgn(cross(a.b\
+    \ - a.a, b.a - b.b)) != 0) {\n        if(sgn(dot(a.b - a.a, b.a - b.b)) == 0)\
+    \ {\n            return 1;\n        }\n        return 0;\n    }\n    else if(sgn(cross(a.b\
+    \ - a.a, b.a - a.a)) != 0) {\n        return 2;\n    }\n    else {\n        return\
+    \ 3;\n    }\n}\n\n}"
   dependsOn:
   - geometry/base_ld.hpp
   - template/template.hpp
   isVerificationFile: false
   path: geometry/line.hpp
-  requiredBy:
-  - test/geometry/Reflection.cpp
-  - test/geometry/Projection.cpp
-  timestamp: '2023-04-23 19:28:55+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  requiredBy: []
+  timestamp: '2023-04-23 19:45:21+09:00'
+  verificationStatus: LIBRARY_SOME_WA
+  verifiedWith:
+  - test/geometry/Parallel_Orthogonal.test.cpp
+  - test/geometry/Projection.test.cpp
+  - test/geometry/Reflection.test.cpp
 documentation_of: geometry/line.hpp
 layout: document
 title: line

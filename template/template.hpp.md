@@ -8,7 +8,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: data_structure/segtree.hpp
     title: segtree
-  - icon: ':warning:'
+  - icon: ':question:'
     path: geometry/base_ld.hpp
     title: base_ld
   - icon: ':warning:'
@@ -17,7 +17,7 @@ data:
   - icon: ':warning:'
     path: geometry/convex_hull.hpp
     title: geometry/convex_hull.hpp
-  - icon: ':warning:'
+  - icon: ':question:'
     path: geometry/line.hpp
     title: line
   - icon: ':heavy_check_mark:'
@@ -29,12 +29,6 @@ data:
   - icon: ':warning:'
     path: string/parsing_template.hpp
     title: string/parsing_template.hpp
-  - icon: ':warning:'
-    path: test/geometry/Projection.cpp
-    title: test/geometry/Projection.cpp
-  - icon: ':warning:'
-    path: test/geometry/Reflection.cpp
-    title: test/geometry/Reflection.cpp
   - icon: ':heavy_check_mark:'
     path: tree/HeavyLightDecomposition.hpp
     title: HeavyLightDecomposition
@@ -52,6 +46,18 @@ data:
     path: test/data_structure/Vertex_Add_Path_Sum.test.cpp
     title: test/data_structure/Vertex_Add_Path_Sum.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/geometry/Counter_Clockwise.test.cpp
+    title: test/geometry/Counter_Clockwise.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/geometry/Parallel_Orthogonal.test.cpp
+    title: test/geometry/Parallel_Orthogonal.test.cpp
+  - icon: ':x:'
+    path: test/geometry/Projection.test.cpp
+    title: test/geometry/Projection.test.cpp
+  - icon: ':x:'
+    path: test/geometry/Reflection.test.cpp
+    title: test/geometry/Reflection.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/math/enumerate_primes.test.cpp
     title: test/math/enumerate_primes.test.cpp
   - icon: ':heavy_check_mark:'
@@ -60,9 +66,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/tree/Lowest_Common_Ancestor.test.cpp
     title: test/tree/Lowest_Common_Ancestor.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n\n#include<bits/stdc++.h>\n\n#define\
@@ -96,13 +102,15 @@ data:
   - math/eratosthenes_sieve.hpp
   - data_structure/segtree.hpp
   - data_structure/BinaryTrie.hpp
-  - test/geometry/Reflection.cpp
-  - test/geometry/Projection.cpp
   timestamp: '2023-04-23 15:49:48+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/string/aoj_2444.test.cpp
   - test/tree/Lowest_Common_Ancestor.test.cpp
+  - test/geometry/Parallel_Orthogonal.test.cpp
+  - test/geometry/Counter_Clockwise.test.cpp
+  - test/geometry/Projection.test.cpp
+  - test/geometry/Reflection.test.cpp
   - test/math/enumerate_primes.test.cpp
   - test/data_structure/Vertex_Add_Path_Sum.test.cpp
   - test/data_structure/Set_Xor_Min.test.cpp
