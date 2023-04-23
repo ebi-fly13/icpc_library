@@ -9,14 +9,14 @@ data:
     path: data_structure/segtree.hpp
     title: segtree
   - icon: ':warning:'
-    path: geometry/geometry2D.hpp
-    title: geometry/geometry2D.hpp
+    path: geometry/base_ld.hpp
+    title: geometry/base_ld.hpp
   - icon: ':warning:'
-    path: geometry/geometry2D_ld.hpp
-    title: geometry/geometry2D_ld.hpp
+    path: geometry/base_ll.hpp
+    title: geometry/base_ll.hpp
   - icon: ':warning:'
-    path: geometry/geometry2D_ll.hpp
-    title: geometry/geometry2D_ll.hpp
+    path: geometry/convex_hull.hpp
+    title: geometry/convex_hull.hpp
   - icon: ':heavy_check_mark:'
     path: math/eratosthenes_sieve.hpp
     title: eratosthenes sieve
@@ -77,9 +77,9 @@ data:
   - string/RollingHash.hpp
   - tree/HeavyLightDecomposition.hpp
   - tree/LowestCommonAncestor.hpp
-  - geometry/geometry2D_ll.hpp
-  - geometry/geometry2D_ld.hpp
-  - geometry/geometry2D.hpp
+  - geometry/base_ll.hpp
+  - geometry/convex_hull.hpp
+  - geometry/base_ld.hpp
   - math/eratosthenes_sieve.hpp
   - data_structure/segtree.hpp
   - data_structure/BinaryTrie.hpp

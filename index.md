@@ -12,14 +12,14 @@ data:
   - name: geometry
     pages:
     - icon: ':warning:'
-      path: geometry/geometry2D.hpp
-      title: geometry/geometry2D.hpp
+      path: geometry/base_ld.hpp
+      title: geometry/base_ld.hpp
     - icon: ':warning:'
-      path: geometry/geometry2D_ld.hpp
-      title: geometry/geometry2D_ld.hpp
+      path: geometry/base_ll.hpp
+      title: geometry/base_ll.hpp
     - icon: ':warning:'
-      path: geometry/geometry2D_ll.hpp
-      title: geometry/geometry2D_ll.hpp
+      path: geometry/convex_hull.hpp
+      title: geometry/convex_hull.hpp
   - name: math
     pages:
     - icon: ':heavy_check_mark:'
