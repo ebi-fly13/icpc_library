@@ -11,6 +11,12 @@ data:
   - icon: ':warning:'
     path: geometry/geometry2D.hpp
     title: geometry/geometry2D.hpp
+  - icon: ':warning:'
+    path: geometry/geometry2D_ld.hpp
+    title: geometry/geometry2D_ld.hpp
+  - icon: ':warning:'
+    path: geometry/geometry2D_ll.hpp
+    title: geometry/geometry2D_ll.hpp
   - icon: ':heavy_check_mark:'
     path: math/eratosthenes_sieve.hpp
     title: eratosthenes sieve
@@ -71,6 +77,8 @@ data:
   - string/RollingHash.hpp
   - tree/HeavyLightDecomposition.hpp
   - tree/LowestCommonAncestor.hpp
+  - geometry/geometry2D_ll.hpp
+  - geometry/geometry2D_ld.hpp
   - geometry/geometry2D.hpp
   - math/eratosthenes_sieve.hpp
   - data_structure/segtree.hpp

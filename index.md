@@ -14,6 +14,12 @@ data:
     - icon: ':warning:'
       path: geometry/geometry2D.hpp
       title: geometry/geometry2D.hpp
+    - icon: ':warning:'
+      path: geometry/geometry2D_ld.hpp
+      title: geometry/geometry2D_ld.hpp
+    - icon: ':warning:'
+      path: geometry/geometry2D_ll.hpp
+      title: geometry/geometry2D_ll.hpp
   - name: math
     pages:
     - icon: ':heavy_check_mark:'
