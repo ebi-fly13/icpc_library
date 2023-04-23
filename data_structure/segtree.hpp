@@ -9,15 +9,15 @@ struct segtree {
    private:
     int n;
     int sz;
-    std::vector<S> data;
+    vector<S> data;
 
     void update(int i) { data[i] = op(data[2 * i], data[2 * i + 1]); }
 
    public:
-    segtree(int n) : segtree(std::vector<S>(n, e())) {}
-    segtree(const std::vector<S> &v) : n((int)v.size()), sz(1) {
+    segtree(int n) : segtree(vector<S>(n, e())) {}
+    segtree(const vector<S> &v) : n((int)v.size()), sz(1) {
         while (sz < n) sz *= 2;
-        data = std::vector<S>(2 * sz, e());
+        data = vector<S>(2 * sz, e());
         rep(i, 0, n) { data[sz + i] = v[i]; }
         rrep(i, 1, sz) update(i);
     }
