@@ -18,3 +18,12 @@ documentation_of: //geometry/line.hpp
 ### refl(line l, vec p)
 
 直線 $l$ を対象軸として点 $p$ を線対象に移動させた点 $x$ を返す。
+
+### intersection(line a, line b)
+
+直線 $a$, $b$ の関係を返す。
+
+- 交差 $0$
+- 垂直 $1$
+- 平行 $2$
+- 同一直線 $3$
