@@ -4,6 +4,10 @@
 
 namespace lib {
 
+void ldout(){
+    cout << fixed << setprecision(20);
+}
+
 using vec = complex<ld>;
 const ld eps = 1e-7;
 
@@ -13,6 +17,10 @@ ld dot(const vec &a, const vec &b){
 
 ld cross(const vec &a, const vec &b){
     return (conj(a) * b).imag();
+}
+
+void rot(vec &a, ld rad){
+    a *= vec(cosl(rad),sinl(rad));
 }
 
 bool comp_for_argument_sort(const vec &lhs, const vec &rhs){
