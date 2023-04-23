@@ -8,6 +8,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: data_structure/segtree.hpp
     title: segtree
+  - icon: ':warning:'
+    path: geometry/geometry2D.hpp
+    title: geometry/geometry2D.hpp
   - icon: ':heavy_check_mark:'
     path: math/eratosthenes_sieve.hpp
     title: eratosthenes sieve
@@ -47,17 +50,19 @@ data:
   bundledCode: "#line 2 \"template/template.hpp\"\n\n#include<bits/stdc++.h>\n\n#define\
     \ rep(i,s,n) for (int i = s; i < (int)(n); i++)\n#define rrep(i,s,n) for (int\
     \ i = (int)(n)-1; i >= (int)(s); i--)\n#define all(v) v.begin(),v.end()\n\nusing\
-    \ ll = long long;\nusing ull = unsigned long long;\n\ntemplate<typename T> bool\
-    \ chmin(T &a, const T &b){\n    if (a <= b) return false;\n    a = b;\n    return\
-    \ true;\n}\ntemplate<typename T> bool chmax(T &a, const T &b){\n    if (a >= b)\
-    \ return false;\n    a = b;\n    return true;\n}\n"
+    \ ll = long long;\nusing ld = long double;\nusing ull = unsigned long long;\n\n\
+    template<typename T> bool chmin(T &a, const T &b){\n    if (a <= b) return false;\n\
+    \    a = b;\n    return true;\n}\ntemplate<typename T> bool chmax(T &a, const\
+    \ T &b){\n    if (a >= b) return false;\n    a = b;\n    return true;\n}\n\nnamespace\
+    \ lib{\n\nusing namespace std;\n\n} // namespace lib;\n\n//using namespace lib;\n"
   code: "#pragma once\n\n#include<bits/stdc++.h>\n\n#define rep(i,s,n) for (int i\
     \ = s; i < (int)(n); i++)\n#define rrep(i,s,n) for (int i = (int)(n)-1; i >= (int)(s);\
-    \ i--)\n#define all(v) v.begin(),v.end()\n\nusing ll = long long;\nusing ull =\
-    \ unsigned long long;\n\ntemplate<typename T> bool chmin(T &a, const T &b){\n\
-    \    if (a <= b) return false;\n    a = b;\n    return true;\n}\ntemplate<typename\
-    \ T> bool chmax(T &a, const T &b){\n    if (a >= b) return false;\n    a = b;\n\
-    \    return true;\n}\n"
+    \ i--)\n#define all(v) v.begin(),v.end()\n\nusing ll = long long;\nusing ld =\
+    \ long double;\nusing ull = unsigned long long;\n\ntemplate<typename T> bool chmin(T\
+    \ &a, const T &b){\n    if (a <= b) return false;\n    a = b;\n    return true;\n\
+    }\ntemplate<typename T> bool chmax(T &a, const T &b){\n    if (a >= b) return\
+    \ false;\n    a = b;\n    return true;\n}\n\nnamespace lib{\n\nusing namespace\
+    \ std;\n\n} // namespace lib;\n\n//using namespace lib;"
   dependsOn: []
   isVerificationFile: false
   path: template/template.hpp
@@ -66,10 +71,11 @@ data:
   - string/RollingHash.hpp
   - tree/HeavyLightDecomposition.hpp
   - tree/LowestCommonAncestor.hpp
+  - geometry/geometry2D.hpp
   - math/eratosthenes_sieve.hpp
   - data_structure/segtree.hpp
   - data_structure/BinaryTrie.hpp
-  timestamp: '2023-04-20 01:31:50+09:00'
+  timestamp: '2023-04-23 15:49:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/string/aoj_2444.test.cpp

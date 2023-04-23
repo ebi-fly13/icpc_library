@@ -9,6 +9,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: data_structure/segtree.hpp
       title: segtree
+  - name: geometry
+    pages:
+    - icon: ':warning:'
+      path: geometry/geometry2D.hpp
+      title: geometry/geometry2D.hpp
   - name: math
     pages:
     - icon: ':heavy_check_mark:'

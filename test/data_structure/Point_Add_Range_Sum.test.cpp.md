@@ -22,11 +22,13 @@ data:
     template/template.hpp\"\n\n#include<bits/stdc++.h>\n\n#define rep(i,s,n) for (int\
     \ i = s; i < (int)(n); i++)\n#define rrep(i,s,n) for (int i = (int)(n)-1; i >=\
     \ (int)(s); i--)\n#define all(v) v.begin(),v.end()\n\nusing ll = long long;\n\
-    using ull = unsigned long long;\n\ntemplate<typename T> bool chmin(T &a, const\
-    \ T &b){\n    if (a <= b) return false;\n    a = b;\n    return true;\n}\ntemplate<typename\
-    \ T> bool chmax(T &a, const T &b){\n    if (a >= b) return false;\n    a = b;\n\
-    \    return true;\n}\n#line 2 \"data_structure/segtree.hpp\"\n\n#line 4 \"data_structure/segtree.hpp\"\
-    \n\nnamespace lib {\n\nusing namespace std;\n\ntemplate <class S, S (*op)(S, S),\
+    using ld = long double;\nusing ull = unsigned long long;\n\ntemplate<typename\
+    \ T> bool chmin(T &a, const T &b){\n    if (a <= b) return false;\n    a = b;\n\
+    \    return true;\n}\ntemplate<typename T> bool chmax(T &a, const T &b){\n   \
+    \ if (a >= b) return false;\n    a = b;\n    return true;\n}\n\nnamespace lib{\n\
+    \nusing namespace std;\n\n} // namespace lib;\n\n//using namespace lib;\n#line\
+    \ 2 \"data_structure/segtree.hpp\"\n\n#line 4 \"data_structure/segtree.hpp\"\n\
+    \nnamespace lib {\n\nusing namespace std;\n\ntemplate <class S, S (*op)(S, S),\
     \ S (*e)()>\nstruct segtree {\n   private:\n    int n;\n    int sz;\n    vector<S>\
     \ data;\n\n    void update(int i) { data[i] = op(data[2 * i], data[2 * i + 1]);\
     \ }\n\n   public:\n    segtree(int n) : segtree(vector<S>(n, e())) {}\n    segtree(const\
@@ -84,7 +86,7 @@ data:
   isVerificationFile: true
   path: test/data_structure/Point_Add_Range_Sum.test.cpp
   requiredBy: []
-  timestamp: '2023-04-23 15:45:55+09:00'
+  timestamp: '2023-04-23 15:50:20+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data_structure/Point_Add_Range_Sum.test.cpp
