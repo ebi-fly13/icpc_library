@@ -11,7 +11,7 @@ data:
       title: segtree
   - name: geometry
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: geometry/base_ld.hpp
       title: base_ld
     - icon: ':warning:'
@@ -20,7 +20,7 @@ data:
     - icon: ':warning:'
       path: geometry/convex_hull.hpp
       title: geometry/convex_hull.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: geometry/line.hpp
       title: line
   - name: math
@@ -38,7 +38,7 @@ data:
       title: string/parsing_template.hpp
   - name: template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: template/template.hpp
   - name: tree
@@ -69,10 +69,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/geometry/Parallel_Orthogonal.test.cpp
       title: test/geometry/Parallel_Orthogonal.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/geometry/Projection.test.cpp
       title: test/geometry/Projection.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/geometry/Reflection.test.cpp
       title: test/geometry/Reflection.test.cpp
   - name: test/math

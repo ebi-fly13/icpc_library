@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: geometry/base_ld.hpp
     title: base_ld
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
@@ -12,15 +12,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/geometry/Parallel_Orthogonal.test.cpp
     title: test/geometry/Parallel_Orthogonal.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/geometry/Projection.test.cpp
     title: test/geometry/Projection.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/geometry/Reflection.test.cpp
     title: test/geometry/Reflection.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"geometry/line.hpp\"\n\n#line 2 \"geometry/base_ld.hpp\"\n\
@@ -66,7 +66,7 @@ data:
   path: geometry/line.hpp
   requiredBy: []
   timestamp: '2023-04-23 19:45:21+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/geometry/Parallel_Orthogonal.test.cpp
   - test/geometry/Projection.test.cpp
@@ -91,3 +91,12 @@ title: line
 ### refl(line l, vec p)
 
 直線 $l$ を対象軸として点 $p$ を線対象に移動させた点 $x$ を返す。
+
+### intersection(line a, line b)
+
+直線 $a$, $b$ の関係を返す。
+
+- 交差 $0$
+- 垂直 $1$
+- 平行 $2$
+- 同一直線 $3$
