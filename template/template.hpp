@@ -7,6 +7,7 @@
 #define all(v) v.begin(),v.end()
 
 using ll = long long;
+using ld = long double;
 using ull = unsigned long long;
 
 template<typename T> bool chmin(T &a, const T &b){
@@ -19,3 +20,11 @@ template<typename T> bool chmax(T &a, const T &b){
     a = b;
     return true;
 }
+
+namespace lib{
+
+using namespace std;
+
+} // namespace lib;
+
+//using namespace lib;
