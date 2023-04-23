@@ -13,6 +13,9 @@ data:
     title: segment
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/geometry/Cross_Point.test.cpp
+    title: test/geometry/Cross_Point.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/geometry/Intersection.test.cpp
     title: test/geometry/Intersection.test.cpp
   - icon: ':heavy_check_mark:'
@@ -75,6 +78,7 @@ data:
   timestamp: '2023-04-23 19:45:21+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/geometry/Cross_Point.test.cpp
   - test/geometry/Parallel_Orthogonal.test.cpp
   - test/geometry/Projection.test.cpp
   - test/geometry/Reflection.test.cpp

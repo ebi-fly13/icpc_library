@@ -70,6 +70,9 @@ data:
       path: test/geometry/Counter_Clockwise.test.cpp
       title: test/geometry/Counter_Clockwise.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/geometry/Cross_Point.test.cpp
+      title: test/geometry/Cross_Point.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/geometry/Intersection.test.cpp
       title: test/geometry/Intersection.test.cpp
     - icon: ':heavy_check_mark:'

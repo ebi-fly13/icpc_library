@@ -13,6 +13,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/geometry/Cross_Point.test.cpp
+    title: test/geometry/Cross_Point.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/geometry/Intersection.test.cpp
     title: test/geometry/Intersection.test.cpp
   _isVerificationFailed: false
@@ -48,14 +51,20 @@ data:
     \    }\n    else if(sgn(cross(a.b - a.a, b.a - a.a)) != 0) {\n        return 2;\n\
     \    }\n    else {\n        return 3;\n    }\n}\n\n}\n#line 4 \"geometry/segment.hpp\"\
     \n\nnamespace lib {\n\nstruct segment : line {};\n\nbool intersection(const segment\
-    \ &a, const segment &b, bool bound) {\n    if(sgn(isp(a.a, a.b, b.a) * isp(a.a,\
-    \ a.b, b.b)) < int(bound) && sgn(isp(b.a, b.b, a.a) * isp(b.a, b.b, a.b)) < int(bound))\
-    \ {\n        return true;\n    }\n    else return false;\n}\n\n}\n"
+    \ &a, const segment &b, bool bound = true) {\n    if(sgn(isp(a.a, a.b, b.a) *\
+    \ isp(a.a, a.b, b.b)) < int(bound) && sgn(isp(b.a, b.b, a.a) * isp(b.a, b.b, a.b))\
+    \ < int(bound)) {\n        return true;\n    }\n    else return false;\n}\n\n\
+    vec cross_point(const segment &a, const segment &b) {\n    assert(intersection(a,\
+    \ b, true));\n    return a.a + (a.b - a.a) * cross(b.a - a.a, b.b - b.a) / cross(a.b\
+    \ - a.a, b.b - b.a);\n}\n\n}\n"
   code: "#pragma once\n\n#include \"../geometry/line.hpp\"\n\nnamespace lib {\n\n\
     struct segment : line {};\n\nbool intersection(const segment &a, const segment\
-    \ &b, bool bound) {\n    if(sgn(isp(a.a, a.b, b.a) * isp(a.a, a.b, b.b)) < int(bound)\
-    \ && sgn(isp(b.a, b.b, a.a) * isp(b.a, b.b, a.b)) < int(bound)) {\n        return\
-    \ true;\n    }\n    else return false;\n}\n\n}"
+    \ &b, bool bound = true) {\n    if(sgn(isp(a.a, a.b, b.a) * isp(a.a, a.b, b.b))\
+    \ < int(bound) && sgn(isp(b.a, b.b, a.a) * isp(b.a, b.b, a.b)) < int(bound)) {\n\
+    \        return true;\n    }\n    else return false;\n}\n\nvec cross_point(const\
+    \ segment &a, const segment &b) {\n    assert(intersection(a, b, true));\n   \
+    \ return a.a + (a.b - a.a) * cross(b.a - a.a, b.b - b.a) / cross(a.b - a.a, b.b\
+    \ - b.a);\n}\n\n}"
   dependsOn:
   - geometry/line.hpp
   - geometry/base_ld.hpp
@@ -63,9 +72,10 @@ data:
   isVerificationFile: false
   path: geometry/segment.hpp
   requiredBy: []
-  timestamp: '2023-04-23 20:16:48+09:00'
+  timestamp: '2023-04-23 20:32:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/geometry/Cross_Point.test.cpp
   - test/geometry/Intersection.test.cpp
 documentation_of: geometry/segment.hpp
 layout: document
@@ -80,6 +90,10 @@ title: segment
 
 線分の端点 $a$, $b$ を持つ
 
-### intersection(segment a, segment b)
+### intersection(segment a, segment b, bool bound = true)
 
-線分 $a$, $b$ が交わるか判定
+線分 $a$, $b$ が交わるか判定。boundがtrueのとき端点を含む。falseのとき端点を含まない。
+
+### cross_point(segment a, segment b)
+
+線分 $a$, $b$ の交点を返す。

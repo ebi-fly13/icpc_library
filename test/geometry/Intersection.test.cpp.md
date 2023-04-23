@@ -53,16 +53,19 @@ data:
     \    }\n    else if(sgn(cross(a.b - a.a, b.a - a.a)) != 0) {\n        return 2;\n\
     \    }\n    else {\n        return 3;\n    }\n}\n\n}\n#line 4 \"geometry/segment.hpp\"\
     \n\nnamespace lib {\n\nstruct segment : line {};\n\nbool intersection(const segment\
-    \ &a, const segment &b, bool bound) {\n    if(sgn(isp(a.a, a.b, b.a) * isp(a.a,\
-    \ a.b, b.b)) < int(bound) && sgn(isp(b.a, b.b, a.a) * isp(b.a, b.b, a.b)) < int(bound))\
-    \ {\n        return true;\n    }\n    else return false;\n}\n\n}\n#line 4 \"test/geometry/Intersection.test.cpp\"\
-    \n\nusing namespace lib;\n\nint main() {\n    int q;\n    std::cin >> q;\n   \
-    \ while(q--) {\n        vec p0, p1, p2, p3;\n        auto input = [](vec &p) {\n\
-    \            ld x,y;\n            std::cin >> x >> y;\n            p = {x, y};\n\
-    \        };\n        input(p0);\n        input(p1);\n        input(p2);\n    \
-    \    input(p3);\n        segment s1 = {p0, p1};\n        segment s2 = {p2, p3};\n\
-    \        int flag = intersection(s1, s2, true);\n        std::cout << flag <<\
-    \ '\\n';\n    }\n}\n"
+    \ &a, const segment &b, bool bound = true) {\n    if(sgn(isp(a.a, a.b, b.a) *\
+    \ isp(a.a, a.b, b.b)) < int(bound) && sgn(isp(b.a, b.b, a.a) * isp(b.a, b.b, a.b))\
+    \ < int(bound)) {\n        return true;\n    }\n    else return false;\n}\n\n\
+    vec cross_point(const segment &a, const segment &b) {\n    assert(intersection(a,\
+    \ b, true));\n    return a.a + (a.b - a.a) * cross(b.a - a.a, b.b - b.a) / cross(a.b\
+    \ - a.a, b.b - b.a);\n}\n\n}\n#line 4 \"test/geometry/Intersection.test.cpp\"\n\
+    \nusing namespace lib;\n\nint main() {\n    int q;\n    std::cin >> q;\n    while(q--)\
+    \ {\n        vec p0, p1, p2, p3;\n        auto input = [](vec &p) {\n        \
+    \    ld x,y;\n            std::cin >> x >> y;\n            p = {x, y};\n     \
+    \   };\n        input(p0);\n        input(p1);\n        input(p2);\n        input(p3);\n\
+    \        segment s1 = {p0, p1};\n        segment s2 = {p2, p3};\n        int flag\
+    \ = intersection(s1, s2, true);\n        std::cout << flag << '\\n';\n    }\n\
+    }\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_B\"\
     \n\n#include \"../../geometry/segment.hpp\"\n\nusing namespace lib;\n\nint main()\
     \ {\n    int q;\n    std::cin >> q;\n    while(q--) {\n        vec p0, p1, p2,\
@@ -79,7 +82,7 @@ data:
   isVerificationFile: true
   path: test/geometry/Intersection.test.cpp
   requiredBy: []
-  timestamp: '2023-04-23 20:25:04+09:00'
+  timestamp: '2023-04-23 20:32:50+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/geometry/Intersection.test.cpp
