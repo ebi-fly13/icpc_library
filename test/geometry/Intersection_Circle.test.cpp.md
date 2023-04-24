@@ -1,27 +1,27 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: geometry/base_ld.hpp
     title: base_ld
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: geometry/circle.hpp
     title: circle
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_B
+    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/7/CGL_7_A
     links:
-    - https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_B
+    - https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/7/CGL_7_A
   bundledCode: "#line 1 \"test/geometry/Intersection_Circle.test.cpp\"\n#define PROBLEM\
-    \ \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_B\"\r\n\r\n\
+    \ \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/7/CGL_7_A\"\r\n\r\n\
     #line 2 \"geometry/circle.hpp\"\n\r\n#line 2 \"geometry/base_ld.hpp\"\n\n#line\
     \ 2 \"template/template.hpp\"\n\n#include<bits/stdc++.h>\n\n#define rep(i,s,n)\
     \ for (int i = s; i < (int)(n); i++)\n#define rrep(i,s,n) for (int i = (int)(n)-1;\
@@ -57,7 +57,7 @@ data:
     \  ld c2x, c2y, c2r;\r\n    std::cin >> c1x >> c1y >> c1r;\r\n    std::cin >>\
     \ c2x >> c2y >> c2r;\r\n    circle c1 = {{c1x, c1y}, c1r};\r\n    circle c2 =\
     \ {{c2x, c2y}, c2r};\r\n    std::cout << intersection(c1, c2) << '\\n';\r\n}\n"
-  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_B\"\
+  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/7/CGL_7_A\"\
     \r\n\r\n#include \"../../geometry/circle.hpp\"\r\n\r\nusing namespace lib;\r\n\
     \r\nint main() {\r\n    ld c1x, c1y, c1r;\r\n    ld c2x, c2y, c2r;\r\n    std::cin\
     \ >> c1x >> c1y >> c1r;\r\n    std::cin >> c2x >> c2y >> c2r;\r\n    circle c1\
@@ -70,8 +70,8 @@ data:
   isVerificationFile: true
   path: test/geometry/Intersection_Circle.test.cpp
   requiredBy: []
-  timestamp: '2023-04-24 18:42:07+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-04-25 00:46:25+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/geometry/Intersection_Circle.test.cpp
 layout: document

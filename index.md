@@ -14,13 +14,13 @@ data:
       title: segtree
   - name: geometry
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: geometry/base_ld.hpp
       title: base_ld
     - icon: ':warning:'
       path: geometry/base_ll.hpp
       title: geometry/base_ll.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: geometry/circle.hpp
       title: circle
     - icon: ':warning:'
@@ -47,7 +47,7 @@ data:
       title: string/parsing_template.hpp
   - name: template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: template/template.hpp
   - name: tree
@@ -87,7 +87,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/geometry/Intersection.test.cpp
       title: test/geometry/Intersection.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/geometry/Intersection_Circle.test.cpp
       title: test/geometry/Intersection_Circle.test.cpp
     - icon: ':heavy_check_mark:'
