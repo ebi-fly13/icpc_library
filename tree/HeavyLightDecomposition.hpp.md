@@ -51,12 +51,13 @@ data:
     \        return depth[u] < depth[v] ? u : v;\n    }\n\n    int distance(int u,\
     \ int v) const {\n        return depth[u] + depth[v] - 2 * depth[lca(u, v)];\n\
     \    }\n\n    template <class F>\n    void path_noncommutative_query(int u, int\
-    \ v, const F &f) const {\n        int l = lca(u, v);\n        for (auto [a, b]\
-    \ : ascend(u, l)) f(a + 1, b);\n        f(in[l], in[l] + 1);\n        for (auto\
-    \ [a, b] : descend(l, v)) f(a, b + 1);\n    }\n\n    template <class F>\n    void\
-    \ subtree_query(int u, bool vertex, const F &f) {\n        f(in[u] + int(!vertex),\
-    \ out[u]);\n    }\n\n   private:\n    int n;\n    vector<vector<int>> g;\n   \
-    \ vector<int> sz, in, out, nxt, par, depth;\n};\n\n}  // namespace ebi\n"
+    \ v, bool vertex, const F &f) const {\n        int l = lca(u, v);\n        for\
+    \ (auto [a, b] : ascend(u, l)) f(a + 1, b);\n        if(vertex) f(in[l], in[l]\
+    \ + 1);\n        for (auto [a, b] : descend(l, v)) f(a, b + 1);\n    }\n\n   \
+    \ template <class F>\n    void subtree_query(int u, bool vertex, const F &f) {\n\
+    \        f(in[u] + int(!vertex), out[u]);\n    }\n\n   private:\n    int n;\n\
+    \    vector<vector<int>> g;\n    vector<int> sz, in, out, nxt, par, depth;\n};\n\
+    \n}  // namespace ebi\n"
   code: "#pragma once\n\n#include \"../template/template.hpp\"\n\nnamespace lib {\n\
     \nusing namespace std;\n\nstruct HeavyLightDecomposition {\n   private:\n    void\
     \ dfs_sz(int v) {\n        for (auto &nv : g[v]) {\n            if (nv == par[v])\
@@ -86,18 +87,19 @@ data:
     \        return depth[u] < depth[v] ? u : v;\n    }\n\n    int distance(int u,\
     \ int v) const {\n        return depth[u] + depth[v] - 2 * depth[lca(u, v)];\n\
     \    }\n\n    template <class F>\n    void path_noncommutative_query(int u, int\
-    \ v, const F &f) const {\n        int l = lca(u, v);\n        for (auto [a, b]\
-    \ : ascend(u, l)) f(a + 1, b);\n        f(in[l], in[l] + 1);\n        for (auto\
-    \ [a, b] : descend(l, v)) f(a, b + 1);\n    }\n\n    template <class F>\n    void\
-    \ subtree_query(int u, bool vertex, const F &f) {\n        f(in[u] + int(!vertex),\
-    \ out[u]);\n    }\n\n   private:\n    int n;\n    vector<vector<int>> g;\n   \
-    \ vector<int> sz, in, out, nxt, par, depth;\n};\n\n}  // namespace ebi"
+    \ v, bool vertex, const F &f) const {\n        int l = lca(u, v);\n        for\
+    \ (auto [a, b] : ascend(u, l)) f(a + 1, b);\n        if(vertex) f(in[l], in[l]\
+    \ + 1);\n        for (auto [a, b] : descend(l, v)) f(a, b + 1);\n    }\n\n   \
+    \ template <class F>\n    void subtree_query(int u, bool vertex, const F &f) {\n\
+    \        f(in[u] + int(!vertex), out[u]);\n    }\n\n   private:\n    int n;\n\
+    \    vector<vector<int>> g;\n    vector<int> sz, in, out, nxt, par, depth;\n};\n\
+    \n}  // namespace ebi"
   dependsOn:
   - template/template.hpp
   isVerificationFile: false
   path: tree/HeavyLightDecomposition.hpp
   requiredBy: []
-  timestamp: '2023-04-23 15:49:48+09:00'
+  timestamp: '2023-04-24 21:43:54+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/data_structure/Vertex_Add_Path_Sum.test.cpp
@@ -128,9 +130,9 @@ title: HeavyLightDecomposition
 
 頂点 u, v の距離を返す。
 
-### path_noncommutative_query(int u, int v, const F &f)
+### path_noncommutative_query(int u, int v, bool vertex, const F &f)
 
-パス u-v にクエリ`f`を適用する。非可換。
+パス u-v にクエリ`f`を適用する。非可換。vertexがtrueのとき、頂点に属性がある。vertexがfalseのとき、辺に属性がある。親-子間の辺属性は子のidxに持つ。
 
 ### subtree_query(int u, bool vertex, const F &f)
 
@@ -150,21 +152,22 @@ int main() {
         g[v].emplace_back(u);
     }
     lib::HeavyLightDecomposition hld(g);
-    segtree<S, op, e> seg1(n), seg2(n);
+    segtree<S, op, e> seg1(n) 
+    segtree<S, op_rev, e> seg2(n);
     auto set = [&](int u, S x) {
         int idx = hld.idx(u);
         seg1.set(idx, x);
-        seg2.set(n-1-idx, x);
+        seg2.set(idx, x);
     };
     S ans = e();
     auto f = [&](int l, int r) {
         if(l <= r) ans = op(ans, seg1.prod(l, r));
-        else ans = op(ans, seg2.prod(n-l, n-r)); 
+        else ans = op(ans, seg2.prod(r, l)); 
     };
     int u,v;
     std::cin >> u >> v;
     ans = e();
-    hld.path_noncommutative_query(u, v, f);
+    hld.path_noncommutative_query(u, v, true, f);
     std::cout << ans << '\n';
 }
 ```
