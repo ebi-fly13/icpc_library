@@ -30,10 +30,11 @@ data:
     }\n\nint isp(const vec &a, const vec &b, const vec &c) {\n    int cross_sgn =\
     \ sgn(cross(b - a, c - a));\n    if(cross_sgn == 0) {\n        if(sgn(dot(b -\
     \ a, c - a)) < 0) return -2;\n        if(sgn(dot(a - b, c - b)) < 0) return 2;\n\
-    \    }\n    return cross_sgn;\n}\n\nbool comp_for_argument_sort(const vec &lhs,\
-    \ const vec &rhs){\n    //if (abs(arg(lhs)-arg(rhs)) < eps) return false; // need\
-    \ ?\n    return arg(lhs) < arg(rhs);\n}\n\n} // namespace lib\n#line 5 \"geometry/convex_hull.hpp\"\
-    \n\nnamespace lib {\n\nvector<vec> convex_hull(vector<vec> a){\n    int n = a.size();\n\
+    \    }\n    return cross_sgn;\n}\n\nvec rot90(const vec &a) {\n    return {-a.imag(),\
+    \ a.real()};\n}\n\nbool comp_for_argument_sort(const vec &lhs, const vec &rhs){\n\
+    \    //if (abs(arg(lhs)-arg(rhs)) < eps) return false; // need ?\n    return arg(lhs)\
+    \ < arg(rhs);\n}\n\n} // namespace lib\n#line 5 \"geometry/convex_hull.hpp\"\n\
+    \nnamespace lib {\n\nvector<vec> convex_hull(vector<vec> a){\n    int n = a.size();\n\
     \    if (n <= 2) return a;\n    auto comp = [&](vec lhs, vec rhs){\n        if\
     \ (lhs.real() == rhs.real()) return lhs.imag() < rhs.imag();\n        return lhs.real()\
     \ < rhs.real();\n    };\n    sort(all(a),comp);\n    stack<int> uid, did;\n  \
@@ -78,7 +79,7 @@ data:
   isVerificationFile: false
   path: geometry/convex_hull.hpp
   requiredBy: []
-  timestamp: '2023-04-23 19:28:55+09:00'
+  timestamp: '2023-04-24 18:42:07+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: geometry/convex_hull.hpp

@@ -36,11 +36,12 @@ data:
     }\n\nint isp(const vec &a, const vec &b, const vec &c) {\n    int cross_sgn =\
     \ sgn(cross(b - a, c - a));\n    if(cross_sgn == 0) {\n        if(sgn(dot(b -\
     \ a, c - a)) < 0) return -2;\n        if(sgn(dot(a - b, c - b)) < 0) return 2;\n\
-    \    }\n    return cross_sgn;\n}\n\nbool comp_for_argument_sort(const vec &lhs,\
-    \ const vec &rhs){\n    //if (abs(arg(lhs)-arg(rhs)) < eps) return false; // need\
-    \ ?\n    return arg(lhs) < arg(rhs);\n}\n\n} // namespace lib\n#line 4 \"geometry/circle.hpp\"\
-    \n\r\nnamespace lib {\r\n\r\nstruct circle {\r\n    vec c;\r\n    ld r;\r\n};\r\
-    \n\r\nint intersection(const circle &c1, const circle &c2) {\r\n    ld d = abs(c1.c\
+    \    }\n    return cross_sgn;\n}\n\nvec rot90(const vec &a) {\n    return {-a.imag(),\
+    \ a.real()};\n}\n\nbool comp_for_argument_sort(const vec &lhs, const vec &rhs){\n\
+    \    //if (abs(arg(lhs)-arg(rhs)) < eps) return false; // need ?\n    return arg(lhs)\
+    \ < arg(rhs);\n}\n\n} // namespace lib\n#line 4 \"geometry/circle.hpp\"\n\r\n\
+    namespace lib {\r\n\r\nstruct circle {\r\n    vec c;\r\n    ld r;\r\n};\r\n\r\n\
+    int intersection(const circle &c1, const circle &c2) {\r\n    ld d = abs(c1.c\
     \ - c2.c);\r\n    ld r1 = c1.r;\r\n    ld r2 = c2.r;\r\n    if(r1 < r2) std::swap(r1,\
     \ r2);\r\n    if(sgn(d - (r1 + r2)) > 0) {\r\n        return 4;\r\n    }\r\n \
     \   else if(sgn(d - (r1 + r2) == 0)) {\r\n        return 3;\r\n    }\r\n    else\
@@ -68,7 +69,7 @@ data:
   isVerificationFile: false
   path: geometry/circle.hpp
   requiredBy: []
-  timestamp: '2023-04-24 18:34:18+09:00'
+  timestamp: '2023-04-24 18:42:07+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/geometry/Incircle_of_Triangle.test.cpp

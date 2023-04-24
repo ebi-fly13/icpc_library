@@ -51,17 +51,21 @@ data:
     }\n\nint isp(const vec &a, const vec &b, const vec &c) {\n    int cross_sgn =\
     \ sgn(cross(b - a, c - a));\n    if(cross_sgn == 0) {\n        if(sgn(dot(b -\
     \ a, c - a)) < 0) return -2;\n        if(sgn(dot(a - b, c - b)) < 0) return 2;\n\
-    \    }\n    return cross_sgn;\n}\n\nbool comp_for_argument_sort(const vec &lhs,\
-    \ const vec &rhs){\n    //if (abs(arg(lhs)-arg(rhs)) < eps) return false; // need\
-    \ ?\n    return arg(lhs) < arg(rhs);\n}\n\n} // namespace lib\n#line 4 \"geometry/line.hpp\"\
-    \n\nnamespace lib {\n\nstruct line {\n    vec a, b;\n};\n\nvec proj(const line\
-    \ &l, const vec &p) {\n    vec ab = l.b - l.a;\n    return l.a + ab * (dot(ab,\
-    \ p - l.a) / norm(ab));\n}\n\nvec refl(const line &l, const vec &p) {\n    return\
-    \ proj(l, p) * ld(2) - p;\n}\n\nint intersection(const line &a, const line &b)\
-    \ {\n    if(sgn(cross(a.b - a.a, b.a - b.b)) != 0) {\n        if(sgn(dot(a.b -\
-    \ a.a, b.a - b.b)) == 0) {\n            return 1;\n        }\n        return 0;\n\
-    \    }\n    else if(sgn(cross(a.b - a.a, b.a - a.a)) != 0) {\n        return 2;\n\
-    \    }\n    else {\n        return 3;\n    }\n}\n\n}\n"
+    \    }\n    return cross_sgn;\n}\n\nvec rot90(const vec &a) {\n    return {-a.imag(),\
+    \ a.real()};\n}\n\nbool comp_for_argument_sort(const vec &lhs, const vec &rhs){\n\
+    \    //if (abs(arg(lhs)-arg(rhs)) < eps) return false; // need ?\n    return arg(lhs)\
+    \ < arg(rhs);\n}\n\n} // namespace lib\n#line 4 \"geometry/line.hpp\"\n\nnamespace\
+    \ lib {\n\nstruct line {\n    vec a, b;\n};\n\nvec proj(const line &l, const vec\
+    \ &p) {\n    vec ab = l.b - l.a;\n    return l.a + ab * (dot(ab, p - l.a) / norm(ab));\n\
+    }\n\nvec refl(const line &l, const vec &p) {\n    return proj(l, p) * ld(2) -\
+    \ p;\n}\n\nint intersection(const line &a, const line &b) {\n    if(sgn(cross(a.b\
+    \ - a.a, b.a - b.b)) != 0) {\n        if(sgn(dot(a.b - a.a, b.a - b.b)) == 0)\
+    \ {\n            return 1;\n        }\n        return 0;\n    }\n    else if(sgn(cross(a.b\
+    \ - a.a, b.a - a.a)) != 0) {\n        return 2;\n    }\n    else {\n        return\
+    \ 3;\n    }\n}\n\nld distance(const line &a, const vec &p) {\n    return abs(cross(p\
+    \ - a.a, a.b - a.a) / abs(a.b - a.a));\n}\n\nvec cross_point(const line &a, const\
+    \ line &b) {\n    assert(intersection(a, b) < 2);\n    return a.a + (a.b - a.a)\
+    \ * cross(b.a - a.a, b.b - b.a) / cross(a.b - a.a, b.b - b.a);\n}\n\n}\n"
   code: "#pragma once\n\n#include \"../geometry/base_ld.hpp\"\n\nnamespace lib {\n\
     \nstruct line {\n    vec a, b;\n};\n\nvec proj(const line &l, const vec &p) {\n\
     \    vec ab = l.b - l.a;\n    return l.a + ab * (dot(ab, p - l.a) / norm(ab));\n\
@@ -70,7 +74,10 @@ data:
     \ - a.a, b.a - b.b)) != 0) {\n        if(sgn(dot(a.b - a.a, b.a - b.b)) == 0)\
     \ {\n            return 1;\n        }\n        return 0;\n    }\n    else if(sgn(cross(a.b\
     \ - a.a, b.a - a.a)) != 0) {\n        return 2;\n    }\n    else {\n        return\
-    \ 3;\n    }\n}\n\n}"
+    \ 3;\n    }\n}\n\nld distance(const line &a, const vec &p) {\n    return abs(cross(p\
+    \ - a.a, a.b - a.a) / abs(a.b - a.a));\n}\n\nvec cross_point(const line &a, const\
+    \ line &b) {\n    assert(intersection(a, b) < 2);\n    return a.a + (a.b - a.a)\
+    \ * cross(b.a - a.a, b.b - b.a) / cross(a.b - a.a, b.b - b.a);\n}\n\n}"
   dependsOn:
   - geometry/base_ld.hpp
   - template/template.hpp
@@ -78,7 +85,7 @@ data:
   path: geometry/line.hpp
   requiredBy:
   - geometry/segment.hpp
-  timestamp: '2023-04-23 19:45:21+09:00'
+  timestamp: '2023-04-24 18:42:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/geometry/Cross_Point.test.cpp

@@ -34,9 +34,10 @@ data:
     }\n\nint isp(const vec &a, const vec &b, const vec &c) {\n    int cross_sgn =\
     \ sgn(cross(b - a, c - a));\n    if(cross_sgn == 0) {\n        if(sgn(dot(b -\
     \ a, c - a)) < 0) return -2;\n        if(sgn(dot(a - b, c - b)) < 0) return 2;\n\
-    \    }\n    return cross_sgn;\n}\n\nbool comp_for_argument_sort(const vec &lhs,\
-    \ const vec &rhs){\n    //if (abs(arg(lhs)-arg(rhs)) < eps) return false; // need\
-    \ ?\n    return arg(lhs) < arg(rhs);\n}\n\n} // namespace lib\n#line 5 \"test/geometry/Counter_Clockwise.test.cpp\"\
+    \    }\n    return cross_sgn;\n}\n\nvec rot90(const vec &a) {\n    return {-a.imag(),\
+    \ a.real()};\n}\n\nbool comp_for_argument_sort(const vec &lhs, const vec &rhs){\n\
+    \    //if (abs(arg(lhs)-arg(rhs)) < eps) return false; // need ?\n    return arg(lhs)\
+    \ < arg(rhs);\n}\n\n} // namespace lib\n#line 5 \"test/geometry/Counter_Clockwise.test.cpp\"\
     \n\nusing namespace lib;\n\nint main() {\n    std::cout << std::fixed << std::setprecision(15);\n\
     \    long double x1,y1,x2,y2;\n    std::cin >> x1 >> y1 >> x2 >> y2;\n    vec\
     \ p0(x1, y1), p1(x2, y2);\n    int q;\n    std::cin >> q;\n    while(q--) {\n\
@@ -67,7 +68,7 @@ data:
   isVerificationFile: true
   path: test/geometry/Counter_Clockwise.test.cpp
   requiredBy: []
-  timestamp: '2023-04-23 19:45:21+09:00'
+  timestamp: '2023-04-24 18:42:07+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/geometry/Counter_Clockwise.test.cpp

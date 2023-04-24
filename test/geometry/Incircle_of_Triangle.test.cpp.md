@@ -39,22 +39,23 @@ data:
     \ vec &b, const vec &c) {\n    int cross_sgn = sgn(cross(b - a, c - a));\n   \
     \ if(cross_sgn == 0) {\n        if(sgn(dot(b - a, c - a)) < 0) return -2;\n  \
     \      if(sgn(dot(a - b, c - b)) < 0) return 2;\n    }\n    return cross_sgn;\n\
-    }\n\nbool comp_for_argument_sort(const vec &lhs, const vec &rhs){\n    //if (abs(arg(lhs)-arg(rhs))\
-    \ < eps) return false; // need ?\n    return arg(lhs) < arg(rhs);\n}\n\n} // namespace\
-    \ lib\n#line 2 \"geometry/circle.hpp\"\n\r\n#line 4 \"geometry/circle.hpp\"\n\r\
-    \nnamespace lib {\r\n\r\nstruct circle {\r\n    vec c;\r\n    ld r;\r\n};\r\n\r\
-    \nint intersection(const circle &c1, const circle &c2) {\r\n    ld d = abs(c1.c\
-    \ - c2.c);\r\n    ld r1 = c1.r;\r\n    ld r2 = c2.r;\r\n    if(r1 < r2) std::swap(r1,\
-    \ r2);\r\n    if(sgn(d - (r1 + r2)) > 0) {\r\n        return 4;\r\n    }\r\n \
-    \   else if(sgn(d - (r1 + r2) == 0)) {\r\n        return 3;\r\n    }\r\n    else\
-    \ if(sgn(d - r1 + r2) > 0) {\r\n        return 2;\r\n    }\r\n    else if(sgn(d\
-    \ - r1 + r2) == 0) {\r\n        return 1;\r\n    }\r\n    else return 0;\r\n}\r\
-    \n\r\ncircle incircle_of_triangle(const vec &a, const vec &b, const vec &c) {\r\
-    \n    ld A = abs(b - c), B = abs(c - a), C = abs(a - b);\r\n    vec in = A * a\
-    \ + B * b + C * c;\r\n    in /= A + B + C;\r\n    ld r = abs(cross(in - a, b -\
-    \ a) / abs(b - a));\r\n    return {in, r};\r\n}\r\n\r\n}\n#line 7 \"test/geometry/Incircle_of_Triangle.test.cpp\"\
-    \n\r\nusing namespace lib;\r\n\r\nint main() {\r\n    std::cout << std::fixed\
-    \ << std::setprecision(15);\r\n    auto input = [](vec &a) {\r\n        ld x,y;\r\
+    }\n\nvec rot90(const vec &a) {\n    return {-a.imag(), a.real()};\n}\n\nbool comp_for_argument_sort(const\
+    \ vec &lhs, const vec &rhs){\n    //if (abs(arg(lhs)-arg(rhs)) < eps) return false;\
+    \ // need ?\n    return arg(lhs) < arg(rhs);\n}\n\n} // namespace lib\n#line 2\
+    \ \"geometry/circle.hpp\"\n\r\n#line 4 \"geometry/circle.hpp\"\n\r\nnamespace\
+    \ lib {\r\n\r\nstruct circle {\r\n    vec c;\r\n    ld r;\r\n};\r\n\r\nint intersection(const\
+    \ circle &c1, const circle &c2) {\r\n    ld d = abs(c1.c - c2.c);\r\n    ld r1\
+    \ = c1.r;\r\n    ld r2 = c2.r;\r\n    if(r1 < r2) std::swap(r1, r2);\r\n    if(sgn(d\
+    \ - (r1 + r2)) > 0) {\r\n        return 4;\r\n    }\r\n    else if(sgn(d - (r1\
+    \ + r2) == 0)) {\r\n        return 3;\r\n    }\r\n    else if(sgn(d - r1 + r2)\
+    \ > 0) {\r\n        return 2;\r\n    }\r\n    else if(sgn(d - r1 + r2) == 0) {\r\
+    \n        return 1;\r\n    }\r\n    else return 0;\r\n}\r\n\r\ncircle incircle_of_triangle(const\
+    \ vec &a, const vec &b, const vec &c) {\r\n    ld A = abs(b - c), B = abs(c -\
+    \ a), C = abs(a - b);\r\n    vec in = A * a + B * b + C * c;\r\n    in /= A +\
+    \ B + C;\r\n    ld r = abs(cross(in - a, b - a) / abs(b - a));\r\n    return {in,\
+    \ r};\r\n}\r\n\r\n}\n#line 7 \"test/geometry/Incircle_of_Triangle.test.cpp\"\n\
+    \r\nusing namespace lib;\r\n\r\nint main() {\r\n    std::cout << std::fixed <<\
+    \ std::setprecision(15);\r\n    auto input = [](vec &a) {\r\n        ld x,y;\r\
     \n        std::cin >> x >> y;\r\n        a = {x, y};\r\n    };\r\n    vec a,b,c;\r\
     \n    input(a);\r\n    input(b);\r\n    input(c);\r\n    circle in = incircle_of_triangle(a,\
     \ b, c);\r\n    std::cout << in.c.real() << \" \" << in.c.imag() << \" \" << in.r\
@@ -75,7 +76,7 @@ data:
   isVerificationFile: true
   path: test/geometry/Incircle_of_Triangle.test.cpp
   requiredBy: []
-  timestamp: '2023-04-24 18:34:18+09:00'
+  timestamp: '2023-04-24 18:42:07+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/geometry/Incircle_of_Triangle.test.cpp
