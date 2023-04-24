@@ -5,6 +5,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: data_structure/BinaryTrie.hpp
     title: BinaryTrie
+  - icon: ':warning:'
+    path: data_structure/dsu.hpp
+    title: data_structure/dsu.hpp
   - icon: ':heavy_check_mark:'
     path: data_structure/segtree.hpp
     title: segtree
@@ -125,6 +128,7 @@ data:
   - math/eratosthenes_sieve.hpp
   - data_structure/segtree.hpp
   - data_structure/BinaryTrie.hpp
+  - data_structure/dsu.hpp
   timestamp: '2023-04-23 15:49:48+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
