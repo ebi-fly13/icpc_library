@@ -25,9 +25,9 @@ documentation_of: //tree/HeavyLightDecomposition.hpp
 
 頂点 u, v の距離を返す。
 
-### path_noncommutative_query(int u, int v, const F &f)
+### path_noncommutative_query(int u, int v, bool vertex, const F &f)
 
-パス u-v にクエリ`f`を適用する。非可換。
+パス u-v にクエリ`f`を適用する。非可換。vertexがtrueのとき、頂点に属性がある。vertexがfalseのとき、辺に属性がある。親-子間の辺属性は子のidxに持つ。
 
 ### subtree_query(int u, bool vertex, const F &f)
 
@@ -47,21 +47,22 @@ int main() {
         g[v].emplace_back(u);
     }
     lib::HeavyLightDecomposition hld(g);
-    segtree<S, op, e> seg1(n), seg2(n);
+    segtree<S, op, e> seg1(n) 
+    segtree<S, op_rev, e> seg2(n);
     auto set = [&](int u, S x) {
         int idx = hld.idx(u);
         seg1.set(idx, x);
-        seg2.set(n-1-idx, x);
+        seg2.set(idx, x);
     };
     S ans = e();
     auto f = [&](int l, int r) {
         if(l <= r) ans = op(ans, seg1.prod(l, r));
-        else ans = op(ans, seg2.prod(n-l, n-r)); 
+        else ans = op(ans, seg2.prod(r, l)); 
     };
     int u,v;
     std::cin >> u >> v;
     ans = e();
-    hld.path_noncommutative_query(u, v, f);
+    hld.path_noncommutative_query(u, v, true, f);
     std::cout << ans << '\n';
 }
 ```
