@@ -9,12 +9,15 @@ data:
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/geometry/Incircle_of_Triangle.test.cpp
+    title: test/geometry/Incircle_of_Triangle.test.cpp
   - icon: ':x:'
     path: test/geometry/Intersection_Circle.test.cpp
     title: test/geometry/Intersection_Circle.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"geometry/circle.hpp\"\n\r\n#line 2 \"geometry/base_ld.hpp\"\
@@ -43,7 +46,10 @@ data:
     \   else if(sgn(d - (r1 + r2) == 0)) {\r\n        return 3;\r\n    }\r\n    else\
     \ if(sgn(d - r1 + r2) > 0) {\r\n        return 2;\r\n    }\r\n    else if(sgn(d\
     \ - r1 + r2) == 0) {\r\n        return 1;\r\n    }\r\n    else return 0;\r\n}\r\
-    \n\r\n}\n"
+    \n\r\ncircle incircle_of_triangle(const vec &a, const vec &b, const vec &c) {\r\
+    \n    ld A = abs(b - c), B = abs(c - a), C = abs(a - b);\r\n    vec in = A * a\
+    \ + B * b + C * c;\r\n    in /= A + B + C;\r\n    ld r = abs(cross(in - a, b -\
+    \ a) / abs(b - a));\r\n    return {in, r};\r\n}\r\n\r\n}\n"
   code: "#pragma once\r\n\r\n#include \"../geometry/base_ld.hpp\"\r\n\r\nnamespace\
     \ lib {\r\n\r\nstruct circle {\r\n    vec c;\r\n    ld r;\r\n};\r\n\r\nint intersection(const\
     \ circle &c1, const circle &c2) {\r\n    ld d = abs(c1.c - c2.c);\r\n    ld r1\
@@ -51,16 +57,21 @@ data:
     \ - (r1 + r2)) > 0) {\r\n        return 4;\r\n    }\r\n    else if(sgn(d - (r1\
     \ + r2) == 0)) {\r\n        return 3;\r\n    }\r\n    else if(sgn(d - r1 + r2)\
     \ > 0) {\r\n        return 2;\r\n    }\r\n    else if(sgn(d - r1 + r2) == 0) {\r\
-    \n        return 1;\r\n    }\r\n    else return 0;\r\n}\r\n\r\n}"
+    \n        return 1;\r\n    }\r\n    else return 0;\r\n}\r\n\r\ncircle incircle_of_triangle(const\
+    \ vec &a, const vec &b, const vec &c) {\r\n    ld A = abs(b - c), B = abs(c -\
+    \ a), C = abs(a - b);\r\n    vec in = A * a + B * b + C * c;\r\n    in /= A +\
+    \ B + C;\r\n    ld r = abs(cross(in - a, b - a) / abs(b - a));\r\n    return {in,\
+    \ r};\r\n}\r\n\r\n}"
   dependsOn:
   - geometry/base_ld.hpp
   - template/template.hpp
   isVerificationFile: false
   path: geometry/circle.hpp
   requiredBy: []
-  timestamp: '2023-04-24 18:14:52+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2023-04-24 18:34:18+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - test/geometry/Incircle_of_Triangle.test.cpp
   - test/geometry/Intersection_Circle.test.cpp
 documentation_of: geometry/circle.hpp
 layout: document
@@ -80,3 +91,7 @@ title: circle
 - $2$ 本: 交わる
 - $1$ 本: 内接している
 - $0$ 本: 一方がもう一方を内包する
+
+### incircle_of_triangle(vec a, vec b, vec c)
+
+三角形abcの内接円を返す。

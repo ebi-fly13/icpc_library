@@ -5,7 +5,7 @@ data:
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':question:'
     path: geometry/circle.hpp
     title: circle
   - icon: ':warning:'
@@ -27,6 +27,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/geometry/Distance.test.cpp
     title: test/geometry/Distance.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/geometry/Incircle_of_Triangle.test.cpp
+    title: test/geometry/Incircle_of_Triangle.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/geometry/Intersection.test.cpp
     title: test/geometry/Intersection.test.cpp
@@ -92,6 +95,7 @@ data:
   - test/geometry/Parallel_Orthogonal.test.cpp
   - test/geometry/Counter_Clockwise.test.cpp
   - test/geometry/Distance.test.cpp
+  - test/geometry/Incircle_of_Triangle.test.cpp
   - test/geometry/Intersection_Circle.test.cpp
   - test/geometry/Projection.test.cpp
   - test/geometry/Reflection.test.cpp

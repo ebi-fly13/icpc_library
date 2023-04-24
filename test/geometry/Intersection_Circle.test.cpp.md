@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: geometry/base_ld.hpp
     title: base_ld
-  - icon: ':x:'
+  - icon: ':question:'
     path: geometry/circle.hpp
     title: circle
   - icon: ':question:'
@@ -48,11 +48,14 @@ data:
     \   else if(sgn(d - (r1 + r2) == 0)) {\r\n        return 3;\r\n    }\r\n    else\
     \ if(sgn(d - r1 + r2) > 0) {\r\n        return 2;\r\n    }\r\n    else if(sgn(d\
     \ - r1 + r2) == 0) {\r\n        return 1;\r\n    }\r\n    else return 0;\r\n}\r\
-    \n\r\n}\n#line 4 \"test/geometry/Intersection_Circle.test.cpp\"\n\r\nusing namespace\
-    \ lib;\r\n\r\nint main() {\r\n    ld c1x, c1y, c1r;\r\n    ld c2x, c2y, c2r;\r\
-    \n    std::cin >> c1x >> c1y >> c1r;\r\n    std::cin >> c2x >> c2y >> c2r;\r\n\
-    \    circle c1 = {{c1x, c1y}, c1r};\r\n    circle c2 = {{c2x, c2y}, c2r};\r\n\
-    \    std::cout << intersection(c1, c2) << '\\n';\r\n}\n"
+    \n\r\ncircle incircle_of_triangle(const vec &a, const vec &b, const vec &c) {\r\
+    \n    ld A = abs(b - c), B = abs(c - a), C = abs(a - b);\r\n    vec in = A * a\
+    \ + B * b + C * c;\r\n    in /= A + B + C;\r\n    ld r = abs(cross(in - a, b -\
+    \ a) / abs(b - a));\r\n    return {in, r};\r\n}\r\n\r\n}\n#line 4 \"test/geometry/Intersection_Circle.test.cpp\"\
+    \n\r\nusing namespace lib;\r\n\r\nint main() {\r\n    ld c1x, c1y, c1r;\r\n  \
+    \  ld c2x, c2y, c2r;\r\n    std::cin >> c1x >> c1y >> c1r;\r\n    std::cin >>\
+    \ c2x >> c2y >> c2r;\r\n    circle c1 = {{c1x, c1y}, c1r};\r\n    circle c2 =\
+    \ {{c2x, c2y}, c2r};\r\n    std::cout << intersection(c1, c2) << '\\n';\r\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_B\"\
     \r\n\r\n#include \"../../geometry/circle.hpp\"\r\n\r\nusing namespace lib;\r\n\
     \r\nint main() {\r\n    ld c1x, c1y, c1r;\r\n    ld c2x, c2y, c2r;\r\n    std::cin\
@@ -66,7 +69,7 @@ data:
   isVerificationFile: true
   path: test/geometry/Intersection_Circle.test.cpp
   requiredBy: []
-  timestamp: '2023-04-24 18:14:52+09:00'
+  timestamp: '2023-04-24 18:34:18+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/geometry/Intersection_Circle.test.cpp
