@@ -5,11 +5,13 @@ documentation_of: //string/RollingHash.hpp
 
 ## 説明
 
+以下、文字列の長さを $N$ とする。
+
 ### コンストラクタ
 
 `roriha (string s)`
 
-`s` から $\bmod (2^{61}-1)$ のローリングハッシュを構築します。計算量は $\Theta(|s|)$ です。
+`s` から $\bmod (2^{61}-1)$ のローリングハッシュを構築します。計算量は $\Theta(N)$ です。
 
 ### get 
 
@@ -21,7 +23,7 @@ documentation_of: //string/RollingHash.hpp
 
 `ull get_hash(string s)`
 
-`s` 全体のハッシュを取得します。ローリングハッシュの構築を行う必要がない場合に使います。計算量は $\Theta(|s|)$ です。
+`s` 全体のハッシュを取得します。ローリングハッシュの構築を行う必要がない場合に使います。計算量は $\Theta(N)$ です。
 
 ### concat
 
