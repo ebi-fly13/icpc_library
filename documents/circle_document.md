@@ -16,3 +16,7 @@ documentation_of: //geometry/circle.hpp
 - $2$ 本: 交わる
 - $1$ 本: 内接している
 - $0$ 本: 一方がもう一方を内包する
+
+### incircle_of_triangle(vec a, vec b, vec c)
+
+三角形abcの内接円を返す。

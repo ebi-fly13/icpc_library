@@ -29,4 +29,12 @@ int intersection(const circle &c1, const circle &c2) {
     else return 0;
 }
 
+circle incircle_of_triangle(const vec &a, const vec &b, const vec &c) {
+    ld A = abs(b - c), B = abs(c - a), C = abs(a - b);
+    vec in = A * a + B * b + C * c;
+    in /= A + B + C;
+    ld r = abs(cross(in - a, b - a) / abs(b - a));
+    return {in, r};
+}
+
 }
