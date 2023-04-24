@@ -123,3 +123,11 @@ title: line
 - 垂直 $1$
 - 平行 $2$
 - 同一直線 $3$
+
+### distance(line a, vec p)
+
+直線 $a$ と点 $p$ の距離を返す。
+
+### cross_point(line a, line b)
+
+直線 $a$, $b$ の交点を返す。

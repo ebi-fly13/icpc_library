@@ -134,6 +134,10 @@ $x$ の符号を返す。epsで評価する。
 
 となる。
 
+### rot90(vec a)
+
+点 $a$ を90度回転をする。
+
 ### comp_for_argument_sort(vec lhs, vec rhs)
 
 偏角ソートの比較関数。
