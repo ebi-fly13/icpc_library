@@ -119,11 +119,11 @@ title: segtree
 `segtree<S, op, e>(int n)`
 `segtree<S, op, e>(const std::vector<S> &v)`
 
--   型 ```S```
--   二項演算 ```S op(S, S)```
--   単位元 ```S e()```
+-   型 `S`
+-   二項演算 `S op(S, S)`
+-   単位元 `S e()`
 
-に対するセグ木を構築する。要素数を渡す場合、std::vector<S>(n, e())に対してセグ木を構築する。Range Sumの場合次のようになる。計算量$O(n)$
+に対するセグ木を構築する。要素数を渡す場合、std::vector<S>(n, e())に対してセグ木を構築する。Range Sumの場合次のようになる。計算量 $O(n)$
 
 ```cpp
 int op(int a, int b) { 
