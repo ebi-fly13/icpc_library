@@ -8,12 +8,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: data_structure/segtree.hpp
     title: segtree
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: geometry/base_ld.hpp
     title: base_ld
   - icon: ':warning:'
     path: geometry/base_ll.hpp
     title: geometry/base_ll.hpp
+  - icon: ':x:'
+    path: geometry/circle.hpp
+    title: circle
   - icon: ':warning:'
     path: geometry/convex_hull.hpp
     title: geometry/convex_hull.hpp
@@ -60,6 +63,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/geometry/Intersection.test.cpp
     title: test/geometry/Intersection.test.cpp
+  - icon: ':x:'
+    path: test/geometry/Intersection_Circle.test.cpp
+    title: test/geometry/Intersection_Circle.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/geometry/Parallel_Orthogonal.test.cpp
     title: test/geometry/Parallel_Orthogonal.test.cpp
@@ -78,9 +84,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/tree/Lowest_Common_Ancestor.test.cpp
     title: test/tree/Lowest_Common_Ancestor.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n\n#include<bits/stdc++.h>\n\n#define\
@@ -108,6 +114,7 @@ data:
   - tree/HeavyLightDecomposition.hpp
   - tree/LowestCommonAncestor.hpp
   - geometry/line.hpp
+  - geometry/circle.hpp
   - geometry/segment.hpp
   - geometry/base_ll.hpp
   - geometry/convex_hull.hpp
@@ -116,7 +123,7 @@ data:
   - data_structure/segtree.hpp
   - data_structure/BinaryTrie.hpp
   timestamp: '2023-04-23 15:49:48+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/string/aoj_2444.test.cpp
   - test/tree/Lowest_Common_Ancestor.test.cpp
@@ -124,6 +131,7 @@ data:
   - test/geometry/Parallel_Orthogonal.test.cpp
   - test/geometry/Counter_Clockwise.test.cpp
   - test/geometry/Distance.test.cpp
+  - test/geometry/Intersection_Circle.test.cpp
   - test/geometry/Projection.test.cpp
   - test/geometry/Reflection.test.cpp
   - test/geometry/Intersection.test.cpp

@@ -1,10 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy:
+  - icon: ':x:'
+    path: geometry/circle.hpp
+    title: circle
   - icon: ':warning:'
     path: geometry/convex_hull.hpp
     title: geometry/convex_hull.hpp
@@ -27,6 +30,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/geometry/Intersection.test.cpp
     title: test/geometry/Intersection.test.cpp
+  - icon: ':x:'
+    path: test/geometry/Intersection_Circle.test.cpp
+    title: test/geometry/Intersection_Circle.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/geometry/Parallel_Orthogonal.test.cpp
     title: test/geometry/Parallel_Orthogonal.test.cpp
@@ -36,9 +42,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/geometry/Reflection.test.cpp
     title: test/geometry/Reflection.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"geometry/base_ld.hpp\"\n\n#line 2 \"template/template.hpp\"\
@@ -76,15 +82,17 @@ data:
   path: geometry/base_ld.hpp
   requiredBy:
   - geometry/line.hpp
+  - geometry/circle.hpp
   - geometry/segment.hpp
   - geometry/convex_hull.hpp
   timestamp: '2023-04-23 19:28:55+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/geometry/Cross_Point.test.cpp
   - test/geometry/Parallel_Orthogonal.test.cpp
   - test/geometry/Counter_Clockwise.test.cpp
   - test/geometry/Distance.test.cpp
+  - test/geometry/Intersection_Circle.test.cpp
   - test/geometry/Projection.test.cpp
   - test/geometry/Reflection.test.cpp
   - test/geometry/Intersection.test.cpp
