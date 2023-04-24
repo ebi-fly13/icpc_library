@@ -32,4 +32,13 @@ int intersection(const line &a, const line &b) {
     }
 }
 
+ld distance(const line &a, const vec &p) {
+    return abs(cross(p - a.a, a.b - a.a) / abs(a.b - a.a));
+}
+
+vec cross_point(const line &a, const line &b) {
+    assert(intersection(a, b) < 2);
+    return a.a + (a.b - a.a) * cross(b.a - a.a, b.b - b.a) / cross(a.b - a.a, b.b - b.a);
+}
+
 }

@@ -28,6 +28,10 @@ int isp(const vec &a, const vec &b, const vec &c) {
     return cross_sgn;
 }
 
+vec rot90(const vec &a) {
+    return {-a.imag(), a.real()};
+}
+
 bool comp_for_argument_sort(const vec &lhs, const vec &rhs){
     //if (abs(arg(lhs)-arg(rhs)) < eps) return false; // need ?
     return arg(lhs) < arg(rhs);
