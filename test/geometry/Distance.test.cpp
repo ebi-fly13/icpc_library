@@ -22,6 +22,6 @@ int main() {
         input(p3);
         segment s1 = {p0, p1};
         segment s2 = {p2, p3};
-        std::cout << distance(s1, s2) << '\n';
+        std::cout << dist(s1, s2) << '\n';
     }
 }
