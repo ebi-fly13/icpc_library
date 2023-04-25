@@ -20,3 +20,12 @@ documentation_of: //geometry/circle.hpp
 ### incircle_of_triangle(vec a, vec b, vec c)
 
 三角形abcの内接円を返す。
+
+### circumscribed_circle_of_triangle(vec a, vec b, vec c)
+
+depends on line.hpp (cross_point)
+三角形abcの外接円を返す。
+
+### cross_point(circle c, line l)
+
+円 $c$ と直線 $l$ の交点をvectorに格納して返す。

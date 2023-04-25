@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../geometry/base_ld.hpp"
+#include "../geometry/line.hpp"
 
 namespace lib {
 
@@ -35,6 +36,27 @@ circle incircle_of_triangle(const vec &a, const vec &b, const vec &c) {
     in /= A + B + C;
     ld r = abs(cross(in - a, b - a) / abs(b - a));
     return {in, r};
+}
+
+circle circumscribed_circle_of_triangle(const vec &a, const vec &b, const vec &c) {
+    line p = {(a + b)/ld(2.0), (a + b)/ld(2.0)+rot90(b - a)};
+    line q = {(b + c)/ld(2.0), (b + c)/ld(2.0)+rot90(c - b)};
+    vec cross = cross_point(p, q);
+    return {cross, abs(a-cross)};
+}
+
+vector<vec> cross_point(const circle &c, const line &l) {
+    vector<vec> ps;
+    ld d = distance(l, c.c);
+    if(sgn(d - c.r) == 0) ps.emplace_back(proj(l, c.c));
+    else if(sgn(d - c.r) < 0) {
+        vec p = proj(l, c.c);
+        vec v = l.b - l.a;
+        v *= sqrt(max(c.r*c.r - d * d,  ld(0))) / abs(v);
+        ps.emplace_back(p + v);
+        ps.emplace_back(p - v);
+    }
+    return ps;
 }
 
 }
