@@ -32,6 +32,9 @@ data:
   - icon: ':warning:'
     path: graph/fordfulkerson.hpp
     title: graph/fordfulkerson.hpp
+  - icon: ':warning:'
+    path: graph/mf_graph.hpp
+    title: graph/mf_graph.hpp
   - icon: ':heavy_check_mark:'
     path: math/eratosthenes_sieve.hpp
     title: eratosthenes sieve
@@ -132,6 +135,7 @@ data:
   requiredBy:
   - string/parsing_template.hpp
   - string/RollingHash.hpp
+  - graph/mf_graph.hpp
   - graph/fordfulkerson.hpp
   - tree/HeavyLightDecomposition.hpp
   - tree/LowestCommonAncestor.hpp
