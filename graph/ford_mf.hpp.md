@@ -19,11 +19,11 @@ data:
     \    a = b;\n    return true;\n}\ntemplate<typename T> bool chmax(T &a, const\
     \ T &b){\n    if (a >= b) return false;\n    a = b;\n    return true;\n}\n\nnamespace\
     \ lib{\n\nusing namespace std;\n\n} // namespace lib;\n\n//using namespace lib;\n\
-    #line 3 \"data_structure/ford_mf.hpp\"\n\nnamespace lib{\nusing namespace std;\n\
-    \nstruct ford_mf{\n\tstruct edge{int to, cap, rev;};\n\tint n;\n\tvector<int>\
-    \ a;\n\tvector<vector<edge>> g;\n\tvector<bool> used;\n\n\tford_mf(int ni){\n\t\
-    \tn = ni;\n\t\ta.resize(ni);\n\t\tg.resize(ni);\n\t\tused.resize(ni);\n\t}\n\n\
-    \tvoid add_edge(int from, int to, int cap){\n\t\tg[from].push_back((edge){to,cap,(int)g[to].size()});\n\
+    #line 3 \"graph/ford_mf.hpp\"\n\nnamespace lib{\nusing namespace std;\n\nstruct\
+    \ ford_mf{\n\tstruct edge{int to, cap, rev;};\n\tint n;\n\tvector<int> a;\n\t\
+    vector<vector<edge>> g;\n\tvector<bool> used;\n\n\tford_mf(int ni){\n\t\tn = ni;\n\
+    \t\ta.resize(ni);\n\t\tg.resize(ni);\n\t\tused.resize(ni);\n\t}\n\n\tvoid add_edge(int\
+    \ from, int to, int cap){\n\t\tg[from].push_back((edge){to,cap,(int)g[to].size()});\n\
     \t\tg[to].push_back((edge){from,0,(int)g[from].size()-1});\n\t}\n\n\tint dfs(int\
     \ v,int t,int f){\n\t\tif (v==t) return f;\n\t\tused[v] = true;\n\t\tfor(edge\
     \ &e: g[v]){\n\t\t\tif (!used[e.to] && e.cap>0){\n\t\t\t\tint d = dfs(e.to, t,\
@@ -48,15 +48,15 @@ data:
   dependsOn:
   - template/template.hpp
   isVerificationFile: false
-  path: data_structure/ford_mf.hpp
+  path: graph/ford_mf.hpp
   requiredBy: []
-  timestamp: '2023-04-25 22:24:13+09:00'
+  timestamp: '2023-04-25 23:17:22+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: data_structure/ford_mf.hpp
+documentation_of: graph/ford_mf.hpp
 layout: document
 redirect_from:
-- /library/data_structure/ford_mf.hpp
-- /library/data_structure/ford_mf.hpp.html
-title: data_structure/ford_mf.hpp
+- /library/graph/ford_mf.hpp
+- /library/graph/ford_mf.hpp.html
+title: graph/ford_mf.hpp
 ---

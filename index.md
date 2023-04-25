@@ -9,9 +9,6 @@ data:
     - icon: ':warning:'
       path: data_structure/dsu.hpp
       title: data_structure/dsu.hpp
-    - icon: ':warning:'
-      path: data_structure/ford_mf.hpp
-      title: data_structure/ford_mf.hpp
     - icon: ':heavy_check_mark:'
       path: data_structure/segtree.hpp
       title: segtree
@@ -35,6 +32,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: geometry/segment.hpp
       title: segment
+  - name: graph
+    pages:
+    - icon: ':warning:'
+      path: graph/ford_mf.hpp
+      title: graph/ford_mf.hpp
   - name: math
     pages:
     - icon: ':heavy_check_mark:'

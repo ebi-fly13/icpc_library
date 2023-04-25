@@ -8,9 +8,6 @@ data:
   - icon: ':warning:'
     path: data_structure/dsu.hpp
     title: data_structure/dsu.hpp
-  - icon: ':warning:'
-    path: data_structure/ford_mf.hpp
-    title: data_structure/ford_mf.hpp
   - icon: ':heavy_check_mark:'
     path: data_structure/segtree.hpp
     title: segtree
@@ -32,6 +29,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: geometry/segment.hpp
     title: segment
+  - icon: ':warning:'
+    path: graph/ford_mf.hpp
+    title: graph/ford_mf.hpp
   - icon: ':heavy_check_mark:'
     path: math/eratosthenes_sieve.hpp
     title: eratosthenes sieve
@@ -132,6 +132,7 @@ data:
   requiredBy:
   - string/parsing_template.hpp
   - string/RollingHash.hpp
+  - graph/ford_mf.hpp
   - tree/HeavyLightDecomposition.hpp
   - tree/LowestCommonAncestor.hpp
   - geometry/line.hpp
@@ -143,7 +144,6 @@ data:
   - math/eratosthenes_sieve.hpp
   - math/gauss_jordan.hpp
   - data_structure/segtree.hpp
-  - data_structure/ford_mf.hpp
   - data_structure/BinaryTrie.hpp
   - data_structure/dsu.hpp
   timestamp: '2023-04-23 15:49:48+09:00'
