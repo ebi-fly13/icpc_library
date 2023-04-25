@@ -11,7 +11,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: data_structure/segtree.hpp
     title: segtree
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: geometry/base_ld.hpp
     title: base_ld
   - icon: ':warning:'
@@ -23,10 +23,10 @@ data:
   - icon: ':warning:'
     path: geometry/convex_hull.hpp
     title: geometry/convex_hull.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: geometry/line.hpp
     title: line
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: geometry/segment.hpp
     title: segment
   - icon: ':warning:'
@@ -75,7 +75,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/geometry/Cross_Points_of_Circles.test.cpp
     title: test/geometry/Cross_Points_of_Circles.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/geometry/Distance.test.cpp
     title: test/geometry/Distance.test.cpp
   - icon: ':heavy_check_mark:'
@@ -105,9 +105,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/tree/Lowest_Common_Ancestor.test.cpp
     title: test/tree/Lowest_Common_Ancestor.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n\n#include<bits/stdc++.h>\n\n#define\
@@ -147,7 +147,7 @@ data:
   - data_structure/BinaryTrie.hpp
   - data_structure/dsu.hpp
   timestamp: '2023-04-23 15:49:48+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/string/aoj_2444.test.cpp
   - test/tree/Lowest_Common_Ancestor.test.cpp

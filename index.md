@@ -14,7 +14,7 @@ data:
       title: segtree
   - name: geometry
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: geometry/base_ld.hpp
       title: base_ld
     - icon: ':warning:'
@@ -26,10 +26,10 @@ data:
     - icon: ':warning:'
       path: geometry/convex_hull.hpp
       title: geometry/convex_hull.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: geometry/line.hpp
       title: line
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: geometry/segment.hpp
       title: segment
   - name: graph
@@ -55,7 +55,7 @@ data:
       title: string/parsing_template.hpp
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: template/template.hpp
   - name: tree
@@ -95,7 +95,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/geometry/Cross_Points_of_Circles.test.cpp
       title: test/geometry/Cross_Points_of_Circles.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/geometry/Distance.test.cpp
       title: test/geometry/Distance.test.cpp
     - icon: ':heavy_check_mark:'

@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: geometry/base_ld.hpp
     title: base_ld
   - icon: ':heavy_check_mark:'
     path: geometry/circle.hpp
     title: circle
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: geometry/line.hpp
     title: line
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
@@ -54,9 +54,9 @@ data:
     \    if(sgn(dot(a.b - a.a, b.a - b.b)) == 0) {\n            return 1;\n      \
     \  }\n        return 0;\n    }\n    else if(sgn(cross(a.b - a.a, b.a - a.a)) !=\
     \ 0) {\n        return 2;\n    }\n    else {\n        return 3;\n    }\n}\n\n\
-    ld distance(const line &a, const vec &p) {\n    return abs(cross(p - a.a, a.b\
-    \ - a.a) / abs(a.b - a.a));\n}\n\nvec cross_point(const line &a, const line &b)\
-    \ {\n    assert(intersection(a, b) < 2);\n    return a.a + (a.b - a.a) * cross(b.a\
+    ld dist(const line &a, const vec &p) {\n    return abs(cross(p - a.a, a.b - a.a)\
+    \ / abs(a.b - a.a));\n}\n\nvec cross_point(const line &a, const line &b) {\n \
+    \   assert(intersection(a, b) < 2);\n    return a.a + (a.b - a.a) * cross(b.a\
     \ - a.a, b.b - b.a) / cross(a.b - a.a, b.b - b.a);\n}\n\n}\n#line 5 \"geometry/circle.hpp\"\
     \n\r\nnamespace lib {\r\n\r\nstruct circle {\r\n    vec c;\r\n    ld r;\r\n};\r\
     \n\r\nint intersection(const circle &c1, const circle &c2) {\r\n    ld d = abs(c1.c\
@@ -73,7 +73,7 @@ data:
     \ b)/ld(2.0)+rot90(b - a)};\r\n    line q = {(b + c)/ld(2.0), (b + c)/ld(2.0)+rot90(c\
     \ - b)};\r\n    vec cross = cross_point(p, q);\r\n    return {cross, abs(a-cross)};\r\
     \n}\r\n\r\nvector<vec> cross_point(const circle &c, const line &l) {\r\n    vector<vec>\
-    \ ps;\r\n    ld d = distance(l, c.c);\r\n    if(sgn(d - c.r) == 0) ps.emplace_back(proj(l,\
+    \ ps;\r\n    ld d = dist(l, c.c);\r\n    if(sgn(d - c.r) == 0) ps.emplace_back(proj(l,\
     \ c.c));\r\n    else if(sgn(d - c.r) < 0) {\r\n        vec p = proj(l, c.c);\r\
     \n        vec v = l.b - l.a;\r\n        v *= sqrt(max(c.r*c.r - d * d,  ld(0)))\
     \ / abs(v);\r\n        ps.emplace_back(p + v);\r\n        ps.emplace_back(p -\
@@ -108,7 +108,7 @@ data:
   isVerificationFile: true
   path: test/geometry/Circumscribed_Circle_of_Triangle.test.cpp
   requiredBy: []
-  timestamp: '2023-04-25 15:39:08+09:00'
+  timestamp: '2023-04-26 00:57:27+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/geometry/Circumscribed_Circle_of_Triangle.test.cpp

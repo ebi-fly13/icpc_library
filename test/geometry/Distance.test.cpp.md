@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: geometry/base_ld.hpp
     title: base_ld
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: geometry/line.hpp
     title: line
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: geometry/segment.hpp
     title: segment
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     ERROR: '0.0000001'
@@ -53,9 +53,9 @@ data:
     \    if(sgn(dot(a.b - a.a, b.a - b.b)) == 0) {\n            return 1;\n      \
     \  }\n        return 0;\n    }\n    else if(sgn(cross(a.b - a.a, b.a - a.a)) !=\
     \ 0) {\n        return 2;\n    }\n    else {\n        return 3;\n    }\n}\n\n\
-    ld distance(const line &a, const vec &p) {\n    return abs(cross(p - a.a, a.b\
-    \ - a.a) / abs(a.b - a.a));\n}\n\nvec cross_point(const line &a, const line &b)\
-    \ {\n    assert(intersection(a, b) < 2);\n    return a.a + (a.b - a.a) * cross(b.a\
+    ld dist(const line &a, const vec &p) {\n    return abs(cross(p - a.a, a.b - a.a)\
+    \ / abs(a.b - a.a));\n}\n\nvec cross_point(const line &a, const line &b) {\n \
+    \   assert(intersection(a, b) < 2);\n    return a.a + (a.b - a.a) * cross(b.a\
     \ - a.a, b.b - b.a) / cross(a.b - a.a, b.b - b.a);\n}\n\n}\n#line 4 \"geometry/segment.hpp\"\
     \n\nnamespace lib {\n\nstruct segment : line {};\n\nbool intersection_segment(const\
     \ segment &a, const segment &b, bool bound = true) {\n    if(sgn(isp(a.a, a.b,\
@@ -63,14 +63,14 @@ data:
     \ b.b, a.b)) < int(bound)) {\n        return true;\n    }\n    else return false;\n\
     }\n\nvec cross_point(const segment &a, const segment &b) {\n    assert(intersection_segment(a,\
     \ b, true));\n    return a.a + (a.b - a.a) * cross(b.a - a.a, b.b - b.a) / cross(a.b\
-    \ - a.a, b.b - b.a);\n}\n\nld distance(const segment &a, const vec &c) {\n   \
-    \ if(sgn(dot(a.b - a.a, c - a.a)) < 0) {\n        return abs(c-a.a);\n    }\n\
-    \    else if(sgn(dot(a.a - a.b, c - a.b)) < 0) {\n        return abs(c-a.b);\n\
-    \    }\n    else {\n        return abs(cross(c - a.a, a.b - a.a)/abs(a.b-a.a));\n\
-    \    }\n}\n\nld distance(const segment &a, const segment &b) {\n    if(intersection_segment(a,\
-    \ b, true)) return 0;\n    else return min(min(distance(a, b.a), distance(a, b.b)),\
-    \ min(distance(b, a.a), distance(b, a.b)));\n}\n\n}\n#line 5 \"test/geometry/Distance.test.cpp\"\
-    \n\nusing namespace lib;\n\nint main() {\n    std::cout << std::fixed << std::setprecision(15);\n\
+    \ - a.a, b.b - b.a);\n}\n\nld dist(const segment &a, const vec &c) {\n    if(sgn(dot(a.b\
+    \ - a.a, c - a.a)) < 0) {\n        return abs(c-a.a);\n    }\n    else if(sgn(dot(a.a\
+    \ - a.b, c - a.b)) < 0) {\n        return abs(c-a.b);\n    }\n    else {\n   \
+    \     return abs(cross(c - a.a, a.b - a.a)/abs(a.b-a.a));\n    }\n}\n\nld dist(const\
+    \ segment &a, const segment &b) {\n    if(intersection_segment(a, b, true)) return\
+    \ 0;\n    else return min(min(dist(a, b.a), dist(a, b.b)), min(dist(b, a.a), dist(b,\
+    \ a.b)));\n}\n\n}\n#line 5 \"test/geometry/Distance.test.cpp\"\n\nusing namespace\
+    \ lib;\n\nint main() {\n    std::cout << std::fixed << std::setprecision(15);\n\
     \    int q;\n    std::cin >> q;\n    while(q--) {\n        vec p0, p1, p2, p3;\n\
     \        auto input = [](vec &p) {\n            ld x,y;\n            std::cin\
     \ >> x >> y;\n            p = {x, y};\n        };\n        input(p0);\n      \
@@ -94,8 +94,8 @@ data:
   isVerificationFile: true
   path: test/geometry/Distance.test.cpp
   requiredBy: []
-  timestamp: '2023-04-24 18:42:07+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-04-26 00:57:27+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/geometry/Distance.test.cpp
 layout: document

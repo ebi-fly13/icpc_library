@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: geometry/base_ld.hpp
     title: base_ld
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: geometry/circle.hpp
     title: circle
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: geometry/segment.hpp
     title: segment
   _extendedVerifiedWith:
@@ -27,7 +27,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/geometry/Cross_Points_of_Circles.test.cpp
     title: test/geometry/Cross_Points_of_Circles.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/geometry/Distance.test.cpp
     title: test/geometry/Distance.test.cpp
   - icon: ':heavy_check_mark:'
@@ -48,9 +48,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/geometry/Reflection.test.cpp
     title: test/geometry/Reflection.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"geometry/line.hpp\"\n\n#line 2 \"geometry/base_ld.hpp\"\n\
@@ -80,7 +80,7 @@ data:
     \ - a.a, b.a - b.b)) != 0) {\n        if(sgn(dot(a.b - a.a, b.a - b.b)) == 0)\
     \ {\n            return 1;\n        }\n        return 0;\n    }\n    else if(sgn(cross(a.b\
     \ - a.a, b.a - a.a)) != 0) {\n        return 2;\n    }\n    else {\n        return\
-    \ 3;\n    }\n}\n\nld distance(const line &a, const vec &p) {\n    return abs(cross(p\
+    \ 3;\n    }\n}\n\nld dist(const line &a, const vec &p) {\n    return abs(cross(p\
     \ - a.a, a.b - a.a) / abs(a.b - a.a));\n}\n\nvec cross_point(const line &a, const\
     \ line &b) {\n    assert(intersection(a, b) < 2);\n    return a.a + (a.b - a.a)\
     \ * cross(b.a - a.a, b.b - b.a) / cross(a.b - a.a, b.b - b.a);\n}\n\n}\n"
@@ -92,7 +92,7 @@ data:
     \ - a.a, b.a - b.b)) != 0) {\n        if(sgn(dot(a.b - a.a, b.a - b.b)) == 0)\
     \ {\n            return 1;\n        }\n        return 0;\n    }\n    else if(sgn(cross(a.b\
     \ - a.a, b.a - a.a)) != 0) {\n        return 2;\n    }\n    else {\n        return\
-    \ 3;\n    }\n}\n\nld distance(const line &a, const vec &p) {\n    return abs(cross(p\
+    \ 3;\n    }\n}\n\nld dist(const line &a, const vec &p) {\n    return abs(cross(p\
     \ - a.a, a.b - a.a) / abs(a.b - a.a));\n}\n\nvec cross_point(const line &a, const\
     \ line &b) {\n    assert(intersection(a, b) < 2);\n    return a.a + (a.b - a.a)\
     \ * cross(b.a - a.a, b.b - b.a) / cross(a.b - a.a, b.b - b.a);\n}\n\n}"
@@ -104,8 +104,8 @@ data:
   requiredBy:
   - geometry/circle.hpp
   - geometry/segment.hpp
-  timestamp: '2023-04-24 18:42:07+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-04-26 00:57:27+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/geometry/Cross_Points_of_Circle_and_Line.test.cpp
   - test/geometry/Circumscribed_Circle_of_Triangle.test.cpp
