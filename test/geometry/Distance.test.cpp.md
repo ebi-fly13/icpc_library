@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: geometry/base_ld.hpp
     title: base_ld
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: geometry/line.hpp
     title: line
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: geometry/segment.hpp
     title: segment
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     ERROR: '0.0000001'
@@ -75,8 +75,8 @@ data:
     \        auto input = [](vec &p) {\n            ld x,y;\n            std::cin\
     \ >> x >> y;\n            p = {x, y};\n        };\n        input(p0);\n      \
     \  input(p1);\n        input(p2);\n        input(p3);\n        segment s1 = {p0,\
-    \ p1};\n        segment s2 = {p2, p3};\n        std::cout << distance(s1, s2)\
-    \ << '\\n';\n    }\n}\n"
+    \ p1};\n        segment s2 = {p2, p3};\n        std::cout << dist(s1, s2) << '\\\
+    n';\n    }\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_D\"\
     \n#define ERROR 0.0000001\n\n#include \"../../geometry/segment.hpp\"\n\nusing\
     \ namespace lib;\n\nint main() {\n    std::cout << std::fixed << std::setprecision(15);\n\
@@ -84,8 +84,8 @@ data:
     \        auto input = [](vec &p) {\n            ld x,y;\n            std::cin\
     \ >> x >> y;\n            p = {x, y};\n        };\n        input(p0);\n      \
     \  input(p1);\n        input(p2);\n        input(p3);\n        segment s1 = {p0,\
-    \ p1};\n        segment s2 = {p2, p3};\n        std::cout << distance(s1, s2)\
-    \ << '\\n';\n    }\n}"
+    \ p1};\n        segment s2 = {p2, p3};\n        std::cout << dist(s1, s2) << '\\\
+    n';\n    }\n}"
   dependsOn:
   - geometry/segment.hpp
   - geometry/line.hpp
@@ -94,8 +94,8 @@ data:
   isVerificationFile: true
   path: test/geometry/Distance.test.cpp
   requiredBy: []
-  timestamp: '2023-04-26 00:57:27+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-04-26 01:04:45+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/geometry/Distance.test.cpp
 layout: document
