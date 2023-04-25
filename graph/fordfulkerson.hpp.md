@@ -119,7 +119,7 @@ vector<bool> graph.min_cut(int s)
 ```cpp
 int main(){
 	int n, m; cin >> n >> m;
-	lib::FordFulkerson<int> mf(n);
+	lib::mf_graph<int> mf(n);
 	for(int i=0;i<m;i++){
 		int u,v,c;cin>>u>>v>>c;
 		mf.add_edge(u,v,c);
