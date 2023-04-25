@@ -85,6 +85,9 @@ data:
       path: test/geometry/Cross_Points_of_Circle_and_Line.test.cpp
       title: test/geometry/Cross_Points_of_Circle_and_Line.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/geometry/Cross_Points_of_Circles.test.cpp
+      title: test/geometry/Cross_Points_of_Circles.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/geometry/Distance.test.cpp
       title: test/geometry/Distance.test.cpp
     - icon: ':heavy_check_mark:'

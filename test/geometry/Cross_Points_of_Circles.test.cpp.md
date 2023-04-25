@@ -21,11 +21,11 @@ data:
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     ERROR: '0.0000001'
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/7/CGL_7_D
+    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/7/CGL_7_E
     links:
-    - https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/7/CGL_7_D
-  bundledCode: "#line 1 \"test/geometry/Cross_Points_of_Circle_and_Line.test.cpp\"\
-    \n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/7/CGL_7_D\"\
+    - https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/7/CGL_7_E
+  bundledCode: "#line 1 \"test/geometry/Cross_Points_of_Circles.test.cpp\"\n#define\
+    \ PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/7/CGL_7_E\"\
     \r\n#define ERROR 0.0000001\r\n\r\n#line 2 \"geometry/circle.hpp\"\n\r\n#line\
     \ 2 \"geometry/base_ld.hpp\"\n\n#line 2 \"template/template.hpp\"\n\n#include<bits/stdc++.h>\n\
     \n#define rep(i,s,n) for (int i = s; i < (int)(n); i++)\n#define rrep(i,s,n) for\
@@ -85,47 +85,48 @@ data:
     \ c1.c);\r\n    if(cnt_tangent == 1 || cnt_tangent == 3) ps.emplace_back(p);\r\
     \n    else {\r\n        v *= sqrt(max(c1.r * c1.r - x * x, ld(0))) / abs(v);\r\
     \n        ps.emplace_back(p + v);\r\n        ps.emplace_back(p - v);\r\n    }\r\
-    \n    return ps;\r\n}\r\n\r\n}\n#line 5 \"test/geometry/Cross_Points_of_Circle_and_Line.test.cpp\"\
+    \n    return ps;\r\n}\r\n\r\n}\n#line 5 \"test/geometry/Cross_Points_of_Circles.test.cpp\"\
     \n\r\nusing namespace lib;\r\n\r\nint main() {\r\n    std::cout << std::fixed\
     \ << std::setprecision(15);\r\n    auto input = [](vec &p) {\r\n        ld x,\
     \ y;\r\n        std::cin >> x >> y;\r\n        p = {x, y};\r\n    };\r\n    circle\
-    \ c;\r\n    {\r\n        vec p;\r\n        ld r;\r\n        input(p);\r\n    \
-    \    std::cin >> r;\r\n        c = {p, r};\r\n    }\r\n    int q;\r\n    cin >>\
-    \ q;\r\n    while(q--) {\r\n        line l;\r\n        vec a, b;\r\n        input(a);\r\
-    \n        input(b);\r\n        l = {a, b};\r\n        auto ps = cross_point(c,\
-    \ l);\r\n        if(ps.size() == 1) ps.emplace_back(ps.back());\r\n        std::sort(all(ps),\
-    \ [](auto lhs, auto rhs) { return lhs.real() == rhs.real() ? lhs.imag() < rhs.imag()\
-    \ : lhs.real() < rhs.real(); });\r\n        std::cout << ps[0].real() << \" \"\
-    \ << ps[0].imag() << \" \" << ps[1].real() << \" \" << ps[1].imag() << '\\n';\r\
-    \n    }\r\n}\n"
-  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/7/CGL_7_D\"\
+    \ c1, c2;\r\n    {\r\n        vec p;\r\n        ld r;\r\n        input(p);\r\n\
+    \        std::cin >> r;\r\n        c1 = {p, r};\r\n    }\r\n    {\r\n        vec\
+    \ p;\r\n        ld r;\r\n        input(p);\r\n        std::cin >> r;\r\n     \
+    \   c2 = {p, r};\r\n    }\r\n    auto ps = cross_point(c1, c2);\r\n    if (ps.size()\
+    \ == 1) ps.emplace_back(ps.back());\r\n    std::sort(all(ps), [](auto lhs, auto\
+    \ rhs) {\r\n        return lhs.real() == rhs.real() ? lhs.imag() < rhs.imag()\r\
+    \n                                        : lhs.real() < rhs.real();\r\n    });\r\
+    \n    for(auto p: ps) {\r\n        std::cout << p.real() << \" \" << p.imag()\
+    \ << \" \";\r\n    }\r\n    std::cout << '\\n';\r\n}\n"
+  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/7/CGL_7_E\"\
     \r\n#define ERROR 0.0000001\r\n\r\n#include \"../../geometry/circle.hpp\"\r\n\r\
     \nusing namespace lib;\r\n\r\nint main() {\r\n    std::cout << std::fixed << std::setprecision(15);\r\
     \n    auto input = [](vec &p) {\r\n        ld x, y;\r\n        std::cin >> x >>\
-    \ y;\r\n        p = {x, y};\r\n    };\r\n    circle c;\r\n    {\r\n        vec\
-    \ p;\r\n        ld r;\r\n        input(p);\r\n        std::cin >> r;\r\n     \
-    \   c = {p, r};\r\n    }\r\n    int q;\r\n    cin >> q;\r\n    while(q--) {\r\n\
-    \        line l;\r\n        vec a, b;\r\n        input(a);\r\n        input(b);\r\
-    \n        l = {a, b};\r\n        auto ps = cross_point(c, l);\r\n        if(ps.size()\
-    \ == 1) ps.emplace_back(ps.back());\r\n        std::sort(all(ps), [](auto lhs,\
-    \ auto rhs) { return lhs.real() == rhs.real() ? lhs.imag() < rhs.imag() : lhs.real()\
-    \ < rhs.real(); });\r\n        std::cout << ps[0].real() << \" \" << ps[0].imag()\
-    \ << \" \" << ps[1].real() << \" \" << ps[1].imag() << '\\n';\r\n    }\r\n}"
+    \ y;\r\n        p = {x, y};\r\n    };\r\n    circle c1, c2;\r\n    {\r\n     \
+    \   vec p;\r\n        ld r;\r\n        input(p);\r\n        std::cin >> r;\r\n\
+    \        c1 = {p, r};\r\n    }\r\n    {\r\n        vec p;\r\n        ld r;\r\n\
+    \        input(p);\r\n        std::cin >> r;\r\n        c2 = {p, r};\r\n    }\r\
+    \n    auto ps = cross_point(c1, c2);\r\n    if (ps.size() == 1) ps.emplace_back(ps.back());\r\
+    \n    std::sort(all(ps), [](auto lhs, auto rhs) {\r\n        return lhs.real()\
+    \ == rhs.real() ? lhs.imag() < rhs.imag()\r\n                                \
+    \        : lhs.real() < rhs.real();\r\n    });\r\n    for(auto p: ps) {\r\n  \
+    \      std::cout << p.real() << \" \" << p.imag() << \" \";\r\n    }\r\n    std::cout\
+    \ << '\\n';\r\n}"
   dependsOn:
   - geometry/circle.hpp
   - geometry/base_ld.hpp
   - template/template.hpp
   - geometry/line.hpp
   isVerificationFile: true
-  path: test/geometry/Cross_Points_of_Circle_and_Line.test.cpp
+  path: test/geometry/Cross_Points_of_Circles.test.cpp
   requiredBy: []
   timestamp: '2023-04-25 15:39:08+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/geometry/Cross_Points_of_Circle_and_Line.test.cpp
+documentation_of: test/geometry/Cross_Points_of_Circles.test.cpp
 layout: document
 redirect_from:
-- /verify/test/geometry/Cross_Points_of_Circle_and_Line.test.cpp
-- /verify/test/geometry/Cross_Points_of_Circle_and_Line.test.cpp.html
-title: test/geometry/Cross_Points_of_Circle_and_Line.test.cpp
+- /verify/test/geometry/Cross_Points_of_Circles.test.cpp
+- /verify/test/geometry/Cross_Points_of_Circles.test.cpp.html
+title: test/geometry/Cross_Points_of_Circles.test.cpp
 ---

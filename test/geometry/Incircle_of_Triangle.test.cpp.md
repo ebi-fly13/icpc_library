@@ -77,7 +77,15 @@ data:
     \ c.c));\r\n    else if(sgn(d - c.r) < 0) {\r\n        vec p = proj(l, c.c);\r\
     \n        vec v = l.b - l.a;\r\n        v *= sqrt(max(c.r*c.r - d * d,  ld(0)))\
     \ / abs(v);\r\n        ps.emplace_back(p + v);\r\n        ps.emplace_back(p -\
-    \ v);\r\n    }\r\n    return ps;\r\n}\r\n\r\n}\n#line 7 \"test/geometry/Incircle_of_Triangle.test.cpp\"\
+    \ v);\r\n    }\r\n    return ps;\r\n}\r\n\r\nvector<vec> cross_point(const circle\
+    \ &c1, const circle &c2) {\r\n    vector<vec> ps;\r\n    int cnt_tangent = intersection(c1,\
+    \ c2);\r\n    if(cnt_tangent == 0 || cnt_tangent == 4) return {};\r\n    ld d\
+    \ = abs(c2.c - c1.c);\r\n    ld x = (d * d + c1.r * c1.r - c2.r * c2.r) / (2 *\
+    \ d);\r\n    vec p = c1.c + (c2.c - c1.c) * x / d;\r\n    vec v = rot90(c2.c -\
+    \ c1.c);\r\n    if(cnt_tangent == 1 || cnt_tangent == 3) ps.emplace_back(p);\r\
+    \n    else {\r\n        v *= sqrt(max(c1.r * c1.r - x * x, ld(0))) / abs(v);\r\
+    \n        ps.emplace_back(p + v);\r\n        ps.emplace_back(p - v);\r\n    }\r\
+    \n    return ps;\r\n}\r\n\r\n}\n#line 7 \"test/geometry/Incircle_of_Triangle.test.cpp\"\
     \n\r\nusing namespace lib;\r\n\r\nint main() {\r\n    std::cout << std::fixed\
     \ << std::setprecision(15);\r\n    auto input = [](vec &a) {\r\n        ld x,y;\r\
     \n        std::cin >> x >> y;\r\n        a = {x, y};\r\n    };\r\n    vec a,b,c;\r\
@@ -101,7 +109,7 @@ data:
   isVerificationFile: true
   path: test/geometry/Incircle_of_Triangle.test.cpp
   requiredBy: []
-  timestamp: '2023-04-25 15:08:08+09:00'
+  timestamp: '2023-04-25 15:39:08+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/geometry/Incircle_of_Triangle.test.cpp

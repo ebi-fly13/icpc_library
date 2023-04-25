@@ -19,6 +19,9 @@ data:
     path: test/geometry/Cross_Points_of_Circle_and_Line.test.cpp
     title: test/geometry/Cross_Points_of_Circle_and_Line.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/geometry/Cross_Points_of_Circles.test.cpp
+    title: test/geometry/Cross_Points_of_Circles.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/geometry/Incircle_of_Triangle.test.cpp
     title: test/geometry/Incircle_of_Triangle.test.cpp
   - icon: ':heavy_check_mark:'
@@ -80,7 +83,15 @@ data:
     \ c.c));\r\n    else if(sgn(d - c.r) < 0) {\r\n        vec p = proj(l, c.c);\r\
     \n        vec v = l.b - l.a;\r\n        v *= sqrt(max(c.r*c.r - d * d,  ld(0)))\
     \ / abs(v);\r\n        ps.emplace_back(p + v);\r\n        ps.emplace_back(p -\
-    \ v);\r\n    }\r\n    return ps;\r\n}\r\n\r\n}\n"
+    \ v);\r\n    }\r\n    return ps;\r\n}\r\n\r\nvector<vec> cross_point(const circle\
+    \ &c1, const circle &c2) {\r\n    vector<vec> ps;\r\n    int cnt_tangent = intersection(c1,\
+    \ c2);\r\n    if(cnt_tangent == 0 || cnt_tangent == 4) return {};\r\n    ld d\
+    \ = abs(c2.c - c1.c);\r\n    ld x = (d * d + c1.r * c1.r - c2.r * c2.r) / (2 *\
+    \ d);\r\n    vec p = c1.c + (c2.c - c1.c) * x / d;\r\n    vec v = rot90(c2.c -\
+    \ c1.c);\r\n    if(cnt_tangent == 1 || cnt_tangent == 3) ps.emplace_back(p);\r\
+    \n    else {\r\n        v *= sqrt(max(c1.r * c1.r - x * x, ld(0))) / abs(v);\r\
+    \n        ps.emplace_back(p + v);\r\n        ps.emplace_back(p - v);\r\n    }\r\
+    \n    return ps;\r\n}\r\n\r\n}\n"
   code: "#pragma once\r\n\r\n#include \"../geometry/base_ld.hpp\"\r\n#include \"../geometry/line.hpp\"\
     \r\n\r\nnamespace lib {\r\n\r\nstruct circle {\r\n    vec c;\r\n    ld r;\r\n\
     };\r\n\r\nint intersection(const circle &c1, const circle &c2) {\r\n    ld d =\
@@ -101,7 +112,15 @@ data:
     \ c.c));\r\n    else if(sgn(d - c.r) < 0) {\r\n        vec p = proj(l, c.c);\r\
     \n        vec v = l.b - l.a;\r\n        v *= sqrt(max(c.r*c.r - d * d,  ld(0)))\
     \ / abs(v);\r\n        ps.emplace_back(p + v);\r\n        ps.emplace_back(p -\
-    \ v);\r\n    }\r\n    return ps;\r\n}\r\n\r\n}"
+    \ v);\r\n    }\r\n    return ps;\r\n}\r\n\r\nvector<vec> cross_point(const circle\
+    \ &c1, const circle &c2) {\r\n    vector<vec> ps;\r\n    int cnt_tangent = intersection(c1,\
+    \ c2);\r\n    if(cnt_tangent == 0 || cnt_tangent == 4) return {};\r\n    ld d\
+    \ = abs(c2.c - c1.c);\r\n    ld x = (d * d + c1.r * c1.r - c2.r * c2.r) / (2 *\
+    \ d);\r\n    vec p = c1.c + (c2.c - c1.c) * x / d;\r\n    vec v = rot90(c2.c -\
+    \ c1.c);\r\n    if(cnt_tangent == 1 || cnt_tangent == 3) ps.emplace_back(p);\r\
+    \n    else {\r\n        v *= sqrt(max(c1.r * c1.r - x * x, ld(0))) / abs(v);\r\
+    \n        ps.emplace_back(p + v);\r\n        ps.emplace_back(p - v);\r\n    }\r\
+    \n    return ps;\r\n}\r\n\r\n}"
   dependsOn:
   - geometry/base_ld.hpp
   - template/template.hpp
@@ -109,13 +128,14 @@ data:
   isVerificationFile: false
   path: geometry/circle.hpp
   requiredBy: []
-  timestamp: '2023-04-25 15:08:08+09:00'
+  timestamp: '2023-04-25 15:39:08+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/geometry/Cross_Points_of_Circle_and_Line.test.cpp
   - test/geometry/Circumscribed_Circle_of_Triangle.test.cpp
   - test/geometry/Incircle_of_Triangle.test.cpp
   - test/geometry/Intersection_Circle.test.cpp
+  - test/geometry/Cross_Points_of_Circles.test.cpp
 documentation_of: geometry/circle.hpp
 layout: document
 title: circle
@@ -147,3 +167,7 @@ depends on line.hpp (cross_point)
 ### cross_point(circle c, line l)
 
 円 $c$ と直線 $l$ の交点をvectorに格納して返す。
+
+### cross_point(cirle c1, circle c2)
+
+円 $c1$と $c2$ の交点をvectorに格納して返す。
