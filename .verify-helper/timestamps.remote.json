@@ -7,6 +7,7 @@
 "test/geometry/Cross_Point.test.cpp": "2023-04-26 00:57:27 +0900",
 "test/geometry/Cross_Points_of_Circle_and_Line.test.cpp": "2023-04-26 00:57:27 +0900",
 "test/geometry/Cross_Points_of_Circles.test.cpp": "2023-04-26 00:57:27 +0900",
+"test/geometry/Distance.test.cpp": "2023-04-26 01:04:45 +0900",
 "test/geometry/Incircle_of_Triangle.test.cpp": "2023-04-26 00:57:27 +0900",
 "test/geometry/Intersection.test.cpp": "2023-04-26 00:57:27 +0900",
 "test/geometry/Intersection_Circle.test.cpp": "2023-04-26 00:57:27 +0900",
