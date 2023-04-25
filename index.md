@@ -35,8 +35,8 @@ data:
   - name: graph
     pages:
     - icon: ':warning:'
-      path: graph/ford_mf.hpp
-      title: graph/ford_mf.hpp
+      path: graph/fordfulkerson.hpp
+      title: graph/fordfulkerson.hpp
   - name: math
     pages:
     - icon: ':heavy_check_mark:'

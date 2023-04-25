@@ -30,8 +30,8 @@ data:
     path: geometry/segment.hpp
     title: segment
   - icon: ':warning:'
-    path: graph/ford_mf.hpp
-    title: graph/ford_mf.hpp
+    path: graph/fordfulkerson.hpp
+    title: graph/fordfulkerson.hpp
   - icon: ':heavy_check_mark:'
     path: math/eratosthenes_sieve.hpp
     title: eratosthenes sieve
@@ -132,7 +132,7 @@ data:
   requiredBy:
   - string/parsing_template.hpp
   - string/RollingHash.hpp
-  - graph/ford_mf.hpp
+  - graph/fordfulkerson.hpp
   - tree/HeavyLightDecomposition.hpp
   - tree/LowestCommonAncestor.hpp
   - geometry/line.hpp
