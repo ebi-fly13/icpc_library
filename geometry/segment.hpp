@@ -18,7 +18,7 @@ vec cross_point(const segment &a, const segment &b) {
     return a.a + (a.b - a.a) * cross(b.a - a.a, b.b - b.a) / cross(a.b - a.a, b.b - b.a);
 }
 
-ld distance(const segment &a, const vec &c) {
+ld dist(const segment &a, const vec &c) {
     if(sgn(dot(a.b - a.a, c - a.a)) < 0) {
         return abs(c-a.a);
     }
@@ -30,9 +30,9 @@ ld distance(const segment &a, const vec &c) {
     }
 }
 
-ld distance(const segment &a, const segment &b) {
+ld dist(const segment &a, const segment &b) {
     if(intersection_segment(a, b, true)) return 0;
-    else return min(min(distance(a, b.a), distance(a, b.b)), min(distance(b, a.a), distance(b, a.b)));
+    else return min(min(dist(a, b.a), dist(a, b.b)), min(dist(b, a.a), dist(b, a.b)));
 }
 
 }

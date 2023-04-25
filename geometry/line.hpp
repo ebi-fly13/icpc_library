@@ -32,7 +32,7 @@ int intersection(const line &a, const line &b) {
     }
 }
 
-ld distance(const line &a, const vec &p) {
+ld dist(const line &a, const vec &p) {
     return abs(cross(p - a.a, a.b - a.a) / abs(a.b - a.a));
 }
 

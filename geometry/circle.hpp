@@ -47,7 +47,7 @@ circle circumscribed_circle_of_triangle(const vec &a, const vec &b, const vec &c
 
 vector<vec> cross_point(const circle &c, const line &l) {
     vector<vec> ps;
-    ld d = distance(l, c.c);
+    ld d = dist(l, c.c);
     if(sgn(d - c.r) == 0) ps.emplace_back(proj(l, c.c));
     else if(sgn(d - c.r) < 0) {
         vec p = proj(l, c.c);
