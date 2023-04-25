@@ -9,18 +9,33 @@ data:
     title: template/template.hpp
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
+    path: geometry/circle.hpp
+    title: circle
+  - icon: ':heavy_check_mark:'
     path: geometry/segment.hpp
     title: segment
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/geometry/Circumscribed_Circle_of_Triangle.test.cpp
+    title: test/geometry/Circumscribed_Circle_of_Triangle.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/geometry/Cross_Point.test.cpp
     title: test/geometry/Cross_Point.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/geometry/Cross_Points_of_Circle_and_Line.test.cpp
+    title: test/geometry/Cross_Points_of_Circle_and_Line.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/geometry/Distance.test.cpp
     title: test/geometry/Distance.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/geometry/Incircle_of_Triangle.test.cpp
+    title: test/geometry/Incircle_of_Triangle.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/geometry/Intersection.test.cpp
     title: test/geometry/Intersection.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/geometry/Intersection_Circle.test.cpp
+    title: test/geometry/Intersection_Circle.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/geometry/Parallel_Orthogonal.test.cpp
     title: test/geometry/Parallel_Orthogonal.test.cpp
@@ -84,13 +99,18 @@ data:
   isVerificationFile: false
   path: geometry/line.hpp
   requiredBy:
+  - geometry/circle.hpp
   - geometry/segment.hpp
   timestamp: '2023-04-24 18:42:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/geometry/Cross_Points_of_Circle_and_Line.test.cpp
+  - test/geometry/Circumscribed_Circle_of_Triangle.test.cpp
   - test/geometry/Cross_Point.test.cpp
   - test/geometry/Parallel_Orthogonal.test.cpp
   - test/geometry/Distance.test.cpp
+  - test/geometry/Incircle_of_Triangle.test.cpp
+  - test/geometry/Intersection_Circle.test.cpp
   - test/geometry/Projection.test.cpp
   - test/geometry/Reflection.test.cpp
   - test/geometry/Intersection.test.cpp

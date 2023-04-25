@@ -20,21 +20,22 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/7/CGL_7_A
+    ERROR: '0.0000001'
+    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/7/CGL_7_D
     links:
-    - https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/7/CGL_7_A
-  bundledCode: "#line 1 \"test/geometry/Intersection_Circle.test.cpp\"\n#define PROBLEM\
-    \ \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/7/CGL_7_A\"\r\n\r\n\
-    #line 2 \"geometry/circle.hpp\"\n\r\n#line 2 \"geometry/base_ld.hpp\"\n\n#line\
-    \ 2 \"template/template.hpp\"\n\n#include<bits/stdc++.h>\n\n#define rep(i,s,n)\
-    \ for (int i = s; i < (int)(n); i++)\n#define rrep(i,s,n) for (int i = (int)(n)-1;\
-    \ i >= (int)(s); i--)\n#define all(v) v.begin(),v.end()\n\nusing ll = long long;\n\
-    using ld = long double;\nusing ull = unsigned long long;\n\ntemplate<typename\
-    \ T> bool chmin(T &a, const T &b){\n    if (a <= b) return false;\n    a = b;\n\
-    \    return true;\n}\ntemplate<typename T> bool chmax(T &a, const T &b){\n   \
-    \ if (a >= b) return false;\n    a = b;\n    return true;\n}\n\nnamespace lib{\n\
-    \nusing namespace std;\n\n} // namespace lib;\n\n//using namespace lib;\n#line\
-    \ 4 \"geometry/base_ld.hpp\"\n\nnamespace lib {\n\nusing vec = complex<ld>;\n\
+    - https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/7/CGL_7_D
+  bundledCode: "#line 1 \"test/geometry/Cross_Points_of_Circle_and_Line.test.cpp\"\
+    \n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/7/CGL_7_D\"\
+    \r\n#define ERROR 0.0000001\r\n\r\n#line 2 \"geometry/circle.hpp\"\n\r\n#line\
+    \ 2 \"geometry/base_ld.hpp\"\n\n#line 2 \"template/template.hpp\"\n\n#include<bits/stdc++.h>\n\
+    \n#define rep(i,s,n) for (int i = s; i < (int)(n); i++)\n#define rrep(i,s,n) for\
+    \ (int i = (int)(n)-1; i >= (int)(s); i--)\n#define all(v) v.begin(),v.end()\n\
+    \nusing ll = long long;\nusing ld = long double;\nusing ull = unsigned long long;\n\
+    \ntemplate<typename T> bool chmin(T &a, const T &b){\n    if (a <= b) return false;\n\
+    \    a = b;\n    return true;\n}\ntemplate<typename T> bool chmax(T &a, const\
+    \ T &b){\n    if (a >= b) return false;\n    a = b;\n    return true;\n}\n\nnamespace\
+    \ lib{\n\nusing namespace std;\n\n} // namespace lib;\n\n//using namespace lib;\n\
+    #line 4 \"geometry/base_ld.hpp\"\n\nnamespace lib {\n\nusing vec = complex<ld>;\n\
     const ld eps = 1e-7;\n\nint sgn(ld a) {\n    return (a < -eps) ? -1 : (a > eps)\
     \ ? 1 : 0;\n}\n\nld dot(const vec &a, const vec &b){\n    return (conj(a) * b).real();\n\
     }\n\nld cross(const vec &a, const vec &b){\n    return (conj(a) * b).imag();\n\
@@ -76,32 +77,47 @@ data:
     \ c.c));\r\n    else if(sgn(d - c.r) < 0) {\r\n        vec p = proj(l, c.c);\r\
     \n        vec v = l.b - l.a;\r\n        v *= sqrt(max(c.r*c.r - d * d,  ld(0)))\
     \ / abs(v);\r\n        ps.emplace_back(p + v);\r\n        ps.emplace_back(p -\
-    \ v);\r\n    }\r\n    return ps;\r\n}\r\n\r\n}\n#line 4 \"test/geometry/Intersection_Circle.test.cpp\"\
-    \n\r\nusing namespace lib;\r\n\r\nint main() {\r\n    ld c1x, c1y, c1r;\r\n  \
-    \  ld c2x, c2y, c2r;\r\n    std::cin >> c1x >> c1y >> c1r;\r\n    std::cin >>\
-    \ c2x >> c2y >> c2r;\r\n    circle c1 = {{c1x, c1y}, c1r};\r\n    circle c2 =\
-    \ {{c2x, c2y}, c2r};\r\n    std::cout << intersection(c1, c2) << '\\n';\r\n}\n"
-  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/7/CGL_7_A\"\
-    \r\n\r\n#include \"../../geometry/circle.hpp\"\r\n\r\nusing namespace lib;\r\n\
-    \r\nint main() {\r\n    ld c1x, c1y, c1r;\r\n    ld c2x, c2y, c2r;\r\n    std::cin\
-    \ >> c1x >> c1y >> c1r;\r\n    std::cin >> c2x >> c2y >> c2r;\r\n    circle c1\
-    \ = {{c1x, c1y}, c1r};\r\n    circle c2 = {{c2x, c2y}, c2r};\r\n    std::cout\
-    \ << intersection(c1, c2) << '\\n';\r\n}"
+    \ v);\r\n    }\r\n    return ps;\r\n}\r\n\r\n}\n#line 5 \"test/geometry/Cross_Points_of_Circle_and_Line.test.cpp\"\
+    \n\r\nusing namespace lib;\r\n\r\nint main() {\r\n    std::cout << std::fixed\
+    \ << std::setprecision(15);\r\n    auto input = [](vec &p) {\r\n        ld x,\
+    \ y;\r\n        std::cin >> x >> y;\r\n        p = {x, y};\r\n    };\r\n    circle\
+    \ c;\r\n    {\r\n        vec p;\r\n        ld r;\r\n        input(p);\r\n    \
+    \    std::cin >> r;\r\n        c = {p, r};\r\n    }\r\n    int q;\r\n    cin >>\
+    \ q;\r\n    while(q--) {\r\n        line l;\r\n        vec a, b;\r\n        input(a);\r\
+    \n        input(b);\r\n        l = {a, b};\r\n        auto ps = cross_point(c,\
+    \ l);\r\n        if(ps.size() == 1) ps.emplace_back(ps.back());\r\n        std::sort(all(ps),\
+    \ [](auto lhs, auto rhs) { return lhs.real() == rhs.real() ? lhs.imag() < rhs.imag()\
+    \ : lhs.real() < rhs.real(); });\r\n        std::cout << ps[0].real() << \" \"\
+    \ << ps[0].imag() << \" \" << ps[1].real() << \" \" << ps[1].imag() << '\\n';\r\
+    \n    }\r\n}\n"
+  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/7/CGL_7_D\"\
+    \r\n#define ERROR 0.0000001\r\n\r\n#include \"../../geometry/circle.hpp\"\r\n\r\
+    \nusing namespace lib;\r\n\r\nint main() {\r\n    std::cout << std::fixed << std::setprecision(15);\r\
+    \n    auto input = [](vec &p) {\r\n        ld x, y;\r\n        std::cin >> x >>\
+    \ y;\r\n        p = {x, y};\r\n    };\r\n    circle c;\r\n    {\r\n        vec\
+    \ p;\r\n        ld r;\r\n        input(p);\r\n        std::cin >> r;\r\n     \
+    \   c = {p, r};\r\n    }\r\n    int q;\r\n    cin >> q;\r\n    while(q--) {\r\n\
+    \        line l;\r\n        vec a, b;\r\n        input(a);\r\n        input(b);\r\
+    \n        l = {a, b};\r\n        auto ps = cross_point(c, l);\r\n        if(ps.size()\
+    \ == 1) ps.emplace_back(ps.back());\r\n        std::sort(all(ps), [](auto lhs,\
+    \ auto rhs) { return lhs.real() == rhs.real() ? lhs.imag() < rhs.imag() : lhs.real()\
+    \ < rhs.real(); });\r\n        std::cout << ps[0].real() << \" \" << ps[0].imag()\
+    \ << \" \" << ps[1].real() << \" \" << ps[1].imag() << '\\n';\r\n    }\r\n}"
   dependsOn:
   - geometry/circle.hpp
   - geometry/base_ld.hpp
   - template/template.hpp
   - geometry/line.hpp
   isVerificationFile: true
-  path: test/geometry/Intersection_Circle.test.cpp
+  path: test/geometry/Cross_Points_of_Circle_and_Line.test.cpp
   requiredBy: []
   timestamp: '2023-04-25 15:08:08+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/geometry/Intersection_Circle.test.cpp
+documentation_of: test/geometry/Cross_Points_of_Circle_and_Line.test.cpp
 layout: document
 redirect_from:
-- /verify/test/geometry/Intersection_Circle.test.cpp
-- /verify/test/geometry/Intersection_Circle.test.cpp.html
-title: test/geometry/Intersection_Circle.test.cpp
+- /verify/test/geometry/Cross_Points_of_Circle_and_Line.test.cpp
+- /verify/test/geometry/Cross_Points_of_Circle_and_Line.test.cpp.html
+title: test/geometry/Cross_Points_of_Circle_and_Line.test.cpp
 ---

@@ -8,6 +8,9 @@ data:
     path: geometry/circle.hpp
     title: circle
   - icon: ':heavy_check_mark:'
+    path: geometry/line.hpp
+    title: line
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
@@ -42,8 +45,20 @@ data:
     }\n\nvec rot90(const vec &a) {\n    return {-a.imag(), a.real()};\n}\n\nbool comp_for_argument_sort(const\
     \ vec &lhs, const vec &rhs){\n    //if (abs(arg(lhs)-arg(rhs)) < eps) return false;\
     \ // need ?\n    return arg(lhs) < arg(rhs);\n}\n\n} // namespace lib\n#line 2\
-    \ \"geometry/circle.hpp\"\n\r\n#line 4 \"geometry/circle.hpp\"\n\r\nnamespace\
-    \ lib {\r\n\r\nstruct circle {\r\n    vec c;\r\n    ld r;\r\n};\r\n\r\nint intersection(const\
+    \ \"geometry/circle.hpp\"\n\r\n#line 2 \"geometry/line.hpp\"\n\n#line 4 \"geometry/line.hpp\"\
+    \n\nnamespace lib {\n\nstruct line {\n    vec a, b;\n};\n\nvec proj(const line\
+    \ &l, const vec &p) {\n    vec ab = l.b - l.a;\n    return l.a + ab * (dot(ab,\
+    \ p - l.a) / norm(ab));\n}\n\nvec refl(const line &l, const vec &p) {\n    return\
+    \ proj(l, p) * ld(2) - p;\n}\n\nint intersection(const line &a, const line &b)\
+    \ {\n    if(sgn(cross(a.b - a.a, b.a - b.b)) != 0) {\n        if(sgn(dot(a.b -\
+    \ a.a, b.a - b.b)) == 0) {\n            return 1;\n        }\n        return 0;\n\
+    \    }\n    else if(sgn(cross(a.b - a.a, b.a - a.a)) != 0) {\n        return 2;\n\
+    \    }\n    else {\n        return 3;\n    }\n}\n\nld distance(const line &a,\
+    \ const vec &p) {\n    return abs(cross(p - a.a, a.b - a.a) / abs(a.b - a.a));\n\
+    }\n\nvec cross_point(const line &a, const line &b) {\n    assert(intersection(a,\
+    \ b) < 2);\n    return a.a + (a.b - a.a) * cross(b.a - a.a, b.b - b.a) / cross(a.b\
+    \ - a.a, b.b - b.a);\n}\n\n}\n#line 5 \"geometry/circle.hpp\"\n\r\nnamespace lib\
+    \ {\r\n\r\nstruct circle {\r\n    vec c;\r\n    ld r;\r\n};\r\n\r\nint intersection(const\
     \ circle &c1, const circle &c2) {\r\n    ld d = abs(c1.c - c2.c);\r\n    ld r1\
     \ = c1.r;\r\n    ld r2 = c2.r;\r\n    if(r1 < r2) std::swap(r1, r2);\r\n    if(sgn(d\
     \ - (r1 + r2)) > 0) {\r\n        return 4;\r\n    }\r\n    else if(sgn(d - (r1\
@@ -53,9 +68,18 @@ data:
     \ vec &a, const vec &b, const vec &c) {\r\n    ld A = abs(b - c), B = abs(c -\
     \ a), C = abs(a - b);\r\n    vec in = A * a + B * b + C * c;\r\n    in /= A +\
     \ B + C;\r\n    ld r = abs(cross(in - a, b - a) / abs(b - a));\r\n    return {in,\
-    \ r};\r\n}\r\n\r\n}\n#line 7 \"test/geometry/Incircle_of_Triangle.test.cpp\"\n\
-    \r\nusing namespace lib;\r\n\r\nint main() {\r\n    std::cout << std::fixed <<\
-    \ std::setprecision(15);\r\n    auto input = [](vec &a) {\r\n        ld x,y;\r\
+    \ r};\r\n}\r\n\r\ncircle circumscribed_circle_of_triangle(const vec &a, const\
+    \ vec &b, const vec &c) {\r\n    line p = {(a + b)/ld(2.0), (a + b)/ld(2.0)+rot90(b\
+    \ - a)};\r\n    line q = {(b + c)/ld(2.0), (b + c)/ld(2.0)+rot90(c - b)};\r\n\
+    \    vec cross = cross_point(p, q);\r\n    return {cross, abs(a-cross)};\r\n}\r\
+    \n\r\nvector<vec> cross_point(const circle &c, const line &l) {\r\n    vector<vec>\
+    \ ps;\r\n    ld d = distance(l, c.c);\r\n    if(sgn(d - c.r) == 0) ps.emplace_back(proj(l,\
+    \ c.c));\r\n    else if(sgn(d - c.r) < 0) {\r\n        vec p = proj(l, c.c);\r\
+    \n        vec v = l.b - l.a;\r\n        v *= sqrt(max(c.r*c.r - d * d,  ld(0)))\
+    \ / abs(v);\r\n        ps.emplace_back(p + v);\r\n        ps.emplace_back(p -\
+    \ v);\r\n    }\r\n    return ps;\r\n}\r\n\r\n}\n#line 7 \"test/geometry/Incircle_of_Triangle.test.cpp\"\
+    \n\r\nusing namespace lib;\r\n\r\nint main() {\r\n    std::cout << std::fixed\
+    \ << std::setprecision(15);\r\n    auto input = [](vec &a) {\r\n        ld x,y;\r\
     \n        std::cin >> x >> y;\r\n        a = {x, y};\r\n    };\r\n    vec a,b,c;\r\
     \n    input(a);\r\n    input(b);\r\n    input(c);\r\n    circle in = incircle_of_triangle(a,\
     \ b, c);\r\n    std::cout << in.c.real() << \" \" << in.c.imag() << \" \" << in.r\
@@ -73,10 +97,11 @@ data:
   - template/template.hpp
   - geometry/base_ld.hpp
   - geometry/circle.hpp
+  - geometry/line.hpp
   isVerificationFile: true
   path: test/geometry/Incircle_of_Triangle.test.cpp
   requiredBy: []
-  timestamp: '2023-04-24 18:42:07+09:00'
+  timestamp: '2023-04-25 15:08:08+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/geometry/Incircle_of_Triangle.test.cpp

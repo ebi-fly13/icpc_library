@@ -19,11 +19,17 @@ data:
     title: segment
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/geometry/Circumscribed_Circle_of_Triangle.test.cpp
+    title: test/geometry/Circumscribed_Circle_of_Triangle.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/geometry/Counter_Clockwise.test.cpp
     title: test/geometry/Counter_Clockwise.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/geometry/Cross_Point.test.cpp
     title: test/geometry/Cross_Point.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/geometry/Cross_Points_of_Circle_and_Line.test.cpp
+    title: test/geometry/Cross_Points_of_Circle_and_Line.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/geometry/Distance.test.cpp
     title: test/geometry/Distance.test.cpp
@@ -92,6 +98,8 @@ data:
   timestamp: '2023-04-24 18:42:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/geometry/Cross_Points_of_Circle_and_Line.test.cpp
+  - test/geometry/Circumscribed_Circle_of_Triangle.test.cpp
   - test/geometry/Cross_Point.test.cpp
   - test/geometry/Parallel_Orthogonal.test.cpp
   - test/geometry/Counter_Clockwise.test.cpp
