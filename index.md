@@ -36,7 +36,7 @@ data:
     pages:
     - icon: ':warning:'
       path: graph/fordfulkerson.hpp
-      title: graph/fordfulkerson.hpp
+      title: FordFulkerson
     - icon: ':warning:'
       path: graph/mf_graph.hpp
       title: graph/mf_graph.hpp
@@ -47,7 +47,7 @@ data:
       title: eratosthenes sieve
     - icon: ':warning:'
       path: math/gauss_jordan.hpp
-      title: math/gauss_jordan.hpp
+      title: gauss_jordan
   - name: string
     pages:
     - icon: ':heavy_check_mark:'
