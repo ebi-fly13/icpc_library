@@ -29,3 +29,7 @@ depends on line.hpp (cross_point)
 ### cross_point(circle c, line l)
 
 円 $c$ と直線 $l$ の交点をvectorに格納して返す。
+
+### cross_point(cirle c1, circle c2)
+
+円 $c1$と $c2$ の交点をvectorに格納して返す。

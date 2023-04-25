@@ -59,4 +59,21 @@ vector<vec> cross_point(const circle &c, const line &l) {
     return ps;
 }
 
+vector<vec> cross_point(const circle &c1, const circle &c2) {
+    vector<vec> ps;
+    int cnt_tangent = intersection(c1, c2);
+    if(cnt_tangent == 0 || cnt_tangent == 4) return {};
+    ld d = abs(c2.c - c1.c);
+    ld x = (d * d + c1.r * c1.r - c2.r * c2.r) / (2 * d);
+    vec p = c1.c + (c2.c - c1.c) * x / d;
+    vec v = rot90(c2.c - c1.c);
+    if(cnt_tangent == 1 || cnt_tangent == 3) ps.emplace_back(p);
+    else {
+        v *= sqrt(max(c1.r * c1.r - x * x, ld(0))) / abs(v);
+        ps.emplace_back(p + v);
+        ps.emplace_back(p - v);
+    }
+    return ps;
+}
+
 }
