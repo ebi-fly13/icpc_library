@@ -9,6 +9,9 @@ data:
     - icon: ':warning:'
       path: data_structure/dsu.hpp
       title: data_structure/dsu.hpp
+    - icon: ':warning:'
+      path: data_structure/ford_mf.hpp
+      title: data_structure/ford_mf.hpp
     - icon: ':heavy_check_mark:'
       path: data_structure/segtree.hpp
       title: segtree
@@ -37,6 +40,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/eratosthenes_sieve.hpp
       title: eratosthenes sieve
+    - icon: ':warning:'
+      path: math/gauss_jordan.hpp
+      title: math/gauss_jordan.hpp
   - name: string
     pages:
     - icon: ':heavy_check_mark:'

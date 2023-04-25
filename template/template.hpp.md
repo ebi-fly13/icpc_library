@@ -8,6 +8,9 @@ data:
   - icon: ':warning:'
     path: data_structure/dsu.hpp
     title: data_structure/dsu.hpp
+  - icon: ':warning:'
+    path: data_structure/ford_mf.hpp
+    title: data_structure/ford_mf.hpp
   - icon: ':heavy_check_mark:'
     path: data_structure/segtree.hpp
     title: segtree
@@ -32,6 +35,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/eratosthenes_sieve.hpp
     title: eratosthenes sieve
+  - icon: ':warning:'
+    path: math/gauss_jordan.hpp
+    title: math/gauss_jordan.hpp
   - icon: ':heavy_check_mark:'
     path: string/RollingHash.hpp
     title: RollingHash
@@ -135,7 +141,9 @@ data:
   - geometry/convex_hull.hpp
   - geometry/base_ld.hpp
   - math/eratosthenes_sieve.hpp
+  - math/gauss_jordan.hpp
   - data_structure/segtree.hpp
+  - data_structure/ford_mf.hpp
   - data_structure/BinaryTrie.hpp
   - data_structure/dsu.hpp
   timestamp: '2023-04-23 15:49:48+09:00'
