@@ -68,20 +68,22 @@ data:
     \ T> bool chmax(T &a, const T &b){\n    if (a >= b) return false;\n    a = b;\n\
     \    return true;\n}\n\nnamespace lib{\n\nusing namespace std;\n\n} // namespace\
     \ lib;\n\n//using namespace lib;\n#line 4 \"geometry/base_ld.hpp\"\n\nnamespace\
-    \ lib {\n\nusing vec = complex<ld>;\nconst ld eps = 1e-7;\n\nint sgn(ld a) {\n\
-    \    return (a < -eps) ? -1 : (a > eps) ? 1 : 0;\n}\n\nld dot(const vec &a, const\
-    \ vec &b){\n    return (conj(a) * b).real();\n}\n\nld cross(const vec &a, const\
-    \ vec &b){\n    return (conj(a) * b).imag();\n}\n\nint isp(const vec &a, const\
-    \ vec &b, const vec &c) {\n    int cross_sgn = sgn(cross(b - a, c - a));\n   \
-    \ if(cross_sgn == 0) {\n        if(sgn(dot(b - a, c - a)) < 0) return -2;\n  \
-    \      if(sgn(dot(a - b, c - b)) < 0) return 2;\n    }\n    return cross_sgn;\n\
-    }\n\nvec rot90(const vec &a) {\n    return {-a.imag(), a.real()};\n}\n\nvec rot(const\
-    \ vec &a, ld rad){\n    return a * vec(cosl(rad),sinl(rad));\n}\n\nbool comp_for_argument_sort(const\
+    \ lib {\n\nusing vec = complex<ld>;\nconst ld eps = 1e-7;\n\nvoid ldout(int len\
+    \ = 20){\n    cout << fixed << setprecision(len);\n}\n\nint sgn(ld a) {\n    return\
+    \ (a < -eps) ? -1 : (a > eps) ? 1 : 0;\n}\n\nld dot(const vec &a, const vec &b){\n\
+    \    return (conj(a) * b).real();\n}\n\nld cross(const vec &a, const vec &b){\n\
+    \    return (conj(a) * b).imag();\n}\n\nint isp(const vec &a, const vec &b, const\
+    \ vec &c) {\n    int cross_sgn = sgn(cross(b - a, c - a));\n    if(cross_sgn ==\
+    \ 0) {\n        if(sgn(dot(b - a, c - a)) < 0) return -2;\n        if(sgn(dot(a\
+    \ - b, c - b)) < 0) return 2;\n    }\n    return cross_sgn;\n}\n\nvec rot90(const\
+    \ vec &a) {\n    return {-a.imag(), a.real()};\n}\n\nvec rot(const vec &a, ld\
+    \ rad){\n    return a * vec(cosl(rad),sinl(rad));\n}\n\nbool comp_for_argument_sort(const\
     \ vec &lhs, const vec &rhs){\n    //if (abs(arg(lhs)-arg(rhs)) < eps) return false;\
     \ // need ?\n    return arg(lhs) < arg(rhs);\n}\n\n} // namespace lib\n"
   code: "#pragma once\n\n#include\"../template/template.hpp\"\n\nnamespace lib {\n\
-    \nusing vec = complex<ld>;\nconst ld eps = 1e-7;\n\nint sgn(ld a) {\n    return\
-    \ (a < -eps) ? -1 : (a > eps) ? 1 : 0;\n}\n\nld dot(const vec &a, const vec &b){\n\
+    \nusing vec = complex<ld>;\nconst ld eps = 1e-7;\n\nvoid ldout(int len = 20){\n\
+    \    cout << fixed << setprecision(len);\n}\n\nint sgn(ld a) {\n    return (a\
+    \ < -eps) ? -1 : (a > eps) ? 1 : 0;\n}\n\nld dot(const vec &a, const vec &b){\n\
     \    return (conj(a) * b).real();\n}\n\nld cross(const vec &a, const vec &b){\n\
     \    return (conj(a) * b).imag();\n}\n\nint isp(const vec &a, const vec &b, const\
     \ vec &c) {\n    int cross_sgn = sgn(cross(b - a, c - a));\n    if(cross_sgn ==\
@@ -100,7 +102,7 @@ data:
   - geometry/circle.hpp
   - geometry/segment.hpp
   - geometry/convex_hull.hpp
-  timestamp: '2023-04-26 14:03:13+09:00'
+  timestamp: '2023-04-26 17:21:17+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/geometry/Cross_Points_of_Circle_and_Line.test.cpp
@@ -123,6 +125,10 @@ title: base_ld
 ## 説明
 
 小数点を用いた平面幾何に必須なもの。小数点での平面幾何ではこれをincludeして用いる。
+
+### ldout(int len = 20)
+
+浮動小数点数の出力用関数。小数点以下 `len` 桁出力する。
 
 ### sgn(ld x)
 
@@ -151,6 +157,10 @@ $x$ の符号を返す。epsで評価する。
 ### rot90(vec a)
 
 点 $a$ を90度回転をする。
+
+### rot90(const &vec a, ld rad)
+
+ベクトル `a` を `(0,0)` を中心に反時計回りに `rad[rad]` 回転させたものを返す。
 
 ### comp_for_argument_sort(vec lhs, vec rhs)
 
