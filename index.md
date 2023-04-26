@@ -69,6 +69,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: tree/LowestCommonAncestor.hpp
       title: LowestCommonAncestor
+    - icon: ':warning:'
+      path: tree/RerootingDP.hpp
+      title: tree/RerootingDP.hpp
   verificationCategories:
   - name: test/data_structure
     pages:

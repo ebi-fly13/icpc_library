@@ -53,6 +53,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: tree/LowestCommonAncestor.hpp
     title: LowestCommonAncestor
+  - icon: ':warning:'
+    path: tree/RerootingDP.hpp
+    title: tree/RerootingDP.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/data_structure/Point_Add_Range_Sum.test.cpp
@@ -138,6 +141,7 @@ data:
   - graph/mf_graph.hpp
   - graph/fordfulkerson.hpp
   - tree/HeavyLightDecomposition.hpp
+  - tree/RerootingDP.hpp
   - tree/LowestCommonAncestor.hpp
   - geometry/line.hpp
   - geometry/circle.hpp
