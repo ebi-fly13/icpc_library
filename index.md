@@ -71,7 +71,7 @@ data:
       title: LowestCommonAncestor
     - icon: ':warning:'
       path: tree/RerootingDP.hpp
-      title: tree/RerootingDP.hpp
+      title: RerootingDP
   verificationCategories:
   - name: test/data_structure
     pages:
