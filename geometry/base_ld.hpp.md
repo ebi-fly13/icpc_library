@@ -75,7 +75,8 @@ data:
     \ vec &b, const vec &c) {\n    int cross_sgn = sgn(cross(b - a, c - a));\n   \
     \ if(cross_sgn == 0) {\n        if(sgn(dot(b - a, c - a)) < 0) return -2;\n  \
     \      if(sgn(dot(a - b, c - b)) < 0) return 2;\n    }\n    return cross_sgn;\n\
-    }\n\nvec rot90(const vec &a) {\n    return {-a.imag(), a.real()};\n}\n\nbool comp_for_argument_sort(const\
+    }\n\nvec rot90(const vec &a) {\n    return {-a.imag(), a.real()};\n}\n\nvec rot(const\
+    \ vec &a, ld rad){\n    return a * vec(cosl(rad),sinl(rad));\n}\n\nbool comp_for_argument_sort(const\
     \ vec &lhs, const vec &rhs){\n    //if (abs(arg(lhs)-arg(rhs)) < eps) return false;\
     \ // need ?\n    return arg(lhs) < arg(rhs);\n}\n\n} // namespace lib\n"
   code: "#pragma once\n\n#include\"../template/template.hpp\"\n\nnamespace lib {\n\
@@ -86,7 +87,8 @@ data:
     \ vec &c) {\n    int cross_sgn = sgn(cross(b - a, c - a));\n    if(cross_sgn ==\
     \ 0) {\n        if(sgn(dot(b - a, c - a)) < 0) return -2;\n        if(sgn(dot(a\
     \ - b, c - b)) < 0) return 2;\n    }\n    return cross_sgn;\n}\n\nvec rot90(const\
-    \ vec &a) {\n    return {-a.imag(), a.real()};\n}\n\nbool comp_for_argument_sort(const\
+    \ vec &a) {\n    return {-a.imag(), a.real()};\n}\n\nvec rot(const vec &a, ld\
+    \ rad){\n    return a * vec(cosl(rad),sinl(rad));\n}\n\nbool comp_for_argument_sort(const\
     \ vec &lhs, const vec &rhs){\n    //if (abs(arg(lhs)-arg(rhs)) < eps) return false;\
     \ // need ?\n    return arg(lhs) < arg(rhs);\n}\n\n} // namespace lib\n"
   dependsOn:
@@ -98,7 +100,7 @@ data:
   - geometry/circle.hpp
   - geometry/segment.hpp
   - geometry/convex_hull.hpp
-  timestamp: '2023-04-24 18:42:07+09:00'
+  timestamp: '2023-04-26 14:03:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/geometry/Cross_Points_of_Circle_and_Line.test.cpp

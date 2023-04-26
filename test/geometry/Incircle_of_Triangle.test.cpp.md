@@ -42,7 +42,8 @@ data:
     \ vec &b, const vec &c) {\n    int cross_sgn = sgn(cross(b - a, c - a));\n   \
     \ if(cross_sgn == 0) {\n        if(sgn(dot(b - a, c - a)) < 0) return -2;\n  \
     \      if(sgn(dot(a - b, c - b)) < 0) return 2;\n    }\n    return cross_sgn;\n\
-    }\n\nvec rot90(const vec &a) {\n    return {-a.imag(), a.real()};\n}\n\nbool comp_for_argument_sort(const\
+    }\n\nvec rot90(const vec &a) {\n    return {-a.imag(), a.real()};\n}\n\nvec rot(const\
+    \ vec &a, ld rad){\n    return a * vec(cosl(rad),sinl(rad));\n}\n\nbool comp_for_argument_sort(const\
     \ vec &lhs, const vec &rhs){\n    //if (abs(arg(lhs)-arg(rhs)) < eps) return false;\
     \ // need ?\n    return arg(lhs) < arg(rhs);\n}\n\n} // namespace lib\n#line 2\
     \ \"geometry/circle.hpp\"\n\r\n#line 2 \"geometry/line.hpp\"\n\n#line 4 \"geometry/line.hpp\"\
@@ -109,7 +110,7 @@ data:
   isVerificationFile: true
   path: test/geometry/Incircle_of_Triangle.test.cpp
   requiredBy: []
-  timestamp: '2023-04-26 00:57:27+09:00'
+  timestamp: '2023-04-26 14:03:13+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/geometry/Incircle_of_Triangle.test.cpp

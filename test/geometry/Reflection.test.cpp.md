@@ -40,27 +40,27 @@ data:
     \ sgn(cross(b - a, c - a));\n    if(cross_sgn == 0) {\n        if(sgn(dot(b -\
     \ a, c - a)) < 0) return -2;\n        if(sgn(dot(a - b, c - b)) < 0) return 2;\n\
     \    }\n    return cross_sgn;\n}\n\nvec rot90(const vec &a) {\n    return {-a.imag(),\
-    \ a.real()};\n}\n\nbool comp_for_argument_sort(const vec &lhs, const vec &rhs){\n\
-    \    //if (abs(arg(lhs)-arg(rhs)) < eps) return false; // need ?\n    return arg(lhs)\
-    \ < arg(rhs);\n}\n\n} // namespace lib\n#line 4 \"geometry/line.hpp\"\n\nnamespace\
-    \ lib {\n\nstruct line {\n    vec a, b;\n};\n\nvec proj(const line &l, const vec\
-    \ &p) {\n    vec ab = l.b - l.a;\n    return l.a + ab * (dot(ab, p - l.a) / norm(ab));\n\
-    }\n\nvec refl(const line &l, const vec &p) {\n    return proj(l, p) * ld(2) -\
-    \ p;\n}\n\nint intersection(const line &a, const line &b) {\n    if(sgn(cross(a.b\
-    \ - a.a, b.a - b.b)) != 0) {\n        if(sgn(dot(a.b - a.a, b.a - b.b)) == 0)\
-    \ {\n            return 1;\n        }\n        return 0;\n    }\n    else if(sgn(cross(a.b\
-    \ - a.a, b.a - a.a)) != 0) {\n        return 2;\n    }\n    else {\n        return\
-    \ 3;\n    }\n}\n\nld dist(const line &a, const vec &p) {\n    return abs(cross(p\
-    \ - a.a, a.b - a.a) / abs(a.b - a.a));\n}\n\nvec cross_point(const line &a, const\
-    \ line &b) {\n    assert(intersection(a, b) < 2);\n    return a.a + (a.b - a.a)\
-    \ * cross(b.a - a.a, b.b - b.a) / cross(a.b - a.a, b.b - b.a);\n}\n\n}\n#line\
-    \ 6 \"test/geometry/Reflection.test.cpp\"\n\nusing namespace lib;\n\nint main()\
-    \ {\n    std::cout << std::fixed << std::setprecision(15);\n    line l;\n    {\n\
-    \        ld x1, y1, x2, y2;\n        std::cin >> x1 >> y1 >> x2 >> y2;\n     \
-    \   l.a = {x1, y1};\n        l.b = {x2, y2};\n    }\n    int q;\n    std::cin\
-    \ >> q;\n    while(q--) {\n        ld x,y;\n        std::cin >> x >> y;\n    \
-    \    vec p = refl(l, {x, y});\n        std::cout << p.real() << \" \" << p.imag()\
-    \ << '\\n';\n    }\n}\n"
+    \ a.real()};\n}\n\nvec rot(const vec &a, ld rad){\n    return a * vec(cosl(rad),sinl(rad));\n\
+    }\n\nbool comp_for_argument_sort(const vec &lhs, const vec &rhs){\n    //if (abs(arg(lhs)-arg(rhs))\
+    \ < eps) return false; // need ?\n    return arg(lhs) < arg(rhs);\n}\n\n} // namespace\
+    \ lib\n#line 4 \"geometry/line.hpp\"\n\nnamespace lib {\n\nstruct line {\n   \
+    \ vec a, b;\n};\n\nvec proj(const line &l, const vec &p) {\n    vec ab = l.b -\
+    \ l.a;\n    return l.a + ab * (dot(ab, p - l.a) / norm(ab));\n}\n\nvec refl(const\
+    \ line &l, const vec &p) {\n    return proj(l, p) * ld(2) - p;\n}\n\nint intersection(const\
+    \ line &a, const line &b) {\n    if(sgn(cross(a.b - a.a, b.a - b.b)) != 0) {\n\
+    \        if(sgn(dot(a.b - a.a, b.a - b.b)) == 0) {\n            return 1;\n  \
+    \      }\n        return 0;\n    }\n    else if(sgn(cross(a.b - a.a, b.a - a.a))\
+    \ != 0) {\n        return 2;\n    }\n    else {\n        return 3;\n    }\n}\n\
+    \nld dist(const line &a, const vec &p) {\n    return abs(cross(p - a.a, a.b -\
+    \ a.a) / abs(a.b - a.a));\n}\n\nvec cross_point(const line &a, const line &b)\
+    \ {\n    assert(intersection(a, b) < 2);\n    return a.a + (a.b - a.a) * cross(b.a\
+    \ - a.a, b.b - b.a) / cross(a.b - a.a, b.b - b.a);\n}\n\n}\n#line 6 \"test/geometry/Reflection.test.cpp\"\
+    \n\nusing namespace lib;\n\nint main() {\n    std::cout << std::fixed << std::setprecision(15);\n\
+    \    line l;\n    {\n        ld x1, y1, x2, y2;\n        std::cin >> x1 >> y1\
+    \ >> x2 >> y2;\n        l.a = {x1, y1};\n        l.b = {x2, y2};\n    }\n    int\
+    \ q;\n    std::cin >> q;\n    while(q--) {\n        ld x,y;\n        std::cin\
+    \ >> x >> y;\n        vec p = refl(l, {x, y});\n        std::cout << p.real()\
+    \ << \" \" << p.imag() << '\\n';\n    }\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/1/CGL_1_B\"\
     \n#define ERROR 0.0000001\n\n#include \"../../geometry/line.hpp\"\n#include \"\
     ../../template/template.hpp\"\n\nusing namespace lib;\n\nint main() {\n    std::cout\
@@ -76,7 +76,7 @@ data:
   isVerificationFile: true
   path: test/geometry/Reflection.test.cpp
   requiredBy: []
-  timestamp: '2023-04-26 00:57:27+09:00'
+  timestamp: '2023-04-26 14:03:13+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/geometry/Reflection.test.cpp
