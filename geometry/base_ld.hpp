@@ -7,6 +7,10 @@ namespace lib {
 using vec = complex<ld>;
 const ld eps = 1e-7;
 
+void ldout(int len = 20){
+    cout << fixed << setprecision(len);
+}
+
 int sgn(ld a) {
     return (a < -eps) ? -1 : (a > eps) ? 1 : 0;
 }
