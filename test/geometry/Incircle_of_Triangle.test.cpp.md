@@ -61,12 +61,13 @@ data:
     \ < 2);\n    return a.a + (a.b - a.a) * cross(b.a - a.a, b.b - b.a) / cross(a.b\
     \ - a.a, b.b - b.a);\n}\n\n}\n#line 5 \"geometry/circle.hpp\"\n\r\nnamespace lib\
     \ {\r\n\r\nstruct circle {\r\n    vec c;\r\n    ld r;\r\n};\r\n\r\nint intersection(const\
-    \ circle &c1, const circle &c2) {\r\n    ld d = abs(c1.c - c2.c);\r\n    ld r1\
-    \ = c1.r;\r\n    ld r2 = c2.r;\r\n    if(r1 < r2) std::swap(r1, r2);\r\n    if(sgn(d\
-    \ - (r1 + r2)) > 0) {\r\n        return 4;\r\n    }\r\n    else if(sgn(d - (r1\
-    \ + r2) == 0)) {\r\n        return 3;\r\n    }\r\n    else if(sgn(d - r1 + r2)\
-    \ > 0) {\r\n        return 2;\r\n    }\r\n    else if(sgn(d - r1 + r2) == 0) {\r\
-    \n        return 1;\r\n    }\r\n    else return 0;\r\n}\r\n\r\ncircle incircle_of_triangle(const\
+    \ circle &c1, const circle &c2) {\r\n    if(c1.c == c2.c && sgn(c1.r - c2.r) ==\
+    \ 0) return 5;\r\n    ld d = abs(c1.c - c2.c);\r\n    ld r1 = c1.r;\r\n    ld\
+    \ r2 = c2.r;\r\n    if(r1 < r2) std::swap(r1, r2);\r\n    if(sgn(d - (r1 + r2))\
+    \ > 0) {\r\n        return 4;\r\n    }\r\n    else if(sgn(d - (r1 + r2) == 0))\
+    \ {\r\n        return 3;\r\n    }\r\n    else if(sgn(d - r1 + r2) > 0) {\r\n \
+    \       return 2;\r\n    }\r\n    else if(sgn(d - r1 + r2) == 0) {\r\n       \
+    \ return 1;\r\n    }\r\n    else return 0;\r\n}\r\n\r\ncircle incircle_of_triangle(const\
     \ vec &a, const vec &b, const vec &c) {\r\n    ld A = abs(b - c), B = abs(c -\
     \ a), C = abs(a - b);\r\n    vec in = A * a + B * b + C * c;\r\n    in /= A +\
     \ B + C;\r\n    ld r = abs(cross(in - a, b - a) / abs(b - a));\r\n    return {in,\
@@ -87,7 +88,7 @@ data:
     \ c1.c);\r\n    if(cnt_tangent == 1 || cnt_tangent == 3) ps.emplace_back(p);\r\
     \n    else {\r\n        v *= sqrt(max(c1.r * c1.r - x * x, ld(0))) / abs(v);\r\
     \n        ps.emplace_back(p + v);\r\n        ps.emplace_back(p - v);\r\n    }\r\
-    \n    return ps;\r\n}\r\n\r\n}\n#line 7 \"test/geometry/Incircle_of_Triangle.test.cpp\"\
+    \n    return ps;\r\n}\r\n\r\n}\r\n#line 7 \"test/geometry/Incircle_of_Triangle.test.cpp\"\
     \n\r\nusing namespace lib;\r\n\r\nint main() {\r\n    std::cout << std::fixed\
     \ << std::setprecision(15);\r\n    auto input = [](vec &a) {\r\n        ld x,y;\r\
     \n        std::cin >> x >> y;\r\n        a = {x, y};\r\n    };\r\n    vec a,b,c;\r\
@@ -111,7 +112,7 @@ data:
   isVerificationFile: true
   path: test/geometry/Incircle_of_Triangle.test.cpp
   requiredBy: []
-  timestamp: '2023-04-26 17:21:17+09:00'
+  timestamp: '2023-04-30 15:50:50+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/geometry/Incircle_of_Triangle.test.cpp
