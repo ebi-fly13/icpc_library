@@ -19,10 +19,10 @@ vec cross_point(const segment &a, const segment &b) {
 }
 
 ld dist(const segment &a, const vec &c) {
-    if(sgn(dot(a.b - a.a, c - a.a)) < 0) {
+    if(sgn(dot(a.b - a.a, c - a.a)) <= 0) {
         return abs(c-a.a);
     }
-    else if(sgn(dot(a.a - a.b, c - a.b)) < 0) {
+    else if(sgn(dot(a.a - a.b, c - a.b)) <= 0) {
         return abs(c-a.b);
     }
     else {
