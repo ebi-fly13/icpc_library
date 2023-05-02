@@ -8,10 +8,13 @@ data:
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/geometry/Convex_Hull.test.cpp
+    title: test/geometry/Convex_Hull.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"geometry/convex_hull.hpp\"\n\n#line 2 \"template/template.hpp\"\
@@ -39,51 +42,50 @@ data:
     \ convex_hull(vector<vec> a){\n    int n = a.size();\n    if (n <= 2) return a;\n\
     \    auto comp = [&](vec lhs, vec rhs){\n        if (lhs.real() == rhs.real())\
     \ return lhs.imag() < rhs.imag();\n        return lhs.real() < rhs.real();\n \
-    \   };\n    sort(all(a),comp);\n    stack<int> uid, did;\n    uid.push(0);\n \
-    \   vec ri = a[n-1];\n    rep(i,1,n-1) {\n        vec le = a[uid.top()];\n   \
-    \     if (cross(ri-le,a[i]-le) > 0){\n            while (uid.size() >= 2){\n \
-    \               int test = uid.top(); uid.pop();\n                vec from = a[uid.top()];\n\
-    \                if (cross(a[i]-from,a[test]-from) > 0){\n                   \
-    \ uid.push(test);\n                    break;\n                }\n           \
-    \ }\n            uid.push(i);\n        }\n    }\n    did.push(0);\n    rep(i,1,n-1){\n\
-    \        vec le = a[did.top()];\n        if (cross(ri-le,a[i]-le) < 0){\n    \
-    \        while (did.size() >= 2){\n                int test = did.top(); did.pop();\n\
-    \                vec from = a[did.top()];\n                if (cross(a[i]-from,a[test]-from)\
-    \ < 0){\n                    did.push(test);\n                    break;\n   \
-    \             }\n            }\n            did.push(i);\n        }\n    }\n \
-    \   vector<int> ids(1,n-1);\n    while (!uid.empty()) ids.emplace_back(uid.top()),\
-    \ uid.pop();\n    reverse(all(ids));\n    while (!did.empty()) ids.emplace_back(did.top()),\
-    \ did.pop();\n    vector<vec> ans(ids.size());\n    rep(i,0,ids.size()) ans[i]\
-    \ = a[ids[i]];\n    return ans;\n}\n\n}\n"
+    \   };\n    sort(all(a),comp);\n    stack<int> uid, did;\n    vec ri = a[n-1];\n\
+    \    auto make_half = [&](bool isupper){\n        auto &id = (isupper ? uid :\
+    \ did);\n        id.push(0);\n        rep(i,1,n-1){\n            vec le = a[id.top()];\n\
+    \            auto cr = cross(ri-le,a[i]-le);\n            if ((cr > 0 && isupper)\
+    \ || (cr < 0 && !isupper)){\n                while (id.size() >= 2){\n       \
+    \             int test = id.top(); id.pop();\n                    vec from = a[id.top()];\n\
+    \                    auto cr2 = cross(a[i]-from,a[test]-from);\n             \
+    \       if ((cr2 > 0 && isupper) || (cr2 < 0 && !isupper)){\n                \
+    \        id.push(test);\n                        break;\n                    }\n\
+    \                }\n                id.push(i);\n            }\n        }\n  \
+    \  };\n    make_half(true); make_half(false);\n    vector<int> ids(1,n-1);\n \
+    \   while (!did.empty()) ids.emplace_back(did.top()), did.pop();\n    reverse(all(ids));\n\
+    \    while (!uid.empty()) ids.emplace_back(uid.top()), uid.pop();\n    ids.pop_back();\n\
+    \    vector<vec> ans(ids.size());\n    rep(i,0,ids.size()) ans[i] = a[ids[i]];\n\
+    \    return ans;\n}\n\n}\n"
   code: "#pragma once\n\n#include \"../template/template.hpp\"\n#include \"../geometry/base_ld.hpp\"\
     \n\nnamespace lib {\n\nvector<vec> convex_hull(vector<vec> a){\n    int n = a.size();\n\
     \    if (n <= 2) return a;\n    auto comp = [&](vec lhs, vec rhs){\n        if\
     \ (lhs.real() == rhs.real()) return lhs.imag() < rhs.imag();\n        return lhs.real()\
     \ < rhs.real();\n    };\n    sort(all(a),comp);\n    stack<int> uid, did;\n  \
-    \  uid.push(0);\n    vec ri = a[n-1];\n    rep(i,1,n-1) {\n        vec le = a[uid.top()];\n\
-    \        if (cross(ri-le,a[i]-le) > 0){\n            while (uid.size() >= 2){\n\
-    \                int test = uid.top(); uid.pop();\n                vec from =\
-    \ a[uid.top()];\n                if (cross(a[i]-from,a[test]-from) > 0){\n   \
-    \                 uid.push(test);\n                    break;\n              \
-    \  }\n            }\n            uid.push(i);\n        }\n    }\n    did.push(0);\n\
-    \    rep(i,1,n-1){\n        vec le = a[did.top()];\n        if (cross(ri-le,a[i]-le)\
-    \ < 0){\n            while (did.size() >= 2){\n                int test = did.top();\
-    \ did.pop();\n                vec from = a[did.top()];\n                if (cross(a[i]-from,a[test]-from)\
-    \ < 0){\n                    did.push(test);\n                    break;\n   \
-    \             }\n            }\n            did.push(i);\n        }\n    }\n \
-    \   vector<int> ids(1,n-1);\n    while (!uid.empty()) ids.emplace_back(uid.top()),\
-    \ uid.pop();\n    reverse(all(ids));\n    while (!did.empty()) ids.emplace_back(did.top()),\
-    \ did.pop();\n    vector<vec> ans(ids.size());\n    rep(i,0,ids.size()) ans[i]\
-    \ = a[ids[i]];\n    return ans;\n}\n\n}"
+    \  vec ri = a[n-1];\n    auto make_half = [&](bool isupper){\n        auto &id\
+    \ = (isupper ? uid : did);\n        id.push(0);\n        rep(i,1,n-1){\n     \
+    \       vec le = a[id.top()];\n            auto cr = cross(ri-le,a[i]-le);\n \
+    \           if ((cr > 0 && isupper) || (cr < 0 && !isupper)){\n              \
+    \  while (id.size() >= 2){\n                    int test = id.top(); id.pop();\n\
+    \                    vec from = a[id.top()];\n                    auto cr2 = cross(a[i]-from,a[test]-from);\n\
+    \                    if ((cr2 > 0 && isupper) || (cr2 < 0 && !isupper)){\n   \
+    \                     id.push(test);\n                        break;\n       \
+    \             }\n                }\n                id.push(i);\n            }\n\
+    \        }\n    };\n    make_half(true); make_half(false);\n    vector<int> ids(1,n-1);\n\
+    \    while (!did.empty()) ids.emplace_back(did.top()), did.pop();\n    reverse(all(ids));\n\
+    \    while (!uid.empty()) ids.emplace_back(uid.top()), uid.pop();\n    ids.pop_back();\n\
+    \    vector<vec> ans(ids.size());\n    rep(i,0,ids.size()) ans[i] = a[ids[i]];\n\
+    \    return ans;\n}\n\n}"
   dependsOn:
   - template/template.hpp
   - geometry/base_ld.hpp
   isVerificationFile: false
   path: geometry/convex_hull.hpp
   requiredBy: []
-  timestamp: '2023-04-26 17:21:17+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2023-05-02 22:40:20+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/geometry/Convex_Hull.test.cpp
 documentation_of: geometry/convex_hull.hpp
 layout: document
 redirect_from:

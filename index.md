@@ -23,7 +23,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: geometry/circle.hpp
       title: circle
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: geometry/convex_hull.hpp
       title: geometry/convex_hull.hpp
     - icon: ':heavy_check_mark:'
@@ -89,6 +89,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/geometry/Circumscribed_Circle_of_Triangle.test.cpp
       title: test/geometry/Circumscribed_Circle_of_Triangle.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/geometry/Convex_Hull.test.cpp
+      title: test/geometry/Convex_Hull.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/geometry/Counter_Clockwise.test.cpp
       title: test/geometry/Counter_Clockwise.test.cpp

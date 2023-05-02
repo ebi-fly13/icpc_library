@@ -13,6 +13,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/geometry/Convex_Hull.test.cpp
+    title: test/geometry/Convex_Hull.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/geometry/Cross_Point.test.cpp
     title: test/geometry/Cross_Point.test.cpp
   - icon: ':heavy_check_mark:'
@@ -66,9 +69,9 @@ data:
     }\n\nvec cross_point(const segment &a, const segment &b) {\n    assert(intersection_segment(a,\
     \ b, true));\n    return a.a + (a.b - a.a) * cross(b.a - a.a, b.b - b.a) / cross(a.b\
     \ - a.a, b.b - b.a);\n}\n\nld dist(const segment &a, const vec &c) {\n    if(sgn(dot(a.b\
-    \ - a.a, c - a.a)) < 0) {\n        return abs(c-a.a);\n    }\n    else if(sgn(dot(a.a\
-    \ - a.b, c - a.b)) < 0) {\n        return abs(c-a.b);\n    }\n    else {\n   \
-    \     return abs(cross(c - a.a, a.b - a.a)/abs(a.b-a.a));\n    }\n}\n\nld dist(const\
+    \ - a.a, c - a.a)) <= 0) {\n        return abs(c-a.a);\n    }\n    else if(sgn(dot(a.a\
+    \ - a.b, c - a.b)) <= 0) {\n        return abs(c-a.b);\n    }\n    else {\n  \
+    \      return abs(cross(c - a.a, a.b - a.a)/abs(a.b-a.a));\n    }\n}\n\nld dist(const\
     \ segment &a, const segment &b) {\n    if(intersection_segment(a, b, true)) return\
     \ 0;\n    else return min(min(dist(a, b.a), dist(a, b.b)), min(dist(b, a.a), dist(b,\
     \ a.b)));\n}\n\n}\n"
@@ -80,9 +83,9 @@ data:
     \ segment &a, const segment &b) {\n    assert(intersection_segment(a, b, true));\n\
     \    return a.a + (a.b - a.a) * cross(b.a - a.a, b.b - b.a) / cross(a.b - a.a,\
     \ b.b - b.a);\n}\n\nld dist(const segment &a, const vec &c) {\n    if(sgn(dot(a.b\
-    \ - a.a, c - a.a)) < 0) {\n        return abs(c-a.a);\n    }\n    else if(sgn(dot(a.a\
-    \ - a.b, c - a.b)) < 0) {\n        return abs(c-a.b);\n    }\n    else {\n   \
-    \     return abs(cross(c - a.a, a.b - a.a)/abs(a.b-a.a));\n    }\n}\n\nld dist(const\
+    \ - a.a, c - a.a)) <= 0) {\n        return abs(c-a.a);\n    }\n    else if(sgn(dot(a.a\
+    \ - a.b, c - a.b)) <= 0) {\n        return abs(c-a.b);\n    }\n    else {\n  \
+    \      return abs(cross(c - a.a, a.b - a.a)/abs(a.b-a.a));\n    }\n}\n\nld dist(const\
     \ segment &a, const segment &b) {\n    if(intersection_segment(a, b, true)) return\
     \ 0;\n    else return min(min(dist(a, b.a), dist(a, b.b)), min(dist(b, a.a), dist(b,\
     \ a.b)));\n}\n\n}"
@@ -93,10 +96,11 @@ data:
   isVerificationFile: false
   path: geometry/segment.hpp
   requiredBy: []
-  timestamp: '2023-04-26 17:21:17+09:00'
+  timestamp: '2023-05-02 23:13:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/geometry/Intersection.test.cpp
+  - test/geometry/Convex_Hull.test.cpp
   - test/geometry/Distance.test.cpp
   - test/geometry/Cross_Point.test.cpp
 documentation_of: geometry/segment.hpp
