@@ -25,7 +25,7 @@ data:
       title: circle
     - icon: ':heavy_check_mark:'
       path: geometry/convex_hull.hpp
-      title: geometry/convex_hull.hpp
+      title: convex_hull
     - icon: ':heavy_check_mark:'
       path: geometry/line.hpp
       title: line
