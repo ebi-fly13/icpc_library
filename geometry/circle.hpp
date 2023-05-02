@@ -11,6 +11,7 @@ struct circle {
 };
 
 int intersection(const circle &c1, const circle &c2) {
+    if(sgn(c1.c.real() - c2.c.real()) == 0 && sgn(c1.c.imag() - c2.c.imag()) == 0 && sgn(c1.r - c2.r) == 0) return 5;
     ld d = abs(c1.c - c2.c);
     ld r1 = c1.r;
     ld r2 = c2.r;
