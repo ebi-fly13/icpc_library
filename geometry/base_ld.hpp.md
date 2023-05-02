@@ -158,7 +158,7 @@ $x$ の符号を返す。epsで評価する。
 
 点 $a$ を90度回転をする。
 
-### rot90(const &vec a, ld rad)
+### rot(const &vec a, ld rad)
 
 ベクトル `a` を `(0,0)` を中心に反時計回りに `rad[rad]` 回転させたものを返す。
 
