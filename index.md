@@ -72,12 +72,20 @@ data:
     - icon: ':warning:'
       path: tree/RerootingDP.hpp
       title: RerootingDP
+  - name: utility
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: utility/modint.hpp
+      title: utility/modint.hpp
   verificationCategories:
   - name: test/data_structure
     pages:
     - icon: ':heavy_check_mark:'
       path: test/data_structure/Point_Add_Range_Sum.test.cpp
       title: test/data_structure/Point_Add_Range_Sum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data_structure/Point_Set_Range_Composite.test.cpp
+      title: test/data_structure/Point_Set_Range_Composite.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/data_structure/Set_Xor_Min.test.cpp
       title: test/data_structure/Set_Xor_Min.test.cpp

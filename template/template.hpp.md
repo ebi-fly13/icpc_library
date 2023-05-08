@@ -56,10 +56,16 @@ data:
   - icon: ':warning:'
     path: tree/RerootingDP.hpp
     title: RerootingDP
+  - icon: ':heavy_check_mark:'
+    path: utility/modint.hpp
+    title: utility/modint.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/data_structure/Point_Add_Range_Sum.test.cpp
     title: test/data_structure/Point_Add_Range_Sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/data_structure/Point_Set_Range_Composite.test.cpp
+    title: test/data_structure/Point_Set_Range_Composite.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/data_structure/Set_Xor_Min.test.cpp
     title: test/data_structure/Set_Xor_Min.test.cpp
@@ -139,6 +145,7 @@ data:
   isVerificationFile: false
   path: template/template.hpp
   requiredBy:
+  - utility/modint.hpp
   - graph/mf_graph.hpp
   - graph/fordfulkerson.hpp
   - geometry/base_ld.hpp
@@ -178,6 +185,7 @@ data:
   - test/data_structure/Vertex_Add_Path_Sum.test.cpp
   - test/data_structure/Point_Add_Range_Sum.test.cpp
   - test/data_structure/Set_Xor_Min.test.cpp
+  - test/data_structure/Point_Set_Range_Composite.test.cpp
   - test/math/enumerate_primes.test.cpp
 documentation_of: template/template.hpp
 layout: document
