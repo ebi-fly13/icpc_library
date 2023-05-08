@@ -1,6 +1,6 @@
 ---
 title: modint
-documentation_of: //utility/modint
+documentation_of: //utility/modint.hpp
 ---
 
 ## 説明
