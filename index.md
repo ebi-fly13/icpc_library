@@ -58,7 +58,7 @@ data:
       title: string/parsing_template.hpp
   - name: template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: template/template.hpp
   - name: tree
@@ -69,7 +69,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: tree/LowestCommonAncestor.hpp
       title: LowestCommonAncestor
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: tree/RerootingDP.hpp
       title: RerootingDP
   - name: utility
@@ -148,7 +148,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/tree/Lowest_Common_Ancestor.test.cpp
       title: test/tree/Lowest_Common_Ancestor.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/tree/RerootingDP.test.cpp
       title: test/tree/RerootingDP.test.cpp
 layout: toppage
