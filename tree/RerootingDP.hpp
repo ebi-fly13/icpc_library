@@ -6,11 +6,11 @@ namespace lib {
 
 template <class E, class V, E (*merge)(E, E), E (*e)(), E (*put_edge)(V, int),
           V (*put_vertex)(E, int)>
-struct Rerooting {
+struct RerootingDP {
     struct edge {
         int to, idx, xdi;
     };
-    Rerooting(int _n = 0) : n(_n) { es.resize(n); }
+    RerootingDP(int _n = 0) : n(_n) { es.resize(n); }
     void add_edge(int u, int v, int idx1, int idx2) {
         es[u].push_back({v, idx1, idx2});
         es[v].push_back({u, idx2, idx1});
