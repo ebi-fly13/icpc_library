@@ -125,22 +125,23 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"template/template.hpp\"\n\n#include<bits/stdc++.h>\n\n#define\
-    \ rep(i,s,n) for (int i = s; i < (int)(n); i++)\n#define rrep(i,s,n) for (int\
-    \ i = (int)(n)-1; i >= (int)(s); i--)\n#define all(v) v.begin(),v.end()\n\nusing\
-    \ ll = long long;\nusing ld = long double;\nusing ull = unsigned long long;\n\n\
-    template<typename T> bool chmin(T &a, const T &b){\n    if (a <= b) return false;\n\
-    \    a = b;\n    return true;\n}\ntemplate<typename T> bool chmax(T &a, const\
-    \ T &b){\n    if (a >= b) return false;\n    a = b;\n    return true;\n}\n\nnamespace\
-    \ lib{\n\nusing namespace std;\n\n} // namespace lib;\n\n//using namespace lib;\n"
-  code: "#pragma once\n\n#include<bits/stdc++.h>\n\n#define rep(i,s,n) for (int i\
-    \ = s; i < (int)(n); i++)\n#define rrep(i,s,n) for (int i = (int)(n)-1; i >= (int)(s);\
-    \ i--)\n#define all(v) v.begin(),v.end()\n\nusing ll = long long;\nusing ld =\
-    \ long double;\nusing ull = unsigned long long;\n\ntemplate<typename T> bool chmin(T\
-    \ &a, const T &b){\n    if (a <= b) return false;\n    a = b;\n    return true;\n\
-    }\ntemplate<typename T> bool chmax(T &a, const T &b){\n    if (a >= b) return\
-    \ false;\n    a = b;\n    return true;\n}\n\nnamespace lib{\n\nusing namespace\
-    \ std;\n\n} // namespace lib;\n\n//using namespace lib;"
+  bundledCode: "#line 2 \"template/template.hpp\"\n\n#include <bits/stdc++.h>\n\n\
+    #define rep(i, s, n) for (int i = s; i < (int)(n); i++)\n#define rrep(i, s, n)\
+    \ for (int i = (int)(n)-1; i >= (int)(s); i--)\n#define all(v) v.begin(), v.end()\n\
+    \nusing ll = long long;\nusing ld = long double;\nusing ull = unsigned long long;\n\
+    \ntemplate <typename T> bool chmin(T &a, const T &b) {\n    if (a <= b) return\
+    \ false;\n    a = b;\n    return true;\n}\ntemplate <typename T> bool chmax(T\
+    \ &a, const T &b) {\n    if (a >= b) return false;\n    a = b;\n    return true;\n\
+    }\n\nnamespace lib {\n\nusing namespace std;\n\n}  // namespace lib\n\n// using\
+    \ namespace lib;\n"
+  code: "#pragma once\n\n#include <bits/stdc++.h>\n\n#define rep(i, s, n) for (int\
+    \ i = s; i < (int)(n); i++)\n#define rrep(i, s, n) for (int i = (int)(n)-1; i\
+    \ >= (int)(s); i--)\n#define all(v) v.begin(), v.end()\n\nusing ll = long long;\n\
+    using ld = long double;\nusing ull = unsigned long long;\n\ntemplate <typename\
+    \ T> bool chmin(T &a, const T &b) {\n    if (a <= b) return false;\n    a = b;\n\
+    \    return true;\n}\ntemplate <typename T> bool chmax(T &a, const T &b) {\n \
+    \   if (a >= b) return false;\n    a = b;\n    return true;\n}\n\nnamespace lib\
+    \ {\n\nusing namespace std;\n\n}  // namespace lib\n\n// using namespace lib;"
   dependsOn: []
   isVerificationFile: false
   path: template/template.hpp
@@ -164,7 +165,7 @@ data:
   - data_structure/BinaryTrie.hpp
   - math/eratosthenes_sieve.hpp
   - math/gauss_jordan.hpp
-  timestamp: '2023-04-23 15:49:48+09:00'
+  timestamp: '2023-05-08 15:48:04+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/geometry/Projection.test.cpp
