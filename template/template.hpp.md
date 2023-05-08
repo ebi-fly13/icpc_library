@@ -53,7 +53,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: tree/LowestCommonAncestor.hpp
     title: LowestCommonAncestor
-  - icon: ':warning:'
+  - icon: ':x:'
     path: tree/RerootingDP.hpp
     title: RerootingDP
   - icon: ':heavy_check_mark:'
@@ -120,9 +120,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/tree/Lowest_Common_Ancestor.test.cpp
     title: test/tree/Lowest_Common_Ancestor.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: test/tree/RerootingDP.test.cpp
+    title: test/tree/RerootingDP.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n\n#include <bits/stdc++.h>\n\n\
@@ -166,7 +169,7 @@ data:
   - math/eratosthenes_sieve.hpp
   - math/gauss_jordan.hpp
   timestamp: '2023-05-08 15:48:04+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/geometry/Projection.test.cpp
   - test/geometry/Parallel_Orthogonal.test.cpp
@@ -182,6 +185,7 @@ data:
   - test/geometry/Distance.test.cpp
   - test/geometry/Cross_Point.test.cpp
   - test/string/aoj_2444.test.cpp
+  - test/tree/RerootingDP.test.cpp
   - test/tree/Lowest_Common_Ancestor.test.cpp
   - test/data_structure/Vertex_Add_Path_Sum.test.cpp
   - test/data_structure/Point_Add_Range_Sum.test.cpp

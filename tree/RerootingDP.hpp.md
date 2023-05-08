@@ -1,14 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/tree/RerootingDP.test.cpp
+    title: test/tree/RerootingDP.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"tree/RerootingDP.hpp\"\n\n#line 2 \"template/template.hpp\"\
@@ -21,10 +24,10 @@ data:
     \    a = b;\n    return true;\n}\n\nnamespace lib {\n\nusing namespace std;\n\n\
     }  // namespace lib\n\n// using namespace lib;\n#line 4 \"tree/RerootingDP.hpp\"\
     \n\nnamespace lib {\n\ntemplate <class E, class V, E (*merge)(E, E), E (*e)(),\
-    \ E (*put_edge)(V, int),\n          V (*put_vertex)(E, int)>\nstruct Rerooting\
-    \ {\n    struct edge {\n        int to, idx, xdi;\n    };\n    Rerooting(int _n\
-    \ = 0) : n(_n) { es.resize(n); }\n    void add_edge(int u, int v, int idx1, int\
-    \ idx2) {\n        es[u].push_back({v, idx1, idx2});\n        es[v].push_back({u,\
+    \ E (*put_edge)(V, int),\n          V (*put_vertex)(E, int)>\nstruct RerootingDP\
+    \ {\n    struct edge {\n        int to, idx, xdi;\n    };\n    RerootingDP(int\
+    \ _n = 0) : n(_n) { es.resize(n); }\n    void add_edge(int u, int v, int idx1,\
+    \ int idx2) {\n        es[u].push_back({v, idx1, idx2});\n        es[v].push_back({u,\
     \ idx2, idx1});\n    }\n    vector<V> build(int v = 0) {\n        root = v;\n\
     \        outs.resize(n);\n        subdp.resize(n);\n        in.resize(n), up.resize(n);\n\
     \        int tnow = 0;\n        dfs(root, -1, tnow);\n        return subdp;\n\
@@ -56,8 +59,8 @@ data:
     \ lib\n"
   code: "#pragma once\n\n#include \"../template/template.hpp\"\n\nnamespace lib {\n\
     \ntemplate <class E, class V, E (*merge)(E, E), E (*e)(), E (*put_edge)(V, int),\n\
-    \          V (*put_vertex)(E, int)>\nstruct Rerooting {\n    struct edge {\n \
-    \       int to, idx, xdi;\n    };\n    Rerooting(int _n = 0) : n(_n) { es.resize(n);\
+    \          V (*put_vertex)(E, int)>\nstruct RerootingDP {\n    struct edge {\n\
+    \        int to, idx, xdi;\n    };\n    RerootingDP(int _n = 0) : n(_n) { es.resize(n);\
     \ }\n    void add_edge(int u, int v, int idx1, int idx2) {\n        es[u].push_back({v,\
     \ idx1, idx2});\n        es[v].push_back({u, idx2, idx1});\n    }\n    vector<V>\
     \ build(int v = 0) {\n        root = v;\n        outs.resize(n);\n        subdp.resize(n);\n\
@@ -94,9 +97,10 @@ data:
   isVerificationFile: false
   path: tree/RerootingDP.hpp
   requiredBy: []
-  timestamp: '2023-05-08 15:48:04+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2023-05-08 19:23:06+09:00'
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/tree/RerootingDP.test.cpp
 documentation_of: tree/RerootingDP.hpp
 layout: document
 title: RerootingDP
@@ -214,6 +218,10 @@ V get g.get(int r, int v)
 
 - 上述した問題における <code>dfs(r,r)</code> を計算する過程で `dfs` が返す値 `dfs(r,v)` を返します。
 - 頂点 `r` を根とする木DPをしたときの頂点 `v` の部分木に対するDPの値を得ることができます。
+
+#### 制約
+
+- `get` を呼ぶ前にちょうど $1$ 回 `reroot` を呼んでいる。
 
 #### 計算量
 
