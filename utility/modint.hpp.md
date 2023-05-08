@@ -75,8 +75,9 @@ data:
   - test/data_structure/Point_Set_Range_Composite.test.cpp
 documentation_of: utility/modint.hpp
 layout: document
-redirect_from:
-- /library/utility/modint.hpp
-- /library/utility/modint.hpp.html
-title: utility/modint.hpp
+title: modint
 ---
+
+## 説明
+
+modを自動で取ってくれる構造体。割り算は素数の場合のみ正常に動作。

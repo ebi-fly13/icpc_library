@@ -76,7 +76,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: utility/modint.hpp
-      title: utility/modint.hpp
+      title: modint
   verificationCategories:
   - name: test/data_structure
     pages:

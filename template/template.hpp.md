@@ -58,7 +58,7 @@ data:
     title: RerootingDP
   - icon: ':heavy_check_mark:'
     path: utility/modint.hpp
-    title: utility/modint.hpp
+    title: modint
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/data_structure/Point_Add_Range_Sum.test.cpp

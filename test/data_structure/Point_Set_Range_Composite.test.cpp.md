@@ -9,7 +9,7 @@ data:
     title: template/template.hpp
   - icon: ':heavy_check_mark:'
     path: utility/modint.hpp
-    title: utility/modint.hpp
+    title: modint
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
