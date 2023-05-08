@@ -12,7 +12,7 @@ documentation_of: //tree/RerootingDP.hpp
 > - $\mathbb{V}=\lbrace 0,1,\dots, n-1 \rbrace$ である。
 > - $\mathbb{E}\subset \mathbb{V}\times \mathbb{V}$ である。辺 $(a,b)$ は頂点 $a$ から頂点 $b$ への**有向辺**。 $T$ において頂点 $a,b$ の間に辺が張られているとき, またそのときに限り $(a,b),(b,a)\in \mathbb{E}$ である。
 > 
-> また、各有向辺には整数値の番号が割り当てられていて、 $\mathrm{idx}:\mathbb{E}\to \mathbb{Z}$ によって定められます。ここで $\mathbb{E}_\mathrm{idx}=\lbrace \mathrm{idx}(e)\ |\ e\in \mathbb{E} \rbrace$ としておきます。
+> また、各有向辺には整数値の番号が割り当てられていて、 $\mathrm{idx}:\mathbb{E}\to \mathbb{Z}$ によって定められます。ここで $\mathbb{E}_\mathrm{idx}=\lbrace \mathrm{idx}(e)\ \mid\ e\in \mathbb{E} \rbrace$ としておきます。
 > 
 > **可換**モノイド $(E,\oplus : E\times E\to E,e\in E)$ と集合 $V$ および $\mathrm{put \_ edge}:V\times \mathbb{E}_\mathrm{idx}\to E,\ \mathrm{put \_ vertex}:E\times \mathbb{V}\to V$ が与えられます。次の擬似コードに従って計算される値 <code>dfs(0,0), dfs(1,1),...,dfs(n-1,n-1)</code> を求めてください。ただし、頂点 $r$ を根と見たときの頂点 $v$ の子の頂点の集合を $\mathrm{child}(r,v)$ とします。
 >```
@@ -163,7 +163,11 @@ int main(){
 ## 設計の意図
 
 全方位木DPはすべての部分木 $t$ に対する答え $dp(t)$ を高速に求めるアルゴリズムで、 $t$ に含まれるさらに小さい部分木 $s$ に対する答え $dp(s)$ から $dp(t)$ を計算していきます。 $r$ を全体の根としたときの木DPの値を求める際、$v$ の部分木を有向辺 $(par(v),v)$ に対応させると理解しやすい、という話があります。（ $par(v)$ は $r$ を根としたときの $v$ の親です。 $v=r$ のときは $par(v)$ は仮想的な頂点であり、有向辺 $(par(v),v)$ は仮想的な辺です。 ）これに基づいて、有向辺 $(u,v)$ に対応する答えを $f(u,v)$ と書くことにしましょう。 $u=-1$ のときは仮想的な有向辺を考えており、対応する部分木は $v$ を根とする根付き木です。さて、このライブラリの設計では、
-$$f(u,v)=\bigoplus_{c\in \mathrm{child}(u,v)}f(v,c)$$
+
+$$
+f(u,v)=\bigoplus_{c\in \mathrm{child}(u,v)}f(v,c)
+$$
+
 のような遷移式では考慮されない「辺の重み」を取り入れるため、補助的な関数 $g(u,v)$ を定義しています。 $g(u,v)$ は $(u,v)$ に対応する部分木に辺 $(u,v)$ を付加するが頂点 $u$ はまだ付加しないみたいな（雰囲気で感じ取ってください）部分木もどきに対する答えっぽいもの（雰囲気で感じ取ってください）です。要点は次のとおりです。
 
 - 部分木に辺を付加すると、部分木もどきになる。( $\mathrm{put \\_ edge}$ )
