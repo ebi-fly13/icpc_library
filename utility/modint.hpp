@@ -6,7 +6,9 @@ template <ll mod> struct modint {
     ll a;
 
     modint(ll x = 0) : a((x % mod + mod) % mod) {}
-    ll &val() { return a; }
+    ll& val() {
+        return a;
+    }
     modint pow(ll n) {
         modint res = 1;
         modint x = a;
@@ -17,36 +19,44 @@ template <ll mod> struct modint {
         }
         return res;
     }
-    modint inv() { return pow(mod - 2); }
-    constexpr modint &operator+=(const modint rhs) {
+    modint inv() {
+        return pow(mod - 2);
+    }
+    modint& operator+=(const modint rhs) {
         a += rhs.a;
         if (a >= mod) a -= mod;
         return *this;
     }
-    constexpr modint &operator-=(const modint rhs) {
+    modint& operator-=(const modint rhs) {
         if (a < rhs.a) a += mod;
         a -= rhs.a;
         return *this;
     }
-    constexpr modint &operator*=(const modint rhs) {
+    modint& operator*=(const modint rhs) {
         a = a * rhs.a % mod;
         return *this;
     }
-    constexpr modint &operator/=(modint rhs) {
+    modint& operator/=(modint rhs) {
         *this *= rhs.inv();
         return *this;
     }
-    constexpr modint operator+(const modint rhs) {
-        return modint(*this) += rhs;
+    friend modint operator+(const modint& lhs, const modint& rhs) {
+        return modint(lhs) += rhs;
     }
-    constexpr modint operator-(const modint rhs) {
-        return modint(*this) -= rhs;
+    friend modint operator-(const modint& lhs, const modint& rhs) {
+        return modint(lhs) -= rhs;
     }
-    constexpr modint operator*(const modint rhs) {
-        return modint(*this) *= rhs;
+    friend modint operator*(const modint& lhs, const modint& rhs) {
+        return modint(lhs) *= rhs;
     }
-    constexpr modint operator/(const modint rhs) {
-        return modint(*this) /= rhs;
+    friend modint operator/(const modint& lhs, const modint& rhs) {
+        return modint(lhs) /= rhs;
+    }
+    modint operator+() const {
+        return *this;
+    }
+    modint operator-() const {
+        return modint() - *this;
     }
 };
 
