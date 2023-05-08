@@ -24,48 +24,52 @@ data:
     }\n\nnamespace lib {\n\nusing namespace std;\n\n}  // namespace lib\n\n// using\
     \ namespace lib;\n#line 2 \"utility/modint.hpp\"\n\nnamespace lib {\n\ntemplate\
     \ <ll mod> struct modint {\n    ll a;\n\n    modint(ll x = 0) : a((x % mod + mod)\
-    \ % mod) {}\n    ll &val() { return a; }\n    modint pow(ll n) {\n        modint\
-    \ res = 1;\n        modint x = a;\n        while (n) {\n            if (n & 1)\
-    \ res *= x;\n            x *= x;\n            n >>= 1;\n        }\n        return\
-    \ res;\n    }\n    modint inv() { return pow(mod - 2); }\n    constexpr modint\
-    \ &operator+=(const modint rhs) {\n        a += rhs.a;\n        if (a >= mod)\
-    \ a -= mod;\n        return *this;\n    }\n    constexpr modint &operator-=(const\
+    \ % mod) {}\n    ll& val() {\n        return a;\n    }\n    modint pow(ll n) {\n\
+    \        modint res = 1;\n        modint x = a;\n        while (n) {\n       \
+    \     if (n & 1) res *= x;\n            x *= x;\n            n >>= 1;\n      \
+    \  }\n        return res;\n    }\n    modint inv() {\n        return pow(mod -\
+    \ 2);\n    }\n    modint& operator+=(const modint rhs) {\n        a += rhs.a;\n\
+    \        if (a >= mod) a -= mod;\n        return *this;\n    }\n    modint& operator-=(const\
     \ modint rhs) {\n        if (a < rhs.a) a += mod;\n        a -= rhs.a;\n     \
-    \   return *this;\n    }\n    constexpr modint &operator*=(const modint rhs) {\n\
-    \        a = a * rhs.a % mod;\n        return *this;\n    }\n    constexpr modint\
-    \ &operator/=(modint rhs) {\n        *this *= rhs.inv();\n        return *this;\n\
-    \    }\n    constexpr modint operator+(const modint rhs) {\n        return modint(*this)\
-    \ += rhs;\n    }\n    constexpr modint operator-(const modint rhs) {\n       \
-    \ return modint(*this) -= rhs;\n    }\n    constexpr modint operator*(const modint\
-    \ rhs) {\n        return modint(*this) *= rhs;\n    }\n    constexpr modint operator/(const\
-    \ modint rhs) {\n        return modint(*this) /= rhs;\n    }\n};\n\nusing modint998244353\
-    \ = modint<998244353>;\nusing modint1000000007 = modint<1'000'000'007>;\n\n} \
-    \ // namespace lib\n"
+    \   return *this;\n    }\n    modint& operator*=(const modint rhs) {\n       \
+    \ a = a * rhs.a % mod;\n        return *this;\n    }\n    modint& operator/=(modint\
+    \ rhs) {\n        *this *= rhs.inv();\n        return *this;\n    }\n    friend\
+    \ modint operator+(const modint& lhs, const modint& rhs) {\n        return modint(lhs)\
+    \ += rhs;\n    }\n    friend modint operator-(const modint& lhs, const modint&\
+    \ rhs) {\n        return modint(lhs) -= rhs;\n    }\n    friend modint operator*(const\
+    \ modint& lhs, const modint& rhs) {\n        return modint(lhs) *= rhs;\n    }\n\
+    \    friend modint operator/(const modint& lhs, const modint& rhs) {\n       \
+    \ return modint(lhs) /= rhs;\n    }\n    modint operator+() const {\n        return\
+    \ *this;\n    }\n    modint operator-() const {\n        return modint() - *this;\n\
+    \    }\n};\n\nusing modint998244353 = modint<998244353>;\nusing modint1000000007\
+    \ = modint<1'000'000'007>;\n\n}  // namespace lib\n"
   code: "#include \"../template/template.hpp\"\n\nnamespace lib {\n\ntemplate <ll\
     \ mod> struct modint {\n    ll a;\n\n    modint(ll x = 0) : a((x % mod + mod)\
-    \ % mod) {}\n    ll &val() { return a; }\n    modint pow(ll n) {\n        modint\
-    \ res = 1;\n        modint x = a;\n        while (n) {\n            if (n & 1)\
-    \ res *= x;\n            x *= x;\n            n >>= 1;\n        }\n        return\
-    \ res;\n    }\n    modint inv() { return pow(mod - 2); }\n    constexpr modint\
-    \ &operator+=(const modint rhs) {\n        a += rhs.a;\n        if (a >= mod)\
-    \ a -= mod;\n        return *this;\n    }\n    constexpr modint &operator-=(const\
+    \ % mod) {}\n    ll& val() {\n        return a;\n    }\n    modint pow(ll n) {\n\
+    \        modint res = 1;\n        modint x = a;\n        while (n) {\n       \
+    \     if (n & 1) res *= x;\n            x *= x;\n            n >>= 1;\n      \
+    \  }\n        return res;\n    }\n    modint inv() {\n        return pow(mod -\
+    \ 2);\n    }\n    modint& operator+=(const modint rhs) {\n        a += rhs.a;\n\
+    \        if (a >= mod) a -= mod;\n        return *this;\n    }\n    modint& operator-=(const\
     \ modint rhs) {\n        if (a < rhs.a) a += mod;\n        a -= rhs.a;\n     \
-    \   return *this;\n    }\n    constexpr modint &operator*=(const modint rhs) {\n\
-    \        a = a * rhs.a % mod;\n        return *this;\n    }\n    constexpr modint\
-    \ &operator/=(modint rhs) {\n        *this *= rhs.inv();\n        return *this;\n\
-    \    }\n    constexpr modint operator+(const modint rhs) {\n        return modint(*this)\
-    \ += rhs;\n    }\n    constexpr modint operator-(const modint rhs) {\n       \
-    \ return modint(*this) -= rhs;\n    }\n    constexpr modint operator*(const modint\
-    \ rhs) {\n        return modint(*this) *= rhs;\n    }\n    constexpr modint operator/(const\
-    \ modint rhs) {\n        return modint(*this) /= rhs;\n    }\n};\n\nusing modint998244353\
-    \ = modint<998244353>;\nusing modint1000000007 = modint<1'000'000'007>;\n\n} \
-    \ // namespace lib"
+    \   return *this;\n    }\n    modint& operator*=(const modint rhs) {\n       \
+    \ a = a * rhs.a % mod;\n        return *this;\n    }\n    modint& operator/=(modint\
+    \ rhs) {\n        *this *= rhs.inv();\n        return *this;\n    }\n    friend\
+    \ modint operator+(const modint& lhs, const modint& rhs) {\n        return modint(lhs)\
+    \ += rhs;\n    }\n    friend modint operator-(const modint& lhs, const modint&\
+    \ rhs) {\n        return modint(lhs) -= rhs;\n    }\n    friend modint operator*(const\
+    \ modint& lhs, const modint& rhs) {\n        return modint(lhs) *= rhs;\n    }\n\
+    \    friend modint operator/(const modint& lhs, const modint& rhs) {\n       \
+    \ return modint(lhs) /= rhs;\n    }\n    modint operator+() const {\n        return\
+    \ *this;\n    }\n    modint operator-() const {\n        return modint() - *this;\n\
+    \    }\n};\n\nusing modint998244353 = modint<998244353>;\nusing modint1000000007\
+    \ = modint<1'000'000'007>;\n\n}  // namespace lib"
   dependsOn:
   - template/template.hpp
   isVerificationFile: false
   path: utility/modint.hpp
   requiredBy: []
-  timestamp: '2023-05-08 15:48:04+09:00'
+  timestamp: '2023-05-08 16:25:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/data_structure/Point_Set_Range_Composite.test.cpp
