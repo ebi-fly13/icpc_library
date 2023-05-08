@@ -1,16 +1,16 @@
 #pragma once
 #include "../template/template.hpp"
 
-namespace lib{
+namespace lib {
 using namespace std;
 
 template <class Cap> struct mf_graph {
-    struct edge{
+    struct edge {
         int from, to;
         Cap cap, flow;
     };
 
-    struct nedge{
+    struct nedge {
         int to, rev;
         Cap cap;
     };
@@ -33,10 +33,7 @@ template <class Cap> struct mf_graph {
         return m;
     }
 
-	
-    Cap flow(int s, int t) {
-        return flow(s, t, numeric_limits<Cap>::max());
-    }
+    Cap flow(int s, int t) { return flow(s, t, numeric_limits<Cap>::max()); }
 
     Cap flow(int s, int t, Cap flow_limit) {
         vector<int> lv(nn), iter(nn);
@@ -89,54 +86,54 @@ template <class Cap> struct mf_graph {
         return flow;
     }
 
-	/*
-	
-    if you want other functions, take from here
-    NOT VERIFIED.
+    /*
 
-    edge get_edge(int i) {
-        int m = int(pos.size());
-        auto _e = g[pos[i].first][pos[i].second];
-        auto _re = g[_e.to][_e.rev];
-        return edge{pos[i].first, _e.to, _e.cap + _re.cap, _re.cap};
-    }
-    
-    vector<edge> edges() {
-        int m = int(pos.size());
-        vector<edge> result;
-        for (int i = 0; i < m; i++) {
-            result.push_back(get_edge(i));
-        }
-        return result;
-    }
+if you want other functions, take from here
+NOT VERIFIED.
 
-    void change_edge(int i, Cap new_cap, Cap new_flow) {
-        int m = int(pos.size());
-        auto& _e = g[pos[i].first][pos[i].second];
-        auto& _re = g[_e.to][_e.rev];
-        _e.cap = new_cap - new_flow;
-        _re.cap = new_flow;
-    }
+edge get_edge(int i) {
+    int m = int(pos.size());
+    auto _e = g[pos[i].first][pos[i].second];
+    auto _re = g[_e.to][_e.rev];
+    return edge{pos[i].first, _e.to, _e.cap + _re.cap, _re.cap};
+}
 
-    std::vector<bool> min_cut(int s) {
-        vector<bool> visited(_n);
-        queue<int> q;
-        q.push(s);
-        while (!q.empty()) {
-            int p = q.front();
-            q.pop();
-            visited[p] = true;
-            for (auto e : g[p]) {
-                if (e.cap && !visited[e.to]) {
-                    visited[e.to] = true;
-                    q.push(e.to);
-                }
+vector<edge> edges() {
+    int m = int(pos.size());
+    vector<edge> result;
+    for (int i = 0; i < m; i++) {
+        result.push_back(get_edge(i));
+    }
+    return result;
+}
+
+void change_edge(int i, Cap new_cap, Cap new_flow) {
+    int m = int(pos.size());
+    auto& _e = g[pos[i].first][pos[i].second];
+    auto& _re = g[_e.to][_e.rev];
+    _e.cap = new_cap - new_flow;
+    _re.cap = new_flow;
+}
+
+std::vector<bool> min_cut(int s) {
+    vector<bool> visited(_n);
+    queue<int> q;
+    q.push(s);
+    while (!q.empty()) {
+        int p = q.front();
+        q.pop();
+        visited[p] = true;
+        for (auto e : g[p]) {
+            if (e.cap && !visited[e.to]) {
+                visited[e.to] = true;
+                q.push(e.to);
             }
         }
-        return visited;
     }
-	
-	*/
+    return visited;
+}
+
+    */
 };
 
-}
+}  // namespace lib

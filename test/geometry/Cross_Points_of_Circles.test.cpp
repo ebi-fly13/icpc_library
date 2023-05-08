@@ -1,4 +1,5 @@
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/7/CGL_7_E"
+#define PROBLEM \
+    "https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/7/CGL_7_E"
 #define ERROR 0.0000001
 
 #include "../../geometry/circle.hpp"
@@ -33,7 +34,7 @@ int main() {
         return lhs.real() == rhs.real() ? lhs.imag() < rhs.imag()
                                         : lhs.real() < rhs.real();
     });
-    for(auto p: ps) {
+    for (auto p : ps) {
         std::cout << p.real() << " " << p.imag() << " ";
     }
     std::cout << '\n';

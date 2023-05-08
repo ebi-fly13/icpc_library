@@ -1,6 +1,6 @@
 #pragma once
 
-#include"../template/template.hpp"
+#include "../template/template.hpp"
 
 namespace lib {
 
@@ -17,22 +17,18 @@ struct dsu {
         return x;
     }
 
-    bool same(int a, int b) {
-        return leader(a) == leader(b);
-    }
+    bool same(int a, int b) { return leader(a) == leader(b); }
 
     int leader(int a) {
         if (pos[a] < 0) return a;
         return pos[a] = leader(pos[a]);
     }
 
-    int size(int a) {
-        return -pos[leader(a)];
-    }
+    int size(int a) { return -pos[leader(a)]; }
 
   private:
     int _n;
     vector<int> pos;
 };
 
-} // namespace lib
+}  // namespace lib

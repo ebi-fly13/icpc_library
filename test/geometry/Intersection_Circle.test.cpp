@@ -1,4 +1,5 @@
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/7/CGL_7_A"
+#define PROBLEM \
+    "https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/7/CGL_7_A"
 
 #include "../../geometry/circle.hpp"
 

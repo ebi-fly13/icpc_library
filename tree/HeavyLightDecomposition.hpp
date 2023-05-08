@@ -7,7 +7,7 @@ namespace lib {
 using namespace std;
 
 struct HeavyLightDecomposition {
-   private:
+  private:
     void dfs_sz(int v) {
         for (auto &nv : g[v]) {
             if (nv == par[v]) continue;
@@ -15,8 +15,7 @@ struct HeavyLightDecomposition {
             depth[nv] = depth[v] + 1;
             dfs_sz(nv);
             sz[v] += sz[nv];
-            if (sz[nv] > sz[g[v][0]] || g[v][0] == par[v])
-                swap(nv, g[v][0]);
+            if (sz[nv] > sz[g[v][0]] || g[v][0] == par[v]) swap(nv, g[v][0]);
         }
     }
 
@@ -51,9 +50,8 @@ struct HeavyLightDecomposition {
         return res;
     }
 
-   public:
-    HeavyLightDecomposition(const vector<vector<int>> &gh,
-                              int root = 0)
+  public:
+    HeavyLightDecomposition(const vector<vector<int>> &gh, int root = 0)
         : n(gh.size()),
           g(gh),
           sz(n, 1),
@@ -81,22 +79,22 @@ struct HeavyLightDecomposition {
     }
 
     template <class F>
-    void path_noncommutative_query(int u, int v, bool vertex, const F &f) const {
+    void path_noncommutative_query(int u, int v, bool vertex,
+                                   const F &f) const {
         int l = lca(u, v);
         for (auto [a, b] : ascend(u, l)) f(a + 1, b);
-        if(vertex) f(in[l], in[l] + 1);
+        if (vertex) f(in[l], in[l] + 1);
         for (auto [a, b] : descend(l, v)) f(a, b + 1);
     }
 
-    template <class F>
-    void subtree_query(int u, bool vertex, const F &f) {
+    template <class F> void subtree_query(int u, bool vertex, const F &f) {
         f(in[u] + int(!vertex), out[u]);
     }
 
-   private:
+  private:
     int n;
     vector<vector<int>> g;
     vector<int> sz, in, out, nxt, par, depth;
 };
 
-}  // namespace ebi
+}  // namespace lib

@@ -1,4 +1,5 @@
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_B"
+#define PROBLEM \
+    "https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_B"
 
 #include "../../geometry/segment.hpp"
 
@@ -7,10 +8,10 @@ using namespace lib;
 int main() {
     int q;
     std::cin >> q;
-    while(q--) {
+    while (q--) {
         vec p0, p1, p2, p3;
         auto input = [](vec &p) {
-            ld x,y;
+            ld x, y;
             std::cin >> x >> y;
             p = {x, y};
         };

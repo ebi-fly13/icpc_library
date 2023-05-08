@@ -2,14 +2,11 @@
 
 namespace lib {
 
-template <ll mod>
-struct modint {
+template <ll mod> struct modint {
     ll a;
 
     modint(ll x = 0) : a((x % mod + mod) % mod) {}
-    ll &val() {
-        return a;
-    }
+    ll &val() { return a; }
     modint pow(ll n) {
         modint res = 1;
         modint x = a;
@@ -20,9 +17,7 @@ struct modint {
         }
         return res;
     }
-    modint inv() {
-        return pow(mod-2);
-    }
+    modint inv() { return pow(mod - 2); }
     constexpr modint &operator+=(const modint rhs) {
         a += rhs.a;
         if (a >= mod) a -= mod;
@@ -58,4 +53,4 @@ struct modint {
 using modint998244353 = modint<998244353>;
 using modint1000000007 = modint<1'000'000'007>;
 
-}
+}  // namespace lib

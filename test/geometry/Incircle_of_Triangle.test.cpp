@@ -1,20 +1,21 @@
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/7/CGL_7_B"
+#define PROBLEM \
+    "https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/7/CGL_7_B"
 #define ERROR 0.0000001
 
-#include "../../template/template.hpp"
 #include "../../geometry/base_ld.hpp"
 #include "../../geometry/circle.hpp"
+#include "../../template/template.hpp"
 
 using namespace lib;
 
 int main() {
     std::cout << std::fixed << std::setprecision(15);
     auto input = [](vec &a) {
-        ld x,y;
+        ld x, y;
         std::cin >> x >> y;
         a = {x, y};
     };
-    vec a,b,c;
+    vec a, b, c;
     input(a);
     input(b);
     input(c);

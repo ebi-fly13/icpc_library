@@ -13,21 +13,17 @@ vec proj(const line &l, const vec &p) {
     return l.a + ab * (dot(ab, p - l.a) / norm(ab));
 }
 
-vec refl(const line &l, const vec &p) {
-    return proj(l, p) * ld(2) - p;
-}
+vec refl(const line &l, const vec &p) { return proj(l, p) * ld(2) - p; }
 
 int intersection(const line &a, const line &b) {
-    if(sgn(cross(a.b - a.a, b.a - b.b)) != 0) {
-        if(sgn(dot(a.b - a.a, b.a - b.b)) == 0) {
+    if (sgn(cross(a.b - a.a, b.a - b.b)) != 0) {
+        if (sgn(dot(a.b - a.a, b.a - b.b)) == 0) {
             return 1;
         }
         return 0;
-    }
-    else if(sgn(cross(a.b - a.a, b.a - a.a)) != 0) {
+    } else if (sgn(cross(a.b - a.a, b.a - a.a)) != 0) {
         return 2;
-    }
-    else {
+    } else {
         return 3;
     }
 }
@@ -38,7 +34,8 @@ ld dist(const line &a, const vec &p) {
 
 vec cross_point(const line &a, const line &b) {
     assert(intersection(a, b) < 2);
-    return a.a + (a.b - a.a) * cross(b.a - a.a, b.b - b.a) / cross(a.b - a.a, b.b - b.a);
+    return a.a + (a.b - a.a) * cross(b.a - a.a, b.b - b.a) /
+                     cross(a.b - a.a, b.b - b.a);
 }
 
-}
+}  // namespace lib

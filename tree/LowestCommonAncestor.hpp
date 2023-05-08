@@ -10,7 +10,8 @@ struct LowestCommonAncestor {
     std::vector<int> depth;
     int log = 25;
 
-    LowestCommonAncestor(const std::vector<std::vector<int>> &gh, int root = 0) : n(gh.size()) {
+    LowestCommonAncestor(const std::vector<std::vector<int>> &gh, int root = 0)
+        : n(gh.size()) {
         table = std::vector(log, std::vector<int>(n, -1));
         depth.assign(n, 0);
         auto dfs = [&](auto &&self, int v) -> void {
@@ -29,7 +30,7 @@ struct LowestCommonAncestor {
     }
 
     int la(int u, int k) const {
-        if(depth[u] < k) return -1;
+        if (depth[u] < k) return -1;
         rrep(i, 0, log) {
             if ((k >> i) & 1) {
                 u = table[i][u];

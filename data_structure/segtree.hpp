@@ -6,16 +6,15 @@ namespace lib {
 
 using namespace std;
 
-template <class S, S (*op)(S, S), S (*e)()>
-struct segtree {
-   private:
+template <class S, S (*op)(S, S), S (*e)()> struct segtree {
+  private:
     int n;
     int sz;
     vector<S> data;
 
     void update(int i) { data[i] = op(data[2 * i], data[2 * i + 1]); }
 
-   public:
+  public:
     segtree(int n) : segtree(vector<S>(n, e())) {}
     segtree(const vector<S> &v) : n((int)v.size()), sz(1) {
         while (sz < n) sz *= 2;
@@ -55,8 +54,7 @@ struct segtree {
 
     S all_prod() { return data[1]; }
 
-    template <class F>
-    int max_right(int l, F f) {
+    template <class F> int max_right(int l, F f) {
         assert(0 <= l && l < n);
         assert(f(e()));
         if (l == n) return n;
@@ -80,8 +78,7 @@ struct segtree {
         return n;
     }
 
-    template <class F>
-    int min_left(int r, F f) {
+    template <class F> int min_left(int r, F f) {
         assert(0 <= r && r <= n);
         assert(f(e()));
         if (r == 0) return 0;
