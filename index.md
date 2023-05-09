@@ -77,6 +77,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: utility/modint.hpp
       title: modint
+    - icon: ':warning:'
+      path: utility/rational.hpp
+      title: utility/rational.hpp
   verificationCategories:
   - name: test/data_structure
     pages:
