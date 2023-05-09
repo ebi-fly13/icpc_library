@@ -9,6 +9,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/tree/RerootingDP.test.cpp
     title: test/tree/RerootingDP.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/tree/RerootingDP_LC.test.cpp
+    title: test/tree/RerootingDP_LC.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -100,6 +103,7 @@ data:
   timestamp: '2023-05-08 19:23:06+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/tree/RerootingDP_LC.test.cpp
   - test/tree/RerootingDP.test.cpp
 documentation_of: tree/RerootingDP.hpp
 layout: document

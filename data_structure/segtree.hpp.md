@@ -105,9 +105,9 @@ data:
   timestamp: '2023-05-08 15:48:04+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/data_structure/Vertex_Add_Path_Sum.test.cpp
   - test/data_structure/Point_Add_Range_Sum.test.cpp
   - test/data_structure/Point_Set_Range_Composite.test.cpp
-  - test/data_structure/Vertex_Add_Path_Sum.test.cpp
 documentation_of: data_structure/segtree.hpp
 layout: document
 title: segtree

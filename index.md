@@ -154,5 +154,8 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/tree/RerootingDP.test.cpp
       title: test/tree/RerootingDP.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/tree/RerootingDP_LC.test.cpp
+      title: test/tree/RerootingDP_LC.test.cpp
 layout: toppage
 ---
