@@ -5,10 +5,13 @@ data:
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/geometry/base_rational.test.cpp
+    title: test/geometry/base_rational.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"utility/rational.hpp\"\n\n#line 2 \"template/template.hpp\"\
@@ -97,8 +100,9 @@ data:
   path: utility/rational.hpp
   requiredBy: []
   timestamp: '2023-05-09 22:43:19+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/geometry/base_rational.test.cpp
 documentation_of: utility/rational.hpp
 layout: document
 redirect_from:

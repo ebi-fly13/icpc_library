@@ -12,6 +12,9 @@ data:
     path: data_structure/segtree.hpp
     title: segtree
   - icon: ':heavy_check_mark:'
+    path: geometry/base_arbitary.hpp
+    title: geometry/base_arbitary.hpp
+  - icon: ':heavy_check_mark:'
     path: geometry/base_ld.hpp
     title: base_ld
   - icon: ':warning:'
@@ -59,7 +62,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: utility/modint.hpp
     title: modint
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: utility/rational.hpp
     title: utility/rational.hpp
   _extendedVerifiedWith:
@@ -115,6 +118,9 @@ data:
     path: test/geometry/Reflection.test.cpp
     title: test/geometry/Reflection.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/geometry/base_rational.test.cpp
+    title: test/geometry/base_rational.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/math/enumerate_primes.test.cpp
     title: test/math/enumerate_primes.test.cpp
   - icon: ':heavy_check_mark:'
@@ -155,51 +161,53 @@ data:
   isVerificationFile: false
   path: template/template.hpp
   requiredBy:
-  - utility/modint.hpp
-  - utility/rational.hpp
-  - graph/mf_graph.hpp
-  - graph/fordfulkerson.hpp
-  - geometry/base_ld.hpp
   - geometry/circle.hpp
-  - geometry/line.hpp
   - geometry/base_ll.hpp
-  - geometry/segment.hpp
+  - geometry/line.hpp
   - geometry/convex_hull.hpp
-  - string/RollingHash.hpp
-  - string/parsing_template.hpp
-  - tree/RerootingDP.hpp
+  - geometry/base_arbitary.hpp
+  - geometry/base_ld.hpp
+  - geometry/segment.hpp
   - tree/HeavyLightDecomposition.hpp
+  - tree/RerootingDP.hpp
   - tree/LowestCommonAncestor.hpp
-  - data_structure/dsu.hpp
-  - data_structure/segtree.hpp
   - data_structure/BinaryTrie.hpp
+  - data_structure/segtree.hpp
+  - data_structure/dsu.hpp
   - math/eratosthenes_sieve.hpp
   - math/gauss_jordan.hpp
+  - utility/rational.hpp
+  - utility/modint.hpp
+  - graph/mf_graph.hpp
+  - graph/fordfulkerson.hpp
+  - string/RollingHash.hpp
+  - string/parsing_template.hpp
   timestamp: '2023-05-08 15:48:04+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/geometry/Projection.test.cpp
-  - test/geometry/Parallel_Orthogonal.test.cpp
-  - test/geometry/Reflection.test.cpp
-  - test/geometry/Intersection.test.cpp
-  - test/geometry/Circumscribed_Circle_of_Triangle.test.cpp
-  - test/geometry/Cross_Points_of_Circle_and_Line.test.cpp
   - test/geometry/Counter_Clockwise.test.cpp
-  - test/geometry/Cross_Points_of_Circles.test.cpp
-  - test/geometry/Convex_Hull.test.cpp
-  - test/geometry/Incircle_of_Triangle.test.cpp
-  - test/geometry/Intersection_Circle.test.cpp
+  - test/geometry/Reflection.test.cpp
   - test/geometry/Distance.test.cpp
   - test/geometry/Cross_Point.test.cpp
-  - test/string/aoj_2444.test.cpp
-  - test/tree/RerootingDP_LC.test.cpp
+  - test/geometry/Parallel_Orthogonal.test.cpp
+  - test/geometry/Projection.test.cpp
+  - test/geometry/Convex_Hull.test.cpp
+  - test/geometry/Incircle_of_Triangle.test.cpp
+  - test/geometry/Cross_Points_of_Circle_and_Line.test.cpp
+  - test/geometry/Intersection.test.cpp
+  - test/geometry/base_rational.test.cpp
+  - test/geometry/Intersection_Circle.test.cpp
+  - test/geometry/Cross_Points_of_Circles.test.cpp
+  - test/geometry/Circumscribed_Circle_of_Triangle.test.cpp
   - test/tree/RerootingDP.test.cpp
   - test/tree/Lowest_Common_Ancestor.test.cpp
-  - test/data_structure/Vertex_Add_Path_Sum.test.cpp
+  - test/tree/RerootingDP_LC.test.cpp
   - test/data_structure/Point_Add_Range_Sum.test.cpp
   - test/data_structure/Set_Xor_Min.test.cpp
   - test/data_structure/Point_Set_Range_Composite.test.cpp
+  - test/data_structure/Vertex_Add_Path_Sum.test.cpp
   - test/math/enumerate_primes.test.cpp
+  - test/string/aoj_2444.test.cpp
 documentation_of: template/template.hpp
 layout: document
 redirect_from:

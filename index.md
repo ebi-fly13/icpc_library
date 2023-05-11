@@ -15,6 +15,9 @@ data:
   - name: geometry
     pages:
     - icon: ':heavy_check_mark:'
+      path: geometry/base_arbitary.hpp
+      title: geometry/base_arbitary.hpp
+    - icon: ':heavy_check_mark:'
       path: geometry/base_ld.hpp
       title: base_ld
     - icon: ':warning:'
@@ -77,7 +80,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: utility/modint.hpp
       title: modint
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: utility/rational.hpp
       title: utility/rational.hpp
   verificationCategories:
@@ -136,6 +139,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/geometry/Reflection.test.cpp
       title: test/geometry/Reflection.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/geometry/base_rational.test.cpp
+      title: test/geometry/base_rational.test.cpp
   - name: test/math
     pages:
     - icon: ':heavy_check_mark:'
