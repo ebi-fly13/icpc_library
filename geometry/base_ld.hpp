@@ -7,13 +7,21 @@ namespace lib {
 using vec = complex<ld>;
 const ld eps = 1e-7;
 
-void ldout(int len = 20) { cout << fixed << setprecision(len); }
+void ldout(int len = 20) {
+    cout << fixed << setprecision(len);
+}
 
-int sgn(ld a) { return (a < -eps) ? -1 : (a > eps) ? 1 : 0; }
+int sgn(ld a) {
+    return (a < -eps) ? -1 : (a > eps) ? 1 : 0;
+}
 
-ld dot(const vec &a, const vec &b) { return (conj(a) * b).real(); }
+ld dot(const vec &a, const vec &b) {
+    return (conj(a) * b).real();
+}
 
-ld cross(const vec &a, const vec &b) { return (conj(a) * b).imag(); }
+ld cross(const vec &a, const vec &b) {
+    return (conj(a) * b).imag();
+}
 
 int isp(const vec &a, const vec &b, const vec &c) {
     int cross_sgn = sgn(cross(b - a, c - a));
@@ -24,9 +32,13 @@ int isp(const vec &a, const vec &b, const vec &c) {
     return cross_sgn;
 }
 
-vec rot90(const vec &a) { return {-a.imag(), a.real()}; }
+vec rot90(const vec &a) {
+    return {-a.imag(), a.real()};
+}
 
-vec rot(const vec &a, ld rad) { return a * vec(cosl(rad), sinl(rad)); }
+vec rot(const vec &a, ld rad) {
+    return a * vec(cosl(rad), sinl(rad));
+}
 
 bool comp_for_argument_sort(const vec &lhs, const vec &rhs) {
     // if (abs(arg(lhs)-arg(rhs)) < eps) return false; // need ?

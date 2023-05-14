@@ -25,7 +25,9 @@ struct LowestCommonAncestor {
         dfs(dfs, root);
         table[0][root] = root;
         rep(i, 0, log - 1) {
-            rep(v, 0, n) { table[i + 1][v] = table[i][table[i][v]]; }
+            rep(v, 0, n) {
+                table[i + 1][v] = table[i][table[i][v]];
+            }
         }
     }
 

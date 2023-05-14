@@ -25,7 +25,9 @@ struct eratosthenes_sieve {
         }
     }
 
-    bool is_prime(int p) { return table[p]; }
+    bool is_prime(int p) {
+        return table[p];
+    }
 
     vector<int> prime_table(int m = -1) {
         if (m < 0) m = n;

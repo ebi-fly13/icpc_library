@@ -8,7 +8,9 @@ using namespace std;
 
 struct RollingHash {
     using ull = unsigned long long;
-    RollingHash(const string& s = "") { build(s); }
+    RollingHash(const string& s = "") {
+        build(s);
+    }
     ull get(int l, int r) {
         assert(0 <= l && l <= r && r <= n);
         return cal(inner_hash[r] + buf - mul(inner_hash[l], pow_base[r - l]));

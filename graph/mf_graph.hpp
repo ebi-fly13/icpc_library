@@ -33,7 +33,9 @@ template <class Cap> struct mf_graph {
         return m;
     }
 
-    Cap flow(int s, int t) { return flow(s, t, numeric_limits<Cap>::max()); }
+    Cap flow(int s, int t) {
+        return flow(s, t, numeric_limits<Cap>::max());
+    }
 
     Cap flow(int s, int t, Cap flow_limit) {
         vector<int> lv(nn), iter(nn);

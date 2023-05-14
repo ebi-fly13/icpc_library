@@ -3,15 +3,21 @@
 #include "../../data_structure/segtree.hpp"
 #include "../../template/template.hpp"
 
-ll op(ll a, ll b) { return a + b; }
+ll op(ll a, ll b) {
+    return a + b;
+}
 
-ll e() { return 0; }
+ll e() {
+    return 0;
+}
 
 int main() {
     int n, q;
     std::cin >> n >> q;
     std::vector<ll> a(n);
-    rep(i, 0, n) { std::cin >> a[i]; }
+    rep(i, 0, n) {
+        std::cin >> a[i];
+    }
     lib::segtree<ll, op, e> seg(a);
     while (q--) {
         int t;

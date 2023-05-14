@@ -111,12 +111,16 @@ struct BinaryTrie {                 // set(multiset) of integer
         }
         return ans;
     }
-    void xor_all(T x) { lazy ^= x; }
+    void xor_all(T x) {
+        lazy ^= x;
+    }
 
   private:
     T lazy;
     node *root = new node();
-    void update(node *v) { v->sz = v->exist + size(v->ch[0]) + size(v->ch[1]); }
+    void update(node *v) {
+        v->sz = v->exist + size(v->ch[0]) + size(v->ch[1]);
+    }
 };
 
 }  // namespace lib

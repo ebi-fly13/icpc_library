@@ -10,9 +10,13 @@ struct F {
     mint a, b;
 };
 
-F op(F a, F b) { return {b.a * a.a, b.b + b.a * a.b}; }
+F op(F a, F b) {
+    return {b.a * a.a, b.b + b.a * a.b};
+}
 
-F e() { return {1, 0}; }
+F e() {
+    return {1, 0};
+}
 
 int main() {
     int n, q;
