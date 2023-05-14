@@ -20,5 +20,7 @@
 "test/geometry/base_rational.test.cpp": "2023-05-14 18:25:33 +0900",
 "test/math/enumerate_primes.test.cpp": "2023-05-14 18:25:33 +0900",
 "test/string/aoj_2444.test.cpp": "2023-05-14 18:25:33 +0900",
-"test/tree/Lowest_Common_Ancestor.test.cpp": "2023-05-14 18:25:33 +0900"
+"test/tree/Lowest_Common_Ancestor.test.cpp": "2023-05-14 18:25:33 +0900",
+"test/tree/RerootingDP.test.cpp": "2023-05-14 18:25:33 +0900",
+"test/tree/Tree_Path_Composite_Sum.test.cpp": "2023-05-14 18:42:05 +0900"
 }
