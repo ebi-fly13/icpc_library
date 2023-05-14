@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/tree/RerootingDP.test.cpp
     title: test/tree/RerootingDP.test.cpp
-  - icon: ':x:'
-    path: test/tree/RerootingDP_LC.test.cpp
-    title: test/tree/RerootingDP_LC.test.cpp
-  _isVerificationFailed: true
+  - icon: ':heavy_check_mark:'
+    path: test/tree/Tree_Path_Composite_Sum.test.cpp
+    title: test/tree/Tree_Path_Composite_Sum.test.cpp
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"tree/RerootingDP.hpp\"\n\n#line 2 \"template/template.hpp\"\
@@ -103,10 +103,10 @@ data:
   path: tree/RerootingDP.hpp
   requiredBy: []
   timestamp: '2023-05-14 18:25:33+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/tree/RerootingDP.test.cpp
-  - test/tree/RerootingDP_LC.test.cpp
+  - test/tree/Tree_Path_Composite_Sum.test.cpp
 documentation_of: tree/RerootingDP.hpp
 layout: document
 title: RerootingDP

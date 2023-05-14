@@ -56,10 +56,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: tree/LowestCommonAncestor.hpp
     title: LowestCommonAncestor
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: tree/RerootingDP.hpp
     title: RerootingDP
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utility/modint.hpp
     title: modint
   - icon: ':heavy_check_mark:'
@@ -132,15 +132,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/tree/Lowest_Common_Ancestor.test.cpp
     title: test/tree/Lowest_Common_Ancestor.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/tree/RerootingDP.test.cpp
     title: test/tree/RerootingDP.test.cpp
-  - icon: ':x:'
-    path: test/tree/RerootingDP_LC.test.cpp
-    title: test/tree/RerootingDP_LC.test.cpp
-  _isVerificationFailed: true
+  - icon: ':heavy_check_mark:'
+    path: test/tree/Tree_Path_Composite_Sum.test.cpp
+    title: test/tree/Tree_Path_Composite_Sum.test.cpp
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n\n#include <bits/stdc++.h>\n\n\
@@ -186,7 +186,7 @@ data:
   - string/RollingHash.hpp
   - string/parsing_template.hpp
   timestamp: '2023-05-08 15:48:04+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/geometry/Counter_Clockwise.test.cpp
   - test/geometry/Reflection.test.cpp
@@ -204,7 +204,7 @@ data:
   - test/geometry/Circumscribed_Circle_of_Triangle.test.cpp
   - test/tree/RerootingDP.test.cpp
   - test/tree/Lowest_Common_Ancestor.test.cpp
-  - test/tree/RerootingDP_LC.test.cpp
+  - test/tree/Tree_Path_Composite_Sum.test.cpp
   - test/data_structure/Point_Add_Range_Sum.test.cpp
   - test/data_structure/Set_Xor_Min.test.cpp
   - test/data_structure/Unionfind.test.cpp

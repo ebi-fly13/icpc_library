@@ -1,27 +1,27 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: tree/RerootingDP.hpp
     title: RerootingDP
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utility/modint.hpp
     title: modint
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/tree_path_composite_sum
     links:
     - https://judge.yosupo.jp/problem/tree_path_composite_sum
-  bundledCode: "#line 1 \"test/tree/RerootingDP_LC.test.cpp\"\n#define PROBLEM \"\
-    https://judge.yosupo.jp/problem/tree_path_composite_sum\"\n\n#line 2 \"template/template.hpp\"\
+  bundledCode: "#line 1 \"test/tree/Tree_Path_Composite_Sum.test.cpp\"\n#define PROBLEM\
+    \ \"https://judge.yosupo.jp/problem/tree_path_composite_sum\"\n\n#line 2 \"template/template.hpp\"\
     \n\n#include <bits/stdc++.h>\n\n#define rep(i, s, n) for (int i = s; i < (int)(n);\
     \ i++)\n#define rrep(i, s, n) for (int i = (int)(n)-1; i >= (int)(s); i--)\n#define\
     \ all(v) v.begin(), v.end()\n\nusing ll = long long;\nusing ld = long double;\n\
@@ -84,7 +84,7 @@ data:
     \ return modint(lhs) /= rhs;\n    }\n    modint operator+() const {\n        return\
     \ *this;\n    }\n    modint operator-() const {\n        return modint() - *this;\n\
     \    }\n};\n\nusing modint998244353 = modint<998244353>;\nusing modint1000000007\
-    \ = modint<1'000'000'007>;\n\n}  // namespace lib\n#line 6 \"test/tree/RerootingDP_LC.test.cpp\"\
+    \ = modint<1'000'000'007>;\n\n}  // namespace lib\n#line 6 \"test/tree/Tree_Path_Composite_Sum.test.cpp\"\
     \n\nusing namespace lib;\nusing mint = modint998244353;\nusing pmm = pair<mint,\
     \ mint>;\n\npmm merge(pmm a, pmm b) {\n    return pmm(a.first + b.first, a.second\
     \ + b.second);\n}\npmm e() {\n    return pmm(0, 0);\n}\n\nvector<mint> a, b, c;\n\
@@ -117,15 +117,15 @@ data:
   - tree/RerootingDP.hpp
   - utility/modint.hpp
   isVerificationFile: true
-  path: test/tree/RerootingDP_LC.test.cpp
+  path: test/tree/Tree_Path_Composite_Sum.test.cpp
   requiredBy: []
-  timestamp: '2023-05-14 18:25:33+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-05-14 18:42:05+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/tree/RerootingDP_LC.test.cpp
+documentation_of: test/tree/Tree_Path_Composite_Sum.test.cpp
 layout: document
 redirect_from:
-- /verify/test/tree/RerootingDP_LC.test.cpp
-- /verify/test/tree/RerootingDP_LC.test.cpp.html
-title: test/tree/RerootingDP_LC.test.cpp
+- /verify/test/tree/Tree_Path_Composite_Sum.test.cpp
+- /verify/test/tree/Tree_Path_Composite_Sum.test.cpp.html
+title: test/tree/Tree_Path_Composite_Sum.test.cpp
 ---
