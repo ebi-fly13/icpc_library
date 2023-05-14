@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: geometry/line.hpp
     title: line
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
@@ -40,21 +40,21 @@ data:
     \    a = b;\n    return true;\n}\n\nnamespace lib {\n\nusing namespace std;\n\n\
     }  // namespace lib\n\n// using namespace lib;\n#line 4 \"geometry/base_ld.hpp\"\
     \n\nnamespace lib {\n\nusing vec = complex<ld>;\nconst ld eps = 1e-7;\n\nvoid\
-    \ ldout(int len = 20) { cout << fixed << setprecision(len); }\n\nint sgn(ld a)\
-    \ { return (a < -eps) ? -1 : (a > eps) ? 1 : 0; }\n\nld dot(const vec &a, const\
-    \ vec &b) { return (conj(a) * b).real(); }\n\nld cross(const vec &a, const vec\
-    \ &b) { return (conj(a) * b).imag(); }\n\nint isp(const vec &a, const vec &b,\
-    \ const vec &c) {\n    int cross_sgn = sgn(cross(b - a, c - a));\n    if (cross_sgn\
-    \ == 0) {\n        if (sgn(dot(b - a, c - a)) < 0) return -2;\n        if (sgn(dot(a\
-    \ - b, c - b)) < 0) return 2;\n    }\n    return cross_sgn;\n}\n\nvec rot90(const\
-    \ vec &a) { return {-a.imag(), a.real()}; }\n\nvec rot(const vec &a, ld rad) {\
-    \ return a * vec(cosl(rad), sinl(rad)); }\n\nbool comp_for_argument_sort(const\
+    \ ldout(int len = 20) {\n    cout << fixed << setprecision(len);\n}\n\nint sgn(ld\
+    \ a) {\n    return (a < -eps) ? -1 : (a > eps) ? 1 : 0;\n}\n\nld dot(const vec\
+    \ &a, const vec &b) {\n    return (conj(a) * b).real();\n}\n\nld cross(const vec\
+    \ &a, const vec &b) {\n    return (conj(a) * b).imag();\n}\n\nint isp(const vec\
+    \ &a, const vec &b, const vec &c) {\n    int cross_sgn = sgn(cross(b - a, c -\
+    \ a));\n    if (cross_sgn == 0) {\n        if (sgn(dot(b - a, c - a)) < 0) return\
+    \ -2;\n        if (sgn(dot(a - b, c - b)) < 0) return 2;\n    }\n    return cross_sgn;\n\
+    }\n\nvec rot90(const vec &a) {\n    return {-a.imag(), a.real()};\n}\n\nvec rot(const\
+    \ vec &a, ld rad) {\n    return a * vec(cosl(rad), sinl(rad));\n}\n\nbool comp_for_argument_sort(const\
     \ vec &lhs, const vec &rhs) {\n    // if (abs(arg(lhs)-arg(rhs)) < eps) return\
     \ false; // need ?\n    return arg(lhs) < arg(rhs);\n}\n\n}  // namespace lib\n\
     #line 4 \"geometry/line.hpp\"\n\nnamespace lib {\n\nstruct line {\n    vec a,\
     \ b;\n};\n\nvec proj(const line &l, const vec &p) {\n    vec ab = l.b - l.a;\n\
     \    return l.a + ab * (dot(ab, p - l.a) / norm(ab));\n}\n\nvec refl(const line\
-    \ &l, const vec &p) { return proj(l, p) * ld(2) - p; }\n\nint intersection(const\
+    \ &l, const vec &p) {\n    return proj(l, p) * ld(2) - p;\n}\n\nint intersection(const\
     \ line &a, const line &b) {\n    if (sgn(cross(a.b - a.a, b.a - b.b)) != 0) {\n\
     \        if (sgn(dot(a.b - a.a, b.a - b.b)) == 0) {\n            return 1;\n \
     \       }\n        return 0;\n    } else if (sgn(cross(a.b - a.a, b.a - a.a))\
@@ -100,7 +100,7 @@ data:
   isVerificationFile: false
   path: geometry/segment.hpp
   requiredBy: []
-  timestamp: '2023-05-08 15:48:04+09:00'
+  timestamp: '2023-05-14 18:25:33+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/geometry/Distance.test.cpp

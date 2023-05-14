@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: data_structure/BinaryTrie.hpp
     title: BinaryTrie
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
@@ -64,15 +64,15 @@ data:
     \ {\n            int j = lazy >> i & 1;\n            if (k < size(v->ch[j])) {\n\
     \                v = v->ch[j];\n            } else {\n                k -= size(v->ch[j]);\n\
     \                v = v->ch[j ^ 1];\n                ans |= T(1) << i;\n      \
-    \      }\n        }\n        return ans;\n    }\n    void xor_all(T x) { lazy\
-    \ ^= x; }\n\n  private:\n    T lazy;\n    node *root = new node();\n    void update(node\
-    \ *v) { v->sz = v->exist + size(v->ch[0]) + size(v->ch[1]); }\n};\n\n}  // namespace\
-    \ lib\n#line 5 \"test/data_structure/Set_Xor_Min.test.cpp\"\n\nint main() {\n\
-    \    lib::BinaryTrie<int, 30> trie;\n    int q;\n    std::cin >> q;\n    while\
-    \ (q--) {\n        int t, x;\n        std::cin >> t >> x;\n        if (t == 0)\
-    \ {\n            if (trie.count(x) > 0) continue;\n            trie.insert(x);\n\
-    \        } else if (t == 1) {\n            if (trie.count(x) == 0) continue;\n\
-    \            trie.erase(x);\n        } else {\n            trie.xor_all(x);\n\
+    \      }\n        }\n        return ans;\n    }\n    void xor_all(T x) {\n   \
+    \     lazy ^= x;\n    }\n\n  private:\n    T lazy;\n    node *root = new node();\n\
+    \    void update(node *v) {\n        v->sz = v->exist + size(v->ch[0]) + size(v->ch[1]);\n\
+    \    }\n};\n\n}  // namespace lib\n#line 5 \"test/data_structure/Set_Xor_Min.test.cpp\"\
+    \n\nint main() {\n    lib::BinaryTrie<int, 30> trie;\n    int q;\n    std::cin\
+    \ >> q;\n    while (q--) {\n        int t, x;\n        std::cin >> t >> x;\n \
+    \       if (t == 0) {\n            if (trie.count(x) > 0) continue;\n        \
+    \    trie.insert(x);\n        } else if (t == 1) {\n            if (trie.count(x)\
+    \ == 0) continue;\n            trie.erase(x);\n        } else {\n            trie.xor_all(x);\n\
     \            std::cout << trie.get(0) << '\\n';\n            trie.xor_all(x);\n\
     \        }\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/set_xor_min\"\n\n#include\
@@ -90,7 +90,7 @@ data:
   isVerificationFile: true
   path: test/data_structure/Set_Xor_Min.test.cpp
   requiredBy: []
-  timestamp: '2023-05-08 15:48:04+09:00'
+  timestamp: '2023-05-14 18:25:33+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data_structure/Set_Xor_Min.test.cpp

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
@@ -60,10 +60,10 @@ data:
     \ {\n            int j = lazy >> i & 1;\n            if (k < size(v->ch[j])) {\n\
     \                v = v->ch[j];\n            } else {\n                k -= size(v->ch[j]);\n\
     \                v = v->ch[j ^ 1];\n                ans |= T(1) << i;\n      \
-    \      }\n        }\n        return ans;\n    }\n    void xor_all(T x) { lazy\
-    \ ^= x; }\n\n  private:\n    T lazy;\n    node *root = new node();\n    void update(node\
-    \ *v) { v->sz = v->exist + size(v->ch[0]) + size(v->ch[1]); }\n};\n\n}  // namespace\
-    \ lib\n"
+    \      }\n        }\n        return ans;\n    }\n    void xor_all(T x) {\n   \
+    \     lazy ^= x;\n    }\n\n  private:\n    T lazy;\n    node *root = new node();\n\
+    \    void update(node *v) {\n        v->sz = v->exist + size(v->ch[0]) + size(v->ch[1]);\n\
+    \    }\n};\n\n}  // namespace lib\n"
   code: "#pragma once\n\n#include \"../template/template.hpp\"\n\nnamespace lib {\n\
     \nusing namespace std;\n\ntemplate <typename T, int MAX_LOG>  // T = int/ll, 0\
     \ <= x < 2 ^ MAX_LOG\nstruct BinaryTrie {                 // set(multiset) of\
@@ -101,16 +101,16 @@ data:
     \ {\n            int j = lazy >> i & 1;\n            if (k < size(v->ch[j])) {\n\
     \                v = v->ch[j];\n            } else {\n                k -= size(v->ch[j]);\n\
     \                v = v->ch[j ^ 1];\n                ans |= T(1) << i;\n      \
-    \      }\n        }\n        return ans;\n    }\n    void xor_all(T x) { lazy\
-    \ ^= x; }\n\n  private:\n    T lazy;\n    node *root = new node();\n    void update(node\
-    \ *v) { v->sz = v->exist + size(v->ch[0]) + size(v->ch[1]); }\n};\n\n}  // namespace\
-    \ lib\n"
+    \      }\n        }\n        return ans;\n    }\n    void xor_all(T x) {\n   \
+    \     lazy ^= x;\n    }\n\n  private:\n    T lazy;\n    node *root = new node();\n\
+    \    void update(node *v) {\n        v->sz = v->exist + size(v->ch[0]) + size(v->ch[1]);\n\
+    \    }\n};\n\n}  // namespace lib\n"
   dependsOn:
   - template/template.hpp
   isVerificationFile: false
   path: data_structure/BinaryTrie.hpp
   requiredBy: []
-  timestamp: '2023-05-08 15:48:04+09:00'
+  timestamp: '2023-05-14 18:25:33+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/data_structure/Set_Xor_Min.test.cpp

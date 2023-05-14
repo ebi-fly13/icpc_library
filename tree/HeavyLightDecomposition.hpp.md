@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
@@ -45,18 +45,19 @@ data:
     \ = 0)\n        : n(gh.size()),\n          g(gh),\n          sz(n, 1),\n     \
     \     in(n),\n          out(n),\n          nxt(n),\n          par(n, -1),\n  \
     \        depth(n, 0) {\n        dfs_sz(root);\n        dfs_hld(root);\n    }\n\
-    \n    int idx(int u) const { return in[u]; }\n\n    int lca(int u, int v) const\
-    \ {\n        while (nxt[u] != nxt[v]) {\n            if (in[u] < in[v]) swap(u,\
-    \ v);\n            u = par[nxt[u]];\n        }\n        return depth[u] < depth[v]\
-    \ ? u : v;\n    }\n\n    int distance(int u, int v) const {\n        return depth[u]\
-    \ + depth[v] - 2 * depth[lca(u, v)];\n    }\n\n    template <class F>\n    void\
-    \ path_noncommutative_query(int u, int v, bool vertex,\n                     \
-    \              const F &f) const {\n        int l = lca(u, v);\n        for (auto\
-    \ [a, b] : ascend(u, l)) f(a + 1, b);\n        if (vertex) f(in[l], in[l] + 1);\n\
-    \        for (auto [a, b] : descend(l, v)) f(a, b + 1);\n    }\n\n    template\
-    \ <class F> void subtree_query(int u, bool vertex, const F &f) {\n        f(in[u]\
-    \ + int(!vertex), out[u]);\n    }\n\n  private:\n    int n;\n    vector<vector<int>>\
-    \ g;\n    vector<int> sz, in, out, nxt, par, depth;\n};\n\n}  // namespace lib\n"
+    \n    int idx(int u) const {\n        return in[u];\n    }\n\n    int lca(int\
+    \ u, int v) const {\n        while (nxt[u] != nxt[v]) {\n            if (in[u]\
+    \ < in[v]) swap(u, v);\n            u = par[nxt[u]];\n        }\n        return\
+    \ depth[u] < depth[v] ? u : v;\n    }\n\n    int distance(int u, int v) const\
+    \ {\n        return depth[u] + depth[v] - 2 * depth[lca(u, v)];\n    }\n\n   \
+    \ template <class F>\n    void path_noncommutative_query(int u, int v, bool vertex,\n\
+    \                                   const F &f) const {\n        int l = lca(u,\
+    \ v);\n        for (auto [a, b] : ascend(u, l)) f(a + 1, b);\n        if (vertex)\
+    \ f(in[l], in[l] + 1);\n        for (auto [a, b] : descend(l, v)) f(a, b + 1);\n\
+    \    }\n\n    template <class F> void subtree_query(int u, bool vertex, const\
+    \ F &f) {\n        f(in[u] + int(!vertex), out[u]);\n    }\n\n  private:\n   \
+    \ int n;\n    vector<vector<int>> g;\n    vector<int> sz, in, out, nxt, par, depth;\n\
+    };\n\n}  // namespace lib\n"
   code: "#pragma once\n\n#include \"../template/template.hpp\"\n\nnamespace lib {\n\
     \nusing namespace std;\n\nstruct HeavyLightDecomposition {\n  private:\n    void\
     \ dfs_sz(int v) {\n        for (auto &nv : g[v]) {\n            if (nv == par[v])\
@@ -80,24 +81,24 @@ data:
     \      : n(gh.size()),\n          g(gh),\n          sz(n, 1),\n          in(n),\n\
     \          out(n),\n          nxt(n),\n          par(n, -1),\n          depth(n,\
     \ 0) {\n        dfs_sz(root);\n        dfs_hld(root);\n    }\n\n    int idx(int\
-    \ u) const { return in[u]; }\n\n    int lca(int u, int v) const {\n        while\
-    \ (nxt[u] != nxt[v]) {\n            if (in[u] < in[v]) swap(u, v);\n         \
-    \   u = par[nxt[u]];\n        }\n        return depth[u] < depth[v] ? u : v;\n\
-    \    }\n\n    int distance(int u, int v) const {\n        return depth[u] + depth[v]\
-    \ - 2 * depth[lca(u, v)];\n    }\n\n    template <class F>\n    void path_noncommutative_query(int\
-    \ u, int v, bool vertex,\n                                   const F &f) const\
-    \ {\n        int l = lca(u, v);\n        for (auto [a, b] : ascend(u, l)) f(a\
-    \ + 1, b);\n        if (vertex) f(in[l], in[l] + 1);\n        for (auto [a, b]\
-    \ : descend(l, v)) f(a, b + 1);\n    }\n\n    template <class F> void subtree_query(int\
-    \ u, bool vertex, const F &f) {\n        f(in[u] + int(!vertex), out[u]);\n  \
-    \  }\n\n  private:\n    int n;\n    vector<vector<int>> g;\n    vector<int> sz,\
-    \ in, out, nxt, par, depth;\n};\n\n}  // namespace lib"
+    \ u) const {\n        return in[u];\n    }\n\n    int lca(int u, int v) const\
+    \ {\n        while (nxt[u] != nxt[v]) {\n            if (in[u] < in[v]) swap(u,\
+    \ v);\n            u = par[nxt[u]];\n        }\n        return depth[u] < depth[v]\
+    \ ? u : v;\n    }\n\n    int distance(int u, int v) const {\n        return depth[u]\
+    \ + depth[v] - 2 * depth[lca(u, v)];\n    }\n\n    template <class F>\n    void\
+    \ path_noncommutative_query(int u, int v, bool vertex,\n                     \
+    \              const F &f) const {\n        int l = lca(u, v);\n        for (auto\
+    \ [a, b] : ascend(u, l)) f(a + 1, b);\n        if (vertex) f(in[l], in[l] + 1);\n\
+    \        for (auto [a, b] : descend(l, v)) f(a, b + 1);\n    }\n\n    template\
+    \ <class F> void subtree_query(int u, bool vertex, const F &f) {\n        f(in[u]\
+    \ + int(!vertex), out[u]);\n    }\n\n  private:\n    int n;\n    vector<vector<int>>\
+    \ g;\n    vector<int> sz, in, out, nxt, par, depth;\n};\n\n}  // namespace lib"
   dependsOn:
   - template/template.hpp
   isVerificationFile: false
   path: tree/HeavyLightDecomposition.hpp
   requiredBy: []
-  timestamp: '2023-05-08 15:48:04+09:00'
+  timestamp: '2023-05-14 18:25:33+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/data_structure/Vertex_Add_Path_Sum.test.cpp

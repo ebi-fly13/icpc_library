@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
@@ -32,17 +32,17 @@ data:
     \      table[0][nv] = v;\n                depth[nv] = depth[v] + 1;\n        \
     \        self(self, nv);\n            }\n        };\n        dfs(dfs, root);\n\
     \        table[0][root] = root;\n        rep(i, 0, log - 1) {\n            rep(v,\
-    \ 0, n) { table[i + 1][v] = table[i][table[i][v]]; }\n        }\n    }\n\n   \
-    \ int la(int u, int k) const {\n        if (depth[u] < k) return -1;\n       \
-    \ rrep(i, 0, log) {\n            if ((k >> i) & 1) {\n                u = table[i][u];\n\
-    \            }\n        }\n        return u;\n    }\n\n    int lca(int u, int\
-    \ v) const {\n        if (depth[u] < depth[v]) std::swap(u, v);\n        u = la(u,\
-    \ depth[u] - depth[v]);\n        if (u == v) return u;\n        rrep(i, 0, log)\
-    \ {\n            if (table[i][u] != table[i][v]) {\n                u = table[i][u];\n\
-    \                v = table[i][v];\n            }\n        }\n        return table[0][u];\n\
-    \    }\n\n    int distance(int u, int v) const {\n        int l = lca(u, v);\n\
-    \        return depth[u] + depth[v] - 2 * depth[l];\n    };\n};\n\n}  // namespace\
-    \ lib\n"
+    \ 0, n) {\n                table[i + 1][v] = table[i][table[i][v]];\n        \
+    \    }\n        }\n    }\n\n    int la(int u, int k) const {\n        if (depth[u]\
+    \ < k) return -1;\n        rrep(i, 0, log) {\n            if ((k >> i) & 1) {\n\
+    \                u = table[i][u];\n            }\n        }\n        return u;\n\
+    \    }\n\n    int lca(int u, int v) const {\n        if (depth[u] < depth[v])\
+    \ std::swap(u, v);\n        u = la(u, depth[u] - depth[v]);\n        if (u ==\
+    \ v) return u;\n        rrep(i, 0, log) {\n            if (table[i][u] != table[i][v])\
+    \ {\n                u = table[i][u];\n                v = table[i][v];\n    \
+    \        }\n        }\n        return table[0][u];\n    }\n\n    int distance(int\
+    \ u, int v) const {\n        int l = lca(u, v);\n        return depth[u] + depth[v]\
+    \ - 2 * depth[l];\n    };\n};\n\n}  // namespace lib\n"
   code: "#pragma once\n\n#include \"../template/template.hpp\"\n\nnamespace lib {\n\
     \nstruct LowestCommonAncestor {\n    int n;\n    std::vector<std::vector<int>>\
     \ table;\n    std::vector<int> depth;\n    int log = 25;\n\n    LowestCommonAncestor(const\
@@ -53,23 +53,23 @@ data:
     \      table[0][nv] = v;\n                depth[nv] = depth[v] + 1;\n        \
     \        self(self, nv);\n            }\n        };\n        dfs(dfs, root);\n\
     \        table[0][root] = root;\n        rep(i, 0, log - 1) {\n            rep(v,\
-    \ 0, n) { table[i + 1][v] = table[i][table[i][v]]; }\n        }\n    }\n\n   \
-    \ int la(int u, int k) const {\n        if (depth[u] < k) return -1;\n       \
-    \ rrep(i, 0, log) {\n            if ((k >> i) & 1) {\n                u = table[i][u];\n\
-    \            }\n        }\n        return u;\n    }\n\n    int lca(int u, int\
-    \ v) const {\n        if (depth[u] < depth[v]) std::swap(u, v);\n        u = la(u,\
-    \ depth[u] - depth[v]);\n        if (u == v) return u;\n        rrep(i, 0, log)\
-    \ {\n            if (table[i][u] != table[i][v]) {\n                u = table[i][u];\n\
-    \                v = table[i][v];\n            }\n        }\n        return table[0][u];\n\
-    \    }\n\n    int distance(int u, int v) const {\n        int l = lca(u, v);\n\
-    \        return depth[u] + depth[v] - 2 * depth[l];\n    };\n};\n\n}  // namespace\
-    \ lib"
+    \ 0, n) {\n                table[i + 1][v] = table[i][table[i][v]];\n        \
+    \    }\n        }\n    }\n\n    int la(int u, int k) const {\n        if (depth[u]\
+    \ < k) return -1;\n        rrep(i, 0, log) {\n            if ((k >> i) & 1) {\n\
+    \                u = table[i][u];\n            }\n        }\n        return u;\n\
+    \    }\n\n    int lca(int u, int v) const {\n        if (depth[u] < depth[v])\
+    \ std::swap(u, v);\n        u = la(u, depth[u] - depth[v]);\n        if (u ==\
+    \ v) return u;\n        rrep(i, 0, log) {\n            if (table[i][u] != table[i][v])\
+    \ {\n                u = table[i][u];\n                v = table[i][v];\n    \
+    \        }\n        }\n        return table[0][u];\n    }\n\n    int distance(int\
+    \ u, int v) const {\n        int l = lca(u, v);\n        return depth[u] + depth[v]\
+    \ - 2 * depth[l];\n    };\n};\n\n}  // namespace lib"
   dependsOn:
   - template/template.hpp
   isVerificationFile: false
   path: tree/LowestCommonAncestor.hpp
   requiredBy: []
-  timestamp: '2023-05-08 15:48:04+09:00'
+  timestamp: '2023-05-14 18:25:33+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/tree/Lowest_Common_Ancestor.test.cpp

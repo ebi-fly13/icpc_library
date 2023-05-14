@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   - icon: ':heavy_check_mark:'
@@ -36,23 +36,23 @@ data:
     \    if (table[0][v] == nv) continue;\n                table[0][nv] = v;\n   \
     \             depth[nv] = depth[v] + 1;\n                self(self, nv);\n   \
     \         }\n        };\n        dfs(dfs, root);\n        table[0][root] = root;\n\
-    \        rep(i, 0, log - 1) {\n            rep(v, 0, n) { table[i + 1][v] = table[i][table[i][v]];\
-    \ }\n        }\n    }\n\n    int la(int u, int k) const {\n        if (depth[u]\
-    \ < k) return -1;\n        rrep(i, 0, log) {\n            if ((k >> i) & 1) {\n\
-    \                u = table[i][u];\n            }\n        }\n        return u;\n\
-    \    }\n\n    int lca(int u, int v) const {\n        if (depth[u] < depth[v])\
-    \ std::swap(u, v);\n        u = la(u, depth[u] - depth[v]);\n        if (u ==\
-    \ v) return u;\n        rrep(i, 0, log) {\n            if (table[i][u] != table[i][v])\
-    \ {\n                u = table[i][u];\n                v = table[i][v];\n    \
-    \        }\n        }\n        return table[0][u];\n    }\n\n    int distance(int\
-    \ u, int v) const {\n        int l = lca(u, v);\n        return depth[u] + depth[v]\
-    \ - 2 * depth[l];\n    };\n};\n\n}  // namespace lib\n#line 5 \"test/tree/Lowest_Common_Ancestor.test.cpp\"\
-    \n\nint main() {\n    int n, q;\n    std::cin >> n >> q;\n    std::vector g(n,\
-    \ std::vector<int>());\n    rep(i, 1, n) {\n        int p;\n        std::cin >>\
-    \ p;\n        g[p].emplace_back(i);\n        g[i].emplace_back(p);\n    }\n  \
-    \  lib::LowestCommonAncestor lca(g, 0);\n    while (q--) {\n        int u, v;\n\
-    \        std::cin >> u >> v;\n        std::cout << lca.lca(u, v) << '\\n';\n \
-    \   }\n}\n"
+    \        rep(i, 0, log - 1) {\n            rep(v, 0, n) {\n                table[i\
+    \ + 1][v] = table[i][table[i][v]];\n            }\n        }\n    }\n\n    int\
+    \ la(int u, int k) const {\n        if (depth[u] < k) return -1;\n        rrep(i,\
+    \ 0, log) {\n            if ((k >> i) & 1) {\n                u = table[i][u];\n\
+    \            }\n        }\n        return u;\n    }\n\n    int lca(int u, int\
+    \ v) const {\n        if (depth[u] < depth[v]) std::swap(u, v);\n        u = la(u,\
+    \ depth[u] - depth[v]);\n        if (u == v) return u;\n        rrep(i, 0, log)\
+    \ {\n            if (table[i][u] != table[i][v]) {\n                u = table[i][u];\n\
+    \                v = table[i][v];\n            }\n        }\n        return table[0][u];\n\
+    \    }\n\n    int distance(int u, int v) const {\n        int l = lca(u, v);\n\
+    \        return depth[u] + depth[v] - 2 * depth[l];\n    };\n};\n\n}  // namespace\
+    \ lib\n#line 5 \"test/tree/Lowest_Common_Ancestor.test.cpp\"\n\nint main() {\n\
+    \    int n, q;\n    std::cin >> n >> q;\n    std::vector g(n, std::vector<int>());\n\
+    \    rep(i, 1, n) {\n        int p;\n        std::cin >> p;\n        g[p].emplace_back(i);\n\
+    \        g[i].emplace_back(p);\n    }\n    lib::LowestCommonAncestor lca(g, 0);\n\
+    \    while (q--) {\n        int u, v;\n        std::cin >> u >> v;\n        std::cout\
+    \ << lca.lca(u, v) << '\\n';\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/lca\"\n\n#include \"../../template/template.hpp\"\
     \n#include \"../../tree/LowestCommonAncestor.hpp\"\n\nint main() {\n    int n,\
     \ q;\n    std::cin >> n >> q;\n    std::vector g(n, std::vector<int>());\n   \
@@ -66,7 +66,7 @@ data:
   isVerificationFile: true
   path: test/tree/Lowest_Common_Ancestor.test.cpp
   requiredBy: []
-  timestamp: '2023-05-08 15:48:04+09:00'
+  timestamp: '2023-05-14 18:25:33+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/tree/Lowest_Common_Ancestor.test.cpp

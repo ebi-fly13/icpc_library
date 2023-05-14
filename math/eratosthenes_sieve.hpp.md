@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
@@ -29,27 +29,28 @@ data:
     \ + 1, true)) {\n        table[1] = false;\n        for (int i = 2; i * i <= n;\
     \ i++) {\n            if (!table[i]) continue;\n            for (int j = i; i\
     \ * j <= n; j++) {\n                table[i * j] = false;\n            }\n   \
-    \     }\n    }\n\n    bool is_prime(int p) { return table[p]; }\n\n    vector<int>\
-    \ prime_table(int m = -1) {\n        if (m < 0) m = n;\n        std::vector<int>\
-    \ prime;\n        rep(i, 2, m + 1) {\n            if (table[i]) prime.emplace_back(i);\n\
-    \        }\n        return prime;\n    }\n};\n\n}  // namespace lib\n"
+    \     }\n    }\n\n    bool is_prime(int p) {\n        return table[p];\n    }\n\
+    \n    vector<int> prime_table(int m = -1) {\n        if (m < 0) m = n;\n     \
+    \   std::vector<int> prime;\n        rep(i, 2, m + 1) {\n            if (table[i])\
+    \ prime.emplace_back(i);\n        }\n        return prime;\n    }\n};\n\n}  //\
+    \ namespace lib\n"
   code: "#pragma once\n\n#include <cassert>\n#include <vector>\n\n#include \"../template/template.hpp\"\
     \n\nnamespace lib {\n\nusing namespace std;\n\nstruct eratosthenes_sieve {\n \
     \ private:\n    int n;\n    vector<bool> table;\n\n  public:\n    eratosthenes_sieve(int\
     \ n) : n(n), table(vector<bool>(n + 1, true)) {\n        table[1] = false;\n \
     \       for (int i = 2; i * i <= n; i++) {\n            if (!table[i]) continue;\n\
     \            for (int j = i; i * j <= n; j++) {\n                table[i * j]\
-    \ = false;\n            }\n        }\n    }\n\n    bool is_prime(int p) { return\
-    \ table[p]; }\n\n    vector<int> prime_table(int m = -1) {\n        if (m < 0)\
-    \ m = n;\n        std::vector<int> prime;\n        rep(i, 2, m + 1) {\n      \
-    \      if (table[i]) prime.emplace_back(i);\n        }\n        return prime;\n\
-    \    }\n};\n\n}  // namespace lib"
+    \ = false;\n            }\n        }\n    }\n\n    bool is_prime(int p) {\n  \
+    \      return table[p];\n    }\n\n    vector<int> prime_table(int m = -1) {\n\
+    \        if (m < 0) m = n;\n        std::vector<int> prime;\n        rep(i, 2,\
+    \ m + 1) {\n            if (table[i]) prime.emplace_back(i);\n        }\n    \
+    \    return prime;\n    }\n};\n\n}  // namespace lib"
   dependsOn:
   - template/template.hpp
   isVerificationFile: false
   path: math/eratosthenes_sieve.hpp
   requiredBy: []
-  timestamp: '2023-05-08 15:48:04+09:00'
+  timestamp: '2023-05-14 18:25:33+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/math/enumerate_primes.test.cpp

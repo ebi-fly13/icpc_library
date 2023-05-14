@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
@@ -29,20 +29,20 @@ data:
     \        int frid = int(g[from].size());\n        int toid = int(g[to].size());\n\
     \        if (from == to) toid++;\n        g[from].push_back(nedge{to, toid, cap});\n\
     \        g[to].push_back(nedge{from, frid, 0});\n        return m;\n    }\n\n\
-    \    Cap flow(int s, int t) { return flow(s, t, numeric_limits<Cap>::max()); }\n\
-    \n    Cap flow(int s, int t, Cap flow_limit) {\n        vector<int> lv(nn), iter(nn);\n\
-    \        queue<int> q;\n\n        auto bfs = [&]() {\n            fill(all(lv),\
-    \ -1);\n            lv[s] = 0;\n            queue<int>().swap(q);\n          \
-    \  q.push(s);\n            while (!q.empty()) {\n                int v = q.front();\n\
-    \                q.pop();\n                for (auto e : g[v]) {\n           \
-    \         if (e.cap == 0 || lv[e.to] >= 0) continue;\n                    lv[e.to]\
-    \ = lv[v] + 1;\n                    if (e.to == t) return;\n                 \
-    \   q.push(e.to);\n                }\n            }\n        };\n\n        auto\
-    \ dfs = [&](auto self, int v, Cap up) {\n            if (v == s) return up;\n\
-    \            Cap res = 0;\n            int lvvv = lv[v];\n            for (int&\
-    \ i = iter[v]; i < int(g[v].size()); i++) {\n                nedge& e = g[v][i];\n\
-    \                if (lvvv <= lv[e.to] || g[e.to][e.rev].cap == 0) continue;\n\
-    \                Cap d = self(self, e.to, min(up - res, g[e.to][e.rev].cap));\n\
+    \    Cap flow(int s, int t) {\n        return flow(s, t, numeric_limits<Cap>::max());\n\
+    \    }\n\n    Cap flow(int s, int t, Cap flow_limit) {\n        vector<int> lv(nn),\
+    \ iter(nn);\n        queue<int> q;\n\n        auto bfs = [&]() {\n           \
+    \ fill(all(lv), -1);\n            lv[s] = 0;\n            queue<int>().swap(q);\n\
+    \            q.push(s);\n            while (!q.empty()) {\n                int\
+    \ v = q.front();\n                q.pop();\n                for (auto e : g[v])\
+    \ {\n                    if (e.cap == 0 || lv[e.to] >= 0) continue;\n        \
+    \            lv[e.to] = lv[v] + 1;\n                    if (e.to == t) return;\n\
+    \                    q.push(e.to);\n                }\n            }\n       \
+    \ };\n\n        auto dfs = [&](auto self, int v, Cap up) {\n            if (v\
+    \ == s) return up;\n            Cap res = 0;\n            int lvvv = lv[v];\n\
+    \            for (int& i = iter[v]; i < int(g[v].size()); i++) {\n           \
+    \     nedge& e = g[v][i];\n                if (lvvv <= lv[e.to] || g[e.to][e.rev].cap\
+    \ == 0) continue;\n                Cap d = self(self, e.to, min(up - res, g[e.to][e.rev].cap));\n\
     \                if (d <= 0) continue;\n                g[v][i].cap += d;\n  \
     \              g[e.to][e.rev].cap -= d;\n                res += d;\n         \
     \       if (res == up) return res;\n            }\n            lv[v] = nn;\n \
@@ -75,20 +75,20 @@ data:
     \        int frid = int(g[from].size());\n        int toid = int(g[to].size());\n\
     \        if (from == to) toid++;\n        g[from].push_back(nedge{to, toid, cap});\n\
     \        g[to].push_back(nedge{from, frid, 0});\n        return m;\n    }\n\n\
-    \    Cap flow(int s, int t) { return flow(s, t, numeric_limits<Cap>::max()); }\n\
-    \n    Cap flow(int s, int t, Cap flow_limit) {\n        vector<int> lv(nn), iter(nn);\n\
-    \        queue<int> q;\n\n        auto bfs = [&]() {\n            fill(all(lv),\
-    \ -1);\n            lv[s] = 0;\n            queue<int>().swap(q);\n          \
-    \  q.push(s);\n            while (!q.empty()) {\n                int v = q.front();\n\
-    \                q.pop();\n                for (auto e : g[v]) {\n           \
-    \         if (e.cap == 0 || lv[e.to] >= 0) continue;\n                    lv[e.to]\
-    \ = lv[v] + 1;\n                    if (e.to == t) return;\n                 \
-    \   q.push(e.to);\n                }\n            }\n        };\n\n        auto\
-    \ dfs = [&](auto self, int v, Cap up) {\n            if (v == s) return up;\n\
-    \            Cap res = 0;\n            int lvvv = lv[v];\n            for (int&\
-    \ i = iter[v]; i < int(g[v].size()); i++) {\n                nedge& e = g[v][i];\n\
-    \                if (lvvv <= lv[e.to] || g[e.to][e.rev].cap == 0) continue;\n\
-    \                Cap d = self(self, e.to, min(up - res, g[e.to][e.rev].cap));\n\
+    \    Cap flow(int s, int t) {\n        return flow(s, t, numeric_limits<Cap>::max());\n\
+    \    }\n\n    Cap flow(int s, int t, Cap flow_limit) {\n        vector<int> lv(nn),\
+    \ iter(nn);\n        queue<int> q;\n\n        auto bfs = [&]() {\n           \
+    \ fill(all(lv), -1);\n            lv[s] = 0;\n            queue<int>().swap(q);\n\
+    \            q.push(s);\n            while (!q.empty()) {\n                int\
+    \ v = q.front();\n                q.pop();\n                for (auto e : g[v])\
+    \ {\n                    if (e.cap == 0 || lv[e.to] >= 0) continue;\n        \
+    \            lv[e.to] = lv[v] + 1;\n                    if (e.to == t) return;\n\
+    \                    q.push(e.to);\n                }\n            }\n       \
+    \ };\n\n        auto dfs = [&](auto self, int v, Cap up) {\n            if (v\
+    \ == s) return up;\n            Cap res = 0;\n            int lvvv = lv[v];\n\
+    \            for (int& i = iter[v]; i < int(g[v].size()); i++) {\n           \
+    \     nedge& e = g[v][i];\n                if (lvvv <= lv[e.to] || g[e.to][e.rev].cap\
+    \ == 0) continue;\n                Cap d = self(self, e.to, min(up - res, g[e.to][e.rev].cap));\n\
     \                if (d <= 0) continue;\n                g[v][i].cap += d;\n  \
     \              g[e.to][e.rev].cap -= d;\n                res += d;\n         \
     \       if (res == up) return res;\n            }\n            lv[v] = nn;\n \
@@ -116,7 +116,7 @@ data:
   isVerificationFile: false
   path: graph/mf_graph.hpp
   requiredBy: []
-  timestamp: '2023-05-08 15:48:04+09:00'
+  timestamp: '2023-05-14 18:25:33+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: graph/mf_graph.hpp

@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/eratosthenes_sieve.hpp
     title: eratosthenes sieve
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
@@ -34,15 +34,16 @@ data:
     \ + 1, true)) {\n        table[1] = false;\n        for (int i = 2; i * i <= n;\
     \ i++) {\n            if (!table[i]) continue;\n            for (int j = i; i\
     \ * j <= n; j++) {\n                table[i * j] = false;\n            }\n   \
-    \     }\n    }\n\n    bool is_prime(int p) { return table[p]; }\n\n    vector<int>\
-    \ prime_table(int m = -1) {\n        if (m < 0) m = n;\n        std::vector<int>\
-    \ prime;\n        rep(i, 2, m + 1) {\n            if (table[i]) prime.emplace_back(i);\n\
-    \        }\n        return prime;\n    }\n};\n\n}  // namespace lib\n#line 6 \"\
-    test/math/enumerate_primes.test.cpp\"\n\nint main() {\n    int n, a, b;\n    std::cin\
-    \ >> n >> a >> b;\n    lib::eratosthenes_sieve sieve(n);\n    auto p = sieve.prime_table();\n\
-    \    int sz = p.size();\n    int x = (sz - b + a - 1) / a;\n    std::cout << sz\
-    \ << \" \" << x << '\\n';\n    for (int i = b; i < sz; i += a) {\n        std::cout\
-    \ << p[i] << \" \";\n    }\n    std::cout << \"\\n\";\n}\n"
+    \     }\n    }\n\n    bool is_prime(int p) {\n        return table[p];\n    }\n\
+    \n    vector<int> prime_table(int m = -1) {\n        if (m < 0) m = n;\n     \
+    \   std::vector<int> prime;\n        rep(i, 2, m + 1) {\n            if (table[i])\
+    \ prime.emplace_back(i);\n        }\n        return prime;\n    }\n};\n\n}  //\
+    \ namespace lib\n#line 6 \"test/math/enumerate_primes.test.cpp\"\n\nint main()\
+    \ {\n    int n, a, b;\n    std::cin >> n >> a >> b;\n    lib::eratosthenes_sieve\
+    \ sieve(n);\n    auto p = sieve.prime_table();\n    int sz = p.size();\n    int\
+    \ x = (sz - b + a - 1) / a;\n    std::cout << sz << \" \" << x << '\\n';\n   \
+    \ for (int i = b; i < sz; i += a) {\n        std::cout << p[i] << \" \";\n   \
+    \ }\n    std::cout << \"\\n\";\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/enumerate_primes\"\n\n\
     #include <iostream>\n\n#include \"../../math/eratosthenes_sieve.hpp\"\n\nint main()\
     \ {\n    int n, a, b;\n    std::cin >> n >> a >> b;\n    lib::eratosthenes_sieve\
@@ -56,7 +57,7 @@ data:
   isVerificationFile: true
   path: test/math/enumerate_primes.test.cpp
   requiredBy: []
-  timestamp: '2023-05-08 15:48:04+09:00'
+  timestamp: '2023-05-14 18:25:33+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/math/enumerate_primes.test.cpp

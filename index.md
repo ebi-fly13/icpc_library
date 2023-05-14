@@ -61,7 +61,7 @@ data:
       title: string/parsing_template.hpp
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: template/template.hpp
   - name: tree
@@ -72,12 +72,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: tree/LowestCommonAncestor.hpp
       title: LowestCommonAncestor
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: tree/RerootingDP.hpp
       title: RerootingDP
   - name: utility
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: utility/modint.hpp
       title: modint
     - icon: ':heavy_check_mark:'
@@ -160,10 +160,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/tree/Lowest_Common_Ancestor.test.cpp
       title: test/tree/Lowest_Common_Ancestor.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/tree/RerootingDP.test.cpp
       title: test/tree/RerootingDP.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/tree/RerootingDP_LC.test.cpp
       title: test/tree/RerootingDP_LC.test.cpp
 layout: toppage

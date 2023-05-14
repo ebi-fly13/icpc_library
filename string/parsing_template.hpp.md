@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
@@ -26,9 +26,10 @@ data:
     \ false;\n    }\n}\n\n// begin\u304Cexpected\u3092\u6307\u3057\u3066\u3044\u305F\
     \u3089begin\u3092\u4E00\u3064\u9032\u3081\u308B\u3002\nvoid consume(State &begin,\
     \ char expected) {\n    if (*begin == expected) {\n        begin++;\n    } else\
-    \ {\n        assert(0);\n    }\n}\n\nbool isdigit(char c) { return '0' <= c &&\
-    \ c <= '9'; }\n\nbool isAlpha(char c) { return 'A' <= c && c <= 'Z'; }\n\nbool\
-    \ isalpha(char c) { return 'a' <= c && c <= 'z'; }\n\n}  // namespace lib\n"
+    \ {\n        assert(0);\n    }\n}\n\nbool isdigit(char c) {\n    return '0' <=\
+    \ c && c <= '9';\n}\n\nbool isAlpha(char c) {\n    return 'A' <= c && c <= 'Z';\n\
+    }\n\nbool isalpha(char c) {\n    return 'a' <= c && c <= 'z';\n}\n\n}  // namespace\
+    \ lib\n"
   code: "#pragma once\n\n#include \"../template/template.hpp\"\n\nnamespace lib {\n\
     \ntypedef std::string::const_iterator State;\n\n// *begin == expected\u306E\u5224\
     \u5B9A\nbool expect(State &begin, char expected) {\n    if (*begin == expected)\
@@ -36,15 +37,15 @@ data:
     \ begin\u304Cexpected\u3092\u6307\u3057\u3066\u3044\u305F\u3089begin\u3092\u4E00\
     \u3064\u9032\u3081\u308B\u3002\nvoid consume(State &begin, char expected) {\n\
     \    if (*begin == expected) {\n        begin++;\n    } else {\n        assert(0);\n\
-    \    }\n}\n\nbool isdigit(char c) { return '0' <= c && c <= '9'; }\n\nbool isAlpha(char\
-    \ c) { return 'A' <= c && c <= 'Z'; }\n\nbool isalpha(char c) { return 'a' <=\
-    \ c && c <= 'z'; }\n\n}  // namespace lib"
+    \    }\n}\n\nbool isdigit(char c) {\n    return '0' <= c && c <= '9';\n}\n\nbool\
+    \ isAlpha(char c) {\n    return 'A' <= c && c <= 'Z';\n}\n\nbool isalpha(char\
+    \ c) {\n    return 'a' <= c && c <= 'z';\n}\n\n}  // namespace lib"
   dependsOn:
   - template/template.hpp
   isVerificationFile: false
   path: string/parsing_template.hpp
   requiredBy: []
-  timestamp: '2023-05-08 15:48:04+09:00'
+  timestamp: '2023-05-14 18:25:33+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: string/parsing_template.hpp

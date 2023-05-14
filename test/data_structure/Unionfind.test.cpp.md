@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: data_structure/dsu.hpp
     title: data_structure/dsu.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
@@ -32,11 +32,11 @@ data:
     \ int b) {\n        int x = leader(a), y = leader(b);\n        if (x == y) return\
     \ x;\n        if (-pos[x] < -pos[y]) swap(x, y);\n        pos[x] += pos[y];\n\
     \        pos[y] = x;\n        return x;\n    }\n\n    bool same(int a, int b)\
-    \ { return leader(a) == leader(b); }\n\n    int leader(int a) {\n        if (pos[a]\
-    \ < 0) return a;\n        return pos[a] = leader(pos[a]);\n    }\n\n    int size(int\
-    \ a) { return -pos[leader(a)]; }\n\n  private:\n    int _n;\n    vector<int> pos;\n\
-    };\n\n}  // namespace lib\n#line 5 \"test/data_structure/Unionfind.test.cpp\"\n\
-    \nint main() {\n    int n, q;\n    std::cin >> n >> q;\n    lib::dsu uf(n);\n\
+    \ {\n        return leader(a) == leader(b);\n    }\n\n    int leader(int a) {\n\
+    \        if (pos[a] < 0) return a;\n        return pos[a] = leader(pos[a]);\n\
+    \    }\n\n    int size(int a) {\n        return -pos[leader(a)];\n    }\n\n  private:\n\
+    \    int _n;\n    vector<int> pos;\n};\n\n}  // namespace lib\n#line 5 \"test/data_structure/Unionfind.test.cpp\"\
+    \n\nint main() {\n    int n, q;\n    std::cin >> n >> q;\n    lib::dsu uf(n);\n\
     \    while (q--) {\n        int t, u, v;\n        std::cin >> t >> u >> v;\n \
     \       if (t == 0) {\n            uf.merge(u, v);\n        } else {\n       \
     \     std::cout << (int)uf.same(u, v) << '\\n';\n        }\n    }\n}\n"
@@ -52,7 +52,7 @@ data:
   isVerificationFile: true
   path: test/data_structure/Unionfind.test.cpp
   requiredBy: []
-  timestamp: '2023-05-14 18:21:59+09:00'
+  timestamp: '2023-05-14 18:25:33+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data_structure/Unionfind.test.cpp
