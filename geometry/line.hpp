@@ -13,7 +13,9 @@ vec proj(const line &l, const vec &p) {
     return l.a + ab * (dot(ab, p - l.a) / norm(ab));
 }
 
-vec refl(const line &l, const vec &p) { return proj(l, p) * ld(2) - p; }
+vec refl(const line &l, const vec &p) {
+    return proj(l, p) * ld(2) - p;
+}
 
 int intersection(const line &a, const line &b) {
     if (sgn(cross(a.b - a.a, b.a - b.b)) != 0) {

@@ -64,7 +64,9 @@ struct HeavyLightDecomposition {
         dfs_hld(root);
     }
 
-    int idx(int u) const { return in[u]; }
+    int idx(int u) const {
+        return in[u];
+    }
 
     int lca(int u, int v) const {
         while (nxt[u] != nxt[v]) {

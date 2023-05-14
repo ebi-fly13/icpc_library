@@ -2,6 +2,7 @@
 #define ERROR 0.001
 
 #include "../../geometry/convex_hull.hpp"
+
 #include "../../geometry/segment.hpp"
 #include "../../template/template.hpp"
 using namespace lib;

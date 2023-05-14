@@ -12,14 +12,18 @@ template <class S, S (*op)(S, S), S (*e)()> struct segtree {
     int sz;
     vector<S> data;
 
-    void update(int i) { data[i] = op(data[2 * i], data[2 * i + 1]); }
+    void update(int i) {
+        data[i] = op(data[2 * i], data[2 * i + 1]);
+    }
 
   public:
     segtree(int n) : segtree(vector<S>(n, e())) {}
     segtree(const vector<S> &v) : n((int)v.size()), sz(1) {
         while (sz < n) sz *= 2;
         data = vector<S>(2 * sz, e());
-        rep(i, 0, n) { data[sz + i] = v[i]; }
+        rep(i, 0, n) {
+            data[sz + i] = v[i];
+        }
         rrep(i, 1, sz) update(i);
     }
 
@@ -52,7 +56,9 @@ template <class S, S (*op)(S, S), S (*e)()> struct segtree {
         return op(sml, smr);
     }
 
-    S all_prod() { return data[1]; }
+    S all_prod() {
+        return data[1];
+    }
 
     template <class F> int max_right(int l, F f) {
         assert(0 <= l && l < n);

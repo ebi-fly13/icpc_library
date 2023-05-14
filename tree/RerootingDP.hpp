@@ -10,7 +10,9 @@ struct RerootingDP {
     struct edge {
         int to, idx, xdi;
     };
-    RerootingDP(int _n = 0) : n(_n) { es.resize(n); }
+    RerootingDP(int _n = 0) : n(_n) {
+        es.resize(n);
+    }
     void add_edge(int u, int v, int idx1, int idx2) {
         es[u].push_back({v, idx1, idx2});
         es[v].push_back({u, idx2, idx1});
@@ -45,7 +47,9 @@ struct RerootingDP {
         }
         return reverse_dp[es[v][le].to];
     }
-    const vector<edge> &operator[](int idx) const { return es[idx]; }
+    const vector<edge> &operator[](int idx) const {
+        return es[idx];
+    }
 
   private:
     int n, root;

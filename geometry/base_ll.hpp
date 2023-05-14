@@ -6,9 +6,13 @@ namespace lib {
 
 using vec = complex<ll>;
 
-ll dot(const vec &a, const vec &b) { return (conj(a) * b).real(); }
+ll dot(const vec &a, const vec &b) {
+    return (conj(a) * b).real();
+}
 
-ll cross(const vec &a, const vec &b) { return (conj(a) * b).imag(); }
+ll cross(const vec &a, const vec &b) {
+    return (conj(a) * b).imag();
+}
 
 // e : vec(OX)
 // orthant k : [ pi/2 * k, pi/2 * (k+1) ) rad
