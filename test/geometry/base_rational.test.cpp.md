@@ -65,19 +65,19 @@ data:
     \ 4 \"utility/rational.hpp\"\n\nnamespace lib {\n\nstruct rational {\n    rational()\
     \ : p(0), q(1) {}\n    rational(ll n) : p(n), q(1) {}\n    rational(ll n, ll m)\
     \ {\n        assert(m != 0);\n        if (m < 0) n = -n, m = -m;\n        ll g\
-    \ = gcd(n, m);\n        p = n / g;\n        q = m / g;\n    }\n    ld val() {\n\
-    \        return ld(p) / ld(q);\n    }\n    rational& operator+=(const rational&\
-    \ rhs) {\n        ll g = gcd(q, rhs.q);\n        ll np = rhs.q / g * p + q / g\
-    \ * rhs.p;\n        ll nq = q / g * rhs.q;\n        ll ng = gcd(np, nq);\n   \
-    \     p = np / ng, q = nq / ng;\n        return *this;\n    }\n    rational& operator-=(const\
-    \ rational& rhs) {\n        (*this) += rational(-rhs.p, rhs.q);\n        return\
-    \ *this;\n    }\n    rational& operator*=(const rational& rhs) {\n        ll g1\
-    \ = gcd(q, rhs.p), g2 = gcd(p, rhs.q);\n        ll np = p / g2 * rhs.p / g1;\n\
-    \        ll nq = q / g1 * rhs.q / g2;\n        p = np, q = nq;\n        return\
-    \ *this;\n    }\n    rational& operator/=(const rational& rhs) {\n        (*this)\
-    \ *= rational(rhs.q, rhs.p);\n        return *this;\n    }\n    rational operator+()\
-    \ const {\n        return *this;\n    }\n    rational operator-() const {\n  \
-    \      return rational() - *this;\n    }\n    friend rational operator+(const\
+    \ = gcd(n, m);\n        p = n / g;\n        q = m / g;\n    }\n    explicit operator\
+    \ const ld () const { return ld(p) / ld(q); }\n    rational& operator+=(const\
+    \ rational& rhs){\n        ll g = gcd(q, rhs.q);\n        ll np = rhs.q / g *\
+    \ p + q / g * rhs.p;\n        ll nq = q / g * rhs.q;\n        ll ng = gcd(np,\
+    \ nq);\n        p = np / ng, q = nq / ng;\n        return *this;\n    }\n    rational&\
+    \ operator-=(const rational& rhs) {\n        (*this) += rational(-rhs.p, rhs.q);\n\
+    \        return *this;\n    }\n    rational& operator*=(const rational& rhs) {\n\
+    \        ll g1 = gcd(q, rhs.p), g2 = gcd(p, rhs.q);\n        ll np = p / g2 *\
+    \ rhs.p / g1;\n        ll nq = q / g1 * rhs.q / g2;\n        p = np, q = nq;\n\
+    \        return *this;\n    }\n    rational& operator/=(const rational& rhs) {\n\
+    \        (*this) *= rational(rhs.q, rhs.p);\n        return *this;\n    }\n  \
+    \  rational operator+() const {\n        return *this;\n    }\n    rational operator-()\
+    \ const {\n        return rational() - *this;\n    }\n    friend rational operator+(const\
     \ rational& lhs, const rational& rhs) {\n        return rational(lhs) += rhs;\n\
     \    }\n    friend rational operator-(const rational& lhs, const rational& rhs)\
     \ {\n        return rational(lhs) -= rhs;\n    }\n    friend rational operator*(const\
@@ -153,7 +153,7 @@ data:
   isVerificationFile: true
   path: test/geometry/base_rational.test.cpp
   requiredBy: []
-  timestamp: '2023-05-14 18:25:33+09:00'
+  timestamp: '2023-05-14 19:09:00+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/geometry/base_rational.test.cpp

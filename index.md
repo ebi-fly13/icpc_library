@@ -35,6 +35,19 @@ data:
     - icon: ':heavy_check_mark:'
       path: geometry/segment.hpp
       title: segment
+  - name: geometry3D
+    pages:
+    - icon: ':warning:'
+      path: geometry3D/base_arbitary.hpp
+      title: geometry3D/base_arbitary.hpp
+  - name: geometry3D/ld
+    pages:
+    - icon: ':warning:'
+      path: geometry3D/ld/base_ld.hpp
+      title: geometry3D/ld/base_ld.hpp
+    - icon: ':warning:'
+      path: geometry3D/ld/line.hpp
+      title: geometry3D/ld/line.hpp
   - name: graph
     pages:
     - icon: ':warning:'

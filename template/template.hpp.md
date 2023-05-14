@@ -33,6 +33,15 @@ data:
     path: geometry/segment.hpp
     title: segment
   - icon: ':warning:'
+    path: geometry3D/base_arbitary.hpp
+    title: geometry3D/base_arbitary.hpp
+  - icon: ':warning:'
+    path: geometry3D/ld/base_ld.hpp
+    title: geometry3D/ld/base_ld.hpp
+  - icon: ':warning:'
+    path: geometry3D/ld/line.hpp
+    title: geometry3D/ld/line.hpp
+  - icon: ':warning:'
     path: graph/fordfulkerson.hpp
     title: FordFulkerson
   - icon: ':warning:'
@@ -174,6 +183,9 @@ data:
   - tree/HeavyLightDecomposition.hpp
   - tree/RerootingDP.hpp
   - tree/LowestCommonAncestor.hpp
+  - geometry3D/ld/line.hpp
+  - geometry3D/ld/base_ld.hpp
+  - geometry3D/base_arbitary.hpp
   - data_structure/BinaryTrie.hpp
   - data_structure/segtree.hpp
   - data_structure/dsu.hpp
