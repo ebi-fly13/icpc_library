@@ -13,9 +13,7 @@ struct rational{
         ll g = gcd(n,m);
         p = n / g; q = m / g;
     }
-    ld val(){
-        return ld(p) / ld(q);
-    }
+    explicit operator const ld () const { return ld(p) / ld(q); }
     rational& operator+=(const rational& rhs){
         ll g = gcd(q,rhs.q);
         ll np = rhs.q / g * p + q / g * rhs.p;
