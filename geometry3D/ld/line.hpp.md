@@ -51,19 +51,79 @@ data:
     \    return Vec(a.y*b.z-a.z*b.y, a.z*b.x-a.x*b.z, a.x*b.y-a.y*b.x);\n}\n\nld norm(const\
     \ vec &a){\n    return a.x*a.x+a.y*a.y+a.z*a.z;\n}\n\nld abs(const vec &a){\n\
     \    return sqrtl(norm(a));\n}\n\n\n}  // namespace lib\n#line 4 \"geometry3D/ld/line.hpp\"\
-    \n\nnamespace lib {\n\n\nstruct line {\n    vec a, b;\n};\n\nvec proj(const line\
+    \n\nnamespace lib {\n\nstruct line {\n    vec a, b;\n};\n\nvec proj(const line\
     \ &l, const vec &p) {\n    vec ab = l.b - l.a;\n    return l.a + ab * (dot(ab,\
     \ p - l.a) / norm(ab));\n}\n\nvec refl(const line &l, const vec &p) { return proj(l,\
-    \ p) * ld(2) - p; }\n\n/*\n\nato de kaku\n\nint intersection(const line &a, const\
-    \ line &b)\n\nld dist(const line &a, const vec &p)\n\nvec cross_point(const line\
-    \ &a, const line &b)\n\n*/\n\n\n}  // namespace lib\n"
-  code: "#pragma once\n\n#include \"base_ld.hpp\"\n\nnamespace lib {\n\n\nstruct line\
+    \ p) * ld(2) - p; }\n\nint intersection(const line &p, const line &q){\n    //\
+    \ cross_point = alpha * p.a + (1-alpha) * p.b = beta * q.b + (1-beta) * q.a\n\
+    \    // alpha * vp + beta * vq = vr\n    vec vp = p.a - p.b, vq = q.a - q.b, vr\
+    \ = q.a - p.b;\n    vec cpq = cross(vp,vq), cpr = cross(vp,vr), crq = cross(vr,vq);\n\
+    \    // yz projection\n    if (sgn(cpq.x) != 0){\n        ld alpha = crq.x / cpq.x,\
+    \ beta = cpr.x / cpq.x;\n        // cross\n        if (sgn(abs(alpha * vp.x +\
+    \ beta * vq.x - vr.x)) == 0){\n            return 0;\n        }\n        // nejire\n\
+    \        return 1;\n    }\n    // zx projection\n    if (sgn(cpq.y) != 0){\n \
+    \       ld alpha = crq.y / cpq.y, beta = cpr.y / cpq.y;\n        // cross\n  \
+    \      if (sgn(abs(alpha * vp.y + beta * vq.y - vr.y)) == 0){\n            return\
+    \ 0;\n        }\n        // nejire\n        return 1;\n    }\n    // xy projection\n\
+    \    if (sgn(cpq.z) != 0){\n        ld alpha = crq.z / cpq.z, beta = cpr.z / cpq.z;\n\
+    \        // cross\n        if (sgn(abs(alpha * vp.z + beta * vq.z - vr.z)) ==\
+    \ 0){\n            return 0;\n        }\n        // nejire\n        return 1;\n\
+    \    }\n    // cpq == 0  ->  parallel\n    // same\n    if (sgn(abs(cross(p.a\
+    \ - q.a, p.b - q.a))) == 0){\n        return 3;\n    }\n    // not same\n    return\
+    \ 2;\n}\n\nld dist(const line &l, const vec &p){\n    return abs(p - proj(l,p));\n\
+    }\n\nvec cross_point(const line &p, const line &q){\n    assert(intersection(p,q)\
+    \ == 0);\n    // cross_point = alpha * p.a + (1-alpha) * p.b = beta * q.b + (1-beta)\
+    \ * q.a\n    // alpha * vp + beta * vq = vr\n    vec vp = p.a - p.b, vq = q.a\
+    \ - q.b, vr = q.a - p.b;\n    vec cpq = cross(vp,vq), cpr = cross(vp,vr), crq\
+    \ = cross(vr,vq);\n    auto res = [&](ld alpha){\n        return alpha * p.a +\
+    \ (1-alpha) * p.b;\n    };\n    // yz projection\n    if (sgn(cpq.x) != 0){\n\
+    \        ld alpha = crq.x / cpq.x, beta = cpr.x / cpq.x;\n        // cross\n \
+    \       if (sgn(abs(alpha * vp.x + beta * vq.x - vr.x)) == 0){\n            return\
+    \ res(alpha);\n        }\n    }\n    // zx projection\n    if (sgn(cpq.y) != 0){\n\
+    \        ld alpha = crq.y / cpq.y, beta = cpr.y / cpq.y;\n        // cross\n \
+    \       if (sgn(abs(alpha * vp.y + beta * vq.y - vr.y)) == 0){\n            return\
+    \ res(alpha);\n        }\n    }\n    // xy projection\n    if (sgn(cpq.z) != 0){\n\
+    \        ld alpha = crq.z / cpq.z, beta = cpr.z / cpq.z;\n        // cross\n \
+    \       if (sgn(abs(alpha * vp.z + beta * vq.z - vr.z)) == 0){\n            return\
+    \ res(alpha);\n        }\n    }\n    // NOT expected\n    return vec();\n}\n\n\
+    \n}  // namespace lib\n"
+  code: "#pragma once\n\n#include \"base_ld.hpp\"\n\nnamespace lib {\n\nstruct line\
     \ {\n    vec a, b;\n};\n\nvec proj(const line &l, const vec &p) {\n    vec ab\
     \ = l.b - l.a;\n    return l.a + ab * (dot(ab, p - l.a) / norm(ab));\n}\n\nvec\
-    \ refl(const line &l, const vec &p) { return proj(l, p) * ld(2) - p; }\n\n/*\n\
-    \nato de kaku\n\nint intersection(const line &a, const line &b)\n\nld dist(const\
-    \ line &a, const vec &p)\n\nvec cross_point(const line &a, const line &b)\n\n\
-    */\n\n\n}  // namespace lib"
+    \ refl(const line &l, const vec &p) { return proj(l, p) * ld(2) - p; }\n\nint\
+    \ intersection(const line &p, const line &q){\n    // cross_point = alpha * p.a\
+    \ + (1-alpha) * p.b = beta * q.b + (1-beta) * q.a\n    // alpha * vp + beta *\
+    \ vq = vr\n    vec vp = p.a - p.b, vq = q.a - q.b, vr = q.a - p.b;\n    vec cpq\
+    \ = cross(vp,vq), cpr = cross(vp,vr), crq = cross(vr,vq);\n    // yz projection\n\
+    \    if (sgn(cpq.x) != 0){\n        ld alpha = crq.x / cpq.x, beta = cpr.x / cpq.x;\n\
+    \        // cross\n        if (sgn(abs(alpha * vp.x + beta * vq.x - vr.x)) ==\
+    \ 0){\n            return 0;\n        }\n        // nejire\n        return 1;\n\
+    \    }\n    // zx projection\n    if (sgn(cpq.y) != 0){\n        ld alpha = crq.y\
+    \ / cpq.y, beta = cpr.y / cpq.y;\n        // cross\n        if (sgn(abs(alpha\
+    \ * vp.y + beta * vq.y - vr.y)) == 0){\n            return 0;\n        }\n   \
+    \     // nejire\n        return 1;\n    }\n    // xy projection\n    if (sgn(cpq.z)\
+    \ != 0){\n        ld alpha = crq.z / cpq.z, beta = cpr.z / cpq.z;\n        //\
+    \ cross\n        if (sgn(abs(alpha * vp.z + beta * vq.z - vr.z)) == 0){\n    \
+    \        return 0;\n        }\n        // nejire\n        return 1;\n    }\n \
+    \   // cpq == 0  ->  parallel\n    // same\n    if (sgn(abs(cross(p.a - q.a, p.b\
+    \ - q.a))) == 0){\n        return 3;\n    }\n    // not same\n    return 2;\n\
+    }\n\nld dist(const line &l, const vec &p){\n    return abs(p - proj(l,p));\n}\n\
+    \nvec cross_point(const line &p, const line &q){\n    assert(intersection(p,q)\
+    \ == 0);\n    // cross_point = alpha * p.a + (1-alpha) * p.b = beta * q.b + (1-beta)\
+    \ * q.a\n    // alpha * vp + beta * vq = vr\n    vec vp = p.a - p.b, vq = q.a\
+    \ - q.b, vr = q.a - p.b;\n    vec cpq = cross(vp,vq), cpr = cross(vp,vr), crq\
+    \ = cross(vr,vq);\n    auto res = [&](ld alpha){\n        return alpha * p.a +\
+    \ (1-alpha) * p.b;\n    };\n    // yz projection\n    if (sgn(cpq.x) != 0){\n\
+    \        ld alpha = crq.x / cpq.x, beta = cpr.x / cpq.x;\n        // cross\n \
+    \       if (sgn(abs(alpha * vp.x + beta * vq.x - vr.x)) == 0){\n            return\
+    \ res(alpha);\n        }\n    }\n    // zx projection\n    if (sgn(cpq.y) != 0){\n\
+    \        ld alpha = crq.y / cpq.y, beta = cpr.y / cpq.y;\n        // cross\n \
+    \       if (sgn(abs(alpha * vp.y + beta * vq.y - vr.y)) == 0){\n            return\
+    \ res(alpha);\n        }\n    }\n    // xy projection\n    if (sgn(cpq.z) != 0){\n\
+    \        ld alpha = crq.z / cpq.z, beta = cpr.z / cpq.z;\n        // cross\n \
+    \       if (sgn(abs(alpha * vp.z + beta * vq.z - vr.z)) == 0){\n            return\
+    \ res(alpha);\n        }\n    }\n    // NOT expected\n    return vec();\n}\n\n\
+    \n}  // namespace lib"
   dependsOn:
   - geometry3D/ld/base_ld.hpp
   - template/template.hpp
@@ -71,7 +131,7 @@ data:
   isVerificationFile: false
   path: geometry3D/ld/line.hpp
   requiredBy: []
-  timestamp: '2023-05-14 19:00:33+09:00'
+  timestamp: '2023-05-16 15:02:10+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: geometry3D/ld/line.hpp
