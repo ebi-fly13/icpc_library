@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: geometry/line.hpp
     title: line
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
@@ -24,14 +24,14 @@ data:
     \ \\\n    \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_A\"\
     \n\n#line 2 \"geometry/line.hpp\"\n\n#line 2 \"geometry/base_ld.hpp\"\n\n#line\
     \ 2 \"template/template.hpp\"\n\n#include <bits/stdc++.h>\n\n#define rep(i, s,\
-    \ n) for (int i = s; i < (int)(n); i++)\n#define rrep(i, s, n) for (int i = (int)(n)-1;\
-    \ i >= (int)(s); i--)\n#define all(v) v.begin(), v.end()\n\nusing ll = long long;\n\
-    using ld = long double;\nusing ull = unsigned long long;\n\ntemplate <typename\
-    \ T> bool chmin(T &a, const T &b) {\n    if (a <= b) return false;\n    a = b;\n\
-    \    return true;\n}\ntemplate <typename T> bool chmax(T &a, const T &b) {\n \
-    \   if (a >= b) return false;\n    a = b;\n    return true;\n}\n\nnamespace lib\
-    \ {\n\nusing namespace std;\n\n}  // namespace lib\n\n// using namespace lib;\n\
-    #line 4 \"geometry/base_ld.hpp\"\n\nnamespace lib {\n\nusing vec = complex<ld>;\n\
+    \ n) for (int i = (int)(s); i < (int)(n); i++)\n#define rrep(i, s, n) for (int\
+    \ i = (int)(n)-1; i >= (int)(s); i--)\n#define all(v) v.begin(), v.end()\n\nusing\
+    \ ll = long long;\nusing ld = long double;\nusing ull = unsigned long long;\n\n\
+    template <typename T> bool chmin(T &a, const T &b) {\n    if (a <= b) return false;\n\
+    \    a = b;\n    return true;\n}\ntemplate <typename T> bool chmax(T &a, const\
+    \ T &b) {\n    if (a >= b) return false;\n    a = b;\n    return true;\n}\n\n\
+    namespace lib {\n\nusing namespace std;\n\n}  // namespace lib\n\n// using namespace\
+    \ lib;\n#line 4 \"geometry/base_ld.hpp\"\n\nnamespace lib {\n\nusing vec = complex<ld>;\n\
     const ld eps = 1e-7;\n\nvoid ldout(int len = 20) {\n    cout << fixed << setprecision(len);\n\
     }\n\nint sgn(ld a) {\n    return (a < -eps) ? -1 : (a > eps) ? 1 : 0;\n}\n\nld\
     \ dot(const vec &a, const vec &b) {\n    return (conj(a) * b).real();\n}\n\nld\
@@ -80,7 +80,7 @@ data:
   isVerificationFile: true
   path: test/geometry/Parallel_Orthogonal.test.cpp
   requiredBy: []
-  timestamp: '2023-05-14 18:25:33+09:00'
+  timestamp: '2023-05-17 22:41:14+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/geometry/Parallel_Orthogonal.test.cpp

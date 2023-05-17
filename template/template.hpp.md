@@ -3,6 +3,9 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
+    path: convolution/ntt.hpp
+    title: NTT convolution
+  - icon: ':heavy_check_mark:'
     path: data_structure/BinaryTrie.hpp
     title: BinaryTrie
   - icon: ':heavy_check_mark:'
@@ -32,13 +35,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: geometry/segment.hpp
     title: segment
-  - icon: ':x:'
+  - icon: ':warning:'
     path: geometry3D/accurate/base_accurate.hpp
-    title: geometry3D/accurate/base_accurate.hpp
-  - icon: ':x:'
+    title: base_accurate
+  - icon: ':warning:'
     path: geometry3D/accurate/line.hpp
     title: geometry3D/accurate/line.hpp
-  - icon: ':x:'
+  - icon: ':warning:'
     path: geometry3D/base_arbitary.hpp
     title: geometry3D/base_arbitary.hpp
   - icon: ':warning:'
@@ -77,10 +80,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: utility/modint.hpp
     title: modint
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utility/rational.hpp
     title: utility/rational.hpp
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/convolution/Convolution_mod.test.cpp
+    title: test/convolution/Convolution_mod.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/data_structure/Point_Add_Range_Sum.test.cpp
     title: test/data_structure/Point_Add_Range_Sum.test.cpp
@@ -138,9 +144,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/geometry/base_rational.test.cpp
     title: test/geometry/base_rational.test.cpp
-  - icon: ':x:'
-    path: test/geometry3D/Worst_Picture.test.cpp
-    title: test/geometry3D/Worst_Picture.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/math/enumerate_primes.test.cpp
     title: test/math/enumerate_primes.test.cpp
@@ -156,23 +159,23 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/tree/Tree_Path_Composite_Sum.test.cpp
     title: test/tree/Tree_Path_Composite_Sum.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n\n#include <bits/stdc++.h>\n\n\
-    #define rep(i, s, n) for (int i = s; i < (int)(n); i++)\n#define rrep(i, s, n)\
-    \ for (int i = (int)(n)-1; i >= (int)(s); i--)\n#define all(v) v.begin(), v.end()\n\
-    \nusing ll = long long;\nusing ld = long double;\nusing ull = unsigned long long;\n\
-    \ntemplate <typename T> bool chmin(T &a, const T &b) {\n    if (a <= b) return\
-    \ false;\n    a = b;\n    return true;\n}\ntemplate <typename T> bool chmax(T\
-    \ &a, const T &b) {\n    if (a >= b) return false;\n    a = b;\n    return true;\n\
-    }\n\nnamespace lib {\n\nusing namespace std;\n\n}  // namespace lib\n\n// using\
-    \ namespace lib;\n"
+    #define rep(i, s, n) for (int i = (int)(s); i < (int)(n); i++)\n#define rrep(i,\
+    \ s, n) for (int i = (int)(n)-1; i >= (int)(s); i--)\n#define all(v) v.begin(),\
+    \ v.end()\n\nusing ll = long long;\nusing ld = long double;\nusing ull = unsigned\
+    \ long long;\n\ntemplate <typename T> bool chmin(T &a, const T &b) {\n    if (a\
+    \ <= b) return false;\n    a = b;\n    return true;\n}\ntemplate <typename T>\
+    \ bool chmax(T &a, const T &b) {\n    if (a >= b) return false;\n    a = b;\n\
+    \    return true;\n}\n\nnamespace lib {\n\nusing namespace std;\n\n}  // namespace\
+    \ lib\n\n// using namespace lib;\n"
   code: "#pragma once\n\n#include <bits/stdc++.h>\n\n#define rep(i, s, n) for (int\
-    \ i = s; i < (int)(n); i++)\n#define rrep(i, s, n) for (int i = (int)(n)-1; i\
-    \ >= (int)(s); i--)\n#define all(v) v.begin(), v.end()\n\nusing ll = long long;\n\
+    \ i = (int)(s); i < (int)(n); i++)\n#define rrep(i, s, n) for (int i = (int)(n)-1;\
+    \ i >= (int)(s); i--)\n#define all(v) v.begin(), v.end()\n\nusing ll = long long;\n\
     using ld = long double;\nusing ull = unsigned long long;\n\ntemplate <typename\
     \ T> bool chmin(T &a, const T &b) {\n    if (a <= b) return false;\n    a = b;\n\
     \    return true;\n}\ntemplate <typename T> bool chmax(T &a, const T &b) {\n \
@@ -192,6 +195,7 @@ data:
   - tree/HeavyLightDecomposition.hpp
   - tree/RerootingDP.hpp
   - tree/LowestCommonAncestor.hpp
+  - convolution/ntt.hpp
   - geometry3D/accurate/line.hpp
   - geometry3D/accurate/base_accurate.hpp
   - geometry3D/ld/line.hpp
@@ -208,8 +212,8 @@ data:
   - graph/fordfulkerson.hpp
   - string/RollingHash.hpp
   - string/parsing_template.hpp
-  timestamp: '2023-05-08 15:48:04+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2023-05-17 22:41:14+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/geometry/Counter_Clockwise.test.cpp
   - test/geometry/Reflection.test.cpp
@@ -228,7 +232,7 @@ data:
   - test/tree/RerootingDP.test.cpp
   - test/tree/Lowest_Common_Ancestor.test.cpp
   - test/tree/Tree_Path_Composite_Sum.test.cpp
-  - test/geometry3D/Worst_Picture.test.cpp
+  - test/convolution/Convolution_mod.test.cpp
   - test/data_structure/Point_Add_Range_Sum.test.cpp
   - test/data_structure/Set_Xor_Min.test.cpp
   - test/data_structure/Unionfind.test.cpp

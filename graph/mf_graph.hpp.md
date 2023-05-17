@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
@@ -12,24 +12,24 @@ data:
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n\n#include <bits/stdc++.h>\n\n\
-    #define rep(i, s, n) for (int i = s; i < (int)(n); i++)\n#define rrep(i, s, n)\
-    \ for (int i = (int)(n)-1; i >= (int)(s); i--)\n#define all(v) v.begin(), v.end()\n\
-    \nusing ll = long long;\nusing ld = long double;\nusing ull = unsigned long long;\n\
-    \ntemplate <typename T> bool chmin(T &a, const T &b) {\n    if (a <= b) return\
-    \ false;\n    a = b;\n    return true;\n}\ntemplate <typename T> bool chmax(T\
-    \ &a, const T &b) {\n    if (a >= b) return false;\n    a = b;\n    return true;\n\
-    }\n\nnamespace lib {\n\nusing namespace std;\n\n}  // namespace lib\n\n// using\
-    \ namespace lib;\n#line 3 \"graph/mf_graph.hpp\"\n\nnamespace lib {\nusing namespace\
-    \ std;\n\ntemplate <class Cap> struct mf_graph {\n    struct edge {\n        int\
-    \ from, to;\n        Cap cap, flow;\n    };\n\n    struct nedge {\n        int\
-    \ to, rev;\n        Cap cap;\n    };\n\n    int nn;\n    vector<pair<int, int>>\
-    \ pos;\n    vector<vector<nedge>> g;\n\n    mf_graph() : nn(0) {}\n    explicit\
-    \ mf_graph(int n) : nn(n), g(n) {}\n\n    int add_edge(int from, int to, Cap cap)\
-    \ {\n        int m = pos.size();\n        pos.push_back({from, int(g[from].size())});\n\
-    \        int frid = int(g[from].size());\n        int toid = int(g[to].size());\n\
-    \        if (from == to) toid++;\n        g[from].push_back(nedge{to, toid, cap});\n\
-    \        g[to].push_back(nedge{from, frid, 0});\n        return m;\n    }\n\n\
-    \    Cap flow(int s, int t) {\n        return flow(s, t, numeric_limits<Cap>::max());\n\
+    #define rep(i, s, n) for (int i = (int)(s); i < (int)(n); i++)\n#define rrep(i,\
+    \ s, n) for (int i = (int)(n)-1; i >= (int)(s); i--)\n#define all(v) v.begin(),\
+    \ v.end()\n\nusing ll = long long;\nusing ld = long double;\nusing ull = unsigned\
+    \ long long;\n\ntemplate <typename T> bool chmin(T &a, const T &b) {\n    if (a\
+    \ <= b) return false;\n    a = b;\n    return true;\n}\ntemplate <typename T>\
+    \ bool chmax(T &a, const T &b) {\n    if (a >= b) return false;\n    a = b;\n\
+    \    return true;\n}\n\nnamespace lib {\n\nusing namespace std;\n\n}  // namespace\
+    \ lib\n\n// using namespace lib;\n#line 3 \"graph/mf_graph.hpp\"\n\nnamespace\
+    \ lib {\nusing namespace std;\n\ntemplate <class Cap> struct mf_graph {\n    struct\
+    \ edge {\n        int from, to;\n        Cap cap, flow;\n    };\n\n    struct\
+    \ nedge {\n        int to, rev;\n        Cap cap;\n    };\n\n    int nn;\n   \
+    \ vector<pair<int, int>> pos;\n    vector<vector<nedge>> g;\n\n    mf_graph()\
+    \ : nn(0) {}\n    explicit mf_graph(int n) : nn(n), g(n) {}\n\n    int add_edge(int\
+    \ from, int to, Cap cap) {\n        int m = pos.size();\n        pos.push_back({from,\
+    \ int(g[from].size())});\n        int frid = int(g[from].size());\n        int\
+    \ toid = int(g[to].size());\n        if (from == to) toid++;\n        g[from].push_back(nedge{to,\
+    \ toid, cap});\n        g[to].push_back(nedge{from, frid, 0});\n        return\
+    \ m;\n    }\n\n    Cap flow(int s, int t) {\n        return flow(s, t, numeric_limits<Cap>::max());\n\
     \    }\n\n    Cap flow(int s, int t, Cap flow_limit) {\n        vector<int> lv(nn),\
     \ iter(nn);\n        queue<int> q;\n\n        auto bfs = [&]() {\n           \
     \ fill(all(lv), -1);\n            lv[s] = 0;\n            queue<int>().swap(q);\n\
@@ -116,7 +116,7 @@ data:
   isVerificationFile: false
   path: graph/mf_graph.hpp
   requiredBy: []
-  timestamp: '2023-05-14 18:25:33+09:00'
+  timestamp: '2023-05-17 22:41:14+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: graph/mf_graph.hpp

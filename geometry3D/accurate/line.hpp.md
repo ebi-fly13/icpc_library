@@ -1,32 +1,29 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':warning:'
     path: geometry3D/accurate/base_accurate.hpp
-    title: geometry3D/accurate/base_accurate.hpp
-  - icon: ':x:'
+    title: base_accurate
+  - icon: ':warning:'
     path: geometry3D/base_arbitary.hpp
     title: geometry3D/base_arbitary.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utility/rational.hpp
     title: utility/rational.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':x:'
-    path: test/geometry3D/Worst_Picture.test.cpp
-    title: test/geometry3D/Worst_Picture.test.cpp
-  _isVerificationFailed: true
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 2 \"geometry3D/accurate/line.hpp\"\n\n#line 2 \"geometry3D/accurate/base_accurate.hpp\"\
     \n\n#line 2 \"template/template.hpp\"\n\n#include <bits/stdc++.h>\n\n#define rep(i,\
-    \ s, n) for (int i = s; i < (int)(n); i++)\n#define rrep(i, s, n) for (int i =\
-    \ (int)(n)-1; i >= (int)(s); i--)\n#define all(v) v.begin(), v.end()\n\nusing\
+    \ s, n) for (int i = (int)(s); i < (int)(n); i++)\n#define rrep(i, s, n) for (int\
+    \ i = (int)(n)-1; i >= (int)(s); i--)\n#define all(v) v.begin(), v.end()\n\nusing\
     \ ll = long long;\nusing ld = long double;\nusing ull = unsigned long long;\n\n\
     template <typename T> bool chmin(T &a, const T &b) {\n    if (a <= b) return false;\n\
     \    a = b;\n    return true;\n}\ntemplate <typename T> bool chmax(T &a, const\
@@ -168,10 +165,9 @@ data:
   isVerificationFile: false
   path: geometry3D/accurate/line.hpp
   requiredBy: []
-  timestamp: '2023-05-17 17:41:18+09:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verifiedWith:
-  - test/geometry3D/Worst_Picture.test.cpp
+  timestamp: '2023-05-17 22:41:14+09:00'
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: geometry3D/accurate/line.hpp
 layout: document
 redirect_from:

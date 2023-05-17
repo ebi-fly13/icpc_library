@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: data_structure/dsu.hpp
     title: data_structure/dsu.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
@@ -20,8 +20,8 @@ data:
   bundledCode: "#line 1 \"test/data_structure/Unionfind.test.cpp\"\n#define PROBLEM\
     \ \"https://judge.yosupo.jp/problem/unionfind\"\n\n#line 2 \"data_structure/dsu.hpp\"\
     \n\n#line 2 \"template/template.hpp\"\n\n#include <bits/stdc++.h>\n\n#define rep(i,\
-    \ s, n) for (int i = s; i < (int)(n); i++)\n#define rrep(i, s, n) for (int i =\
-    \ (int)(n)-1; i >= (int)(s); i--)\n#define all(v) v.begin(), v.end()\n\nusing\
+    \ s, n) for (int i = (int)(s); i < (int)(n); i++)\n#define rrep(i, s, n) for (int\
+    \ i = (int)(n)-1; i >= (int)(s); i--)\n#define all(v) v.begin(), v.end()\n\nusing\
     \ ll = long long;\nusing ld = long double;\nusing ull = unsigned long long;\n\n\
     template <typename T> bool chmin(T &a, const T &b) {\n    if (a <= b) return false;\n\
     \    a = b;\n    return true;\n}\ntemplate <typename T> bool chmax(T &a, const\
@@ -52,7 +52,7 @@ data:
   isVerificationFile: true
   path: test/data_structure/Unionfind.test.cpp
   requiredBy: []
-  timestamp: '2023-05-14 18:25:33+09:00'
+  timestamp: '2023-05-17 22:41:14+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data_structure/Unionfind.test.cpp

@@ -1,6 +1,11 @@
 ---
 data:
   libraryCategories:
+  - name: convolution
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: convolution/ntt.hpp
+      title: NTT convolution
   - name: data_structure
     pages:
     - icon: ':heavy_check_mark:'
@@ -37,15 +42,15 @@ data:
       title: segment
   - name: geometry3D/accurate
     pages:
-    - icon: ':x:'
+    - icon: ':warning:'
       path: geometry3D/accurate/base_accurate.hpp
-      title: geometry3D/accurate/base_accurate.hpp
-    - icon: ':x:'
+      title: base_accurate
+    - icon: ':warning:'
       path: geometry3D/accurate/line.hpp
       title: geometry3D/accurate/line.hpp
   - name: geometry3D
     pages:
-    - icon: ':x:'
+    - icon: ':warning:'
       path: geometry3D/base_arbitary.hpp
       title: geometry3D/base_arbitary.hpp
   - name: geometry3D/ld
@@ -82,7 +87,7 @@ data:
       title: string/parsing_template.hpp
   - name: template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: template/template.hpp
   - name: tree
@@ -101,10 +106,15 @@ data:
     - icon: ':heavy_check_mark:'
       path: utility/modint.hpp
       title: modint
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: utility/rational.hpp
       title: utility/rational.hpp
   verificationCategories:
+  - name: test/convolution
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/convolution/Convolution_mod.test.cpp
+      title: test/convolution/Convolution_mod.test.cpp
   - name: test/data_structure
     pages:
     - icon: ':heavy_check_mark:'
@@ -166,11 +176,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/geometry/base_rational.test.cpp
       title: test/geometry/base_rational.test.cpp
-  - name: test/geometry3D
-    pages:
-    - icon: ':x:'
-      path: test/geometry3D/Worst_Picture.test.cpp
-      title: test/geometry3D/Worst_Picture.test.cpp
   - name: test/math
     pages:
     - icon: ':heavy_check_mark:'

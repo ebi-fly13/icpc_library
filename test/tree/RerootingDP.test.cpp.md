@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
   - icon: ':heavy_check_mark:'
@@ -19,7 +19,7 @@ data:
     - https://yukicoder.me/problems/no/1976
   bundledCode: "#line 1 \"test/tree/RerootingDP.test.cpp\"\n#define PROBLEM \"https://yukicoder.me/problems/no/1976\"\
     \n\n#line 2 \"tree/RerootingDP.hpp\"\n\n#line 2 \"template/template.hpp\"\n\n\
-    #include <bits/stdc++.h>\n\n#define rep(i, s, n) for (int i = s; i < (int)(n);\
+    #include <bits/stdc++.h>\n\n#define rep(i, s, n) for (int i = (int)(s); i < (int)(n);\
     \ i++)\n#define rrep(i, s, n) for (int i = (int)(n)-1; i >= (int)(s); i--)\n#define\
     \ all(v) v.begin(), v.end()\n\nusing ll = long long;\nusing ld = long double;\n\
     using ull = unsigned long long;\n\ntemplate <typename T> bool chmin(T &a, const\
@@ -94,7 +94,7 @@ data:
   isVerificationFile: true
   path: test/tree/RerootingDP.test.cpp
   requiredBy: []
-  timestamp: '2023-05-14 18:25:33+09:00'
+  timestamp: '2023-05-17 22:41:14+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/tree/RerootingDP.test.cpp

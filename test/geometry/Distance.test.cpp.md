@@ -10,7 +10,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: geometry/segment.hpp
     title: segment
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
@@ -28,7 +28,7 @@ data:
     \    \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_D\"\n#define\
     \ ERROR 0.0000001\n\n#line 2 \"geometry/segment.hpp\"\n\n#line 2 \"geometry/line.hpp\"\
     \n\n#line 2 \"geometry/base_ld.hpp\"\n\n#line 2 \"template/template.hpp\"\n\n\
-    #include <bits/stdc++.h>\n\n#define rep(i, s, n) for (int i = s; i < (int)(n);\
+    #include <bits/stdc++.h>\n\n#define rep(i, s, n) for (int i = (int)(s); i < (int)(n);\
     \ i++)\n#define rrep(i, s, n) for (int i = (int)(n)-1; i >= (int)(s); i--)\n#define\
     \ all(v) v.begin(), v.end()\n\nusing ll = long long;\nusing ld = long double;\n\
     using ull = unsigned long long;\n\ntemplate <typename T> bool chmin(T &a, const\
@@ -99,7 +99,7 @@ data:
   isVerificationFile: true
   path: test/geometry/Distance.test.cpp
   requiredBy: []
-  timestamp: '2023-05-14 18:25:33+09:00'
+  timestamp: '2023-05-17 22:41:14+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/geometry/Distance.test.cpp

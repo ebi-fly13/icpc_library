@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
@@ -18,17 +18,17 @@ data:
   attributes:
     links: []
   bundledCode: "#line 2 \"tree/RerootingDP.hpp\"\n\n#line 2 \"template/template.hpp\"\
-    \n\n#include <bits/stdc++.h>\n\n#define rep(i, s, n) for (int i = s; i < (int)(n);\
-    \ i++)\n#define rrep(i, s, n) for (int i = (int)(n)-1; i >= (int)(s); i--)\n#define\
-    \ all(v) v.begin(), v.end()\n\nusing ll = long long;\nusing ld = long double;\n\
-    using ull = unsigned long long;\n\ntemplate <typename T> bool chmin(T &a, const\
-    \ T &b) {\n    if (a <= b) return false;\n    a = b;\n    return true;\n}\ntemplate\
-    \ <typename T> bool chmax(T &a, const T &b) {\n    if (a >= b) return false;\n\
-    \    a = b;\n    return true;\n}\n\nnamespace lib {\n\nusing namespace std;\n\n\
-    }  // namespace lib\n\n// using namespace lib;\n#line 4 \"tree/RerootingDP.hpp\"\
-    \n\nnamespace lib {\n\ntemplate <class E, class V, E (*merge)(E, E), E (*e)(),\
-    \ E (*put_edge)(V, int),\n          V (*put_vertex)(E, int)>\nstruct RerootingDP\
-    \ {\n    struct edge {\n        int to, idx, xdi;\n    };\n    RerootingDP(int\
+    \n\n#include <bits/stdc++.h>\n\n#define rep(i, s, n) for (int i = (int)(s); i\
+    \ < (int)(n); i++)\n#define rrep(i, s, n) for (int i = (int)(n)-1; i >= (int)(s);\
+    \ i--)\n#define all(v) v.begin(), v.end()\n\nusing ll = long long;\nusing ld =\
+    \ long double;\nusing ull = unsigned long long;\n\ntemplate <typename T> bool\
+    \ chmin(T &a, const T &b) {\n    if (a <= b) return false;\n    a = b;\n    return\
+    \ true;\n}\ntemplate <typename T> bool chmax(T &a, const T &b) {\n    if (a >=\
+    \ b) return false;\n    a = b;\n    return true;\n}\n\nnamespace lib {\n\nusing\
+    \ namespace std;\n\n}  // namespace lib\n\n// using namespace lib;\n#line 4 \"\
+    tree/RerootingDP.hpp\"\n\nnamespace lib {\n\ntemplate <class E, class V, E (*merge)(E,\
+    \ E), E (*e)(), E (*put_edge)(V, int),\n          V (*put_vertex)(E, int)>\nstruct\
+    \ RerootingDP {\n    struct edge {\n        int to, idx, xdi;\n    };\n    RerootingDP(int\
     \ _n = 0) : n(_n) {\n        es.resize(n);\n    }\n    void add_edge(int u, int\
     \ v, int idx1, int idx2) {\n        es[u].push_back({v, idx1, idx2});\n      \
     \  es[v].push_back({u, idx2, idx1});\n    }\n    vector<V> build(int v = 0) {\n\
@@ -102,7 +102,7 @@ data:
   isVerificationFile: false
   path: tree/RerootingDP.hpp
   requiredBy: []
-  timestamp: '2023-05-14 18:25:33+09:00'
+  timestamp: '2023-05-17 22:41:14+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/tree/RerootingDP.test.cpp

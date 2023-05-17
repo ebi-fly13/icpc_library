@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
@@ -15,20 +15,20 @@ data:
   attributes:
     links: []
   bundledCode: "#line 2 \"string/RollingHash.hpp\"\n\n#line 2 \"template/template.hpp\"\
-    \n\n#include <bits/stdc++.h>\n\n#define rep(i, s, n) for (int i = s; i < (int)(n);\
-    \ i++)\n#define rrep(i, s, n) for (int i = (int)(n)-1; i >= (int)(s); i--)\n#define\
-    \ all(v) v.begin(), v.end()\n\nusing ll = long long;\nusing ld = long double;\n\
-    using ull = unsigned long long;\n\ntemplate <typename T> bool chmin(T &a, const\
-    \ T &b) {\n    if (a <= b) return false;\n    a = b;\n    return true;\n}\ntemplate\
-    \ <typename T> bool chmax(T &a, const T &b) {\n    if (a >= b) return false;\n\
-    \    a = b;\n    return true;\n}\n\nnamespace lib {\n\nusing namespace std;\n\n\
-    }  // namespace lib\n\n// using namespace lib;\n#line 4 \"string/RollingHash.hpp\"\
-    \n\nnamespace lib {\n\nusing namespace std;\n\nstruct RollingHash {\n    using\
-    \ ull = unsigned long long;\n    RollingHash(const string& s = \"\") {\n     \
-    \   build(s);\n    }\n    ull get(int l, int r) {\n        assert(0 <= l && l\
-    \ <= r && r <= n);\n        return cal(inner_hash[r] + buf - mul(inner_hash[l],\
-    \ pow_base[r - l]));\n    }\n    static ull get_hash(const string& s) {\n    \
-    \    int len = s.size();\n        set_hash();\n        extend_pow_base(len);\n\
+    \n\n#include <bits/stdc++.h>\n\n#define rep(i, s, n) for (int i = (int)(s); i\
+    \ < (int)(n); i++)\n#define rrep(i, s, n) for (int i = (int)(n)-1; i >= (int)(s);\
+    \ i--)\n#define all(v) v.begin(), v.end()\n\nusing ll = long long;\nusing ld =\
+    \ long double;\nusing ull = unsigned long long;\n\ntemplate <typename T> bool\
+    \ chmin(T &a, const T &b) {\n    if (a <= b) return false;\n    a = b;\n    return\
+    \ true;\n}\ntemplate <typename T> bool chmax(T &a, const T &b) {\n    if (a >=\
+    \ b) return false;\n    a = b;\n    return true;\n}\n\nnamespace lib {\n\nusing\
+    \ namespace std;\n\n}  // namespace lib\n\n// using namespace lib;\n#line 4 \"\
+    string/RollingHash.hpp\"\n\nnamespace lib {\n\nusing namespace std;\n\nstruct\
+    \ RollingHash {\n    using ull = unsigned long long;\n    RollingHash(const string&\
+    \ s = \"\") {\n        build(s);\n    }\n    ull get(int l, int r) {\n       \
+    \ assert(0 <= l && l <= r && r <= n);\n        return cal(inner_hash[r] + buf\
+    \ - mul(inner_hash[l], pow_base[r - l]));\n    }\n    static ull get_hash(const\
+    \ string& s) {\n        int len = s.size();\n        set_hash();\n        extend_pow_base(len);\n\
     \        ull res = 0;\n        rep(i, 0, len) res = cal(mul(res, BASE) + s[i]);\n\
     \        return res;\n    }\n    static ull concat(const ull& hash1, const ull&\
     \ hash2, const int& len2) {\n        return cal(cal(mul(hash1, pow_base[len2]))\
@@ -89,7 +89,7 @@ data:
   isVerificationFile: false
   path: string/RollingHash.hpp
   requiredBy: []
-  timestamp: '2023-05-14 18:25:33+09:00'
+  timestamp: '2023-05-17 22:41:14+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/string/aoj_2444.test.cpp
