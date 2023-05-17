@@ -130,7 +130,7 @@ NTTをするために必要なデータを格納している。
 
 ## bit_reverse(int n, int bit_size)
 
-$n$ を ビット幅 $bit_size$ でビットリバースする。
+$n$ を ビット幅 bit_size でビットリバースする。
 
 ## butterfly(std::vector<mint> &a, bool inverse)
 
