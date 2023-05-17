@@ -8,16 +8,19 @@ data:
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy:
-  - icon: ':warning:'
-    path: geometry3D/ld/line.hpp
-    title: geometry3D/ld/line.hpp
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: geometry3D/accurate/line.hpp
+    title: geometry3D/accurate/line.hpp
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/geometry3D/Worst_Picture.test.cpp
+    title: test/geometry3D/Worst_Picture.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"geometry3D/ld/base_ld.hpp\"\n\n#line 2 \"template/template.hpp\"\
+  bundledCode: "#line 2 \"geometry3D/accurate/base_accurate.hpp\"\n\n#line 2 \"template/template.hpp\"\
     \n\n#include <bits/stdc++.h>\n\n#define rep(i, s, n) for (int i = s; i < (int)(n);\
     \ i++)\n#define rrep(i, s, n) for (int i = (int)(n)-1; i >= (int)(s); i--)\n#define\
     \ all(v) v.begin(), v.end()\n\nusing ll = long long;\nusing ld = long double;\n\
@@ -42,36 +45,37 @@ data:
     \ Vec(lhs) *= rhs;\n    }\n    friend Vec operator/(const Vec& lhs, const T& rhs)\
     \ {\n        return Vec(lhs) /= rhs;\n    }\n    friend std::ostream &operator<<(std::ostream\
     \ &os,const Vec&r) {\n        return os << \"(\" << r.x << \",\" << r.y << \"\
-    ,\" << r.z << \")\"; \n    }\n};\n\n};\n#line 5 \"geometry3D/ld/base_ld.hpp\"\n\
-    \nnamespace lib {\n\nusing vec = Vec<ld>;\nconst ld eps = 1e-7;\n\nvoid ldout(int\
-    \ len = 20) { cout << fixed << setprecision(len); }\n\nint sgn(ld a) { return\
-    \ (a < -eps) ? -1 : (a > eps) ? 1 : 0; }\n\nld dot(const vec &a, const vec &b){\n\
-    \    return a.x*b.x + a.y*b.y + a.z*b.z;\n}\n\nvec cross(const vec &a, const vec\
-    \ &b){\n    return Vec(a.y*b.z-a.z*b.y, a.z*b.x-a.x*b.z, a.x*b.y-a.y*b.x);\n}\n\
-    \nld norm(const vec &a){\n    return a.x*a.x+a.y*a.y+a.z*a.z;\n}\n\nld abs(const\
-    \ vec &a){\n    return sqrtl(norm(a));\n}\n\n\n}  // namespace lib\n"
+    ,\" << r.z << \")\"; \n    }\n};\n\n};\n#line 5 \"geometry3D/accurate/base_accurate.hpp\"\
+    \n\nnamespace lib {\n\ntemplate<typename T>\nbool operator==(const Vec<T>& lhs,\
+    \ const Vec<T>& rhs) {\n    return lhs.x == rhs.x && lhs.y == rhs.y && lhs.z ==\
+    \ rhs.z;\n}\n\ntemplate<typename T>\nT dot(const Vec<T> &a, const Vec<T> &b){\n\
+    \    return a.x*b.x + a.y*b.y + a.z*b.z;\n}\n\ntemplate<typename T>\nVec<T> cross(const\
+    \ Vec<T> &a, const Vec<T> &b){\n    return Vec(a.y*b.z-a.z*b.y, a.z*b.x-a.x*b.z,\
+    \ a.x*b.y-a.y*b.x);\n}\n\ntemplate<typename T>\nT norm(const Vec<T> &a){\n   \
+    \ return a.x*a.x+a.y*a.y+a.z*a.z;\n}\n\n}  // namespace lib\n"
   code: "#pragma once\n\n#include \"../../template/template.hpp\"\n#include \"../base_arbitary.hpp\"\
-    \n\nnamespace lib {\n\nusing vec = Vec<ld>;\nconst ld eps = 1e-7;\n\nvoid ldout(int\
-    \ len = 20) { cout << fixed << setprecision(len); }\n\nint sgn(ld a) { return\
-    \ (a < -eps) ? -1 : (a > eps) ? 1 : 0; }\n\nld dot(const vec &a, const vec &b){\n\
-    \    return a.x*b.x + a.y*b.y + a.z*b.z;\n}\n\nvec cross(const vec &a, const vec\
-    \ &b){\n    return Vec(a.y*b.z-a.z*b.y, a.z*b.x-a.x*b.z, a.x*b.y-a.y*b.x);\n}\n\
-    \nld norm(const vec &a){\n    return a.x*a.x+a.y*a.y+a.z*a.z;\n}\n\nld abs(const\
-    \ vec &a){\n    return sqrtl(norm(a));\n}\n\n\n}  // namespace lib\n"
+    \n\nnamespace lib {\n\ntemplate<typename T>\nbool operator==(const Vec<T>& lhs,\
+    \ const Vec<T>& rhs) {\n    return lhs.x == rhs.x && lhs.y == rhs.y && lhs.z ==\
+    \ rhs.z;\n}\n\ntemplate<typename T>\nT dot(const Vec<T> &a, const Vec<T> &b){\n\
+    \    return a.x*b.x + a.y*b.y + a.z*b.z;\n}\n\ntemplate<typename T>\nVec<T> cross(const\
+    \ Vec<T> &a, const Vec<T> &b){\n    return Vec(a.y*b.z-a.z*b.y, a.z*b.x-a.x*b.z,\
+    \ a.x*b.y-a.y*b.x);\n}\n\ntemplate<typename T>\nT norm(const Vec<T> &a){\n   \
+    \ return a.x*a.x+a.y*a.y+a.z*a.z;\n}\n\n}  // namespace lib"
   dependsOn:
   - template/template.hpp
   - geometry3D/base_arbitary.hpp
   isVerificationFile: false
-  path: geometry3D/ld/base_ld.hpp
+  path: geometry3D/accurate/base_accurate.hpp
   requiredBy:
-  - geometry3D/ld/line.hpp
-  timestamp: '2023-05-14 19:00:33+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
-documentation_of: geometry3D/ld/base_ld.hpp
+  - geometry3D/accurate/line.hpp
+  timestamp: '2023-05-17 17:41:18+09:00'
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/geometry3D/Worst_Picture.test.cpp
+documentation_of: geometry3D/accurate/base_accurate.hpp
 layout: document
 redirect_from:
-- /library/geometry3D/ld/base_ld.hpp
-- /library/geometry3D/ld/base_ld.hpp.html
-title: geometry3D/ld/base_ld.hpp
+- /library/geometry3D/accurate/base_accurate.hpp
+- /library/geometry3D/accurate/base_accurate.hpp.html
+title: geometry3D/accurate/base_accurate.hpp
 ---

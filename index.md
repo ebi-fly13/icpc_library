@@ -35,9 +35,17 @@ data:
     - icon: ':heavy_check_mark:'
       path: geometry/segment.hpp
       title: segment
+  - name: geometry3D/accurate
+    pages:
+    - icon: ':x:'
+      path: geometry3D/accurate/base_accurate.hpp
+      title: geometry3D/accurate/base_accurate.hpp
+    - icon: ':x:'
+      path: geometry3D/accurate/line.hpp
+      title: geometry3D/accurate/line.hpp
   - name: geometry3D
     pages:
-    - icon: ':warning:'
+    - icon: ':x:'
       path: geometry3D/base_arbitary.hpp
       title: geometry3D/base_arbitary.hpp
   - name: geometry3D/ld
@@ -74,7 +82,7 @@ data:
       title: string/parsing_template.hpp
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: template/template.hpp
   - name: tree
@@ -93,7 +101,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: utility/modint.hpp
       title: modint
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: utility/rational.hpp
       title: utility/rational.hpp
   verificationCategories:
@@ -158,6 +166,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/geometry/base_rational.test.cpp
       title: test/geometry/base_rational.test.cpp
+  - name: test/geometry3D
+    pages:
+    - icon: ':x:'
+      path: test/geometry3D/Worst_Picture.test.cpp
+      title: test/geometry3D/Worst_Picture.test.cpp
   - name: test/math
     pages:
     - icon: ':heavy_check_mark:'

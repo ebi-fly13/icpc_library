@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: geometry/base_arbitary.hpp
     title: geometry/base_arbitary.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utility/rational.hpp
     title: utility/rational.hpp
   _extendedRequiredBy: []

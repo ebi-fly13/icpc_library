@@ -1,17 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':x:'
+    path: geometry3D/accurate/line.hpp
+    title: geometry3D/accurate/line.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/geometry/base_rational.test.cpp
     title: test/geometry/base_rational.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: test/geometry3D/Worst_Picture.test.cpp
+    title: test/geometry3D/Worst_Picture.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"utility/rational.hpp\"\n\n#line 2 \"template/template.hpp\"\
@@ -100,11 +106,13 @@ data:
   - template/template.hpp
   isVerificationFile: false
   path: utility/rational.hpp
-  requiredBy: []
+  requiredBy:
+  - geometry3D/accurate/line.hpp
   timestamp: '2023-05-14 19:09:00+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/geometry/base_rational.test.cpp
+  - test/geometry3D/Worst_Picture.test.cpp
 documentation_of: utility/rational.hpp
 layout: document
 redirect_from:

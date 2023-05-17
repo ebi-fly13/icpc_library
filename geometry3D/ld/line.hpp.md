@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':x:'
     path: geometry3D/base_arbitary.hpp
     title: geometry3D/base_arbitary.hpp
   - icon: ':warning:'
     path: geometry3D/ld/base_ld.hpp
     title: geometry3D/ld/base_ld.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []

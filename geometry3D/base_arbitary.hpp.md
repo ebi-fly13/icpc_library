@@ -1,20 +1,29 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy:
+  - icon: ':x:'
+    path: geometry3D/accurate/base_accurate.hpp
+    title: geometry3D/accurate/base_accurate.hpp
+  - icon: ':x:'
+    path: geometry3D/accurate/line.hpp
+    title: geometry3D/accurate/line.hpp
   - icon: ':warning:'
     path: geometry3D/ld/base_ld.hpp
     title: geometry3D/ld/base_ld.hpp
   - icon: ':warning:'
     path: geometry3D/ld/line.hpp
     title: geometry3D/ld/line.hpp
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/geometry3D/Worst_Picture.test.cpp
+    title: test/geometry3D/Worst_Picture.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"geometry3D/base_arbitary.hpp\"\n\n#line 2 \"template/template.hpp\"\
@@ -66,11 +75,14 @@ data:
   isVerificationFile: false
   path: geometry3D/base_arbitary.hpp
   requiredBy:
+  - geometry3D/accurate/line.hpp
+  - geometry3D/accurate/base_accurate.hpp
   - geometry3D/ld/line.hpp
   - geometry3D/ld/base_ld.hpp
   timestamp: '2023-05-14 19:00:33+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/geometry3D/Worst_Picture.test.cpp
 documentation_of: geometry3D/base_arbitary.hpp
 layout: document
 redirect_from:

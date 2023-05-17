@@ -32,7 +32,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: geometry/segment.hpp
     title: segment
-  - icon: ':warning:'
+  - icon: ':x:'
+    path: geometry3D/accurate/base_accurate.hpp
+    title: geometry3D/accurate/base_accurate.hpp
+  - icon: ':x:'
+    path: geometry3D/accurate/line.hpp
+    title: geometry3D/accurate/line.hpp
+  - icon: ':x:'
     path: geometry3D/base_arbitary.hpp
     title: geometry3D/base_arbitary.hpp
   - icon: ':warning:'
@@ -71,7 +77,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: utility/modint.hpp
     title: modint
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utility/rational.hpp
     title: utility/rational.hpp
   _extendedVerifiedWith:
@@ -132,6 +138,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/geometry/base_rational.test.cpp
     title: test/geometry/base_rational.test.cpp
+  - icon: ':x:'
+    path: test/geometry3D/Worst_Picture.test.cpp
+    title: test/geometry3D/Worst_Picture.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/math/enumerate_primes.test.cpp
     title: test/math/enumerate_primes.test.cpp
@@ -147,9 +156,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/tree/Tree_Path_Composite_Sum.test.cpp
     title: test/tree/Tree_Path_Composite_Sum.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n\n#include <bits/stdc++.h>\n\n\
@@ -183,6 +192,8 @@ data:
   - tree/HeavyLightDecomposition.hpp
   - tree/RerootingDP.hpp
   - tree/LowestCommonAncestor.hpp
+  - geometry3D/accurate/line.hpp
+  - geometry3D/accurate/base_accurate.hpp
   - geometry3D/ld/line.hpp
   - geometry3D/ld/base_ld.hpp
   - geometry3D/base_arbitary.hpp
@@ -198,7 +209,7 @@ data:
   - string/RollingHash.hpp
   - string/parsing_template.hpp
   timestamp: '2023-05-08 15:48:04+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/geometry/Counter_Clockwise.test.cpp
   - test/geometry/Reflection.test.cpp
@@ -217,6 +228,7 @@ data:
   - test/tree/RerootingDP.test.cpp
   - test/tree/Lowest_Common_Ancestor.test.cpp
   - test/tree/Tree_Path_Composite_Sum.test.cpp
+  - test/geometry3D/Worst_Picture.test.cpp
   - test/data_structure/Point_Add_Range_Sum.test.cpp
   - test/data_structure/Set_Xor_Min.test.cpp
   - test/data_structure/Unionfind.test.cpp
