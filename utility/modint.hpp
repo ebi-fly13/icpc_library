@@ -1,17 +1,23 @@
+#pragma once
+
 #include "../template/template.hpp"
 
 namespace lib {
 
-template <ll mod> struct modint {
+template <ll m> struct modint {
+    using mint = modint;
     ll a;
 
-    modint(ll x = 0) : a((x % mod + mod) % mod) {}
+    modint(ll x = 0) : a((x % m + m) % m) {}
+    static ll mod() {
+        return m;
+    }
     ll& val() {
         return a;
     }
-    modint pow(ll n) {
-        modint res = 1;
-        modint x = a;
+    mint pow(ll n) {
+        mint res = 1;
+        mint x = a;
         while (n) {
             if (n & 1) res *= x;
             x *= x;
@@ -19,44 +25,44 @@ template <ll mod> struct modint {
         }
         return res;
     }
-    modint inv() {
-        return pow(mod - 2);
+    mint inv() {
+        return pow(m - 2);
     }
-    modint& operator+=(const modint rhs) {
+    mint& operator+=(const mint rhs) {
         a += rhs.a;
-        if (a >= mod) a -= mod;
+        if (a >= m) a -= m;
         return *this;
     }
-    modint& operator-=(const modint rhs) {
-        if (a < rhs.a) a += mod;
+    mint& operator-=(const mint rhs) {
+        if (a < rhs.a) a += m;
         a -= rhs.a;
         return *this;
     }
-    modint& operator*=(const modint rhs) {
-        a = a * rhs.a % mod;
+    mint& operator*=(const mint rhs) {
+        a = a * rhs.a % m;
         return *this;
     }
-    modint& operator/=(modint rhs) {
+    mint& operator/=(mint rhs) {
         *this *= rhs.inv();
         return *this;
     }
-    friend modint operator+(const modint& lhs, const modint& rhs) {
-        return modint(lhs) += rhs;
+    friend mint operator+(const mint& lhs, const mint& rhs) {
+        return mint(lhs) += rhs;
     }
-    friend modint operator-(const modint& lhs, const modint& rhs) {
-        return modint(lhs) -= rhs;
+    friend mint operator-(const mint& lhs, const mint& rhs) {
+        return mint(lhs) -= rhs;
     }
-    friend modint operator*(const modint& lhs, const modint& rhs) {
-        return modint(lhs) *= rhs;
+    friend mint operator*(const mint& lhs, const mint& rhs) {
+        return mint(lhs) *= rhs;
     }
-    friend modint operator/(const modint& lhs, const modint& rhs) {
-        return modint(lhs) /= rhs;
+    friend mint operator/(const mint& lhs, const mint& rhs) {
+        return mint(lhs) /= rhs;
     }
-    modint operator+() const {
+    mint operator+() const {
         return *this;
     }
-    modint operator-() const {
-        return modint() - *this;
+    mint operator-() const {
+        return mint() - *this;
     }
 };
 
