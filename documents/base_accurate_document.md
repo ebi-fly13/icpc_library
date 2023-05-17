@@ -1,6 +1,6 @@
 ---
 title: base_accurate
-documentation_of: //geometry3D/accurate
+documentation_of: //geometry3D/accurate/base_accurate.hpp
 ---
 
 3次元幾何を整数で正確に扱うためのライブラリです。
