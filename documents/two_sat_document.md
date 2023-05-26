@@ -14,7 +14,7 @@ Two SATを解く。
 ### add_clause(int i, bool f, int j, bool g)
 
 $i \lor j$ を追加。
-f が true のときは i が否定に、 g が trueのときは j が否定となる。
+f が false のときは i が否定に、 g が false のときは j が否定となる。
 
 ### satisfiable()
 
