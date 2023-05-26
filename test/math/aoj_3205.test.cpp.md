@@ -3,10 +3,10 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: graph/scc_graph.hpp
-    title: graph/scc_graph.hpp
+    title: SCC Graph
   - icon: ':heavy_check_mark:'
     path: math/two_sat.hpp
-    title: math/two_sat.hpp
+    title: Two SAT
   - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp

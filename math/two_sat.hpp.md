@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: graph/scc_graph.hpp
-    title: graph/scc_graph.hpp
+    title: SCC Graph
   - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
@@ -84,8 +84,26 @@ data:
   - test/math/aoj_3205.test.cpp
 documentation_of: math/two_sat.hpp
 layout: document
-redirect_from:
-- /library/math/two_sat.hpp
-- /library/math/two_sat.hpp.html
-title: math/two_sat.hpp
+title: Two SAT
 ---
+
+## 説明
+
+Two SATを解く。
+
+### コンストラクタ
+
+`two_sat(int n)` $n$ 変数のTwo SAT
+
+### add_clause(int i, bool f, int j, bool g)
+
+$i \lor j$ を追加。
+f が true のときは i が否定に、 g が trueのときは j が否定となる。
+
+### satisfiable()
+
+与えられたTwo SATを満たす変数の割り当てがあるかどうか判定
+
+### ans()
+
+変数の割り当てを返す。事前にsatisfiableを実行しておくことが必要。

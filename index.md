@@ -71,7 +71,7 @@ data:
       title: graph/mf_graph.hpp
     - icon: ':heavy_check_mark:'
       path: graph/scc_graph.hpp
-      title: graph/scc_graph.hpp
+      title: SCC Graph
   - name: math
     pages:
     - icon: ':heavy_check_mark:'
@@ -82,7 +82,7 @@ data:
       title: gauss_jordan
     - icon: ':heavy_check_mark:'
       path: math/two_sat.hpp
-      title: math/two_sat.hpp
+      title: Two SAT
   - name: string
     pages:
     - icon: ':heavy_check_mark:'
