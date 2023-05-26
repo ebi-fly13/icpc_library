@@ -69,6 +69,9 @@ data:
     - icon: ':warning:'
       path: graph/mf_graph.hpp
       title: graph/mf_graph.hpp
+    - icon: ':heavy_check_mark:'
+      path: graph/scc_graph.hpp
+      title: graph/scc_graph.hpp
   - name: math
     pages:
     - icon: ':heavy_check_mark:'
@@ -77,6 +80,9 @@ data:
     - icon: ':warning:'
       path: math/gauss_jordan.hpp
       title: gauss_jordan
+    - icon: ':heavy_check_mark:'
+      path: math/two_sat.hpp
+      title: math/two_sat.hpp
   - name: string
     pages:
     - icon: ':heavy_check_mark:'
@@ -179,8 +185,14 @@ data:
   - name: test/math
     pages:
     - icon: ':heavy_check_mark:'
+      path: test/math/aoj_3205.test.cpp
+      title: test/math/aoj_3205.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/math/enumerate_primes.test.cpp
       title: test/math/enumerate_primes.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/math/two_sat.test.cpp
+      title: test/math/two_sat.test.cpp
   - name: test/string
     pages:
     - icon: ':heavy_check_mark:'

@@ -57,11 +57,17 @@ data:
     path: graph/mf_graph.hpp
     title: graph/mf_graph.hpp
   - icon: ':heavy_check_mark:'
+    path: graph/scc_graph.hpp
+    title: graph/scc_graph.hpp
+  - icon: ':heavy_check_mark:'
     path: math/eratosthenes_sieve.hpp
     title: eratosthenes sieve
   - icon: ':warning:'
     path: math/gauss_jordan.hpp
     title: gauss_jordan
+  - icon: ':heavy_check_mark:'
+    path: math/two_sat.hpp
+    title: math/two_sat.hpp
   - icon: ':heavy_check_mark:'
     path: string/RollingHash.hpp
     title: RollingHash
@@ -145,8 +151,14 @@ data:
     path: test/geometry/base_rational.test.cpp
     title: test/geometry/base_rational.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/math/aoj_3205.test.cpp
+    title: test/math/aoj_3205.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/math/enumerate_primes.test.cpp
     title: test/math/enumerate_primes.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/math/two_sat.test.cpp
+    title: test/math/two_sat.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/string/aoj_2444.test.cpp
     title: test/string/aoj_2444.test.cpp
@@ -206,10 +218,12 @@ data:
   - data_structure/dsu.hpp
   - math/eratosthenes_sieve.hpp
   - math/gauss_jordan.hpp
+  - math/two_sat.hpp
   - utility/rational.hpp
   - utility/modint.hpp
   - graph/mf_graph.hpp
   - graph/fordfulkerson.hpp
+  - graph/scc_graph.hpp
   - string/RollingHash.hpp
   - string/parsing_template.hpp
   timestamp: '2023-05-17 22:41:14+09:00'
@@ -239,6 +253,8 @@ data:
   - test/data_structure/Point_Set_Range_Composite.test.cpp
   - test/data_structure/Vertex_Add_Path_Sum.test.cpp
   - test/math/enumerate_primes.test.cpp
+  - test/math/two_sat.test.cpp
+  - test/math/aoj_3205.test.cpp
   - test/string/aoj_2444.test.cpp
 documentation_of: template/template.hpp
 layout: document
