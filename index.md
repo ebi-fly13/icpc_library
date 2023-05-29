@@ -16,7 +16,7 @@ data:
       title: data_structure/dsu.hpp
     - icon: ':heavy_check_mark:'
       path: data_structure/lazysegtree.hpp
-      title: data_structure/lazysegtree.hpp
+      title: lazy segtree
     - icon: ':heavy_check_mark:'
       path: data_structure/segtree.hpp
       title: segtree

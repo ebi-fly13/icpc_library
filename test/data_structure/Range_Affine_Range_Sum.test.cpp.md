@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: data_structure/lazysegtree.hpp
-    title: data_structure/lazysegtree.hpp
+    title: lazy segtree
   - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
