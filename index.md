@@ -15,6 +15,9 @@ data:
       path: data_structure/dsu.hpp
       title: data_structure/dsu.hpp
     - icon: ':heavy_check_mark:'
+      path: data_structure/lazysegtree.hpp
+      title: data_structure/lazysegtree.hpp
+    - icon: ':heavy_check_mark:'
       path: data_structure/segtree.hpp
       title: segtree
   - name: geometry
@@ -129,6 +132,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data_structure/Point_Set_Range_Composite.test.cpp
       title: test/data_structure/Point_Set_Range_Composite.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data_structure/Range_Affine_Range_Sum.test.cpp
+      title: test/data_structure/Range_Affine_Range_Sum.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/data_structure/Set_Xor_Min.test.cpp
       title: test/data_structure/Set_Xor_Min.test.cpp

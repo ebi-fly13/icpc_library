@@ -16,6 +16,9 @@ data:
     path: test/data_structure/Point_Set_Range_Composite.test.cpp
     title: test/data_structure/Point_Set_Range_Composite.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/data_structure/Range_Affine_Range_Sum.test.cpp
+    title: test/data_structure/Range_Affine_Range_Sum.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/tree/Tree_Path_Composite_Sum.test.cpp
     title: test/tree/Tree_Path_Composite_Sum.test.cpp
   _isVerificationFailed: false
@@ -86,6 +89,7 @@ data:
   verifiedWith:
   - test/tree/Tree_Path_Composite_Sum.test.cpp
   - test/convolution/Convolution_mod.test.cpp
+  - test/data_structure/Range_Affine_Range_Sum.test.cpp
   - test/data_structure/Point_Set_Range_Composite.test.cpp
 documentation_of: utility/modint.hpp
 layout: document
