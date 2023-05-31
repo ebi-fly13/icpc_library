@@ -18,6 +18,9 @@ data:
       path: data_structure/dualsegtree.hpp
       title: dual segtree
     - icon: ':heavy_check_mark:'
+      path: data_structure/fenwick_tree.hpp
+      title: fenwick tree
+    - icon: ':heavy_check_mark:'
       path: data_structure/lazysegtree.hpp
       title: lazy segtree
     - icon: ':heavy_check_mark:'
@@ -135,6 +138,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data_structure/Point_Add_Range_Sum.test.cpp
       title: test/data_structure/Point_Add_Range_Sum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data_structure/Point_Add_Range_Sum_Fenwick.test.cpp
+      title: test/data_structure/Point_Add_Range_Sum_Fenwick.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/data_structure/Point_Set_Range_Composite.test.cpp
       title: test/data_structure/Point_Set_Range_Composite.test.cpp

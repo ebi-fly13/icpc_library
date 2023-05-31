@@ -12,6 +12,9 @@ data:
     path: data_structure/dsu.hpp
     title: data_structure/dsu.hpp
   - icon: ':heavy_check_mark:'
+    path: data_structure/fenwick_tree.hpp
+    title: fenwick tree
+  - icon: ':heavy_check_mark:'
     path: data_structure/lazysegtree.hpp
     title: lazy segtree
   - icon: ':heavy_check_mark:'
@@ -102,6 +105,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/data_structure/Point_Add_Range_Sum.test.cpp
     title: test/data_structure/Point_Add_Range_Sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/data_structure/Point_Add_Range_Sum_Fenwick.test.cpp
+    title: test/data_structure/Point_Add_Range_Sum_Fenwick.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/data_structure/Point_Set_Range_Composite.test.cpp
     title: test/data_structure/Point_Set_Range_Composite.test.cpp
@@ -230,6 +236,7 @@ data:
   - geometry3D/base_arbitary.hpp
   - data_structure/BinaryTrie.hpp
   - data_structure/segtree.hpp
+  - data_structure/fenwick_tree.hpp
   - data_structure/dsu.hpp
   - data_structure/undo_dsu.hpp
   - data_structure/lazysegtree.hpp
@@ -264,6 +271,7 @@ data:
   - test/tree/Lowest_Common_Ancestor.test.cpp
   - test/tree/Tree_Path_Composite_Sum.test.cpp
   - test/convolution/Convolution_mod.test.cpp
+  - test/data_structure/Point_Add_Range_Sum_Fenwick.test.cpp
   - test/data_structure/Point_Add_Range_Sum.test.cpp
   - test/data_structure/Set_Xor_Min.test.cpp
   - test/data_structure/aoj_1645.test.cpp
