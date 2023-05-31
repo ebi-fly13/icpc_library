@@ -35,8 +35,8 @@ data:
     \ bool chmax(T &a, const T &b) {\n    if (a >= b) return false;\n    a = b;\n\
     \    return true;\n}\n\nnamespace lib {\n\nusing namespace std;\n\n}  // namespace\
     \ lib\n\n// using namespace lib;\n#line 4 \"geometry/base_ld.hpp\"\n\nnamespace\
-    \ lib {\n\nusing vec = complex<ld>;\nconst ld eps = 1e-7;\n\nvoid ldout(int len\
-    \ = 20) {\n    cout << fixed << setprecision(len);\n}\n\nint sgn(ld a) {\n   \
+    \ lib {\n\nusing vec = complex<ld>;\n\nvoid ldout(int len = 20) {\n    cout <<\
+    \ fixed << setprecision(len);\n}\n\nint sgn(ld a, const ld eps = 1e-7) {\n   \
     \ return (a < -eps) ? -1 : (a > eps) ? 1 : 0;\n}\n\nld dot(const vec &a, const\
     \ vec &b) {\n    return (conj(a) * b).real();\n}\n\nld cross(const vec &a, const\
     \ vec &b) {\n    return (conj(a) * b).imag();\n}\n\nint isp(const vec &a, const\
@@ -97,7 +97,7 @@ data:
   isVerificationFile: true
   path: test/geometry/Intersection.test.cpp
   requiredBy: []
-  timestamp: '2023-05-17 22:41:14+09:00'
+  timestamp: '2023-05-31 15:07:00+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/geometry/Intersection.test.cpp

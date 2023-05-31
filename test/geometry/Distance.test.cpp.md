@@ -36,14 +36,14 @@ data:
     \ <typename T> bool chmax(T &a, const T &b) {\n    if (a >= b) return false;\n\
     \    a = b;\n    return true;\n}\n\nnamespace lib {\n\nusing namespace std;\n\n\
     }  // namespace lib\n\n// using namespace lib;\n#line 4 \"geometry/base_ld.hpp\"\
-    \n\nnamespace lib {\n\nusing vec = complex<ld>;\nconst ld eps = 1e-7;\n\nvoid\
-    \ ldout(int len = 20) {\n    cout << fixed << setprecision(len);\n}\n\nint sgn(ld\
-    \ a) {\n    return (a < -eps) ? -1 : (a > eps) ? 1 : 0;\n}\n\nld dot(const vec\
-    \ &a, const vec &b) {\n    return (conj(a) * b).real();\n}\n\nld cross(const vec\
-    \ &a, const vec &b) {\n    return (conj(a) * b).imag();\n}\n\nint isp(const vec\
-    \ &a, const vec &b, const vec &c) {\n    int cross_sgn = sgn(cross(b - a, c -\
-    \ a));\n    if (cross_sgn == 0) {\n        if (sgn(dot(b - a, c - a)) < 0) return\
-    \ -2;\n        if (sgn(dot(a - b, c - b)) < 0) return 2;\n    }\n    return cross_sgn;\n\
+    \n\nnamespace lib {\n\nusing vec = complex<ld>;\n\nvoid ldout(int len = 20) {\n\
+    \    cout << fixed << setprecision(len);\n}\n\nint sgn(ld a, const ld eps = 1e-7)\
+    \ {\n    return (a < -eps) ? -1 : (a > eps) ? 1 : 0;\n}\n\nld dot(const vec &a,\
+    \ const vec &b) {\n    return (conj(a) * b).real();\n}\n\nld cross(const vec &a,\
+    \ const vec &b) {\n    return (conj(a) * b).imag();\n}\n\nint isp(const vec &a,\
+    \ const vec &b, const vec &c) {\n    int cross_sgn = sgn(cross(b - a, c - a));\n\
+    \    if (cross_sgn == 0) {\n        if (sgn(dot(b - a, c - a)) < 0) return -2;\n\
+    \        if (sgn(dot(a - b, c - b)) < 0) return 2;\n    }\n    return cross_sgn;\n\
     }\n\nvec rot90(const vec &a) {\n    return {-a.imag(), a.real()};\n}\n\nvec rot(const\
     \ vec &a, ld rad) {\n    return a * vec(cosl(rad), sinl(rad));\n}\n\nbool comp_for_argument_sort(const\
     \ vec &lhs, const vec &rhs) {\n    // if (abs(arg(lhs)-arg(rhs)) < eps) return\
@@ -99,7 +99,7 @@ data:
   isVerificationFile: true
   path: test/geometry/Distance.test.cpp
   requiredBy: []
-  timestamp: '2023-05-17 22:41:14+09:00'
+  timestamp: '2023-05-31 15:07:00+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/geometry/Distance.test.cpp
