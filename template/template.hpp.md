@@ -18,6 +18,9 @@ data:
     path: data_structure/segtree.hpp
     title: segtree
   - icon: ':heavy_check_mark:'
+    path: data_structure/undo_dsu.hpp
+    title: Undo dsu
+  - icon: ':heavy_check_mark:'
     path: geometry/base_arbitary.hpp
     title: geometry/base_arbitary.hpp
   - icon: ':heavy_check_mark:'
@@ -117,6 +120,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/data_structure/Vertex_Add_Path_Sum.test.cpp
     title: test/data_structure/Vertex_Add_Path_Sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/data_structure/aoj_1645.test.cpp
+    title: test/data_structure/aoj_1645.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/geometry/Circumscribed_Circle_of_Triangle.test.cpp
     title: test/geometry/Circumscribed_Circle_of_Triangle.test.cpp
@@ -225,6 +231,7 @@ data:
   - data_structure/BinaryTrie.hpp
   - data_structure/segtree.hpp
   - data_structure/dsu.hpp
+  - data_structure/undo_dsu.hpp
   - data_structure/lazysegtree.hpp
   - math/eratosthenes_sieve.hpp
   - math/gauss_jordan.hpp
@@ -259,6 +266,7 @@ data:
   - test/convolution/Convolution_mod.test.cpp
   - test/data_structure/Point_Add_Range_Sum.test.cpp
   - test/data_structure/Set_Xor_Min.test.cpp
+  - test/data_structure/aoj_1645.test.cpp
   - test/data_structure/Range_Affine_Range_Sum.test.cpp
   - test/data_structure/Unionfind.test.cpp
   - test/data_structure/Point_Set_Range_Composite.test.cpp

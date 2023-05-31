@@ -23,6 +23,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: data_structure/segtree.hpp
       title: segtree
+    - icon: ':heavy_check_mark:'
+      path: data_structure/undo_dsu.hpp
+      title: Undo dsu
   - name: geometry
     pages:
     - icon: ':heavy_check_mark:'
@@ -150,6 +153,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data_structure/Vertex_Add_Path_Sum.test.cpp
       title: test/data_structure/Vertex_Add_Path_Sum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data_structure/aoj_1645.test.cpp
+      title: test/data_structure/aoj_1645.test.cpp
   - name: test/geometry
     pages:
     - icon: ':heavy_check_mark:'
