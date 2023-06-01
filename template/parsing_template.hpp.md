@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: template/template.hpp
-    title: template/template.hpp
+    title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -11,7 +11,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"string/parsing_template.hpp\"\n\n#line 2 \"template/template.hpp\"\
+  bundledCode: "#line 2 \"template/parsing_template.hpp\"\n\n#line 2 \"template/template.hpp\"\
     \n\n#include <bits/stdc++.h>\n\n#define rep(i, s, n) for (int i = (int)(s); i\
     \ < (int)(n); i++)\n#define rrep(i, s, n) for (int i = (int)(n)-1; i >= (int)(s);\
     \ i--)\n#define all(v) v.begin(), v.end()\n\nusing ll = long long;\nusing ld =\
@@ -20,7 +20,7 @@ data:
     \ true;\n}\ntemplate <typename T> bool chmax(T &a, const T &b) {\n    if (a >=\
     \ b) return false;\n    a = b;\n    return true;\n}\n\nnamespace lib {\n\nusing\
     \ namespace std;\n\n}  // namespace lib\n\n// using namespace lib;\n#line 4 \"\
-    string/parsing_template.hpp\"\n\nnamespace lib {\n\ntypedef std::string::const_iterator\
+    template/parsing_template.hpp\"\n\nnamespace lib {\n\ntypedef std::string::const_iterator\
     \ State;\n\n// *begin == expected\u306E\u5224\u5B9A\nbool expect(State &begin,\
     \ char expected) {\n    if (*begin == expected) {\n        return true;\n    }\
     \ else {\n        return false;\n    }\n}\n\n// begin\u304Cexpected\u3092\u6307\
@@ -43,15 +43,36 @@ data:
   dependsOn:
   - template/template.hpp
   isVerificationFile: false
-  path: string/parsing_template.hpp
+  path: template/parsing_template.hpp
   requiredBy: []
-  timestamp: '2023-05-17 22:41:14+09:00'
+  timestamp: '2023-06-02 00:54:21+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: string/parsing_template.hpp
+documentation_of: template/parsing_template.hpp
 layout: document
-redirect_from:
-- /library/string/parsing_template.hpp
-- /library/string/parsing_template.hpp.html
-title: string/parsing_template.hpp
+title: "\u69CB\u6587\u89E3\u6790\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
 ---
+
+## 説明
+
+構文解析をする際のテンプレート
+
+### bool expect(State &begin, char expected)
+
+現在見ている文字がexpectedと一致しているかを返す。
+
+### consume(State &begin, char expected)
+
+現在見ている文字がexpectedであるとして一文字進める。一致していない場合、`assert`で落ちる。
+
+### isdigit(char c)
+
+`c` が数値であるかを返す。
+
+### isAlpha(char c)
+
+`c` が大文字アルファベットかを返す。
+
+### isalpha(char c)
+
+`c` が小文字アルファベットかを返す。

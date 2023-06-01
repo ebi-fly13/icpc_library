@@ -81,8 +81,8 @@ data:
     path: string/RollingHash.hpp
     title: RollingHash
   - icon: ':warning:'
-    path: string/parsing_template.hpp
-    title: string/parsing_template.hpp
+    path: template/parsing_template.hpp
+    title: "\u69CB\u6587\u89E3\u6790\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   - icon: ':heavy_check_mark:'
     path: tree/HeavyLightDecomposition.hpp
     title: HeavyLightDecomposition
@@ -245,11 +245,11 @@ data:
   - math/two_sat.hpp
   - utility/rational.hpp
   - utility/modint.hpp
+  - template/parsing_template.hpp
   - graph/mf_graph.hpp
   - graph/fordfulkerson.hpp
   - graph/scc_graph.hpp
   - string/RollingHash.hpp
-  - string/parsing_template.hpp
   timestamp: '2023-05-17 22:41:14+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
@@ -286,8 +286,9 @@ data:
   - test/string/aoj_2444.test.cpp
 documentation_of: template/template.hpp
 layout: document
-redirect_from:
-- /library/template/template.hpp
-- /library/template/template.hpp.html
-title: template/template.hpp
+title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
 ---
+
+## 説明
+
+ICPCで用いるテンプレート。コンテスト開始時にこれを書く。

@@ -6,7 +6,7 @@ data:
     title: data_structure/dsu.hpp
   - icon: ':heavy_check_mark:'
     path: template/template.hpp
-    title: template/template.hpp
+    title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false

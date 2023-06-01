@@ -100,14 +100,14 @@ data:
     - icon: ':heavy_check_mark:'
       path: string/RollingHash.hpp
       title: RollingHash
-    - icon: ':warning:'
-      path: string/parsing_template.hpp
-      title: string/parsing_template.hpp
   - name: template
     pages:
+    - icon: ':warning:'
+      path: template/parsing_template.hpp
+      title: "\u69CB\u6587\u89E3\u6790\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
     - icon: ':heavy_check_mark:'
       path: template/template.hpp
-      title: template/template.hpp
+      title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   - name: tree
     pages:
     - icon: ':heavy_check_mark:'
