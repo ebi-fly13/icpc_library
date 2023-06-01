@@ -1,6 +1,6 @@
 ---
-title: FordFulkerson
-documentation_of: //graph/fordfulkerson.hpp
+title: max flow
+documentation_of: //graph/mf_graph.hpp
 ---
 
 ## 説明
