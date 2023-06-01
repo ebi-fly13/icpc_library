@@ -105,8 +105,8 @@ data:
   timestamp: '2023-05-17 22:41:14+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/tree/Tree_Path_Composite_Sum.test.cpp
   - test/tree/RerootingDP.test.cpp
+  - test/tree/Tree_Path_Composite_Sum.test.cpp
 documentation_of: tree/RerootingDP.hpp
 layout: document
 title: RerootingDP

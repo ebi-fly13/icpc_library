@@ -78,6 +78,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/fordfulkerson.hpp
       title: FordFulkerson
+    - icon: ':warning:'
+      path: graph/mcf_graph.hpp
+      title: graph/mcf_graph.hpp
     - icon: ':heavy_check_mark:'
       path: graph/mf_graph.hpp
       title: max flow
