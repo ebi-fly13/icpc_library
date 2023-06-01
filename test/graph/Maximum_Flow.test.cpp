@@ -1,6 +1,5 @@
-#define PROBLEM                               \
-    "https://judge.u-aizu.ac.jp/onlinejudge/" \
-    "description.jsp?id=GRL_6_A&lang=jp"
+#define PROBLEM \
+    "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_A"
 
 #include "../../graph/fordfulkerson.hpp"
 #include "../../graph/mf_graph.hpp"
