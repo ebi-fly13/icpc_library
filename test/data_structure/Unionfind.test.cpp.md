@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: data_structure/dsu.hpp
-    title: data_structure/dsu.hpp
+    title: dsu
   - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
@@ -28,14 +28,14 @@ data:
     \ T &b) {\n    if (a >= b) return false;\n    a = b;\n    return true;\n}\n\n\
     namespace lib {\n\nusing namespace std;\n\n}  // namespace lib\n\n// using namespace\
     \ lib;\n#line 4 \"data_structure/dsu.hpp\"\n\nnamespace lib {\n\nstruct dsu {\n\
-    \  public:\n    dsu(int n = 0) : _n(n), pos(n, -1) {}\n\n    int merge(int a,\
-    \ int b) {\n        int x = leader(a), y = leader(b);\n        if (x == y) return\
-    \ x;\n        if (-pos[x] < -pos[y]) swap(x, y);\n        pos[x] += pos[y];\n\
-    \        pos[y] = x;\n        return x;\n    }\n\n    bool same(int a, int b)\
-    \ {\n        return leader(a) == leader(b);\n    }\n\n    int leader(int a) {\n\
-    \        if (pos[a] < 0) return a;\n        return pos[a] = leader(pos[a]);\n\
-    \    }\n\n    int size(int a) {\n        return -pos[leader(a)];\n    }\n\n  private:\n\
-    \    int _n;\n    vector<int> pos;\n};\n\n}  // namespace lib\n#line 5 \"test/data_structure/Unionfind.test.cpp\"\
+    \  public:\n    dsu(int n = 0) : _n(n), data(n, -1) {}\n\n    int leader(int a)\
+    \ {\n        if (data[a] < 0) return a;\n        return data[a] = leader(data[a]);\n\
+    \    }\n\n    int merge(int a, int b) {\n        int x = leader(a), y = leader(b);\n\
+    \        if (x == y) return x;\n        if (-data[x] < -data[y]) swap(x, y);\n\
+    \        data[x] += data[y];\n        data[y] = x;\n        return x;\n    }\n\
+    \n    bool same(int a, int b) {\n        return leader(a) == leader(b);\n    }\n\
+    \n    int size(int a) {\n        return -data[leader(a)];\n    }\n\n  private:\n\
+    \    int _n;\n    vector<int> data;\n};\n\n}  // namespace lib\n#line 5 \"test/data_structure/Unionfind.test.cpp\"\
     \n\nint main() {\n    int n, q;\n    std::cin >> n >> q;\n    lib::dsu uf(n);\n\
     \    while (q--) {\n        int t, u, v;\n        std::cin >> t >> u >> v;\n \
     \       if (t == 0) {\n            uf.merge(u, v);\n        } else {\n       \
@@ -52,7 +52,7 @@ data:
   isVerificationFile: true
   path: test/data_structure/Unionfind.test.cpp
   requiredBy: []
-  timestamp: '2023-05-17 22:41:14+09:00'
+  timestamp: '2023-06-02 01:02:23+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data_structure/Unionfind.test.cpp

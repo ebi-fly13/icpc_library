@@ -13,7 +13,7 @@ data:
       title: BinaryTrie
     - icon: ':heavy_check_mark:'
       path: data_structure/dsu.hpp
-      title: data_structure/dsu.hpp
+      title: dsu
     - icon: ':heavy_check_mark:'
       path: data_structure/dualsegtree.hpp
       title: dual segtree
@@ -28,7 +28,7 @@ data:
       title: segtree
     - icon: ':heavy_check_mark:'
       path: data_structure/undo_dsu.hpp
-      title: Undo dsu
+      title: undo dsu
   - name: geometry
     pages:
     - icon: ':heavy_check_mark:'

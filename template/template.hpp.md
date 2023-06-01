@@ -10,7 +10,7 @@ data:
     title: BinaryTrie
   - icon: ':heavy_check_mark:'
     path: data_structure/dsu.hpp
-    title: data_structure/dsu.hpp
+    title: dsu
   - icon: ':heavy_check_mark:'
     path: data_structure/fenwick_tree.hpp
     title: fenwick tree
@@ -22,7 +22,7 @@ data:
     title: segtree
   - icon: ':heavy_check_mark:'
     path: data_structure/undo_dsu.hpp
-    title: Undo dsu
+    title: undo dsu
   - icon: ':heavy_check_mark:'
     path: geometry/base_arbitary.hpp
     title: geometry/base_arbitary.hpp

@@ -31,6 +31,7 @@ data:
     \ y = leader(b);\n        stack.push({x, data[x]});\n        stack.push({y, data[y]});\n\
     \        if (x == y) return x;\n        if (size(x) < size(y)) std::swap(x, y);\n\
     \        data[x] += data[y];\n        data[y] = x;\n        return x;\n    }\n\
+    \n    bool same(int a, int b) {\n        return leader(a) == leader(b);\n    }\n\
     \n    void undo() {\n        assert(stack.size() >= 2);\n        auto [x, xval]\
     \ = stack.top();\n        data[x] = xval;\n        stack.pop();\n        auto\
     \ [y, yval] = stack.top();\n        data[y] = yval;\n        stack.pop();\n  \
@@ -44,7 +45,8 @@ data:
     \ x = leader(a);\n        int y = leader(b);\n        stack.push({x, data[x]});\n\
     \        stack.push({y, data[y]});\n        if (x == y) return x;\n        if\
     \ (size(x) < size(y)) std::swap(x, y);\n        data[x] += data[y];\n        data[y]\
-    \ = x;\n        return x;\n    }\n\n    void undo() {\n        assert(stack.size()\
+    \ = x;\n        return x;\n    }\n\n    bool same(int a, int b) {\n        return\
+    \ leader(a) == leader(b);\n    }\n\n    void undo() {\n        assert(stack.size()\
     \ >= 2);\n        auto [x, xval] = stack.top();\n        data[x] = xval;\n   \
     \     stack.pop();\n        auto [y, yval] = stack.top();\n        data[y] = yval;\n\
     \        stack.pop();\n    }\n\n  private:\n    int n;\n    std::vector<int> data;\n\
@@ -54,13 +56,13 @@ data:
   isVerificationFile: false
   path: data_structure/undo_dsu.hpp
   requiredBy: []
-  timestamp: '2023-05-31 11:32:33+09:00'
+  timestamp: '2023-06-02 01:02:23+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/data_structure/aoj_1645.test.cpp
 documentation_of: data_structure/undo_dsu.hpp
 layout: document
-title: Undo dsu
+title: undo dsu
 ---
 
 ## 説明
@@ -84,6 +86,10 @@ rollbackできるdsu。
 ### merge(int a, int b)
 
 頂点 $a$ と $b$ をマージし、代表元を返す。$O(\log N)$
+
+### same(int a, int b)
+
+頂点 $a$ と $b$ が同じ連結成分に属するか判定。 $O(\log N)$
 
 ### undo()
 
