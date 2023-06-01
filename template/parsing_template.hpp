@@ -6,22 +6,13 @@ namespace lib {
 
 typedef std::string::const_iterator State;
 
-// *begin == expectedの判定
 bool expect(State &begin, char expected) {
-    if (*begin == expected) {
-        return true;
-    } else {
-        return false;
-    }
+    return *begin == expected;
 }
 
-// beginがexpectedを指していたらbeginを一つ進める。
 void consume(State &begin, char expected) {
-    if (*begin == expected) {
-        begin++;
-    } else {
-        assert(0);
-    }
+    assert(*begin == expected);
+    begin++;
 }
 
 bool isdigit(char c) {
