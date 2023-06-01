@@ -75,10 +75,10 @@ data:
       title: geometry3D/ld/line.hpp
   - name: graph
     pages:
-    - icon: ':warning:'
+    - icon: ':x:'
       path: graph/fordfulkerson.hpp
       title: FordFulkerson
-    - icon: ':warning:'
+    - icon: ':x:'
       path: graph/mf_graph.hpp
       title: graph/mf_graph.hpp
     - icon: ':heavy_check_mark:'
@@ -105,7 +105,7 @@ data:
     - icon: ':warning:'
       path: template/parsing_template.hpp
       title: "\u69CB\u6587\u89E3\u6790\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   - name: tree
@@ -206,6 +206,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/geometry/base_rational.test.cpp
       title: test/geometry/base_rational.test.cpp
+  - name: test/graph
+    pages:
+    - icon: ':x:'
+      path: test/graph/Maximum_Flow.test.cpp
+      title: test/graph/Maximum_Flow.test.cpp
   - name: test/math
     pages:
     - icon: ':heavy_check_mark:'
