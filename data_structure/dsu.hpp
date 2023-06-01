@@ -6,14 +6,19 @@ namespace lib {
 
 struct dsu {
   public:
-    dsu(int n = 0) : _n(n), pos(n, -1) {}
+    dsu(int n = 0) : _n(n), data(n, -1) {}
+
+    int leader(int a) {
+        if (data[a] < 0) return a;
+        return data[a] = leader(data[a]);
+    }
 
     int merge(int a, int b) {
         int x = leader(a), y = leader(b);
         if (x == y) return x;
-        if (-pos[x] < -pos[y]) swap(x, y);
-        pos[x] += pos[y];
-        pos[y] = x;
+        if (-data[x] < -data[y]) swap(x, y);
+        data[x] += data[y];
+        data[y] = x;
         return x;
     }
 
@@ -21,18 +26,13 @@ struct dsu {
         return leader(a) == leader(b);
     }
 
-    int leader(int a) {
-        if (pos[a] < 0) return a;
-        return pos[a] = leader(pos[a]);
-    }
-
     int size(int a) {
-        return -pos[leader(a)];
+        return -data[leader(a)];
     }
 
   private:
     int _n;
-    vector<int> pos;
+    vector<int> data;
 };
 
 }  // namespace lib

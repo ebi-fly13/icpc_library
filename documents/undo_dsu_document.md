@@ -1,5 +1,5 @@
 ---
-title: Undo dsu
+title: undo dsu
 documentation_of: //data_structure/undo_dsu.hpp
 ---
 
@@ -24,6 +24,10 @@ rollbackできるdsu。
 ### merge(int a, int b)
 
 頂点 $a$ と $b$ をマージし、代表元を返す。$O(\log N)$
+
+### same(int a, int b)
+
+頂点 $a$ と $b$ が同じ連結成分に属するか判定。 $O(\log N)$
 
 ### undo()
 

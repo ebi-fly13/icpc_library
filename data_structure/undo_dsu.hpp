@@ -30,6 +30,10 @@ struct undo_dsu {
         return x;
     }
 
+    bool same(int a, int b) {
+        return leader(a) == leader(b);
+    }
+
     void undo() {
         assert(stack.size() >= 2);
         auto [x, xval] = stack.top();
