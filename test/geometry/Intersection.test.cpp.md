@@ -60,27 +60,28 @@ data:
     \   assert(intersection(a, b) < 2);\n    return a.a + (a.b - a.a) * cross(b.a\
     \ - a.a, b.b - b.a) /\n                     cross(a.b - a.a, b.b - b.a);\n}\n\n\
     }  // namespace lib\n#line 4 \"geometry/segment.hpp\"\n\nnamespace lib {\n\nstruct\
-    \ segment : line {};\n\nbool intersection_segment(const segment &a, const segment\
-    \ &b,\n                          bool bound = true) {\n    if (sgn(isp(a.a, a.b,\
-    \ b.a) * isp(a.a, a.b, b.b)) < int(bound) &&\n        sgn(isp(b.a, b.b, a.a) *\
-    \ isp(b.a, b.b, a.b)) < int(bound)) {\n        return true;\n    } else\n    \
-    \    return false;\n}\n\nvec cross_point(const segment &a, const segment &b) {\n\
-    \    assert(intersection_segment(a, b, true));\n    return a.a + (a.b - a.a) *\
-    \ cross(b.a - a.a, b.b - b.a) /\n                     cross(a.b - a.a, b.b - b.a);\n\
-    }\n\nld dist(const segment &a, const vec &c) {\n    if (sgn(dot(a.b - a.a, c -\
-    \ a.a)) <= 0) {\n        return abs(c - a.a);\n    } else if (sgn(dot(a.a - a.b,\
-    \ c - a.b)) <= 0) {\n        return abs(c - a.b);\n    } else {\n        return\
-    \ abs(cross(c - a.a, a.b - a.a) / abs(a.b - a.a));\n    }\n}\n\nld dist(const\
-    \ segment &a, const segment &b) {\n    if (intersection_segment(a, b, true))\n\
-    \        return 0;\n    else\n        return min(min(dist(a, b.a), dist(a, b.b)),\n\
-    \                   min(dist(b, a.a), dist(b, a.b)));\n}\n\n}  // namespace lib\n\
-    #line 5 \"test/geometry/Intersection.test.cpp\"\n\nusing namespace lib;\n\nint\
-    \ main() {\n    int q;\n    std::cin >> q;\n    while (q--) {\n        vec p0,\
-    \ p1, p2, p3;\n        auto input = [](vec &p) {\n            ld x, y;\n     \
-    \       std::cin >> x >> y;\n            p = {x, y};\n        };\n        input(p0);\n\
-    \        input(p1);\n        input(p2);\n        input(p3);\n        segment s1\
-    \ = {p0, p1};\n        segment s2 = {p2, p3};\n        int flag = intersection_segment(s1,\
-    \ s2, true);\n        std::cout << flag << '\\n';\n    }\n}\n"
+    \ segment : line {};\n\nbool intersection_segment_and_vec(const segment &a, const\
+    \ vec &p) {\n    return isp(a.a, a.a, p) == 0;\n}\n\nbool intersection_segment(const\
+    \ segment &a, const segment &b) {\n    if (sgn(isp(a.a, a.b, b.a) * isp(a.a, a.b,\
+    \ b.b)) <= 0 &&\n        sgn(isp(b.a, b.b, a.a) * isp(b.a, b.b, a.b)) <= 0) {\n\
+    \        return true;\n    } else\n        return false;\n}\n\nvec cross_point(const\
+    \ segment &a, const segment &b) {\n    assert(intersection_segment(a, b));\n \
+    \   return a.a + (a.b - a.a) * cross(b.a - a.a, b.b - b.a) /\n               \
+    \      cross(a.b - a.a, b.b - b.a);\n}\n\nld dist(const segment &a, const vec\
+    \ &c) {\n    if (sgn(dot(a.b - a.a, c - a.a)) <= 0) {\n        return abs(c -\
+    \ a.a);\n    } else if (sgn(dot(a.a - a.b, c - a.b)) <= 0) {\n        return abs(c\
+    \ - a.b);\n    } else {\n        return abs(cross(c - a.a, a.b - a.a) / abs(a.b\
+    \ - a.a));\n    }\n}\n\nld dist(const segment &a, const segment &b) {\n    if\
+    \ (intersection_segment(a, b))\n        return 0;\n    else\n        return min(min(dist(a,\
+    \ b.a), dist(a, b.b)),\n                   min(dist(b, a.a), dist(b, a.b)));\n\
+    }\n\n}  // namespace lib\n#line 5 \"test/geometry/Intersection.test.cpp\"\n\n\
+    using namespace lib;\n\nint main() {\n    int q;\n    std::cin >> q;\n    while\
+    \ (q--) {\n        vec p0, p1, p2, p3;\n        auto input = [](vec &p) {\n  \
+    \          ld x, y;\n            std::cin >> x >> y;\n            p = {x, y};\n\
+    \        };\n        input(p0);\n        input(p1);\n        input(p2);\n    \
+    \    input(p3);\n        segment s1 = {p0, p1};\n        segment s2 = {p2, p3};\n\
+    \        int flag = intersection_segment(s1, s2);\n        std::cout << flag <<\
+    \ '\\n';\n    }\n}\n"
   code: "#define PROBLEM \\\n    \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_B\"\
     \n\n#include \"../../geometry/segment.hpp\"\n\nusing namespace lib;\n\nint main()\
     \ {\n    int q;\n    std::cin >> q;\n    while (q--) {\n        vec p0, p1, p2,\
@@ -88,7 +89,7 @@ data:
     \ >> x >> y;\n            p = {x, y};\n        };\n        input(p0);\n      \
     \  input(p1);\n        input(p2);\n        input(p3);\n        segment s1 = {p0,\
     \ p1};\n        segment s2 = {p2, p3};\n        int flag = intersection_segment(s1,\
-    \ s2, true);\n        std::cout << flag << '\\n';\n    }\n}"
+    \ s2);\n        std::cout << flag << '\\n';\n    }\n}"
   dependsOn:
   - geometry/segment.hpp
   - geometry/line.hpp
@@ -97,7 +98,7 @@ data:
   isVerificationFile: true
   path: test/geometry/Intersection.test.cpp
   requiredBy: []
-  timestamp: '2023-05-31 15:07:00+09:00'
+  timestamp: '2023-06-02 13:33:30+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/geometry/Intersection.test.cpp

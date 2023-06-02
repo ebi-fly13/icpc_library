@@ -64,35 +64,37 @@ data:
     \   assert(intersection(a, b) < 2);\n    return a.a + (a.b - a.a) * cross(b.a\
     \ - a.a, b.b - b.a) /\n                     cross(a.b - a.a, b.b - b.a);\n}\n\n\
     }  // namespace lib\n#line 4 \"geometry/segment.hpp\"\n\nnamespace lib {\n\nstruct\
-    \ segment : line {};\n\nbool intersection_segment(const segment &a, const segment\
-    \ &b,\n                          bool bound = true) {\n    if (sgn(isp(a.a, a.b,\
-    \ b.a) * isp(a.a, a.b, b.b)) < int(bound) &&\n        sgn(isp(b.a, b.b, a.a) *\
-    \ isp(b.a, b.b, a.b)) < int(bound)) {\n        return true;\n    } else\n    \
-    \    return false;\n}\n\nvec cross_point(const segment &a, const segment &b) {\n\
-    \    assert(intersection_segment(a, b, true));\n    return a.a + (a.b - a.a) *\
-    \ cross(b.a - a.a, b.b - b.a) /\n                     cross(a.b - a.a, b.b - b.a);\n\
-    }\n\nld dist(const segment &a, const vec &c) {\n    if (sgn(dot(a.b - a.a, c -\
-    \ a.a)) <= 0) {\n        return abs(c - a.a);\n    } else if (sgn(dot(a.a - a.b,\
-    \ c - a.b)) <= 0) {\n        return abs(c - a.b);\n    } else {\n        return\
-    \ abs(cross(c - a.a, a.b - a.a) / abs(a.b - a.a));\n    }\n}\n\nld dist(const\
-    \ segment &a, const segment &b) {\n    if (intersection_segment(a, b, true))\n\
-    \        return 0;\n    else\n        return min(min(dist(a, b.a), dist(a, b.b)),\n\
-    \                   min(dist(b, a.a), dist(b, a.b)));\n}\n\n}  // namespace lib\n"
+    \ segment : line {};\n\nbool intersection_segment_and_vec(const segment &a, const\
+    \ vec &p) {\n    return isp(a.a, a.a, p) == 0;\n}\n\nbool intersection_segment(const\
+    \ segment &a, const segment &b) {\n    if (sgn(isp(a.a, a.b, b.a) * isp(a.a, a.b,\
+    \ b.b)) <= 0 &&\n        sgn(isp(b.a, b.b, a.a) * isp(b.a, b.b, a.b)) <= 0) {\n\
+    \        return true;\n    } else\n        return false;\n}\n\nvec cross_point(const\
+    \ segment &a, const segment &b) {\n    assert(intersection_segment(a, b));\n \
+    \   return a.a + (a.b - a.a) * cross(b.a - a.a, b.b - b.a) /\n               \
+    \      cross(a.b - a.a, b.b - b.a);\n}\n\nld dist(const segment &a, const vec\
+    \ &c) {\n    if (sgn(dot(a.b - a.a, c - a.a)) <= 0) {\n        return abs(c -\
+    \ a.a);\n    } else if (sgn(dot(a.a - a.b, c - a.b)) <= 0) {\n        return abs(c\
+    \ - a.b);\n    } else {\n        return abs(cross(c - a.a, a.b - a.a) / abs(a.b\
+    \ - a.a));\n    }\n}\n\nld dist(const segment &a, const segment &b) {\n    if\
+    \ (intersection_segment(a, b))\n        return 0;\n    else\n        return min(min(dist(a,\
+    \ b.a), dist(a, b.b)),\n                   min(dist(b, a.a), dist(b, a.b)));\n\
+    }\n\n}  // namespace lib\n"
   code: "#pragma once\n\n#include \"../geometry/line.hpp\"\n\nnamespace lib {\n\n\
-    struct segment : line {};\n\nbool intersection_segment(const segment &a, const\
-    \ segment &b,\n                          bool bound = true) {\n    if (sgn(isp(a.a,\
-    \ a.b, b.a) * isp(a.a, a.b, b.b)) < int(bound) &&\n        sgn(isp(b.a, b.b, a.a)\
-    \ * isp(b.a, b.b, a.b)) < int(bound)) {\n        return true;\n    } else\n  \
-    \      return false;\n}\n\nvec cross_point(const segment &a, const segment &b)\
-    \ {\n    assert(intersection_segment(a, b, true));\n    return a.a + (a.b - a.a)\
-    \ * cross(b.a - a.a, b.b - b.a) /\n                     cross(a.b - a.a, b.b -\
-    \ b.a);\n}\n\nld dist(const segment &a, const vec &c) {\n    if (sgn(dot(a.b -\
-    \ a.a, c - a.a)) <= 0) {\n        return abs(c - a.a);\n    } else if (sgn(dot(a.a\
-    \ - a.b, c - a.b)) <= 0) {\n        return abs(c - a.b);\n    } else {\n     \
-    \   return abs(cross(c - a.a, a.b - a.a) / abs(a.b - a.a));\n    }\n}\n\nld dist(const\
-    \ segment &a, const segment &b) {\n    if (intersection_segment(a, b, true))\n\
-    \        return 0;\n    else\n        return min(min(dist(a, b.a), dist(a, b.b)),\n\
-    \                   min(dist(b, a.a), dist(b, a.b)));\n}\n\n}  // namespace lib"
+    struct segment : line {};\n\nbool intersection_segment_and_vec(const segment &a,\
+    \ const vec &p) {\n    return isp(a.a, a.a, p) == 0;\n}\n\nbool intersection_segment(const\
+    \ segment &a, const segment &b) {\n    if (sgn(isp(a.a, a.b, b.a) * isp(a.a, a.b,\
+    \ b.b)) <= 0 &&\n        sgn(isp(b.a, b.b, a.a) * isp(b.a, b.b, a.b)) <= 0) {\n\
+    \        return true;\n    } else\n        return false;\n}\n\nvec cross_point(const\
+    \ segment &a, const segment &b) {\n    assert(intersection_segment(a, b));\n \
+    \   return a.a + (a.b - a.a) * cross(b.a - a.a, b.b - b.a) /\n               \
+    \      cross(a.b - a.a, b.b - b.a);\n}\n\nld dist(const segment &a, const vec\
+    \ &c) {\n    if (sgn(dot(a.b - a.a, c - a.a)) <= 0) {\n        return abs(c -\
+    \ a.a);\n    } else if (sgn(dot(a.a - a.b, c - a.b)) <= 0) {\n        return abs(c\
+    \ - a.b);\n    } else {\n        return abs(cross(c - a.a, a.b - a.a) / abs(a.b\
+    \ - a.a));\n    }\n}\n\nld dist(const segment &a, const segment &b) {\n    if\
+    \ (intersection_segment(a, b))\n        return 0;\n    else\n        return min(min(dist(a,\
+    \ b.a), dist(a, b.b)),\n                   min(dist(b, a.a), dist(b, a.b)));\n\
+    }\n\n}  // namespace lib"
   dependsOn:
   - geometry/line.hpp
   - geometry/base_ld.hpp
@@ -100,7 +102,7 @@ data:
   isVerificationFile: false
   path: geometry/segment.hpp
   requiredBy: []
-  timestamp: '2023-05-31 15:07:00+09:00'
+  timestamp: '2023-06-02 13:33:30+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/geometry/Distance.test.cpp
@@ -120,9 +122,13 @@ title: segment
 
 線分の端点 $a$, $b$ を持つ
 
-### intersection_segment(segment a, segment b, bool bound = true)
+### intersection_segment_and_vec(segment a, vec p)
 
-線分 $a$, $b$ が交わるか判定。boundがtrueのとき端点を含む。falseのとき端点を含まない。
+線分 $a$ 上に点 $p$ が存在するか判定。
+
+### intersection_segment(segment a, segment b)
+
+線分 $a$, $b$ が交わるか判定。端点も含む。
 
 ### cross_point(segment a, segment b)
 
