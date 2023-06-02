@@ -1,5 +1,5 @@
 ---
-title: HeavyLightDecomposition
+title: Heavy Light Decomposition
 documentation_of: //tree/HeavyLightDecomposition.hpp
 ---
 

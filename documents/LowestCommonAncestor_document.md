@@ -1,5 +1,5 @@
 ---
-title: LowestCommonAncestor
+title: Lowest Common Ancestor
 documentation_of: //tree/LowestCommonAncestor.hpp
 ---
 

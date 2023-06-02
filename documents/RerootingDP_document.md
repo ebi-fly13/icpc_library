@@ -1,5 +1,5 @@
 ---
-title: RerootingDP
+title: Rerooting DP
 documentation_of: //tree/RerootingDP.hpp
 ---
 
