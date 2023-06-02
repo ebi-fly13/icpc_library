@@ -67,25 +67,18 @@ data:
     \ isp(a.a, a.a, p) == 0;\n}\n\nbool intersection_segment(const segment &a, const\
     \ segment &b) {\n    if (sgn(isp(a.a, a.b, b.a) * isp(a.a, a.b, b.b)) <= 0 &&\n\
     \        sgn(isp(b.a, b.b, a.a) * isp(b.a, b.b, a.b)) <= 0) {\n        return\
-    \ true;\n    } else\n        return false;\n}\n\nbool intersection_segment_nobundary(const\
-    \ segment &a, const segment &b) {\n    if (sgn(isp(a.a, a.b, b.a) * isp(a.a, a.b,\
-    \ b.b)) <= 0 &&\n        sgn(isp(b.a, b.b, a.a) * isp(b.a, b.b, a.b)) <= 0) {\n\
-    \        auto check = [&](vec p) -> bool {\n            return isp(a.a, b.a, p)\
-    \ == 0 && (!same_vec(a.a, p)) &&\n                   (!same_vec(a.b, p));\n  \
-    \      };\n        if (intersection(a, b) == 3 && (check(b.a) || check(b.b)))\n\
-    \            return true;\n        else\n            return false;\n    } else\n\
-    \        return false;\n}\n\nvec cross_point(const segment &a, const segment &b)\
-    \ {\n    assert(intersection_segment(a, b));\n    return a.a + (a.b - a.a) * cross(b.a\
-    \ - a.a, b.b - b.a) /\n                     cross(a.b - a.a, b.b - b.a);\n}\n\n\
-    ld dist(const segment &a, const vec &c) {\n    if (sgn(dot(a.b - a.a, c - a.a))\
-    \ <= 0) {\n        return abs(c - a.a);\n    } else if (sgn(dot(a.a - a.b, c -\
-    \ a.b)) <= 0) {\n        return abs(c - a.b);\n    } else {\n        return abs(cross(c\
-    \ - a.a, a.b - a.a) / abs(a.b - a.a));\n    }\n}\n\nld dist(const segment &a,\
-    \ const segment &b) {\n    if (intersection_segment(a, b))\n        return 0;\n\
-    \    else\n        return min(min(dist(a, b.a), dist(a, b.b)),\n             \
-    \      min(dist(b, a.a), dist(b, a.b)));\n}\n\n}  // namespace lib\n#line 6 \"\
-    test/geometry/Distance.test.cpp\"\n\nusing namespace lib;\n\nint main() {\n  \
-    \  std::cout << std::fixed << std::setprecision(15);\n    int q;\n    std::cin\
+    \ true;\n    } else\n        return false;\n}\n\nvec cross_point(const segment\
+    \ &a, const segment &b) {\n    assert(intersection_segment(a, b));\n    return\
+    \ a.a + (a.b - a.a) * cross(b.a - a.a, b.b - b.a) /\n                     cross(a.b\
+    \ - a.a, b.b - b.a);\n}\n\nld dist(const segment &a, const vec &c) {\n    if (sgn(dot(a.b\
+    \ - a.a, c - a.a)) <= 0) {\n        return abs(c - a.a);\n    } else if (sgn(dot(a.a\
+    \ - a.b, c - a.b)) <= 0) {\n        return abs(c - a.b);\n    } else {\n     \
+    \   return abs(cross(c - a.a, a.b - a.a) / abs(a.b - a.a));\n    }\n}\n\nld dist(const\
+    \ segment &a, const segment &b) {\n    if (intersection_segment(a, b))\n     \
+    \   return 0;\n    else\n        return min(min(dist(a, b.a), dist(a, b.b)),\n\
+    \                   min(dist(b, a.a), dist(b, a.b)));\n}\n\n}  // namespace lib\n\
+    #line 6 \"test/geometry/Distance.test.cpp\"\n\nusing namespace lib;\n\nint main()\
+    \ {\n    std::cout << std::fixed << std::setprecision(15);\n    int q;\n    std::cin\
     \ >> q;\n    while (q--) {\n        vec p0, p1, p2, p3;\n        auto input =\
     \ [](vec &p) {\n            ld x, y;\n            std::cin >> x >> y;\n      \
     \      p = {x, y};\n        };\n        input(p0);\n        input(p1);\n     \
@@ -108,7 +101,7 @@ data:
   isVerificationFile: true
   path: test/geometry/Distance.test.cpp
   requiredBy: []
-  timestamp: '2023-06-02 14:04:01+09:00'
+  timestamp: '2023-06-02 15:00:08+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/geometry/Distance.test.cpp
