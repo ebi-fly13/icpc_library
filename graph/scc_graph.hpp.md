@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy:
@@ -79,8 +79,8 @@ data:
   timestamp: '2023-05-26 21:39:22+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/math/aoj_3205.test.cpp
   - test/math/two_sat.test.cpp
+  - test/math/aoj_3205.test.cpp
 documentation_of: graph/scc_graph.hpp
 layout: document
 title: SCC Graph

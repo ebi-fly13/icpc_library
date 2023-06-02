@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: geometry/line.hpp
     title: line
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy: []
@@ -141,10 +141,10 @@ data:
   timestamp: '2023-06-02 14:04:01+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/geometry/Cross_Points_of_Circle_and_Line.test.cpp
-  - test/geometry/Cross_Points_of_Circles.test.cpp
-  - test/geometry/Intersection_Circle.test.cpp
   - test/geometry/Incircle_of_Triangle.test.cpp
+  - test/geometry/Cross_Points_of_Circle_and_Line.test.cpp
+  - test/geometry/Intersection_Circle.test.cpp
+  - test/geometry/Cross_Points_of_Circles.test.cpp
   - test/geometry/Circumscribed_Circle_of_Triangle.test.cpp
 documentation_of: geometry/circle.hpp
 layout: document

@@ -1,28 +1,28 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: data_structure/fenwick_tree.hpp
     title: fenwick tree
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: misc/mo_algorithm.hpp
     title: misc/mo_algorithm.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/static_range_frequency
+    PROBLEM: https://judge.yosupo.jp/problem/static_range_inversions_query
     links:
-    - https://judge.yosupo.jp/problem/static_range_frequency
+    - https://judge.yosupo.jp/problem/static_range_inversions_query
   bundledCode: "#line 1 \"test/data_structure/Static_Range_Inversions_Query.test.cpp\"\
-    \n#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_frequency\"\n\
-    \n#line 2 \"data_structure/fenwick_tree.hpp\"\n\n#line 2 \"template/template.hpp\"\
+    \n#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_inversions_query\"\
+    \n\n#line 2 \"data_structure/fenwick_tree.hpp\"\n\n#line 2 \"template/template.hpp\"\
     \n\n#include <bits/stdc++.h>\n\n#define rep(i, s, n) for (int i = (int)(s); i\
     \ < (int)(n); i++)\n#define rrep(i, s, n) for (int i = (int)(n)-1; i >= (int)(s);\
     \ i--)\n#define all(v) v.begin(), v.end()\n\nusing ll = long long;\nusing ld =\
@@ -73,7 +73,7 @@ data:
     \    };\n    const auto out = [&](int i) -> void { ans[i] = ret; };\n    mo.run(add_left,\
     \ add_right, delete_left, delete_right, out);\n    rep(i, 0, q) {\n        std::cout\
     \ << ans[i] << '\\n';\n    }\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_frequency\"\
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_inversions_query\"\
     \n\n#include \"../../data_structure/fenwick_tree.hpp\"\n#include \"../../misc/mo_algorithm.hpp\"\
     \n#include \"../../template/template.hpp\"\n\nusing namespace lib;\n\nint main()\
     \ {\n    int n, q;\n    std::cin >> n >> q;\n    Mo mo(n, q);\n    std::vector<int>\
@@ -98,8 +98,8 @@ data:
   isVerificationFile: true
   path: test/data_structure/Static_Range_Inversions_Query.test.cpp
   requiredBy: []
-  timestamp: '2023-06-02 15:45:54+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-06-02 15:50:48+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data_structure/Static_Range_Inversions_Query.test.cpp
 layout: document

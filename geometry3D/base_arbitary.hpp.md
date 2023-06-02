@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy:
@@ -72,10 +72,10 @@ data:
   isVerificationFile: false
   path: geometry3D/base_arbitary.hpp
   requiredBy:
-  - geometry3D/ld/base_ld.hpp
-  - geometry3D/ld/line.hpp
-  - geometry3D/accurate/base_accurate.hpp
   - geometry3D/accurate/line.hpp
+  - geometry3D/accurate/base_accurate.hpp
+  - geometry3D/ld/line.hpp
+  - geometry3D/ld/base_ld.hpp
   timestamp: '2023-05-17 22:41:14+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy: []
@@ -9,12 +9,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/data_structure/Point_Add_Range_Sum_Fenwick.test.cpp
     title: test/data_structure/Point_Add_Range_Sum_Fenwick.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/data_structure/Static_Range_Inversions_Query.test.cpp
     title: test/data_structure/Static_Range_Inversions_Query.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"data_structure/fenwick_tree.hpp\"\n\n#line 2 \"template/template.hpp\"\
@@ -51,10 +51,10 @@ data:
   path: data_structure/fenwick_tree.hpp
   requiredBy: []
   timestamp: '2023-05-31 14:09:15+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/data_structure/Static_Range_Inversions_Query.test.cpp
   - test/data_structure/Point_Add_Range_Sum_Fenwick.test.cpp
+  - test/data_structure/Static_Range_Inversions_Query.test.cpp
 documentation_of: data_structure/fenwick_tree.hpp
 layout: document
 title: fenwick tree

@@ -17,7 +17,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data_structure/dualsegtree.hpp
       title: dual segtree
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: data_structure/fenwick_tree.hpp
       title: fenwick tree
     - icon: ':heavy_check_mark:'
@@ -100,7 +100,7 @@ data:
       title: Two SAT
   - name: misc
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: misc/mo_algorithm.hpp
       title: misc/mo_algorithm.hpp
   - name: string
@@ -113,7 +113,7 @@ data:
     - icon: ':warning:'
       path: template/parsing_template.hpp
       title: "\u69CB\u6587\u89E3\u6790\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   - name: tree
@@ -161,7 +161,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data_structure/Set_Xor_Min.test.cpp
       title: test/data_structure/Set_Xor_Min.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/data_structure/Static_Range_Inversions_Query.test.cpp
       title: test/data_structure/Static_Range_Inversions_Query.test.cpp
     - icon: ':heavy_check_mark:'
