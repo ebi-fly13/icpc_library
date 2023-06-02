@@ -11,7 +11,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: data_structure/dsu.hpp
     title: dsu
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: data_structure/fenwick_tree.hpp
     title: fenwick tree
   - icon: ':heavy_check_mark:'
@@ -80,6 +80,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/two_sat.hpp
     title: Two SAT
+  - icon: ':x:'
+    path: misc/mo_algorithm.hpp
+    title: misc/mo_algorithm.hpp
   - icon: ':heavy_check_mark:'
     path: string/RollingHash.hpp
     title: RollingHash
@@ -123,6 +126,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/data_structure/Set_Xor_Min.test.cpp
     title: test/data_structure/Set_Xor_Min.test.cpp
+  - icon: ':x:'
+    path: test/data_structure/Static_Range_Inversions_Query.test.cpp
+    title: test/data_structure/Static_Range_Inversions_Query.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/data_structure/Unionfind.test.cpp
     title: test/data_structure/Unionfind.test.cpp
@@ -198,9 +204,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/tree/Tree_Path_Composite_Sum.test.cpp
     title: test/tree/Tree_Path_Composite_Sum.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n\n#include <bits/stdc++.h>\n\n\
@@ -224,6 +230,7 @@ data:
   isVerificationFile: false
   path: template/template.hpp
   requiredBy:
+  - misc/mo_algorithm.hpp
   - convolution/ntt.hpp
   - math/gauss_jordan.hpp
   - math/two_sat.hpp
@@ -258,7 +265,7 @@ data:
   - data_structure/undo_dsu.hpp
   - data_structure/segtree.hpp
   timestamp: '2023-05-17 22:41:14+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/convolution/Convolution_mod.test.cpp
   - test/math/enumerate_primes.test.cpp
@@ -287,6 +294,7 @@ data:
   - test/data_structure/Set_Xor_Min.test.cpp
   - test/data_structure/Point_Set_Range_Composite.test.cpp
   - test/data_structure/Range_Add_Point_Get.test.cpp
+  - test/data_structure/Static_Range_Inversions_Query.test.cpp
   - test/data_structure/Range_Affine_Range_Sum.test.cpp
   - test/data_structure/Point_Add_Range_Sum.test.cpp
   - test/data_structure/Vertex_Add_Path_Sum.test.cpp
