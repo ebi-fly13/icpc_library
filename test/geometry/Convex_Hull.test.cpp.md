@@ -41,17 +41,18 @@ data:
     \ lib;\n#line 4 \"geometry/base_ld.hpp\"\n\nnamespace lib {\n\nusing vec = complex<ld>;\n\
     \nvoid ldout(int len = 20) {\n    cout << fixed << setprecision(len);\n}\n\nint\
     \ sgn(ld a, const ld eps = 1e-7) {\n    return (a < -eps) ? -1 : (a > eps) ? 1\
-    \ : 0;\n}\n\nld dot(const vec &a, const vec &b) {\n    return (conj(a) * b).real();\n\
-    }\n\nld cross(const vec &a, const vec &b) {\n    return (conj(a) * b).imag();\n\
-    }\n\nint isp(const vec &a, const vec &b, const vec &c) {\n    int cross_sgn =\
-    \ sgn(cross(b - a, c - a));\n    if (cross_sgn == 0) {\n        if (sgn(dot(b\
-    \ - a, c - a)) < 0) return -2;\n        if (sgn(dot(a - b, c - b)) < 0) return\
-    \ 2;\n    }\n    return cross_sgn;\n}\n\nvec rot90(const vec &a) {\n    return\
-    \ {-a.imag(), a.real()};\n}\n\nvec rot(const vec &a, ld rad) {\n    return a *\
-    \ vec(cosl(rad), sinl(rad));\n}\n\nbool comp_for_argument_sort(const vec &lhs,\
-    \ const vec &rhs) {\n    // if (abs(arg(lhs)-arg(rhs)) < eps) return false; //\
-    \ need ?\n    return arg(lhs) < arg(rhs);\n}\n\n}  // namespace lib\n#line 5 \"\
-    geometry/convex_hull.hpp\"\n\nnamespace lib {\n\nvector<vec> convex_hull(vector<vec>\
+    \ : 0;\n}\n\nbool same_vec(vec a, vec b) {\n    a -= b;\n    return sgn(a.real())\
+    \ == 0 && sgn(a.imag()) == 0;\n}\n\nld dot(const vec &a, const vec &b) {\n   \
+    \ return (conj(a) * b).real();\n}\n\nld cross(const vec &a, const vec &b) {\n\
+    \    return (conj(a) * b).imag();\n}\n\nint isp(const vec &a, const vec &b, const\
+    \ vec &c) {\n    int cross_sgn = sgn(cross(b - a, c - a));\n    if (cross_sgn\
+    \ == 0) {\n        if (sgn(dot(b - a, c - a)) < 0) return -2;\n        if (sgn(dot(a\
+    \ - b, c - b)) < 0) return 2;\n    }\n    return cross_sgn;\n}\n\nvec rot90(const\
+    \ vec &a) {\n    return {-a.imag(), a.real()};\n}\n\nvec rot(const vec &a, ld\
+    \ rad) {\n    return a * vec(cosl(rad), sinl(rad));\n}\n\nbool comp_for_argument_sort(const\
+    \ vec &lhs, const vec &rhs) {\n    // if (abs(arg(lhs)-arg(rhs)) < eps) return\
+    \ false; // need ?\n    return arg(lhs) < arg(rhs);\n}\n\n}  // namespace lib\n\
+    #line 5 \"geometry/convex_hull.hpp\"\n\nnamespace lib {\n\nvector<vec> convex_hull(vector<vec>\
     \ a) {\n    int n = a.size();\n    if (n <= 2) return a;\n    auto comp = [&](vec\
     \ lhs, vec rhs) {\n        if (lhs.real() == rhs.real()) return lhs.imag() < rhs.imag();\n\
     \        return lhs.real() < rhs.real();\n    };\n    sort(all(a), comp);\n  \
@@ -88,50 +89,57 @@ data:
     \ segment &a, const vec &p) {\n    return isp(a.a, a.a, p) == 0;\n}\n\nbool intersection_segment(const\
     \ segment &a, const segment &b) {\n    if (sgn(isp(a.a, a.b, b.a) * isp(a.a, a.b,\
     \ b.b)) <= 0 &&\n        sgn(isp(b.a, b.b, a.a) * isp(b.a, b.b, a.b)) <= 0) {\n\
-    \        return true;\n    } else\n        return false;\n}\n\nvec cross_point(const\
-    \ segment &a, const segment &b) {\n    assert(intersection_segment(a, b));\n \
-    \   return a.a + (a.b - a.a) * cross(b.a - a.a, b.b - b.a) /\n               \
-    \      cross(a.b - a.a, b.b - b.a);\n}\n\nld dist(const segment &a, const vec\
-    \ &c) {\n    if (sgn(dot(a.b - a.a, c - a.a)) <= 0) {\n        return abs(c -\
-    \ a.a);\n    } else if (sgn(dot(a.a - a.b, c - a.b)) <= 0) {\n        return abs(c\
-    \ - a.b);\n    } else {\n        return abs(cross(c - a.a, a.b - a.a) / abs(a.b\
-    \ - a.a));\n    }\n}\n\nld dist(const segment &a, const segment &b) {\n    if\
-    \ (intersection_segment(a, b))\n        return 0;\n    else\n        return min(min(dist(a,\
-    \ b.a), dist(a, b.b)),\n                   min(dist(b, a.a), dist(b, a.b)));\n\
-    }\n\n}  // namespace lib\n#line 8 \"test/geometry/Convex_Hull.test.cpp\"\nusing\
-    \ namespace lib;\n\nconst ld dinf = 2e12;\n\nvoid solve(int n) {\n    vector<vector<vec>>\
-    \ a(n);\n    vector<ld> hs(n);\n    rep(i, 0, n) {\n        int m;\n        cin\
-    \ >> m >> hs[i];\n        a[i].resize(m);\n        rep(j, 0, m) {\n          \
-    \  ld x, y;\n            cin >> x >> y;\n            a[i][j] = vec(x, y);\n  \
-    \      }\n    }\n    ld rad1, rad2;\n    cin >> rad1 >> rad2;\n    rad1 *= M_PI\
-    \ / 180, rad2 *= M_PI / 180;\n    ld sx, sy, tx, ty;\n    cin >> sx >> sy >> tx\
-    \ >> ty;\n    vec sv(sx, sy), tv(tx, ty);\n    vector<vector<vec>> hulls(n);\n\
-    \    rep(i, 0, n) {\n        vec pl = rot(vec(hs[i] / tanl(rad2), 0), rad1 + M_PI);\n\
-    \        vector<vec> b = a[i];\n        rep(j, 0, a[i].size()) b.emplace_back(a[i][j]\
-    \ + pl);\n        hulls[i] = convex_hull(b);\n    }\n    vector<vector<ld>> ds(n\
-    \ + 2, vector<ld>(n + 2, dinf));\n    rep(i, 0, n) rep(j, 0, n) {\n        if\
-    \ (i >= j) {\n            ds[i][j] = ds[j][i];\n            continue;\n      \
-    \  }\n        int si = hulls[i].size(), sj = hulls[j].size();\n        rep(p,\
-    \ 0, si) rep(q, 0, sj) {\n            segment iseg({hulls[i][p], hulls[i][(p +\
-    \ 1) % si]});\n            segment jseg({hulls[j][q], hulls[j][(q + 1) % sj]});\n\
-    \            chmin(ds[i][j], dist(iseg, jseg));\n        }\n    }\n    ds[n][n\
-    \ + 1] = abs(sv - tv);\n    ds[n + 1][n] = ds[n][n + 1];\n    auto dist_hull_vec\
-    \ = [&](int id, vec v) {\n        bool in = true;\n        ld res = dinf;\n  \
-    \      int isiz = hulls[id].size();\n        rep(i, 0, isiz) {\n            vec\
-    \ iv = hulls[id][i];\n            vec jv = hulls[id][(i + 1) % isiz];\n      \
-    \      chmin(res, dist(segment({iv, jv}), v));\n            if (cross(jv - iv,\
-    \ v - iv) < 0) in = false;\n        }\n        if (in) return ld(0);\n       \
-    \ return res;\n    };\n    rep(i, 0, n) {\n        ds[i][n] = dist_hull_vec(i,\
-    \ sv);\n        ds[n][i] = ds[i][n];\n        ds[i][n + 1] = dist_hull_vec(i,\
-    \ tv);\n        ds[n + 1][i] = ds[i][n + 1];\n    }\n    vector<ld> ans(n + 2,\
-    \ dinf);\n    ans[n] = 0;\n    using pdi = pair<ld, int>;\n    priority_queue<pdi,\
-    \ vector<pdi>, greater<pdi>> pque;\n    pque.push(pdi(ans[n], n));\n    while\
-    \ (!pque.empty()) {\n        auto [idist, f] = pque.top();\n        pque.pop();\n\
-    \        if (ans[f] < idist) continue;\n        rep(i, 0, n + 2) {\n         \
-    \   if (chmin(ans[i], idist + ds[f][i])) {\n                pque.push(pdi(ans[i],\
-    \ i));\n            }\n        }\n    }\n    cout << ans[n + 1] << endl;\n}\n\n\
-    int main() {\n    ldout();\n    while (true) {\n        int n;\n        cin >>\
-    \ n;\n        if (n == 0) break;\n        solve(n);\n    }\n}\n"
+    \        return true;\n    } else\n        return false;\n}\n\nbool intersection_segment_nobundary(const\
+    \ segment &a, const segment &b) {\n    if (sgn(isp(a.a, a.b, b.a) * isp(a.a, a.b,\
+    \ b.b)) <= 0 &&\n        sgn(isp(b.a, b.b, a.a) * isp(b.a, b.b, a.b)) <= 0) {\n\
+    \        auto check = [&](vec p) -> bool {\n            return isp(a.a, b.a, p)\
+    \ == 0 && (!same_vec(a.a, p)) &&\n                   (!same_vec(a.b, p));\n  \
+    \      };\n        if (intersection(a, b) == 3 && (check(b.a) || check(b.b)))\n\
+    \            return true;\n        else\n            return false;\n    } else\n\
+    \        return false;\n}\n\nvec cross_point(const segment &a, const segment &b)\
+    \ {\n    assert(intersection_segment(a, b));\n    return a.a + (a.b - a.a) * cross(b.a\
+    \ - a.a, b.b - b.a) /\n                     cross(a.b - a.a, b.b - b.a);\n}\n\n\
+    ld dist(const segment &a, const vec &c) {\n    if (sgn(dot(a.b - a.a, c - a.a))\
+    \ <= 0) {\n        return abs(c - a.a);\n    } else if (sgn(dot(a.a - a.b, c -\
+    \ a.b)) <= 0) {\n        return abs(c - a.b);\n    } else {\n        return abs(cross(c\
+    \ - a.a, a.b - a.a) / abs(a.b - a.a));\n    }\n}\n\nld dist(const segment &a,\
+    \ const segment &b) {\n    if (intersection_segment(a, b))\n        return 0;\n\
+    \    else\n        return min(min(dist(a, b.a), dist(a, b.b)),\n             \
+    \      min(dist(b, a.a), dist(b, a.b)));\n}\n\n}  // namespace lib\n#line 8 \"\
+    test/geometry/Convex_Hull.test.cpp\"\nusing namespace lib;\n\nconst ld dinf =\
+    \ 2e12;\n\nvoid solve(int n) {\n    vector<vector<vec>> a(n);\n    vector<ld>\
+    \ hs(n);\n    rep(i, 0, n) {\n        int m;\n        cin >> m >> hs[i];\n   \
+    \     a[i].resize(m);\n        rep(j, 0, m) {\n            ld x, y;\n        \
+    \    cin >> x >> y;\n            a[i][j] = vec(x, y);\n        }\n    }\n    ld\
+    \ rad1, rad2;\n    cin >> rad1 >> rad2;\n    rad1 *= M_PI / 180, rad2 *= M_PI\
+    \ / 180;\n    ld sx, sy, tx, ty;\n    cin >> sx >> sy >> tx >> ty;\n    vec sv(sx,\
+    \ sy), tv(tx, ty);\n    vector<vector<vec>> hulls(n);\n    rep(i, 0, n) {\n  \
+    \      vec pl = rot(vec(hs[i] / tanl(rad2), 0), rad1 + M_PI);\n        vector<vec>\
+    \ b = a[i];\n        rep(j, 0, a[i].size()) b.emplace_back(a[i][j] + pl);\n  \
+    \      hulls[i] = convex_hull(b);\n    }\n    vector<vector<ld>> ds(n + 2, vector<ld>(n\
+    \ + 2, dinf));\n    rep(i, 0, n) rep(j, 0, n) {\n        if (i >= j) {\n     \
+    \       ds[i][j] = ds[j][i];\n            continue;\n        }\n        int si\
+    \ = hulls[i].size(), sj = hulls[j].size();\n        rep(p, 0, si) rep(q, 0, sj)\
+    \ {\n            segment iseg({hulls[i][p], hulls[i][(p + 1) % si]});\n      \
+    \      segment jseg({hulls[j][q], hulls[j][(q + 1) % sj]});\n            chmin(ds[i][j],\
+    \ dist(iseg, jseg));\n        }\n    }\n    ds[n][n + 1] = abs(sv - tv);\n   \
+    \ ds[n + 1][n] = ds[n][n + 1];\n    auto dist_hull_vec = [&](int id, vec v) {\n\
+    \        bool in = true;\n        ld res = dinf;\n        int isiz = hulls[id].size();\n\
+    \        rep(i, 0, isiz) {\n            vec iv = hulls[id][i];\n            vec\
+    \ jv = hulls[id][(i + 1) % isiz];\n            chmin(res, dist(segment({iv, jv}),\
+    \ v));\n            if (cross(jv - iv, v - iv) < 0) in = false;\n        }\n \
+    \       if (in) return ld(0);\n        return res;\n    };\n    rep(i, 0, n) {\n\
+    \        ds[i][n] = dist_hull_vec(i, sv);\n        ds[n][i] = ds[i][n];\n    \
+    \    ds[i][n + 1] = dist_hull_vec(i, tv);\n        ds[n + 1][i] = ds[i][n + 1];\n\
+    \    }\n    vector<ld> ans(n + 2, dinf);\n    ans[n] = 0;\n    using pdi = pair<ld,\
+    \ int>;\n    priority_queue<pdi, vector<pdi>, greater<pdi>> pque;\n    pque.push(pdi(ans[n],\
+    \ n));\n    while (!pque.empty()) {\n        auto [idist, f] = pque.top();\n \
+    \       pque.pop();\n        if (ans[f] < idist) continue;\n        rep(i, 0,\
+    \ n + 2) {\n            if (chmin(ans[i], idist + ds[f][i])) {\n             \
+    \   pque.push(pdi(ans[i], i));\n            }\n        }\n    }\n    cout << ans[n\
+    \ + 1] << endl;\n}\n\nint main() {\n    ldout();\n    while (true) {\n       \
+    \ int n;\n        cin >> n;\n        if (n == 0) break;\n        solve(n);\n \
+    \   }\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/2827\"\n#define\
     \ ERROR 0.001\n\n#include \"../../geometry/convex_hull.hpp\"\n\n#include \"../../geometry/segment.hpp\"\
     \n#include \"../../template/template.hpp\"\nusing namespace lib;\n\nconst ld dinf\
@@ -177,7 +185,7 @@ data:
   isVerificationFile: true
   path: test/geometry/Convex_Hull.test.cpp
   requiredBy: []
-  timestamp: '2023-06-02 13:33:30+09:00'
+  timestamp: '2023-06-02 14:04:01+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/geometry/Convex_Hull.test.cpp
