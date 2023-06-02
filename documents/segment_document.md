@@ -11,9 +11,13 @@ documentation_of: //geometry/segment.hpp
 
 線分の端点 $a$, $b$ を持つ
 
-### intersection_segment(segment a, segment b, bool bound = true)
+### intersection_segment_and_vec(segment a, vec p)
 
-線分 $a$, $b$ が交わるか判定。boundがtrueのとき端点を含む。falseのとき端点を含まない。
+線分 $a$ 上に点 $p$ が存在するか判定。
+
+### intersection_segment(segment a, segment b)
+
+線分 $a$, $b$ が交わるか判定。端点も含む。
 
 ### cross_point(segment a, segment b)
 

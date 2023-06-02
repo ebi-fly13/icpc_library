@@ -21,7 +21,7 @@ int main() {
         input(p3);
         segment s1 = {p0, p1};
         segment s2 = {p2, p3};
-        int flag = intersection_segment(s1, s2, true);
+        int flag = intersection_segment(s1, s2);
         std::cout << flag << '\n';
     }
 }
