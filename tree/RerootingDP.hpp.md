@@ -109,7 +109,7 @@ data:
   - test/tree/Tree_Path_Composite_Sum.test.cpp
 documentation_of: tree/RerootingDP.hpp
 layout: document
-title: RerootingDP
+title: Rerooting DP
 ---
 
 ## RerootingDP

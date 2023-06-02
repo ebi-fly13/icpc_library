@@ -104,7 +104,7 @@ data:
   - test/data_structure/Vertex_Add_Path_Sum.test.cpp
 documentation_of: tree/HeavyLightDecomposition.hpp
 layout: document
-title: HeavyLightDecomposition
+title: Heavy Light Decomposition
 ---
 
 ## 説明

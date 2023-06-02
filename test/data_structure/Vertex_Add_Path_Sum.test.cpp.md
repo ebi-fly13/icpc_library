@@ -9,7 +9,7 @@ data:
     title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   - icon: ':heavy_check_mark:'
     path: tree/HeavyLightDecomposition.hpp
-    title: HeavyLightDecomposition
+    title: Heavy Light Decomposition
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false

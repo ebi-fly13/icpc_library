@@ -115,13 +115,13 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: tree/HeavyLightDecomposition.hpp
-      title: HeavyLightDecomposition
+      title: Heavy Light Decomposition
     - icon: ':heavy_check_mark:'
       path: tree/LowestCommonAncestor.hpp
-      title: LowestCommonAncestor
+      title: Lowest Common Ancestor
     - icon: ':heavy_check_mark:'
       path: tree/RerootingDP.hpp
-      title: RerootingDP
+      title: Rerooting DP
   - name: utility
     pages:
     - icon: ':heavy_check_mark:'

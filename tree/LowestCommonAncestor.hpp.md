@@ -76,7 +76,7 @@ data:
   - test/tree/Lowest_Common_Ancestor.test.cpp
 documentation_of: tree/LowestCommonAncestor.hpp
 layout: document
-title: LowestCommonAncestor
+title: Lowest Common Ancestor
 ---
 
 ## 説明

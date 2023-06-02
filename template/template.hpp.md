@@ -88,13 +88,13 @@ data:
     title: "\u69CB\u6587\u89E3\u6790\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   - icon: ':heavy_check_mark:'
     path: tree/HeavyLightDecomposition.hpp
-    title: HeavyLightDecomposition
+    title: Heavy Light Decomposition
   - icon: ':heavy_check_mark:'
     path: tree/LowestCommonAncestor.hpp
-    title: LowestCommonAncestor
+    title: Lowest Common Ancestor
   - icon: ':heavy_check_mark:'
     path: tree/RerootingDP.hpp
-    title: RerootingDP
+    title: Rerooting DP
   - icon: ':heavy_check_mark:'
     path: utility/modint.hpp
     title: modint
