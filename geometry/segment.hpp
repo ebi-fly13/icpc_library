@@ -18,6 +18,21 @@ bool intersection_segment(const segment &a, const segment &b) {
         return false;
 }
 
+bool intersection_segment_nobundary(const segment &a, const segment &b) {
+    if (sgn(isp(a.a, a.b, b.a) * isp(a.a, a.b, b.b)) <= 0 &&
+        sgn(isp(b.a, b.b, a.a) * isp(b.a, b.b, a.b)) <= 0) {
+        auto check = [&](vec p) -> bool {
+            return isp(a.a, b.a, p) == 0 && (!same_vec(a.a, p)) &&
+                   (!same_vec(a.b, p));
+        };
+        if (intersection(a, b) == 3 && (check(b.a) || check(b.b)))
+            return true;
+        else
+            return false;
+    } else
+        return false;
+}
+
 vec cross_point(const segment &a, const segment &b) {
     assert(intersection_segment(a, b));
     return a.a + (a.b - a.a) * cross(b.a - a.a, b.b - b.a) /

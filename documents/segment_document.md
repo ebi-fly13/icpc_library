@@ -19,6 +19,10 @@ documentation_of: //geometry/segment.hpp
 
 線分 $a$, $b$ が交わるか判定。端点も含む。
 
+### intersection_segment_nobundary(segment a, segement b)
+
+線分 $a$, $b$ が端点を除いて交わるか判定。
+
 ### cross_point(segment a, segment b)
 
 線分 $a$, $b$ の交点を返す。

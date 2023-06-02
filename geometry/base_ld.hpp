@@ -14,6 +14,11 @@ int sgn(ld a, const ld eps = 1e-7) {
     return (a < -eps) ? -1 : (a > eps) ? 1 : 0;
 }
 
+bool same_vec(vec a, vec b) {
+    a -= b;
+    return sgn(a.real()) == 0 && sgn(a.imag()) == 0;
+}
+
 ld dot(const vec &a, const vec &b) {
     return (conj(a) * b).real();
 }

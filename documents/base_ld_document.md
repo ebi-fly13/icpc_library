@@ -15,13 +15,17 @@ documentation_of: //geometry/base_ld.hpp
 
 $x$ の符号を返す。epsで評価する。
 
+### same_vec(vec a, vec b)
+
+ベクトル $a$ $b$ が同じか判定
+
 ### dot(vec a, vec b)
 
-ベクトル$a$, $b$ の内積を返す。
+ベクトル $a$, $b$ の内積を返す。
 
 ### cross(vec a, vec b)
 
-ベクトル$a$, $b$ の外積を返す。
+ベクトル $a$, $b$ の外積を返す。
 
 ### isp(vec a, vec b, vec c)
 
