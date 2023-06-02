@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/static_range_frequency"
+#define PROBLEM "https://judge.yosupo.jp/problem/static_range_inversions_query"
 
 #include "../../data_structure/fenwick_tree.hpp"
 #include "../../misc/mo_algorithm.hpp"
