@@ -86,6 +86,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: string/RollingHash.hpp
     title: RollingHash
+  - icon: ':heavy_check_mark:'
+    path: string/z_algorithm.hpp
+    title: Z Algorithm
   - icon: ':warning:'
     path: template/parsing_template.hpp
     title: "\u69CB\u6587\u89E3\u6790\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
@@ -196,6 +199,9 @@ data:
     path: test/string/aoj_2444.test.cpp
     title: test/string/aoj_2444.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/string/z_algorithm.test.cpp
+    title: test/string/z_algorithm.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/tree/Lowest_Common_Ancestor.test.cpp
     title: test/tree/Lowest_Common_Ancestor.test.cpp
   - icon: ':heavy_check_mark:'
@@ -230,76 +236,78 @@ data:
   isVerificationFile: false
   path: template/template.hpp
   requiredBy:
-  - geometry/circle.hpp
-  - geometry/base_ll.hpp
-  - geometry/line.hpp
-  - geometry/convex_hull.hpp
-  - geometry/base_arbitary.hpp
-  - geometry/base_ld.hpp
-  - geometry/segment.hpp
   - misc/mo_algorithm.hpp
-  - tree/HeavyLightDecomposition.hpp
-  - tree/RerootingDP.hpp
-  - tree/LowestCommonAncestor.hpp
   - convolution/ntt.hpp
-  - geometry3D/accurate/line.hpp
-  - geometry3D/accurate/base_accurate.hpp
-  - geometry3D/ld/line.hpp
-  - geometry3D/ld/base_ld.hpp
-  - geometry3D/base_arbitary.hpp
-  - data_structure/BinaryTrie.hpp
-  - data_structure/segtree.hpp
-  - data_structure/fenwick_tree.hpp
-  - data_structure/dsu.hpp
-  - data_structure/undo_dsu.hpp
-  - data_structure/lazysegtree.hpp
-  - math/eratosthenes_sieve.hpp
   - math/gauss_jordan.hpp
   - math/two_sat.hpp
+  - math/eratosthenes_sieve.hpp
+  - template/parsing_template.hpp
   - utility/rational.hpp
   - utility/modint.hpp
-  - template/parsing_template.hpp
-  - graph/mf_graph.hpp
-  - graph/mcf_graph.hpp
-  - graph/fordfulkerson.hpp
+  - geometry3D/ld/base_ld.hpp
+  - geometry3D/ld/line.hpp
+  - geometry3D/accurate/base_accurate.hpp
+  - geometry3D/accurate/line.hpp
+  - geometry3D/base_arbitary.hpp
+  - geometry/base_ll.hpp
+  - geometry/convex_hull.hpp
+  - geometry/base_ld.hpp
+  - geometry/base_arbitary.hpp
+  - geometry/circle.hpp
+  - geometry/segment.hpp
+  - geometry/line.hpp
+  - tree/RerootingDP.hpp
+  - tree/LowestCommonAncestor.hpp
+  - tree/HeavyLightDecomposition.hpp
   - graph/scc_graph.hpp
+  - graph/mcf_graph.hpp
+  - graph/mf_graph.hpp
+  - graph/fordfulkerson.hpp
+  - string/z_algorithm.hpp
   - string/RollingHash.hpp
+  - data_structure/fenwick_tree.hpp
+  - data_structure/dsu.hpp
+  - data_structure/BinaryTrie.hpp
+  - data_structure/lazysegtree.hpp
+  - data_structure/undo_dsu.hpp
+  - data_structure/segtree.hpp
   timestamp: '2023-05-17 22:41:14+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/convolution/Convolution_mod.test.cpp
+  - test/math/enumerate_primes.test.cpp
+  - test/math/aoj_3205.test.cpp
+  - test/math/two_sat.test.cpp
   - test/geometry/Counter_Clockwise.test.cpp
   - test/geometry/Reflection.test.cpp
-  - test/geometry/Distance.test.cpp
-  - test/geometry/Cross_Point.test.cpp
-  - test/geometry/Parallel_Orthogonal.test.cpp
-  - test/geometry/Projection.test.cpp
-  - test/geometry/Convex_Hull.test.cpp
-  - test/geometry/Incircle_of_Triangle.test.cpp
   - test/geometry/Cross_Points_of_Circle_and_Line.test.cpp
   - test/geometry/Intersection.test.cpp
-  - test/geometry/base_rational.test.cpp
-  - test/geometry/Intersection_Circle.test.cpp
   - test/geometry/Cross_Points_of_Circles.test.cpp
+  - test/geometry/Projection.test.cpp
+  - test/geometry/Distance.test.cpp
+  - test/geometry/Intersection_Circle.test.cpp
+  - test/geometry/Cross_Point.test.cpp
+  - test/geometry/Convex_Hull.test.cpp
+  - test/geometry/Incircle_of_Triangle.test.cpp
   - test/geometry/Circumscribed_Circle_of_Triangle.test.cpp
-  - test/tree/RerootingDP.test.cpp
+  - test/geometry/base_rational.test.cpp
+  - test/geometry/Parallel_Orthogonal.test.cpp
   - test/tree/Lowest_Common_Ancestor.test.cpp
   - test/tree/Tree_Path_Composite_Sum.test.cpp
-  - test/convolution/Convolution_mod.test.cpp
-  - test/data_structure/Point_Add_Range_Sum_Fenwick.test.cpp
-  - test/data_structure/Point_Add_Range_Sum.test.cpp
-  - test/data_structure/Set_Xor_Min.test.cpp
-  - test/data_structure/aoj_1645.test.cpp
-  - test/data_structure/Range_Affine_Range_Sum.test.cpp
-  - test/data_structure/Unionfind.test.cpp
-  - test/data_structure/Static_Range_Inversions_Query.test.cpp
-  - test/data_structure/Point_Set_Range_Composite.test.cpp
-  - test/data_structure/Vertex_Add_Path_Sum.test.cpp
-  - test/data_structure/Range_Add_Point_Get.test.cpp
-  - test/math/enumerate_primes.test.cpp
-  - test/math/two_sat.test.cpp
-  - test/math/aoj_3205.test.cpp
+  - test/tree/RerootingDP.test.cpp
   - test/graph/Maximum_Flow.test.cpp
+  - test/string/z_algorithm.test.cpp
   - test/string/aoj_2444.test.cpp
+  - test/data_structure/aoj_1645.test.cpp
+  - test/data_structure/Set_Xor_Min.test.cpp
+  - test/data_structure/Point_Set_Range_Composite.test.cpp
+  - test/data_structure/Range_Add_Point_Get.test.cpp
+  - test/data_structure/Static_Range_Inversions_Query.test.cpp
+  - test/data_structure/Range_Affine_Range_Sum.test.cpp
+  - test/data_structure/Point_Add_Range_Sum.test.cpp
+  - test/data_structure/Vertex_Add_Path_Sum.test.cpp
+  - test/data_structure/Point_Add_Range_Sum_Fenwick.test.cpp
+  - test/data_structure/Unionfind.test.cpp
 documentation_of: template/template.hpp
 layout: document
 title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"

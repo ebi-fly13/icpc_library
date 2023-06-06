@@ -108,6 +108,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: string/RollingHash.hpp
       title: RollingHash
+    - icon: ':heavy_check_mark:'
+      path: string/z_algorithm.hpp
+      title: Z Algorithm
   - name: template
     pages:
     - icon: ':warning:'
@@ -238,6 +241,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/string/aoj_2444.test.cpp
       title: test/string/aoj_2444.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/string/z_algorithm.test.cpp
+      title: test/string/z_algorithm.test.cpp
   - name: test/tree
     pages:
     - icon: ':heavy_check_mark:'
