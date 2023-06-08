@@ -182,6 +182,9 @@ data:
       path: test/geometry/Circumscribed_Circle_of_Triangle.test.cpp
       title: test/geometry/Circumscribed_Circle_of_Triangle.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/geometry/Common_Area_Circles.test.cpp
+      title: test/geometry/Common_Area_Circles.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/geometry/Convex_Hull.test.cpp
       title: test/geometry/Convex_Hull.test.cpp
     - icon: ':heavy_check_mark:'

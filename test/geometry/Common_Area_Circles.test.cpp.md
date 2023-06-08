@@ -20,37 +20,38 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/7/CGL_7_A
+    ERROR: '0.00000001'
+    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/7/CGL_7_I
     links:
-    - https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/7/CGL_7_A
-  bundledCode: "#line 1 \"test/geometry/Intersection_Circle.test.cpp\"\n#define PROBLEM\
-    \ \\\r\n    \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/7/CGL_7_A\"\
-    \r\n\r\n#line 2 \"geometry/circle.hpp\"\n\r\n#line 2 \"geometry/base_ld.hpp\"\n\
-    \n#line 2 \"template/template.hpp\"\n\n#include <bits/stdc++.h>\n\n#define rep(i,\
-    \ s, n) for (int i = (int)(s); i < (int)(n); i++)\n#define rrep(i, s, n) for (int\
-    \ i = (int)(n)-1; i >= (int)(s); i--)\n#define all(v) v.begin(), v.end()\n\nusing\
-    \ ll = long long;\nusing ld = long double;\nusing ull = unsigned long long;\n\n\
-    template <typename T> bool chmin(T &a, const T &b) {\n    if (a <= b) return false;\n\
-    \    a = b;\n    return true;\n}\ntemplate <typename T> bool chmax(T &a, const\
-    \ T &b) {\n    if (a >= b) return false;\n    a = b;\n    return true;\n}\n\n\
-    namespace lib {\n\nusing namespace std;\n\n}  // namespace lib\n\n// using namespace\
-    \ lib;\n#line 4 \"geometry/base_ld.hpp\"\n\nnamespace lib {\n\nusing vec = complex<ld>;\n\
-    \nconst ld PI = acos(-1);\n\nvoid ldout(int len = 20) {\n    cout << fixed <<\
-    \ setprecision(len);\n}\n\nint sgn(ld a, const ld eps = 1e-7) {\n    return (a\
-    \ < -eps) ? -1 : (a > eps) ? 1 : 0;\n}\n\nbool same_vec(vec a, vec b) {\n    a\
-    \ -= b;\n    return sgn(a.real()) == 0 && sgn(a.imag()) == 0;\n}\n\nld dot(const\
-    \ vec &a, const vec &b) {\n    return (conj(a) * b).real();\n}\n\nld cross(const\
-    \ vec &a, const vec &b) {\n    return (conj(a) * b).imag();\n}\n\nint isp(const\
-    \ vec &a, const vec &b, const vec &c) {\n    int cross_sgn = sgn(cross(b - a,\
-    \ c - a));\n    if (cross_sgn == 0) {\n        if (sgn(dot(b - a, c - a)) < 0)\
-    \ return -2;\n        if (sgn(dot(a - b, c - b)) < 0) return 2;\n    }\n    return\
-    \ cross_sgn;\n}\n\nvec rot90(const vec &a) {\n    return {-a.imag(), a.real()};\n\
-    }\n\nvec rot(const vec &a, ld rad) {\n    return a * vec(cosl(rad), sinl(rad));\n\
-    }\n\nbool comp_for_argument_sort(const vec &lhs, const vec &rhs) {\n    // if\
-    \ (abs(arg(lhs)-arg(rhs)) < eps) return false; // need ?\n    return arg(lhs)\
-    \ < arg(rhs);\n}\n\n}  // namespace lib\n#line 2 \"geometry/line.hpp\"\n\n#line\
-    \ 4 \"geometry/line.hpp\"\n\nnamespace lib {\n\nstruct line {\n    vec a, b;\n\
-    };\n\nvec proj(const line &l, const vec &p) {\n    vec ab = l.b - l.a;\n    return\
+    - https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/7/CGL_7_I
+  bundledCode: "#line 1 \"test/geometry/Common_Area_Circles.test.cpp\"\n#define PROBLEM\
+    \ \\\n    \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/7/CGL_7_I\"\
+    \n#define ERROR 0.00000001\n\n#line 2 \"geometry/base_ld.hpp\"\n\n#line 2 \"template/template.hpp\"\
+    \n\n#include <bits/stdc++.h>\n\n#define rep(i, s, n) for (int i = (int)(s); i\
+    \ < (int)(n); i++)\n#define rrep(i, s, n) for (int i = (int)(n)-1; i >= (int)(s);\
+    \ i--)\n#define all(v) v.begin(), v.end()\n\nusing ll = long long;\nusing ld =\
+    \ long double;\nusing ull = unsigned long long;\n\ntemplate <typename T> bool\
+    \ chmin(T &a, const T &b) {\n    if (a <= b) return false;\n    a = b;\n    return\
+    \ true;\n}\ntemplate <typename T> bool chmax(T &a, const T &b) {\n    if (a >=\
+    \ b) return false;\n    a = b;\n    return true;\n}\n\nnamespace lib {\n\nusing\
+    \ namespace std;\n\n}  // namespace lib\n\n// using namespace lib;\n#line 4 \"\
+    geometry/base_ld.hpp\"\n\nnamespace lib {\n\nusing vec = complex<ld>;\n\nconst\
+    \ ld PI = acos(-1);\n\nvoid ldout(int len = 20) {\n    cout << fixed << setprecision(len);\n\
+    }\n\nint sgn(ld a, const ld eps = 1e-7) {\n    return (a < -eps) ? -1 : (a > eps)\
+    \ ? 1 : 0;\n}\n\nbool same_vec(vec a, vec b) {\n    a -= b;\n    return sgn(a.real())\
+    \ == 0 && sgn(a.imag()) == 0;\n}\n\nld dot(const vec &a, const vec &b) {\n   \
+    \ return (conj(a) * b).real();\n}\n\nld cross(const vec &a, const vec &b) {\n\
+    \    return (conj(a) * b).imag();\n}\n\nint isp(const vec &a, const vec &b, const\
+    \ vec &c) {\n    int cross_sgn = sgn(cross(b - a, c - a));\n    if (cross_sgn\
+    \ == 0) {\n        if (sgn(dot(b - a, c - a)) < 0) return -2;\n        if (sgn(dot(a\
+    \ - b, c - b)) < 0) return 2;\n    }\n    return cross_sgn;\n}\n\nvec rot90(const\
+    \ vec &a) {\n    return {-a.imag(), a.real()};\n}\n\nvec rot(const vec &a, ld\
+    \ rad) {\n    return a * vec(cosl(rad), sinl(rad));\n}\n\nbool comp_for_argument_sort(const\
+    \ vec &lhs, const vec &rhs) {\n    // if (abs(arg(lhs)-arg(rhs)) < eps) return\
+    \ false; // need ?\n    return arg(lhs) < arg(rhs);\n}\n\n}  // namespace lib\n\
+    #line 2 \"geometry/circle.hpp\"\n\r\n#line 2 \"geometry/line.hpp\"\n\n#line 4\
+    \ \"geometry/line.hpp\"\n\nnamespace lib {\n\nstruct line {\n    vec a, b;\n};\n\
+    \nvec proj(const line &l, const vec &p) {\n    vec ab = l.b - l.a;\n    return\
     \ l.a + ab * (dot(ab, p - l.a) / norm(ab));\n}\n\nvec refl(const line &l, const\
     \ vec &p) {\n    return proj(l, p) * ld(2) - p;\n}\n\nint intersection(const line\
     \ &a, const line &b) {\n    if (sgn(cross(a.b - a.a, b.a - b.b)) != 0) {\n   \
@@ -102,32 +103,38 @@ data:
     \      theta2 /= 2.0 * c2.r * d;\r\n        theta2 = acos(theta2);\r\n       \
     \ ld area2 = c2.r * c2.r * theta2 - c2.r * c2.r * sin(theta2 * 2) / 2.0;\r\n \
     \       return area1 + area2;\r\n    }\r\n}\r\n\r\n}  // namespace lib\r\n#line\
-    \ 5 \"test/geometry/Intersection_Circle.test.cpp\"\n\r\nusing namespace lib;\r\
-    \n\r\nint main() {\r\n    ld c1x, c1y, c1r;\r\n    ld c2x, c2y, c2r;\r\n    std::cin\
-    \ >> c1x >> c1y >> c1r;\r\n    std::cin >> c2x >> c2y >> c2r;\r\n    circle c1\
-    \ = {{c1x, c1y}, c1r};\r\n    circle c2 = {{c2x, c2y}, c2r};\r\n    std::cout\
-    \ << intersection(c1, c2) << '\\n';\r\n}\n"
-  code: "#define PROBLEM \\\r\n    \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/7/CGL_7_A\"\
-    \r\n\r\n#include \"../../geometry/circle.hpp\"\r\n\r\nusing namespace lib;\r\n\
-    \r\nint main() {\r\n    ld c1x, c1y, c1r;\r\n    ld c2x, c2y, c2r;\r\n    std::cin\
-    \ >> c1x >> c1y >> c1r;\r\n    std::cin >> c2x >> c2y >> c2r;\r\n    circle c1\
-    \ = {{c1x, c1y}, c1r};\r\n    circle c2 = {{c2x, c2y}, c2r};\r\n    std::cout\
-    \ << intersection(c1, c2) << '\\n';\r\n}"
+    \ 8 \"test/geometry/Common_Area_Circles.test.cpp\"\n\nusing namespace lib;\n\n\
+    namespace ebi {\n\nvoid main_() {\n    circle c1, c2;\n    auto input = [](circle\
+    \ &c) -> void {\n        ld x, y, r;\n        std::cin >> x >> y >> r;\n     \
+    \   c.c = {x, y};\n        c.r = r;\n    };\n    input(c1);\n    input(c2);\n\
+    \    std::cout << common_area(c1, c2) << '\\n';\n}\n\n}  // namespace ebi\n\n\
+    int main() {\n    std::cout << std::fixed << std::setprecision(15);\n    std::cin.tie(nullptr);\n\
+    \    std::ios::sync_with_stdio(false);\n    ebi::main_();\n}\n"
+  code: "#define PROBLEM \\\n    \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/7/CGL_7_I\"\
+    \n#define ERROR 0.00000001\n\n#include \"../../geometry/base_ld.hpp\"\n#include\
+    \ \"../../geometry/circle.hpp\"\n#include \"../../template/template.hpp\"\n\n\
+    using namespace lib;\n\nnamespace ebi {\n\nvoid main_() {\n    circle c1, c2;\n\
+    \    auto input = [](circle &c) -> void {\n        ld x, y, r;\n        std::cin\
+    \ >> x >> y >> r;\n        c.c = {x, y};\n        c.r = r;\n    };\n    input(c1);\n\
+    \    input(c2);\n    std::cout << common_area(c1, c2) << '\\n';\n}\n\n}  // namespace\
+    \ ebi\n\nint main() {\n    std::cout << std::fixed << std::setprecision(15);\n\
+    \    std::cin.tie(nullptr);\n    std::ios::sync_with_stdio(false);\n    ebi::main_();\n\
+    }"
   dependsOn:
-  - geometry/circle.hpp
   - geometry/base_ld.hpp
   - template/template.hpp
+  - geometry/circle.hpp
   - geometry/line.hpp
   isVerificationFile: true
-  path: test/geometry/Intersection_Circle.test.cpp
+  path: test/geometry/Common_Area_Circles.test.cpp
   requiredBy: []
   timestamp: '2023-06-08 15:34:10+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/geometry/Intersection_Circle.test.cpp
+documentation_of: test/geometry/Common_Area_Circles.test.cpp
 layout: document
 redirect_from:
-- /verify/test/geometry/Intersection_Circle.test.cpp
-- /verify/test/geometry/Intersection_Circle.test.cpp.html
-title: test/geometry/Intersection_Circle.test.cpp
+- /verify/test/geometry/Common_Area_Circles.test.cpp
+- /verify/test/geometry/Common_Area_Circles.test.cpp.html
+title: test/geometry/Common_Area_Circles.test.cpp
 ---

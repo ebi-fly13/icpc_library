@@ -145,6 +145,9 @@ data:
     path: test/geometry/Circumscribed_Circle_of_Triangle.test.cpp
     title: test/geometry/Circumscribed_Circle_of_Triangle.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/geometry/Common_Area_Circles.test.cpp
+    title: test/geometry/Common_Area_Circles.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/geometry/Convex_Hull.test.cpp
     title: test/geometry/Convex_Hull.test.cpp
   - icon: ':heavy_check_mark:'
@@ -280,6 +283,7 @@ data:
   - test/math/two_sat.test.cpp
   - test/geometry/Counter_Clockwise.test.cpp
   - test/geometry/Reflection.test.cpp
+  - test/geometry/Common_Area_Circles.test.cpp
   - test/geometry/Cross_Points_of_Circle_and_Line.test.cpp
   - test/geometry/Intersection.test.cpp
   - test/geometry/Cross_Points_of_Circles.test.cpp

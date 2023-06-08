@@ -36,27 +36,27 @@ data:
     \ <typename T> bool chmax(T &a, const T &b) {\n    if (a >= b) return false;\n\
     \    a = b;\n    return true;\n}\n\nnamespace lib {\n\nusing namespace std;\n\n\
     }  // namespace lib\n\n// using namespace lib;\n#line 4 \"geometry/base_ld.hpp\"\
-    \n\nnamespace lib {\n\nusing vec = complex<ld>;\n\nvoid ldout(int len = 20) {\n\
-    \    cout << fixed << setprecision(len);\n}\n\nint sgn(ld a, const ld eps = 1e-7)\
-    \ {\n    return (a < -eps) ? -1 : (a > eps) ? 1 : 0;\n}\n\nbool same_vec(vec a,\
-    \ vec b) {\n    a -= b;\n    return sgn(a.real()) == 0 && sgn(a.imag()) == 0;\n\
-    }\n\nld dot(const vec &a, const vec &b) {\n    return (conj(a) * b).real();\n\
-    }\n\nld cross(const vec &a, const vec &b) {\n    return (conj(a) * b).imag();\n\
-    }\n\nint isp(const vec &a, const vec &b, const vec &c) {\n    int cross_sgn =\
-    \ sgn(cross(b - a, c - a));\n    if (cross_sgn == 0) {\n        if (sgn(dot(b\
-    \ - a, c - a)) < 0) return -2;\n        if (sgn(dot(a - b, c - b)) < 0) return\
-    \ 2;\n    }\n    return cross_sgn;\n}\n\nvec rot90(const vec &a) {\n    return\
-    \ {-a.imag(), a.real()};\n}\n\nvec rot(const vec &a, ld rad) {\n    return a *\
-    \ vec(cosl(rad), sinl(rad));\n}\n\nbool comp_for_argument_sort(const vec &lhs,\
-    \ const vec &rhs) {\n    // if (abs(arg(lhs)-arg(rhs)) < eps) return false; //\
-    \ need ?\n    return arg(lhs) < arg(rhs);\n}\n\n}  // namespace lib\n#line 2 \"\
-    geometry/line.hpp\"\n\n#line 4 \"geometry/line.hpp\"\n\nnamespace lib {\n\nstruct\
-    \ line {\n    vec a, b;\n};\n\nvec proj(const line &l, const vec &p) {\n    vec\
-    \ ab = l.b - l.a;\n    return l.a + ab * (dot(ab, p - l.a) / norm(ab));\n}\n\n\
-    vec refl(const line &l, const vec &p) {\n    return proj(l, p) * ld(2) - p;\n\
-    }\n\nint intersection(const line &a, const line &b) {\n    if (sgn(cross(a.b -\
-    \ a.a, b.a - b.b)) != 0) {\n        if (sgn(dot(a.b - a.a, b.a - b.b)) == 0) {\n\
-    \            return 1;\n        }\n        return 0;\n    } else if (sgn(cross(a.b\
+    \n\nnamespace lib {\n\nusing vec = complex<ld>;\n\nconst ld PI = acos(-1);\n\n\
+    void ldout(int len = 20) {\n    cout << fixed << setprecision(len);\n}\n\nint\
+    \ sgn(ld a, const ld eps = 1e-7) {\n    return (a < -eps) ? -1 : (a > eps) ? 1\
+    \ : 0;\n}\n\nbool same_vec(vec a, vec b) {\n    a -= b;\n    return sgn(a.real())\
+    \ == 0 && sgn(a.imag()) == 0;\n}\n\nld dot(const vec &a, const vec &b) {\n   \
+    \ return (conj(a) * b).real();\n}\n\nld cross(const vec &a, const vec &b) {\n\
+    \    return (conj(a) * b).imag();\n}\n\nint isp(const vec &a, const vec &b, const\
+    \ vec &c) {\n    int cross_sgn = sgn(cross(b - a, c - a));\n    if (cross_sgn\
+    \ == 0) {\n        if (sgn(dot(b - a, c - a)) < 0) return -2;\n        if (sgn(dot(a\
+    \ - b, c - b)) < 0) return 2;\n    }\n    return cross_sgn;\n}\n\nvec rot90(const\
+    \ vec &a) {\n    return {-a.imag(), a.real()};\n}\n\nvec rot(const vec &a, ld\
+    \ rad) {\n    return a * vec(cosl(rad), sinl(rad));\n}\n\nbool comp_for_argument_sort(const\
+    \ vec &lhs, const vec &rhs) {\n    // if (abs(arg(lhs)-arg(rhs)) < eps) return\
+    \ false; // need ?\n    return arg(lhs) < arg(rhs);\n}\n\n}  // namespace lib\n\
+    #line 2 \"geometry/line.hpp\"\n\n#line 4 \"geometry/line.hpp\"\n\nnamespace lib\
+    \ {\n\nstruct line {\n    vec a, b;\n};\n\nvec proj(const line &l, const vec &p)\
+    \ {\n    vec ab = l.b - l.a;\n    return l.a + ab * (dot(ab, p - l.a) / norm(ab));\n\
+    }\n\nvec refl(const line &l, const vec &p) {\n    return proj(l, p) * ld(2) -\
+    \ p;\n}\n\nint intersection(const line &a, const line &b) {\n    if (sgn(cross(a.b\
+    \ - a.a, b.a - b.b)) != 0) {\n        if (sgn(dot(a.b - a.a, b.a - b.b)) == 0)\
+    \ {\n            return 1;\n        }\n        return 0;\n    } else if (sgn(cross(a.b\
     \ - a.a, b.a - a.a)) != 0) {\n        return 2;\n    } else {\n        return\
     \ 3;\n    }\n}\n\nld dist(const line &a, const vec &p) {\n    return abs(cross(p\
     \ - a.a, a.b - a.a) / abs(a.b - a.a));\n}\n\nvec cross_point(const line &a, const\
@@ -93,19 +93,30 @@ data:
     \    if (cnt_tangent == 1 || cnt_tangent == 3)\r\n        ps.emplace_back(p);\r\
     \n    else {\r\n        v *= sqrt(max(c1.r * c1.r - x * x, ld(0))) / abs(v);\r\
     \n        ps.emplace_back(p + v);\r\n        ps.emplace_back(p - v);\r\n    }\r\
-    \n    return ps;\r\n}\r\n\r\n}  // namespace lib\r\n#line 6 \"test/geometry/Cross_Points_of_Circles.test.cpp\"\
-    \n\r\nusing namespace lib;\r\n\r\nint main() {\r\n    std::cout << std::fixed\
-    \ << std::setprecision(15);\r\n    auto input = [](vec &p) {\r\n        ld x,\
-    \ y;\r\n        std::cin >> x >> y;\r\n        p = {x, y};\r\n    };\r\n    circle\
-    \ c1, c2;\r\n    {\r\n        vec p;\r\n        ld r;\r\n        input(p);\r\n\
-    \        std::cin >> r;\r\n        c1 = {p, r};\r\n    }\r\n    {\r\n        vec\
-    \ p;\r\n        ld r;\r\n        input(p);\r\n        std::cin >> r;\r\n     \
-    \   c2 = {p, r};\r\n    }\r\n    auto ps = cross_point(c1, c2);\r\n    if (ps.size()\
-    \ == 1) ps.emplace_back(ps.back());\r\n    std::sort(all(ps), [](auto lhs, auto\
-    \ rhs) {\r\n        return lhs.real() == rhs.real() ? lhs.imag() < rhs.imag()\r\
-    \n                                        : lhs.real() < rhs.real();\r\n    });\r\
-    \n    for (auto p : ps) {\r\n        std::cout << p.real() << \" \" << p.imag()\
-    \ << \" \";\r\n    }\r\n    std::cout << '\\n';\r\n}\n"
+    \n    return ps;\r\n}\r\n\r\nld common_area(const circle &c1, const circle &c2)\
+    \ {\r\n    int flag = intersection(c1, c2);\r\n    if (flag == 3 || flag == 4)\r\
+    \n        return 0.0;\r\n    else if (flag == 0 || flag == 1 || flag == 5) {\r\
+    \n        ld r = std::min(c1.r, c2.r);\r\n        return PI * r * r;\r\n    }\
+    \ else {\r\n        ld d = abs(c1.c - c2.c);\r\n        ld theta1 = c1.r * c1.r\
+    \ + d * d - c2.r * c2.r;\r\n        theta1 /= 2.0 * c1.r * d;\r\n        theta1\
+    \ = acos(theta1);\r\n        ld area1 = c1.r * c1.r * theta1 - c1.r * c1.r * sin(theta1\
+    \ * 2) / 2.0;\r\n        ld theta2 = c2.r * c2.r + d * d - c1.r * c1.r;\r\n  \
+    \      theta2 /= 2.0 * c2.r * d;\r\n        theta2 = acos(theta2);\r\n       \
+    \ ld area2 = c2.r * c2.r * theta2 - c2.r * c2.r * sin(theta2 * 2) / 2.0;\r\n \
+    \       return area1 + area2;\r\n    }\r\n}\r\n\r\n}  // namespace lib\r\n#line\
+    \ 6 \"test/geometry/Cross_Points_of_Circles.test.cpp\"\n\r\nusing namespace lib;\r\
+    \n\r\nint main() {\r\n    std::cout << std::fixed << std::setprecision(15);\r\n\
+    \    auto input = [](vec &p) {\r\n        ld x, y;\r\n        std::cin >> x >>\
+    \ y;\r\n        p = {x, y};\r\n    };\r\n    circle c1, c2;\r\n    {\r\n     \
+    \   vec p;\r\n        ld r;\r\n        input(p);\r\n        std::cin >> r;\r\n\
+    \        c1 = {p, r};\r\n    }\r\n    {\r\n        vec p;\r\n        ld r;\r\n\
+    \        input(p);\r\n        std::cin >> r;\r\n        c2 = {p, r};\r\n    }\r\
+    \n    auto ps = cross_point(c1, c2);\r\n    if (ps.size() == 1) ps.emplace_back(ps.back());\r\
+    \n    std::sort(all(ps), [](auto lhs, auto rhs) {\r\n        return lhs.real()\
+    \ == rhs.real() ? lhs.imag() < rhs.imag()\r\n                                \
+    \        : lhs.real() < rhs.real();\r\n    });\r\n    for (auto p : ps) {\r\n\
+    \        std::cout << p.real() << \" \" << p.imag() << \" \";\r\n    }\r\n   \
+    \ std::cout << '\\n';\r\n}\n"
   code: "#define PROBLEM \\\r\n    \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/7/CGL_7_E\"\
     \r\n#define ERROR 0.0000001\r\n\r\n#include \"../../geometry/circle.hpp\"\r\n\r\
     \nusing namespace lib;\r\n\r\nint main() {\r\n    std::cout << std::fixed << std::setprecision(15);\r\
@@ -128,7 +139,7 @@ data:
   isVerificationFile: true
   path: test/geometry/Cross_Points_of_Circles.test.cpp
   requiredBy: []
-  timestamp: '2023-06-02 14:04:01+09:00'
+  timestamp: '2023-06-08 15:34:10+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/geometry/Cross_Points_of_Circles.test.cpp
