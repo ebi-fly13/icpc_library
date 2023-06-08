@@ -6,6 +6,8 @@ namespace lib {
 
 using vec = complex<ld>;
 
+const ld PI = acos(-1);
+
 void ldout(int len = 20) {
     cout << fixed << setprecision(len);
 }

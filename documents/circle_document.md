@@ -34,3 +34,7 @@ depends on line.hpp (cross_point)
 ### cross_point(cirle c1, circle c2)
 
 円 $c1$と $c2$ の交点をvectorに格納して返す。
+
+### common_area(circle c1, circle c2)
+
+円 $c1$ と $c2$ の共通部分の面積を返す。
