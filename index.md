@@ -101,6 +101,9 @@ data:
   - name: misc
     pages:
     - icon: ':heavy_check_mark:'
+      path: misc/factorial.hpp
+      title: misc/factorial.hpp
+    - icon: ':heavy_check_mark:'
       path: misc/mo_algorithm.hpp
       title: misc/mo_algorithm.hpp
   - name: string
@@ -132,6 +135,9 @@ data:
       title: Rerooting DP
   - name: utility
     pages:
+    - icon: ':heavy_check_mark:'
+      path: utility/dynamic_modint.hpp
+      title: utility/dynamic_modint.hpp
     - icon: ':heavy_check_mark:'
       path: utility/modint.hpp
       title: modint
@@ -239,6 +245,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/math/two_sat.test.cpp
       title: test/math/two_sat.test.cpp
+  - name: test/misc
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/misc/Binomial_Coefficient.test.cpp
+      title: test/misc/Binomial_Coefficient.test.cpp
   - name: test/string
     pages:
     - icon: ':heavy_check_mark:'

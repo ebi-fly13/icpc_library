@@ -81,6 +81,9 @@ data:
     path: math/two_sat.hpp
     title: Two SAT
   - icon: ':heavy_check_mark:'
+    path: misc/factorial.hpp
+    title: misc/factorial.hpp
+  - icon: ':heavy_check_mark:'
     path: misc/mo_algorithm.hpp
     title: misc/mo_algorithm.hpp
   - icon: ':heavy_check_mark:'
@@ -101,6 +104,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: tree/RerootingDP.hpp
     title: Rerooting DP
+  - icon: ':heavy_check_mark:'
+    path: utility/dynamic_modint.hpp
+    title: utility/dynamic_modint.hpp
   - icon: ':heavy_check_mark:'
     path: utility/modint.hpp
     title: modint
@@ -199,6 +205,9 @@ data:
     path: test/math/two_sat.test.cpp
     title: test/math/two_sat.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/misc/Binomial_Coefficient.test.cpp
+    title: test/misc/Binomial_Coefficient.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/string/aoj_2444.test.cpp
     title: test/string/aoj_2444.test.cpp
   - icon: ':heavy_check_mark:'
@@ -240,11 +249,13 @@ data:
   path: template/template.hpp
   requiredBy:
   - misc/mo_algorithm.hpp
+  - misc/factorial.hpp
   - convolution/ntt.hpp
   - math/gauss_jordan.hpp
   - math/two_sat.hpp
   - math/eratosthenes_sieve.hpp
   - template/parsing_template.hpp
+  - utility/dynamic_modint.hpp
   - utility/rational.hpp
   - utility/modint.hpp
   - geometry3D/ld/base_ld.hpp
@@ -277,6 +288,7 @@ data:
   timestamp: '2023-05-17 22:41:14+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/misc/Binomial_Coefficient.test.cpp
   - test/convolution/Convolution_mod.test.cpp
   - test/math/enumerate_primes.test.cpp
   - test/math/aoj_3205.test.cpp
