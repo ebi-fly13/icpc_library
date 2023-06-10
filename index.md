@@ -93,6 +93,9 @@ data:
       path: math/eratosthenes_sieve.hpp
       title: eratosthenes sieve
     - icon: ':warning:'
+      path: math/ext_gcd.hpp
+      title: math/ext_gcd.hpp
+    - icon: ':warning:'
       path: math/gauss_jordan.hpp
       title: gauss_jordan
     - icon: ':heavy_check_mark:'

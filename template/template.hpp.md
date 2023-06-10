@@ -75,6 +75,9 @@ data:
     path: math/eratosthenes_sieve.hpp
     title: eratosthenes sieve
   - icon: ':warning:'
+    path: math/ext_gcd.hpp
+    title: math/ext_gcd.hpp
+  - icon: ':warning:'
     path: math/gauss_jordan.hpp
     title: gauss_jordan
   - icon: ':heavy_check_mark:'
@@ -254,6 +257,7 @@ data:
   - math/gauss_jordan.hpp
   - math/two_sat.hpp
   - math/eratosthenes_sieve.hpp
+  - math/ext_gcd.hpp
   - template/parsing_template.hpp
   - utility/dynamic_modint.hpp
   - utility/rational.hpp
