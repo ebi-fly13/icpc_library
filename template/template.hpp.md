@@ -64,7 +64,7 @@ data:
     title: FordFulkerson
   - icon: ':heavy_check_mark:'
     path: graph/mcf_graph.hpp
-    title: graph/mcf_graph.hpp
+    title: min cost flow
   - icon: ':heavy_check_mark:'
     path: graph/mf_graph.hpp
     title: max flow
