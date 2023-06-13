@@ -62,7 +62,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/fordfulkerson.hpp
     title: FordFulkerson
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: graph/mcf_graph.hpp
     title: graph/mcf_graph.hpp
   - icon: ':heavy_check_mark:'
@@ -199,6 +199,9 @@ data:
     path: test/graph/Maximum_Flow.test.cpp
     title: test/graph/Maximum_Flow.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/graph/Minimum_Flow.test.cpp
+    title: test/graph/Minimum_Flow.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/math/aoj_3205.test.cpp
     title: test/math/aoj_3205.test.cpp
   - icon: ':heavy_check_mark:'
@@ -315,6 +318,7 @@ data:
   - test/tree/Lowest_Common_Ancestor.test.cpp
   - test/tree/Tree_Path_Composite_Sum.test.cpp
   - test/tree/RerootingDP.test.cpp
+  - test/graph/Minimum_Flow.test.cpp
   - test/graph/Maximum_Flow.test.cpp
   - test/string/z_algorithm.test.cpp
   - test/string/aoj_2444.test.cpp

@@ -78,7 +78,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/fordfulkerson.hpp
       title: FordFulkerson
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/mcf_graph.hpp
       title: graph/mcf_graph.hpp
     - icon: ':heavy_check_mark:'
@@ -237,6 +237,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/graph/Maximum_Flow.test.cpp
       title: test/graph/Maximum_Flow.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/graph/Minimum_Flow.test.cpp
+      title: test/graph/Minimum_Flow.test.cpp
   - name: test/math
     pages:
     - icon: ':heavy_check_mark:'
