@@ -1,5 +1,5 @@
 ---
-title: テンプレート
+title: デバッグテンプレート
 documentation_of: //template/debug_template.hpp
 ---
 
