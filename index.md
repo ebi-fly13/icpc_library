@@ -120,6 +120,9 @@ data:
   - name: template
     pages:
     - icon: ':warning:'
+      path: template/debug_template.hpp
+      title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
+    - icon: ':warning:'
       path: template/parsing_template.hpp
       title: "\u69CB\u6587\u89E3\u6790\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
     - icon: ':heavy_check_mark:'
