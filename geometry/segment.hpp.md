@@ -108,9 +108,9 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/geometry/Intersection.test.cpp
-  - test/geometry/Distance.test.cpp
   - test/geometry/Cross_Point.test.cpp
   - test/geometry/Convex_Hull.test.cpp
+  - test/geometry/Distance.test.cpp
 documentation_of: geometry/segment.hpp
 layout: document
 title: segment

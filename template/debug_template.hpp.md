@@ -43,7 +43,7 @@ data:
   verifiedWith: []
 documentation_of: template/debug_template.hpp
 layout: document
-title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
+title: "\u30C7\u30D0\u30C3\u30B0\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
 ---
 
 ## 説明
