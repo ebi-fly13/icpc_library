@@ -5,8 +5,6 @@
 #include"../../data_structure/segtree.hpp"
 #include"../../tree/LowestCommonAncestor.hpp"
 
-#include"../../template/debug_template.hpp"
-
 using namespace lib;
 
 using P = pair<int,int>;
