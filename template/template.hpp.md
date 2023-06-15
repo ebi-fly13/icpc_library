@@ -95,7 +95,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: string/z_algorithm.hpp
     title: Z Algorithm
-  - icon: ':heavy_check_mark:'
+  - icon: ':warning:'
     path: template/debug_template.hpp
     title: "\u30C7\u30D0\u30C3\u30B0\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   - icon: ':warning:'

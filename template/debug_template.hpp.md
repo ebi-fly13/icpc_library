@@ -5,13 +5,10 @@ data:
     path: template/template.hpp
     title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/data_structure/pck2022y11.test.cpp
-    title: test/data_structure/pck2022y11.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/debug_template.hpp\"\n\n#line 2 \"template/template.hpp\"\
@@ -42,9 +39,8 @@ data:
   path: template/debug_template.hpp
   requiredBy: []
   timestamp: '2023-06-14 12:39:48+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - test/data_structure/pck2022y11.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: template/debug_template.hpp
 layout: document
 title: "\u30C7\u30D0\u30C3\u30B0\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
