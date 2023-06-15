@@ -95,7 +95,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: string/z_algorithm.hpp
     title: Z Algorithm
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: template/debug_template.hpp
     title: "\u30C7\u30D0\u30C3\u30B0\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   - icon: ':warning:'
@@ -153,6 +153,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/data_structure/aoj_1645.test.cpp
     title: test/data_structure/aoj_1645.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/data_structure/pck2022y11.test.cpp
+    title: test/data_structure/pck2022y11.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/geometry/Circumscribed_Circle_of_Triangle.test.cpp
     title: test/geometry/Circumscribed_Circle_of_Triangle.test.cpp
@@ -327,6 +330,7 @@ data:
   - test/data_structure/Set_Xor_Min.test.cpp
   - test/data_structure/aoj_1645.test.cpp
   - test/data_structure/Point_Add_Range_Sum_Fenwick.test.cpp
+  - test/data_structure/pck2022y11.test.cpp
   - test/data_structure/Unionfind.test.cpp
   - test/data_structure/Point_Add_Range_Sum.test.cpp
   - test/data_structure/Static_Range_Inversions_Query.test.cpp

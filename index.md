@@ -119,7 +119,7 @@ data:
       title: Z Algorithm
   - name: template
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: template/debug_template.hpp
       title: "\u30C7\u30D0\u30C3\u30B0\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
     - icon: ':warning:'
@@ -188,6 +188,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data_structure/aoj_1645.test.cpp
       title: test/data_structure/aoj_1645.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data_structure/pck2022y11.test.cpp
+      title: test/data_structure/pck2022y11.test.cpp
   - name: test/geometry
     pages:
     - icon: ':heavy_check_mark:'
