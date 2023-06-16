@@ -34,6 +34,7 @@
 "test/misc/Binomial_Coefficient.test.cpp": "2023-06-10 00:47:04 +0900",
 "test/string/aoj_2444.test.cpp": "2023-05-17 22:41:14 +0900",
 "test/string/z_algorithm.test.cpp": "2023-06-06 22:09:16 +0900",
+"test/template/debug_template.test.cpp": "2023-06-17 00:35:43 +0900",
 "test/tree/Lowest_Common_Ancestor.test.cpp": "2023-05-17 22:41:14 +0900",
 "test/tree/RerootingDP.test.cpp": "2023-05-17 22:41:14 +0900",
 "test/tree/Tree_Path_Composite_Sum.test.cpp": "2023-05-17 22:41:14 +0900"
