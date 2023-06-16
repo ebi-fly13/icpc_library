@@ -119,7 +119,7 @@ data:
       title: Z Algorithm
   - name: template
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: template/debug_template.hpp
       title: "\u30C7\u30D0\u30C3\u30B0\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
     - icon: ':warning:'
@@ -270,6 +270,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/string/z_algorithm.test.cpp
       title: test/string/z_algorithm.test.cpp
+  - name: test/template
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/template/debug_template.test.cpp
+      title: test/template/debug_template.test.cpp
   - name: test/tree
     pages:
     - icon: ':heavy_check_mark:'

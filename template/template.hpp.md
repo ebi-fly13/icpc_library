@@ -95,7 +95,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: string/z_algorithm.hpp
     title: Z Algorithm
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: template/debug_template.hpp
     title: "\u30C7\u30D0\u30C3\u30B0\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   - icon: ':warning:'
@@ -226,6 +226,9 @@ data:
     path: test/string/z_algorithm.test.cpp
     title: test/string/z_algorithm.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/template/debug_template.test.cpp
+    title: test/template/debug_template.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/tree/Lowest_Common_Ancestor.test.cpp
     title: test/tree/Lowest_Common_Ancestor.test.cpp
   - icon: ':heavy_check_mark:'
@@ -304,6 +307,7 @@ data:
   verifiedWith:
   - test/string/z_algorithm.test.cpp
   - test/string/aoj_2444.test.cpp
+  - test/template/debug_template.test.cpp
   - test/math/enumerate_primes.test.cpp
   - test/math/two_sat.test.cpp
   - test/math/aoj_3205.test.cpp
