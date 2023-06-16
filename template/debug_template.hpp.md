@@ -25,20 +25,29 @@ data:
     \ [\" << #__VA_ARGS__ << \"]:\", \\\n        debug_out(__VA_ARGS__)\n\nvoid debug_out()\
     \ {\n    std::cerr << std::endl;\n}\n\ntemplate <typename Head, typename... Tail>\
     \ void debug_out(Head h, Tail... t) {\n    std::cerr << \" \" << h;\n    if (sizeof...(t)\
-    \ > 0) std::cerr << \" :\";\n    debug_out(t...);\n}\n"
+    \ > 0) std::cerr << \",\";\n    debug_out(t...);\n}\n\ntemplate <typename T1,\
+    \ typename T2>\nstd::ostream &operator<<(std::ostream &os, const std::pair<T1,\
+    \ T2> &pa) {\n    return os << pa.first << \" \" << pa.second;\n}\n\ntemplate\
+    \ <typename T>\nstd::ostream &operator<<(std::ostream &os, const std::vector<T>\
+    \ &vec) {\n    for (std::size_t i = 0; i < vec.size(); i++)\n        os << vec[i]\
+    \ << (i + 1 == vec.size() ? \"\" : \" \");\n    return os;\n}\n"
   code: "#pragma once\n\n#include \"../template/template.hpp\"\n\n#define debug(...)\
     \                                                     \\\n    std::cerr << \"\
     LINE: \" << __LINE__ << \" [\" << #__VA_ARGS__ << \"]:\", \\\n        debug_out(__VA_ARGS__)\n\
     \nvoid debug_out() {\n    std::cerr << std::endl;\n}\n\ntemplate <typename Head,\
     \ typename... Tail> void debug_out(Head h, Tail... t) {\n    std::cerr << \" \"\
-    \ << h;\n    if (sizeof...(t) > 0) std::cerr << \" :\";\n    debug_out(t...);\n\
-    }"
+    \ << h;\n    if (sizeof...(t) > 0) std::cerr << \",\";\n    debug_out(t...);\n\
+    }\n\ntemplate <typename T1, typename T2>\nstd::ostream &operator<<(std::ostream\
+    \ &os, const std::pair<T1, T2> &pa) {\n    return os << pa.first << \" \" << pa.second;\n\
+    }\n\ntemplate <typename T>\nstd::ostream &operator<<(std::ostream &os, const std::vector<T>\
+    \ &vec) {\n    for (std::size_t i = 0; i < vec.size(); i++)\n        os << vec[i]\
+    \ << (i + 1 == vec.size() ? \"\" : \" \");\n    return os;\n}"
   dependsOn:
   - template/template.hpp
   isVerificationFile: false
   path: template/debug_template.hpp
   requiredBy: []
-  timestamp: '2023-06-14 12:39:48+09:00'
+  timestamp: '2023-06-16 21:22:49+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: template/debug_template.hpp
