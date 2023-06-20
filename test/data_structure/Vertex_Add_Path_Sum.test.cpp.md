@@ -48,21 +48,21 @@ data:
     \ op(data[--r], smr);\n            l >>= 1;\n            r >>= 1;\n        }\n\
     \        return op(sml, smr);\n    }\n\n    S all_prod() {\n        return data[1];\n\
     \    }\n\n    template <class F> int max_right(int l, F f) {\n        assert(0\
-    \ <= l && l < n);\n        assert(f(e()));\n        if (l == n) return n;\n  \
-    \      l += sz;\n        S sm = e();\n        do {\n            while (l % 2 ==\
-    \ 0) l >>= 1;\n            if (!f(op(sm, data[l]))) {\n                while (l\
-    \ < sz) {\n                    l = 2 * l;\n                    if (f(op(sm, data[l])))\
-    \ {\n                        sm = op(sm, data[l]);\n                        l++;\n\
-    \                    }\n                }\n                return l - sz;\n  \
-    \          }\n            sm = op(sm, data[l]);\n            l++;\n        } while\
-    \ ((l & -l) != l);\n        return n;\n    }\n\n    template <class F> int min_left(int\
-    \ r, F f) {\n        assert(0 <= r && r <= n);\n        assert(f(e()));\n    \
-    \    if (r == 0) return 0;\n        r += sz;\n        S sm = e();\n        do\
-    \ {\n            r--;\n            while (r > 1 && (r % 2)) r >>= 1;\n       \
-    \     if (!f(op(data[r], sm))) {\n                while (r < sz) {\n         \
-    \           r = 2 * r + 1;\n                    if (f(op(data[r], sm))) {\n  \
-    \                      sm = op(data[r], sm);\n                        r--;\n \
-    \                   }\n                }\n                return r + 1 - sz;\n\
+    \ <= l && l <= n);\n        assert(f(e()));\n        if (l == n) return n;\n \
+    \       l += sz;\n        S sm = e();\n        do {\n            while (l % 2\
+    \ == 0) l >>= 1;\n            if (!f(op(sm, data[l]))) {\n                while\
+    \ (l < sz) {\n                    l = 2 * l;\n                    if (f(op(sm,\
+    \ data[l]))) {\n                        sm = op(sm, data[l]);\n              \
+    \          l++;\n                    }\n                }\n                return\
+    \ l - sz;\n            }\n            sm = op(sm, data[l]);\n            l++;\n\
+    \        } while ((l & -l) != l);\n        return n;\n    }\n\n    template <class\
+    \ F> int min_left(int r, F f) {\n        assert(0 <= r && r <= n);\n        assert(f(e()));\n\
+    \        if (r == 0) return 0;\n        r += sz;\n        S sm = e();\n      \
+    \  do {\n            r--;\n            while (r > 1 && (r % 2)) r >>= 1;\n   \
+    \         if (!f(op(data[r], sm))) {\n                while (r < sz) {\n     \
+    \               r = 2 * r + 1;\n                    if (f(op(data[r], sm))) {\n\
+    \                        sm = op(data[r], sm);\n                        r--;\n\
+    \                    }\n                }\n                return r + 1 - sz;\n\
     \            }\n            sm = op(data[r], sm);\n        } while ((r & -r) !=\
     \ r);\n        return 0;\n    }\n};\n\n}  // namespace lib\n#line 2 \"tree/HeavyLightDecomposition.hpp\"\
     \n\n#line 4 \"tree/HeavyLightDecomposition.hpp\"\n\nnamespace lib {\n\nusing namespace\
@@ -143,7 +143,7 @@ data:
   isVerificationFile: true
   path: test/data_structure/Vertex_Add_Path_Sum.test.cpp
   requiredBy: []
-  timestamp: '2023-05-17 22:41:14+09:00'
+  timestamp: '2023-06-20 22:32:45+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data_structure/Vertex_Add_Path_Sum.test.cpp

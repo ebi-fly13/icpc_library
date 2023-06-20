@@ -49,9 +49,9 @@ data:
     \          if (r & 1) smr = op(data[--r], smr);\n            l >>= 1;\n      \
     \      r >>= 1;\n        }\n        return op(sml, smr);\n    }\n\n    S all_prod()\
     \ {\n        return data[1];\n    }\n\n    template <class F> int max_right(int\
-    \ l, F f) {\n        assert(0 <= l && l < n);\n        assert(f(e()));\n     \
-    \   if (l == n) return n;\n        l += sz;\n        S sm = e();\n        do {\n\
-    \            while (l % 2 == 0) l >>= 1;\n            if (!f(op(sm, data[l])))\
+    \ l, F f) {\n        assert(0 <= l && l <= n);\n        assert(f(e()));\n    \
+    \    if (l == n) return n;\n        l += sz;\n        S sm = e();\n        do\
+    \ {\n            while (l % 2 == 0) l >>= 1;\n            if (!f(op(sm, data[l])))\
     \ {\n                while (l < sz) {\n                    l = 2 * l;\n      \
     \              if (f(op(sm, data[l]))) {\n                        sm = op(sm,\
     \ data[l]);\n                        l++;\n                    }\n           \
@@ -84,7 +84,7 @@ data:
     \ data[l++]);\n            if (r & 1) smr = op(data[--r], smr);\n            l\
     \ >>= 1;\n            r >>= 1;\n        }\n        return op(sml, smr);\n    }\n\
     \n    S all_prod() {\n        return data[1];\n    }\n\n    template <class F>\
-    \ int max_right(int l, F f) {\n        assert(0 <= l && l < n);\n        assert(f(e()));\n\
+    \ int max_right(int l, F f) {\n        assert(0 <= l && l <= n);\n        assert(f(e()));\n\
     \        if (l == n) return n;\n        l += sz;\n        S sm = e();\n      \
     \  do {\n            while (l % 2 == 0) l >>= 1;\n            if (!f(op(sm, data[l])))\
     \ {\n                while (l < sz) {\n                    l = 2 * l;\n      \
@@ -107,7 +107,7 @@ data:
   isVerificationFile: false
   path: data_structure/segtree.hpp
   requiredBy: []
-  timestamp: '2023-05-17 22:41:14+09:00'
+  timestamp: '2023-06-20 22:32:45+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/data_structure/pck2022y11.test.cpp
