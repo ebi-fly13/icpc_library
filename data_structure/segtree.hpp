@@ -61,7 +61,7 @@ template <class S, S (*op)(S, S), S (*e)()> struct segtree {
     }
 
     template <class F> int max_right(int l, F f) {
-        assert(0 <= l && l < n);
+        assert(0 <= l && l <= n);
         assert(f(e()));
         if (l == n) return n;
         l += sz;
