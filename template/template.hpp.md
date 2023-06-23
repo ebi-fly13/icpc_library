@@ -360,3 +360,7 @@ title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
 ## 説明
 
 ICPCで用いるテンプレート。コンテスト開始時にこれを書く。
+
+- スタック領域拡張: ```ulimit -s unlimited```
+- 実行: ```g++ -std=c++17 -Wall -Wextra -Wshadow -Ofast -march=native -Wl,-stack_size,500000000```
+- デバッグ: ```g++ -std=c++17 -Wall -Wextra -Wshadow -Wconversion -g -fsanitize=undefined,address```
