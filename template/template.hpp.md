@@ -84,6 +84,9 @@ data:
     path: math/two_sat.hpp
     title: Two SAT
   - icon: ':heavy_check_mark:'
+    path: misc/dice.hpp
+    title: "\u30B5\u30A4\u30B3\u30ED\u30E9\u30A4\u30D6\u30E9\u30EA"
+  - icon: ':heavy_check_mark:'
     path: misc/factorial.hpp
     title: misc/factorial.hpp
   - icon: ':heavy_check_mark:'
@@ -220,6 +223,9 @@ data:
     path: test/misc/Binomial_Coefficient.test.cpp
     title: test/misc/Binomial_Coefficient.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/misc/aoj_1197.test.cpp
+    title: test/misc/aoj_1197.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/string/aoj_2444.test.cpp
     title: test/string/aoj_2444.test.cpp
   - icon: ':heavy_check_mark:'
@@ -286,6 +292,7 @@ data:
   - data_structure/BinaryTrie.hpp
   - data_structure/segtree.hpp
   - misc/mo_algorithm.hpp
+  - misc/dice.hpp
   - misc/factorial.hpp
   - graph/scc_graph.hpp
   - graph/mcf_graph.hpp
@@ -339,6 +346,7 @@ data:
   - test/data_structure/Point_Add_Range_Sum_Fenwick.test.cpp
   - test/data_structure/Vertex_Add_Path_Sum.test.cpp
   - test/misc/Binomial_Coefficient.test.cpp
+  - test/misc/aoj_1197.test.cpp
   - test/graph/Minimum_Flow.test.cpp
   - test/graph/Maximum_Flow.test.cpp
   - test/tree/Lowest_Common_Ancestor.test.cpp

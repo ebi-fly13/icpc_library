@@ -104,6 +104,9 @@ data:
   - name: misc
     pages:
     - icon: ':heavy_check_mark:'
+      path: misc/dice.hpp
+      title: "\u30B5\u30A4\u30B3\u30ED\u30E9\u30A4\u30D6\u30E9\u30EA"
+    - icon: ':heavy_check_mark:'
       path: misc/factorial.hpp
       title: misc/factorial.hpp
     - icon: ':heavy_check_mark:'
@@ -265,6 +268,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/misc/Binomial_Coefficient.test.cpp
       title: test/misc/Binomial_Coefficient.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/misc/aoj_1197.test.cpp
+      title: test/misc/aoj_1197.test.cpp
   - name: test/string
     pages:
     - icon: ':heavy_check_mark:'
