@@ -30,7 +30,7 @@ int main() {
             std::cin >> l >> d >> r >> u;
             r++;
             u++;
-            std::cout << seg2d.prod(l, r, d, u) << '\n';
+            std::cout << seg2d.prod(l, d, r, u) << '\n';
         }
     }
 }
