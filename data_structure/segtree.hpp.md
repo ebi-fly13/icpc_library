@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy: []
@@ -15,12 +15,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/data_structure/Vertex_Add_Path_Sum.test.cpp
     title: test/data_structure/Vertex_Add_Path_Sum.test.cpp
+  - icon: ':x:'
+    path: test/data_structure/aoj_1068.test.cpp
+    title: test/data_structure/aoj_1068.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/data_structure/pck2022y11.test.cpp
     title: test/data_structure/pck2022y11.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"data_structure/segtree.hpp\"\n\n#line 2 \"template/template.hpp\"\
@@ -108,9 +111,10 @@ data:
   path: data_structure/segtree.hpp
   requiredBy: []
   timestamp: '2023-06-20 22:32:45+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/data_structure/pck2022y11.test.cpp
+  - test/data_structure/aoj_1068.test.cpp
   - test/data_structure/Point_Set_Range_Composite.test.cpp
   - test/data_structure/Point_Add_Range_Sum.test.cpp
   - test/data_structure/Vertex_Add_Path_Sum.test.cpp

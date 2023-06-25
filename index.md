@@ -23,9 +23,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: data_structure/lazysegtree.hpp
       title: lazy segtree
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: data_structure/segtree.hpp
       title: segtree
+    - icon: ':x:'
+      path: data_structure/segtree_2d.hpp
+      title: 2D segtree
     - icon: ':heavy_check_mark:'
       path: data_structure/undo_dsu.hpp
       title: undo dsu
@@ -128,7 +131,7 @@ data:
     - icon: ':warning:'
       path: template/parsing_template.hpp
       title: "\u69CB\u6587\u89E3\u6790\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
     - icon: ':warning:'
@@ -191,6 +194,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data_structure/Vertex_Add_Path_Sum.test.cpp
       title: test/data_structure/Vertex_Add_Path_Sum.test.cpp
+    - icon: ':x:'
+      path: test/data_structure/aoj_1068.test.cpp
+      title: test/data_structure/aoj_1068.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/data_structure/aoj_1645.test.cpp
       title: test/data_structure/aoj_1645.test.cpp

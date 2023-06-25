@@ -17,9 +17,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: data_structure/lazysegtree.hpp
     title: lazy segtree
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: data_structure/segtree.hpp
     title: segtree
+  - icon: ':x:'
+    path: data_structure/segtree_2d.hpp
+    title: 2D segtree
   - icon: ':heavy_check_mark:'
     path: data_structure/undo_dsu.hpp
     title: undo dsu
@@ -153,6 +156,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/data_structure/Vertex_Add_Path_Sum.test.cpp
     title: test/data_structure/Vertex_Add_Path_Sum.test.cpp
+  - icon: ':x:'
+    path: test/data_structure/aoj_1068.test.cpp
+    title: test/data_structure/aoj_1068.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/data_structure/aoj_1645.test.cpp
     title: test/data_structure/aoj_1645.test.cpp
@@ -243,9 +249,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/tree/Tree_Path_Composite_Sum.test.cpp
     title: test/tree/Tree_Path_Composite_Sum.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n\n#include <bits/stdc++.h>\n\n\
@@ -290,6 +296,7 @@ data:
   - data_structure/lazysegtree.hpp
   - data_structure/fenwick_tree.hpp
   - data_structure/BinaryTrie.hpp
+  - data_structure/segtree_2d.hpp
   - data_structure/segtree.hpp
   - misc/mo_algorithm.hpp
   - misc/dice.hpp
@@ -310,7 +317,7 @@ data:
   - tree/RerootingDP.hpp
   - tree/HeavyLightDecomposition.hpp
   timestamp: '2023-05-17 22:41:14+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/geometry/Projection.test.cpp
   - test/geometry/Distance.test.cpp
@@ -338,6 +345,7 @@ data:
   - test/data_structure/pck2022y11.test.cpp
   - test/data_structure/Unionfind.test.cpp
   - test/data_structure/Set_Xor_Min.test.cpp
+  - test/data_structure/aoj_1068.test.cpp
   - test/data_structure/Range_Affine_Range_Sum.test.cpp
   - test/data_structure/aoj_1645.test.cpp
   - test/data_structure/Static_Range_Inversions_Query.test.cpp
