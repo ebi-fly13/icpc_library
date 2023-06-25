@@ -27,7 +27,25 @@ data:
     \ S), S (*e)(), class data_structure>\nstruct segtree_2d {\n  private:\n  public:\n\
     \    segtree_2d(int h, int w) : h(h), w(w), sz(1) {\n        while (sz < h) sz\
     \ <<= 1;\n        data = std::vector<data_structure>(2 * sz, data_structure(w));\n\
-    \    }\n\n    void set(int i, int j, S x) {\n        i += sz;\n        data[i].set(j,\
+    \    }\n\n    void set(int i, int j, S x) {\n        assert(0 <= i && i < h &&\
+    \ 0 <= j && j < w);\n        i += sz;\n        data[i].set(j, x);\n        while\
+    \ (i > 1) {\n            i >>= 1;\n            S val = op(data[2 * i].get(j),\
+    \ data[2 * i + 1].get(j));\n            data[i].set(j, val);\n        }\n    }\n\
+    \n    S get(int i, int j) {\n        assert(0 <= i && i < h && 0 <= j && j < w);\n\
+    \        return data[i + sz].get(j);\n    }\n\n    S prod(int l, int d, int r,\
+    \ int u) {\n        assert(0 <= l && l <= r && r <= h);\n        assert(0 <= d\
+    \ && d <= u && u <= w);\n        l += sz;\n        r += sz;\n        S res = e();\n\
+    \        while (l < r) {\n            if (l & 1) res = op(res, data[l++].prod(d,\
+    \ u));\n            if (r & 1) res = op(data[--r].prod(d, u), res);\n        \
+    \    l >>= 1;\n            r >>= 1;\n        }\n        return res;\n    }\n\n\
+    \  private:\n    int h, w;\n    int sz;\n    std::vector<data_structure> data;\n\
+    };\n\n}  // namespace lib\n"
+  code: "#pragma once\n\n#include \"../template/template.hpp\"\n\nnamespace lib {\n\
+    \ntemplate <class S, S (*op)(S, S), S (*e)(), class data_structure>\nstruct segtree_2d\
+    \ {\n  private:\n  public:\n    segtree_2d(int h, int w) : h(h), w(w), sz(1) {\n\
+    \        while (sz < h) sz <<= 1;\n        data = std::vector<data_structure>(2\
+    \ * sz, data_structure(w));\n    }\n\n    void set(int i, int j, S x) {\n    \
+    \    assert(0 <= i && i < h && 0 <= j && j < w);\n        i += sz;\n        data[i].set(j,\
     \ x);\n        while (i > 1) {\n            i >>= 1;\n            S val = op(data[2\
     \ * i].get(j), data[2 * i + 1].get(j));\n            data[i].set(j, val);\n  \
     \      }\n    }\n\n    S get(int i, int j) {\n        assert(0 <= i && i < h &&\
@@ -38,30 +56,13 @@ data:
     \ data[l++].prod(d, u));\n            if (r & 1) res = op(data[--r].prod(d, u),\
     \ res);\n            l >>= 1;\n            r >>= 1;\n        }\n        return\
     \ res;\n    }\n\n  private:\n    int h, w;\n    int sz;\n    std::vector<data_structure>\
-    \ data;\n};\n\n}  // namespace lib\n"
-  code: "#pragma once\n\n#include \"../template/template.hpp\"\n\nnamespace lib {\n\
-    \ntemplate <class S, S (*op)(S, S), S (*e)(), class data_structure>\nstruct segtree_2d\
-    \ {\n  private:\n  public:\n    segtree_2d(int h, int w) : h(h), w(w), sz(1) {\n\
-    \        while (sz < h) sz <<= 1;\n        data = std::vector<data_structure>(2\
-    \ * sz, data_structure(w));\n    }\n\n    void set(int i, int j, S x) {\n    \
-    \    i += sz;\n        data[i].set(j, x);\n        while (i > 1) {\n         \
-    \   i >>= 1;\n            S val = op(data[2 * i].get(j), data[2 * i + 1].get(j));\n\
-    \            data[i].set(j, val);\n        }\n    }\n\n    S get(int i, int j)\
-    \ {\n        assert(0 <= i && i < h && 0 <= j && j < w);\n        return data[i\
-    \ + sz].get(j);\n    }\n\n    S prod(int l, int d, int r, int u) {\n        assert(0\
-    \ <= l && l <= r && r <= h);\n        assert(0 <= d && d <= u && u <= w);\n  \
-    \      l += sz;\n        r += sz;\n        S res = e();\n        while (l < r)\
-    \ {\n            if (l & 1) res = op(res, data[l++].prod(d, u));\n           \
-    \ if (r & 1) res = op(data[--r].prod(d, u), res);\n            l >>= 1;\n    \
-    \        r >>= 1;\n        }\n        return res;\n    }\n\n  private:\n    int\
-    \ h, w;\n    int sz;\n    std::vector<data_structure> data;\n};\n\n}  // namespace\
-    \ lib"
+    \ data;\n};\n\n}  // namespace lib"
   dependsOn:
   - template/template.hpp
   isVerificationFile: false
   path: data_structure/segtree_2d.hpp
   requiredBy: []
-  timestamp: '2023-06-26 01:40:24+09:00'
+  timestamp: '2023-06-26 02:49:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/data_structure/aoj_1068.test.cpp
