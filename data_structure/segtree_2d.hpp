@@ -14,6 +14,7 @@ struct segtree_2d {
     }
 
     void set(int i, int j, S x) {
+        assert(0 <= i && i < h && 0 <= j && j < w);
         i += sz;
         data[i].set(j, x);
         while (i > 1) {
