@@ -20,7 +20,7 @@ int intersection(const circle &c1, const circle &c2) {
     if (r1 < r2) std::swap(r1, r2);
     if (sgn(d - (r1 + r2)) > 0) {
         return 4;
-    } else if (sgn(d - (r1 + r2) == 0)) {
+    } else if (sgn(d - (r1 + r2)) == 0) {
         return 3;
     } else if (sgn(d - r1 + r2) > 0) {
         return 2;
