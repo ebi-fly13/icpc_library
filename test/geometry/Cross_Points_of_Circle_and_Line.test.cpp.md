@@ -68,7 +68,7 @@ data:
     \ 0 &&\r\n        sgn(c1.c.imag() - c2.c.imag()) == 0 && sgn(c1.r - c2.r) == 0)\r\
     \n        return 5;\r\n    ld d = abs(c1.c - c2.c);\r\n    ld r1 = c1.r;\r\n \
     \   ld r2 = c2.r;\r\n    if (r1 < r2) std::swap(r1, r2);\r\n    if (sgn(d - (r1\
-    \ + r2)) > 0) {\r\n        return 4;\r\n    } else if (sgn(d - (r1 + r2) == 0))\
+    \ + r2)) > 0) {\r\n        return 4;\r\n    } else if (sgn(d - (r1 + r2)) == 0)\
     \ {\r\n        return 3;\r\n    } else if (sgn(d - r1 + r2) > 0) {\r\n       \
     \ return 2;\r\n    } else if (sgn(d - r1 + r2) == 0) {\r\n        return 1;\r\n\
     \    } else\r\n        return 0;\r\n}\r\n\r\ncircle incircle_of_triangle(const\
@@ -141,7 +141,7 @@ data:
   isVerificationFile: true
   path: test/geometry/Cross_Points_of_Circle_and_Line.test.cpp
   requiredBy: []
-  timestamp: '2023-06-08 15:34:10+09:00'
+  timestamp: '2023-06-27 22:44:21+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/geometry/Cross_Points_of_Circle_and_Line.test.cpp

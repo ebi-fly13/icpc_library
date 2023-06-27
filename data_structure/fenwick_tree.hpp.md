@@ -53,8 +53,8 @@ data:
   timestamp: '2023-05-31 14:09:15+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/data_structure/Static_Range_Inversions_Query.test.cpp
   - test/data_structure/Point_Add_Range_Sum_Fenwick.test.cpp
+  - test/data_structure/Static_Range_Inversions_Query.test.cpp
 documentation_of: data_structure/fenwick_tree.hpp
 layout: document
 title: fenwick tree

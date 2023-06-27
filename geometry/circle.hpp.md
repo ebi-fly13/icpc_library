@@ -77,7 +77,7 @@ data:
     \ - c2.c.imag()) == 0 && sgn(c1.r - c2.r) == 0)\r\n        return 5;\r\n    ld\
     \ d = abs(c1.c - c2.c);\r\n    ld r1 = c1.r;\r\n    ld r2 = c2.r;\r\n    if (r1\
     \ < r2) std::swap(r1, r2);\r\n    if (sgn(d - (r1 + r2)) > 0) {\r\n        return\
-    \ 4;\r\n    } else if (sgn(d - (r1 + r2) == 0)) {\r\n        return 3;\r\n   \
+    \ 4;\r\n    } else if (sgn(d - (r1 + r2)) == 0) {\r\n        return 3;\r\n   \
     \ } else if (sgn(d - r1 + r2) > 0) {\r\n        return 2;\r\n    } else if (sgn(d\
     \ - r1 + r2) == 0) {\r\n        return 1;\r\n    } else\r\n        return 0;\r\
     \n}\r\n\r\ncircle incircle_of_triangle(const vec &a, const vec &b, const vec &c)\
@@ -119,7 +119,7 @@ data:
     \ - c2.r) == 0)\r\n        return 5;\r\n    ld d = abs(c1.c - c2.c);\r\n    ld\
     \ r1 = c1.r;\r\n    ld r2 = c2.r;\r\n    if (r1 < r2) std::swap(r1, r2);\r\n \
     \   if (sgn(d - (r1 + r2)) > 0) {\r\n        return 4;\r\n    } else if (sgn(d\
-    \ - (r1 + r2) == 0)) {\r\n        return 3;\r\n    } else if (sgn(d - r1 + r2)\
+    \ - (r1 + r2)) == 0) {\r\n        return 3;\r\n    } else if (sgn(d - r1 + r2)\
     \ > 0) {\r\n        return 2;\r\n    } else if (sgn(d - r1 + r2) == 0) {\r\n \
     \       return 1;\r\n    } else\r\n        return 0;\r\n}\r\n\r\ncircle incircle_of_triangle(const\
     \ vec &a, const vec &b, const vec &c) {\r\n    ld A = abs(b - c), B = abs(c -\
@@ -161,15 +161,15 @@ data:
   isVerificationFile: false
   path: geometry/circle.hpp
   requiredBy: []
-  timestamp: '2023-06-08 15:34:10+09:00'
+  timestamp: '2023-06-27 22:44:21+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/geometry/Incircle_of_Triangle.test.cpp
-  - test/geometry/Cross_Points_of_Circle_and_Line.test.cpp
+  - test/geometry/Cross_Points_of_Circles.test.cpp
   - test/geometry/Circumscribed_Circle_of_Triangle.test.cpp
   - test/geometry/Intersection_Circle.test.cpp
+  - test/geometry/Incircle_of_Triangle.test.cpp
+  - test/geometry/Cross_Points_of_Circle_and_Line.test.cpp
   - test/geometry/Common_Area_Circles.test.cpp
-  - test/geometry/Cross_Points_of_Circles.test.cpp
 documentation_of: geometry/circle.hpp
 layout: document
 title: circle
