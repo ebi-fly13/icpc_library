@@ -23,6 +23,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: data_structure/segtree_2d.hpp
     title: 2D segtree
+  - icon: ':warning:'
+    path: data_structure/sparce_table.hpp
+    title: data_structure/sparce_table.hpp
   - icon: ':heavy_check_mark:'
     path: data_structure/undo_dsu.hpp
     title: undo dsu
@@ -299,6 +302,7 @@ data:
   - string/RollingHash.hpp
   - string/z_algorithm.hpp
   - data_structure/dsu.hpp
+  - data_structure/sparce_table.hpp
   - data_structure/undo_dsu.hpp
   - data_structure/lazysegtree.hpp
   - data_structure/fenwick_tree.hpp
