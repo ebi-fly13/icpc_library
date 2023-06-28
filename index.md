@@ -29,7 +29,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data_structure/segtree_2d.hpp
       title: 2D segtree
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data_structure/sparce_table.hpp
       title: data_structure/sparce_table.hpp
     - icon: ':heavy_check_mark:'
@@ -191,6 +191,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data_structure/Set_Xor_Min.test.cpp
       title: test/data_structure/Set_Xor_Min.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data_structure/StaticRMQ.test.cpp
+      title: test/data_structure/StaticRMQ.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/data_structure/Static_Range_Inversions_Query.test.cpp
       title: test/data_structure/Static_Range_Inversions_Query.test.cpp

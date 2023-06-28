@@ -5,10 +5,13 @@ data:
     path: template/template.hpp
     title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/data_structure/StaticRMQ.test.cpp
+    title: test/data_structure/StaticRMQ.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"data_structure/sparce_table.hpp\"\n\n#line 2 \"template/template.hpp\"\
@@ -56,8 +59,9 @@ data:
   path: data_structure/sparce_table.hpp
   requiredBy: []
   timestamp: '2023-06-29 01:38:19+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/data_structure/StaticRMQ.test.cpp
 documentation_of: data_structure/sparce_table.hpp
 layout: document
 redirect_from:

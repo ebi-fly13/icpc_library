@@ -107,9 +107,9 @@ data:
   timestamp: '2023-06-08 15:34:10+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/geometry/Convex_Hull.test.cpp
   - test/geometry/Distance.test.cpp
   - test/geometry/Intersection.test.cpp
-  - test/geometry/Convex_Hull.test.cpp
   - test/geometry/Cross_Point.test.cpp
 documentation_of: geometry/segment.hpp
 layout: document
