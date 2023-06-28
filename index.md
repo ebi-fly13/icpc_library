@@ -35,6 +35,9 @@ data:
   - name: geometry
     pages:
     - icon: ':heavy_check_mark:'
+      path: geometry/Partition_by_Circles.hpp
+      title: geometry/Partition_by_Circles.hpp
+    - icon: ':heavy_check_mark:'
       path: geometry/base_arbitary.hpp
       title: geometry/base_arbitary.hpp
     - icon: ':heavy_check_mark:'
@@ -247,6 +250,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/geometry/Reflection.test.cpp
       title: test/geometry/Reflection.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/geometry/aoj_1198.test.cpp
+      title: test/geometry/aoj_1198.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/geometry/base_rational.test.cpp
       title: test/geometry/base_rational.test.cpp

@@ -6,6 +6,9 @@ data:
     title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
+    path: geometry/Partition_by_Circles.hpp
+    title: geometry/Partition_by_Circles.hpp
+  - icon: ':heavy_check_mark:'
     path: geometry/circle.hpp
     title: circle
   - icon: ':heavy_check_mark:'
@@ -60,6 +63,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/geometry/Reflection.test.cpp
     title: test/geometry/Reflection.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/geometry/aoj_1198.test.cpp
+    title: test/geometry/aoj_1198.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -108,27 +114,29 @@ data:
   isVerificationFile: false
   path: geometry/base_ld.hpp
   requiredBy:
-  - geometry/circle.hpp
+  - geometry/line.hpp
   - geometry/segment.hpp
   - geometry/convex_hull.hpp
-  - geometry/line.hpp
+  - geometry/circle.hpp
+  - geometry/Partition_by_Circles.hpp
   timestamp: '2023-06-08 15:34:10+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/geometry/Cross_Points_of_Circles.test.cpp
-  - test/geometry/Convex_Hull.test.cpp
-  - test/geometry/Distance.test.cpp
-  - test/geometry/Counter_Clockwise.test.cpp
-  - test/geometry/Parallel_Orthogonal.test.cpp
-  - test/geometry/Circumscribed_Circle_of_Triangle.test.cpp
-  - test/geometry/Intersection.test.cpp
-  - test/geometry/Intersection_Circle.test.cpp
   - test/geometry/Projection.test.cpp
-  - test/geometry/Cross_Point.test.cpp
-  - test/geometry/Reflection.test.cpp
+  - test/geometry/Distance.test.cpp
   - test/geometry/Incircle_of_Triangle.test.cpp
+  - test/geometry/Counter_Clockwise.test.cpp
+  - test/geometry/Intersection.test.cpp
+  - test/geometry/aoj_1198.test.cpp
+  - test/geometry/Convex_Hull.test.cpp
   - test/geometry/Cross_Points_of_Circle_and_Line.test.cpp
+  - test/geometry/Parallel_Orthogonal.test.cpp
+  - test/geometry/Reflection.test.cpp
+  - test/geometry/Cross_Point.test.cpp
+  - test/geometry/Circumscribed_Circle_of_Triangle.test.cpp
+  - test/geometry/Intersection_Circle.test.cpp
   - test/geometry/Common_Area_Circles.test.cpp
+  - test/geometry/Cross_Points_of_Circles.test.cpp
 documentation_of: geometry/base_ld.hpp
 layout: document
 title: base_ld

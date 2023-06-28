@@ -1,0 +1,240 @@
+---
+data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: data_structure/dsu.hpp
+    title: dsu
+  - icon: ':heavy_check_mark:'
+    path: geometry/base_ld.hpp
+    title: base_ld
+  - icon: ':heavy_check_mark:'
+    path: template/template.hpp
+    title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/geometry/aoj_1198.test.cpp
+    title: test/geometry/aoj_1198.test.cpp
+  _isVerificationFailed: false
+  _pathExtension: hpp
+  _verificationStatusIcon: ':heavy_check_mark:'
+  attributes:
+    links: []
+  bundledCode: "#line 2 \"geometry/Partition_by_Circles.hpp\"\n\n#line 2 \"template/template.hpp\"\
+    \n\n#include <bits/stdc++.h>\n\n#define rep(i, s, n) for (int i = (int)(s); i\
+    \ < (int)(n); i++)\n#define rrep(i, s, n) for (int i = (int)(n)-1; i >= (int)(s);\
+    \ i--)\n#define all(v) v.begin(), v.end()\n\nusing ll = long long;\nusing ld =\
+    \ long double;\nusing ull = unsigned long long;\n\ntemplate <typename T> bool\
+    \ chmin(T &a, const T &b) {\n    if (a <= b) return false;\n    a = b;\n    return\
+    \ true;\n}\ntemplate <typename T> bool chmax(T &a, const T &b) {\n    if (a >=\
+    \ b) return false;\n    a = b;\n    return true;\n}\n\nnamespace lib {\n\nusing\
+    \ namespace std;\n\n}  // namespace lib\n\n// using namespace lib;\n#line 2 \"\
+    geometry/base_ld.hpp\"\n\n#line 4 \"geometry/base_ld.hpp\"\n\nnamespace lib {\n\
+    \nusing vec = complex<ld>;\n\nconst ld PI = acos(-1);\n\nvoid ldout(int len =\
+    \ 20) {\n    cout << fixed << setprecision(len);\n}\n\nint sgn(ld a, const ld\
+    \ eps = 1e-7) {\n    return (a < -eps) ? -1 : (a > eps) ? 1 : 0;\n}\n\nbool same_vec(vec\
+    \ a, vec b) {\n    a -= b;\n    return sgn(a.real()) == 0 && sgn(a.imag()) ==\
+    \ 0;\n}\n\nld dot(const vec &a, const vec &b) {\n    return (conj(a) * b).real();\n\
+    }\n\nld cross(const vec &a, const vec &b) {\n    return (conj(a) * b).imag();\n\
+    }\n\nint isp(const vec &a, const vec &b, const vec &c) {\n    int cross_sgn =\
+    \ sgn(cross(b - a, c - a));\n    if (cross_sgn == 0) {\n        if (sgn(dot(b\
+    \ - a, c - a)) < 0) return -2;\n        if (sgn(dot(a - b, c - b)) < 0) return\
+    \ 2;\n    }\n    return cross_sgn;\n}\n\nvec rot90(const vec &a) {\n    return\
+    \ {-a.imag(), a.real()};\n}\n\nvec rot(const vec &a, ld rad) {\n    return a *\
+    \ vec(cosl(rad), sinl(rad));\n}\n\nbool comp_for_argument_sort(const vec &lhs,\
+    \ const vec &rhs) {\n    // if (abs(arg(lhs)-arg(rhs)) < eps) return false; //\
+    \ need ?\n    return arg(lhs) < arg(rhs);\n}\n\n}  // namespace lib\n#line 2 \"\
+    data_structure/dsu.hpp\"\n\n#line 4 \"data_structure/dsu.hpp\"\n\nnamespace lib\
+    \ {\n\nstruct dsu {\n  public:\n    dsu(int n = 0) : _n(n), data(n, -1) {}\n\n\
+    \    int leader(int a) {\n        if (data[a] < 0) return a;\n        return data[a]\
+    \ = leader(data[a]);\n    }\n\n    int merge(int a, int b) {\n        int x =\
+    \ leader(a), y = leader(b);\n        if (x == y) return x;\n        if (-data[x]\
+    \ < -data[y]) swap(x, y);\n        data[x] += data[y];\n        data[y] = x;\n\
+    \        return x;\n    }\n\n    bool same(int a, int b) {\n        return leader(a)\
+    \ == leader(b);\n    }\n\n    int size(int a) {\n        return -data[leader(a)];\n\
+    \    }\n\n  private:\n    int _n;\n    vector<int> data;\n};\n\n}  // namespace\
+    \ lib\n#line 6 \"geometry/Partition_by_Circles.hpp\"\n\nnamespace lib{\n\nstruct\
+    \ circle {\n    vec c;\n    ld r;\n};\n\n// c1 != c2\nvector<ld> cross_point_x(const\
+    \ circle &c1, const circle &c2){\n    assert(sgn(abs(c1.r - c2.r)) != 0 || sgn(abs(c1.c\
+    \ - c2.c)) != 0);\n    ld d = abs(c1.c - c2.c);\n    // \u5186\u304C\u96E2\u308C\
+    \u3059\u304E\u3066\u3044\u308B\n    if (sgn(d - c1.r - c2.r) > 0) return {};\n\
+    \    // \u5186\u304C\u8FD1\u3059\u304E\u308B\n    if (sgn(abs(c1.r - c2.r) - d)\
+    \ > 0) return {};\n    // \u5916\u63A5\u3057\u3066\u3044\u308B\n    if (sgn(d\
+    \ - c1.r - c2.r) == 0){\n        return {(c1.r*c2.c.real() + c2.r*c1.c.real())\
+    \ / (c1.r + c2.r)};\n    }\n    // \u5185\u63A5\u3057\u3066\u3044\u308B\n    if\
+    \ (sgn(abs(c1.r - c2.r) - d) == 0){\n        return {(c1.r * c2.c.real() - c2.r\
+    \ * c1.c.real()) / (c1.r - c2.r)};\n    }\n    // 2 \u70B9\u3092\u5171\u6709\u3059\
+    \u308B\n    ld e = (d * d + c1.r * c1.r - c2.r * c2.r) / (2 * d);\n    vec p =\
+    \ c1.c + (c2.c - c1.c) * e / d;\n    vec v((c1.c - c2.c).imag(),(c2.c - c1.c).real());\n\
+    \    v *= sqrtl(max(c1.r * c1.r - e * e, ld(0))) / abs(v);\n    return {(p+v).real(),(p-v).real()};\n\
+    }\n\nvector<ld> cross_point_y(const circle &c, const ld &x){\n    int cond = sgn(abs(c.c.real()\
+    \ - x) - c.r); \n    if (cond > 0) return {};\n    if (cond == 0) return {c.c.imag()};\n\
+    \    ld ydiff = sqrtl(max(c.r*c.r - (x - c.c.real()) * (x - c.c.real()),ld(0)));\n\
+    \    return {c.c.imag()+ydiff,c.c.imag()-ydiff};\n}\n\nstruct Partition_by_Circles\
+    \ {\n    vector<circle> a;\n    // \u540C\u3058\u5186\u306F\u4E0E\u3048\u3089\u308C\
+    \u306A\u3044\n    void add_circle(circle c){\n        // x \u5EA7\u6A19\u3067\u533A\
+    \u5207\u308B\u5834\u6240\u304C\u91CD\u306A\u3089\u306A\u3044\u3088\u3046\u306B\
+    \ 1 rad \u56DE\u8EE2\u3057\u3066\u304A\u304F\n        c.c = rot(c.c,1);\n    \
+    \    a.emplace_back(c);\n    }\n    ld coordinate_width(){\n        ld res = 0.0;\n\
+    \        for (auto &c : a){\n            chmax(res,abs(c.c)+c.r);\n        }\n\
+    \        return res;\n    }\n    vector<ld> x_coordinates(){\n        vector<ld>\
+    \ xs;\n        for (auto &c : a){\n            xs.emplace_back(c.c.real()-c.r);\n\
+    \            xs.emplace_back(c.c.real()+c.r);\n        }\n        int siza = a.size();\n\
+    \        for (int i = 0; i < siza-1; i++) for (int j = i+1; j < siza; j++){\n\
+    \            for (auto x : cross_point_x(a[i],a[j])){\n                bool yet\
+    \ = true;\n                for (auto testx : xs){\n                    if (sgn(abs(x\
+    \ - testx)) == 0){\n                        yet = false;\n                   \
+    \     break;\n                    }\n                }\n                if (yet)\
+    \ xs.emplace_back(x);\n            }\n        }\n        sort(all(xs));\n    \
+    \    return xs;\n    }\n    using ylr = tuple<ld,int,int>;\n    vector<ylr> y_coordinates(ld\
+    \ x){\n        vector<ylr> ys;\n        auto add = [&](ld y, int l, int r){\n\
+    \            bool yet = true;\n            for (auto &[testy, testl, testr] :\
+    \ ys){\n                if (sgn(abs(y - testy)) == 0){\n                    yet\
+    \ = false;\n                    testl += l;\n                    testr += r;\n\
+    \                    break;\n                }\n            }\n            if\
+    \ (yet) ys.push_back({y,l,r});\n        };\n        for (auto &c : a){\n     \
+    \       auto vecy = cross_point_y(c,x);\n            if (vecy.empty()) continue;\n\
+    \            if ((int)(vecy.size()) == 2){\n                for (auto y : vecy)\
+    \ add(y,1,1);\n            }\n            else {\n                if (c.c.real()\
+    \ < x){\n                    add(vecy[0],2,0);\n                }\n          \
+    \      else {\n                    add(vecy[0],0,2);\n                }\n    \
+    \        }\n        }\n        sort(all(ys),[&](ylr lhs, ylr rhs){\n         \
+    \   return get<0>(lhs) < get<0>(rhs);\n        });\n        return ys;\n    }\n\
+    \    dsu d;\n    vector<ld> xs;\n    vector<int> lower_idx;\n    map<int,int>\
+    \ mp;\n    vector<vector<int>> build_graph(){\n        // \u5927\u304D\u306A\u5186\
+    \u3067\u5168\u4F53\u3092\u56F2\u3063\u3066\u3057\u307E\u3046\n        a.push_back({vec(0,0),coordinate_width()*2});\n\
+    \        // x \u5EA7\u6A19\u306E\u5217\u6319\n        xs = x_coordinates();\n\
+    \        // \u5404 x \u306B\u3064\u3044\u3066 y \u5EA7\u6A19\u306E\u5217\u6319\
+    \n        vector<vector<ylr>> yss; yss.reserve(xs.size());\n        for (auto\
+    \ &x : xs) yss.push_back(y_coordinates(x));\n        // x \u3067\u5207\u3063\u3066\
+    \u9818\u57DF\u3092\u8210\u3081\u308B\n        int idx = 0;\n        vector<pair<int,int>>\
+    \ es, merge;\n        vector<int> cur;\n        for (int itr = 0; itr < (int)(xs.size())-1;\
+    \ itr++){\n            lower_idx.emplace_back(idx);\n            vector<int> lid,\
+    \ rid;\n            for (int l = 0; l < (int)(yss[itr].size()); l++){\n      \
+    \          for (int t = 0; t < get<2>(yss[itr][l]); t++){\n                  \
+    \  lid.emplace_back(l);\n                }\n            }\n            for (int\
+    \ r = 0; r < (int)(yss[itr+1].size()); r++){\n                for (int t = 0;\
+    \ t < get<1>(yss[itr+1][r]); t++){\n                    rid.emplace_back(r);\n\
+    \                }\n            }\n            assert(lid.size() == rid.size());\n\
+    \            int pre = 0;\n            vector<int> nxt;\n            for (int\
+    \ i = 0; i < (int)(lid.size())-1; i++){\n                for (int t = 0; t < rid[i+1]-rid[i];\
+    \ t++){\n                    nxt.emplace_back(idx);\n                }\n     \
+    \           if (i != 0){\n                    es.emplace_back(idx-1,idx);\n  \
+    \              }\n                if (lid[i+1] - lid[i] != 0){\n             \
+    \       merge.emplace_back(cur[pre++],idx);\n                }\n             \
+    \   if (lid[i+1] - lid[i] == 2){\n                    merge.emplace_back(cur[pre++],idx);\n\
+    \                }\n                idx++;\n            }\n            swap(cur,nxt);\n\
+    \        }\n        // \u30B0\u30E9\u30D5\u3092\u69CB\u7BC9\n        d = dsu(idx);\n\
+    \        for (auto &[u, v] : merge) d.merge(u,v);\n        set<int> st;\n    \
+    \    for (int i = 0; i < idx; i++) st.insert(d.leader(i));\n        int vid =\
+    \ 0;\n        for (auto v : st) mp[v] = vid++;\n        vector<vector<int>> graph(vid);\n\
+    \        for (auto [u, v] : es){\n            u = mp[d.leader(u)];\n         \
+    \   v = mp[d.leader(v)];\n            graph[u].emplace_back(v);\n            graph[v].emplace_back(u);\n\
+    \        }\n        return graph;\n    }\n    int get_area_idx(vec p){\n     \
+    \   p = rot(p,1);\n        int xid = int(lower_bound(all(xs),p.real()) - xs.begin())\
+    \ - 1;\n        vector<ld> ys;\n        for (auto &[y, l, r] : y_coordinates(p.real()))\
+    \ ys.emplace_back(y);\n        int yid = int(lower_bound(all(ys),p.imag()) - ys.begin())\
+    \ - 1;\n        return mp[d.leader(lower_idx[xid] + yid)];\n    }\n};\n\n} //namespace\
+    \ lib\n"
+  code: "#pragma once\n\n#include\"../template/template.hpp\"\n#include\"base_ld.hpp\"\
+    \n#include\"../data_structure/dsu.hpp\"\n\nnamespace lib{\n\nstruct circle {\n\
+    \    vec c;\n    ld r;\n};\n\n// c1 != c2\nvector<ld> cross_point_x(const circle\
+    \ &c1, const circle &c2){\n    assert(sgn(abs(c1.r - c2.r)) != 0 || sgn(abs(c1.c\
+    \ - c2.c)) != 0);\n    ld d = abs(c1.c - c2.c);\n    // \u5186\u304C\u96E2\u308C\
+    \u3059\u304E\u3066\u3044\u308B\n    if (sgn(d - c1.r - c2.r) > 0) return {};\n\
+    \    // \u5186\u304C\u8FD1\u3059\u304E\u308B\n    if (sgn(abs(c1.r - c2.r) - d)\
+    \ > 0) return {};\n    // \u5916\u63A5\u3057\u3066\u3044\u308B\n    if (sgn(d\
+    \ - c1.r - c2.r) == 0){\n        return {(c1.r*c2.c.real() + c2.r*c1.c.real())\
+    \ / (c1.r + c2.r)};\n    }\n    // \u5185\u63A5\u3057\u3066\u3044\u308B\n    if\
+    \ (sgn(abs(c1.r - c2.r) - d) == 0){\n        return {(c1.r * c2.c.real() - c2.r\
+    \ * c1.c.real()) / (c1.r - c2.r)};\n    }\n    // 2 \u70B9\u3092\u5171\u6709\u3059\
+    \u308B\n    ld e = (d * d + c1.r * c1.r - c2.r * c2.r) / (2 * d);\n    vec p =\
+    \ c1.c + (c2.c - c1.c) * e / d;\n    vec v((c1.c - c2.c).imag(),(c2.c - c1.c).real());\n\
+    \    v *= sqrtl(max(c1.r * c1.r - e * e, ld(0))) / abs(v);\n    return {(p+v).real(),(p-v).real()};\n\
+    }\n\nvector<ld> cross_point_y(const circle &c, const ld &x){\n    int cond = sgn(abs(c.c.real()\
+    \ - x) - c.r); \n    if (cond > 0) return {};\n    if (cond == 0) return {c.c.imag()};\n\
+    \    ld ydiff = sqrtl(max(c.r*c.r - (x - c.c.real()) * (x - c.c.real()),ld(0)));\n\
+    \    return {c.c.imag()+ydiff,c.c.imag()-ydiff};\n}\n\nstruct Partition_by_Circles\
+    \ {\n    vector<circle> a;\n    // \u540C\u3058\u5186\u306F\u4E0E\u3048\u3089\u308C\
+    \u306A\u3044\n    void add_circle(circle c){\n        // x \u5EA7\u6A19\u3067\u533A\
+    \u5207\u308B\u5834\u6240\u304C\u91CD\u306A\u3089\u306A\u3044\u3088\u3046\u306B\
+    \ 1 rad \u56DE\u8EE2\u3057\u3066\u304A\u304F\n        c.c = rot(c.c,1);\n    \
+    \    a.emplace_back(c);\n    }\n    ld coordinate_width(){\n        ld res = 0.0;\n\
+    \        for (auto &c : a){\n            chmax(res,abs(c.c)+c.r);\n        }\n\
+    \        return res;\n    }\n    vector<ld> x_coordinates(){\n        vector<ld>\
+    \ xs;\n        for (auto &c : a){\n            xs.emplace_back(c.c.real()-c.r);\n\
+    \            xs.emplace_back(c.c.real()+c.r);\n        }\n        int siza = a.size();\n\
+    \        for (int i = 0; i < siza-1; i++) for (int j = i+1; j < siza; j++){\n\
+    \            for (auto x : cross_point_x(a[i],a[j])){\n                bool yet\
+    \ = true;\n                for (auto testx : xs){\n                    if (sgn(abs(x\
+    \ - testx)) == 0){\n                        yet = false;\n                   \
+    \     break;\n                    }\n                }\n                if (yet)\
+    \ xs.emplace_back(x);\n            }\n        }\n        sort(all(xs));\n    \
+    \    return xs;\n    }\n    using ylr = tuple<ld,int,int>;\n    vector<ylr> y_coordinates(ld\
+    \ x){\n        vector<ylr> ys;\n        auto add = [&](ld y, int l, int r){\n\
+    \            bool yet = true;\n            for (auto &[testy, testl, testr] :\
+    \ ys){\n                if (sgn(abs(y - testy)) == 0){\n                    yet\
+    \ = false;\n                    testl += l;\n                    testr += r;\n\
+    \                    break;\n                }\n            }\n            if\
+    \ (yet) ys.push_back({y,l,r});\n        };\n        for (auto &c : a){\n     \
+    \       auto vecy = cross_point_y(c,x);\n            if (vecy.empty()) continue;\n\
+    \            if ((int)(vecy.size()) == 2){\n                for (auto y : vecy)\
+    \ add(y,1,1);\n            }\n            else {\n                if (c.c.real()\
+    \ < x){\n                    add(vecy[0],2,0);\n                }\n          \
+    \      else {\n                    add(vecy[0],0,2);\n                }\n    \
+    \        }\n        }\n        sort(all(ys),[&](ylr lhs, ylr rhs){\n         \
+    \   return get<0>(lhs) < get<0>(rhs);\n        });\n        return ys;\n    }\n\
+    \    dsu d;\n    vector<ld> xs;\n    vector<int> lower_idx;\n    map<int,int>\
+    \ mp;\n    vector<vector<int>> build_graph(){\n        // \u5927\u304D\u306A\u5186\
+    \u3067\u5168\u4F53\u3092\u56F2\u3063\u3066\u3057\u307E\u3046\n        a.push_back({vec(0,0),coordinate_width()*2});\n\
+    \        // x \u5EA7\u6A19\u306E\u5217\u6319\n        xs = x_coordinates();\n\
+    \        // \u5404 x \u306B\u3064\u3044\u3066 y \u5EA7\u6A19\u306E\u5217\u6319\
+    \n        vector<vector<ylr>> yss; yss.reserve(xs.size());\n        for (auto\
+    \ &x : xs) yss.push_back(y_coordinates(x));\n        // x \u3067\u5207\u3063\u3066\
+    \u9818\u57DF\u3092\u8210\u3081\u308B\n        int idx = 0;\n        vector<pair<int,int>>\
+    \ es, merge;\n        vector<int> cur;\n        for (int itr = 0; itr < (int)(xs.size())-1;\
+    \ itr++){\n            lower_idx.emplace_back(idx);\n            vector<int> lid,\
+    \ rid;\n            for (int l = 0; l < (int)(yss[itr].size()); l++){\n      \
+    \          for (int t = 0; t < get<2>(yss[itr][l]); t++){\n                  \
+    \  lid.emplace_back(l);\n                }\n            }\n            for (int\
+    \ r = 0; r < (int)(yss[itr+1].size()); r++){\n                for (int t = 0;\
+    \ t < get<1>(yss[itr+1][r]); t++){\n                    rid.emplace_back(r);\n\
+    \                }\n            }\n            assert(lid.size() == rid.size());\n\
+    \            int pre = 0;\n            vector<int> nxt;\n            for (int\
+    \ i = 0; i < (int)(lid.size())-1; i++){\n                for (int t = 0; t < rid[i+1]-rid[i];\
+    \ t++){\n                    nxt.emplace_back(idx);\n                }\n     \
+    \           if (i != 0){\n                    es.emplace_back(idx-1,idx);\n  \
+    \              }\n                if (lid[i+1] - lid[i] != 0){\n             \
+    \       merge.emplace_back(cur[pre++],idx);\n                }\n             \
+    \   if (lid[i+1] - lid[i] == 2){\n                    merge.emplace_back(cur[pre++],idx);\n\
+    \                }\n                idx++;\n            }\n            swap(cur,nxt);\n\
+    \        }\n        // \u30B0\u30E9\u30D5\u3092\u69CB\u7BC9\n        d = dsu(idx);\n\
+    \        for (auto &[u, v] : merge) d.merge(u,v);\n        set<int> st;\n    \
+    \    for (int i = 0; i < idx; i++) st.insert(d.leader(i));\n        int vid =\
+    \ 0;\n        for (auto v : st) mp[v] = vid++;\n        vector<vector<int>> graph(vid);\n\
+    \        for (auto [u, v] : es){\n            u = mp[d.leader(u)];\n         \
+    \   v = mp[d.leader(v)];\n            graph[u].emplace_back(v);\n            graph[v].emplace_back(u);\n\
+    \        }\n        return graph;\n    }\n    int get_area_idx(vec p){\n     \
+    \   p = rot(p,1);\n        int xid = int(lower_bound(all(xs),p.real()) - xs.begin())\
+    \ - 1;\n        vector<ld> ys;\n        for (auto &[y, l, r] : y_coordinates(p.real()))\
+    \ ys.emplace_back(y);\n        int yid = int(lower_bound(all(ys),p.imag()) - ys.begin())\
+    \ - 1;\n        return mp[d.leader(lower_idx[xid] + yid)];\n    }\n};\n\n} //namespace\
+    \ lib"
+  dependsOn:
+  - template/template.hpp
+  - geometry/base_ld.hpp
+  - data_structure/dsu.hpp
+  isVerificationFile: false
+  path: geometry/Partition_by_Circles.hpp
+  requiredBy: []
+  timestamp: '2023-06-28 14:22:09+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/geometry/aoj_1198.test.cpp
+documentation_of: geometry/Partition_by_Circles.hpp
+layout: document
+redirect_from:
+- /library/geometry/Partition_by_Circles.hpp
+- /library/geometry/Partition_by_Circles.hpp.html
+title: geometry/Partition_by_Circles.hpp
+---

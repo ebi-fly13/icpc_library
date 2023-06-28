@@ -4,11 +4,17 @@ data:
   - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: geometry/Partition_by_Circles.hpp
+    title: geometry/Partition_by_Circles.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/data_structure/Unionfind.test.cpp
     title: test/data_structure/Unionfind.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/geometry/aoj_1198.test.cpp
+    title: test/geometry/aoj_1198.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -46,10 +52,12 @@ data:
   - template/template.hpp
   isVerificationFile: false
   path: data_structure/dsu.hpp
-  requiredBy: []
+  requiredBy:
+  - geometry/Partition_by_Circles.hpp
   timestamp: '2023-06-02 01:02:23+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/geometry/aoj_1198.test.cpp
   - test/data_structure/Unionfind.test.cpp
 documentation_of: data_structure/dsu.hpp
 layout: document
