@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy:
@@ -12,9 +12,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/geometry/base_rational.test.cpp
     title: test/geometry/base_rational.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: test/others/aoj_1300.test.cpp
+    title: test/others/aoj_1300.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"utility/rational.hpp\"\n\n#line 2 \"template/template.hpp\"\
@@ -58,8 +61,9 @@ data:
     \    }\n    friend bool operator>=(const rational lhs, const rational rhs) {\n\
     \        return lhs == rhs || lhs > rhs;\n    }\n    friend std::ostream& operator<<(std::ostream&\
     \ os, const rational& r) {\n        return os << r.p << \" / \" << r.q;\n    }\n\
-    \n  private:\n    ll p, q;\n    static bool less_than(rational lhs, rational rhs)\
-    \ {\n        __int128_t lv = __int128_t(lhs.p) * __int128_t(rhs.q);\n        __int128_t\
+    \    std::pair<ll,ll> val() const {\n        return {p, q};\n    }\n\n  private:\n\
+    \    ll p, q;\n    static bool less_than(rational lhs, rational rhs) {\n     \
+    \   __int128_t lv = __int128_t(lhs.p) * __int128_t(rhs.q);\n        __int128_t\
     \ rv = __int128_t(lhs.q) * __int128_t(rhs.p);\n        return lv < rv;\n    }\n\
     };\n\n}  // namespace lib\n"
   code: "#pragma once\n\n#include \"../template/template.hpp\"\n\nnamespace lib {\n\
@@ -95,8 +99,9 @@ data:
     \    friend bool operator>=(const rational lhs, const rational rhs) {\n      \
     \  return lhs == rhs || lhs > rhs;\n    }\n    friend std::ostream& operator<<(std::ostream&\
     \ os, const rational& r) {\n        return os << r.p << \" / \" << r.q;\n    }\n\
-    \n  private:\n    ll p, q;\n    static bool less_than(rational lhs, rational rhs)\
-    \ {\n        __int128_t lv = __int128_t(lhs.p) * __int128_t(rhs.q);\n        __int128_t\
+    \    std::pair<ll,ll> val() const {\n        return {p, q};\n    }\n\n  private:\n\
+    \    ll p, q;\n    static bool less_than(rational lhs, rational rhs) {\n     \
+    \   __int128_t lv = __int128_t(lhs.p) * __int128_t(rhs.q);\n        __int128_t\
     \ rv = __int128_t(lhs.q) * __int128_t(rhs.p);\n        return lv < rv;\n    }\n\
     };\n\n}  // namespace lib"
   dependsOn:
@@ -105,10 +110,11 @@ data:
   path: utility/rational.hpp
   requiredBy:
   - geometry3D/accurate/line.hpp
-  timestamp: '2023-05-17 22:41:14+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-06-29 23:31:55+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/geometry/base_rational.test.cpp
+  - test/others/aoj_1300.test.cpp
 documentation_of: utility/rational.hpp
 layout: document
 redirect_from:

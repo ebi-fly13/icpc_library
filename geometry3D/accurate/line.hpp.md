@@ -7,10 +7,10 @@ data:
   - icon: ':warning:'
     path: geometry3D/base_arbitary.hpp
     title: geometry3D/base_arbitary.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utility/rational.hpp
     title: utility/rational.hpp
   _extendedRequiredBy: []
@@ -86,8 +86,9 @@ data:
     \    }\n    friend bool operator>=(const rational lhs, const rational rhs) {\n\
     \        return lhs == rhs || lhs > rhs;\n    }\n    friend std::ostream& operator<<(std::ostream&\
     \ os, const rational& r) {\n        return os << r.p << \" / \" << r.q;\n    }\n\
-    \n  private:\n    ll p, q;\n    static bool less_than(rational lhs, rational rhs)\
-    \ {\n        __int128_t lv = __int128_t(lhs.p) * __int128_t(rhs.q);\n        __int128_t\
+    \    std::pair<ll,ll> val() const {\n        return {p, q};\n    }\n\n  private:\n\
+    \    ll p, q;\n    static bool less_than(rational lhs, rational rhs) {\n     \
+    \   __int128_t lv = __int128_t(lhs.p) * __int128_t(rhs.q);\n        __int128_t\
     \ rv = __int128_t(lhs.q) * __int128_t(rhs.p);\n        return lv < rv;\n    }\n\
     };\n\n}  // namespace lib\n#line 5 \"geometry3D/accurate/line.hpp\"\n\nnamespace\
     \ lib {\n\ntemplate<typename T>\nstruct Line {\n    Vec<T> a, b;\n};\n\nint intersection(const\
@@ -165,7 +166,7 @@ data:
   isVerificationFile: false
   path: geometry3D/accurate/line.hpp
   requiredBy: []
-  timestamp: '2023-05-17 22:41:14+09:00'
+  timestamp: '2023-06-29 23:31:55+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: geometry3D/accurate/line.hpp

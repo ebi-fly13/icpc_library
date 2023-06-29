@@ -104,7 +104,7 @@ data:
     - icon: ':warning:'
       path: math/ext_gcd.hpp
       title: math/ext_gcd.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: math/gauss_jordan.hpp
       title: gauss_jordan
     - icon: ':heavy_check_mark:'
@@ -134,10 +134,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: template/debug_template.hpp
       title: "\u30C7\u30D0\u30C3\u30B0\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-    - icon: ':warning:'
+    - icon: ':x:'
       path: template/parsing_template.hpp
       title: "\u69CB\u6587\u89E3\u6790\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
     - icon: ':warning:'
@@ -162,7 +162,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: utility/modint.hpp
       title: modint
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: utility/rational.hpp
       title: utility/rational.hpp
   verificationCategories:
@@ -289,6 +289,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/misc/aoj_1197.test.cpp
       title: test/misc/aoj_1197.test.cpp
+  - name: test/others
+    pages:
+    - icon: ':x:'
+      path: test/others/aoj_1300.test.cpp
+      title: test/others/aoj_1300.test.cpp
   - name: test/string
     pages:
     - icon: ':heavy_check_mark:'

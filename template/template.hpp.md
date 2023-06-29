@@ -86,7 +86,7 @@ data:
   - icon: ':warning:'
     path: math/ext_gcd.hpp
     title: math/ext_gcd.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: math/gauss_jordan.hpp
     title: gauss_jordan
   - icon: ':heavy_check_mark:'
@@ -110,7 +110,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: template/debug_template.hpp
     title: "\u30C7\u30D0\u30C3\u30B0\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  - icon: ':warning:'
+  - icon: ':x:'
     path: template/parsing_template.hpp
     title: "\u69CB\u6587\u89E3\u6790\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   - icon: ':heavy_check_mark:'
@@ -128,7 +128,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: utility/modint.hpp
     title: modint
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utility/rational.hpp
     title: utility/rational.hpp
   _extendedVerifiedWith:
@@ -243,6 +243,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/misc/aoj_1197.test.cpp
     title: test/misc/aoj_1197.test.cpp
+  - icon: ':x:'
+    path: test/others/aoj_1300.test.cpp
+    title: test/others/aoj_1300.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/string/aoj_2444.test.cpp
     title: test/string/aoj_2444.test.cpp
@@ -261,9 +264,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/tree/Tree_Path_Composite_Sum.test.cpp
     title: test/tree/Tree_Path_Composite_Sum.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n\n#include <bits/stdc++.h>\n\n\
@@ -331,7 +334,7 @@ data:
   - template/parsing_template.hpp
   - template/debug_template.hpp
   timestamp: '2023-05-17 22:41:14+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/geometry/Cross_Points_of_Circles.test.cpp
   - test/geometry/Convex_Hull.test.cpp
@@ -349,6 +352,7 @@ data:
   - test/geometry/Incircle_of_Triangle.test.cpp
   - test/geometry/Cross_Points_of_Circle_and_Line.test.cpp
   - test/geometry/Common_Area_Circles.test.cpp
+  - test/others/aoj_1300.test.cpp
   - test/convolution/Convolution_mod.test.cpp
   - test/misc/Binomial_Coefficient.test.cpp
   - test/misc/aoj_1197.test.cpp

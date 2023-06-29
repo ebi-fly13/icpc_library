@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: geometry/base_arbitary.hpp
     title: geometry/base_arbitary.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utility/rational.hpp
     title: utility/rational.hpp
   _extendedRequiredBy: []
@@ -95,8 +95,9 @@ data:
     \    friend bool operator>=(const rational lhs, const rational rhs) {\n      \
     \  return lhs == rhs || lhs > rhs;\n    }\n    friend std::ostream& operator<<(std::ostream&\
     \ os, const rational& r) {\n        return os << r.p << \" / \" << r.q;\n    }\n\
-    \n  private:\n    ll p, q;\n    static bool less_than(rational lhs, rational rhs)\
-    \ {\n        __int128_t lv = __int128_t(lhs.p) * __int128_t(rhs.q);\n        __int128_t\
+    \    std::pair<ll,ll> val() const {\n        return {p, q};\n    }\n\n  private:\n\
+    \    ll p, q;\n    static bool less_than(rational lhs, rational rhs) {\n     \
+    \   __int128_t lv = __int128_t(lhs.p) * __int128_t(rhs.q);\n        __int128_t\
     \ rv = __int128_t(lhs.q) * __int128_t(rhs.p);\n        return lv < rv;\n    }\n\
     };\n\n}  // namespace lib\n#line 7 \"test/geometry/base_rational.test.cpp\"\n\n\
     using namespace lib;\nusing vec = Vec<rational>;\nusing line = Line<rational>;\n\
@@ -154,7 +155,7 @@ data:
   isVerificationFile: true
   path: test/geometry/base_rational.test.cpp
   requiredBy: []
-  timestamp: '2023-05-17 22:41:14+09:00'
+  timestamp: '2023-06-29 23:31:55+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/geometry/base_rational.test.cpp
