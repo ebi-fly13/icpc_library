@@ -119,9 +119,10 @@ struct Partition_by_Circles {
     vector<ld> xs;
     vector<int> lower_idx;
     map<int,int> mp;
-    vector<vector<int>> build_graph(){
+    vector<vector<int>> build_graph(ld max_width = 0){
         // 大きな円で全体を囲ってしまう
-        a.push_back({vec(0,0),coordinate_width()*2});
+        if (sgn(max_width) == 0) max_width = coordinate_width()*2;
+        a.push_back({vec(0,0),max_width});
         // x 座標の列挙
         xs = x_coordinates();
         // 各 x について y 座標の列挙

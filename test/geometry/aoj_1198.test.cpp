@@ -15,7 +15,7 @@ int main(){
             ld x, y, r; cin >> x >> y >> r;
             pc.add_circle(circle({vec(x,y),r}));
         }
-        pc.build_graph();
+        pc.build_graph(100000);
         string ans = "";
         while (m--){
             ld px, py, qx, qy; cin >> px >> py >> qx >> qy;
