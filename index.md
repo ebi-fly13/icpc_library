@@ -30,8 +30,8 @@ data:
       path: data_structure/segtree_2d.hpp
       title: 2D segtree
     - icon: ':heavy_check_mark:'
-      path: data_structure/sparce_table.hpp
-      title: data_structure/sparce_table.hpp
+      path: data_structure/sparse_table.hpp
+      title: Sparse Table
     - icon: ':heavy_check_mark:'
       path: data_structure/undo_dsu.hpp
       title: undo dsu

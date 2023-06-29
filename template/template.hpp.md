@@ -24,8 +24,8 @@ data:
     path: data_structure/segtree_2d.hpp
     title: 2D segtree
   - icon: ':heavy_check_mark:'
-    path: data_structure/sparce_table.hpp
-    title: data_structure/sparce_table.hpp
+    path: data_structure/sparse_table.hpp
+    title: Sparse Table
   - icon: ':heavy_check_mark:'
     path: data_structure/undo_dsu.hpp
     title: undo dsu
@@ -324,8 +324,8 @@ data:
   - data_structure/dsu.hpp
   - data_structure/segtree_2d.hpp
   - data_structure/lazysegtree.hpp
-  - data_structure/sparce_table.hpp
   - data_structure/fenwick_tree.hpp
+  - data_structure/sparse_table.hpp
   - data_structure/undo_dsu.hpp
   - data_structure/BinaryTrie.hpp
   - template/parsing_template.hpp
