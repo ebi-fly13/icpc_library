@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy:
@@ -12,12 +12,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/geometry/base_rational.test.cpp
     title: test/geometry/base_rational.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/others/aoj_1300.test.cpp
     title: test/others/aoj_1300.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"utility/rational.hpp\"\n\n#line 2 \"template/template.hpp\"\
@@ -111,7 +111,7 @@ data:
   requiredBy:
   - geometry3D/accurate/line.hpp
   timestamp: '2023-06-29 23:31:55+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/geometry/base_rational.test.cpp
   - test/others/aoj_1300.test.cpp
