@@ -77,6 +77,9 @@ struct rational {
     friend std::ostream& operator<<(std::ostream& os, const rational& r) {
         return os << r.p << " / " << r.q;
     }
+    std::pair<ll,ll> val() const {
+        return {p, q};
+    }
 
   private:
     ll p, q;
