@@ -2,7 +2,7 @@
 
 #include"../../template/template.hpp"
 
-#include"../../data_structure/sparce_table.hpp"
+#include"../../data_structure/sparse_table.hpp"
 
 using namespace lib;
 
