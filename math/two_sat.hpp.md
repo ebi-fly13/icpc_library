@@ -80,8 +80,8 @@ data:
   timestamp: '2023-05-26 21:39:22+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/math/two_sat.test.cpp
   - test/math/aoj_3205.test.cpp
+  - test/math/two_sat.test.cpp
 documentation_of: math/two_sat.hpp
 layout: document
 title: Two SAT
