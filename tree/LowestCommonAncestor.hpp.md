@@ -76,8 +76,8 @@ data:
   timestamp: '2023-05-17 22:41:14+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/tree/Lowest_Common_Ancestor.test.cpp
   - test/data_structure/pck2022y11.test.cpp
+  - test/tree/Lowest_Common_Ancestor.test.cpp
 documentation_of: tree/LowestCommonAncestor.hpp
 layout: document
 title: Lowest Common Ancestor
