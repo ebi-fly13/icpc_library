@@ -1,3 +1,5 @@
+#define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1300"
+
 #include "../../template/template.hpp"
 #include "../../template/parsing_template.hpp"
 #include "../../math/gauss_jordan.hpp"
