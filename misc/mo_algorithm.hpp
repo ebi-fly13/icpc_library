@@ -8,7 +8,7 @@ struct Mo {
     int width;
     vector<int> left, right, order;
 
-    Mo(int N, int Q) : order(Q) {
+    Mo(int N = 1, int Q = 1) : order(Q) {
         width = max<int>(1, 1.0 * N / max<double>(1.0, sqrt(Q * 2.0 / 3.0)));
         iota(begin(order), end(order), 0);
     }
