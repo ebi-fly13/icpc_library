@@ -139,8 +139,13 @@ data:
   - test/tree/aoj_0489.test.cpp
 documentation_of: tree/Mo_on_Tree.hpp
 layout: document
-redirect_from:
-- /library/tree/Mo_on_Tree.hpp
-- /library/tree/Mo_on_Tree.hpp.html
-title: tree/Mo_on_Tree.hpp
+title: "\u6728\u4E0A\u306E Mo"
 ---
+
+## 木上の Mo 
+
+木上のMoは、木上のパスクエリを Euler Tour 順に頂点あるいは辺を並べてその列上での区間クエリとして解釈する。
+
+木を頂点 $0$ の根付き木とし、 $\mathrm{par}(v)$ を $v$ の親とする。ただし $v=0$ のときは $-1$ とする。頂点 $0$ から Euler Tour をし、通った辺とその重みを順に並べた配列 `vals` を作る。また、初めて頂点 $v$ を訪れた時刻　`in[v]` を記録する。ここで、パスクエリ $(u,v)$ は `vals` 上で `[in[u],in[v])` へのクエリに対応する。その区間で辺 $i$ が含まれている個数を $c(i)$ 個とすると、パス上で辺 $i$ は $(c(i)\bmod 2)$ 個含まれている。木上のMoはパスに含まれる辺の順序を考慮せず、含まれる辺は集合として扱われる。つまり、通常のMoが要求する `add_left`, `add_right`, `del_left`, `del_right` は辺の集合への追加 `add` および削除 `del` に置き換えられる。ここで注意したいことは、通常のMoでは区間を収縮する関数はそのindexを引数に取るが、この木上のMoのライブラリが要求する `add`, `del` は重みそのものを引数に取る。また、ライブラリ内部で辺が今集合に含まれているかを表す `contain` を管理している。内部では区間の収縮の際に集合に辺を追加するか削除するかを切り替えられるように `change` を定義し、それを通常のMoに投げている。
+
+さて、辺に重みがついている場合と異なり、頂点に重みがついている場合は工夫が必要である。頂点に重みがついている場合は、$v$ の重みを $\mathrm{par}(v)$ への辺に乗せる。また、パスクエリ $(u,v)$ は `vals[in[u],in[v])` $\cup \lbrace$ 頂点 $\mathrm{lca}(u,v)$ の重み $\rbrace$ が表す集合へのクエリと解釈する。$(u,v)$ クエリを投げる際には `insert(u,v,lca)` として、$\mathrm{lca}(u,v)$ を要求する。

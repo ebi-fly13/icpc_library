@@ -7,7 +7,7 @@ data:
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: tree/Mo_on_Tree.hpp
-    title: tree/Mo_on_Tree.hpp
+    title: "\u6728\u4E0A\u306E Mo"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/data_structure/Static_Range_Inversions_Query.test.cpp
