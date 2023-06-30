@@ -152,6 +152,9 @@ data:
       path: tree/LowestCommonAncestor.hpp
       title: Lowest Common Ancestor
     - icon: ':heavy_check_mark:'
+      path: tree/Mo_on_Tree.hpp
+      title: tree/Mo_on_Tree.hpp
+    - icon: ':heavy_check_mark:'
       path: tree/RerootingDP.hpp
       title: Rerooting DP
   - name: utility
@@ -318,5 +321,8 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/tree/Tree_Path_Composite_Sum.test.cpp
       title: test/tree/Tree_Path_Composite_Sum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/tree/aoj_0489.test.cpp
+      title: test/tree/aoj_0489.test.cpp
 layout: toppage
 ---

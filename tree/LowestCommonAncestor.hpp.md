@@ -12,6 +12,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/tree/Lowest_Common_Ancestor.test.cpp
     title: test/tree/Lowest_Common_Ancestor.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/tree/aoj_0489.test.cpp
+    title: test/tree/aoj_0489.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -77,6 +80,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/tree/Lowest_Common_Ancestor.test.cpp
+  - test/tree/aoj_0489.test.cpp
   - test/data_structure/pck2022y11.test.cpp
 documentation_of: tree/LowestCommonAncestor.hpp
 layout: document

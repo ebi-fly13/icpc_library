@@ -4,11 +4,17 @@ data:
   - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: tree/Mo_on_Tree.hpp
+    title: tree/Mo_on_Tree.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/data_structure/Static_Range_Inversions_Query.test.cpp
     title: test/data_structure/Static_Range_Inversions_Query.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/tree/aoj_0489.test.cpp
+    title: test/tree/aoj_0489.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -24,9 +30,9 @@ data:
     \ b) return false;\n    a = b;\n    return true;\n}\n\nnamespace lib {\n\nusing\
     \ namespace std;\n\n}  // namespace lib\n\n// using namespace lib;\n#line 4 \"\
     misc/mo_algorithm.hpp\"\n\nnamespace lib {\n\nstruct Mo {\n    int width;\n  \
-    \  vector<int> left, right, order;\n\n    Mo(int N, int Q) : order(Q) {\n    \
-    \    width = max<int>(1, 1.0 * N / max<double>(1.0, sqrt(Q * 2.0 / 3.0)));\n \
-    \       iota(begin(order), end(order), 0);\n    }\n\n    void insert(int l, int\
+    \  vector<int> left, right, order;\n\n    Mo(int N = 1, int Q = 1) : order(Q)\
+    \ {\n        width = max<int>(1, 1.0 * N / max<double>(1.0, sqrt(Q * 2.0 / 3.0)));\n\
+    \        iota(begin(order), end(order), 0);\n    }\n\n    void insert(int l, int\
     \ r) { /* [l, r) */\n        left.emplace_back(l);\n        right.emplace_back(r);\n\
     \    }\n\n    template <typename AL, typename AR, typename DL, typename DR, typename\
     \ REM>\n    void run(const AL &add_left, const AR &add_right, const DL &delete_left,\n\
@@ -42,7 +48,7 @@ data:
     \        }\n    }\n};\n\n}  // namespace lib\n"
   code: "#pragma once\n\n#include \"../template/template.hpp\"\n\nnamespace lib {\n\
     \nstruct Mo {\n    int width;\n    vector<int> left, right, order;\n\n    Mo(int\
-    \ N, int Q) : order(Q) {\n        width = max<int>(1, 1.0 * N / max<double>(1.0,\
+    \ N = 1, int Q = 1) : order(Q) {\n        width = max<int>(1, 1.0 * N / max<double>(1.0,\
     \ sqrt(Q * 2.0 / 3.0)));\n        iota(begin(order), end(order), 0);\n    }\n\n\
     \    void insert(int l, int r) { /* [l, r) */\n        left.emplace_back(l);\n\
     \        right.emplace_back(r);\n    }\n\n    template <typename AL, typename\
@@ -61,10 +67,12 @@ data:
   - template/template.hpp
   isVerificationFile: false
   path: misc/mo_algorithm.hpp
-  requiredBy: []
-  timestamp: '2023-06-02 15:45:54+09:00'
+  requiredBy:
+  - tree/Mo_on_Tree.hpp
+  timestamp: '2023-06-30 13:53:37+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/tree/aoj_0489.test.cpp
   - test/data_structure/Static_Range_Inversions_Query.test.cpp
 documentation_of: misc/mo_algorithm.hpp
 layout: document

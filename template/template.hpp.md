@@ -120,6 +120,9 @@ data:
     path: tree/LowestCommonAncestor.hpp
     title: Lowest Common Ancestor
   - icon: ':heavy_check_mark:'
+    path: tree/Mo_on_Tree.hpp
+    title: tree/Mo_on_Tree.hpp
+  - icon: ':heavy_check_mark:'
     path: tree/RerootingDP.hpp
     title: Rerooting DP
   - icon: ':heavy_check_mark:'
@@ -264,6 +267,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/tree/Tree_Path_Composite_Sum.test.cpp
     title: test/tree/Tree_Path_Composite_Sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/tree/aoj_0489.test.cpp
+    title: test/tree/aoj_0489.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -317,6 +323,7 @@ data:
   - tree/RerootingDP.hpp
   - tree/LowestCommonAncestor.hpp
   - tree/HeavyLightDecomposition.hpp
+  - tree/Mo_on_Tree.hpp
   - math/gauss_jordan.hpp
   - math/ext_gcd.hpp
   - math/eratosthenes_sieve.hpp
@@ -361,6 +368,7 @@ data:
   - test/tree/RerootingDP.test.cpp
   - test/tree/Lowest_Common_Ancestor.test.cpp
   - test/tree/Tree_Path_Composite_Sum.test.cpp
+  - test/tree/aoj_0489.test.cpp
   - test/math/enumerate_primes.test.cpp
   - test/math/two_sat.test.cpp
   - test/math/aoj_3205.test.cpp
