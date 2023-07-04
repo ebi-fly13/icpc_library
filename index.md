@@ -99,9 +99,12 @@ data:
   - name: math
     pages:
     - icon: ':heavy_check_mark:'
+      path: math/crt.hpp
+      title: math/crt.hpp
+    - icon: ':heavy_check_mark:'
       path: math/eratosthenes_sieve.hpp
       title: eratosthenes sieve
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: math/ext_gcd.hpp
       title: math/ext_gcd.hpp
     - icon: ':heavy_check_mark:'
@@ -284,6 +287,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/math/two_sat.test.cpp
       title: test/math/two_sat.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/math/yuki_447.test.cpp
+      title: test/math/yuki_447.test.cpp
   - name: test/misc
     pages:
     - icon: ':heavy_check_mark:'

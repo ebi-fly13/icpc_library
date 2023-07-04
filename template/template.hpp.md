@@ -81,9 +81,12 @@ data:
     path: graph/scc_graph.hpp
     title: SCC Graph
   - icon: ':heavy_check_mark:'
+    path: math/crt.hpp
+    title: math/crt.hpp
+  - icon: ':heavy_check_mark:'
     path: math/eratosthenes_sieve.hpp
     title: eratosthenes sieve
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: math/ext_gcd.hpp
     title: math/ext_gcd.hpp
   - icon: ':heavy_check_mark:'
@@ -241,6 +244,9 @@ data:
     path: test/math/two_sat.test.cpp
     title: test/math/two_sat.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/math/yuki_447.test.cpp
+    title: test/math/yuki_447.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/misc/Binomial_Coefficient.test.cpp
     title: test/misc/Binomial_Coefficient.test.cpp
   - icon: ':heavy_check_mark:'
@@ -324,6 +330,7 @@ data:
   - tree/LowestCommonAncestor.hpp
   - tree/HeavyLightDecomposition.hpp
   - tree/Mo_on_Tree.hpp
+  - math/crt.hpp
   - math/gauss_jordan.hpp
   - math/ext_gcd.hpp
   - math/eratosthenes_sieve.hpp
@@ -369,6 +376,7 @@ data:
   - test/tree/Lowest_Common_Ancestor.test.cpp
   - test/tree/Tree_Path_Composite_Sum.test.cpp
   - test/tree/aoj_0489.test.cpp
+  - test/math/yuki_447.test.cpp
   - test/math/enumerate_primes.test.cpp
   - test/math/two_sat.test.cpp
   - test/math/aoj_3205.test.cpp

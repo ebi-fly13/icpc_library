@@ -4,11 +4,17 @@ data:
   - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: math/crt.hpp
+    title: math/crt.hpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/math/yuki_447.test.cpp
+    title: test/math/yuki_447.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links:
     - https://github.com/maspypy/library/blob/main/nt/extgcd.hpp
@@ -57,10 +63,12 @@ data:
   - template/template.hpp
   isVerificationFile: false
   path: math/ext_gcd.hpp
-  requiredBy: []
+  requiredBy:
+  - math/crt.hpp
   timestamp: '2023-06-11 02:07:11+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/math/yuki_447.test.cpp
 documentation_of: math/ext_gcd.hpp
 layout: document
 redirect_from:
