@@ -60,6 +60,7 @@ struct HeavyLightDecomposition {
           nxt(n),
           par(n, -1),
           depth(n, 0) {
+        nxt[root] = root;
         dfs_sz(root);
         dfs_hld(root);
     }
