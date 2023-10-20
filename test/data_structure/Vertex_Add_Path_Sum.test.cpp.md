@@ -86,37 +86,37 @@ data:
     \ in[v]);\n        return res;\n    }\n\n  public:\n    HeavyLightDecomposition(const\
     \ vector<vector<int>> &gh, int root = 0)\n        : n(gh.size()),\n          g(gh),\n\
     \          sz(n, 1),\n          in(n),\n          out(n),\n          nxt(n),\n\
-    \          par(n, -1),\n          depth(n, 0) {\n        dfs_sz(root);\n     \
-    \   dfs_hld(root);\n    }\n\n    int idx(int u) const {\n        return in[u];\n\
-    \    }\n\n    int lca(int u, int v) const {\n        while (nxt[u] != nxt[v])\
-    \ {\n            if (in[u] < in[v]) swap(u, v);\n            u = par[nxt[u]];\n\
-    \        }\n        return depth[u] < depth[v] ? u : v;\n    }\n\n    int distance(int\
-    \ u, int v) const {\n        return depth[u] + depth[v] - 2 * depth[lca(u, v)];\n\
-    \    }\n\n    template <class F>\n    void path_noncommutative_query(int u, int\
-    \ v, bool vertex,\n                                   const F &f) const {\n  \
-    \      int l = lca(u, v);\n        for (auto [a, b] : ascend(u, l)) f(a + 1, b);\n\
-    \        if (vertex) f(in[l], in[l] + 1);\n        for (auto [a, b] : descend(l,\
-    \ v)) f(a, b + 1);\n    }\n\n    template <class F> void subtree_query(int u,\
-    \ bool vertex, const F &f) {\n        f(in[u] + int(!vertex), out[u]);\n    }\n\
-    \n  private:\n    int n;\n    vector<vector<int>> g;\n    vector<int> sz, in,\
-    \ out, nxt, par, depth;\n};\n\n}  // namespace lib\n#line 6 \"test/data_structure/Vertex_Add_Path_Sum.test.cpp\"\
-    \n\nusing i64 = std::int64_t;\ni64 op(i64 a, i64 b) {\n    return a + b;\n}\n\
-    i64 e() {\n    return 0;\n}\n\nint main() {\n    int n, q;\n    std::cin >> n\
-    \ >> q;\n    std::vector<i64> a(n);\n    for (int i = 0; i < n; ++i) {\n     \
-    \   std::cin >> a[i];\n    }\n    std::vector g(n, std::vector<int>());\n    for\
-    \ (int i = 0; i < n - 1; ++i) {\n        int u, v;\n        std::cin >> u >> v;\n\
-    \        g[u].emplace_back(v);\n        g[v].emplace_back(u);\n    }\n    lib::HeavyLightDecomposition\
-    \ hld(g);\n    lib::segtree<i64, op, e> seg(n);\n    i64 ans = e();\n    auto\
-    \ set = [&](int u, i64 x) {\n        int idx = hld.idx(u);\n        seg.set(idx,\
-    \ seg.get(idx) + x);\n    };\n    auto f = [&](int l, int r) {\n        if (l\
-    \ <= r)\n            ans = op(ans, seg.prod(l, r));\n        else\n          \
-    \  ans = op(ans, seg.prod(r, l));\n    };\n    for (int i = 0; i < n; i++) {\n\
-    \        set(i, a[i]);\n    }\n    while (q--) {\n        int flag;\n        std::cin\
-    \ >> flag;\n        if (flag == 0) {\n            int p;\n            i64 x;\n\
-    \            std::cin >> p >> x;\n            set(p, x);\n        } else {\n \
-    \           int u, v;\n            std::cin >> u >> v;\n            ans = e();\n\
-    \            hld.path_noncommutative_query(u, v, true, f);\n            std::cout\
-    \ << ans << '\\n';\n        }\n    }\n}\n"
+    \          par(n, -1),\n          depth(n, 0) {\n        nxt[root] = root;\n \
+    \       dfs_sz(root);\n        dfs_hld(root);\n    }\n\n    int idx(int u) const\
+    \ {\n        return in[u];\n    }\n\n    int lca(int u, int v) const {\n     \
+    \   while (nxt[u] != nxt[v]) {\n            if (in[u] < in[v]) swap(u, v);\n \
+    \           u = par[nxt[u]];\n        }\n        return depth[u] < depth[v] ?\
+    \ u : v;\n    }\n\n    int distance(int u, int v) const {\n        return depth[u]\
+    \ + depth[v] - 2 * depth[lca(u, v)];\n    }\n\n    template <class F>\n    void\
+    \ path_noncommutative_query(int u, int v, bool vertex,\n                     \
+    \              const F &f) const {\n        int l = lca(u, v);\n        for (auto\
+    \ [a, b] : ascend(u, l)) f(a + 1, b);\n        if (vertex) f(in[l], in[l] + 1);\n\
+    \        for (auto [a, b] : descend(l, v)) f(a, b + 1);\n    }\n\n    template\
+    \ <class F> void subtree_query(int u, bool vertex, const F &f) {\n        f(in[u]\
+    \ + int(!vertex), out[u]);\n    }\n\n  private:\n    int n;\n    vector<vector<int>>\
+    \ g;\n    vector<int> sz, in, out, nxt, par, depth;\n};\n\n}  // namespace lib\n\
+    #line 6 \"test/data_structure/Vertex_Add_Path_Sum.test.cpp\"\n\nusing i64 = std::int64_t;\n\
+    i64 op(i64 a, i64 b) {\n    return a + b;\n}\ni64 e() {\n    return 0;\n}\n\n\
+    int main() {\n    int n, q;\n    std::cin >> n >> q;\n    std::vector<i64> a(n);\n\
+    \    for (int i = 0; i < n; ++i) {\n        std::cin >> a[i];\n    }\n    std::vector\
+    \ g(n, std::vector<int>());\n    for (int i = 0; i < n - 1; ++i) {\n        int\
+    \ u, v;\n        std::cin >> u >> v;\n        g[u].emplace_back(v);\n        g[v].emplace_back(u);\n\
+    \    }\n    lib::HeavyLightDecomposition hld(g);\n    lib::segtree<i64, op, e>\
+    \ seg(n);\n    i64 ans = e();\n    auto set = [&](int u, i64 x) {\n        int\
+    \ idx = hld.idx(u);\n        seg.set(idx, seg.get(idx) + x);\n    };\n    auto\
+    \ f = [&](int l, int r) {\n        if (l <= r)\n            ans = op(ans, seg.prod(l,\
+    \ r));\n        else\n            ans = op(ans, seg.prod(r, l));\n    };\n   \
+    \ for (int i = 0; i < n; i++) {\n        set(i, a[i]);\n    }\n    while (q--)\
+    \ {\n        int flag;\n        std::cin >> flag;\n        if (flag == 0) {\n\
+    \            int p;\n            i64 x;\n            std::cin >> p >> x;\n   \
+    \         set(p, x);\n        } else {\n            int u, v;\n            std::cin\
+    \ >> u >> v;\n            ans = e();\n            hld.path_noncommutative_query(u,\
+    \ v, true, f);\n            std::cout << ans << '\\n';\n        }\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/vertex_add_path_sum\"\n\
     \n#include \"../../data_structure/segtree.hpp\"\n#include \"../../template/template.hpp\"\
     \n#include \"../../tree/HeavyLightDecomposition.hpp\"\n\nusing i64 = std::int64_t;\n\
@@ -143,7 +143,7 @@ data:
   isVerificationFile: true
   path: test/data_structure/Vertex_Add_Path_Sum.test.cpp
   requiredBy: []
-  timestamp: '2023-06-20 22:32:45+09:00'
+  timestamp: '2023-10-20 14:05:48+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data_structure/Vertex_Add_Path_Sum.test.cpp
