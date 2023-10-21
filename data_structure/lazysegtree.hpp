@@ -8,7 +8,7 @@ template <class S, S (*op)(S, S), S (*e)(), class F, S (*mapping)(F, S),
           F (*composition)(F, F), F (*id)()>
 struct lazysegtree {
   private:
-    int n, log, sz;
+    int n, lg2, sz;
     std::vector<S> d;
     std::vector<F> lz;
 
@@ -28,13 +28,12 @@ struct lazysegtree {
     }
 
   public:
-    lazysegtree(int n) : n(n) {
-        lazysegtree(std::vector<S>(n, e()));
-    }
+    lazysegtree(int _n) : lazysegtree(std::vector<S>(_n, e())) {}
+
     lazysegtree(const std::vector<S> &v) : n(v.size()) {
-        log = 0;
-        while ((1 << log) < n) log++;
-        sz = 1 << log;
+        lg2 = 0;
+        while ((1 << lg2) < n) lg2++;
+        sz = 1 << lg2;
         d = std::vector<S>(2 * sz, e());
         lz = std::vector<F>(2 * sz, id());
         for (int i = 0; i < n; i++) d[sz + i] = v[i];
@@ -44,15 +43,15 @@ struct lazysegtree {
     void set(int p, S x) {
         assert(0 <= p && p < n);
         p += sz;
-        rrep(i, 1, log + 1) push(p >> i);
+        rrep(i, 1, lg2 + 1) push(p >> i);
         d[p] = x;
-        rep(i, 1, log + 1) update(p >> i);
+        rep(i, 1, lg2 + 1) update(p >> i);
     }
 
     S get(int p) {
         assert(0 <= p && p < n);
         p += sz;
-        rrep(i, 1, log + 1) push(p >> i);
+        rrep(i, 1, lg2 + 1) push(p >> i);
         return d[p];
     }
 
@@ -61,7 +60,7 @@ struct lazysegtree {
         if (l == r) return e();
         l += sz;
         r += sz;
-        rrep(i, 1, log + 1) {
+        rrep(i, 1, lg2 + 1) {
             if (((l >> i) << i) != l) push(l >> i);
             if (((r >> i) << i) != r) push((r - 1) >> i);
         }
@@ -84,9 +83,9 @@ struct lazysegtree {
     void apply(int p, F f) {
         assert(0 <= p && p < n);
         p += sz;
-        rrep(i, 1, log + 1) push(p >> i);
+        rrep(i, 1, lg2 + 1) push(p >> i);
         d[p] = mapping(f, d[p]);
-        rep(i, 1, log + 1) update(p >> i);
+        rep(i, 1, lg2 + 1) update(p >> i);
     }
 
     void apply(int l, int r, F f) {
@@ -94,7 +93,7 @@ struct lazysegtree {
         if (l == r) return;
         l += sz;
         r += sz;
-        rrep(i, 1, log + 1) {
+        rrep(i, 1, lg2 + 1) {
             if (((l >> i) << i) != l) push(l >> i);
             if (((r >> i) << i) != r) push((r - 1) >> i);
         }
@@ -111,7 +110,7 @@ struct lazysegtree {
             r = r2;
         }
 
-        rep(i, 1, log + 1) {
+        rep(i, 1, lg2 + 1) {
             if (((l >> i) << i) != l) update(l >> i);
             if (((r >> i) << i) != r) update((r - 1) >> i);
         }
@@ -122,7 +121,7 @@ struct lazysegtree {
         assert(g(e()));
         if (l == n) return n;
         l += sz;
-        for (int i = log; i >= 1; i--) push(l >> i);
+        for (int i = lg2; i >= 1; i--) push(l >> i);
         S sm = e();
         do {
             while (l % 2 == 0) l >>= 1;
@@ -148,7 +147,7 @@ struct lazysegtree {
         assert(g(e()));
         if (r == 0) return 0;
         r += sz;
-        for (int i = log; i >= 1; i--) push((r - 1) >> i);
+        for (int i = lg2; i >= 1; i--) push((r - 1) >> i);
         S sm = e();
         do {
             r--;
