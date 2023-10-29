@@ -99,7 +99,7 @@ template <class T> struct section_set {
     }
 
     std::pair<T, T> lower_bound(T l) const {
-        return *st.lower_bound({l, -1});
+        return *st.lower_bound({l, std::numeric_limits<T>::min()});
     }
 };
 
