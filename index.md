@@ -24,6 +24,9 @@ data:
       path: data_structure/lazysegtree.hpp
       title: lazy segtree
     - icon: ':heavy_check_mark:'
+      path: data_structure/section_set.hpp
+      title: section set
+    - icon: ':heavy_check_mark:'
       path: data_structure/segtree.hpp
       title: segtree
     - icon: ':heavy_check_mark:'
@@ -215,6 +218,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data_structure/aoj_1645.test.cpp
       title: test/data_structure/aoj_1645.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data_structure/aoj_2152.test.cpp
+      title: test/data_structure/aoj_2152.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/data_structure/pck2022y11.test.cpp
       title: test/data_structure/pck2022y11.test.cpp
