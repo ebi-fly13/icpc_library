@@ -58,7 +58,7 @@ data:
     \        if (x <= itr->second) {\n            assert(itr->first <= x);\n     \
     \       return *itr;\n        } else {\n            return {0, 0};\n        }\n\
     \    }\n\n    std::pair<T, T> lower_bound(T l) const {\n        return *st.lower_bound({l,\
-    \ -1});\n    }\n};\n\n}  // namespace lib\n"
+    \ std::numeric_limits<T>::min()});\n    }\n};\n\n}  // namespace lib\n"
   code: "#pragma once\n\n#include \"../template/template.hpp\"\n\nnamespace lib {\n\
     \ntemplate <class T> struct section_set {\n  private:\n    std::set<std::pair<T,\
     \ T>> st;\n\n  public:\n    section_set() {\n        st.insert(\n            {std::numeric_limits<T>::min(),\
@@ -94,13 +94,13 @@ data:
     \        if (x <= itr->second) {\n            assert(itr->first <= x);\n     \
     \       return *itr;\n        } else {\n            return {0, 0};\n        }\n\
     \    }\n\n    std::pair<T, T> lower_bound(T l) const {\n        return *st.lower_bound({l,\
-    \ -1});\n    }\n};\n\n}  // namespace lib"
+    \ std::numeric_limits<T>::min()});\n    }\n};\n\n}  // namespace lib"
   dependsOn:
   - template/template.hpp
   isVerificationFile: false
   path: data_structure/section_set.hpp
   requiredBy: []
-  timestamp: '2023-10-30 03:01:24+09:00'
+  timestamp: '2023-10-30 03:06:09+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/data_structure/aoj_2152.test.cpp
