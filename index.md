@@ -94,6 +94,9 @@ data:
       path: graph/fordfulkerson.hpp
       title: FordFulkerson
     - icon: ':heavy_check_mark:'
+      path: graph/low_link.hpp
+      title: graph/low_link.hpp
+    - icon: ':heavy_check_mark:'
       path: graph/mcf_graph.hpp
       title: min cost flow
     - icon: ':heavy_check_mark:'
@@ -282,6 +285,12 @@ data:
       title: test/geometry/base_rational.test.cpp
   - name: test/graph
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/graph/Articulation_Points.test.cpp
+      title: test/graph/Articulation_Points.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/graph/Bridges.test.cpp
+      title: test/graph/Bridges.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/graph/Maximum_Flow.test.cpp
       title: test/graph/Maximum_Flow.test.cpp

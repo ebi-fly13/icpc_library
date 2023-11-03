@@ -78,6 +78,9 @@ data:
     path: graph/fordfulkerson.hpp
     title: FordFulkerson
   - icon: ':heavy_check_mark:'
+    path: graph/low_link.hpp
+    title: graph/low_link.hpp
+  - icon: ':heavy_check_mark:'
     path: graph/mcf_graph.hpp
     title: min cost flow
   - icon: ':heavy_check_mark:'
@@ -241,6 +244,12 @@ data:
     path: test/geometry/base_rational.test.cpp
     title: test/geometry/base_rational.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/graph/Articulation_Points.test.cpp
+    title: test/graph/Articulation_Points.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Bridges.test.cpp
+    title: test/graph/Bridges.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/graph/Maximum_Flow.test.cpp
     title: test/graph/Maximum_Flow.test.cpp
   - icon: ':heavy_check_mark:'
@@ -321,6 +330,7 @@ data:
   - misc/dice.hpp
   - graph/mcf_graph.hpp
   - graph/scc_graph.hpp
+  - graph/low_link.hpp
   - graph/mf_graph.hpp
   - graph/fordfulkerson.hpp
   - tree/HeavyLightDecomposition.hpp
@@ -369,6 +379,8 @@ data:
   - test/misc/Binomial_Coefficient.test.cpp
   - test/graph/Minimum_Flow.test.cpp
   - test/graph/Maximum_Flow.test.cpp
+  - test/graph/Bridges.test.cpp
+  - test/graph/Articulation_Points.test.cpp
   - test/tree/Tree_Path_Composite_Sum.test.cpp
   - test/tree/RerootingDP.test.cpp
   - test/tree/Lowest_Common_Ancestor.test.cpp
