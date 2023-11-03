@@ -9,7 +9,7 @@ template <ll m> struct modint {
     ll a;
 
     modint(ll x = 0) : a((x % m + m) % m) {}
-    static ll mod() {
+    static constexpr ll mod() {
         return m;
     }
     ll& val() {
