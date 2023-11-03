@@ -1,6 +1,6 @@
 ---
 title: Low Link
-documentation_of: //tree/low_link.hpp
+documentation_of: //graph/low_link.hpp
 ---
 
 ## 説明
