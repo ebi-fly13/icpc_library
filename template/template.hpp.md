@@ -79,7 +79,7 @@ data:
     title: FordFulkerson
   - icon: ':heavy_check_mark:'
     path: graph/low_link.hpp
-    title: graph/low_link.hpp
+    title: Low Link
   - icon: ':heavy_check_mark:'
     path: graph/mcf_graph.hpp
     title: min cost flow

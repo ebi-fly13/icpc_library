@@ -80,8 +80,21 @@ data:
   - test/graph/Articulation_Points.test.cpp
 documentation_of: graph/low_link.hpp
 layout: document
-redirect_from:
-- /library/graph/low_link.hpp
-- /library/graph/low_link.hpp.html
-title: graph/low_link.hpp
+title: Low Link
 ---
+
+## 説明
+
+グラフを渡してlow linkを求める。 $O(N)$
+
+### is_bridge(int u, int v)
+
+辺 $u-v$ が橋であるか判定。そのような辺がない場合もfalseを返す。
+
+### bridge()
+
+橋を列挙して返す。
+
+### articulation()
+
+関節点を列挙して返す。
