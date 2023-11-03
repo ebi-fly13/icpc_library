@@ -41,7 +41,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: geometry/base_arbitary.hpp
     title: geometry/base_arbitary.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: geometry/base_ld.hpp
     title: base_ld
   - icon: ':warning:'
@@ -237,9 +237,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/geometry/aoj_1198.test.cpp
     title: test/geometry/aoj_1198.test.cpp
-  - icon: ':x:'
-    path: test/geometry/aoj_1662.test.cpp
-    title: test/geometry/aoj_1662.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/geometry/base_rational.test.cpp
     title: test/geometry/base_rational.test.cpp
@@ -291,9 +288,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/tree/aoj_0489.test.cpp
     title: test/tree/aoj_0489.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n\n#include <bits/stdc++.h>\n\n\
@@ -365,7 +362,7 @@ data:
   - string/z_algorithm.hpp
   - string/RollingHash.hpp
   timestamp: '2023-05-17 22:41:14+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/template/debug_template.test.cpp
   - test/misc/aoj_1197.test.cpp
@@ -397,7 +394,6 @@ data:
   - test/math/yuki_447.test.cpp
   - test/math/aoj_3205.test.cpp
   - test/geometry/Intersection.test.cpp
-  - test/geometry/aoj_1662.test.cpp
   - test/geometry/Cross_Point.test.cpp
   - test/geometry/Distance.test.cpp
   - test/geometry/Intersection_Circle.test.cpp
