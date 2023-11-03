@@ -54,28 +54,27 @@ data:
     \ - 1) >> rank2);\n        root[1][rank2] = root[0][rank2].inv();\n        rrep(i,\
     \ 0, rank2) {\n            root[0][i] = root[0][i + 1] * root[0][i + 1];\n   \
     \         root[1][i] = root[1][i + 1] * root[1][i + 1];\n        }\n    }\n};\n\
-    \nint bit_reverse(int n, int bit_size) {\n    int rev = 0;\n    rep(i, 0, bit_size)\
-    \ {\n        rev |= ((n >> i) & 1) << (bit_size - i - 1);\n    }\n    return rev;\n\
-    }\n\nvoid butterfly(std::vector<mint>& a, bool inverse) {\n    static ntt_info\
-    \ info;\n    int n = a.size();\n    int bit_size = 0;\n    while ((1 << bit_size)\
-    \ < n) bit_size++;\n    assert(1 << bit_size == n);\n    rep(i, 0, n) {\n    \
-    \    int rev = bit_reverse(i, bit_size);\n        if (i < rev) {\n           \
-    \ std::swap(a[i], a[rev]);\n        }\n    }\n    rep(bit, 0, bit_size) {\n  \
-    \      rep(i, 0, n / (1 << (bit + 1))) {\n            mint zeta1 = 1;\n      \
-    \      mint zeta2 = info.root[inverse][1];\n            mint w = info.root[inverse][bit\
-    \ + 1];\n            rep(j, 0, 1 << bit) {\n                int idx = i * (1 <<\
-    \ (bit + 1)) + j;\n                int jdx = idx + (1 << bit);\n             \
-    \   mint p1 = a[idx];\n                mint p2 = a[jdx];\n                a[idx]\
-    \ = p1 + zeta1 * p2;\n                a[jdx] = p1 + zeta2 * p2;\n            \
-    \    zeta1 *= w;\n                zeta2 *= w;\n            }\n        }\n    }\n\
-    \    if (inverse) {\n        mint inv_n = mint(n).inv();\n        rep(i, 0, n)\
-    \ a[i] *= inv_n;\n    }\n}\n\nstd::vector<mint> convolution(const std::vector<mint>&\
-    \ f,\n                              const std::vector<mint>& g) {\n    int n =\
-    \ 1;\n    while (n < int(f.size() + g.size() - 1)) n <<= 1;\n    std::vector<mint>\
-    \ a(n), b(n);\n    std::copy(f.begin(), f.end(), a.begin());\n    std::copy(g.begin(),\
-    \ g.end(), b.begin());\n    butterfly(a, false);\n    butterfly(b, false);\n \
-    \   rep(i, 0, n) {\n        a[i] *= b[i];\n    }\n    butterfly(a, true);\n  \
-    \  a.resize(f.size() + g.size() - 1);\n    return a;\n}\n\n}  // namespace lib\n"
+    \nvoid butterfly(std::vector<mint>& a, bool inverse) {\n    static ntt_info info;\n\
+    \    int n = a.size();\n    int bit_size = 0;\n    while ((1 << bit_size) < n)\
+    \ bit_size++;\n    assert(1 << bit_size == n);\n    for (int i = 0, j = 1; j <\
+    \ n - 1; j++) {\n        for (int k = n >> 1; k > (i ^= k); k >>= 1);\n      \
+    \  if (j < i) {\n            std::swap(a[i], a[j]);\n        }\n    }\n    rep(bit,\
+    \ 0, bit_size) {\n        rep(i, 0, n / (1 << (bit + 1))) {\n            mint\
+    \ zeta1 = 1;\n            mint zeta2 = info.root[inverse][1];\n            mint\
+    \ w = info.root[inverse][bit + 1];\n            rep(j, 0, 1 << bit) {\n      \
+    \          int idx = i * (1 << (bit + 1)) + j;\n                int jdx = idx\
+    \ + (1 << bit);\n                mint p1 = a[idx];\n                mint p2 =\
+    \ a[jdx];\n                a[idx] = p1 + zeta1 * p2;\n                a[jdx] =\
+    \ p1 + zeta2 * p2;\n                zeta1 *= w;\n                zeta2 *= w;\n\
+    \            }\n        }\n    }\n    if (inverse) {\n        mint inv_n = mint(n).inv();\n\
+    \        rep(i, 0, n) a[i] *= inv_n;\n    }\n}\n\nstd::vector<mint> convolution(const\
+    \ std::vector<mint>& f,\n                              const std::vector<mint>&\
+    \ g) {\n    int n = 1;\n    while (n < int(f.size() + g.size() - 1)) n <<= 1;\n\
+    \    std::vector<mint> a(n), b(n);\n    std::copy(f.begin(), f.end(), a.begin());\n\
+    \    std::copy(g.begin(), g.end(), b.begin());\n    butterfly(a, false);\n   \
+    \ butterfly(b, false);\n    rep(i, 0, n) {\n        a[i] *= b[i];\n    }\n   \
+    \ butterfly(a, true);\n    a.resize(f.size() + g.size() - 1);\n    return a;\n\
+    }\n\n}  // namespace lib\n"
   code: "#pragma once\n\n#include \"../template/template.hpp\"\n#include \"../utility/modint.hpp\"\
     \n\nnamespace lib {\n\nusing mint = modint998244353;\n\nstruct ntt_info {\n  \
     \  static constexpr int rank2 = 23;\n    const int g = 3;\n    std::array<std::array<mint,\
@@ -83,35 +82,34 @@ data:
     \ - 1) >> rank2);\n        root[1][rank2] = root[0][rank2].inv();\n        rrep(i,\
     \ 0, rank2) {\n            root[0][i] = root[0][i + 1] * root[0][i + 1];\n   \
     \         root[1][i] = root[1][i + 1] * root[1][i + 1];\n        }\n    }\n};\n\
-    \nint bit_reverse(int n, int bit_size) {\n    int rev = 0;\n    rep(i, 0, bit_size)\
-    \ {\n        rev |= ((n >> i) & 1) << (bit_size - i - 1);\n    }\n    return rev;\n\
-    }\n\nvoid butterfly(std::vector<mint>& a, bool inverse) {\n    static ntt_info\
-    \ info;\n    int n = a.size();\n    int bit_size = 0;\n    while ((1 << bit_size)\
-    \ < n) bit_size++;\n    assert(1 << bit_size == n);\n    rep(i, 0, n) {\n    \
-    \    int rev = bit_reverse(i, bit_size);\n        if (i < rev) {\n           \
-    \ std::swap(a[i], a[rev]);\n        }\n    }\n    rep(bit, 0, bit_size) {\n  \
-    \      rep(i, 0, n / (1 << (bit + 1))) {\n            mint zeta1 = 1;\n      \
-    \      mint zeta2 = info.root[inverse][1];\n            mint w = info.root[inverse][bit\
-    \ + 1];\n            rep(j, 0, 1 << bit) {\n                int idx = i * (1 <<\
-    \ (bit + 1)) + j;\n                int jdx = idx + (1 << bit);\n             \
-    \   mint p1 = a[idx];\n                mint p2 = a[jdx];\n                a[idx]\
-    \ = p1 + zeta1 * p2;\n                a[jdx] = p1 + zeta2 * p2;\n            \
-    \    zeta1 *= w;\n                zeta2 *= w;\n            }\n        }\n    }\n\
-    \    if (inverse) {\n        mint inv_n = mint(n).inv();\n        rep(i, 0, n)\
-    \ a[i] *= inv_n;\n    }\n}\n\nstd::vector<mint> convolution(const std::vector<mint>&\
-    \ f,\n                              const std::vector<mint>& g) {\n    int n =\
-    \ 1;\n    while (n < int(f.size() + g.size() - 1)) n <<= 1;\n    std::vector<mint>\
-    \ a(n), b(n);\n    std::copy(f.begin(), f.end(), a.begin());\n    std::copy(g.begin(),\
-    \ g.end(), b.begin());\n    butterfly(a, false);\n    butterfly(b, false);\n \
-    \   rep(i, 0, n) {\n        a[i] *= b[i];\n    }\n    butterfly(a, true);\n  \
-    \  a.resize(f.size() + g.size() - 1);\n    return a;\n}\n\n}  // namespace lib"
+    \nvoid butterfly(std::vector<mint>& a, bool inverse) {\n    static ntt_info info;\n\
+    \    int n = a.size();\n    int bit_size = 0;\n    while ((1 << bit_size) < n)\
+    \ bit_size++;\n    assert(1 << bit_size == n);\n    for (int i = 0, j = 1; j <\
+    \ n - 1; j++) {\n        for (int k = n >> 1; k > (i ^= k); k >>= 1);\n      \
+    \  if (j < i) {\n            std::swap(a[i], a[j]);\n        }\n    }\n    rep(bit,\
+    \ 0, bit_size) {\n        rep(i, 0, n / (1 << (bit + 1))) {\n            mint\
+    \ zeta1 = 1;\n            mint zeta2 = info.root[inverse][1];\n            mint\
+    \ w = info.root[inverse][bit + 1];\n            rep(j, 0, 1 << bit) {\n      \
+    \          int idx = i * (1 << (bit + 1)) + j;\n                int jdx = idx\
+    \ + (1 << bit);\n                mint p1 = a[idx];\n                mint p2 =\
+    \ a[jdx];\n                a[idx] = p1 + zeta1 * p2;\n                a[jdx] =\
+    \ p1 + zeta2 * p2;\n                zeta1 *= w;\n                zeta2 *= w;\n\
+    \            }\n        }\n    }\n    if (inverse) {\n        mint inv_n = mint(n).inv();\n\
+    \        rep(i, 0, n) a[i] *= inv_n;\n    }\n}\n\nstd::vector<mint> convolution(const\
+    \ std::vector<mint>& f,\n                              const std::vector<mint>&\
+    \ g) {\n    int n = 1;\n    while (n < int(f.size() + g.size() - 1)) n <<= 1;\n\
+    \    std::vector<mint> a(n), b(n);\n    std::copy(f.begin(), f.end(), a.begin());\n\
+    \    std::copy(g.begin(), g.end(), b.begin());\n    butterfly(a, false);\n   \
+    \ butterfly(b, false);\n    rep(i, 0, n) {\n        a[i] *= b[i];\n    }\n   \
+    \ butterfly(a, true);\n    a.resize(f.size() + g.size() - 1);\n    return a;\n\
+    }\n\n}  // namespace lib"
   dependsOn:
   - template/template.hpp
   - utility/modint.hpp
   isVerificationFile: false
   path: convolution/ntt.hpp
   requiredBy: []
-  timestamp: '2023-11-03 23:31:42+09:00'
+  timestamp: '2023-11-04 03:11:44+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/convolution/Convolution_mod.test.cpp
