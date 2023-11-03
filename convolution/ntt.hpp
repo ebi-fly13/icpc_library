@@ -22,24 +22,16 @@ struct ntt_info {
     }
 };
 
-int bit_reverse(int n, int bit_size) {
-    int rev = 0;
-    rep(i, 0, bit_size) {
-        rev |= ((n >> i) & 1) << (bit_size - i - 1);
-    }
-    return rev;
-}
-
 void butterfly(std::vector<mint>& a, bool inverse) {
     static ntt_info info;
     int n = a.size();
     int bit_size = 0;
     while ((1 << bit_size) < n) bit_size++;
     assert(1 << bit_size == n);
-    rep(i, 0, n) {
-        int rev = bit_reverse(i, bit_size);
-        if (i < rev) {
-            std::swap(a[i], a[rev]);
+    for (int i = 0, j = 1; j < n - 1; j++) {
+        for (int k = n >> 1; k > (i ^= k); k >>= 1);
+        if (j < i) {
+            std::swap(a[i], a[j]);
         }
     }
     rep(bit, 0, bit_size) {
