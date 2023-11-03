@@ -1,0 +1,104 @@
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/problems/1662"
+
+#include"../../template/template.hpp"
+
+#include"../../geometry/base_ld.hpp"
+
+using namespace lib;
+
+const int iinf = 1e9;
+
+int n, m;
+vector<vec> a, b;
+
+const vector<int> dx = {-1,0,1,0}, dy = {0,-1,0,1};
+
+//ax^2 + bx + c <= 0, a > 0
+bool has_interval(ld aa, ld bb, ld cc){
+    if(bb*bb - 4*aa*cc < 0) return false;
+    if (cc < 0 || aa+bb+cc < 0) return true;
+    if (bb < 0 && 2*aa+bb > 0) return true;
+    return false;
+}
+
+using P = pair<int,int>;
+
+bool check(ld d){
+    if (abs(a[0]-b[0]) > d) return false;
+    if (abs(a[n-1]-b[m-1]) > d) return false;
+    vector es(n-1,vector(m-1,vector<bool>(4,false)));
+    rep(i,0,n-1) rep(j,0,m-1){
+        vec la = a[i], ra = a[i+1];
+        vec lb = b[j], rb = b[j+1];
+        vec va = ra - la;
+        vec vb = rb - lb;
+        if (i > 0){
+            vec c = lb - la;
+            ld aa = norm(vb), bb = 2*dot(vb,c), cc = norm(c) - d*d;
+            if (has_interval(aa,bb,cc)) es[i][j][0] = true;
+        }
+        if (j > 0){
+            vec c = la - lb;
+            ld aa = norm(va), bb = 2*dot(va,c), cc = norm(c) - d*d;
+            if (has_interval(aa,bb,cc)) es[i][j][1] = true;
+        }
+        if (i < n-2){
+            vec c = lb - la - va;
+            ld aa = norm(vb), bb = 2*dot(vb,c), cc = norm(c) - d*d;
+            if (has_interval(aa,bb,cc)) es[i][j][2] = true;
+        }
+        if (j < m-2){
+            vec c = la - lb - vb;
+            ld aa = norm(va), bb = 2*dot(va,c), cc = norm(c) - d*d;
+            if (has_interval(aa,bb,cc)) es[i][j][3] = true;
+        }
+    }
+    vector<vector<int>> dist(n-1,vector<int>(m-1,iinf));
+    dist[0][0] = 0;
+    queue<P> que;
+    que.push(P(0,0));
+    while (!que.empty()){
+        auto [ix, iy] = que.front(); que.pop();
+        rep(k,0,4){
+            if (es[ix][iy][k] == false) continue;
+            int nx = ix + dx[k];
+            int ny = iy + dy[k];
+            if (chmin(dist[nx][ny],dist[ix][iy]+1)){
+                que.push(P(nx,ny));
+            }
+        }
+    }
+    return dist[n-2][m-2] < iinf;
+}
+
+void solve(){
+    ld le = 0, ri = 4000;
+    int test = 60;
+    while (test--){
+        ld md = (le + ri) / 2;
+        if (check(md)) ri = md;
+        else le = md;
+    }
+    cout << ri << endl;
+}
+
+int main() {
+    ldout();
+    while (true){
+        a.clear(), b.clear();
+        cin >> n;
+        if (n == 0) break;
+        a.resize(n);
+        rep(i,0,n){
+            ld x, y; cin >> x >> y;
+            a[i] = vec(x,y);
+        }
+        cin >> m;
+        b.resize(m);
+        rep(i,0,m){
+            ld x, y; cin >> x >> y;
+            b[i] = vec(x,y);
+        }
+        solve();
+    }
+}
