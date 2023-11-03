@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   - icon: ':heavy_check_mark:'
@@ -67,13 +67,13 @@ data:
     \ = put_vertex(merge(lui[siz], reverse_edge[v]), v);\n    }\n};\n\n}  // namespace\
     \ lib\n#line 2 \"utility/modint.hpp\"\n\n#line 4 \"utility/modint.hpp\"\n\nnamespace\
     \ lib {\n\ntemplate <ll m> struct modint {\n    using mint = modint;\n    ll a;\n\
-    \n    modint(ll x = 0) : a((x % m + m) % m) {}\n    static ll mod() {\n      \
-    \  return m;\n    }\n    ll& val() {\n        return a;\n    }\n    mint pow(ll\
-    \ n) {\n        mint res = 1;\n        mint x = a;\n        while (n) {\n    \
-    \        if (n & 1) res *= x;\n            x *= x;\n            n >>= 1;\n   \
-    \     }\n        return res;\n    }\n    mint inv() {\n        return pow(m -\
-    \ 2);\n    }\n    mint& operator+=(const mint rhs) {\n        a += rhs.a;\n  \
-    \      if (a >= m) a -= m;\n        return *this;\n    }\n    mint& operator-=(const\
+    \n    modint(ll x = 0) : a((x % m + m) % m) {}\n    static constexpr ll mod()\
+    \ {\n        return m;\n    }\n    ll& val() {\n        return a;\n    }\n   \
+    \ mint pow(ll n) {\n        mint res = 1;\n        mint x = a;\n        while\
+    \ (n) {\n            if (n & 1) res *= x;\n            x *= x;\n            n\
+    \ >>= 1;\n        }\n        return res;\n    }\n    mint inv() {\n        return\
+    \ pow(m - 2);\n    }\n    mint& operator+=(const mint rhs) {\n        a += rhs.a;\n\
+    \        if (a >= m) a -= m;\n        return *this;\n    }\n    mint& operator-=(const\
     \ mint rhs) {\n        if (a < rhs.a) a += m;\n        a -= rhs.a;\n        return\
     \ *this;\n    }\n    mint& operator*=(const mint rhs) {\n        a = a * rhs.a\
     \ % m;\n        return *this;\n    }\n    mint& operator/=(mint rhs) {\n     \
@@ -121,7 +121,7 @@ data:
   isVerificationFile: true
   path: test/tree/Tree_Path_Composite_Sum.test.cpp
   requiredBy: []
-  timestamp: '2023-05-17 22:41:14+09:00'
+  timestamp: '2023-11-03 23:31:42+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/tree/Tree_Path_Composite_Sum.test.cpp

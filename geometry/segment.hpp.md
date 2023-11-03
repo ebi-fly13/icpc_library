@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: geometry/base_ld.hpp
     title: base_ld
   - icon: ':heavy_check_mark:'
     path: geometry/line.hpp
     title: line
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy: []
@@ -108,9 +108,9 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/geometry/Intersection.test.cpp
+  - test/geometry/Cross_Point.test.cpp
   - test/geometry/Distance.test.cpp
   - test/geometry/Convex_Hull.test.cpp
-  - test/geometry/Cross_Point.test.cpp
 documentation_of: geometry/segment.hpp
 layout: document
 title: segment

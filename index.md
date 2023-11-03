@@ -6,6 +6,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: convolution/ntt.hpp
       title: NTT convolution
+    - icon: ':heavy_check_mark:'
+      path: convolution/ntt4.hpp
+      title: convolution/ntt4.hpp
   - name: data_structure
     pages:
     - icon: ':heavy_check_mark:'
@@ -46,7 +49,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: geometry/base_arbitary.hpp
       title: geometry/base_arbitary.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: geometry/base_ld.hpp
       title: base_ld
     - icon: ':warning:'
@@ -143,7 +146,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: template/parsing_template.hpp
       title: "\u69CB\u6587\u89E3\u6790\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
     - icon: ':warning:'
@@ -180,6 +183,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/convolution/Convolution_mod.test.cpp
       title: test/convolution/Convolution_mod.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/convolution/Convolution_mod_ntt4.test.cpp
+      title: test/convolution/Convolution_mod_ntt4.test.cpp
   - name: test/data_structure
     pages:
     - icon: ':heavy_check_mark:'
@@ -271,6 +277,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/geometry/aoj_1198.test.cpp
       title: test/geometry/aoj_1198.test.cpp
+    - icon: ':x:'
+      path: test/geometry/aoj_1662.test.cpp
+      title: test/geometry/aoj_1662.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/geometry/base_rational.test.cpp
       title: test/geometry/base_rational.test.cpp

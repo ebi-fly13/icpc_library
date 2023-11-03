@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy:
@@ -66,9 +66,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/geometry/aoj_1198.test.cpp
     title: test/geometry/aoj_1198.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: test/geometry/aoj_1662.test.cpp
+    title: test/geometry/aoj_1662.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"geometry/base_ld.hpp\"\n\n#line 2 \"template/template.hpp\"\
@@ -114,29 +117,30 @@ data:
   isVerificationFile: false
   path: geometry/base_ld.hpp
   requiredBy:
-  - geometry/circle.hpp
-  - geometry/line.hpp
   - geometry/Partition_by_Circles.hpp
   - geometry/convex_hull.hpp
+  - geometry/circle.hpp
   - geometry/segment.hpp
+  - geometry/line.hpp
   timestamp: '2023-06-08 15:34:10+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - test/geometry/Intersection.test.cpp
+  - test/geometry/aoj_1662.test.cpp
+  - test/geometry/Cross_Point.test.cpp
+  - test/geometry/Distance.test.cpp
+  - test/geometry/Intersection_Circle.test.cpp
+  - test/geometry/Projection.test.cpp
+  - test/geometry/Parallel_Orthogonal.test.cpp
+  - test/geometry/Counter_Clockwise.test.cpp
+  - test/geometry/aoj_1198.test.cpp
+  - test/geometry/Incircle_of_Triangle.test.cpp
+  - test/geometry/Cross_Points_of_Circles.test.cpp
+  - test/geometry/Cross_Points_of_Circle_and_Line.test.cpp
+  - test/geometry/Convex_Hull.test.cpp
+  - test/geometry/Circumscribed_Circle_of_Triangle.test.cpp
   - test/geometry/Reflection.test.cpp
   - test/geometry/Common_Area_Circles.test.cpp
-  - test/geometry/Intersection_Circle.test.cpp
-  - test/geometry/Intersection.test.cpp
-  - test/geometry/Incircle_of_Triangle.test.cpp
-  - test/geometry/Parallel_Orthogonal.test.cpp
-  - test/geometry/Cross_Points_of_Circle_and_Line.test.cpp
-  - test/geometry/aoj_1198.test.cpp
-  - test/geometry/Distance.test.cpp
-  - test/geometry/Projection.test.cpp
-  - test/geometry/Circumscribed_Circle_of_Triangle.test.cpp
-  - test/geometry/Counter_Clockwise.test.cpp
-  - test/geometry/Convex_Hull.test.cpp
-  - test/geometry/Cross_Points_of_Circles.test.cpp
-  - test/geometry/Cross_Point.test.cpp
 documentation_of: geometry/base_ld.hpp
 layout: document
 title: base_ld

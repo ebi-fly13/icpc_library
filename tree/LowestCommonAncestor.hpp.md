@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy: []
@@ -79,9 +79,9 @@ data:
   timestamp: '2023-05-17 22:41:14+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/data_structure/pck2022y11.test.cpp
-  - test/tree/aoj_0489.test.cpp
   - test/tree/Lowest_Common_Ancestor.test.cpp
+  - test/tree/aoj_0489.test.cpp
+  - test/data_structure/pck2022y11.test.cpp
 documentation_of: tree/LowestCommonAncestor.hpp
 layout: document
 title: Lowest Common Ancestor

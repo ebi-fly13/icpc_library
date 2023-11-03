@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: data_structure/dsu.hpp
     title: dsu
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: geometry/base_ld.hpp
     title: base_ld
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy: []
