@@ -133,6 +133,17 @@ data:
     - icon: ':heavy_check_mark:'
       path: misc/mo_algorithm.hpp
       title: misc/mo_algorithm.hpp
+  - name: playground
+    pages:
+    - icon: ':warning:'
+      path: playground/gen.cpp
+      title: playground/gen.cpp
+    - icon: ':warning:'
+      path: playground/ok.cpp
+      title: playground/ok.cpp
+    - icon: ':warning:'
+      path: playground/sol.cpp
+      title: playground/sol.cpp
   - name: string
     pages:
     - icon: ':heavy_check_mark:'
