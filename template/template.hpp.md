@@ -8,7 +8,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: convolution/ntt4.hpp
     title: convolution/ntt4.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: convolution/subset_convolution.hpp
     title: Subset Convolution
   - icon: ':heavy_check_mark:'
@@ -41,6 +41,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: data_structure/segtree_2d.hpp
     title: 2D segtree
+  - icon: ':warning:'
+    path: data_structure/slope_trick.hpp
+    title: Slope Trick
   - icon: ':heavy_check_mark:'
     path: data_structure/sparse_table.hpp
     title: Sparse Table
@@ -140,7 +143,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/gauss_jordan.hpp
     title: gauss_jordan
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/ranked_subset_transform.hpp
     title: Ranked Subset Transform (Zeta / Mobius)
   - icon: ':heavy_check_mark:'
@@ -182,7 +185,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: utility/dynamic_modint.hpp
     title: utility/dynamic_modint.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utility/modint.hpp
     title: modint
   - icon: ':heavy_check_mark:'
@@ -195,7 +198,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/convolution/Convolution_mod_ntt4.test.cpp
     title: test/convolution/Convolution_mod_ntt4.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/convolution/Subset_Convolution.test.cpp
     title: test/convolution/Subset_Convolution.test.cpp
   - icon: ':heavy_check_mark:'
@@ -393,9 +396,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/tree/aoj_0489.test.cpp
     title: test/tree/aoj_0489.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n\n#include <bits/stdc++.h>\n\n\
@@ -459,6 +462,7 @@ data:
   - data_structure/sparse_table.hpp
   - data_structure/undo_dsu.hpp
   - data_structure/li_chao_tree.hpp
+  - data_structure/slope_trick.hpp
   - data_structure/dsu.hpp
   - data_structure/segtree_2d.hpp
   - convolution/ntt4.hpp
@@ -482,7 +486,7 @@ data:
   - string/z_algorithm.hpp
   - string/RollingHash.hpp
   timestamp: '2023-05-17 22:41:14+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/template/debug_template.test.cpp
   - test/misc/aoj_1197.test.cpp
