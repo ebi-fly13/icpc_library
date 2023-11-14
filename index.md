@@ -137,6 +137,9 @@ data:
       path: math/crt.hpp
       title: math/crt.hpp
     - icon: ':heavy_check_mark:'
+      path: math/dirichlet_series.hpp
+      title: math/dirichlet_series.hpp
+    - icon: ':heavy_check_mark:'
       path: math/eratosthenes_sieve.hpp
       title: eratosthenes sieve
     - icon: ':heavy_check_mark:'
@@ -336,6 +339,9 @@ data:
       title: test/graph/Minimum_Flow.test.cpp
   - name: test/math
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/math/Sum_of_Totient_Function.test.cpp
+      title: test/math/Sum_of_Totient_Function.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/math/aoj_3205.test.cpp
       title: test/math/aoj_3205.test.cpp

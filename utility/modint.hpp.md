@@ -43,6 +43,9 @@ data:
     path: test/data_structure/Range_Affine_Range_Sum.test.cpp
     title: test/data_structure/Range_Affine_Range_Sum.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/math/Sum_of_Totient_Function.test.cpp
+    title: test/math/Sum_of_Totient_Function.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/polynomial/Composition_of_Formal_Power_Series.test.cpp
     title: test/polynomial/Composition_of_Formal_Power_Series.test.cpp
   - icon: ':heavy_check_mark:'
@@ -172,6 +175,7 @@ data:
   - test/data_structure/Range_Affine_Range_Sum.test.cpp
   - test/convolution/Convolution_mod.test.cpp
   - test/convolution/Convolution_mod_ntt4.test.cpp
+  - test/math/Sum_of_Totient_Function.test.cpp
   - test/polynomial/Inv_of_Formal_Power_Series.test.cpp
   - test/polynomial/Inv_of_FPS_Sparse.test.cpp
   - test/polynomial/Log_of_Formal_Power_Series.test.cpp

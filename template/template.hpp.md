@@ -117,6 +117,9 @@ data:
     path: math/crt.hpp
     title: math/crt.hpp
   - icon: ':heavy_check_mark:'
+    path: math/dirichlet_series.hpp
+    title: math/dirichlet_series.hpp
+  - icon: ':heavy_check_mark:'
     path: math/eratosthenes_sieve.hpp
     title: eratosthenes sieve
   - icon: ':heavy_check_mark:'
@@ -280,6 +283,9 @@ data:
     path: test/graph/Minimum_Flow.test.cpp
     title: test/graph/Minimum_Flow.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/math/Sum_of_Totient_Function.test.cpp
+    title: test/math/Sum_of_Totient_Function.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/math/aoj_3205.test.cpp
     title: test/math/aoj_3205.test.cpp
   - icon: ':heavy_check_mark:'
@@ -434,6 +440,7 @@ data:
   - math/two_sat.hpp
   - math/crt.hpp
   - math/ext_gcd.hpp
+  - math/dirichlet_series.hpp
   - math/eratosthenes_sieve.hpp
   - geometry/base_arbitary.hpp
   - geometry/base_ll.hpp
@@ -476,6 +483,7 @@ data:
   - test/convolution/Convolution_mod.test.cpp
   - test/convolution/Convolution_mod_ntt4.test.cpp
   - test/math/two_sat.test.cpp
+  - test/math/Sum_of_Totient_Function.test.cpp
   - test/math/enumerate_primes.test.cpp
   - test/math/yuki_447.test.cpp
   - test/math/aoj_3205.test.cpp
