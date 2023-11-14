@@ -13,24 +13,18 @@ data:
   - icon: ':question:'
     path: utility/modint.hpp
     title: modint
-  _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
-    path: fps/compositional_inverse_of_fps.hpp
-    title: "$f(x)$ \u306E\u9006\u95A2\u6570"
+  _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/polynomial/Composition_of_Formal_Power_Series.test.cpp
-    title: test/polynomial/Composition_of_Formal_Power_Series.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/polynomial/Compositional_Inverse_of_Formal_Power_Series.test.cpp
-    title: test/polynomial/Compositional_Inverse_of_Formal_Power_Series.test.cpp
+    path: test/polynomial/Multipoint_Evaluation.test.cpp
+    title: test/polynomial/Multipoint_Evaluation.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"fps/composition_of_fps.hpp\"\n\n#line 2 \"fps/fps.hpp\"\n\
-    \n#line 2 \"convolution/ntt4.hpp\"\n\n#line 2 \"utility/modint.hpp\"\n\n#line\
+  bundledCode: "#line 2 \"fps/multipoint_evaluation.hpp\"\n\n#line 2 \"fps/fps.hpp\"\
+    \n\n#line 2 \"convolution/ntt4.hpp\"\n\n#line 2 \"utility/modint.hpp\"\n\n#line\
     \ 2 \"template/template.hpp\"\n\n#include <bits/stdc++.h>\n\n#define rep(i, s,\
     \ n) for (int i = (int)(s); i < (int)(n); i++)\n#define rrep(i, s, n) for (int\
     \ i = (int)(n)-1; i >= (int)(s); i--)\n#define all(v) v.begin(), v.end()\n\nusing\
@@ -207,52 +201,53 @@ data:
     \ == 0) this->pop_back();\n    }\n\n    int count_terms() const {\n        int\
     \ c = 0;\n        for (int i = 0; i < deg(); i++) {\n            if ((*this)[i]\
     \ != 0) c++;\n        }\n        return c;\n    }\n};\n\n}  // namespace lib\n\
-    #line 5 \"fps/composition_of_fps.hpp\"\n\nnamespace lib {\n\ntemplate <class mint>\n\
-    FormalPowerSeries<mint> composition_of_fps(const FormalPowerSeries<mint> &f, const\
-    \ FormalPowerSeries<mint> &g) {\n    using FPS = FormalPowerSeries<mint>;\n  \
-    \  int n = f.deg();\n    int k = 1;\n    while (k * k < n) k++;\n    std::vector<FPS>\
-    \ baby(k + 1);\n    baby[0] = FPS{1};\n    baby[1] = g;\n    for (int i = 2; i\
-    \ < k + 1; i++) {\n        baby[i] = (baby[i - 1] * g).pre(n);\n    }\n    std::vector<FPS>\
-    \ giant(k + 1);\n    giant[0] = FPS{1};\n    giant[1] = baby[k];\n    for (int\
-    \ i = 2; i < k + 1; i++) {\n        giant[i] = (giant[i - 1] * giant[1]).pre(n);\n\
-    \    }\n    FPS h(n);\n    for (int i = 0; i < k + 1; i++) {\n        FPS a(n);\n\
-    \        for (int j = 0; j < k; j++) {\n            if (k * i + j < n) {\n   \
-    \             mint coef = f[k * i + j];\n                a += baby[j] * coef;\n\
-    \            } else\n                break;\n        }\n        h += (giant[i]\
-    \ * a).pre(n);\n    }\n    return h;\n}\n\n}  // namespace lib\n"
-  code: "#pragma once\n\n#include \"../fps/fps.hpp\"\n#include \"../template/template.hpp\"\
-    \n\nnamespace lib {\n\ntemplate <class mint>\nFormalPowerSeries<mint> composition_of_fps(const\
-    \ FormalPowerSeries<mint> &f, const FormalPowerSeries<mint> &g) {\n    using FPS\
-    \ = FormalPowerSeries<mint>;\n    int n = f.deg();\n    int k = 1;\n    while\
-    \ (k * k < n) k++;\n    std::vector<FPS> baby(k + 1);\n    baby[0] = FPS{1};\n\
-    \    baby[1] = g;\n    for (int i = 2; i < k + 1; i++) {\n        baby[i] = (baby[i\
-    \ - 1] * g).pre(n);\n    }\n    std::vector<FPS> giant(k + 1);\n    giant[0] =\
-    \ FPS{1};\n    giant[1] = baby[k];\n    for (int i = 2; i < k + 1; i++) {\n  \
-    \      giant[i] = (giant[i - 1] * giant[1]).pre(n);\n    }\n    FPS h(n);\n  \
-    \  for (int i = 0; i < k + 1; i++) {\n        FPS a(n);\n        for (int j =\
-    \ 0; j < k; j++) {\n            if (k * i + j < n) {\n                mint coef\
-    \ = f[k * i + j];\n                a += baby[j] * coef;\n            } else\n\
-    \                break;\n        }\n        h += (giant[i] * a).pre(n);\n    }\n\
-    \    return h;\n}\n\n}  // namespace lib"
+    #line 4 \"fps/multipoint_evaluation.hpp\"\n\nnamespace lib {\n\ntemplate<class\
+    \ mint>\nstd::vector<mint> multipoint_evaluation(FormalPowerSeries<mint> f, const\
+    \ std::vector<mint> &p) {\n    using FPS = FormalPowerSeries<mint>;\n    int m\
+    \ = 1;\n    while (m < (int)p.size()) m <<= 1;\n    std::vector<FPS> subproduct_tree(2\
+    \ * m, {1});\n    for (int i = 0; i < (int)p.size(); i++) {\n        subproduct_tree[i\
+    \ + m] = FPS{-p[i], 1};\n    }\n    for (int i = m - 1; i >= 1; i--) {\n     \
+    \   subproduct_tree[i] =\n            subproduct_tree[2 * i] * subproduct_tree[2\
+    \ * i + 1];\n    }\n    std::vector<FPS> subremainder_tree(2 * m);\n    subremainder_tree[1]\
+    \ = f % subproduct_tree[1];\n    for (int i = 2; i < m + (int)p.size(); i++) {\n\
+    \        if (subremainder_tree[i / 2].empty()) continue;\n        subremainder_tree[i]\
+    \ = subremainder_tree[i / 2] % subproduct_tree[i];\n    }\n    std::vector<mint>\
+    \ fp(p.size());\n    for (int i = 0; i < (int)p.size(); i++) {\n        if (subremainder_tree[i\
+    \ + m].empty())\n            fp[i] = 0;\n        else\n            fp[i] = subremainder_tree[i\
+    \ + m][0];\n    }\n    return fp;\n}\n\n}  // namespace ebi\n"
+  code: "#pragma once\n\n#include \"../fps/fps.hpp\"\n\nnamespace lib {\n\ntemplate<class\
+    \ mint>\nstd::vector<mint> multipoint_evaluation(FormalPowerSeries<mint> f, const\
+    \ std::vector<mint> &p) {\n    using FPS = FormalPowerSeries<mint>;\n    int m\
+    \ = 1;\n    while (m < (int)p.size()) m <<= 1;\n    std::vector<FPS> subproduct_tree(2\
+    \ * m, {1});\n    for (int i = 0; i < (int)p.size(); i++) {\n        subproduct_tree[i\
+    \ + m] = FPS{-p[i], 1};\n    }\n    for (int i = m - 1; i >= 1; i--) {\n     \
+    \   subproduct_tree[i] =\n            subproduct_tree[2 * i] * subproduct_tree[2\
+    \ * i + 1];\n    }\n    std::vector<FPS> subremainder_tree(2 * m);\n    subremainder_tree[1]\
+    \ = f % subproduct_tree[1];\n    for (int i = 2; i < m + (int)p.size(); i++) {\n\
+    \        if (subremainder_tree[i / 2].empty()) continue;\n        subremainder_tree[i]\
+    \ = subremainder_tree[i / 2] % subproduct_tree[i];\n    }\n    std::vector<mint>\
+    \ fp(p.size());\n    for (int i = 0; i < (int)p.size(); i++) {\n        if (subremainder_tree[i\
+    \ + m].empty())\n            fp[i] = 0;\n        else\n            fp[i] = subremainder_tree[i\
+    \ + m][0];\n    }\n    return fp;\n}\n\n}  // namespace ebi"
   dependsOn:
   - fps/fps.hpp
   - convolution/ntt4.hpp
   - utility/modint.hpp
   - template/template.hpp
   isVerificationFile: false
-  path: fps/composition_of_fps.hpp
-  requiredBy:
-  - fps/compositional_inverse_of_fps.hpp
+  path: fps/multipoint_evaluation.hpp
+  requiredBy: []
   timestamp: '2023-11-14 18:27:43+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/polynomial/Compositional_Inverse_of_Formal_Power_Series.test.cpp
-  - test/polynomial/Composition_of_Formal_Power_Series.test.cpp
-documentation_of: fps/composition_of_fps.hpp
+  - test/polynomial/Multipoint_Evaluation.test.cpp
+documentation_of: fps/multipoint_evaluation.hpp
 layout: document
-title: $f(g(x))$
+title: Multipoint Evaluation
 ---
 
 ## 説明
 
-形式的べき級数 $f$, $g$ について、その合成 $f(g(x))$ の先頭 $N$ 項を求める。Baby-step Giant-stepを用いることで $O(N^2)$ で計算する。
+多項式 $f(x)$ と整数列 $p_0, p_1, \dots, p_{M-1}$ を与えて、 $f(p_i) \pmod{998244353}$ を全ての $p_i$ について求める。 $O(M (\log{M})^2 + N\log{N})$
+
+$f(p_i) = f(x) \pmod{(x - p_i)}$ が成り立つことを用いて分割統治をしている。

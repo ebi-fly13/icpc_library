@@ -10,10 +10,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: fps/fps.hpp
     title: Formal Power Series
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utility/modint.hpp
     title: modint
   _extendedRequiredBy: []
@@ -40,54 +40,55 @@ data:
     \n\n#line 4 \"utility/modint.hpp\"\n\nnamespace lib {\n\ntemplate <ll m> struct\
     \ modint {\n    using mint = modint;\n    ll a;\n\n    modint(ll x = 0) : a((x\
     \ % m + m) % m) {}\n    static constexpr ll mod() {\n        return m;\n    }\n\
-    \    ll& val() {\n        return a;\n    }\n    mint pow(ll n) {\n        mint\
-    \ res = 1;\n        mint x = a;\n        while (n) {\n            if (n & 1) res\
-    \ *= x;\n            x *= x;\n            n >>= 1;\n        }\n        return\
-    \ res;\n    }\n    mint inv() {\n        return pow(m - 2);\n    }\n    mint&\
-    \ operator+=(const mint rhs) {\n        a += rhs.a;\n        if (a >= m) a -=\
-    \ m;\n        return *this;\n    }\n    mint& operator-=(const mint rhs) {\n \
-    \       if (a < rhs.a) a += m;\n        a -= rhs.a;\n        return *this;\n \
-    \   }\n    mint& operator*=(const mint rhs) {\n        a = a * rhs.a % m;\n  \
-    \      return *this;\n    }\n    mint& operator/=(mint rhs) {\n        *this *=\
-    \ rhs.inv();\n        return *this;\n    }\n    friend mint operator+(const mint&\
-    \ lhs, const mint& rhs) {\n        return mint(lhs) += rhs;\n    }\n    friend\
-    \ mint operator-(const mint& lhs, const mint& rhs) {\n        return mint(lhs)\
-    \ -= rhs;\n    }\n    friend mint operator*(const mint& lhs, const mint& rhs)\
-    \ {\n        return mint(lhs) *= rhs;\n    }\n    friend mint operator/(const\
-    \ mint& lhs, const mint& rhs) {\n        return mint(lhs) /= rhs;\n    }\n   \
-    \ friend bool operator==(const modint &lhs, const modint &rhs) {\n        return\
-    \ lhs.a == rhs.a;\n    }\n    friend bool operator!=(const modint &lhs, const\
-    \ modint &rhs) {\n        return !(lhs == rhs);\n    }\n    mint operator+() const\
-    \ {\n        return *this;\n    }\n    mint operator-() const {\n        return\
-    \ mint() - *this;\n    }\n};\n\nusing modint998244353 = modint<998244353>;\nusing\
-    \ modint1000000007 = modint<1'000'000'007>;\n\n}  // namespace lib\n#line 5 \"\
-    convolution/ntt.hpp\"\n\nnamespace lib {\n\nusing mint = modint998244353;\n\n\
-    struct ntt_info {\n    static constexpr int rank2 = 23;\n    const int g = 3;\n\
-    \    std::array<std::array<mint, rank2 + 1>, 2> root;\n\n    ntt_info() {\n  \
-    \      root[0][rank2] = mint(g).pow((mint::mod() - 1) >> rank2);\n        root[1][rank2]\
-    \ = root[0][rank2].inv();\n        rrep(i, 0, rank2) {\n            root[0][i]\
-    \ = root[0][i + 1] * root[0][i + 1];\n            root[1][i] = root[1][i + 1]\
-    \ * root[1][i + 1];\n        }\n    }\n};\n\nvoid butterfly(std::vector<mint>&\
-    \ a, bool inverse) {\n    static ntt_info info;\n    int n = a.size();\n    int\
-    \ bit_size = 0;\n    while ((1 << bit_size) < n) bit_size++;\n    assert(1 <<\
-    \ bit_size == n);\n    for (int i = 0, j = 1; j < n - 1; j++) {\n        for (int\
-    \ k = n >> 1; k > (i ^= k); k >>= 1);\n        if (j < i) {\n            std::swap(a[i],\
-    \ a[j]);\n        }\n    }\n    rep(bit, 0, bit_size) {\n        rep(i, 0, n /\
-    \ (1 << (bit + 1))) {\n            mint zeta1 = 1;\n            mint zeta2 = info.root[inverse][1];\n\
-    \            mint w = info.root[inverse][bit + 1];\n            rep(j, 0, 1 <<\
-    \ bit) {\n                int idx = i * (1 << (bit + 1)) + j;\n              \
-    \  int jdx = idx + (1 << bit);\n                mint p1 = a[idx];\n          \
-    \      mint p2 = a[jdx];\n                a[idx] = p1 + zeta1 * p2;\n        \
-    \        a[jdx] = p1 + zeta2 * p2;\n                zeta1 *= w;\n            \
-    \    zeta2 *= w;\n            }\n        }\n    }\n    if (inverse) {\n      \
-    \  mint inv_n = mint(n).inv();\n        rep(i, 0, n) a[i] *= inv_n;\n    }\n}\n\
-    \nstd::vector<mint> convolution(const std::vector<mint>& f,\n                \
-    \              const std::vector<mint>& g) {\n    int n = 1;\n    while (n < int(f.size()\
-    \ + g.size() - 1)) n <<= 1;\n    std::vector<mint> a(n), b(n);\n    std::copy(f.begin(),\
-    \ f.end(), a.begin());\n    std::copy(g.begin(), g.end(), b.begin());\n    butterfly(a,\
-    \ false);\n    butterfly(b, false);\n    rep(i, 0, n) {\n        a[i] *= b[i];\n\
-    \    }\n    butterfly(a, true);\n    a.resize(f.size() + g.size() - 1);\n    return\
-    \ a;\n}\n\n}  // namespace lib\n#line 2 \"fps/fps.hpp\"\n\n#line 2 \"convolution/ntt4.hpp\"\
+    \    ll val() const {\n        return a;\n    }\n    ll& val() {\n        return\
+    \ a;\n    }\n    mint pow(ll n) const {\n        mint res = 1;\n        mint x\
+    \ = a;\n        while (n) {\n            if (n & 1) res *= x;\n            x *=\
+    \ x;\n            n >>= 1;\n        }\n        return res;\n    }\n    mint inv()\
+    \ const {\n        return pow(m - 2);\n    }\n    mint& operator+=(const mint\
+    \ rhs) {\n        a += rhs.a;\n        if (a >= m) a -= m;\n        return *this;\n\
+    \    }\n    mint& operator-=(const mint rhs) {\n        if (a < rhs.a) a += m;\n\
+    \        a -= rhs.a;\n        return *this;\n    }\n    mint& operator*=(const\
+    \ mint rhs) {\n        a = a * rhs.a % m;\n        return *this;\n    }\n    mint&\
+    \ operator/=(mint rhs) {\n        *this *= rhs.inv();\n        return *this;\n\
+    \    }\n    friend mint operator+(const mint& lhs, const mint& rhs) {\n      \
+    \  return mint(lhs) += rhs;\n    }\n    friend mint operator-(const mint& lhs,\
+    \ const mint& rhs) {\n        return mint(lhs) -= rhs;\n    }\n    friend mint\
+    \ operator*(const mint& lhs, const mint& rhs) {\n        return mint(lhs) *= rhs;\n\
+    \    }\n    friend mint operator/(const mint& lhs, const mint& rhs) {\n      \
+    \  return mint(lhs) /= rhs;\n    }\n    friend bool operator==(const modint &lhs,\
+    \ const modint &rhs) {\n        return lhs.a == rhs.a;\n    }\n    friend bool\
+    \ operator!=(const modint &lhs, const modint &rhs) {\n        return !(lhs ==\
+    \ rhs);\n    }\n    mint operator+() const {\n        return *this;\n    }\n \
+    \   mint operator-() const {\n        return mint() - *this;\n    }\n};\n\nusing\
+    \ modint998244353 = modint<998244353>;\nusing modint1000000007 = modint<1'000'000'007>;\n\
+    \n}  // namespace lib\n#line 5 \"convolution/ntt.hpp\"\n\nnamespace lib {\n\n\
+    using mint = modint998244353;\n\nstruct ntt_info {\n    static constexpr int rank2\
+    \ = 23;\n    const int g = 3;\n    std::array<std::array<mint, rank2 + 1>, 2>\
+    \ root;\n\n    ntt_info() {\n        root[0][rank2] = mint(g).pow((mint::mod()\
+    \ - 1) >> rank2);\n        root[1][rank2] = root[0][rank2].inv();\n        rrep(i,\
+    \ 0, rank2) {\n            root[0][i] = root[0][i + 1] * root[0][i + 1];\n   \
+    \         root[1][i] = root[1][i + 1] * root[1][i + 1];\n        }\n    }\n};\n\
+    \nvoid butterfly(std::vector<mint>& a, bool inverse) {\n    static ntt_info info;\n\
+    \    int n = a.size();\n    int bit_size = 0;\n    while ((1 << bit_size) < n)\
+    \ bit_size++;\n    assert(1 << bit_size == n);\n    for (int i = 0, j = 1; j <\
+    \ n - 1; j++) {\n        for (int k = n >> 1; k > (i ^= k); k >>= 1);\n      \
+    \  if (j < i) {\n            std::swap(a[i], a[j]);\n        }\n    }\n    rep(bit,\
+    \ 0, bit_size) {\n        rep(i, 0, n / (1 << (bit + 1))) {\n            mint\
+    \ zeta1 = 1;\n            mint zeta2 = info.root[inverse][1];\n            mint\
+    \ w = info.root[inverse][bit + 1];\n            rep(j, 0, 1 << bit) {\n      \
+    \          int idx = i * (1 << (bit + 1)) + j;\n                int jdx = idx\
+    \ + (1 << bit);\n                mint p1 = a[idx];\n                mint p2 =\
+    \ a[jdx];\n                a[idx] = p1 + zeta1 * p2;\n                a[jdx] =\
+    \ p1 + zeta2 * p2;\n                zeta1 *= w;\n                zeta2 *= w;\n\
+    \            }\n        }\n    }\n    if (inverse) {\n        mint inv_n = mint(n).inv();\n\
+    \        rep(i, 0, n) a[i] *= inv_n;\n    }\n}\n\nstd::vector<mint> convolution(const\
+    \ std::vector<mint>& f,\n                              const std::vector<mint>&\
+    \ g) {\n    int n = 1;\n    while (n < int(f.size() + g.size() - 1)) n <<= 1;\n\
+    \    std::vector<mint> a(n), b(n);\n    std::copy(f.begin(), f.end(), a.begin());\n\
+    \    std::copy(g.begin(), g.end(), b.begin());\n    butterfly(a, false);\n   \
+    \ butterfly(b, false);\n    rep(i, 0, n) {\n        a[i] *= b[i];\n    }\n   \
+    \ butterfly(a, true);\n    a.resize(f.size() + g.size() - 1);\n    return a;\n\
+    }\n\n}  // namespace lib\n#line 2 \"fps/fps.hpp\"\n\n#line 2 \"convolution/ntt4.hpp\"\
     \n\n#line 4 \"convolution/ntt4.hpp\"\n\nnamespace lib {\n\n// only for modint998244353\n\
     template<typename mint>\nstruct NTT {\n    using uint = unsigned int;\n    static\
     \ constexpr uint mod = mint::mod();\n    static constexpr ull mod2 = (ull)mod\
@@ -193,51 +194,51 @@ data:
     \        }\n        return *this;\n    }\n    FPS &operator/=(const mint &rhs)\
     \ noexcept {\n        mint inv_rhs = rhs.inv();\n        for (int i = 0; i < deg();\
     \ ++i) {\n            (*this)[i] *= inv_rhs;\n        }\n        return *this;\n\
-    \    }\n\n    FPS operator>>(int d) {\n        if (deg() <= d) return {};\n  \
-    \      FPS f = *this;\n        f.erase(f.begin(), f.begin() + d);\n        return\
-    \ f;\n    }\n\n    FPS operator<<(int d) {\n        FPS f = *this;\n        f.insert(f.begin(),\
-    \ d, 0);\n        return f;\n    }\n\n    FPS operator-() {\n        FPS g(this->size());\n\
-    \        for (int i = 0; i < (int)this->size(); i++) g[i] = -(*this)[i];\n   \
-    \     return g;\n    }\n\n    FPS pre(int sz) {\n        return FPS(this->begin(),\
-    \ this->begin() + std::min(deg(), sz));\n    }\n\n    FPS rev() {\n        auto\
-    \ f = *this;\n        std::reverse(f.begin(), f.end());\n        return f;\n \
-    \   }\n\n    FPS differential() {\n        int n = deg();\n        FPS g(std::max(0,\
-    \ n - 1));\n        for (int i = 0; i < n - 1; i++) {\n            g[i] = (*this)[i\
-    \ + 1] * (i + 1);\n        }\n        return g;\n    }\n\n    FPS integral() {\n\
-    \        int n = deg();\n        FPS g(n + 1);\n        g[0] = 0;\n        if\
-    \ (n > 0) g[1] = 1;\n        auto mod = mint::mod();\n        for (int i = 2;\
-    \ i <= n; i++) g[i] = (-g[mod % i]) * (mod / i);\n        for (int i = 0; i <\
-    \ n; i++) g[i + 1] *= (*this)[i];\n        return g;\n    }\n\n    FPS inv(int\
-    \ d = -1) {\n        int n = 1;\n        if (d < 0) d = deg();\n        FPS g(n);\n\
-    \        g[0] = (*this)[0].inv();\n        while (n < d) {\n            n <<=\
-    \ 1;\n            g = (g * 2 - g * g * this->pre(n)).pre(n);\n        }\n    \
-    \    g.resize(d);\n        return g;\n    }\n\n    FPS log(int d = -1) {\n   \
-    \     assert((*this)[0].val() == 1);\n        if (d < 0) d = deg();\n        return\
-    \ ((*this).differential() * (*this).inv(d)).pre(d - 1).integral();\n    }\n\n\
-    \    FPS exp(int d = -1) {\n        assert((*this)[0].val() == 0);\n        int\
-    \ n = 1;\n        if (d < 0) d = deg();\n        FPS g(n);\n        g[0] = 1;\n\
-    \        while (n < d) {\n            n <<= 1;\n            g = (g * (this->pre(n)\
-    \ - g.log(n) + 1)).pre(n);\n        }\n        g.resize(d);\n        return g;\n\
-    \    }\n\n    FPS pow(ll k, int d = -1) {\n        const int n = deg();\n    \
-    \    if (d < 0) d = n;\n        if (k == 0) {\n            FPS f(d);\n       \
-    \     if (d > 0) f[0] = 1;\n            return f;\n        }\n        for (int\
-    \ i = 0; i < n; i++) {\n            if ((*this)[i].val() != 0) {\n           \
-    \     mint rev = (*this)[i].inv();\n                FPS f = (((*this * rev) >>\
-    \ i).log(d) * k).exp(d);\n                f *= (*this)[i].pow(k);\n          \
-    \      f = (f << (i * k)).pre(d);\n                if (f.deg() < d) f.resize(d);\n\
-    \                return f;\n            }\n            if (i + 1 >= (d + k - 1)\
-    \ / k) break;\n        }\n        return FPS(d);\n    }\n\n    int deg() {\n \
-    \       return (*this).size();\n    }\n\n    void shrink() {\n        while ((!this->empty())\
-    \ && this->back() == 0) this->pop_back();\n    }\n\n    int count_terms() {\n\
-    \        int c = 0;\n        for (int i = 0; i < deg(); i++) {\n            if\
-    \ ((*this)[i] != 0) c++;\n        }\n        return c;\n    }\n};\n\n}  // namespace\
-    \ lib\n#line 7 \"test/polynomial/Exp_of_Formal_Power_Series.test.cpp\"\n\nusing\
-    \ namespace lib;\nusing mint = modint998244353;\nusing FPS = FormalPowerSeries<mint>;\n\
-    \nint main() {\n    int n;\n    std::cin >> n;\n    FPS a(n);\n    for (int i\
-    \ = 0; i < n; ++i) {\n        int val;\n        std::cin >> val;\n        a[i]\
-    \ = val;\n    }\n    auto b = a.exp();\n    for (int i = 0; i < n; ++i) {\n  \
-    \      std::cout << b[i].val() << \" \";\n    }\n    std::cout << std::endl;\n\
-    }\n"
+    \    }\n\n    FPS operator>>(int d) const {\n        if (deg() <= d) return {};\n\
+    \        FPS f = *this;\n        f.erase(f.begin(), f.begin() + d);\n        return\
+    \ f;\n    }\n\n    FPS operator<<(int d) const {\n        FPS f = *this;\n   \
+    \     f.insert(f.begin(), d, 0);\n        return f;\n    }\n\n    FPS operator-()\
+    \ const {\n        FPS g(this->size());\n        for (int i = 0; i < (int)this->size();\
+    \ i++) g[i] = -(*this)[i];\n        return g;\n    }\n\n    FPS pre(int sz) const\
+    \ {\n        return FPS(this->begin(), this->begin() + std::min(deg(), sz));\n\
+    \    }\n\n    FPS rev() const {\n        auto f = *this;\n        std::reverse(f.begin(),\
+    \ f.end());\n        return f;\n    }\n\n    FPS differential() const {\n    \
+    \    int n = deg();\n        FPS g(std::max(0, n - 1));\n        for (int i =\
+    \ 0; i < n - 1; i++) {\n            g[i] = (*this)[i + 1] * (i + 1);\n       \
+    \ }\n        return g;\n    }\n\n    FPS integral() const {\n        int n = deg();\n\
+    \        FPS g(n + 1);\n        g[0] = 0;\n        if (n > 0) g[1] = 1;\n    \
+    \    auto mod = mint::mod();\n        for (int i = 2; i <= n; i++) g[i] = (-g[mod\
+    \ % i]) * (mod / i);\n        for (int i = 0; i < n; i++) g[i + 1] *= (*this)[i];\n\
+    \        return g;\n    }\n\n    FPS inv(int d = -1) const {\n        int n =\
+    \ 1;\n        if (d < 0) d = deg();\n        FPS g(n);\n        g[0] = (*this)[0].inv();\n\
+    \        while (n < d) {\n            n <<= 1;\n            g = (g * 2 - g * g\
+    \ * this->pre(n)).pre(n);\n        }\n        g.resize(d);\n        return g;\n\
+    \    }\n\n    FPS log(int d = -1) const {\n        assert((*this)[0].val() ==\
+    \ 1);\n        if (d < 0) d = deg();\n        return ((*this).differential() *\
+    \ (*this).inv(d)).pre(d - 1).integral();\n    }\n\n    FPS exp(int d = -1) const\
+    \ {\n        assert((*this)[0].val() == 0);\n        int n = 1;\n        if (d\
+    \ < 0) d = deg();\n        FPS g(n);\n        g[0] = 1;\n        while (n < d)\
+    \ {\n            n <<= 1;\n            g = (g * (this->pre(n) - g.log(n) + 1)).pre(n);\n\
+    \        }\n        g.resize(d);\n        return g;\n    }\n\n    FPS pow(ll k,\
+    \ int d = -1) const {\n        const int n = deg();\n        if (d < 0) d = n;\n\
+    \        if (k == 0) {\n            FPS f(d);\n            if (d > 0) f[0] = 1;\n\
+    \            return f;\n        }\n        for (int i = 0; i < n; i++) {\n   \
+    \         if ((*this)[i].val() != 0) {\n                mint rev = (*this)[i].inv();\n\
+    \                FPS f = (((*this * rev) >> i).log(d) * k).exp(d);\n         \
+    \       f *= (*this)[i].pow(k);\n                f = (f << (i * k)).pre(d);\n\
+    \                if (f.deg() < d) f.resize(d);\n                return f;\n  \
+    \          }\n            if (i + 1 >= (d + k - 1) / k) break;\n        }\n  \
+    \      return FPS(d);\n    }\n\n    int deg() const {\n        return (*this).size();\n\
+    \    }\n\n    void shrink() {\n        while ((!this->empty()) && this->back()\
+    \ == 0) this->pop_back();\n    }\n\n    int count_terms() const {\n        int\
+    \ c = 0;\n        for (int i = 0; i < deg(); i++) {\n            if ((*this)[i]\
+    \ != 0) c++;\n        }\n        return c;\n    }\n};\n\n}  // namespace lib\n\
+    #line 7 \"test/polynomial/Exp_of_Formal_Power_Series.test.cpp\"\n\nusing namespace\
+    \ lib;\nusing mint = modint998244353;\nusing FPS = FormalPowerSeries<mint>;\n\n\
+    int main() {\n    int n;\n    std::cin >> n;\n    FPS a(n);\n    for (int i =\
+    \ 0; i < n; ++i) {\n        int val;\n        std::cin >> val;\n        a[i] =\
+    \ val;\n    }\n    auto b = a.exp();\n    for (int i = 0; i < n; ++i) {\n    \
+    \    std::cout << b[i].val() << \" \";\n    }\n    std::cout << std::endl;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/exp_of_formal_power_series\"\
     \n\n#include \"../../convolution/ntt.hpp\"\n#include \"../../fps/fps.hpp\"\n#include\
     \ \"../../template/template.hpp\"\n#include \"../../utility/modint.hpp\"\n\nusing\
@@ -256,7 +257,7 @@ data:
   isVerificationFile: true
   path: test/polynomial/Exp_of_Formal_Power_Series.test.cpp
   requiredBy: []
-  timestamp: '2023-11-14 18:05:21+09:00'
+  timestamp: '2023-11-14 18:27:43+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/polynomial/Exp_of_Formal_Power_Series.test.cpp

@@ -2,8 +2,17 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
+    path: convolution/ntt.hpp
+    title: NTT convolution
+  - icon: ':heavy_check_mark:'
     path: convolution/ntt4.hpp
     title: convolution/ntt4.hpp
+  - icon: ':heavy_check_mark:'
+    path: fps/composition_of_fps.hpp
+    title: $f(g(x))$
+  - icon: ':heavy_check_mark:'
+    path: fps/compositional_inverse_of_fps.hpp
+    title: "$f(x)$ \u306E\u9006\u95A2\u6570"
   - icon: ':heavy_check_mark:'
     path: fps/fps.hpp
     title: Formal Power Series
@@ -13,43 +22,38 @@ data:
   - icon: ':question:'
     path: utility/modint.hpp
     title: modint
-  _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
-    path: fps/compositional_inverse_of_fps.hpp
-    title: "$f(x)$ \u306E\u9006\u95A2\u6570"
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/polynomial/Composition_of_Formal_Power_Series.test.cpp
-    title: test/polynomial/Composition_of_Formal_Power_Series.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/polynomial/Compositional_Inverse_of_Formal_Power_Series.test.cpp
-    title: test/polynomial/Compositional_Inverse_of_Formal_Power_Series.test.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
-  _pathExtension: hpp
+  _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    links: []
-  bundledCode: "#line 2 \"fps/composition_of_fps.hpp\"\n\n#line 2 \"fps/fps.hpp\"\n\
-    \n#line 2 \"convolution/ntt4.hpp\"\n\n#line 2 \"utility/modint.hpp\"\n\n#line\
-    \ 2 \"template/template.hpp\"\n\n#include <bits/stdc++.h>\n\n#define rep(i, s,\
-    \ n) for (int i = (int)(s); i < (int)(n); i++)\n#define rrep(i, s, n) for (int\
-    \ i = (int)(n)-1; i >= (int)(s); i--)\n#define all(v) v.begin(), v.end()\n\nusing\
-    \ ll = long long;\nusing ld = long double;\nusing ull = unsigned long long;\n\n\
-    template <typename T> bool chmin(T &a, const T &b) {\n    if (a <= b) return false;\n\
-    \    a = b;\n    return true;\n}\ntemplate <typename T> bool chmax(T &a, const\
-    \ T &b) {\n    if (a >= b) return false;\n    a = b;\n    return true;\n}\n\n\
-    namespace lib {\n\nusing namespace std;\n\n}  // namespace lib\n\n// using namespace\
-    \ lib;\n#line 4 \"utility/modint.hpp\"\n\nnamespace lib {\n\ntemplate <ll m> struct\
-    \ modint {\n    using mint = modint;\n    ll a;\n\n    modint(ll x = 0) : a((x\
-    \ % m + m) % m) {}\n    static constexpr ll mod() {\n        return m;\n    }\n\
-    \    ll val() const {\n        return a;\n    }\n    ll& val() {\n        return\
-    \ a;\n    }\n    mint pow(ll n) const {\n        mint res = 1;\n        mint x\
-    \ = a;\n        while (n) {\n            if (n & 1) res *= x;\n            x *=\
-    \ x;\n            n >>= 1;\n        }\n        return res;\n    }\n    mint inv()\
-    \ const {\n        return pow(m - 2);\n    }\n    mint& operator+=(const mint\
-    \ rhs) {\n        a += rhs.a;\n        if (a >= m) a -= m;\n        return *this;\n\
-    \    }\n    mint& operator-=(const mint rhs) {\n        if (a < rhs.a) a += m;\n\
-    \        a -= rhs.a;\n        return *this;\n    }\n    mint& operator*=(const\
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/compositional_inverse_of_formal_power_series
+    links:
+    - https://judge.yosupo.jp/problem/compositional_inverse_of_formal_power_series
+  bundledCode: "#line 1 \"test/polynomial/Compositional_Inverse_of_Formal_Power_Series.test.cpp\"\
+    \n#define PROBLEM \"https://judge.yosupo.jp/problem/compositional_inverse_of_formal_power_series\"\
+    \n\n#include <iostream>\n\n#line 2 \"convolution/ntt.hpp\"\n\n#line 2 \"template/template.hpp\"\
+    \n\n#include <bits/stdc++.h>\n\n#define rep(i, s, n) for (int i = (int)(s); i\
+    \ < (int)(n); i++)\n#define rrep(i, s, n) for (int i = (int)(n)-1; i >= (int)(s);\
+    \ i--)\n#define all(v) v.begin(), v.end()\n\nusing ll = long long;\nusing ld =\
+    \ long double;\nusing ull = unsigned long long;\n\ntemplate <typename T> bool\
+    \ chmin(T &a, const T &b) {\n    if (a <= b) return false;\n    a = b;\n    return\
+    \ true;\n}\ntemplate <typename T> bool chmax(T &a, const T &b) {\n    if (a >=\
+    \ b) return false;\n    a = b;\n    return true;\n}\n\nnamespace lib {\n\nusing\
+    \ namespace std;\n\n}  // namespace lib\n\n// using namespace lib;\n#line 2 \"\
+    utility/modint.hpp\"\n\n#line 4 \"utility/modint.hpp\"\n\nnamespace lib {\n\n\
+    template <ll m> struct modint {\n    using mint = modint;\n    ll a;\n\n    modint(ll\
+    \ x = 0) : a((x % m + m) % m) {}\n    static constexpr ll mod() {\n        return\
+    \ m;\n    }\n    ll val() const {\n        return a;\n    }\n    ll& val() {\n\
+    \        return a;\n    }\n    mint pow(ll n) const {\n        mint res = 1;\n\
+    \        mint x = a;\n        while (n) {\n            if (n & 1) res *= x;\n\
+    \            x *= x;\n            n >>= 1;\n        }\n        return res;\n \
+    \   }\n    mint inv() const {\n        return pow(m - 2);\n    }\n    mint& operator+=(const\
+    \ mint rhs) {\n        a += rhs.a;\n        if (a >= m) a -= m;\n        return\
+    \ *this;\n    }\n    mint& operator-=(const mint rhs) {\n        if (a < rhs.a)\
+    \ a += m;\n        a -= rhs.a;\n        return *this;\n    }\n    mint& operator*=(const\
     \ mint rhs) {\n        a = a * rhs.a % m;\n        return *this;\n    }\n    mint&\
     \ operator/=(mint rhs) {\n        *this *= rhs.inv();\n        return *this;\n\
     \    }\n    friend mint operator+(const mint& lhs, const mint& rhs) {\n      \
@@ -63,8 +67,37 @@ data:
     \ rhs);\n    }\n    mint operator+() const {\n        return *this;\n    }\n \
     \   mint operator-() const {\n        return mint() - *this;\n    }\n};\n\nusing\
     \ modint998244353 = modint<998244353>;\nusing modint1000000007 = modint<1'000'000'007>;\n\
-    \n}  // namespace lib\n#line 4 \"convolution/ntt4.hpp\"\n\nnamespace lib {\n\n\
-    // only for modint998244353\ntemplate<typename mint>\nstruct NTT {\n    using\
+    \n}  // namespace lib\n#line 5 \"convolution/ntt.hpp\"\n\nnamespace lib {\n\n\
+    using mint = modint998244353;\n\nstruct ntt_info {\n    static constexpr int rank2\
+    \ = 23;\n    const int g = 3;\n    std::array<std::array<mint, rank2 + 1>, 2>\
+    \ root;\n\n    ntt_info() {\n        root[0][rank2] = mint(g).pow((mint::mod()\
+    \ - 1) >> rank2);\n        root[1][rank2] = root[0][rank2].inv();\n        rrep(i,\
+    \ 0, rank2) {\n            root[0][i] = root[0][i + 1] * root[0][i + 1];\n   \
+    \         root[1][i] = root[1][i + 1] * root[1][i + 1];\n        }\n    }\n};\n\
+    \nvoid butterfly(std::vector<mint>& a, bool inverse) {\n    static ntt_info info;\n\
+    \    int n = a.size();\n    int bit_size = 0;\n    while ((1 << bit_size) < n)\
+    \ bit_size++;\n    assert(1 << bit_size == n);\n    for (int i = 0, j = 1; j <\
+    \ n - 1; j++) {\n        for (int k = n >> 1; k > (i ^= k); k >>= 1);\n      \
+    \  if (j < i) {\n            std::swap(a[i], a[j]);\n        }\n    }\n    rep(bit,\
+    \ 0, bit_size) {\n        rep(i, 0, n / (1 << (bit + 1))) {\n            mint\
+    \ zeta1 = 1;\n            mint zeta2 = info.root[inverse][1];\n            mint\
+    \ w = info.root[inverse][bit + 1];\n            rep(j, 0, 1 << bit) {\n      \
+    \          int idx = i * (1 << (bit + 1)) + j;\n                int jdx = idx\
+    \ + (1 << bit);\n                mint p1 = a[idx];\n                mint p2 =\
+    \ a[jdx];\n                a[idx] = p1 + zeta1 * p2;\n                a[jdx] =\
+    \ p1 + zeta2 * p2;\n                zeta1 *= w;\n                zeta2 *= w;\n\
+    \            }\n        }\n    }\n    if (inverse) {\n        mint inv_n = mint(n).inv();\n\
+    \        rep(i, 0, n) a[i] *= inv_n;\n    }\n}\n\nstd::vector<mint> convolution(const\
+    \ std::vector<mint>& f,\n                              const std::vector<mint>&\
+    \ g) {\n    int n = 1;\n    while (n < int(f.size() + g.size() - 1)) n <<= 1;\n\
+    \    std::vector<mint> a(n), b(n);\n    std::copy(f.begin(), f.end(), a.begin());\n\
+    \    std::copy(g.begin(), g.end(), b.begin());\n    butterfly(a, false);\n   \
+    \ butterfly(b, false);\n    rep(i, 0, n) {\n        a[i] *= b[i];\n    }\n   \
+    \ butterfly(a, true);\n    a.resize(f.size() + g.size() - 1);\n    return a;\n\
+    }\n\n}  // namespace lib\n#line 2 \"fps/compositional_inverse_of_fps.hpp\"\n\n\
+    #line 2 \"fps/composition_of_fps.hpp\"\n\n#line 2 \"fps/fps.hpp\"\n\n#line 2 \"\
+    convolution/ntt4.hpp\"\n\n#line 4 \"convolution/ntt4.hpp\"\n\nnamespace lib {\n\
+    \n// only for modint998244353\ntemplate<typename mint>\nstruct NTT {\n    using\
     \ uint = unsigned int;\n    static constexpr uint mod = mint::mod();\n    static\
     \ constexpr ull mod2 = (ull)mod * mod;\n    static constexpr uint pr  = 3; //\
     \ for modint998244353\n    static constexpr int level = 23; // for modint998244353\n\
@@ -219,40 +252,48 @@ data:
     \        for (int j = 0; j < k; j++) {\n            if (k * i + j < n) {\n   \
     \             mint coef = f[k * i + j];\n                a += baby[j] * coef;\n\
     \            } else\n                break;\n        }\n        h += (giant[i]\
-    \ * a).pre(n);\n    }\n    return h;\n}\n\n}  // namespace lib\n"
-  code: "#pragma once\n\n#include \"../fps/fps.hpp\"\n#include \"../template/template.hpp\"\
-    \n\nnamespace lib {\n\ntemplate <class mint>\nFormalPowerSeries<mint> composition_of_fps(const\
-    \ FormalPowerSeries<mint> &f, const FormalPowerSeries<mint> &g) {\n    using FPS\
-    \ = FormalPowerSeries<mint>;\n    int n = f.deg();\n    int k = 1;\n    while\
-    \ (k * k < n) k++;\n    std::vector<FPS> baby(k + 1);\n    baby[0] = FPS{1};\n\
-    \    baby[1] = g;\n    for (int i = 2; i < k + 1; i++) {\n        baby[i] = (baby[i\
-    \ - 1] * g).pre(n);\n    }\n    std::vector<FPS> giant(k + 1);\n    giant[0] =\
-    \ FPS{1};\n    giant[1] = baby[k];\n    for (int i = 2; i < k + 1; i++) {\n  \
-    \      giant[i] = (giant[i - 1] * giant[1]).pre(n);\n    }\n    FPS h(n);\n  \
-    \  for (int i = 0; i < k + 1; i++) {\n        FPS a(n);\n        for (int j =\
-    \ 0; j < k; j++) {\n            if (k * i + j < n) {\n                mint coef\
-    \ = f[k * i + j];\n                a += baby[j] * coef;\n            } else\n\
-    \                break;\n        }\n        h += (giant[i] * a).pre(n);\n    }\n\
-    \    return h;\n}\n\n}  // namespace lib"
+    \ * a).pre(n);\n    }\n    return h;\n}\n\n}  // namespace lib\n#line 6 \"fps/compositional_inverse_of_fps.hpp\"\
+    \n\nnamespace lib {\n\ntemplate <class mint>\nFormalPowerSeries<mint> compositional_inverse_of_fps(FormalPowerSeries<mint>\
+    \ f,\n                                                     int d = -1) {\n   \
+    \ using FPS = FormalPowerSeries<mint>;\n    if (d < 0) d = f.deg();\n    assert((int)f.size()\
+    \ >= 2 && f[0] == 0 && f[1] != 0);\n    FPS df = f.differential();\n    FPS g\
+    \ = {0, f[1].inv()};\n    for (int n = 2; n < d; n <<= 1) {\n        g.resize(2\
+    \ * n);\n        if (f.deg() < 2 * n) f.resize(2 * n);\n        if (df.deg() <\
+    \ 2 * n) df.resize(2 * n);\n        FPS fg = composition_of_fps(f.pre(2 * n),\
+    \ g);\n        FPS fdg = composition_of_fps(df.pre(2 * n), g);\n        g -= ((fg\
+    \ - FPS{0, 1}) * fdg.inv(2 * n)).pre(2 * n);\n    }\n    g.resize(d);\n    return\
+    \ g;\n}\n\n}  // namespace lib\n#line 8 \"test/polynomial/Compositional_Inverse_of_Formal_Power_Series.test.cpp\"\
+    \n\nusing namespace lib;\nusing mint = modint998244353;\nusing FPS = FormalPowerSeries<mint>;\n\
+    \nint main() {\n    int n;\n    std::cin >> n;\n    FPS f(n);\n    for (int i\
+    \ = 0; i < n; i++) {\n        std::cin >> f[i].val();\n    }\n    FPS g = compositional_inverse_of_fps(f);\n\
+    \    for (int i = 0; i < n; i++) {\n        std::cout << g[i].val() << \" \\n\"\
+    [i == n - 1];\n    }\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/compositional_inverse_of_formal_power_series\"\
+    \n\n#include <iostream>\n\n#include \"../../convolution/ntt.hpp\"\n#include \"\
+    ../../fps/compositional_inverse_of_fps.hpp\"\n#include \"../../utility/modint.hpp\"\
+    \n\nusing namespace lib;\nusing mint = modint998244353;\nusing FPS = FormalPowerSeries<mint>;\n\
+    \nint main() {\n    int n;\n    std::cin >> n;\n    FPS f(n);\n    for (int i\
+    \ = 0; i < n; i++) {\n        std::cin >> f[i].val();\n    }\n    FPS g = compositional_inverse_of_fps(f);\n\
+    \    for (int i = 0; i < n; i++) {\n        std::cout << g[i].val() << \" \\n\"\
+    [i == n - 1];\n    }\n}"
   dependsOn:
+  - convolution/ntt.hpp
+  - template/template.hpp
+  - utility/modint.hpp
+  - fps/compositional_inverse_of_fps.hpp
+  - fps/composition_of_fps.hpp
   - fps/fps.hpp
   - convolution/ntt4.hpp
-  - utility/modint.hpp
-  - template/template.hpp
-  isVerificationFile: false
-  path: fps/composition_of_fps.hpp
-  requiredBy:
-  - fps/compositional_inverse_of_fps.hpp
+  isVerificationFile: true
+  path: test/polynomial/Compositional_Inverse_of_Formal_Power_Series.test.cpp
+  requiredBy: []
   timestamp: '2023-11-14 18:27:43+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - test/polynomial/Compositional_Inverse_of_Formal_Power_Series.test.cpp
-  - test/polynomial/Composition_of_Formal_Power_Series.test.cpp
-documentation_of: fps/composition_of_fps.hpp
+  verificationStatus: TEST_ACCEPTED
+  verifiedWith: []
+documentation_of: test/polynomial/Compositional_Inverse_of_Formal_Power_Series.test.cpp
 layout: document
-title: $f(g(x))$
+redirect_from:
+- /verify/test/polynomial/Compositional_Inverse_of_Formal_Power_Series.test.cpp
+- /verify/test/polynomial/Compositional_Inverse_of_Formal_Power_Series.test.cpp.html
+title: test/polynomial/Compositional_Inverse_of_Formal_Power_Series.test.cpp
 ---
-
-## 説明
-
-形式的べき級数 $f$, $g$ について、その合成 $f(g(x))$ の先頭 $N$ 項を求める。Baby-step Giant-stepを用いることで $O(N^2)$ で計算する。
