@@ -6,7 +6,7 @@ data:
     title: NTT convolution
   - icon: ':heavy_check_mark:'
     path: fps/bostan_mori.hpp
-    title: fps/bostan_mori.hpp
+    title: Bostan-Mori Algorithm
   - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"

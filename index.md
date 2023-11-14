@@ -45,7 +45,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: fps/bostan_mori.hpp
-      title: fps/bostan_mori.hpp
+      title: Bostan-Mori Algorithm
     - icon: ':heavy_check_mark:'
       path: fps/composition_of_fps.hpp
       title: $f(g(x))$
@@ -138,7 +138,7 @@ data:
       title: math/crt.hpp
     - icon: ':heavy_check_mark:'
       path: math/dirichlet_series.hpp
-      title: math/dirichlet_series.hpp
+      title: Dirichlet Series
     - icon: ':heavy_check_mark:'
       path: math/eratosthenes_sieve.hpp
       title: eratosthenes sieve
