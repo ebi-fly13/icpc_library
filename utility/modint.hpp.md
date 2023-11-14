@@ -61,6 +61,9 @@ data:
     path: test/polynomial/Inv_of_Formal_Power_Series.test.cpp
     title: test/polynomial/Inv_of_Formal_Power_Series.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/polynomial/Kth_term_of_Linearly_Recurrent_Sequence.test.cpp
+    title: test/polynomial/Kth_term_of_Linearly_Recurrent_Sequence.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/polynomial/Log_of_FPS_Sparse.test.cpp
     title: test/polynomial/Log_of_FPS_Sparse.test.cpp
   - icon: ':heavy_check_mark:'
@@ -178,6 +181,7 @@ data:
   - test/polynomial/Polynomial_Taylor_Shift.test.cpp
   - test/polynomial/Pow_of_FPS_Sparse.test.cpp
   - test/polynomial/Multipoint_Evaluation.test.cpp
+  - test/polynomial/Kth_term_of_Linearly_Recurrent_Sequence.test.cpp
   - test/polynomial/Pow_of_Formal_Power_Series.test.cpp
   - test/polynomial/Exp_of_Formal_Power_Series.test.cpp
   - test/polynomial/Log_of_FPS_Sparse.test.cpp

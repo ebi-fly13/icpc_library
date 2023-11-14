@@ -44,6 +44,9 @@ data:
   - name: fps
     pages:
     - icon: ':heavy_check_mark:'
+      path: fps/bostan_mori.hpp
+      title: fps/bostan_mori.hpp
+    - icon: ':heavy_check_mark:'
       path: fps/composition_of_fps.hpp
       title: $f(g(x))$
     - icon: ':heavy_check_mark:'
@@ -378,6 +381,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/polynomial/Inv_of_Formal_Power_Series.test.cpp
       title: test/polynomial/Inv_of_Formal_Power_Series.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/polynomial/Kth_term_of_Linearly_Recurrent_Sequence.test.cpp
+      title: test/polynomial/Kth_term_of_Linearly_Recurrent_Sequence.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/polynomial/Log_of_FPS_Sparse.test.cpp
       title: test/polynomial/Log_of_FPS_Sparse.test.cpp

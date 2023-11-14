@@ -36,6 +36,9 @@ data:
     path: data_structure/undo_dsu.hpp
     title: undo dsu
   - icon: ':heavy_check_mark:'
+    path: fps/bostan_mori.hpp
+    title: fps/bostan_mori.hpp
+  - icon: ':heavy_check_mark:'
     path: fps/composition_of_fps.hpp
     title: $f(g(x))$
   - icon: ':heavy_check_mark:'
@@ -316,6 +319,9 @@ data:
     path: test/polynomial/Inv_of_Formal_Power_Series.test.cpp
     title: test/polynomial/Inv_of_Formal_Power_Series.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/polynomial/Kth_term_of_Linearly_Recurrent_Sequence.test.cpp
+    title: test/polynomial/Kth_term_of_Linearly_Recurrent_Sequence.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/polynomial/Log_of_FPS_Sparse.test.cpp
     title: test/polynomial/Log_of_FPS_Sparse.test.cpp
   - icon: ':heavy_check_mark:'
@@ -403,6 +409,7 @@ data:
   - geometry3D/ld/base_ld.hpp
   - geometry3D/ld/line.hpp
   - fps/composition_of_fps.hpp
+  - fps/bostan_mori.hpp
   - fps/polynomial_interpolation.hpp
   - fps/compositional_inverse_of_fps.hpp
   - fps/fps.hpp
@@ -497,6 +504,7 @@ data:
   - test/polynomial/Polynomial_Taylor_Shift.test.cpp
   - test/polynomial/Pow_of_FPS_Sparse.test.cpp
   - test/polynomial/Multipoint_Evaluation.test.cpp
+  - test/polynomial/Kth_term_of_Linearly_Recurrent_Sequence.test.cpp
   - test/polynomial/Pow_of_Formal_Power_Series.test.cpp
   - test/polynomial/Exp_of_Formal_Power_Series.test.cpp
   - test/polynomial/Log_of_FPS_Sparse.test.cpp
