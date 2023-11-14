@@ -7,7 +7,7 @@ data:
   - icon: ':warning:'
     path: geometry3D/ld/base_ld.hpp
     title: geometry3D/ld/base_ld.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy: []

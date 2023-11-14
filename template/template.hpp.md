@@ -51,6 +51,12 @@ data:
     path: fps/multipoint_evaluation.hpp
     title: Multipoint Evaluation
   - icon: ':heavy_check_mark:'
+    path: fps/polynomial_interpolation.hpp
+    title: Polynomial Interpolation
+  - icon: ':heavy_check_mark:'
+    path: fps/taylor_shift.hpp
+    title: $f(x + c)$
+  - icon: ':heavy_check_mark:'
     path: geometry/Partition_by_Circles.hpp
     title: geometry/Partition_by_Circles.hpp
   - icon: ':heavy_check_mark:'
@@ -149,13 +155,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: tree/Mo_on_Tree.hpp
     title: "\u6728\u4E0A\u306E Mo"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: tree/RerootingDP.hpp
     title: Rerooting DP
   - icon: ':heavy_check_mark:'
     path: utility/dynamic_modint.hpp
     title: utility/dynamic_modint.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utility/modint.hpp
     title: modint
   - icon: ':heavy_check_mark:'
@@ -319,6 +325,12 @@ data:
     path: test/polynomial/Multipoint_Evaluation.test.cpp
     title: test/polynomial/Multipoint_Evaluation.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/polynomial/Polynomial_Interpolation.test.cpp
+    title: test/polynomial/Polynomial_Interpolation.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/polynomial/Polynomial_Taylor_Shift.test.cpp
+    title: test/polynomial/Polynomial_Taylor_Shift.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/polynomial/Pow_of_FPS_Sparse.test.cpp
     title: test/polynomial/Pow_of_FPS_Sparse.test.cpp
   - icon: ':heavy_check_mark:'
@@ -339,15 +351,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/tree/RerootingDP.test.cpp
     title: test/tree/RerootingDP.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/tree/Tree_Path_Composite_Sum.test.cpp
     title: test/tree/Tree_Path_Composite_Sum.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/tree/aoj_0489.test.cpp
     title: test/tree/aoj_0489.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n\n#include <bits/stdc++.h>\n\n\
@@ -391,10 +403,12 @@ data:
   - geometry3D/ld/base_ld.hpp
   - geometry3D/ld/line.hpp
   - fps/composition_of_fps.hpp
+  - fps/polynomial_interpolation.hpp
   - fps/compositional_inverse_of_fps.hpp
   - fps/fps.hpp
   - fps/multipoint_evaluation.hpp
   - fps/fps_sparse.hpp
+  - fps/taylor_shift.hpp
   - utility/rational.hpp
   - utility/dynamic_modint.hpp
   - utility/modint.hpp
@@ -425,7 +439,7 @@ data:
   - string/z_algorithm.hpp
   - string/RollingHash.hpp
   timestamp: '2023-05-17 22:41:14+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/template/debug_template.test.cpp
   - test/misc/aoj_1197.test.cpp
@@ -477,8 +491,10 @@ data:
   - test/polynomial/Inv_of_Formal_Power_Series.test.cpp
   - test/polynomial/Inv_of_FPS_Sparse.test.cpp
   - test/polynomial/Log_of_Formal_Power_Series.test.cpp
+  - test/polynomial/Polynomial_Interpolation.test.cpp
   - test/polynomial/Compositional_Inverse_of_Formal_Power_Series.test.cpp
   - test/polynomial/Exp_of_FPS_Sparse.test.cpp
+  - test/polynomial/Polynomial_Taylor_Shift.test.cpp
   - test/polynomial/Pow_of_FPS_Sparse.test.cpp
   - test/polynomial/Multipoint_Evaluation.test.cpp
   - test/polynomial/Pow_of_Formal_Power_Series.test.cpp

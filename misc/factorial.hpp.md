@@ -1,13 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: fps/fps_sparse.hpp
     title: Formal Power Series (Sparse)
+  - icon: ':heavy_check_mark:'
+    path: fps/taylor_shift.hpp
+    title: $f(x + c)$
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/misc/Binomial_Coefficient.test.cpp
@@ -21,6 +24,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/polynomial/Log_of_FPS_Sparse.test.cpp
     title: test/polynomial/Log_of_FPS_Sparse.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/polynomial/Polynomial_Taylor_Shift.test.cpp
+    title: test/polynomial/Polynomial_Taylor_Shift.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/polynomial/Pow_of_FPS_Sparse.test.cpp
     title: test/polynomial/Pow_of_FPS_Sparse.test.cpp
@@ -76,12 +82,14 @@ data:
   path: misc/factorial.hpp
   requiredBy:
   - fps/fps_sparse.hpp
+  - fps/taylor_shift.hpp
   timestamp: '2023-06-09 15:23:37+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/misc/Binomial_Coefficient.test.cpp
   - test/polynomial/Inv_of_FPS_Sparse.test.cpp
   - test/polynomial/Exp_of_FPS_Sparse.test.cpp
+  - test/polynomial/Polynomial_Taylor_Shift.test.cpp
   - test/polynomial/Pow_of_FPS_Sparse.test.cpp
   - test/polynomial/Log_of_FPS_Sparse.test.cpp
 documentation_of: misc/factorial.hpp

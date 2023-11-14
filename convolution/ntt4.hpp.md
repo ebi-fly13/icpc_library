@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utility/modint.hpp
     title: modint
   _extendedRequiredBy:
@@ -20,6 +20,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: fps/multipoint_evaluation.hpp
     title: Multipoint Evaluation
+  - icon: ':heavy_check_mark:'
+    path: fps/polynomial_interpolation.hpp
+    title: Polynomial Interpolation
+  - icon: ':heavy_check_mark:'
+    path: fps/taylor_shift.hpp
+    title: $f(x + c)$
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/convolution/Convolution_mod_ntt4.test.cpp
@@ -42,6 +48,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/polynomial/Multipoint_Evaluation.test.cpp
     title: test/polynomial/Multipoint_Evaluation.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/polynomial/Polynomial_Interpolation.test.cpp
+    title: test/polynomial/Polynomial_Interpolation.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/polynomial/Polynomial_Taylor_Shift.test.cpp
+    title: test/polynomial/Polynomial_Taylor_Shift.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/polynomial/Pow_of_Formal_Power_Series.test.cpp
     title: test/polynomial/Pow_of_Formal_Power_Series.test.cpp
@@ -226,16 +238,20 @@ data:
   path: convolution/ntt4.hpp
   requiredBy:
   - fps/composition_of_fps.hpp
+  - fps/polynomial_interpolation.hpp
   - fps/compositional_inverse_of_fps.hpp
   - fps/fps.hpp
   - fps/multipoint_evaluation.hpp
+  - fps/taylor_shift.hpp
   timestamp: '2023-11-14 18:27:43+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/convolution/Convolution_mod_ntt4.test.cpp
   - test/polynomial/Inv_of_Formal_Power_Series.test.cpp
   - test/polynomial/Log_of_Formal_Power_Series.test.cpp
+  - test/polynomial/Polynomial_Interpolation.test.cpp
   - test/polynomial/Compositional_Inverse_of_Formal_Power_Series.test.cpp
+  - test/polynomial/Polynomial_Taylor_Shift.test.cpp
   - test/polynomial/Multipoint_Evaluation.test.cpp
   - test/polynomial/Pow_of_Formal_Power_Series.test.cpp
   - test/polynomial/Exp_of_Formal_Power_Series.test.cpp

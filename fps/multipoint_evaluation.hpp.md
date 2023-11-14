@@ -7,17 +7,23 @@ data:
   - icon: ':heavy_check_mark:'
     path: fps/fps.hpp
     title: Formal Power Series
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utility/modint.hpp
     title: modint
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: fps/polynomial_interpolation.hpp
+    title: Polynomial Interpolation
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/polynomial/Multipoint_Evaluation.test.cpp
     title: test/polynomial/Multipoint_Evaluation.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/polynomial/Polynomial_Interpolation.test.cpp
+    title: test/polynomial/Polynomial_Interpolation.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -236,10 +242,12 @@ data:
   - template/template.hpp
   isVerificationFile: false
   path: fps/multipoint_evaluation.hpp
-  requiredBy: []
+  requiredBy:
+  - fps/polynomial_interpolation.hpp
   timestamp: '2023-11-14 18:27:43+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/polynomial/Polynomial_Interpolation.test.cpp
   - test/polynomial/Multipoint_Evaluation.test.cpp
 documentation_of: fps/multipoint_evaluation.hpp
 layout: document
