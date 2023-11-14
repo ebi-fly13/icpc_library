@@ -47,7 +47,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data_structure/segtree_2d.hpp
       title: 2D segtree
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data_structure/slope_trick.hpp
       title: Slope Trick
     - icon: ':heavy_check_mark:'
@@ -300,6 +300,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data_structure/pck2022y11.test.cpp
       title: test/data_structure/pck2022y11.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data_structure/yuki_1077.test.cpp
+      title: test/data_structure/yuki_1077.test.cpp
   - name: test/geometry
     pages:
     - icon: ':heavy_check_mark:'

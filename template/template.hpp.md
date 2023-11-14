@@ -41,7 +41,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: data_structure/segtree_2d.hpp
     title: 2D segtree
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: data_structure/slope_trick.hpp
     title: Slope Trick
   - icon: ':heavy_check_mark:'
@@ -249,6 +249,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/data_structure/pck2022y11.test.cpp
     title: test/data_structure/pck2022y11.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/data_structure/yuki_1077.test.cpp
+    title: test/data_structure/yuki_1077.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/geometry/Circumscribed_Circle_of_Triangle.test.cpp
     title: test/geometry/Circumscribed_Circle_of_Triangle.test.cpp
@@ -513,6 +516,7 @@ data:
   - test/data_structure/Range_Add_Point_Get.test.cpp
   - test/data_structure/Segment_Add_Get_Min.test.cpp
   - test/data_structure/Static_Range_Inversions_Query.test.cpp
+  - test/data_structure/yuki_1077.test.cpp
   - test/data_structure/aoj_1068.test.cpp
   - test/data_structure/Point_Add_Rectangle_Sum.test.cpp
   - test/convolution/Convolution_mod.test.cpp
