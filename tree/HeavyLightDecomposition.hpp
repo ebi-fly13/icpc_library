@@ -20,7 +20,6 @@ struct HeavyLightDecomposition {
     }
 
     void dfs_hld(int v) {
-        static int t = 0;
         in[v] = t++;
         for (auto nv : g[v]) {
             if (nv == par[v]) continue;
@@ -95,7 +94,7 @@ struct HeavyLightDecomposition {
     }
 
   private:
-    int n;
+    int n, t = 0;
     vector<vector<int>> g;
     vector<int> sz, in, out, nxt, par, depth;
 };
