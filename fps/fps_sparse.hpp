@@ -27,7 +27,7 @@ std::vector<mint> mul_sparse(const std::vector<mint> &f,
 }
 
 template <class mint>
-std::vector<mint> inv_sparse(std::vector<mint> f, int d = -1) {
+std::vector<mint> inv_sparse(const std::vector<mint> &f, int d = -1) {
     assert(f[0] != 0);
     if (d < 0) {
         d = f.size();
@@ -51,7 +51,7 @@ std::vector<mint> inv_sparse(std::vector<mint> f, int d = -1) {
 }
 
 template <class mint>
-std::vector<mint> exp_sparse(std::vector<mint> f, int d = -1) {
+std::vector<mint> exp_sparse(const std::vector<mint> &f, int d = -1) {
     int n = f.size();
     if (d < 0) d = n;
     std::vector<std::pair<int, mint>> ret;
@@ -115,7 +115,7 @@ std::vector<mint> pow_sparse_1(const std::vector<mint> &f, long long k,
 }
 
 template <class mint>
-std::vector<mint> pow_sparse(std::vector<mint> &f, long long k,
+std::vector<mint> pow_sparse(const std::vector<mint> &f, long long k,
                              int d = -1) {
     int n = f.size();
     if (d < 0) d = n;

@@ -6,7 +6,7 @@
 namespace lib {
 
 template <class mint>
-FormalPowerSeries<mint> composition_of_fps(FormalPowerSeries<mint> &f, FormalPowerSeries<mint> &g) {
+FormalPowerSeries<mint> composition_of_fps(const FormalPowerSeries<mint> &f, const FormalPowerSeries<mint> &g) {
     using FPS = FormalPowerSeries<mint>;
     int n = f.deg();
     int k = 1;

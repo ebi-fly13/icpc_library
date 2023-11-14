@@ -12,10 +12,13 @@ template <ll m> struct modint {
     static constexpr ll mod() {
         return m;
     }
+    ll val() const {
+        return a;
+    }
     ll& val() {
         return a;
     }
-    mint pow(ll n) {
+    mint pow(ll n) const {
         mint res = 1;
         mint x = a;
         while (n) {
@@ -25,7 +28,7 @@ template <ll m> struct modint {
         }
         return res;
     }
-    mint inv() {
+    mint inv() const {
         return pow(m - 2);
     }
     mint& operator+=(const mint rhs) {

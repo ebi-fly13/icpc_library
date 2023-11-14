@@ -114,36 +114,36 @@ template <class mint> struct FormalPowerSeries : std::vector<mint> {
         return *this;
     }
 
-    FPS operator>>(int d) {
+    FPS operator>>(int d) const {
         if (deg() <= d) return {};
         FPS f = *this;
         f.erase(f.begin(), f.begin() + d);
         return f;
     }
 
-    FPS operator<<(int d) {
+    FPS operator<<(int d) const {
         FPS f = *this;
         f.insert(f.begin(), d, 0);
         return f;
     }
 
-    FPS operator-() {
+    FPS operator-() const {
         FPS g(this->size());
         for (int i = 0; i < (int)this->size(); i++) g[i] = -(*this)[i];
         return g;
     }
 
-    FPS pre(int sz) {
+    FPS pre(int sz) const {
         return FPS(this->begin(), this->begin() + std::min(deg(), sz));
     }
 
-    FPS rev() {
+    FPS rev() const {
         auto f = *this;
         std::reverse(f.begin(), f.end());
         return f;
     }
 
-    FPS differential() {
+    FPS differential() const {
         int n = deg();
         FPS g(std::max(0, n - 1));
         for (int i = 0; i < n - 1; i++) {
@@ -152,7 +152,7 @@ template <class mint> struct FormalPowerSeries : std::vector<mint> {
         return g;
     }
 
-    FPS integral() {
+    FPS integral() const {
         int n = deg();
         FPS g(n + 1);
         g[0] = 0;
@@ -163,7 +163,7 @@ template <class mint> struct FormalPowerSeries : std::vector<mint> {
         return g;
     }
 
-    FPS inv(int d = -1) {
+    FPS inv(int d = -1) const {
         int n = 1;
         if (d < 0) d = deg();
         FPS g(n);
@@ -176,13 +176,13 @@ template <class mint> struct FormalPowerSeries : std::vector<mint> {
         return g;
     }
 
-    FPS log(int d = -1) {
+    FPS log(int d = -1) const {
         assert((*this)[0].val() == 1);
         if (d < 0) d = deg();
         return ((*this).differential() * (*this).inv(d)).pre(d - 1).integral();
     }
 
-    FPS exp(int d = -1) {
+    FPS exp(int d = -1) const {
         assert((*this)[0].val() == 0);
         int n = 1;
         if (d < 0) d = deg();
@@ -196,7 +196,7 @@ template <class mint> struct FormalPowerSeries : std::vector<mint> {
         return g;
     }
 
-    FPS pow(ll k, int d = -1) {
+    FPS pow(ll k, int d = -1) const {
         const int n = deg();
         if (d < 0) d = n;
         if (k == 0) {
@@ -218,7 +218,7 @@ template <class mint> struct FormalPowerSeries : std::vector<mint> {
         return FPS(d);
     }
 
-    int deg() {
+    int deg() const {
         return (*this).size();
     }
 
@@ -226,7 +226,7 @@ template <class mint> struct FormalPowerSeries : std::vector<mint> {
         while ((!this->empty()) && this->back() == 0) this->pop_back();
     }
 
-    int count_terms() {
+    int count_terms() const {
         int c = 0;
         for (int i = 0; i < deg(); i++) {
             if ((*this)[i] != 0) c++;
