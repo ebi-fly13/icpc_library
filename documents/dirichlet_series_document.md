@@ -1,6 +1,6 @@
 ---
 title: Dirichlet Series
-documentation_of: //math/DirichletSeries.hpp
+documentation_of: //math/dirichlet_series.hpp
 ---
 
 ## 説明

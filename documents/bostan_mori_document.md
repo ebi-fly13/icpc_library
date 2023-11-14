@@ -1,6 +1,6 @@
 ---
 title: Bostan-Mori Algorithm 
-documentation_of: //fps/bostan_mori_algorithm.hpp
+documentation_of: //fps/bostan_mori.hpp
 ---
 
 ## 説明
