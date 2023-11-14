@@ -10,6 +10,9 @@ data:
     path: test/data_structure/Point_Add_Range_Sum.test.cpp
     title: test/data_structure/Point_Add_Range_Sum.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/data_structure/Point_Add_Rectangle_Sum.test.cpp
+    title: test/data_structure/Point_Add_Rectangle_Sum.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/data_structure/Point_Set_Range_Composite.test.cpp
     title: test/data_structure/Point_Set_Range_Composite.test.cpp
   - icon: ':heavy_check_mark:'
@@ -122,6 +125,7 @@ data:
   - test/data_structure/pck2022y11.test.cpp
   - test/data_structure/Point_Add_Range_Sum.test.cpp
   - test/data_structure/aoj_1068.test.cpp
+  - test/data_structure/Point_Add_Rectangle_Sum.test.cpp
 documentation_of: data_structure/segtree.hpp
 layout: document
 title: segtree

@@ -15,6 +15,9 @@ data:
       path: data_structure/BinaryTrie.hpp
       title: BinaryTrie
     - icon: ':heavy_check_mark:'
+      path: data_structure/compress.hpp
+      title: Compress
+    - icon: ':heavy_check_mark:'
       path: data_structure/dsu.hpp
       title: dsu
     - icon: ':heavy_check_mark:'
@@ -26,6 +29,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: data_structure/lazysegtree.hpp
       title: lazy segtree
+    - icon: ':heavy_check_mark:'
+      path: data_structure/li_chao_tree.hpp
+      title: Li Chao Tree
+    - icon: ':heavy_check_mark:'
+      path: data_structure/offline_segtree_2d.hpp
+      title: offline 2D segtree
     - icon: ':heavy_check_mark:'
       path: data_structure/section_set.hpp
       title: section set
@@ -238,6 +247,9 @@ data:
       path: test/data_structure/Point_Add_Range_Sum_Fenwick.test.cpp
       title: test/data_structure/Point_Add_Range_Sum_Fenwick.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/data_structure/Point_Add_Rectangle_Sum.test.cpp
+      title: test/data_structure/Point_Add_Rectangle_Sum.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/data_structure/Point_Set_Range_Composite.test.cpp
       title: test/data_structure/Point_Set_Range_Composite.test.cpp
     - icon: ':heavy_check_mark:'
@@ -246,6 +258,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data_structure/Range_Affine_Range_Sum.test.cpp
       title: test/data_structure/Range_Affine_Range_Sum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data_structure/Segment_Add_Get_Min.test.cpp
+      title: test/data_structure/Segment_Add_Get_Min.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/data_structure/Set_Xor_Min.test.cpp
       title: test/data_structure/Set_Xor_Min.test.cpp

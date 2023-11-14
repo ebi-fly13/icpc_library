@@ -12,6 +12,9 @@ data:
     path: data_structure/BinaryTrie.hpp
     title: BinaryTrie
   - icon: ':heavy_check_mark:'
+    path: data_structure/compress.hpp
+    title: Compress
+  - icon: ':heavy_check_mark:'
     path: data_structure/dsu.hpp
     title: dsu
   - icon: ':heavy_check_mark:'
@@ -20,6 +23,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: data_structure/lazysegtree.hpp
     title: lazy segtree
+  - icon: ':heavy_check_mark:'
+    path: data_structure/li_chao_tree.hpp
+    title: Li Chao Tree
+  - icon: ':heavy_check_mark:'
+    path: data_structure/offline_segtree_2d.hpp
+    title: offline 2D segtree
   - icon: ':heavy_check_mark:'
     path: data_structure/section_set.hpp
     title: section set
@@ -187,6 +196,9 @@ data:
     path: test/data_structure/Point_Add_Range_Sum_Fenwick.test.cpp
     title: test/data_structure/Point_Add_Range_Sum_Fenwick.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/data_structure/Point_Add_Rectangle_Sum.test.cpp
+    title: test/data_structure/Point_Add_Rectangle_Sum.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/data_structure/Point_Set_Range_Composite.test.cpp
     title: test/data_structure/Point_Set_Range_Composite.test.cpp
   - icon: ':heavy_check_mark:'
@@ -195,6 +207,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/data_structure/Range_Affine_Range_Sum.test.cpp
     title: test/data_structure/Range_Affine_Range_Sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/data_structure/Segment_Add_Get_Min.test.cpp
+    title: test/data_structure/Segment_Add_Get_Min.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/data_structure/Set_Xor_Min.test.cpp
     title: test/data_structure/Set_Xor_Min.test.cpp
@@ -425,13 +440,16 @@ data:
   - utility/rational.hpp
   - utility/dynamic_modint.hpp
   - utility/modint.hpp
+  - data_structure/offline_segtree_2d.hpp
   - data_structure/section_set.hpp
   - data_structure/fenwick_tree.hpp
+  - data_structure/compress.hpp
   - data_structure/BinaryTrie.hpp
   - data_structure/lazysegtree.hpp
   - data_structure/segtree.hpp
   - data_structure/sparse_table.hpp
   - data_structure/undo_dsu.hpp
+  - data_structure/li_chao_tree.hpp
   - data_structure/dsu.hpp
   - data_structure/segtree_2d.hpp
   - convolution/ntt4.hpp
@@ -478,8 +496,10 @@ data:
   - test/data_structure/Unionfind.test.cpp
   - test/data_structure/Range_Affine_Range_Sum.test.cpp
   - test/data_structure/Range_Add_Point_Get.test.cpp
+  - test/data_structure/Segment_Add_Get_Min.test.cpp
   - test/data_structure/Static_Range_Inversions_Query.test.cpp
   - test/data_structure/aoj_1068.test.cpp
+  - test/data_structure/Point_Add_Rectangle_Sum.test.cpp
   - test/convolution/Convolution_mod.test.cpp
   - test/convolution/Convolution_mod_ntt4.test.cpp
   - test/math/two_sat.test.cpp
