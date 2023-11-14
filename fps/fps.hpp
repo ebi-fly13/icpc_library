@@ -6,15 +6,16 @@
 
 namespace lib {
 
-template <class mint> struct FPS : std::vector<mint> {
+template <class mint> struct FormalPowerSeries : std::vector<mint> {
   private:
+    using FPS = FormalPowerSeries<mint>;
     using std::vector<mint>::vector;
     using std::vector<mint>::vector::operator=;
 
     NTT<mint> ntt;
 
   public:
-    FPS(const std::vector<mint> &a) {
+    FormalPowerSeries(const std::vector<mint> &a) {
         *this = a;
     }
 
