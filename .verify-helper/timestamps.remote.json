@@ -48,6 +48,7 @@
 "test/polynomial/Exp_of_Formal_Power_Series.test.cpp": "2023-11-14 18:27:43 +0900",
 "test/polynomial/Inv_of_FPS_Sparse.test.cpp": "2023-11-14 18:27:43 +0900",
 "test/polynomial/Inv_of_Formal_Power_Series.test.cpp": "2023-11-14 18:27:43 +0900",
+"test/polynomial/Kth_term_of_Linearly_Recurrent_Sequence.test.cpp": "2023-11-14 20:46:04 +0900",
 "test/polynomial/Log_of_FPS_Sparse.test.cpp": "2023-11-14 18:27:43 +0900",
 "test/polynomial/Log_of_Formal_Power_Series.test.cpp": "2023-11-14 18:27:43 +0900",
 "test/polynomial/Multipoint_Evaluation.test.cpp": "2023-11-14 18:27:43 +0900",
