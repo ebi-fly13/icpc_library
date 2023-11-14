@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy:
@@ -36,6 +36,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/convolution/Convolution_mod_ntt4.test.cpp
     title: test/convolution/Convolution_mod_ntt4.test.cpp
+  - icon: ':x:'
+    path: test/convolution/Subset_Convolution.test.cpp
+    title: test/convolution/Subset_Convolution.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/data_structure/Point_Set_Range_Composite.test.cpp
     title: test/data_structure/Point_Set_Range_Composite.test.cpp
@@ -90,9 +93,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/tree/Tree_Path_Composite_Sum.test.cpp
     title: test/tree/Tree_Path_Composite_Sum.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"utility/modint.hpp\"\n\n#line 2 \"template/template.hpp\"\
@@ -168,12 +171,13 @@ data:
   - convolution/ntt4.hpp
   - convolution/ntt.hpp
   timestamp: '2023-11-14 18:27:43+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/tree/Tree_Path_Composite_Sum.test.cpp
   - test/data_structure/Point_Set_Range_Composite.test.cpp
   - test/data_structure/Range_Affine_Range_Sum.test.cpp
   - test/convolution/Convolution_mod.test.cpp
+  - test/convolution/Subset_Convolution.test.cpp
   - test/convolution/Convolution_mod_ntt4.test.cpp
   - test/math/Sum_of_Totient_Function.test.cpp
   - test/polynomial/Inv_of_Formal_Power_Series.test.cpp

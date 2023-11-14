@@ -9,6 +9,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: convolution/ntt4.hpp
       title: convolution/ntt4.hpp
+    - icon: ':x:'
+      path: convolution/subset_convolution.hpp
+      title: Subset Convolution
   - name: data_structure
     pages:
     - icon: ':heavy_check_mark:'
@@ -157,6 +160,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/gauss_jordan.hpp
       title: gauss_jordan
+    - icon: ':x:'
+      path: math/ranked_subset_transform.hpp
+      title: Ranked Subset Transform (Zeta / Mobius)
     - icon: ':heavy_check_mark:'
       path: math/two_sat.hpp
       title: Two SAT
@@ -198,7 +204,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: template/parsing_template.hpp
       title: "\u69CB\u6587\u89E3\u6790\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
     - icon: ':warning:'
@@ -223,7 +229,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: utility/dynamic_modint.hpp
       title: utility/dynamic_modint.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: utility/modint.hpp
       title: modint
     - icon: ':heavy_check_mark:'
@@ -238,6 +244,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/convolution/Convolution_mod_ntt4.test.cpp
       title: test/convolution/Convolution_mod_ntt4.test.cpp
+    - icon: ':x:'
+      path: test/convolution/Subset_Convolution.test.cpp
+      title: test/convolution/Subset_Convolution.test.cpp
   - name: test/data_structure
     pages:
     - icon: ':heavy_check_mark:'

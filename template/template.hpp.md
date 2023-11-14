@@ -8,6 +8,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: convolution/ntt4.hpp
     title: convolution/ntt4.hpp
+  - icon: ':x:'
+    path: convolution/subset_convolution.hpp
+    title: Subset Convolution
   - icon: ':heavy_check_mark:'
     path: data_structure/BinaryTrie.hpp
     title: BinaryTrie
@@ -137,6 +140,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/gauss_jordan.hpp
     title: gauss_jordan
+  - icon: ':x:'
+    path: math/ranked_subset_transform.hpp
+    title: Ranked Subset Transform (Zeta / Mobius)
   - icon: ':heavy_check_mark:'
     path: math/two_sat.hpp
     title: Two SAT
@@ -176,7 +182,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: utility/dynamic_modint.hpp
     title: utility/dynamic_modint.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utility/modint.hpp
     title: modint
   - icon: ':heavy_check_mark:'
@@ -189,6 +195,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/convolution/Convolution_mod_ntt4.test.cpp
     title: test/convolution/Convolution_mod_ntt4.test.cpp
+  - icon: ':x:'
+    path: test/convolution/Subset_Convolution.test.cpp
+    title: test/convolution/Subset_Convolution.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/data_structure/Point_Add_Range_Sum.test.cpp
     title: test/data_structure/Point_Add_Range_Sum.test.cpp
@@ -384,9 +393,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/tree/aoj_0489.test.cpp
     title: test/tree/aoj_0489.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n\n#include <bits/stdc++.h>\n\n\
@@ -453,11 +462,13 @@ data:
   - data_structure/dsu.hpp
   - data_structure/segtree_2d.hpp
   - convolution/ntt4.hpp
+  - convolution/subset_convolution.hpp
   - convolution/ntt.hpp
   - math/gauss_jordan.hpp
   - math/two_sat.hpp
   - math/crt.hpp
   - math/ext_gcd.hpp
+  - math/ranked_subset_transform.hpp
   - math/dirichlet_series.hpp
   - math/eratosthenes_sieve.hpp
   - geometry/base_arbitary.hpp
@@ -471,7 +482,7 @@ data:
   - string/z_algorithm.hpp
   - string/RollingHash.hpp
   timestamp: '2023-05-17 22:41:14+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/template/debug_template.test.cpp
   - test/misc/aoj_1197.test.cpp
@@ -501,6 +512,7 @@ data:
   - test/data_structure/aoj_1068.test.cpp
   - test/data_structure/Point_Add_Rectangle_Sum.test.cpp
   - test/convolution/Convolution_mod.test.cpp
+  - test/convolution/Subset_Convolution.test.cpp
   - test/convolution/Convolution_mod_ntt4.test.cpp
   - test/math/two_sat.test.cpp
   - test/math/Sum_of_Totient_Function.test.cpp
