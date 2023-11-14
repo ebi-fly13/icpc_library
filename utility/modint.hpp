@@ -58,6 +58,12 @@ template <ll m> struct modint {
     friend mint operator/(const mint& lhs, const mint& rhs) {
         return mint(lhs) /= rhs;
     }
+    friend bool operator==(const modint &lhs, const modint &rhs) {
+        return lhs.a == rhs.a;
+    }
+    friend bool operator!=(const modint &lhs, const modint &rhs) {
+        return !(lhs == rhs);
+    }
     mint operator+() const {
         return *this;
     }
