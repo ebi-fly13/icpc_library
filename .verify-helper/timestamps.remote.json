@@ -51,6 +51,8 @@
 "test/polynomial/Log_of_FPS_Sparse.test.cpp": "2023-11-14 18:27:43 +0900",
 "test/polynomial/Log_of_Formal_Power_Series.test.cpp": "2023-11-14 18:27:43 +0900",
 "test/polynomial/Multipoint_Evaluation.test.cpp": "2023-11-14 18:27:43 +0900",
+"test/polynomial/Polynomial_Interpolation.test.cpp": "2023-11-14 20:31:03 +0900",
+"test/polynomial/Polynomial_Taylor_Shift.test.cpp": "2023-11-14 20:31:03 +0900",
 "test/polynomial/Pow_of_FPS_Sparse.test.cpp": "2023-11-14 18:27:43 +0900",
 "test/polynomial/Pow_of_Formal_Power_Series.test.cpp": "2023-11-14 18:27:43 +0900",
 "test/string/aoj_2444.test.cpp": "2023-05-17 22:41:14 +0900",
@@ -58,5 +60,6 @@
 "test/template/debug_template.test.cpp": "2023-06-17 00:35:43 +0900",
 "test/tree/Lowest_Common_Ancestor.test.cpp": "2023-05-17 22:41:14 +0900",
 "test/tree/RerootingDP.test.cpp": "2023-05-17 22:41:14 +0900",
+"test/tree/Tree_Path_Composite_Sum.test.cpp": "2023-11-14 18:27:43 +0900",
 "test/tree/aoj_0489.test.cpp": "2023-06-30 14:03:10 +0900"
 }
