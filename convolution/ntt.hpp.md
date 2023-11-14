@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utility/modint.hpp
     title: modint
   _extendedRequiredBy: []
@@ -12,6 +12,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/convolution/Convolution_mod.test.cpp
     title: test/convolution/Convolution_mod.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/polynomial/Composition_of_Formal_Power_Series.test.cpp
+    title: test/polynomial/Composition_of_Formal_Power_Series.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/polynomial/Exp_of_Formal_Power_Series.test.cpp
     title: test/polynomial/Exp_of_Formal_Power_Series.test.cpp
@@ -131,6 +134,7 @@ data:
   - test/polynomial/Log_of_Formal_Power_Series.test.cpp
   - test/polynomial/Pow_of_Formal_Power_Series.test.cpp
   - test/polynomial/Exp_of_Formal_Power_Series.test.cpp
+  - test/polynomial/Composition_of_Formal_Power_Series.test.cpp
 documentation_of: convolution/ntt.hpp
 layout: document
 title: NTT convolution

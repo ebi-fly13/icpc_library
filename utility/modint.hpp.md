@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy:
@@ -11,6 +11,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: convolution/ntt4.hpp
     title: convolution/ntt4.hpp
+  - icon: ':heavy_check_mark:'
+    path: fps/composition_of_fps.hpp
+    title: $f(g(x))$
   - icon: ':heavy_check_mark:'
     path: fps/fps.hpp
     title: Formal Power Series
@@ -27,6 +30,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/data_structure/Range_Affine_Range_Sum.test.cpp
     title: test/data_structure/Range_Affine_Range_Sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/polynomial/Composition_of_Formal_Power_Series.test.cpp
+    title: test/polynomial/Composition_of_Formal_Power_Series.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/polynomial/Exp_of_FPS_Sparse.test.cpp
     title: test/polynomial/Exp_of_FPS_Sparse.test.cpp
@@ -51,12 +57,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/polynomial/Pow_of_Formal_Power_Series.test.cpp
     title: test/polynomial/Pow_of_Formal_Power_Series.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/tree/Tree_Path_Composite_Sum.test.cpp
     title: test/tree/Tree_Path_Composite_Sum.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"utility/modint.hpp\"\n\n#line 2 \"template/template.hpp\"\
@@ -121,11 +127,12 @@ data:
   isVerificationFile: false
   path: utility/modint.hpp
   requiredBy:
+  - fps/composition_of_fps.hpp
   - fps/fps.hpp
   - convolution/ntt4.hpp
   - convolution/ntt.hpp
   timestamp: '2023-11-14 17:37:14+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/tree/Tree_Path_Composite_Sum.test.cpp
   - test/data_structure/Point_Set_Range_Composite.test.cpp
@@ -140,6 +147,7 @@ data:
   - test/polynomial/Pow_of_Formal_Power_Series.test.cpp
   - test/polynomial/Exp_of_Formal_Power_Series.test.cpp
   - test/polynomial/Log_of_FPS_Sparse.test.cpp
+  - test/polynomial/Composition_of_Formal_Power_Series.test.cpp
 documentation_of: utility/modint.hpp
 layout: document
 title: modint

@@ -44,6 +44,9 @@ data:
   - name: fps
     pages:
     - icon: ':heavy_check_mark:'
+      path: fps/composition_of_fps.hpp
+      title: $f(g(x))$
+    - icon: ':heavy_check_mark:'
       path: fps/fps.hpp
       title: Formal Power Series
     - icon: ':heavy_check_mark:'
@@ -168,7 +171,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: template/parsing_template.hpp
       title: "\u69CB\u6587\u89E3\u6790\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
     - icon: ':warning:'
@@ -185,7 +188,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: tree/Mo_on_Tree.hpp
       title: "\u6728\u4E0A\u306E Mo"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: tree/RerootingDP.hpp
       title: Rerooting DP
   - name: utility
@@ -193,7 +196,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: utility/dynamic_modint.hpp
       title: utility/dynamic_modint.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: utility/modint.hpp
       title: modint
     - icon: ':heavy_check_mark:'
@@ -346,6 +349,9 @@ data:
   - name: test/polynomial
     pages:
     - icon: ':heavy_check_mark:'
+      path: test/polynomial/Composition_of_Formal_Power_Series.test.cpp
+      title: test/polynomial/Composition_of_Formal_Power_Series.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/polynomial/Exp_of_FPS_Sparse.test.cpp
       title: test/polynomial/Exp_of_FPS_Sparse.test.cpp
     - icon: ':heavy_check_mark:'
@@ -390,7 +396,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/tree/RerootingDP.test.cpp
       title: test/tree/RerootingDP.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/tree/Tree_Path_Composite_Sum.test.cpp
       title: test/tree/Tree_Path_Composite_Sum.test.cpp
     - icon: ':heavy_check_mark:'

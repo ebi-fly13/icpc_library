@@ -1,13 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utility/modint.hpp
     title: modint
   _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: fps/composition_of_fps.hpp
+    title: $f(g(x))$
   - icon: ':heavy_check_mark:'
     path: fps/fps.hpp
     title: Formal Power Series
@@ -15,6 +18,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/convolution/Convolution_mod_ntt4.test.cpp
     title: test/convolution/Convolution_mod_ntt4.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/polynomial/Composition_of_Formal_Power_Series.test.cpp
+    title: test/polynomial/Composition_of_Formal_Power_Series.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/polynomial/Exp_of_Formal_Power_Series.test.cpp
     title: test/polynomial/Exp_of_Formal_Power_Series.test.cpp
@@ -206,6 +212,7 @@ data:
   isVerificationFile: false
   path: convolution/ntt4.hpp
   requiredBy:
+  - fps/composition_of_fps.hpp
   - fps/fps.hpp
   timestamp: '2023-11-14 17:37:14+09:00'
   verificationStatus: LIBRARY_ALL_AC
@@ -215,6 +222,7 @@ data:
   - test/polynomial/Log_of_Formal_Power_Series.test.cpp
   - test/polynomial/Pow_of_Formal_Power_Series.test.cpp
   - test/polynomial/Exp_of_Formal_Power_Series.test.cpp
+  - test/polynomial/Composition_of_Formal_Power_Series.test.cpp
 documentation_of: convolution/ntt4.hpp
 layout: document
 redirect_from:

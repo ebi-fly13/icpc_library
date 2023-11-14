@@ -10,10 +10,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: fps/fps.hpp
     title: Formal Power Series
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: utility/modint.hpp
     title: modint
   _extendedRequiredBy: []
@@ -156,16 +156,17 @@ data:
     \ *= t[i];\n        ifft4(s, k);\n        s.resize(l);\n        mint invm = mint(M).inv();\n\
     \        rep(i,0,l) s[i] *= invm;\n        return s;\n    }\n};\n\n} // namespace\
     \ lib\n#line 6 \"fps/fps.hpp\"\n\nnamespace lib {\n\ntemplate <class mint> struct\
-    \ FPS : std::vector<mint> {\n  private:\n    using std::vector<mint>::vector;\n\
-    \    using std::vector<mint>::vector::operator=;\n\n    NTT<mint> ntt;\n\n  public:\n\
-    \    FPS(const std::vector<mint> &a) {\n        *this = a;\n    }\n\n    FPS operator+(const\
-    \ FPS &rhs) const noexcept {\n        return FPS(*this) += rhs;\n    }\n    FPS\
-    \ operator-(const FPS &rhs) const noexcept {\n        return FPS(*this) -= rhs;\n\
-    \    }\n    FPS operator*(const FPS &rhs) const noexcept {\n        return FPS(*this)\
-    \ *= rhs;\n    }\n    FPS operator/(const FPS &rhs) const noexcept {\n       \
-    \ return FPS(*this) /= rhs;\n    }\n    FPS operator%(const FPS &rhs) const noexcept\
-    \ {\n        return FPS(*this) %= rhs;\n    }\n\n    FPS operator+(const mint\
-    \ &rhs) const noexcept {\n        return FPS(*this) += rhs;\n    }\n    FPS operator-(const\
+    \ FormalPowerSeries : std::vector<mint> {\n  private:\n    using FPS = FormalPowerSeries<mint>;\n\
+    \    using std::vector<mint>::vector;\n    using std::vector<mint>::vector::operator=;\n\
+    \n    NTT<mint> ntt;\n\n  public:\n    FormalPowerSeries(const std::vector<mint>\
+    \ &a) {\n        *this = a;\n    }\n\n    FPS operator+(const FPS &rhs) const\
+    \ noexcept {\n        return FPS(*this) += rhs;\n    }\n    FPS operator-(const\
+    \ FPS &rhs) const noexcept {\n        return FPS(*this) -= rhs;\n    }\n    FPS\
+    \ operator*(const FPS &rhs) const noexcept {\n        return FPS(*this) *= rhs;\n\
+    \    }\n    FPS operator/(const FPS &rhs) const noexcept {\n        return FPS(*this)\
+    \ /= rhs;\n    }\n    FPS operator%(const FPS &rhs) const noexcept {\n       \
+    \ return FPS(*this) %= rhs;\n    }\n\n    FPS operator+(const mint &rhs) const\
+    \ noexcept {\n        return FPS(*this) += rhs;\n    }\n    FPS operator-(const\
     \ mint &rhs) const noexcept {\n        return FPS(*this) -= rhs;\n    }\n    FPS\
     \ operator*(const mint &rhs) const noexcept {\n        return FPS(*this) *= rhs;\n\
     \    }\n    FPS operator/(const mint &rhs) const noexcept {\n        return FPS(*this)\
@@ -231,19 +232,21 @@ data:
     \        int c = 0;\n        for (int i = 0; i < deg(); i++) {\n            if\
     \ ((*this)[i] != 0) c++;\n        }\n        return c;\n    }\n};\n\n}  // namespace\
     \ lib\n#line 7 \"test/polynomial/Exp_of_Formal_Power_Series.test.cpp\"\n\nusing\
-    \ namespace lib;\nusing mint = modint998244353;\n\nint main() {\n    int n;\n\
-    \    std::cin >> n;\n    FPS<mint> a(n);\n    for (int i = 0; i < n; ++i) {\n\
-    \        int val;\n        std::cin >> val;\n        a[i] = val;\n    }\n    auto\
-    \ b = a.exp();\n    for (int i = 0; i < n; ++i) {\n        std::cout << b[i].val()\
-    \ << \" \";\n    }\n    std::cout << std::endl;\n}\n"
+    \ namespace lib;\nusing mint = modint998244353;\nusing FPS = FormalPowerSeries<mint>;\n\
+    \nint main() {\n    int n;\n    std::cin >> n;\n    FPS a(n);\n    for (int i\
+    \ = 0; i < n; ++i) {\n        int val;\n        std::cin >> val;\n        a[i]\
+    \ = val;\n    }\n    auto b = a.exp();\n    for (int i = 0; i < n; ++i) {\n  \
+    \      std::cout << b[i].val() << \" \";\n    }\n    std::cout << std::endl;\n\
+    }\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/exp_of_formal_power_series\"\
     \n\n#include \"../../convolution/ntt.hpp\"\n#include \"../../fps/fps.hpp\"\n#include\
     \ \"../../template/template.hpp\"\n#include \"../../utility/modint.hpp\"\n\nusing\
-    \ namespace lib;\nusing mint = modint998244353;\n\nint main() {\n    int n;\n\
-    \    std::cin >> n;\n    FPS<mint> a(n);\n    for (int i = 0; i < n; ++i) {\n\
-    \        int val;\n        std::cin >> val;\n        a[i] = val;\n    }\n    auto\
-    \ b = a.exp();\n    for (int i = 0; i < n; ++i) {\n        std::cout << b[i].val()\
-    \ << \" \";\n    }\n    std::cout << std::endl;\n}"
+    \ namespace lib;\nusing mint = modint998244353;\nusing FPS = FormalPowerSeries<mint>;\n\
+    \nint main() {\n    int n;\n    std::cin >> n;\n    FPS a(n);\n    for (int i\
+    \ = 0; i < n; ++i) {\n        int val;\n        std::cin >> val;\n        a[i]\
+    \ = val;\n    }\n    auto b = a.exp();\n    for (int i = 0; i < n; ++i) {\n  \
+    \      std::cout << b[i].val() << \" \";\n    }\n    std::cout << std::endl;\n\
+    }"
   dependsOn:
   - convolution/ntt.hpp
   - template/template.hpp
@@ -253,7 +256,7 @@ data:
   isVerificationFile: true
   path: test/polynomial/Exp_of_Formal_Power_Series.test.cpp
   requiredBy: []
-  timestamp: '2023-11-14 17:37:14+09:00'
+  timestamp: '2023-11-14 18:05:21+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/polynomial/Exp_of_Formal_Power_Series.test.cpp
