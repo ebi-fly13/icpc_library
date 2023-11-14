@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: data_structure/segtree.hpp
     title: segtree
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utility/modint.hpp
     title: modint
   _extendedRequiredBy: []
@@ -83,10 +83,13 @@ data:
     \ const mint& rhs) {\n        return mint(lhs) -= rhs;\n    }\n    friend mint\
     \ operator*(const mint& lhs, const mint& rhs) {\n        return mint(lhs) *= rhs;\n\
     \    }\n    friend mint operator/(const mint& lhs, const mint& rhs) {\n      \
-    \  return mint(lhs) /= rhs;\n    }\n    mint operator+() const {\n        return\
-    \ *this;\n    }\n    mint operator-() const {\n        return mint() - *this;\n\
-    \    }\n};\n\nusing modint998244353 = modint<998244353>;\nusing modint1000000007\
-    \ = modint<1'000'000'007>;\n\n}  // namespace lib\n#line 6 \"test/data_structure/Point_Set_Range_Composite.test.cpp\"\
+    \  return mint(lhs) /= rhs;\n    }\n    friend bool operator==(const modint &lhs,\
+    \ const modint &rhs) {\n        return lhs.a == rhs.a;\n    }\n    friend bool\
+    \ operator!=(const modint &lhs, const modint &rhs) {\n        return !(lhs ==\
+    \ rhs);\n    }\n    mint operator+() const {\n        return *this;\n    }\n \
+    \   mint operator-() const {\n        return mint() - *this;\n    }\n};\n\nusing\
+    \ modint998244353 = modint<998244353>;\nusing modint1000000007 = modint<1'000'000'007>;\n\
+    \n}  // namespace lib\n#line 6 \"test/data_structure/Point_Set_Range_Composite.test.cpp\"\
     \n\nusing mint = lib::modint998244353;\n\nstruct F {\n    mint a, b;\n};\n\nF\
     \ op(F a, F b) {\n    return {b.a * a.a, b.b + b.a * a.b};\n}\n\nF e() {\n   \
     \ return {1, 0};\n}\n\nint main() {\n    int n, q;\n    std::cin >> n >> q;\n\
@@ -119,7 +122,7 @@ data:
   isVerificationFile: true
   path: test/data_structure/Point_Set_Range_Composite.test.cpp
   requiredBy: []
-  timestamp: '2023-11-03 23:31:42+09:00'
+  timestamp: '2023-11-14 17:37:14+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data_structure/Point_Set_Range_Composite.test.cpp

@@ -10,10 +10,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: fps/fps.hpp
     title: Formal Power Series
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utility/modint.hpp
     title: modint
   _extendedRequiredBy: []
@@ -55,37 +55,39 @@ data:
     \ -= rhs;\n    }\n    friend mint operator*(const mint& lhs, const mint& rhs)\
     \ {\n        return mint(lhs) *= rhs;\n    }\n    friend mint operator/(const\
     \ mint& lhs, const mint& rhs) {\n        return mint(lhs) /= rhs;\n    }\n   \
-    \ mint operator+() const {\n        return *this;\n    }\n    mint operator-()\
-    \ const {\n        return mint() - *this;\n    }\n};\n\nusing modint998244353\
-    \ = modint<998244353>;\nusing modint1000000007 = modint<1'000'000'007>;\n\n} \
-    \ // namespace lib\n#line 5 \"convolution/ntt.hpp\"\n\nnamespace lib {\n\nusing\
-    \ mint = modint998244353;\n\nstruct ntt_info {\n    static constexpr int rank2\
-    \ = 23;\n    const int g = 3;\n    std::array<std::array<mint, rank2 + 1>, 2>\
-    \ root;\n\n    ntt_info() {\n        root[0][rank2] = mint(g).pow((mint::mod()\
-    \ - 1) >> rank2);\n        root[1][rank2] = root[0][rank2].inv();\n        rrep(i,\
-    \ 0, rank2) {\n            root[0][i] = root[0][i + 1] * root[0][i + 1];\n   \
-    \         root[1][i] = root[1][i + 1] * root[1][i + 1];\n        }\n    }\n};\n\
-    \nvoid butterfly(std::vector<mint>& a, bool inverse) {\n    static ntt_info info;\n\
-    \    int n = a.size();\n    int bit_size = 0;\n    while ((1 << bit_size) < n)\
-    \ bit_size++;\n    assert(1 << bit_size == n);\n    for (int i = 0, j = 1; j <\
-    \ n - 1; j++) {\n        for (int k = n >> 1; k > (i ^= k); k >>= 1);\n      \
-    \  if (j < i) {\n            std::swap(a[i], a[j]);\n        }\n    }\n    rep(bit,\
-    \ 0, bit_size) {\n        rep(i, 0, n / (1 << (bit + 1))) {\n            mint\
-    \ zeta1 = 1;\n            mint zeta2 = info.root[inverse][1];\n            mint\
-    \ w = info.root[inverse][bit + 1];\n            rep(j, 0, 1 << bit) {\n      \
-    \          int idx = i * (1 << (bit + 1)) + j;\n                int jdx = idx\
-    \ + (1 << bit);\n                mint p1 = a[idx];\n                mint p2 =\
-    \ a[jdx];\n                a[idx] = p1 + zeta1 * p2;\n                a[jdx] =\
-    \ p1 + zeta2 * p2;\n                zeta1 *= w;\n                zeta2 *= w;\n\
-    \            }\n        }\n    }\n    if (inverse) {\n        mint inv_n = mint(n).inv();\n\
-    \        rep(i, 0, n) a[i] *= inv_n;\n    }\n}\n\nstd::vector<mint> convolution(const\
-    \ std::vector<mint>& f,\n                              const std::vector<mint>&\
-    \ g) {\n    int n = 1;\n    while (n < int(f.size() + g.size() - 1)) n <<= 1;\n\
-    \    std::vector<mint> a(n), b(n);\n    std::copy(f.begin(), f.end(), a.begin());\n\
-    \    std::copy(g.begin(), g.end(), b.begin());\n    butterfly(a, false);\n   \
-    \ butterfly(b, false);\n    rep(i, 0, n) {\n        a[i] *= b[i];\n    }\n   \
-    \ butterfly(a, true);\n    a.resize(f.size() + g.size() - 1);\n    return a;\n\
-    }\n\n}  // namespace lib\n#line 2 \"fps/fps.hpp\"\n\n#line 2 \"convolution/ntt4.hpp\"\
+    \ friend bool operator==(const modint &lhs, const modint &rhs) {\n        return\
+    \ lhs.a == rhs.a;\n    }\n    friend bool operator!=(const modint &lhs, const\
+    \ modint &rhs) {\n        return !(lhs == rhs);\n    }\n    mint operator+() const\
+    \ {\n        return *this;\n    }\n    mint operator-() const {\n        return\
+    \ mint() - *this;\n    }\n};\n\nusing modint998244353 = modint<998244353>;\nusing\
+    \ modint1000000007 = modint<1'000'000'007>;\n\n}  // namespace lib\n#line 5 \"\
+    convolution/ntt.hpp\"\n\nnamespace lib {\n\nusing mint = modint998244353;\n\n\
+    struct ntt_info {\n    static constexpr int rank2 = 23;\n    const int g = 3;\n\
+    \    std::array<std::array<mint, rank2 + 1>, 2> root;\n\n    ntt_info() {\n  \
+    \      root[0][rank2] = mint(g).pow((mint::mod() - 1) >> rank2);\n        root[1][rank2]\
+    \ = root[0][rank2].inv();\n        rrep(i, 0, rank2) {\n            root[0][i]\
+    \ = root[0][i + 1] * root[0][i + 1];\n            root[1][i] = root[1][i + 1]\
+    \ * root[1][i + 1];\n        }\n    }\n};\n\nvoid butterfly(std::vector<mint>&\
+    \ a, bool inverse) {\n    static ntt_info info;\n    int n = a.size();\n    int\
+    \ bit_size = 0;\n    while ((1 << bit_size) < n) bit_size++;\n    assert(1 <<\
+    \ bit_size == n);\n    for (int i = 0, j = 1; j < n - 1; j++) {\n        for (int\
+    \ k = n >> 1; k > (i ^= k); k >>= 1);\n        if (j < i) {\n            std::swap(a[i],\
+    \ a[j]);\n        }\n    }\n    rep(bit, 0, bit_size) {\n        rep(i, 0, n /\
+    \ (1 << (bit + 1))) {\n            mint zeta1 = 1;\n            mint zeta2 = info.root[inverse][1];\n\
+    \            mint w = info.root[inverse][bit + 1];\n            rep(j, 0, 1 <<\
+    \ bit) {\n                int idx = i * (1 << (bit + 1)) + j;\n              \
+    \  int jdx = idx + (1 << bit);\n                mint p1 = a[idx];\n          \
+    \      mint p2 = a[jdx];\n                a[idx] = p1 + zeta1 * p2;\n        \
+    \        a[jdx] = p1 + zeta2 * p2;\n                zeta1 *= w;\n            \
+    \    zeta2 *= w;\n            }\n        }\n    }\n    if (inverse) {\n      \
+    \  mint inv_n = mint(n).inv();\n        rep(i, 0, n) a[i] *= inv_n;\n    }\n}\n\
+    \nstd::vector<mint> convolution(const std::vector<mint>& f,\n                \
+    \              const std::vector<mint>& g) {\n    int n = 1;\n    while (n < int(f.size()\
+    \ + g.size() - 1)) n <<= 1;\n    std::vector<mint> a(n), b(n);\n    std::copy(f.begin(),\
+    \ f.end(), a.begin());\n    std::copy(g.begin(), g.end(), b.begin());\n    butterfly(a,\
+    \ false);\n    butterfly(b, false);\n    rep(i, 0, n) {\n        a[i] *= b[i];\n\
+    \    }\n    butterfly(a, true);\n    a.resize(f.size() + g.size() - 1);\n    return\
+    \ a;\n}\n\n}  // namespace lib\n#line 2 \"fps/fps.hpp\"\n\n#line 2 \"convolution/ntt4.hpp\"\
     \n\n#line 4 \"convolution/ntt4.hpp\"\n\nnamespace lib {\n\n// only for modint998244353\n\
     template<typename mint>\nstruct NTT {\n    using uint = unsigned int;\n    static\
     \ constexpr uint mod = mint::mod();\n    static constexpr ull mod2 = (ull)mod\
@@ -251,7 +253,7 @@ data:
   isVerificationFile: true
   path: test/polynomial/Pow_of_Formal_Power_Series.test.cpp
   requiredBy: []
-  timestamp: '2023-11-14 16:37:21+09:00'
+  timestamp: '2023-11-14 17:37:14+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/polynomial/Pow_of_Formal_Power_Series.test.cpp

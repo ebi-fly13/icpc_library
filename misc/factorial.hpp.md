@@ -1,14 +1,29 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: fps/fps_sparse.hpp
+    title: Formal Power Series (Sparse)
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/misc/Binomial_Coefficient.test.cpp
     title: test/misc/Binomial_Coefficient.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/polynomial/Exp_of_FPS_Sparse.test.cpp
+    title: test/polynomial/Exp_of_FPS_Sparse.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/polynomial/Inv_of_FPS_Sparse.test.cpp
+    title: test/polynomial/Inv_of_FPS_Sparse.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/polynomial/Log_of_FPS_Sparse.test.cpp
+    title: test/polynomial/Log_of_FPS_Sparse.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/polynomial/Pow_of_FPS_Sparse.test.cpp
+    title: test/polynomial/Pow_of_FPS_Sparse.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -59,11 +74,16 @@ data:
   - template/template.hpp
   isVerificationFile: false
   path: misc/factorial.hpp
-  requiredBy: []
+  requiredBy:
+  - fps/fps_sparse.hpp
   timestamp: '2023-06-09 15:23:37+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/misc/Binomial_Coefficient.test.cpp
+  - test/polynomial/Inv_of_FPS_Sparse.test.cpp
+  - test/polynomial/Exp_of_FPS_Sparse.test.cpp
+  - test/polynomial/Pow_of_FPS_Sparse.test.cpp
+  - test/polynomial/Log_of_FPS_Sparse.test.cpp
 documentation_of: misc/factorial.hpp
 layout: document
 redirect_from:

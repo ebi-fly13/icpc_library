@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: tree/RerootingDP.hpp
     title: Rerooting DP
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: utility/modint.hpp
     title: modint
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/tree_path_composite_sum
@@ -83,22 +83,25 @@ data:
     \ -= rhs;\n    }\n    friend mint operator*(const mint& lhs, const mint& rhs)\
     \ {\n        return mint(lhs) *= rhs;\n    }\n    friend mint operator/(const\
     \ mint& lhs, const mint& rhs) {\n        return mint(lhs) /= rhs;\n    }\n   \
-    \ mint operator+() const {\n        return *this;\n    }\n    mint operator-()\
-    \ const {\n        return mint() - *this;\n    }\n};\n\nusing modint998244353\
-    \ = modint<998244353>;\nusing modint1000000007 = modint<1'000'000'007>;\n\n} \
-    \ // namespace lib\n#line 6 \"test/tree/Tree_Path_Composite_Sum.test.cpp\"\n\n\
-    using namespace lib;\nusing mint = modint998244353;\nusing pmm = pair<mint, mint>;\n\
-    \npmm merge(pmm a, pmm b) {\n    return pmm(a.first + b.first, a.second + b.second);\n\
-    }\npmm e() {\n    return pmm(0, 0);\n}\n\nvector<mint> a, b, c;\npmm pute(pmm\
-    \ x, int e) {\n    return pmm(b[e] * x.first + c[e] * x.second, x.second);\n}\n\
-    pmm putv(pmm x, int v) {\n    return pmm(x.first + a[v], x.second + 1);\n}\n\n\
-    int main() {\n    int n;\n    cin >> n;\n    a.resize(n), b.resize(n - 1), c.resize(n\
-    \ - 1);\n    rep(i, 0, n) {\n        ll x;\n        cin >> x;\n        a[i] =\
-    \ x;\n    }\n    RerootingDP<pmm, pmm, merge, e, pute, putv> g(n);\n    rep(i,\
-    \ 0, n - 1) {\n        int u, v;\n        cin >> u >> v;\n        g.add_edge(u,\
-    \ v, i, i);\n        ll y, z;\n        cin >> y >> z;\n        b[i] = y, c[i]\
-    \ = z;\n    }\n    g.build();\n    auto ans = g.reroot();\n    rep(i, 0, n) cout\
-    \ << ans[i].first.val() << \" \\n\"[i == n - 1];\n}\n"
+    \ friend bool operator==(const modint &lhs, const modint &rhs) {\n        return\
+    \ lhs.a == rhs.a;\n    }\n    friend bool operator!=(const modint &lhs, const\
+    \ modint &rhs) {\n        return !(lhs == rhs);\n    }\n    mint operator+() const\
+    \ {\n        return *this;\n    }\n    mint operator-() const {\n        return\
+    \ mint() - *this;\n    }\n};\n\nusing modint998244353 = modint<998244353>;\nusing\
+    \ modint1000000007 = modint<1'000'000'007>;\n\n}  // namespace lib\n#line 6 \"\
+    test/tree/Tree_Path_Composite_Sum.test.cpp\"\n\nusing namespace lib;\nusing mint\
+    \ = modint998244353;\nusing pmm = pair<mint, mint>;\n\npmm merge(pmm a, pmm b)\
+    \ {\n    return pmm(a.first + b.first, a.second + b.second);\n}\npmm e() {\n \
+    \   return pmm(0, 0);\n}\n\nvector<mint> a, b, c;\npmm pute(pmm x, int e) {\n\
+    \    return pmm(b[e] * x.first + c[e] * x.second, x.second);\n}\npmm putv(pmm\
+    \ x, int v) {\n    return pmm(x.first + a[v], x.second + 1);\n}\n\nint main()\
+    \ {\n    int n;\n    cin >> n;\n    a.resize(n), b.resize(n - 1), c.resize(n -\
+    \ 1);\n    rep(i, 0, n) {\n        ll x;\n        cin >> x;\n        a[i] = x;\n\
+    \    }\n    RerootingDP<pmm, pmm, merge, e, pute, putv> g(n);\n    rep(i, 0, n\
+    \ - 1) {\n        int u, v;\n        cin >> u >> v;\n        g.add_edge(u, v,\
+    \ i, i);\n        ll y, z;\n        cin >> y >> z;\n        b[i] = y, c[i] = z;\n\
+    \    }\n    g.build();\n    auto ans = g.reroot();\n    rep(i, 0, n) cout << ans[i].first.val()\
+    \ << \" \\n\"[i == n - 1];\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/tree_path_composite_sum\"\
     \n\n#include \"../../template/template.hpp\"\n#include \"../../tree/RerootingDP.hpp\"\
     \n#include \"../../utility/modint.hpp\"\n\nusing namespace lib;\nusing mint =\
@@ -121,8 +124,8 @@ data:
   isVerificationFile: true
   path: test/tree/Tree_Path_Composite_Sum.test.cpp
   requiredBy: []
-  timestamp: '2023-11-03 23:31:42+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-11-14 17:37:14+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/tree/Tree_Path_Composite_Sum.test.cpp
 layout: document

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy:
@@ -28,23 +28,35 @@ data:
     path: test/data_structure/Range_Affine_Range_Sum.test.cpp
     title: test/data_structure/Range_Affine_Range_Sum.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/polynomial/Exp_of_FPS_Sparse.test.cpp
+    title: test/polynomial/Exp_of_FPS_Sparse.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/polynomial/Exp_of_Formal_Power_Series.test.cpp
     title: test/polynomial/Exp_of_Formal_Power_Series.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/polynomial/Inv_of_FPS_Sparse.test.cpp
+    title: test/polynomial/Inv_of_FPS_Sparse.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/polynomial/Inv_of_Formal_Power_Series.test.cpp
     title: test/polynomial/Inv_of_Formal_Power_Series.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/polynomial/Log_of_FPS_Sparse.test.cpp
+    title: test/polynomial/Log_of_FPS_Sparse.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/polynomial/Log_of_Formal_Power_Series.test.cpp
     title: test/polynomial/Log_of_Formal_Power_Series.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/polynomial/Pow_of_FPS_Sparse.test.cpp
+    title: test/polynomial/Pow_of_FPS_Sparse.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/polynomial/Pow_of_Formal_Power_Series.test.cpp
     title: test/polynomial/Pow_of_Formal_Power_Series.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/tree/Tree_Path_Composite_Sum.test.cpp
     title: test/tree/Tree_Path_Composite_Sum.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"utility/modint.hpp\"\n\n#line 2 \"template/template.hpp\"\
@@ -73,10 +85,13 @@ data:
     \ const mint& rhs) {\n        return mint(lhs) -= rhs;\n    }\n    friend mint\
     \ operator*(const mint& lhs, const mint& rhs) {\n        return mint(lhs) *= rhs;\n\
     \    }\n    friend mint operator/(const mint& lhs, const mint& rhs) {\n      \
-    \  return mint(lhs) /= rhs;\n    }\n    mint operator+() const {\n        return\
-    \ *this;\n    }\n    mint operator-() const {\n        return mint() - *this;\n\
-    \    }\n};\n\nusing modint998244353 = modint<998244353>;\nusing modint1000000007\
-    \ = modint<1'000'000'007>;\n\n}  // namespace lib\n"
+    \  return mint(lhs) /= rhs;\n    }\n    friend bool operator==(const modint &lhs,\
+    \ const modint &rhs) {\n        return lhs.a == rhs.a;\n    }\n    friend bool\
+    \ operator!=(const modint &lhs, const modint &rhs) {\n        return !(lhs ==\
+    \ rhs);\n    }\n    mint operator+() const {\n        return *this;\n    }\n \
+    \   mint operator-() const {\n        return mint() - *this;\n    }\n};\n\nusing\
+    \ modint998244353 = modint<998244353>;\nusing modint1000000007 = modint<1'000'000'007>;\n\
+    \n}  // namespace lib\n"
   code: "#pragma once\n\n#include \"../template/template.hpp\"\n\nnamespace lib {\n\
     \ntemplate <ll m> struct modint {\n    using mint = modint;\n    ll a;\n\n   \
     \ modint(ll x = 0) : a((x % m + m) % m) {}\n    static constexpr ll mod() {\n\
@@ -95,10 +110,12 @@ data:
     \ -= rhs;\n    }\n    friend mint operator*(const mint& lhs, const mint& rhs)\
     \ {\n        return mint(lhs) *= rhs;\n    }\n    friend mint operator/(const\
     \ mint& lhs, const mint& rhs) {\n        return mint(lhs) /= rhs;\n    }\n   \
-    \ mint operator+() const {\n        return *this;\n    }\n    mint operator-()\
-    \ const {\n        return mint() - *this;\n    }\n};\n\nusing modint998244353\
-    \ = modint<998244353>;\nusing modint1000000007 = modint<1'000'000'007>;\n\n} \
-    \ // namespace lib"
+    \ friend bool operator==(const modint &lhs, const modint &rhs) {\n        return\
+    \ lhs.a == rhs.a;\n    }\n    friend bool operator!=(const modint &lhs, const\
+    \ modint &rhs) {\n        return !(lhs == rhs);\n    }\n    mint operator+() const\
+    \ {\n        return *this;\n    }\n    mint operator-() const {\n        return\
+    \ mint() - *this;\n    }\n};\n\nusing modint998244353 = modint<998244353>;\nusing\
+    \ modint1000000007 = modint<1'000'000'007>;\n\n}  // namespace lib"
   dependsOn:
   - template/template.hpp
   isVerificationFile: false
@@ -107,8 +124,8 @@ data:
   - fps/fps.hpp
   - convolution/ntt4.hpp
   - convolution/ntt.hpp
-  timestamp: '2023-11-03 23:31:42+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-11-14 17:37:14+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/tree/Tree_Path_Composite_Sum.test.cpp
   - test/data_structure/Point_Set_Range_Composite.test.cpp
@@ -116,9 +133,13 @@ data:
   - test/convolution/Convolution_mod.test.cpp
   - test/convolution/Convolution_mod_ntt4.test.cpp
   - test/polynomial/Inv_of_Formal_Power_Series.test.cpp
+  - test/polynomial/Inv_of_FPS_Sparse.test.cpp
   - test/polynomial/Log_of_Formal_Power_Series.test.cpp
+  - test/polynomial/Exp_of_FPS_Sparse.test.cpp
+  - test/polynomial/Pow_of_FPS_Sparse.test.cpp
   - test/polynomial/Pow_of_Formal_Power_Series.test.cpp
   - test/polynomial/Exp_of_Formal_Power_Series.test.cpp
+  - test/polynomial/Log_of_FPS_Sparse.test.cpp
 documentation_of: utility/modint.hpp
 layout: document
 title: modint
