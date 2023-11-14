@@ -36,6 +36,9 @@ data:
     path: data_structure/undo_dsu.hpp
     title: undo dsu
   - icon: ':heavy_check_mark:'
+    path: fps/fps.hpp
+    title: Formal Power Series
+  - icon: ':heavy_check_mark:'
     path: geometry/Partition_by_Circles.hpp
     title: geometry/Partition_by_Circles.hpp
   - icon: ':heavy_check_mark:'
@@ -277,6 +280,18 @@ data:
     path: test/others/aoj_1300.test.cpp
     title: test/others/aoj_1300.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/polynomial/Exp_of_Formal_Power_Series.test.cpp
+    title: test/polynomial/Exp_of_Formal_Power_Series.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/polynomial/Inv_of_Formal_Power_Series.test.cpp
+    title: test/polynomial/Inv_of_Formal_Power_Series.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/polynomial/Log_of_Formal_Power_Series.test.cpp
+    title: test/polynomial/Log_of_Formal_Power_Series.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/polynomial/Pow_of_Formal_Power_Series.test.cpp
+    title: test/polynomial/Pow_of_Formal_Power_Series.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/string/aoj_2444.test.cpp
     title: test/string/aoj_2444.test.cpp
   - icon: ':heavy_check_mark:'
@@ -342,6 +357,7 @@ data:
   - geometry3D/accurate/line.hpp
   - geometry3D/ld/base_ld.hpp
   - geometry3D/ld/line.hpp
+  - fps/fps.hpp
   - utility/rational.hpp
   - utility/dynamic_modint.hpp
   - utility/modint.hpp
@@ -421,6 +437,10 @@ data:
   - test/geometry/Reflection.test.cpp
   - test/geometry/Common_Area_Circles.test.cpp
   - test/geometry/base_rational.test.cpp
+  - test/polynomial/Inv_of_Formal_Power_Series.test.cpp
+  - test/polynomial/Log_of_Formal_Power_Series.test.cpp
+  - test/polynomial/Pow_of_Formal_Power_Series.test.cpp
+  - test/polynomial/Exp_of_Formal_Power_Series.test.cpp
   - test/others/aoj_1300.test.cpp
   - test/string/z_algorithm.test.cpp
   - test/string/aoj_2444.test.cpp

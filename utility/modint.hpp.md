@@ -11,6 +11,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: convolution/ntt4.hpp
     title: convolution/ntt4.hpp
+  - icon: ':heavy_check_mark:'
+    path: fps/fps.hpp
+    title: Formal Power Series
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/convolution/Convolution_mod.test.cpp
@@ -24,6 +27,18 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/data_structure/Range_Affine_Range_Sum.test.cpp
     title: test/data_structure/Range_Affine_Range_Sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/polynomial/Exp_of_Formal_Power_Series.test.cpp
+    title: test/polynomial/Exp_of_Formal_Power_Series.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/polynomial/Inv_of_Formal_Power_Series.test.cpp
+    title: test/polynomial/Inv_of_Formal_Power_Series.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/polynomial/Log_of_Formal_Power_Series.test.cpp
+    title: test/polynomial/Log_of_Formal_Power_Series.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/polynomial/Pow_of_Formal_Power_Series.test.cpp
+    title: test/polynomial/Pow_of_Formal_Power_Series.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/tree/Tree_Path_Composite_Sum.test.cpp
     title: test/tree/Tree_Path_Composite_Sum.test.cpp
@@ -89,6 +104,7 @@ data:
   isVerificationFile: false
   path: utility/modint.hpp
   requiredBy:
+  - fps/fps.hpp
   - convolution/ntt4.hpp
   - convolution/ntt.hpp
   timestamp: '2023-11-03 23:31:42+09:00'
@@ -99,6 +115,10 @@ data:
   - test/data_structure/Range_Affine_Range_Sum.test.cpp
   - test/convolution/Convolution_mod.test.cpp
   - test/convolution/Convolution_mod_ntt4.test.cpp
+  - test/polynomial/Inv_of_Formal_Power_Series.test.cpp
+  - test/polynomial/Log_of_Formal_Power_Series.test.cpp
+  - test/polynomial/Pow_of_Formal_Power_Series.test.cpp
+  - test/polynomial/Exp_of_Formal_Power_Series.test.cpp
 documentation_of: utility/modint.hpp
 layout: document
 title: modint

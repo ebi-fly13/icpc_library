@@ -41,6 +41,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: data_structure/undo_dsu.hpp
       title: undo dsu
+  - name: fps
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: fps/fps.hpp
+      title: Formal Power Series
   - name: geometry
     pages:
     - icon: ':heavy_check_mark:'
@@ -335,6 +340,20 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/others/aoj_1300.test.cpp
       title: test/others/aoj_1300.test.cpp
+  - name: test/polynomial
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/polynomial/Exp_of_Formal_Power_Series.test.cpp
+      title: test/polynomial/Exp_of_Formal_Power_Series.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/polynomial/Inv_of_Formal_Power_Series.test.cpp
+      title: test/polynomial/Inv_of_Formal_Power_Series.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/polynomial/Log_of_Formal_Power_Series.test.cpp
+      title: test/polynomial/Log_of_Formal_Power_Series.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/polynomial/Pow_of_Formal_Power_Series.test.cpp
+      title: test/polynomial/Pow_of_Formal_Power_Series.test.cpp
   - name: test/string
     pages:
     - icon: ':heavy_check_mark:'

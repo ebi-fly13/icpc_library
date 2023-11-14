@@ -12,6 +12,18 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/convolution/Convolution_mod.test.cpp
     title: test/convolution/Convolution_mod.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/polynomial/Exp_of_Formal_Power_Series.test.cpp
+    title: test/polynomial/Exp_of_Formal_Power_Series.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/polynomial/Inv_of_Formal_Power_Series.test.cpp
+    title: test/polynomial/Inv_of_Formal_Power_Series.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/polynomial/Log_of_Formal_Power_Series.test.cpp
+    title: test/polynomial/Log_of_Formal_Power_Series.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/polynomial/Pow_of_Formal_Power_Series.test.cpp
+    title: test/polynomial/Pow_of_Formal_Power_Series.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -113,6 +125,10 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/convolution/Convolution_mod.test.cpp
+  - test/polynomial/Inv_of_Formal_Power_Series.test.cpp
+  - test/polynomial/Log_of_Formal_Power_Series.test.cpp
+  - test/polynomial/Pow_of_Formal_Power_Series.test.cpp
+  - test/polynomial/Exp_of_Formal_Power_Series.test.cpp
 documentation_of: convolution/ntt.hpp
 layout: document
 title: NTT convolution
