@@ -128,7 +128,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/scc_graph.hpp
     title: SCC Graph
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: graph/shobon_mcf.hpp
     title: shobon min cost flow
   - icon: ':heavy_check_mark:'
@@ -316,6 +316,9 @@ data:
     path: test/graph/Minimum_Flow.test.cpp
     title: test/graph/Minimum_Flow.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/graph/Shobon_Minimum_Flow.test.cpp
+    title: test/graph/Shobon_Minimum_Flow.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/math/Sum_of_Totient_Function.test.cpp
     title: test/math/Sum_of_Totient_Function.test.cpp
   - icon: ':heavy_check_mark:'
@@ -498,6 +501,7 @@ data:
   - test/template/debug_template.test.cpp
   - test/misc/aoj_1197.test.cpp
   - test/misc/Binomial_Coefficient.test.cpp
+  - test/graph/Shobon_Minimum_Flow.test.cpp
   - test/graph/Minimum_Flow.test.cpp
   - test/graph/Maximum_Flow.test.cpp
   - test/graph/Bridges.test.cpp
