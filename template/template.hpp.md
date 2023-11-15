@@ -128,6 +128,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/scc_graph.hpp
     title: SCC Graph
+  - icon: ':warning:'
+    path: graph/shobon_mcf.hpp
+    title: shobon min cost flow
   - icon: ':heavy_check_mark:'
     path: math/crt.hpp
     title: math/crt.hpp
@@ -432,6 +435,7 @@ data:
   - misc/dice.hpp
   - graph/mcf_graph.hpp
   - graph/scc_graph.hpp
+  - graph/shobon_mcf.hpp
   - graph/low_link.hpp
   - graph/mf_graph.hpp
   - graph/fordfulkerson.hpp

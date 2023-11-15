@@ -146,6 +146,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/scc_graph.hpp
       title: SCC Graph
+    - icon: ':warning:'
+      path: graph/shobon_mcf.hpp
+      title: shobon min cost flow
   - name: math
     pages:
     - icon: ':heavy_check_mark:'
