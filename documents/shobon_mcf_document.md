@@ -43,14 +43,14 @@ from→to へ最大容量 cap、流量 0、コスト cost の辺を追加する�
 
 ```cpp
 int main(){
-  int v,e,f; cin>>v>>e>>f;
-  lib::shobon_mcf<int,int> mcf(v);
-  rep(i,0,e){
-    int u,v,c,d;cin>>u>>v>>c>>d;
-    mcf.add_edge(u,v,c,d);
-  }
-  auto[flow,cost]=mcf.flow(0,v-1,f);
-  if (flow!=f)cout<<-1<<'\n';
-  else cout<<cost<<'\n';
+	int v,e,f; std::cin>>v>>e>>f;
+	lib::shobon_mcf<int,int> mcf(v);
+	for (int i=0;i<e;i++){
+		int a,b,c,d; std::cin >> a >> b >> c >> d;
+		mcf.add_edge(a,b,c,d);
+	}
+	auto [flow, cost] = mcf.flow(0,v-1,f);
+	if (flow != f) std::cout << "-1\n";
+	else std::cout << cost << '\n';
 }
 ```
