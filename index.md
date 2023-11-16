@@ -200,6 +200,9 @@ data:
       path: string/RollingHash.hpp
       title: RollingHash
     - icon: ':heavy_check_mark:'
+      path: string/suffix_array.hpp
+      title: Suffix Array
+    - icon: ':heavy_check_mark:'
       path: string/z_algorithm.hpp
       title: Z Algorithm
   - name: template
@@ -449,6 +452,12 @@ data:
       title: test/polynomial/Pow_of_Formal_Power_Series.test.cpp
   - name: test/string
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/string/Number_of_Substrings.test.cpp
+      title: test/string/Number_of_Substrings.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/string/Suffix_Array.test.cpp
+      title: test/string/Suffix_Array.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/string/aoj_2444.test.cpp
       title: test/string/aoj_2444.test.cpp

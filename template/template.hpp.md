@@ -165,6 +165,9 @@ data:
     path: string/RollingHash.hpp
     title: RollingHash
   - icon: ':heavy_check_mark:'
+    path: string/suffix_array.hpp
+    title: Suffix Array
+  - icon: ':heavy_check_mark:'
     path: string/z_algorithm.hpp
     title: Z Algorithm
   - icon: ':heavy_check_mark:'
@@ -385,6 +388,12 @@ data:
     path: test/polynomial/Pow_of_Formal_Power_Series.test.cpp
     title: test/polynomial/Pow_of_Formal_Power_Series.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/string/Number_of_Substrings.test.cpp
+    title: test/string/Number_of_Substrings.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/string/Suffix_Array.test.cpp
+    title: test/string/Suffix_Array.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/string/aoj_2444.test.cpp
     title: test/string/aoj_2444.test.cpp
   - icon: ':heavy_check_mark:'
@@ -493,6 +502,7 @@ data:
   - geometry/circle.hpp
   - geometry/segment.hpp
   - geometry/line.hpp
+  - string/suffix_array.hpp
   - string/z_algorithm.hpp
   - string/RollingHash.hpp
   timestamp: '2023-05-17 22:41:14+09:00'
@@ -566,6 +576,8 @@ data:
   - test/polynomial/Log_of_FPS_Sparse.test.cpp
   - test/polynomial/Composition_of_Formal_Power_Series.test.cpp
   - test/others/aoj_1300.test.cpp
+  - test/string/Suffix_Array.test.cpp
+  - test/string/Number_of_Substrings.test.cpp
   - test/string/z_algorithm.test.cpp
   - test/string/aoj_2444.test.cpp
 documentation_of: template/template.hpp
