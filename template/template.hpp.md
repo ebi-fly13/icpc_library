@@ -144,6 +144,9 @@ data:
     path: math/ext_gcd.hpp
     title: math/ext_gcd.hpp
   - icon: ':heavy_check_mark:'
+    path: math/floor_sum.hpp
+    title: Floor Sum
+  - icon: ':heavy_check_mark:'
     path: math/gauss_jordan.hpp
     title: gauss_jordan
   - icon: ':heavy_check_mark:'
@@ -322,6 +325,9 @@ data:
     path: test/graph/Shobon_Minimum_Flow.test.cpp
     title: test/graph/Shobon_Minimum_Flow.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/math/Sum_of_Floor_of_Linear.test.cpp
+    title: test/math/Sum_of_Floor_of_Linear.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/math/Sum_of_Totient_Function.test.cpp
     title: test/math/Sum_of_Totient_Function.test.cpp
   - icon: ':heavy_check_mark:'
@@ -493,6 +499,7 @@ data:
   - math/ext_gcd.hpp
   - math/ranked_subset_transform.hpp
   - math/dirichlet_series.hpp
+  - math/floor_sum.hpp
   - math/eratosthenes_sieve.hpp
   - geometry/base_arbitary.hpp
   - geometry/base_ll.hpp
@@ -543,6 +550,7 @@ data:
   - test/math/two_sat.test.cpp
   - test/math/Sum_of_Totient_Function.test.cpp
   - test/math/enumerate_primes.test.cpp
+  - test/math/Sum_of_Floor_of_Linear.test.cpp
   - test/math/yuki_447.test.cpp
   - test/math/aoj_3205.test.cpp
   - test/geometry/Intersection.test.cpp

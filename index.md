@@ -164,6 +164,9 @@ data:
       path: math/ext_gcd.hpp
       title: math/ext_gcd.hpp
     - icon: ':heavy_check_mark:'
+      path: math/floor_sum.hpp
+      title: Floor Sum
+    - icon: ':heavy_check_mark:'
       path: math/gauss_jordan.hpp
       title: gauss_jordan
     - icon: ':heavy_check_mark:'
@@ -378,6 +381,9 @@ data:
       title: test/graph/Shobon_Minimum_Flow.test.cpp
   - name: test/math
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/math/Sum_of_Floor_of_Linear.test.cpp
+      title: test/math/Sum_of_Floor_of_Linear.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/math/Sum_of_Totient_Function.test.cpp
       title: test/math/Sum_of_Totient_Function.test.cpp
