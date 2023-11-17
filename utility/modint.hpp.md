@@ -162,38 +162,38 @@ data:
   isVerificationFile: false
   path: utility/modint.hpp
   requiredBy:
-  - fps/composition_of_fps.hpp
+  - convolution/ntt.hpp
+  - convolution/ntt4.hpp
+  - fps/multipoint_evaluation.hpp
   - fps/polynomial_interpolation.hpp
   - fps/compositional_inverse_of_fps.hpp
-  - fps/fps.hpp
-  - fps/multipoint_evaluation.hpp
   - fps/taylor_shift.hpp
-  - convolution/ntt4.hpp
-  - convolution/ntt.hpp
+  - fps/fps.hpp
+  - fps/composition_of_fps.hpp
   timestamp: '2023-11-14 18:27:43+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/tree/Tree_Path_Composite_Sum.test.cpp
-  - test/data_structure/Point_Set_Range_Composite.test.cpp
   - test/data_structure/Range_Affine_Range_Sum.test.cpp
+  - test/data_structure/Point_Set_Range_Composite.test.cpp
+  - test/polynomial/Inv_of_FPS_Sparse.test.cpp
+  - test/polynomial/Polynomial_Taylor_Shift.test.cpp
+  - test/polynomial/Kth_term_of_Linearly_Recurrent_Sequence.test.cpp
+  - test/polynomial/Polynomial_Interpolation.test.cpp
+  - test/polynomial/Multipoint_Evaluation.test.cpp
+  - test/polynomial/Log_of_FPS_Sparse.test.cpp
+  - test/polynomial/Pow_of_Formal_Power_Series.test.cpp
+  - test/polynomial/Pow_of_FPS_Sparse.test.cpp
+  - test/polynomial/Exp_of_Formal_Power_Series.test.cpp
+  - test/polynomial/Exp_of_FPS_Sparse.test.cpp
+  - test/polynomial/Inv_of_Formal_Power_Series.test.cpp
+  - test/polynomial/Composition_of_Formal_Power_Series.test.cpp
+  - test/polynomial/Compositional_Inverse_of_Formal_Power_Series.test.cpp
+  - test/polynomial/Log_of_Formal_Power_Series.test.cpp
   - test/convolution/Convolution_mod.test.cpp
   - test/convolution/Subset_Convolution.test.cpp
   - test/convolution/Convolution_mod_ntt4.test.cpp
   - test/math/Sum_of_Totient_Function.test.cpp
-  - test/polynomial/Inv_of_Formal_Power_Series.test.cpp
-  - test/polynomial/Inv_of_FPS_Sparse.test.cpp
-  - test/polynomial/Log_of_Formal_Power_Series.test.cpp
-  - test/polynomial/Polynomial_Interpolation.test.cpp
-  - test/polynomial/Compositional_Inverse_of_Formal_Power_Series.test.cpp
-  - test/polynomial/Exp_of_FPS_Sparse.test.cpp
-  - test/polynomial/Polynomial_Taylor_Shift.test.cpp
-  - test/polynomial/Pow_of_FPS_Sparse.test.cpp
-  - test/polynomial/Multipoint_Evaluation.test.cpp
-  - test/polynomial/Kth_term_of_Linearly_Recurrent_Sequence.test.cpp
-  - test/polynomial/Pow_of_Formal_Power_Series.test.cpp
-  - test/polynomial/Exp_of_Formal_Power_Series.test.cpp
-  - test/polynomial/Log_of_FPS_Sparse.test.cpp
-  - test/polynomial/Composition_of_Formal_Power_Series.test.cpp
 documentation_of: utility/modint.hpp
 layout: document
 title: modint

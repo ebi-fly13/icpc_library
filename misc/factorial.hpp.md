@@ -81,17 +81,17 @@ data:
   isVerificationFile: false
   path: misc/factorial.hpp
   requiredBy:
-  - fps/fps_sparse.hpp
   - fps/taylor_shift.hpp
+  - fps/fps_sparse.hpp
   timestamp: '2023-06-09 15:23:37+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/misc/Binomial_Coefficient.test.cpp
   - test/polynomial/Inv_of_FPS_Sparse.test.cpp
-  - test/polynomial/Exp_of_FPS_Sparse.test.cpp
   - test/polynomial/Polynomial_Taylor_Shift.test.cpp
-  - test/polynomial/Pow_of_FPS_Sparse.test.cpp
   - test/polynomial/Log_of_FPS_Sparse.test.cpp
+  - test/polynomial/Pow_of_FPS_Sparse.test.cpp
+  - test/polynomial/Exp_of_FPS_Sparse.test.cpp
+  - test/misc/Binomial_Coefficient.test.cpp
 documentation_of: misc/factorial.hpp
 layout: document
 redirect_from:

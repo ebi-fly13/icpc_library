@@ -321,23 +321,23 @@ data:
   isVerificationFile: false
   path: fps/fps.hpp
   requiredBy:
-  - fps/composition_of_fps.hpp
+  - fps/multipoint_evaluation.hpp
   - fps/polynomial_interpolation.hpp
   - fps/compositional_inverse_of_fps.hpp
-  - fps/multipoint_evaluation.hpp
   - fps/taylor_shift.hpp
+  - fps/composition_of_fps.hpp
   timestamp: '2023-11-14 18:27:43+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/polynomial/Inv_of_Formal_Power_Series.test.cpp
-  - test/polynomial/Log_of_Formal_Power_Series.test.cpp
-  - test/polynomial/Polynomial_Interpolation.test.cpp
-  - test/polynomial/Compositional_Inverse_of_Formal_Power_Series.test.cpp
   - test/polynomial/Polynomial_Taylor_Shift.test.cpp
+  - test/polynomial/Polynomial_Interpolation.test.cpp
   - test/polynomial/Multipoint_Evaluation.test.cpp
   - test/polynomial/Pow_of_Formal_Power_Series.test.cpp
   - test/polynomial/Exp_of_Formal_Power_Series.test.cpp
+  - test/polynomial/Inv_of_Formal_Power_Series.test.cpp
   - test/polynomial/Composition_of_Formal_Power_Series.test.cpp
+  - test/polynomial/Compositional_Inverse_of_Formal_Power_Series.test.cpp
+  - test/polynomial/Log_of_Formal_Power_Series.test.cpp
 documentation_of: fps/fps.hpp
 layout: document
 title: Formal Power Series

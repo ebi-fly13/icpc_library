@@ -113,8 +113,8 @@ data:
   timestamp: '2023-06-29 23:31:55+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/geometry/base_rational.test.cpp
   - test/others/aoj_1300.test.cpp
+  - test/geometry/base_rational.test.cpp
 documentation_of: utility/rational.hpp
 layout: document
 redirect_from:
