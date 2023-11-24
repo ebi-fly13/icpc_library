@@ -98,8 +98,10 @@ data:
     \        if (vertex) f(in[l], in[l] + 1);\n        for (auto [a, b] : descend(l,\
     \ v)) f(a, b + 1);\n    }\n\n    template <class F> void subtree_query(int u,\
     \ bool vertex, const F &f) {\n        f(in[u] + int(!vertex), out[u]);\n    }\n\
-    \n  private:\n    int n, t = 0;\n    vector<vector<int>> g;\n    vector<int> sz,\
-    \ in, out, nxt, par, depth;\n};\n\n}  // namespace lib\n#line 6 \"test/data_structure/Vertex_Add_Path_Sum.test.cpp\"\
+    \n    int parent(int v) {\n        return par[v];\n    }\n\n    std::vector<std::pair<int,int>>\
+    \ lca_based_auxiliary_tree(std::vector<int>);\n\n  private:\n    int n, t = 0;\n\
+    \    vector<vector<int>> g;\n    vector<int> sz, in, out, nxt, par, depth;\n};\n\
+    \n}  // namespace lib\n#line 6 \"test/data_structure/Vertex_Add_Path_Sum.test.cpp\"\
     \n\nusing i64 = std::int64_t;\ni64 op(i64 a, i64 b) {\n    return a + b;\n}\n\
     i64 e() {\n    return 0;\n}\n\nint main() {\n    int n, q;\n    std::cin >> n\
     \ >> q;\n    std::vector<i64> a(n);\n    for (int i = 0; i < n; ++i) {\n     \
@@ -143,7 +145,7 @@ data:
   isVerificationFile: true
   path: test/data_structure/Vertex_Add_Path_Sum.test.cpp
   requiredBy: []
-  timestamp: '2023-11-14 15:55:41+09:00'
+  timestamp: '2023-11-24 15:39:05+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data_structure/Vertex_Add_Path_Sum.test.cpp

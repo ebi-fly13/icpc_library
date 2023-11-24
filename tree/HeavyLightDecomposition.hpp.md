@@ -4,11 +4,17 @@ data:
   - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: tree/lca_based_auxiliary_tree.hpp
+    title: LCA based Auxiliary Tree
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/data_structure/Vertex_Add_Path_Sum.test.cpp
     title: test/data_structure/Vertex_Add_Path_Sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/tree/yuki_901.test.cpp
+    title: test/tree/yuki_901.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -56,8 +62,10 @@ data:
     \        if (vertex) f(in[l], in[l] + 1);\n        for (auto [a, b] : descend(l,\
     \ v)) f(a, b + 1);\n    }\n\n    template <class F> void subtree_query(int u,\
     \ bool vertex, const F &f) {\n        f(in[u] + int(!vertex), out[u]);\n    }\n\
-    \n  private:\n    int n, t = 0;\n    vector<vector<int>> g;\n    vector<int> sz,\
-    \ in, out, nxt, par, depth;\n};\n\n}  // namespace lib\n"
+    \n    int parent(int v) {\n        return par[v];\n    }\n\n    std::vector<std::pair<int,int>>\
+    \ lca_based_auxiliary_tree(std::vector<int>);\n\n  private:\n    int n, t = 0;\n\
+    \    vector<vector<int>> g;\n    vector<int> sz, in, out, nxt, par, depth;\n};\n\
+    \n}  // namespace lib\n"
   code: "#pragma once\n\n#include \"../template/template.hpp\"\n\nnamespace lib {\n\
     \nusing namespace std;\n\nstruct HeavyLightDecomposition {\n  private:\n    void\
     \ dfs_sz(int v) {\n        for (auto &nv : g[v]) {\n            if (nv == par[v])\
@@ -91,16 +99,20 @@ data:
     \        if (vertex) f(in[l], in[l] + 1);\n        for (auto [a, b] : descend(l,\
     \ v)) f(a, b + 1);\n    }\n\n    template <class F> void subtree_query(int u,\
     \ bool vertex, const F &f) {\n        f(in[u] + int(!vertex), out[u]);\n    }\n\
-    \n  private:\n    int n, t = 0;\n    vector<vector<int>> g;\n    vector<int> sz,\
-    \ in, out, nxt, par, depth;\n};\n\n}  // namespace lib\n"
+    \n    int parent(int v) {\n        return par[v];\n    }\n\n    std::vector<std::pair<int,int>>\
+    \ lca_based_auxiliary_tree(std::vector<int>);\n\n  private:\n    int n, t = 0;\n\
+    \    vector<vector<int>> g;\n    vector<int> sz, in, out, nxt, par, depth;\n};\n\
+    \n}  // namespace lib\n"
   dependsOn:
   - template/template.hpp
   isVerificationFile: false
   path: tree/HeavyLightDecomposition.hpp
-  requiredBy: []
-  timestamp: '2023-11-14 15:55:41+09:00'
+  requiredBy:
+  - tree/lca_based_auxiliary_tree.hpp
+  timestamp: '2023-11-24 15:39:05+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/tree/yuki_901.test.cpp
   - test/data_structure/Vertex_Add_Path_Sum.test.cpp
 documentation_of: tree/HeavyLightDecomposition.hpp
 layout: document

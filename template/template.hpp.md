@@ -192,6 +192,9 @@ data:
     path: tree/RerootingDP.hpp
     title: Rerooting DP
   - icon: ':heavy_check_mark:'
+    path: tree/lca_based_auxiliary_tree.hpp
+    title: LCA based Auxiliary Tree
+  - icon: ':heavy_check_mark:'
     path: utility/dynamic_modint.hpp
     title: utility/dynamic_modint.hpp
   - icon: ':heavy_check_mark:'
@@ -420,6 +423,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/tree/aoj_0489.test.cpp
     title: test/tree/aoj_0489.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/tree/yuki_901.test.cpp
+    title: test/tree/yuki_901.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -447,6 +453,7 @@ data:
   path: template/template.hpp
   requiredBy:
   - tree/LowestCommonAncestor.hpp
+  - tree/lca_based_auxiliary_tree.hpp
   - tree/Mo_on_Tree.hpp
   - tree/RerootingDP.hpp
   - tree/HeavyLightDecomposition.hpp
@@ -516,6 +523,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/tree/RerootingDP.test.cpp
+  - test/tree/yuki_901.test.cpp
   - test/tree/Tree_Path_Composite_Sum.test.cpp
   - test/tree/aoj_0489.test.cpp
   - test/tree/Lowest_Common_Ancestor.test.cpp

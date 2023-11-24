@@ -236,6 +236,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: tree/RerootingDP.hpp
       title: Rerooting DP
+    - icon: ':heavy_check_mark:'
+      path: tree/lca_based_auxiliary_tree.hpp
+      title: LCA based Auxiliary Tree
   - name: utility
     pages:
     - icon: ':heavy_check_mark:'
@@ -489,5 +492,8 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/tree/aoj_0489.test.cpp
       title: test/tree/aoj_0489.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/tree/yuki_901.test.cpp
+      title: test/tree/yuki_901.test.cpp
 layout: toppage
 ---
