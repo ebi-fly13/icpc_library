@@ -93,6 +93,12 @@ struct HeavyLightDecomposition {
         f(in[u] + int(!vertex), out[u]);
     }
 
+    int parent(int v) {
+        return par[v];
+    }
+
+    std::vector<std::pair<int,int>> lca_based_auxiliary_tree(std::vector<int>);
+
   private:
     int n, t = 0;
     vector<vector<int>> g;
