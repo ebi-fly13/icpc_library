@@ -3,8 +3,6 @@
 #include "../../data_structure/fenwick_tree.hpp"
 #include "../../template/template.hpp"
 
-using namespace lib;
-
 int main() {
     int n, q;
     std::cin >> n >> q;

@@ -31,7 +31,7 @@ from→to へ最大容量 cap、流量 0、コスト cost の辺を追加する�
 int main(){
 	int v,e,f;
 	cin >> v >> e >> f;
-	lib::MinCostFlow mcf(v);
+	MinCostFlow mcf(v);
 	for (int i=0;i<e;i++){
 		int a,b,c,d;
 		cin >> a >> b >> c >> d;

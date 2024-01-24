@@ -1,0 +1,236 @@
+[[library]]
+category = "convolution"
+    [[library.file]]
+    name = "NTT"
+    path = "../icpc_library/convolution/ntt4.hpp"
+
+    [[library.file]]
+    name = "Subset Convolution"
+    path = "../icpc_library/convolution/subset_convolution.hpp"
+
+[[library]]
+category = "Data Structure"
+
+    [[library.file]]
+    name = "Binary Trie"
+    path = "../icpc_library/data_structure/BinaryTrie.hpp"
+
+    [[library.file]]
+    name = "Dsu"
+    path = "../icpc_library/data_structure/dsu.hpp"
+
+    [[library.file]]
+    name = "Dual Segtree"
+    path = "../icpc_library/data_structure/dualsegtree.hpp"
+
+    [[library.file]]
+    name = "fenwick tree"
+    path = "../icpc_library/data_structure/fenwick_tree.hpp"
+
+    [[library.file]]
+    name = "Lazy Segtree"
+    path = "../icpc_library/data_structure/lazysegtree.hpp"
+
+    [[library.file]]
+    name = "Li Chao Tree"
+    path = "../icpc_library/data_structure/li_chao_tree.hpp"
+
+    [[library.file]]
+    name = "offline 2D segtree"
+    path = "../icpc_library/data_structure/offline_segtree_2d.hpp"
+
+    [[library.file]]
+    name = "section set"
+    path = "../icpc_library/data_structure/section_set.hpp"
+
+    [[library.file]]
+    name = "segtree 2D"
+    path = "../icpc_library/data_structure/segtree_2d.hpp"
+
+    [[library.file]]
+    name = "Slope Trick"
+    path = "../icpc_library/data_structure/slope_trick.hpp"
+
+    [[library.file]]
+    name = "undo dsu"
+    path = "../icpc_library/data_structure/undo_dsu.hpp"
+
+[[library]]
+category = "fps"
+    [[library.file]]
+    name = "Bostan-Mori Algorithm"
+    path = "../icpc_library/fps/bostan_mori.hpp"
+
+    [[library.file]]
+    name = "$f(g(x))$"
+    path = "../icpc_library/fps/composition_of_fps.hpp"
+
+    [[library.file]]
+    name = "$f^{-1}(x)$"
+    path = "../icpc_library/fps/compositional_inverse_of_fps.hpp"
+
+    [[library.file]]
+    name = "FPS"
+    path = "../icpc_library/fps/fps.hpp"
+
+    [[library.file]]
+    name = "FPS (sparse)"
+    path = "../icpc_library/fps/fps_sparse.hpp"
+
+    [[library.file]]
+    name = "Multipoint Evaluation"
+    path = "../icpc_library/fps/multipoint_evaluation.hpp"
+
+    [[library.file]]
+    name = "Polynomial Interpolation"
+    path = "../icpc_library/fps/polynomial_interpolation.hpp"
+
+    [[library.file]]
+    name = "$f(x+c)$"
+    path = "../icpc_library/fps/taylor_shift.hpp"
+
+[[library]]
+category = "geometry"
+    [[library.file]]
+    name = "Partition by Circles"
+    path = "../icpc_library/geometry/Partition_by_Circles.hpp"
+
+    [[library.file]]
+    name = "base arbitrary"
+    path = "../icpc_library/geometry/base_arbitary.hpp"
+
+    [[library.file]]
+    name = "base ll"
+    path = "../icpc_library/geometry/base_ll.hpp"
+
+    [[library.file]]
+    name = "circle"
+    path = "../icpc_library/geometry/circle.hpp"
+
+    [[library.file]]
+    name = "Convex Hull"
+    path = "../icpc_library/geometry/convex_hull.hpp"
+
+    [[library.file]]
+    name = "line"
+    path = "../icpc_library/geometry/line.hpp"
+
+    [[library.file]]
+    name = "segment"
+    path = "../icpc_library/geometry/segment.hpp"
+
+[[library]]
+category = "graph"
+    [[library.file]]
+    name = "Ford Fulkerson"
+    path = "../icpc_library/graph/fordfulkerson.hpp"
+
+    [[library.file]]
+    name = "Low Link"
+    path = "../icpc_library/graph/low_link.hpp"
+
+    [[library.file]]
+    name = "min cost flow"
+    path = "../icpc_library/graph/mcf_graph.hpp"
+
+    [[library.file]]
+    name = "max flow"
+    path = "../icpc_library/graph/mf_graph.hpp"
+
+    [[library.file]]
+    name = "SCC graph"
+    path = "../icpc_library/graph/scc_graph.hpp"
+
+    [[library.file]]
+    name = "shobon min cost flow"
+    path = "../icpc_library/graph/shobon_mcf.hpp"
+
+[[library]]
+category = "math"
+    [[library.file]]
+    name = "crt"
+    path = "../icpc_library/math/crt.hpp"
+
+    [[library.file]]
+    name = "Dirichlet Series"
+    path = "../icpc_library/math/dirichlet_series.hpp"
+
+    [[library.file]]
+    name = "eratosthenes sieve"
+    path = "../icpc_library/math/eratosthenes_sieve"
+
+    [[library.file]]
+    name = "ext gcd"
+    path = "../icpc_library/math/ext_gcd.hpp"
+
+    [[library.file]]
+    name = "Floor Sum"
+    path = "../icpc_library/math/floor_sum.hpp"
+
+    [[library.file]]
+    name = "gauss jordan"
+    path = "../icpc_library/math/gauss_jordan.hpp"
+
+    [[library.file]]
+    name = "Ranked Subset Transform (Zeta / Mobius)"
+    path = "../icpc_library/math/ranked_transform.hpp"
+
+    [[library.file]]
+    name = "Two SAT"
+    path = "../icpc_library/math/two_sat.hpp"
+
+[[library]]
+category = "misc"
+    [[library.file]]
+    name = "dice"
+    path = "../icpc_library/misc/dice.hpp"
+
+    [[library.file]]
+    name = "factorial"
+    path = "../icpc_library/misc/factorial.hpp"
+
+    [[library.file]]
+    name = "Mo algorithm"
+    path = "../icpc_library/misc/mo_algorithm.hpp"
+
+[[library]]
+category = "string"
+    [[library.file]]
+    name = "RollingHash"
+    path = "../icpc_library/string/RollingHash.hpp"
+
+    [[library.file]]
+    name = "Suffix Array"
+    path = "../icpc_library/string/suffix_array.hpp"
+
+    [[library.file]]
+    name = "Z Algorithm"
+    path = "../icpc_library/string/z_algorithm.hpp"
+
+[[library]]
+category = "tree"
+    [[library.file]]
+    name = "Heavy Light Decomposition"
+    path = "../icpc_library/tree/HeavyLightDecomposition.hpp"
+
+    [[library.file]]
+    name = "Mo on Tree"
+    path = "../icpc_library/tree/Mo_on_Tree.hpp"
+
+    [[library.file]]
+    name = "Rerooting DP"
+    path = "../icpc_library/tree/RerootingDP.hpp"
+
+    [[library.file]]
+    name = "LCA based Auxiliary Tree"
+    path = "../icpc_library/tree/lca_based_auxiliary_tree.hpp"
+
+[[library]]
+category = "utility"
+    [[library.file]]
+    name = "modint"
+    path = "../icpc_library/utility/modint.hpp"
+
+    [[library.file]]
+    name = "rational"
+    path = "../icpc_library/utility/rational.hpp"

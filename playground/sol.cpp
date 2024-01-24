@@ -21,12 +21,14 @@ template <typename T> bool chmax(T &a, const T &b) {
 
 using namespace std;
 
-int main(){
-    int n, x; cin >> n >> x;
+int main() {
+    int n, x;
+    cin >> n >> x;
     int ans = 0;
-    rep(i,0,n){
-        int s; cin >> s;
-        if (s < x) ans += s; // 本当は未満ではなくて以下
+    rep(i, 0, n) {
+        int s;
+        cin >> s;
+        if (s < x) ans += s;  // 本当は未満ではなくて以下
     }
     cout << ans << endl;
 }

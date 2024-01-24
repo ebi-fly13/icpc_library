@@ -2,7 +2,7 @@
 
 #include "../template/template.hpp"
 
-namespace lib {
+
 
 using namespace std;
 
@@ -75,4 +75,3 @@ ull RollingHash::BASE = 0;
 vector<ull> RollingHash::pow_base = vector<ull>(1, 1);
 using roriha = RollingHash;
 
-}  // namespace lib

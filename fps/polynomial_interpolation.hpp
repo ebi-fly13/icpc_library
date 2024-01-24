@@ -4,7 +4,7 @@
 #include "../fps/fps.hpp"
 #include "../fps/multipoint_evaluation.hpp"
 
-namespace lib {
+
 
 template <class mint>
 FormalPowerSeries<mint> polynomial_interpolation(const std::vector<mint> &xs,
@@ -36,4 +36,3 @@ FormalPowerSeries<mint> polynomial_interpolation(const std::vector<mint> &xs,
     return f[1];
 }
 
-}  // namespace lib

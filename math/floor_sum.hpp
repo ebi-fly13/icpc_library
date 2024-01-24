@@ -1,7 +1,7 @@
 #pragma once
 #include "../template/template.hpp"
 
-namespace lib {
+
 using namespace std;
 
 ll floor_sum(ll n, ll m, ll a, ll b){
@@ -36,4 +36,3 @@ ll floor_sum(ll n, ll m, ll a, ll b){
 	return ret + floor_sum(y, a, m, z);
 }
 
-}  // namespace lib

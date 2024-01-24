@@ -3,7 +3,7 @@
 #include "../geometry/base_ld.hpp"
 #include "../geometry/line.hpp"
 
-namespace lib {
+
 
 struct circle {
     vec c;
@@ -100,4 +100,4 @@ ld common_area(const circle &c1, const circle &c2) {
     }
 }
 
-}  // namespace lib
+

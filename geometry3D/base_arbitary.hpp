@@ -2,7 +2,7 @@
 
 #include"../template/template.hpp"
 
-namespace lib {
+
 
 template<typename T>
 struct Vec {

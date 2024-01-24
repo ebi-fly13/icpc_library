@@ -1,11 +1,10 @@
 #define PROBLEM \
     "https://judge.yosupo.jp/problem/log_of_formal_power_series_sparse"
 
-#include "../../template/template.hpp"
 #include "../../fps/fps_sparse.hpp"
+#include "../../template/template.hpp"
 #include "../../utility/modint.hpp"
 
-using namespace lib;
 using mint = modint998244353;
 
 int main() {

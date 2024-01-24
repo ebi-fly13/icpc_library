@@ -1,9 +1,8 @@
-#define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=3205&lang=jp"
+#define PROBLEM \
+    "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=3205&lang=jp"
 
-#include "../../template/template.hpp"
 #include "../../math/two_sat.hpp"
-
-using namespace lib;
+#include "../../template/template.hpp"
 
 int main() {
     int n, m;
@@ -14,16 +13,19 @@ int main() {
         }
         int ans = -1;
         int r = 1;
-        rep(i,0,m) {
-            chmax(r, i+1);
-            while(r < m) {
+        rep(i, 0, m) {
+            chmax(r, i + 1);
+            while (r < m) {
                 two_sat tsat(n);
-                rep(j,i,r+1) {
+                rep(j, i, r + 1) {
                     auto [a, b] = ab[j];
-                    tsat.add_clause(std::abs(a) - 1, a > 0, std::abs(b) - 1, b > 0);
+                    tsat.add_clause(std::abs(a) - 1, a > 0, std::abs(b) - 1,
+                                    b > 0);
                 }
-                if(tsat.satisfiable()) r++;
-                else break; 
+                if (tsat.satisfiable())
+                    r++;
+                else
+                    break;
             }
             chmax(ans, r - i);
         }

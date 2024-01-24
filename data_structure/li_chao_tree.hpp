@@ -2,7 +2,7 @@
 
 #include "../template/template.hpp"
 
-namespace lib {
+
 
 template <class T> struct li_chao_tree {
   private:

@@ -2,7 +2,7 @@
 
 #include "../template/template.hpp"
 
-namespace lib {
+
 
 vector<int> suffix_array(const string &s) {
     int n = s.size();
@@ -45,4 +45,3 @@ vector<int> lcp_array(const string &s, const vector<int> &sa) {
     return lcp;
 }
 
-}  // namespace lib

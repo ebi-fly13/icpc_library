@@ -4,7 +4,7 @@
 #include "../misc/factorial.hpp"
 #include "../template/template.hpp"
 
-namespace lib {
+
 
 template <class mint>
 FormalPowerSeries<mint> taylor_shift(FormalPowerSeries<mint> f, mint a) {
@@ -24,4 +24,3 @@ FormalPowerSeries<mint> taylor_shift(FormalPowerSeries<mint> f, mint a) {
     return f;
 }
 
-}  // namespace lib

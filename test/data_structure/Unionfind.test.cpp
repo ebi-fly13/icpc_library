@@ -6,7 +6,7 @@
 int main() {
     int n, q;
     std::cin >> n >> q;
-    lib::dsu uf(n);
+    dsu uf(n);
     while (q--) {
         int t, u, v;
         std::cin >> t >> u >> v;

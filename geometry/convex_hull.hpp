@@ -3,7 +3,7 @@
 #include "../geometry/base_ld.hpp"
 #include "../template/template.hpp"
 
-namespace lib {
+
 
 vector<vec> convex_hull(vector<vec> a) {
     int n = a.size();
@@ -48,4 +48,3 @@ vector<vec> convex_hull(vector<vec> a) {
     return ans;
 }
 
-}  // namespace lib

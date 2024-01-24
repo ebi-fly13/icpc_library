@@ -2,7 +2,7 @@
 
 #include "../template/template.hpp"
 
-namespace lib {
+
 
 template <class T> std::vector<int> z_algorithm(const std::vector<T>& s) {
     int n = int(s.size());

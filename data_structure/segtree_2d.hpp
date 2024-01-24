@@ -2,7 +2,7 @@
 
 #include "../template/template.hpp"
 
-namespace lib {
+
 
 template <class S, S (*op)(S, S), S (*e)(), class data_structure>
 struct segtree_2d {
@@ -50,4 +50,3 @@ struct segtree_2d {
     std::vector<data_structure> data;
 };
 
-}  // namespace lib

@@ -2,7 +2,7 @@
 
 #include "../template/template.hpp"
 
-namespace lib {
+
 
 template <class T> struct fenwick_tree {
   private:
@@ -34,4 +34,3 @@ template <class T> struct fenwick_tree {
     }
 };
 
-}  // namespace lib

@@ -2,7 +2,7 @@
 
 #include"../utility/modint.hpp"
 
-namespace lib {
+
 
 // only for modint998244353
 template<typename mint>
@@ -138,4 +138,3 @@ struct NTT {
     }
 };
 
-} // namespace lib

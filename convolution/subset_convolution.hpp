@@ -3,7 +3,7 @@
 #include "../template/template.hpp"
 #include "../math/ranked_subset_transform.hpp"
 
-namespace lib {
+
 
 template <class T, int LIM = 20>
 std::vector<T> subset_convolution(const std::vector<T> &a,
@@ -25,4 +25,3 @@ std::vector<T> subset_convolution(const std::vector<T> &a,
     return ranked_mobius<T, LIM>(ra);
 }
 
-}  // namespace ebi

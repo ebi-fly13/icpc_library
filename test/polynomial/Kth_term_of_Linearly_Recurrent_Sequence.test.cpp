@@ -6,7 +6,6 @@
 #include "../../template/template.hpp"
 #include "../../utility/modint.hpp"
 
-using namespace lib;
 using mint = modint998244353;
 
 int main() {

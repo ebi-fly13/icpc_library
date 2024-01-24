@@ -3,7 +3,7 @@
 #include "../template/template.hpp"
 #include "../graph/scc_graph.hpp"
 
-namespace lib {
+
 
 struct two_sat {
     two_sat(int n) : n(n), scc(2 * n), _ans(n) {}
@@ -33,4 +33,3 @@ struct two_sat {
     vector<bool> _ans;
 };
 
-}  // namespace lib

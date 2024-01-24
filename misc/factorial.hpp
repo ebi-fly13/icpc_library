@@ -2,7 +2,7 @@
 
 #include"../template/template.hpp"
 
-namespace lib {
+
 
 template<typename T>
 struct Binom{
@@ -45,4 +45,3 @@ vector<T>Binom<T>::kaijo = vector<T>(2,T(1));
 template<typename T>
 vector<T>Binom<T>::kainv = vector<T>(2,T(1));
 
-} // namespace lib

@@ -4,8 +4,6 @@
 
 #include "../../template/template.hpp"
 
-using namespace lib;
-
 using P = pair<int, int>;
 P merge(P a, P b) {
     return P(max(max(a.first, b.first), a.second + b.second),

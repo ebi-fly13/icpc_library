@@ -1,7 +1,7 @@
 #pragma once
 #include "../template/template.hpp"
 
-namespace lib {
+
 
 struct low_link {
     low_link(const std::vector<std::vector<int>> &g) : n(g.size()), ord(n, -1), low(n), par(n,-1) {

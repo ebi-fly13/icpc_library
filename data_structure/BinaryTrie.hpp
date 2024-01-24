@@ -2,7 +2,7 @@
 
 #include "../template/template.hpp"
 
-namespace lib {
+
 
 using namespace std;
 
@@ -123,4 +123,4 @@ struct BinaryTrie {                 // set(multiset) of integer
     }
 };
 
-}  // namespace lib
+

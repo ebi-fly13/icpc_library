@@ -22,18 +22,19 @@ template <typename T> bool chmax(T &a, const T &b) {
 using namespace std;
 
 mt19937_64 mt;
-ll rnd(ll l, ll r){
+ll rnd(ll l, ll r) {
     assert(l <= r);
-    return mt() % (r-l+1) + l;
+    return mt() % (r - l + 1) + l;
 }
 
-int main(int argc, char* argv[]){
+int main(int argc, char *argv[]) {
     mt.seed(stoi(argv[1]));
-    ll n = rnd(4,8);
-    ll x = rnd(1,100); // [100,675] のところを [1,100] にすることで、 diff を見つけやすくする
+    ll n = rnd(4, 8);
+    ll x = rnd(1, 100);  // [100,675] のところを [1,100] にすることで、 diff
+                         // を見つけやすくする
     cout << n << " " << x << endl;
-    rep(i,0,n){
-        ll s = rnd(1,100); // ここも
-        cout << s << " \n"[i == n-1];
+    rep(i, 0, n) {
+        ll s = rnd(1, 100);  // ここも
+        cout << s << " \n"[i == n - 1];
     }
 }

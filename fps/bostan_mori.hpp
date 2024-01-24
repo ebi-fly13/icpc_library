@@ -2,7 +2,7 @@
 
 #include "../template/template.hpp"
 
-namespace lib {
+
 
 template <class T, std::vector<T> (*convolution)(const std::vector<T> &,
                                                  const std::vector<T> &)>
@@ -33,4 +33,3 @@ T kitamasa(std::int64_t n, std::vector<T> a, std::vector<T> c) {
     return bostan_mori_algorithm<T, convolution>(n, p, c);
 }
 
-}  // namespace lib

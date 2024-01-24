@@ -8,7 +8,7 @@ int main() {
     int n, m;
     std::string s;
     std::cin >> n >> m >> s;
-    lib::RollingHash rh(s);
+    RollingHash rh(s);
     int l = 0, r = 1;
     std::set<ull> set;
     rep(i, 0, m) {

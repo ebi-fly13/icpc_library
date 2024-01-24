@@ -3,8 +3,6 @@
 #include "../../data_structure/slope_trick.hpp"
 #include "../../template/template.hpp"
 
-namespace lib {
-
 void main_() {
     int n;
     std::cin >> n;
@@ -18,13 +16,11 @@ void main_() {
     std::cout << st.min() << '\n';
 }
 
-}  // namespace lib
-
 int main() {
     int t = 1;
     // std::cin >> t;
     while (t--) {
-        lib::main_();
+        main_();
     }
     return 0;
 }

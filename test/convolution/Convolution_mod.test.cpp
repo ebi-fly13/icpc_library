@@ -4,7 +4,7 @@
 #include "../../template/template.hpp"
 #include "../../utility/modint.hpp"
 
-using mint = lib::modint998244353;
+using mint = modint998244353;
 
 int main() {
     int n, m;
@@ -20,7 +20,7 @@ int main() {
         std::cin >> x;
         b[i] = x;
     }
-    auto c = lib::convolution(a, b);
+    auto c = convolution(a, b);
     rep(i, 0, c.size()) {
         std::cout << c[i].val() << " \n"[i == int(c.size()) - 1];
     }

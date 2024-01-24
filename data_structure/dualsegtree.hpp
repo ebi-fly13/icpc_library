@@ -3,7 +3,7 @@
 #include <cassert>
 #include <vector>
 
-namespace lib {
+
 
 template <class S, S (*op)(S, S), S (*e)()>
 struct dualsegtree {
@@ -57,4 +57,3 @@ struct dualsegtree {
     int sz;
 };
 
-}  // namespace ebi

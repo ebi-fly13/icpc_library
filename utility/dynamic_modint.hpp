@@ -2,7 +2,7 @@
 
 #include"../template/template.hpp"
 
-namespace lib {
+
 
 template <int id> struct dynamic_modint {
     using mint = dynamic_modint;
@@ -73,4 +73,3 @@ template <int id> struct dynamic_modint {
 template<int id>
 ll dynamic_modint<id>::m = 2;
 
-} // namespace lib

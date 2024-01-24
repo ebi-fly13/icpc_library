@@ -4,7 +4,7 @@
 
 #include"../../geometry/base_ld.hpp"
 
-using namespace lib;
+
 
 const int iinf = 1e9;
 

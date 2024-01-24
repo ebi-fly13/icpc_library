@@ -2,7 +2,7 @@
 
 #include "../template/template.hpp"
 
-namespace lib {
+
 
 struct undo_dsu {
   public:
@@ -50,4 +50,3 @@ struct undo_dsu {
     std::stack<std::pair<int, int>> stack;
 };
 
-}  // namespace lib

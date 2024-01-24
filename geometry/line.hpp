@@ -2,7 +2,7 @@
 
 #include "../geometry/base_ld.hpp"
 
-namespace lib {
+
 
 struct line {
     vec a, b;
@@ -40,4 +40,3 @@ vec cross_point(const line &a, const line &b) {
                      cross(a.b - a.a, b.b - b.a);
 }
 
-}  // namespace lib

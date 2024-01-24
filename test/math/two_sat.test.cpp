@@ -1,9 +1,8 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/two_sat"
 
-#include "../../template/template.hpp"
 #include "../../math/two_sat.hpp"
 
-using namespace lib;
+#include "../../template/template.hpp"
 
 int main() {
     char p;

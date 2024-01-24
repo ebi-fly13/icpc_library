@@ -1,7 +1,7 @@
 #pragma once
 #include "../template/template.hpp"
 
-namespace lib {
+
 using namespace std;
 
 template <typename T> vector<vector<T>> gauss_jordan(vector<vector<T>> &a) {
@@ -27,4 +27,3 @@ template <typename T> vector<vector<T>> gauss_jordan(vector<vector<T>> &a) {
     return b;
 }
 
-}  // namespace lib

@@ -3,7 +3,7 @@
 #include "../math/ext_gcd.hpp"
 #include "../template/template.hpp"
 
-namespace lib {
+
 
 std::pair<ll, ll> crt(const std::vector<ll> &b, const std::vector<ll> &m) {
     ll r = 0, mod = 1;
@@ -19,4 +19,3 @@ std::pair<ll, ll> crt(const std::vector<ll> &b, const std::vector<ll> &m) {
     return {(r % mod + mod) % mod, mod};
 }
 
-}  // namespace lib

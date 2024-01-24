@@ -6,8 +6,6 @@
 #include "../../geometry/circle.hpp"
 #include "../../template/template.hpp"
 
-using namespace lib;
-
 int main() {
     std::cout << std::fixed << std::setprecision(15);
     auto input = [](vec &a) {

@@ -3,7 +3,7 @@
 #include "base_accurate.hpp"
 #include "../../utility/rational.hpp"
 
-namespace lib {
+
 
 template<typename T>
 struct Line {
@@ -94,4 +94,3 @@ Vec<rational> cross_point(const Line<rational> &p, const Line<rational> &q){
 }
 
 
-}  // namespace lib

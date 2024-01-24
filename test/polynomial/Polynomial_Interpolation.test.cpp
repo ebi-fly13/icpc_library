@@ -5,18 +5,16 @@
 #include "../../template/template.hpp"
 #include "../../utility/modint.hpp"
 
-namespace lib {
-
 using mint = modint998244353;
 
 void main_() {
     int n;
     std::cin >> n;
     std::vector<mint> x(n), y(n);
-    rep(i,0,n) {
+    rep(i, 0, n) {
         std::cin >> x[i].val();
     }
-    rep(i,0,n) {
+    rep(i, 0, n) {
         std::cin >> y[i].val();
     }
     auto f = polynomial_interpolation<mint>(x, y);
@@ -25,13 +23,11 @@ void main_() {
     }
 }
 
-}  // namespace ebi
-
 int main() {
     int t = 1;
     // std::cin >> t;
     while (t--) {
-        lib::main_();
+        main_();
     }
     return 0;
 }

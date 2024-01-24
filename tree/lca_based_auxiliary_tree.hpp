@@ -2,7 +2,7 @@
 
 #include "../tree/HeavyLightDecomposition.hpp"
 
-namespace lib {
+
 
 using namespace std;
 
@@ -39,4 +39,3 @@ vector<pair<int, int>> HeavyLightDecomposition::lca_based_auxiliary_tree(
     return dfs_order;
 }
 
-}  // namespace lib

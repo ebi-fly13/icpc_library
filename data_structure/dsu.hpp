@@ -2,7 +2,7 @@
 
 #include "../template/template.hpp"
 
-namespace lib {
+
 
 struct dsu {
   public:
@@ -35,4 +35,4 @@ struct dsu {
     vector<int> data;
 };
 
-}  // namespace lib
+

@@ -9,7 +9,7 @@ using i64 = std::int64_t;
 int main() {
     int n;
     while (std::cin >> n, !(n == 0)) {
-        lib::section_set<i64> used, noused;
+        section_set<i64> used, noused;
         noused.insert(0, 1e9 + 7);
         std::map<i64, std::vector<std::pair<i64, i64>>> map;
         std::map<i64, i64> vmap;

@@ -1,7 +1,7 @@
 #pragma once
 #include "../template/template.hpp"
 
-namespace lib {
+
 using namespace std;
 
 template<class Cap, class Cost> struct shobon_mcf {

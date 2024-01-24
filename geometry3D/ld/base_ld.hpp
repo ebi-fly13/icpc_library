@@ -3,7 +3,7 @@
 #include "../../template/template.hpp"
 #include "../base_arbitary.hpp"
 
-namespace lib {
+
 
 using vec = Vec<ld>;
 const ld eps = 1e-7;
@@ -29,4 +29,4 @@ ld abs(const vec &a){
 }
 
 
-}  // namespace lib
+

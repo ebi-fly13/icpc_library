@@ -2,7 +2,7 @@
 
 #include "../template/template.hpp"
 
-namespace lib {
+
 
 typedef std::string::const_iterator State;
 
@@ -27,4 +27,3 @@ bool isalpha(char c) {
     return 'a' <= c && c <= 'z';
 }
 
-}  // namespace lib

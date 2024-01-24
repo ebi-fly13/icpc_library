@@ -7,8 +7,6 @@ struct Edge {
     int u, v, s;
 };
 
-using namespace lib;
-
 int main() {
     int n, m;
     while (std::cin >> n >> m, !(n == 0 && m == 0)) {

@@ -26,8 +26,8 @@ int main() {
         g[u].emplace_back(v);
         g[v].emplace_back(u);
     }
-    lib::HeavyLightDecomposition hld(g);
-    lib::segtree<i64, op, e> seg(n);
+    HeavyLightDecomposition hld(g);
+    segtree<i64, op, e> seg(n);
     i64 ans = e();
     auto set = [&](int u, i64 x) {
         int idx = hld.idx(u);

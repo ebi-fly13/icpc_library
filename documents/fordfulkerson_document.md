@@ -26,7 +26,7 @@ from→to へ最大容量 cap、流量 0 の辺を追加する。
 ```cpp
 int main(){
 	int n, m; cin >> n >> m;
-	lib::FordFulkerson<int> mf(n);
+	FordFulkerson<int> mf(n);
 	for(int i=0;i<m;i++){
 		int u,v,c;cin>>u>>v>>c;
 		mf.add_edge(u,v,c);

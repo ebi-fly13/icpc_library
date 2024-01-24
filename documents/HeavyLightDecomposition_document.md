@@ -46,7 +46,7 @@ int main() {
         g[u].emplace_back(v);
         g[v].emplace_back(u);
     }
-    lib::HeavyLightDecomposition hld(g);
+    HeavyLightDecomposition hld(g);
     segtree<S, op, e> seg1(n) 
     segtree<S, op_rev, e> seg2(n);
     auto set = [&](int u, S x) {

@@ -2,7 +2,7 @@
 
 #include "../template/template.hpp"
 
-namespace lib {
+
 
 struct scc_graph {
     vector<vector<int>> g, rg;

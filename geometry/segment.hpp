@@ -2,7 +2,7 @@
 
 #include "../geometry/line.hpp"
 
-namespace lib {
+
 
 struct segment : line {};
 
@@ -42,4 +42,4 @@ ld dist(const segment &a, const segment &b) {
                    min(dist(b, a.a), dist(b, a.b)));
 }
 
-}  // namespace lib
+

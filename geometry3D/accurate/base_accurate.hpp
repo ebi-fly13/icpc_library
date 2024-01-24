@@ -3,7 +3,7 @@
 #include "../../template/template.hpp"
 #include "../base_arbitary.hpp"
 
-namespace lib {
+
 
 template<typename T>
 bool operator==(const Vec<T>& lhs, const Vec<T>& rhs) {
@@ -25,4 +25,3 @@ T norm(const Vec<T> &a){
     return a.x*a.x+a.y*a.y+a.z*a.z;
 }
 
-}  // namespace lib

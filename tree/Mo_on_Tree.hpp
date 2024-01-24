@@ -129,4 +129,3 @@ struct MoTree_vertex {
     }
 };
 
-} // namespace lib

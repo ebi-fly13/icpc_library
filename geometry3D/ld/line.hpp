@@ -2,7 +2,7 @@
 
 #include "base_ld.hpp"
 
-namespace lib {
+
 
 struct line {
     vec a, b;
@@ -101,4 +101,3 @@ vec cross_point(const line &p, const line &q){
 }
 
 
-}  // namespace lib

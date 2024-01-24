@@ -1,7 +1,7 @@
 #pragma once
 #include "../template/template.hpp"
 
-namespace lib {
+
 using namespace std;
 
 template <class Cap> struct mf_graph {
@@ -138,4 +138,4 @@ std::vector<bool> min_cut(int s) {
     */
 };
 
-}  // namespace lib
+

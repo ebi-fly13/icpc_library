@@ -5,7 +5,6 @@
 
 #include "../../geometry/segment.hpp"
 #include "../../template/template.hpp"
-using namespace lib;
 
 const ld dinf = 2e12;
 

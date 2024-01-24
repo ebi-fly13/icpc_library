@@ -2,7 +2,7 @@
 
 #include "../template/template.hpp"
 
-namespace lib {
+
 
 template <class T, int LIM = 20>
 std::vector<std::array<T, LIM + 1>> ranked_zeta(const std::vector<T> &f) {
@@ -44,4 +44,3 @@ std::vector<T> ranked_mobius(std::vector<std::array<T, LIM + 1>> rf) {
     return f;
 }
 
-}  // namespace ebi

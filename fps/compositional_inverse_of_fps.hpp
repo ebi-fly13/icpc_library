@@ -4,7 +4,7 @@
 #include "../fps/fps.hpp"
 #include "../template/template.hpp"
 
-namespace lib {
+
 
 template <class mint>
 FormalPowerSeries<mint> compositional_inverse_of_fps(FormalPowerSeries<mint> f,
@@ -26,4 +26,3 @@ FormalPowerSeries<mint> compositional_inverse_of_fps(FormalPowerSeries<mint> f,
     return g;
 }
 
-}  // namespace lib

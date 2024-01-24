@@ -1,10 +1,8 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/sum_of_totient_function"
 
 #include "../../math/dirichlet_series.hpp"
-#include "../../utility/modint.hpp"
 #include "../../template/template.hpp"
-
-namespace lib {
+#include "../../utility/modint.hpp"
 
 using mint = modint998244353;
 
@@ -17,13 +15,11 @@ void main_() {
     std::cout << ans.val() << '\n';
 }
 
-}  // namespace ebi
-
 int main() {
     int t = 1;
     // std::cin >> t;
     while (t--) {
-        lib::main_();
+        main_();
     }
     return 0;
 }

@@ -5,7 +5,7 @@
 
 #include "../template/template.hpp"
 
-namespace lib {
+
 
 using namespace std;
 
@@ -39,4 +39,3 @@ struct eratosthenes_sieve {
     }
 };
 
-}  // namespace lib

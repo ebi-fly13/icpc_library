@@ -2,7 +2,7 @@
 
 #include "../fps/fps.hpp"
 
-namespace lib {
+
 
 template<class mint>
 std::vector<mint> multipoint_evaluation(FormalPowerSeries<mint> f, const std::vector<mint> &p) {
@@ -33,4 +33,3 @@ std::vector<mint> multipoint_evaluation(FormalPowerSeries<mint> f, const std::ve
     return fp;
 }
 
-}  // namespace ebi

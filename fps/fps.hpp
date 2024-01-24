@@ -4,7 +4,7 @@
 #include "../template/template.hpp"
 #include "../utility/modint.hpp"
 
-namespace lib {
+
 
 template <class mint> struct FormalPowerSeries : std::vector<mint> {
   private:
@@ -235,4 +235,3 @@ template <class mint> struct FormalPowerSeries : std::vector<mint> {
     }
 };
 
-}  // namespace lib

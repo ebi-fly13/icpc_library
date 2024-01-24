@@ -2,7 +2,7 @@
 
 #include "../template/template.hpp"
 
-namespace lib {
+
 
 struct LowestCommonAncestor {
     int n;
@@ -60,4 +60,3 @@ struct LowestCommonAncestor {
     };
 };
 
-}  // namespace lib

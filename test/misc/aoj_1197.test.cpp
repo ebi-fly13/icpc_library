@@ -14,8 +14,6 @@ bool input(std::vector<int> &t) {
     return true;
 }
 
-using namespace lib;
-
 int main() {
     std::vector<int> t(6);
     while (input(t)) {

@@ -4,8 +4,6 @@
 #include "../../geometry/base_ld.hpp"
 #include "../../template/template.hpp"
 
-using namespace lib;
-
 int main() {
     std::cout << std::fixed << std::setprecision(15);
     long double x1, y1, x2, y2;

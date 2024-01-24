@@ -2,7 +2,7 @@
 
 #include "../template/template.hpp"
 
-namespace lib {
+
 
 template <class T> struct slope_trick {
   private:
@@ -147,4 +147,3 @@ template <class T> struct slope_trick {
     const T INF = std::numeric_limits<T>::max() / 4;
 };
 
-}  // namespace ebi

@@ -9,7 +9,7 @@ documentation_of: //geometry3D/accurate/base_accurate.hpp
 
 `Vec<T>`
 
-3次元の点やベクトルを表す構造体です。点の座標は `T = ll,int,lib::rational` などの型で保持します。
+3次元の点やベクトルを表す構造体です。点の座標は `T = ll,int,rational` などの型で保持します。
 
 ## cross(外積)
 

@@ -6,8 +6,6 @@
 #include "../../geometry/circle.hpp"
 #include "../../template/template.hpp"
 
-using namespace lib;
-
 namespace ebi {
 
 void main_() {
@@ -22,8 +20,6 @@ void main_() {
     input(c2);
     std::cout << common_area(c1, c2) << '\n';
 }
-
-}  // namespace ebi
 
 int main() {
     std::cout << std::fixed << std::setprecision(15);

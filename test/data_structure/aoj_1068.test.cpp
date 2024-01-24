@@ -4,8 +4,6 @@
 #include "../../data_structure/segtree_2d.hpp"
 #include "../../template/template.hpp"
 
-using namespace lib;
-
 int op(int a, int b) {
     return a < b ? a : b;
 }

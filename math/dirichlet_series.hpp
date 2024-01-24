@@ -2,7 +2,7 @@
 
 #include "../template/template.hpp"
 
-namespace lib {
+
 
 template <class T>
 std::vector<T> dirichlet_convolution(const std::vector<T> &a,
@@ -235,4 +235,3 @@ template <class T, int id> ll DirichletSeries<T, id>::L = 100;
 template <class T, int id>
 std::vector<std::pair<int, int>> DirichletSeries<T, id>::prime_pow_table = {};
 
-}  // namespace lib

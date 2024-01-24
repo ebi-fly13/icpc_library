@@ -4,8 +4,6 @@
 #include "../../data_structure/segtree.hpp"
 #include "../../template/template.hpp"
 
-using namespace lib;
-
 ll op(ll a, ll b) {
     return a + b;
 }

@@ -3,8 +3,6 @@
 
 #include "../../geometry/segment.hpp"
 
-using namespace lib;
-
 int main() {
     int q;
     std::cin >> q;

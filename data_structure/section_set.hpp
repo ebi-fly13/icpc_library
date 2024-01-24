@@ -2,7 +2,7 @@
 
 #include "../template/template.hpp"
 
-namespace lib {
+
 
 template <class T> struct section_set {
   private:
@@ -103,4 +103,3 @@ template <class T> struct section_set {
     }
 };
 
-}  // namespace lib

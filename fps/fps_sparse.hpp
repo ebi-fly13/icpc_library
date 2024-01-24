@@ -3,7 +3,7 @@
 #include "../misc/factorial.hpp"
 #include "../template/template.hpp"
 
-namespace lib {
+
 
 template <class mint>
 std::vector<mint> mul_sparse(const std::vector<mint> &f,
@@ -146,4 +146,3 @@ std::vector<mint> pow_sparse(const std::vector<mint> &f, long long k,
     return std::vector<mint>(d);
 }
 
-}  // namespace lib

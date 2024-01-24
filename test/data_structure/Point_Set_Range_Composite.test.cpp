@@ -4,7 +4,7 @@
 #include "../../template/template.hpp"
 #include "../../utility/modint.hpp"
 
-using mint = lib::modint998244353;
+using mint = modint998244353;
 
 struct F {
     mint a, b;
@@ -27,7 +27,7 @@ int main() {
         std::cin >> a >> b;
         f[i] = {a, b};
     }
-    lib::segtree<F, op, e> seg(f);
+    segtree<F, op, e> seg(f);
     while (q--) {
         int t;
         std::cin >> t;

@@ -21,10 +21,10 @@ template <typename T> bool chmax(T &a, const T &b) {
     return true;
 }
 
-namespace lib {
+
 
 using namespace std;
 
-}  // namespace lib
 
-// using namespace lib;
+
+// 

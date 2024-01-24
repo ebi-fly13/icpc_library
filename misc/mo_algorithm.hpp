@@ -2,7 +2,7 @@
 
 #include "../template/template.hpp"
 
-namespace lib {
+
 
 struct Mo {
     int width;
@@ -39,4 +39,3 @@ struct Mo {
     }
 };
 
-}  // namespace lib

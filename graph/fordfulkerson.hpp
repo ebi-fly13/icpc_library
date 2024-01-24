@@ -1,7 +1,7 @@
 #pragma once
 #include "../template/template.hpp"
 
-namespace lib {
+
 using namespace std;
 
 template <typename fa> struct FordFulkerson {
@@ -48,4 +48,4 @@ template <typename fa> struct FordFulkerson {
     }
 };
 
-}  // namespace lib
+

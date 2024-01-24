@@ -3,8 +3,6 @@
 
 #include "../../geometry/line.hpp"
 
-using namespace lib;
-
 int main() {
     int q;
     std::cin >> q;

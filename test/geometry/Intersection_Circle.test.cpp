@@ -3,8 +3,6 @@
 
 #include "../../geometry/circle.hpp"
 
-using namespace lib;
-
 int main() {
     ld c1x, c1y, c1r;
     ld c2x, c2y, c2r;

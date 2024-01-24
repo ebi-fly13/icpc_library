@@ -2,7 +2,7 @@
 
 #include "../template/template.hpp"
 
-namespace lib {
+
 
 using vec = complex<ll>;
 
@@ -37,4 +37,4 @@ bool comp_for_argument_sort(const vec &lhs, const vec &rhs) {
     return pl < pr;
 }
 
-}  // namespace lib
+

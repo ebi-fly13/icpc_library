@@ -4,8 +4,6 @@
 #include "../../graph/low_link.hpp"
 #include "../../template/template.hpp"
 
-using namespace lib;
-
 int main() {
     int n, m;
     std::cin >> n >> m;

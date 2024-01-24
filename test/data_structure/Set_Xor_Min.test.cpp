@@ -4,7 +4,7 @@
 #include "../../template/template.hpp"
 
 int main() {
-    lib::BinaryTrie<int, 30> trie;
+    BinaryTrie<int, 30> trie;
     int q;
     std::cin >> q;
     while (q--) {

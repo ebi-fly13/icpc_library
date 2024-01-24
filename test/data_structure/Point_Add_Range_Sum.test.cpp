@@ -18,7 +18,7 @@ int main() {
     rep(i, 0, n) {
         std::cin >> a[i];
     }
-    lib::segtree<ll, op, e> seg(a);
+    segtree<ll, op, e> seg(a);
     while (q--) {
         int t;
         std::cin >> t;

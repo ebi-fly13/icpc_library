@@ -4,7 +4,6 @@
 #include "../../tree/RerootingDP.hpp"
 #include "../../utility/modint.hpp"
 
-using namespace lib;
 using mint = modint998244353;
 using pmm = pair<mint, mint>;
 

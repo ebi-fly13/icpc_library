@@ -2,7 +2,7 @@
 
 #include "../template/template.hpp"
 
-namespace lib {
+
 
 using namespace std;
 
@@ -105,4 +105,4 @@ struct HeavyLightDecomposition {
     vector<int> sz, in, out, nxt, par, depth;
 };
 
-}  // namespace lib
+

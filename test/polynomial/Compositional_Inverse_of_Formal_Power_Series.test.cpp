@@ -1,4 +1,6 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/compositional_inverse_of_formal_power_series"
+#define PROBLEM                        \
+    "https://judge.yosupo.jp/problem/" \
+    "compositional_inverse_of_formal_power_series"
 
 #include <iostream>
 
@@ -6,7 +8,6 @@
 #include "../../fps/compositional_inverse_of_fps.hpp"
 #include "../../utility/modint.hpp"
 
-using namespace lib;
 using mint = modint998244353;
 using FPS = FormalPowerSeries<mint>;
 

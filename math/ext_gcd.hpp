@@ -4,7 +4,7 @@
 
 // https://github.com/maspypy/library/blob/main/nt/extgcd.hpp
 
-namespace lib {
+
 
 tuple<ll, ll, ll, ll> Farey_lr(ll a, ll b) {
     assert(a > 0 && b > 0);
@@ -30,4 +30,3 @@ tuple<ll, ll, ll> extgcd(ll a, ll b) {
     return (key1 < key2 ? make_tuple(x1, y1, g) : make_tuple(x2, y2, g));
 }
 
-}  // namespace lib

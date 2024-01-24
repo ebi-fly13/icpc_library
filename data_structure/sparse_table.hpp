@@ -2,7 +2,7 @@
 
 #include "../template/template.hpp"
 
-namespace lib {
+
 
 template <class S, S (*op)(S, S)> struct SparseTable {
     vector<vector<S>> table;
@@ -41,4 +41,3 @@ template <class S, S (*op)(S, S)> struct SparseTable {
     }
 };
 
-}  // namespace lib

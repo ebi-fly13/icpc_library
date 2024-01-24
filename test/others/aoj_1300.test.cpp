@@ -1,11 +1,9 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1300"
 
-#include "../../template/template.hpp"
-#include "../../template/parsing_template.hpp"
 #include "../../math/gauss_jordan.hpp"
+#include "../../template/parsing_template.hpp"
+#include "../../template/template.hpp"
 #include "../../utility/rational.hpp"
-
-using namespace lib;
 
 std::vector<std::vector<rational>> chemical_equation(State &);
 std::vector<std::map<std::string, ll>> molecule_sequence(State &);
@@ -118,7 +116,7 @@ int main() {
         {
             bool is_break = false;
             rrep(i, 0, n) {
-                if(is_break) break;
+                if (is_break) break;
                 rep(j, 0, m) {
                     if (a[i][j] != 0) {
                         x = j + 1;
@@ -129,21 +127,21 @@ int main() {
             }
         }
         std::vector<ll> ans(m, 1);
-        rep(j,x,m) {
-            rep(i,0,n) {
-                if(a[i][j] != 0) {
+        rep(j, x, m) {
+            rep(i, 0, n) {
+                if (a[i][j] != 0) {
                     ans[j] = std::lcm(ans[j], a[i][j].val().second);
                 }
             }
         }
-        rep(i,0,x) {
+        rep(i, 0, x) {
             ans[i] = 0;
-            rep(j,x,m) {
+            rep(j, x, m) {
                 ans[i] -= (a[i][j] * ans[j]).val().first;
             }
         }
-        rep(i,0,m) {
-            std::cout << ans[i] << " \n"[i == m-1];
+        rep(i, 0, m) {
+            std::cout << ans[i] << " \n"[i == m - 1];
         }
     }
 }

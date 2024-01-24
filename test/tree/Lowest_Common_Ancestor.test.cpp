@@ -13,7 +13,7 @@ int main() {
         g[p].emplace_back(i);
         g[i].emplace_back(p);
     }
-    lib::LowestCommonAncestor lca(g, 0);
+    LowestCommonAncestor lca(g, 0);
     while (q--) {
         int u, v;
         std::cin >> u >> v;

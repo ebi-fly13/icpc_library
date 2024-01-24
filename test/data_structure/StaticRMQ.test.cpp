@@ -3,8 +3,6 @@
 #include "../../data_structure/sparse_table.hpp"
 #include "../../template/template.hpp"
 
-using namespace lib;
-
 int op(int a, int b) {
     return min(a, b);
 }

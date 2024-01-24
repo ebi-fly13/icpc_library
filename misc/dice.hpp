@@ -1,6 +1,6 @@
 #include "../template/template.hpp"
 
-namespace lib {
+
 
 struct Dice {
     int up = 0, front = 1, right = 2, left = 3, back = 4, down = 5;

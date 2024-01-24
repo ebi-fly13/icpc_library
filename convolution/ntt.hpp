@@ -3,8 +3,6 @@
 #include "../template/template.hpp"
 #include "../utility/modint.hpp"
 
-namespace lib {
-
 using mint = modint998244353;
 
 struct ntt_info {
@@ -74,4 +72,3 @@ std::vector<mint> convolution(const std::vector<mint>& f,
     return a;
 }
 
-}  // namespace lib

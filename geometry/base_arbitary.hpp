@@ -2,7 +2,7 @@
 
 #include "../template/template.hpp"
 
-namespace lib {
+
 
 template <typename T> struct Vec {
     T x, y;
@@ -88,4 +88,3 @@ template <typename T> Vec<T> cross_point(const Line<T>& a, const Line<T>& b) {
     return alpha * a.p + (1 - alpha) * a.q;
 }
 
-}  // namespace lib

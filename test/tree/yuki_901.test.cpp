@@ -4,8 +4,6 @@
 #include "../../tree/HeavyLightDecomposition.hpp"
 #include "../../tree/lca_based_auxiliary_tree.hpp"
 
-using namespace lib;
-
 int main() {
     int n;
     std::cin >> n;

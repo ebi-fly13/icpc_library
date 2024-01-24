@@ -2,7 +2,7 @@
 
 #include "../template/template.hpp"
 
-namespace lib {
+
 
 template <class E, class V, E (*merge)(E, E), E (*e)(), E (*put_edge)(V, int),
           V (*put_vertex)(E, int)>
@@ -90,4 +90,4 @@ struct RerootingDP {
     }
 };
 
-}  // namespace lib
+

@@ -3,7 +3,7 @@
 #include "../fps/fps.hpp"
 #include "../template/template.hpp"
 
-namespace lib {
+
 
 template <class mint>
 FormalPowerSeries<mint> composition_of_fps(const FormalPowerSeries<mint> &f, const FormalPowerSeries<mint> &g) {
@@ -38,4 +38,3 @@ FormalPowerSeries<mint> composition_of_fps(const FormalPowerSeries<mint> &f, con
     return h;
 }
 
-}  // namespace lib

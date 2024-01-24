@@ -5,7 +5,6 @@
 #include "../../template/template.hpp"
 #include "../../utility/rational.hpp"
 
-using namespace lib;
 using vec = Vec<rational>;
 using line = Line<rational>;
 

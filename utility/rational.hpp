@@ -2,7 +2,7 @@
 
 #include "../template/template.hpp"
 
-namespace lib {
+
 
 struct rational {
     rational() : p(0), q(1) {}
@@ -90,4 +90,3 @@ struct rational {
     }
 };
 
-}  // namespace lib

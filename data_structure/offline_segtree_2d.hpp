@@ -8,7 +8,7 @@
 #include "../template/template.hpp"
 #include "../data_structure/compress.hpp"
 
-namespace lib {
+
 
 template <class S, S (*op)(S, S), S (*e)(), class data_structure>
 struct offline_segtree_2d {
@@ -88,4 +88,3 @@ struct offline_segtree_2d {
     std::vector<data_structure> data;
 };
 
-}  // namespace ebi
