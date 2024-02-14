@@ -26,15 +26,15 @@ struct NTT {
         uint im = wm[2].val();
         uint n = 1<<k;
         uint len = n;
-        int l = k;
+        int d = k;
         while (len > 1){
-            if (l == 1){
+            if (d == 1){
                 for (int i = 0; i < (1<<(k-1)); i++){
                     a[i*2+0] += a[i*2+1];
                     a[i*2+1]  = a[i*2+0] - a[i*2+1] * 2;
                 }
                 len >>= 1;
-                l -= 1;
+                d -= 1;
             }
             else {
                 int len4 = len/4;
@@ -57,14 +57,14 @@ struct NTT {
                         a[len4*2+i + len*j] = (a0p2 + mod*2 - a1p3) * r2;
                         a[len4*3+i + len*j] = c0m2 + mod2*2 - c1m3;
                     }
-                    r1 = r1 * wm[l].val() % mod;
+                    r1 = r1 * wm[d].val() % mod;
                     r2 = r1 * r1 % mod;
                     r3 = r1 * r2 % mod;
                     imr1 = im * r1 % mod;
                     imr3 = im * r3 % mod;
                 }
                 len >>= 2;
-                l -= 2;
+                d -= 2;
             }
         }
     }
@@ -72,15 +72,15 @@ struct NTT {
         uint im = wp[2].val();
         uint n = 1<<k;
         uint len = (k & 1 ? 2 : 4);
-        int l = (k & 1 ? 1 : 2);
+        int d = (k & 1 ? 1 : 2);
         while (len <= n){
-            if (l == 1){
+            if (d == 1){
                 for (int i = 0; i < (1<<(k-1)); i++){
                     a[i*2+0] += a[i*2+1];
                     a[i*2+1]  = a[i*2+0] - a[i*2+1] * 2;
                 }
                 len <<= 2;
-                l += 2;
+                d += 2;
             }
             else {
                 int len4 = len/4;
@@ -103,27 +103,27 @@ struct NTT {
                         a[len4*2+i + len*j] = a0p2 + mod2*2 - a1p3;
                         a[len4*3+i + len*j] = a0m2 + mod2*2 - b1m3;
                     }
-                    r1 = r1 * wp[l].val() % mod;
+                    r1 = r1 * wp[d].val() % mod;
                     r2 = r1 * r1 % mod;
                     r3 = r1 * r2 % mod;
                     imr1 = im * r1 % mod;
                     imr3 = im * r3 % mod;
                 }
                 len <<= 2;
-                l += 2;
+                d += 2;
             }
         }
     }
     vector<mint> multiply(const vector<mint> &a, const vector<mint> &b){
         if (a.empty() || b.empty()) return {};
-        int l = a.size() + b.size() - 1;
+        int d = a.size() + b.size() - 1;
         if (min<int>(a.size(), b.size()) <= 40){
-            vector<mint> s(l);
+            vector<mint> s(d);
             rep(i,0,a.size()) rep(j,0,b.size()) s[i+j] += a[i]*b[j];
             return s;
         }
         int k = 2, M = 4;
-        while (M < l) M <<= 1, ++k;
+        while (M < d) M <<= 1, ++k;
         vector<mint> s(M), t(M);
         rep(i,0,a.size()) s[i] = a[i];
         rep(i,0,b.size()) t[i] = b[i];
@@ -131,9 +131,9 @@ struct NTT {
         fft4(t,k);
         rep(i,0,M) s[i] *= t[i];
         ifft4(s, k);
-        s.resize(l);
+        s.resize(d);
         mint invm = mint(M).inv();
-        rep(i,0,l) s[i] *= invm;
+        rep(i,0,d) s[i] *= invm;
         return s;
     }
 };
