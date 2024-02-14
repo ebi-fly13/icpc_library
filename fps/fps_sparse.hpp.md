@@ -161,9 +161,9 @@ data:
   timestamp: '2023-11-14 18:27:43+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/polynomial/Pow_of_FPS_Sparse.test.cpp
   - test/polynomial/Inv_of_FPS_Sparse.test.cpp
   - test/polynomial/Log_of_FPS_Sparse.test.cpp
-  - test/polynomial/Pow_of_FPS_Sparse.test.cpp
   - test/polynomial/Exp_of_FPS_Sparse.test.cpp
 documentation_of: fps/fps_sparse.hpp
 layout: document

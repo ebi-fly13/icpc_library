@@ -112,8 +112,8 @@ data:
   timestamp: '2023-11-24 15:39:05+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/tree/yuki_901.test.cpp
   - test/data_structure/Vertex_Add_Path_Sum.test.cpp
+  - test/tree/yuki_901.test.cpp
 documentation_of: tree/HeavyLightDecomposition.hpp
 layout: document
 title: Heavy Light Decomposition

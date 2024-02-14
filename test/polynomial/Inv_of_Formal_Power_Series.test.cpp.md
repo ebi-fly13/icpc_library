@@ -99,11 +99,11 @@ data:
     \ >= 0; i--){\n            wp[i] = wp[i+1] * wp[i+1];\n            wm[i] = wm[i+1]\
     \ * wm[i+1];\n        }\n    }\n    NTT () { set_ws(); }\n    void fft4(vector<mint>\
     \ &a, int k){\n        uint im = wm[2].val();\n        uint n = 1<<k;\n      \
-    \  uint len = n;\n        int l = k;\n        while (len > 1){\n            if\
-    \ (l == 1){\n                for (int i = 0; i < (1<<(k-1)); i++){\n         \
+    \  uint len = n;\n        int d = k;\n        while (len > 1){\n            if\
+    \ (d == 1){\n                for (int i = 0; i < (1<<(k-1)); i++){\n         \
     \           a[i*2+0] += a[i*2+1];\n                    a[i*2+1]  = a[i*2+0] -\
     \ a[i*2+1] * 2;\n                }\n                len >>= 1;\n             \
-    \   l -= 1;\n            }\n            else {\n                int len4 = len/4;\n\
+    \   d -= 1;\n            }\n            else {\n                int len4 = len/4;\n\
     \                int nlen = n/len;\n                ull r1 = 1, r2 = 1, r3 = 1,\
     \ imr1 = im, imr3 = im;\n                for (int i = 0; i < len4; i++){\n   \
     \                 for (int j = 0; j < nlen; j++){\n                        uint\
@@ -118,16 +118,16 @@ data:
     \                a[len4*1+i + len*j] = b0m2 + b1m3;\n                        a[len4*2+i\
     \ + len*j] = (a0p2 + mod*2 - a1p3) * r2;\n                        a[len4*3+i +\
     \ len*j] = c0m2 + mod2*2 - c1m3;\n                    }\n                    r1\
-    \ = r1 * wm[l].val() % mod;\n                    r2 = r1 * r1 % mod;\n       \
+    \ = r1 * wm[d].val() % mod;\n                    r2 = r1 * r1 % mod;\n       \
     \             r3 = r1 * r2 % mod;\n                    imr1 = im * r1 % mod;\n\
     \                    imr3 = im * r3 % mod;\n                }\n              \
-    \  len >>= 2;\n                l -= 2;\n            }\n        }\n    }\n    void\
+    \  len >>= 2;\n                d -= 2;\n            }\n        }\n    }\n    void\
     \ ifft4(vector<mint> &a, int k){\n        uint im = wp[2].val();\n        uint\
-    \ n = 1<<k;\n        uint len = (k & 1 ? 2 : 4);\n        int l = (k & 1 ? 1 :\
-    \ 2);\n        while (len <= n){\n            if (l == 1){\n                for\
+    \ n = 1<<k;\n        uint len = (k & 1 ? 2 : 4);\n        int d = (k & 1 ? 1 :\
+    \ 2);\n        while (len <= n){\n            if (d == 1){\n                for\
     \ (int i = 0; i < (1<<(k-1)); i++){\n                    a[i*2+0] += a[i*2+1];\n\
     \                    a[i*2+1]  = a[i*2+0] - a[i*2+1] * 2;\n                }\n\
-    \                len <<= 2;\n                l += 2;\n            }\n        \
+    \                len <<= 2;\n                d += 2;\n            }\n        \
     \    else {\n                int len4 = len/4;\n                int nlen = n/len;\n\
     \                ull r1 = 1, r2 = 1, r3 = 1, imr1 = im, imr3 = im;\n         \
     \       for (int i = 0; i < len4; i++){\n                    for (int j = 0; j\
@@ -142,20 +142,20 @@ data:
     \               a[len4*0+i + len*j] = a0p2 + a1p3;\n                        a[len4*1+i\
     \ + len*j] = a0m2 + b1m3;\n                        a[len4*2+i + len*j] = a0p2\
     \ + mod2*2 - a1p3;\n                        a[len4*3+i + len*j] = a0m2 + mod2*2\
-    \ - b1m3;\n                    }\n                    r1 = r1 * wp[l].val() %\
+    \ - b1m3;\n                    }\n                    r1 = r1 * wp[d].val() %\
     \ mod;\n                    r2 = r1 * r1 % mod;\n                    r3 = r1 *\
     \ r2 % mod;\n                    imr1 = im * r1 % mod;\n                    imr3\
     \ = im * r3 % mod;\n                }\n                len <<= 2;\n          \
-    \      l += 2;\n            }\n        }\n    }\n    vector<mint> multiply(const\
+    \      d += 2;\n            }\n        }\n    }\n    vector<mint> multiply(const\
     \ vector<mint> &a, const vector<mint> &b){\n        if (a.empty() || b.empty())\
-    \ return {};\n        int l = a.size() + b.size() - 1;\n        if (min<int>(a.size(),\
-    \ b.size()) <= 40){\n            vector<mint> s(l);\n            rep(i,0,a.size())\
+    \ return {};\n        int d = a.size() + b.size() - 1;\n        if (min<int>(a.size(),\
+    \ b.size()) <= 40){\n            vector<mint> s(d);\n            rep(i,0,a.size())\
     \ rep(j,0,b.size()) s[i+j] += a[i]*b[j];\n            return s;\n        }\n \
-    \       int k = 2, M = 4;\n        while (M < l) M <<= 1, ++k;\n        vector<mint>\
+    \       int k = 2, M = 4;\n        while (M < d) M <<= 1, ++k;\n        vector<mint>\
     \ s(M), t(M);\n        rep(i,0,a.size()) s[i] = a[i];\n        rep(i,0,b.size())\
     \ t[i] = b[i];\n        fft4(s,k);\n        fft4(t,k);\n        rep(i,0,M) s[i]\
-    \ *= t[i];\n        ifft4(s, k);\n        s.resize(l);\n        mint invm = mint(M).inv();\n\
-    \        rep(i,0,l) s[i] *= invm;\n        return s;\n    }\n};\n\n} // namespace\
+    \ *= t[i];\n        ifft4(s, k);\n        s.resize(d);\n        mint invm = mint(M).inv();\n\
+    \        rep(i,0,d) s[i] *= invm;\n        return s;\n    }\n};\n\n} // namespace\
     \ lib\n#line 6 \"fps/fps.hpp\"\n\nnamespace lib {\n\ntemplate <class mint> struct\
     \ FormalPowerSeries : std::vector<mint> {\n  private:\n    using FPS = FormalPowerSeries<mint>;\n\
     \    using std::vector<mint>::vector;\n    using std::vector<mint>::vector::operator=;\n\
@@ -257,7 +257,7 @@ data:
   isVerificationFile: true
   path: test/polynomial/Inv_of_Formal_Power_Series.test.cpp
   requiredBy: []
-  timestamp: '2023-11-14 18:27:43+09:00'
+  timestamp: '2024-02-14 16:29:12+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/polynomial/Inv_of_Formal_Power_Series.test.cpp

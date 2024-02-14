@@ -57,8 +57,8 @@ data:
   timestamp: '2023-06-02 01:02:23+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/data_structure/Unionfind.test.cpp
   - test/geometry/aoj_1198.test.cpp
+  - test/data_structure/Unionfind.test.cpp
 documentation_of: data_structure/dsu.hpp
 layout: document
 title: dsu
