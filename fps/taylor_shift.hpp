@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../fps/fps.hpp"
-#include "../misc/factorial.hpp"
+#include "../math/factorial.hpp"
 #include "../template/template.hpp"
 
 namespace lib {

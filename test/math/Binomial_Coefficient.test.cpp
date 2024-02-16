@@ -3,7 +3,7 @@
 #include"../../template/template.hpp"
 
 #include"../../utility/dynamic_modint.hpp"
-#include"../../misc/factorial.hpp"
+#include"../../math/factorial.hpp"
 
 using namespace lib;
 
