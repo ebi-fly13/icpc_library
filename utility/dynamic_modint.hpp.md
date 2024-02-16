@@ -7,8 +7,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/misc/Binomial_Coefficient.test.cpp
-    title: test/misc/Binomial_Coefficient.test.cpp
+    path: test/math/Binomial_Coefficient.test.cpp
+    title: test/math/Binomial_Coefficient.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -76,7 +76,7 @@ data:
   timestamp: '2023-06-10 00:47:04+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/misc/Binomial_Coefficient.test.cpp
+  - test/math/Binomial_Coefficient.test.cpp
 documentation_of: utility/dynamic_modint.hpp
 layout: document
 redirect_from:

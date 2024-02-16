@@ -5,8 +5,8 @@ data:
     path: fps/fps_sparse.hpp
     title: Formal Power Series (Sparse)
   - icon: ':heavy_check_mark:'
-    path: misc/factorial.hpp
-    title: misc/factorial.hpp
+    path: math/factorial.hpp
+    title: math/factorial.hpp
   - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
@@ -33,28 +33,30 @@ data:
     \    a = b;\n    return true;\n}\ntemplate <typename T> bool chmax(T &a, const\
     \ T &b) {\n    if (a >= b) return false;\n    a = b;\n    return true;\n}\n\n\
     namespace lib {\n\nusing namespace std;\n\n}  // namespace lib\n\n// using namespace\
-    \ lib;\n#line 2 \"fps/fps_sparse.hpp\"\n\n#line 2 \"misc/factorial.hpp\"\n\n#line\
-    \ 4 \"misc/factorial.hpp\"\n\nnamespace lib {\n\ntemplate<typename T>\nstruct\
+    \ lib;\n#line 2 \"fps/fps_sparse.hpp\"\n\n#line 2 \"math/factorial.hpp\"\n\n#line\
+    \ 4 \"math/factorial.hpp\"\n\nnamespace lib {\n\ntemplate<typename T>\nstruct\
     \ Binom{\n    Binom(int lim = 300000){\n        if (kaijo.empty()){\n        \
-    \    kaijo = {1,1};\n            kainv = {1,1};\n        }\n        kaijo.resize(lim+1),\
-    \ kainv.resize(lim+1);\n        for (int i = 2; i <= lim; i++) kaijo[i] = kaijo[i-1]\
-    \ * T(i);\n        kainv[lim] = kaijo[lim].inv();\n        for (int i = lim-1;\
-    \ i >= 2; i--) kainv[i] = kainv[i+1] * T(i+1);\n    }\n    static T fact(int x)\
-    \ {\n        if (x < 0) return T(0);\n        return kaijo[x];\n    }\n    static\
-    \ T ifact(int x){\n        if (x < 0) return T(0);\n        return kainv[x];\n\
-    \    }\n    static T C(int n, int r){\n        if (n < 0 || n < r || r < 0) return\
-    \ T(0);\n        return kaijo[n] * kainv[r] * kainv[n-r];\n    }\n    static T\
-    \ P(int n, int r){\n        if (n < 0 || n < r || r < 0) return T(0);\n      \
-    \  return kaijo[n] * kainv[n-r];\n    }\n    static T Inv(int n){\n        assert(0\
-    \ < n);\n        return ifact(n) * fact(n-1);\n    }\n    T operator()(int n,\
-    \ int r){ return C(n,r); }\n  private:\n    static vector<T> kaijo, kainv;\n};\n\
-    template<typename T>\nvector<T>Binom<T>::kaijo = vector<T>(2,T(1));\ntemplate<typename\
-    \ T>\nvector<T>Binom<T>::kainv = vector<T>(2,T(1));\n\n} // namespace lib\n#line\
-    \ 5 \"fps/fps_sparse.hpp\"\n\nnamespace lib {\n\ntemplate <class mint>\nstd::vector<mint>\
-    \ mul_sparse(const std::vector<mint> &f,\n                             const std::vector<mint>\
-    \ &g) {\n    int n = f.size();\n    int m = g.size();\n    std::vector<std::pair<int,\
-    \ mint>> cf, cg;\n    for (int i = 0; i < n; i++) {\n        if (f[i] != 0) cf.emplace_back(i,\
-    \ f[i]);\n    }\n    for (int i = 0; i < m; i++) {\n        if (g[i] != 0) cg.emplace_back(i,\
+    \    kaijo = {1,1};\n            kainv = {1,1};\n        }\n        extend(lim);\n\
+    \    }\n    static T fact(int x) {\n        if (x < 0) return T(0);\n        return\
+    \ kaijo[x];\n    }\n    static T ifact(int x){\n        if (x < 0) return T(0);\n\
+    \        return kainv[x];\n    }\n    static T C(int n, int r){\n        if (n\
+    \ < 0 || n < r || r < 0) return T(0);\n        return kaijo[n] * kainv[r] * kainv[n-r];\n\
+    \    }\n    static T P(int n, int r){\n        if (n < 0 || n < r || r < 0) return\
+    \ T(0);\n        return kaijo[n] * kainv[n-r];\n    }\n    static T Inv(int n){\n\
+    \        assert(0 < n);\n        return ifact(n) * fact(n-1);\n    }\n    T operator()(int\
+    \ n, int r){ return C(n,r); }\n  private:\n    static vector<T> kaijo, kainv;\n\
+    \    static void extend(int lim){\n        if ((int)kaijo.size() > lim) return\
+    \ ;\n        int pre = kaijo.size();\n        kaijo.resize(lim+1);\n        kainv.resize(lim+1);\n\
+    \        for (int i = pre; i <= lim; i++) kaijo[i] = kaijo[i-1] * T(i);\n    \
+    \    kainv[lim] = kaijo[lim].inv();\n        for (int i = lim-1; i >= pre; i--)\
+    \ kainv[i] = kainv[i+1] * T(i+1);\n    }\n};\ntemplate<typename T>\nvector<T>Binom<T>::kaijo\
+    \ = vector<T>(2,T(1));\ntemplate<typename T>\nvector<T>Binom<T>::kainv = vector<T>(2,T(1));\n\
+    \n} // namespace lib\n#line 5 \"fps/fps_sparse.hpp\"\n\nnamespace lib {\n\ntemplate\
+    \ <class mint>\nstd::vector<mint> mul_sparse(const std::vector<mint> &f,\n   \
+    \                          const std::vector<mint> &g) {\n    int n = f.size();\n\
+    \    int m = g.size();\n    std::vector<std::pair<int, mint>> cf, cg;\n    for\
+    \ (int i = 0; i < n; i++) {\n        if (f[i] != 0) cf.emplace_back(i, f[i]);\n\
+    \    }\n    for (int i = 0; i < m; i++) {\n        if (g[i] != 0) cg.emplace_back(i,\
     \ g[i]);\n    }\n    std::vector<mint> h(n + m - 1);\n    for (auto [i, p] : cf)\
     \ {\n        for (auto [j, q] : cg) {\n            h[i + j] += p * q;\n      \
     \  }\n    }\n    return h;\n}\n\ntemplate <class mint>\nstd::vector<mint> inv_sparse(const\
@@ -142,12 +144,12 @@ data:
   dependsOn:
   - template/template.hpp
   - fps/fps_sparse.hpp
-  - misc/factorial.hpp
+  - math/factorial.hpp
   - utility/modint.hpp
   isVerificationFile: true
   path: test/polynomial/Pow_of_FPS_Sparse.test.cpp
   requiredBy: []
-  timestamp: '2023-11-14 18:27:43+09:00'
+  timestamp: '2024-02-16 18:48:16+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/polynomial/Pow_of_FPS_Sparse.test.cpp

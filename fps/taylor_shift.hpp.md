@@ -8,8 +8,8 @@ data:
     path: fps/fps.hpp
     title: Formal Power Series
   - icon: ':heavy_check_mark:'
-    path: misc/factorial.hpp
-    title: misc/factorial.hpp
+    path: math/factorial.hpp
+    title: math/factorial.hpp
   - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
@@ -204,21 +204,23 @@ data:
     \ == 0) this->pop_back();\n    }\n\n    int count_terms() const {\n        int\
     \ c = 0;\n        for (int i = 0; i < deg(); i++) {\n            if ((*this)[i]\
     \ != 0) c++;\n        }\n        return c;\n    }\n};\n\n}  // namespace lib\n\
-    #line 2 \"misc/factorial.hpp\"\n\n#line 4 \"misc/factorial.hpp\"\n\nnamespace\
+    #line 2 \"math/factorial.hpp\"\n\n#line 4 \"math/factorial.hpp\"\n\nnamespace\
     \ lib {\n\ntemplate<typename T>\nstruct Binom{\n    Binom(int lim = 300000){\n\
     \        if (kaijo.empty()){\n            kaijo = {1,1};\n            kainv =\
-    \ {1,1};\n        }\n        kaijo.resize(lim+1), kainv.resize(lim+1);\n     \
-    \   for (int i = 2; i <= lim; i++) kaijo[i] = kaijo[i-1] * T(i);\n        kainv[lim]\
-    \ = kaijo[lim].inv();\n        for (int i = lim-1; i >= 2; i--) kainv[i] = kainv[i+1]\
-    \ * T(i+1);\n    }\n    static T fact(int x) {\n        if (x < 0) return T(0);\n\
-    \        return kaijo[x];\n    }\n    static T ifact(int x){\n        if (x <\
-    \ 0) return T(0);\n        return kainv[x];\n    }\n    static T C(int n, int\
-    \ r){\n        if (n < 0 || n < r || r < 0) return T(0);\n        return kaijo[n]\
-    \ * kainv[r] * kainv[n-r];\n    }\n    static T P(int n, int r){\n        if (n\
-    \ < 0 || n < r || r < 0) return T(0);\n        return kaijo[n] * kainv[n-r];\n\
-    \    }\n    static T Inv(int n){\n        assert(0 < n);\n        return ifact(n)\
-    \ * fact(n-1);\n    }\n    T operator()(int n, int r){ return C(n,r); }\n  private:\n\
-    \    static vector<T> kaijo, kainv;\n};\ntemplate<typename T>\nvector<T>Binom<T>::kaijo\
+    \ {1,1};\n        }\n        extend(lim);\n    }\n    static T fact(int x) {\n\
+    \        if (x < 0) return T(0);\n        return kaijo[x];\n    }\n    static\
+    \ T ifact(int x){\n        if (x < 0) return T(0);\n        return kainv[x];\n\
+    \    }\n    static T C(int n, int r){\n        if (n < 0 || n < r || r < 0) return\
+    \ T(0);\n        return kaijo[n] * kainv[r] * kainv[n-r];\n    }\n    static T\
+    \ P(int n, int r){\n        if (n < 0 || n < r || r < 0) return T(0);\n      \
+    \  return kaijo[n] * kainv[n-r];\n    }\n    static T Inv(int n){\n        assert(0\
+    \ < n);\n        return ifact(n) * fact(n-1);\n    }\n    T operator()(int n,\
+    \ int r){ return C(n,r); }\n  private:\n    static vector<T> kaijo, kainv;\n \
+    \   static void extend(int lim){\n        if ((int)kaijo.size() > lim) return\
+    \ ;\n        int pre = kaijo.size();\n        kaijo.resize(lim+1);\n        kainv.resize(lim+1);\n\
+    \        for (int i = pre; i <= lim; i++) kaijo[i] = kaijo[i-1] * T(i);\n    \
+    \    kainv[lim] = kaijo[lim].inv();\n        for (int i = lim-1; i >= pre; i--)\
+    \ kainv[i] = kainv[i+1] * T(i+1);\n    }\n};\ntemplate<typename T>\nvector<T>Binom<T>::kaijo\
     \ = vector<T>(2,T(1));\ntemplate<typename T>\nvector<T>Binom<T>::kainv = vector<T>(2,T(1));\n\
     \n} // namespace lib\n#line 6 \"fps/taylor_shift.hpp\"\n\nnamespace lib {\n\n\
     template <class mint>\nFormalPowerSeries<mint> taylor_shift(FormalPowerSeries<mint>\
@@ -229,7 +231,7 @@ data:
     \    }\n    f = (f * g).pre(d);\n    std::reverse(f.begin(), f.end());\n    for\
     \ (int i = 0; i < d; i++) f[i] *= binom.ifact(i);\n    return f;\n}\n\n}  // namespace\
     \ lib\n"
-  code: "#pragma once\n\n#include \"../fps/fps.hpp\"\n#include \"../misc/factorial.hpp\"\
+  code: "#pragma once\n\n#include \"../fps/fps.hpp\"\n#include \"../math/factorial.hpp\"\
     \n#include \"../template/template.hpp\"\n\nnamespace lib {\n\ntemplate <class\
     \ mint>\nFormalPowerSeries<mint> taylor_shift(FormalPowerSeries<mint> f, mint\
     \ a) {\n    int d = f.deg();\n    Binom<mint> binom(d);\n    for (int i = 0; i\
@@ -244,11 +246,11 @@ data:
   - convolution/ntt4.hpp
   - utility/modint.hpp
   - template/template.hpp
-  - misc/factorial.hpp
+  - math/factorial.hpp
   isVerificationFile: false
   path: fps/taylor_shift.hpp
   requiredBy: []
-  timestamp: '2024-02-14 16:29:12+09:00'
+  timestamp: '2024-02-16 18:48:16+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/polynomial/Polynomial_Taylor_Shift.test.cpp

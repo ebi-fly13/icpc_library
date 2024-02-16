@@ -144,6 +144,9 @@ data:
     path: math/ext_gcd.hpp
     title: math/ext_gcd.hpp
   - icon: ':heavy_check_mark:'
+    path: math/factorial.hpp
+    title: math/factorial.hpp
+  - icon: ':heavy_check_mark:'
     path: math/floor_sum.hpp
     title: Floor Sum
   - icon: ':heavy_check_mark:'
@@ -158,9 +161,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: misc/dice.hpp
     title: "\u30B5\u30A4\u30B3\u30ED\u30E9\u30A4\u30D6\u30E9\u30EA"
-  - icon: ':heavy_check_mark:'
-    path: misc/factorial.hpp
-    title: misc/factorial.hpp
   - icon: ':heavy_check_mark:'
     path: misc/mo_algorithm.hpp
     title: misc/mo_algorithm.hpp
@@ -328,6 +328,9 @@ data:
     path: test/graph/Shobon_Minimum_Flow.test.cpp
     title: test/graph/Shobon_Minimum_Flow.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/math/Binomial_Coefficient.test.cpp
+    title: test/math/Binomial_Coefficient.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/math/Sum_of_Floor_of_Linear.test.cpp
     title: test/math/Sum_of_Floor_of_Linear.test.cpp
   - icon: ':heavy_check_mark:'
@@ -345,9 +348,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/math/yuki_447.test.cpp
     title: test/math/yuki_447.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/misc/Binomial_Coefficient.test.cpp
-    title: test/misc/Binomial_Coefficient.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/misc/aoj_1197.test.cpp
     title: test/misc/aoj_1197.test.cpp
@@ -454,7 +454,6 @@ data:
   requiredBy:
   - misc/dice.hpp
   - misc/mo_algorithm.hpp
-  - misc/factorial.hpp
   - graph/scc_graph.hpp
   - graph/low_link.hpp
   - graph/mf_graph.hpp
@@ -477,6 +476,7 @@ data:
   - fps/composition_of_fps.hpp
   - math/two_sat.hpp
   - math/eratosthenes_sieve.hpp
+  - math/factorial.hpp
   - math/floor_sum.hpp
   - math/dirichlet_series.hpp
   - math/crt.hpp
@@ -522,7 +522,6 @@ data:
   timestamp: '2023-05-17 22:41:14+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/misc/Binomial_Coefficient.test.cpp
   - test/misc/aoj_1197.test.cpp
   - test/graph/Maximum_Flow.test.cpp
   - test/graph/Bridges.test.cpp
@@ -550,6 +549,7 @@ data:
   - test/math/yuki_447.test.cpp
   - test/math/two_sat.test.cpp
   - test/math/Sum_of_Floor_of_Linear.test.cpp
+  - test/math/Binomial_Coefficient.test.cpp
   - test/math/Sum_of_Totient_Function.test.cpp
   - test/math/aoj_3205.test.cpp
   - test/geometry/base_rational.test.cpp

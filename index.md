@@ -164,6 +164,9 @@ data:
       path: math/ext_gcd.hpp
       title: math/ext_gcd.hpp
     - icon: ':heavy_check_mark:'
+      path: math/factorial.hpp
+      title: math/factorial.hpp
+    - icon: ':heavy_check_mark:'
       path: math/floor_sum.hpp
       title: Floor Sum
     - icon: ':heavy_check_mark:'
@@ -180,9 +183,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: misc/dice.hpp
       title: "\u30B5\u30A4\u30B3\u30ED\u30E9\u30A4\u30D6\u30E9\u30EA"
-    - icon: ':heavy_check_mark:'
-      path: misc/factorial.hpp
-      title: misc/factorial.hpp
     - icon: ':heavy_check_mark:'
       path: misc/mo_algorithm.hpp
       title: misc/mo_algorithm.hpp
@@ -385,6 +385,9 @@ data:
   - name: test/math
     pages:
     - icon: ':heavy_check_mark:'
+      path: test/math/Binomial_Coefficient.test.cpp
+      title: test/math/Binomial_Coefficient.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/math/Sum_of_Floor_of_Linear.test.cpp
       title: test/math/Sum_of_Floor_of_Linear.test.cpp
     - icon: ':heavy_check_mark:'
@@ -404,9 +407,6 @@ data:
       title: test/math/yuki_447.test.cpp
   - name: test/misc
     pages:
-    - icon: ':heavy_check_mark:'
-      path: test/misc/Binomial_Coefficient.test.cpp
-      title: test/misc/Binomial_Coefficient.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/misc/aoj_1197.test.cpp
       title: test/misc/aoj_1197.test.cpp
